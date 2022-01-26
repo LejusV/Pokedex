@@ -1,19 +1,11 @@
 ﻿using Pokedex.Models;
+using Pokedex.Models.Pokemons;
 using System;
 
 namespace Pokedex
 {
     class Program
     {
-        /*
-        static void Display(Pokemon pok)
-        {
-            Console.WriteLine(pok.ID);
-            Console.WriteLine(pok.Name);
-            Console.WriteLine(pok.ToString());
-            Console.WriteLine(pok.Shout);
-        }*/
-
         static void Main(string[] args)
         {
             PokemonType t_normal = new("Normal", "gris");
@@ -30,16 +22,15 @@ namespace Pokedex
 
             int next_pokemon_id = 1;
 
-            Pokemon pikachu = new(next_pokemon_id++, "Pika", t_elec);
-            Pokemon dracofeu = new(next_pokemon_id++, "Dracofeu", t_feu, t_vol);
-            Pokemon bulbizarre = new(next_pokemon_id++, "Bulbizarre", t_plante);
-            Pokemon tortank = new(next_pokemon_id++, "Tortank", t_eau);
-            Pokemon miaouss = new(next_pokemon_id++, "Miaouss", t_normal);
-            Pokemon salameche = new(next_pokemon_id++, "Salamèche", t_feu);
-            Pokemon mrmime = new(next_pokemon_id++, "M. Mime", t_psy, t_fee);
-            Pokemon racaillou = new(next_pokemon_id++, "Racaillou", t_roche, t_sol);
+            Pikachu pikachu = new("Pikatchum");
+            Pokemon dracofeu = new(next_pokemon_id++, "Dracofeu", "Dracofeu", t_feu, t_vol);
+            Pokemon bulbizarre = new(next_pokemon_id++, "Bulbizarre", "Bulbizarre", t_plante);
+            Pokemon tortank = new(next_pokemon_id++, "Tortank", "Bulbizarre", t_eau);
+            Pokemon miaouss = new(next_pokemon_id++, "Miaouss", "Bulbizarre", t_normal);
+            Pokemon salameche = new(next_pokemon_id++, "Salamèche", "Bulbizarre", t_feu);
+            Pokemon mrmime = new(next_pokemon_id++, "M. Mime", "Bulbizarre", t_psy, t_fee);
+            Pokemon racaillou = new(next_pokemon_id++, "Racaillou", "Bulbizarre", t_roche, t_sol);
 
-            pikachu.Cry = "PikaPika";
             dracofeu.Cry = "FEU";
             bulbizarre.Cry = "Bizarre...";
             tortank.Cry = "PANZER";

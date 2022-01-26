@@ -21,10 +21,10 @@ namespace Pokedex.Models
             get { return p_color; }
         }
 
-        public PokemonType(string n, string c)
+        public PokemonType(string name, string color)
         {
-            this.p_name = n;
-            this.p_color = c;
+            this.p_name = name;
+            this.p_color = color;
         }
     }
 }

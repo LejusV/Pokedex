@@ -1,11 +1,10 @@
 ﻿//using Pokemons.Models.Abilities.ElectrikType;
 //using Pokemons.Models.Abilities.NormalType;
-using Pokemons.Models.Types;
 using System;
 
 namespace Pokemons.Models.Pokemons.ElectrikType
 {
-    class Pikachu : Pokemon
+    /*class Pikachu : Pokemon
     {
         #region Constructors
         /// <summary>
@@ -21,8 +20,10 @@ namespace Pokemons.Models.Pokemons.ElectrikType
             this.attacks.Add(new Thunder());
         }
         #endregion
-    }
+    }*/
 }
+
+namespace Pokedex.Models
 
 {
     internal class Pokemon
@@ -30,12 +31,13 @@ namespace Pokemons.Models.Pokemons.ElectrikType
         private int p_id,
                     p_level;
         private string  p_cry,
-                        p_name;
-        private PokemonType[] p_types;
+                        p_name,
+                        p_givenName;
+        protected PokemonType[] p_types;
 
-        public string Name
+        public string GivenName
         {
-            get { return p_name; }
+            get { return p_givenName; }
         }
         public string Shout
         {
@@ -64,12 +66,13 @@ namespace Pokemons.Models.Pokemons.ElectrikType
             Console.WriteLine();
         }
 
-        public Pokemon(int id, string n, params PokemonType[] types)
+        public Pokemon(int id, string givenName, string cry, params PokemonType[] types)
         {
             this.p_level = 1;
             this.p_id = id;
             this.p_cry = string.Empty;
-            this.p_name = n;
+            this.p_givenName = givenName;
+            this.p_cry = cry;
             this.p_types = types;
         }
 
@@ -80,7 +83,7 @@ namespace Pokemons.Models.Pokemons.ElectrikType
 
         public override string ToString()
         {
-            return string.Format("My name is {0}", this.p_name);
+            return string.Format("My name is {0}", this.p_givenName);
         }
     }
 
