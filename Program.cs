@@ -1,5 +1,6 @@
 ﻿using Pokedex.Models;
 using Pokedex.Models.Pokemons;
+using Pokedex.Models.Types;
 using System;
 
 namespace Pokedex
@@ -8,28 +9,22 @@ namespace Pokedex
     {
         static void Main(string[] args)
         {
-            PokemonType t_normal = new("Normal", "gris");
-            PokemonType t_feu = new("Feu", "rouge");
-            PokemonType t_eau = new("Eau", "bleu outremer");
-            PokemonType t_glace = new("Glace", "bleu clair");
-            PokemonType t_elec = new("Electrique", "jaune");
-            PokemonType t_plante = new("Plante", "vert");
-            PokemonType t_psy = new("Psy", "rose fushia");
-            PokemonType t_vol = new("Vol", "violette");
-            PokemonType t_roche = new("Roche", "beige");
-            PokemonType t_sol = new("Sol", "Marron");
-            PokemonType t_fee = new("Fee", "rose pastel");
 
-            int next_pokemon_id = 1;
+            Electric electric = Electric.Instance;
+            Fire fire = Fire.Instance;
+            Grass grass = Grass.Instance;
+            Normal normal = Normal.Instance;
+            Rock rock = Rock.Instance;
+            Water water = Water.Instance;
 
-            Pikachu pikachu = new("Pikatchum");
-            Pokemon dracofeu = new(next_pokemon_id++, "Dracofeu", "Dracofeu", t_feu, t_vol);
-            Pokemon bulbizarre = new(next_pokemon_id++, "Bulbizarre", "Bulbizarre", t_plante);
-            Pokemon tortank = new(next_pokemon_id++, "Tortank", "Bulbizarre", t_eau);
-            Pokemon miaouss = new(next_pokemon_id++, "Miaouss", "Bulbizarre", t_normal);
-            Pokemon salameche = new(next_pokemon_id++, "Salamèche", "Bulbizarre", t_feu);
-            Pokemon mrmime = new(next_pokemon_id++, "M. Mime", "Bulbizarre", t_psy, t_fee);
-            Pokemon racaillou = new(next_pokemon_id++, "Racaillou", "Bulbizarre", t_roche, t_sol);
+            Pokemon pikachu = new Pikachu("Pikatchum", 17);
+            Pokemon dracofeu = new Charizard("Charizard", 49);
+            Pokemon bulbizarre = new Bulbasaur("Bulbizarre", "Bulbizarre", Grass.Instance);
+            Pokemon tortank = new(9, "Tortank", "Bulbizarre", water);
+            Pokemon miaouss = new(52, "Miaouss", "Bulbizarre", normal);
+            Pokemon salameche = new(4, "Salamèche", "Bulbizarre", fire);
+            Pokemon mrmime = new(122, "M. Mime", "Bulbizarre"/*, t_psy, t_fee*/);
+            Pokemon racaillou = new(74, "Racaillou", "Bulbizarre", rock/*, t_sol*/);
 
             dracofeu.Cry = "FEU";
             bulbizarre.Cry = "Bizarre...";

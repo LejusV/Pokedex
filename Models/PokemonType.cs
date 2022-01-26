@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pokedex.Models
 {
-    class PokemonType
+    internal abstract class PokemonType
     {
-        private string  p_name,
+        private string p_name,
                         p_color;
 
         public string Name

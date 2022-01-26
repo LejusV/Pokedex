@@ -1,11 +1,11 @@
-﻿using Pokedex.Models;
+﻿
+using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
     class Pikachu : Pokemon
     {
-        private static PokemonType ElecType = new PokemonType("elec", "yellow");
-        public Pikachu(string name) : base(25, name, name, ElecType)
+        public Pikachu(string name, int level) : base(25, name, "Pika Pika", level, Electric.Instance)
         {
         }
     }

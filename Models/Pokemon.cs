@@ -31,13 +31,12 @@ namespace Pokedex.Models
         private int p_id,
                     p_level;
         private string  p_cry,
-                        p_name,
-                        p_givenName;
+                        p_nickname;
         protected PokemonType[] p_types;
 
-        public string GivenName
+        public string nickname
         {
-            get { return p_givenName; }
+            get { return p_nickname; }
         }
         public string Shout
         {
@@ -55,7 +54,7 @@ namespace Pokedex.Models
         public void Display()
         {
             Console.WriteLine(this.p_id);
-            Console.WriteLine(this.p_name);
+            Console.WriteLine(this.p_nickname);
             Console.WriteLine("Level " + this.p_level);
             Console.WriteLine(this.ToString());
             Console.WriteLine(this.p_cry);
@@ -66,12 +65,12 @@ namespace Pokedex.Models
             Console.WriteLine();
         }
 
-        public Pokemon(int id, string givenName, string cry, params PokemonType[] types)
+        public Pokemon(int id, string nickname, string cry, int level, params PokemonType[] types)
         {
-            this.p_level = 1;
+            this.p_level = level;
             this.p_id = id;
             this.p_cry = string.Empty;
-            this.p_givenName = givenName;
+            this.p_nickname = nickname;
             this.p_cry = cry;
             this.p_types = types;
         }
@@ -83,7 +82,7 @@ namespace Pokedex.Models
 
         public override string ToString()
         {
-            return string.Format("My name is {0}", this.p_givenName);
+            return string.Format("My name is {0}", this.p_nickname);
         }
     }
 
