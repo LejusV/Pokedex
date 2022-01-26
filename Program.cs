@@ -18,10 +18,10 @@ namespace Pokedex
             Water water = Water.Instance;
 
             Pokemon pikachu = new Pikachu("Pikatchum", 17);
-            Pokemon dracofeu = new Charizard("Charizard", 49);
-            Pokemon bulbizarre = new Bulbasaur("Bulbizarre", "Bulbizarre", Grass.Instance);
-            Pokemon tortank = new(9, "Tortank", "Bulbizarre", water);
-            Pokemon miaouss = new(52, "Miaouss", "Bulbizarre", normal);
+            Pokemon dracofeu = new Charizard("Dracofeu", 49);
+            Pokemon bulbizarre = new Bulbasaur("Bulbizarre", 12);
+            Pokemon tortank = new Blastoise("Tortank", 666);
+            Pokemon miaouss = new Meowth("Miaouss", 1);
             Pokemon salameche = new(4, "Salamèche", "Bulbizarre", fire);
             Pokemon mrmime = new(122, "M. Mime", "Bulbizarre"/*, t_psy, t_fee*/);
             Pokemon racaillou = new(74, "Racaillou", "Bulbizarre", rock/*, t_sol*/);
