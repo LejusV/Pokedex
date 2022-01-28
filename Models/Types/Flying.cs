@@ -1,22 +1,23 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Electric : PokemonType
+    internal class Flying : PokemonType
     {
-        private static Electric? _instance = null;
-        public static Electric Instance
+        private static Flying? _instance = null;
+        public static Flying Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Electric();
+                    _instance = new Flying();
                 }
                 return _instance;
             }
         }
-        private Electric() : base("Electric", "Yellow")
+        private Flying() : base("Flying", "Violet")
         {
+
         }
     }
 }

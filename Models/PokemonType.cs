@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pokedex.Models
+﻿namespace Pokedex.Models
 {
     internal abstract class PokemonType
     {
-        private string p_name,
+        private readonly string p_name,
                         p_color;
 
         public string Name

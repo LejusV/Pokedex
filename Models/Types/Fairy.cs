@@ -1,22 +1,23 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Electric : PokemonType
+    internal class Fairy : PokemonType
     {
-        private static Electric? _instance = null;
-        public static Electric Instance
+        private static Fairy? _instance = null;
+        public static Fairy Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Electric();
+                    _instance = new Fairy();
                 }
                 return _instance;
             }
         }
-        private Electric() : base("Electric", "Yellow")
+        private Fairy() : base("Fairy", "Salmon")
         {
+
         }
     }
 }

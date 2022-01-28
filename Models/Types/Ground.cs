@@ -1,22 +1,23 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Electric : PokemonType
+    internal class Ground : PokemonType
     {
-        private static Electric? _instance = null;
-        public static Electric Instance
+        private static Ground? _instance = null;
+        public static Ground Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Electric();
+                    _instance = new Ground();
                 }
                 return _instance;
             }
         }
-        private Electric() : base("Electric", "Yellow")
+        private Ground() : base("Ground", "Beige")
         {
+
         }
     }
 }
