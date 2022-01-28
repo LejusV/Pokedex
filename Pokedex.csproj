@@ -5,4 +5,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Types\Water\Moves\" />
+    <Folder Include="Models\Types\Rock\Moves\" />
+    <Folder Include="Models\Types\Fire\Moves\" />
+    <Folder Include="Models\Types\Flying\Moves\" />
+    <Folder Include="Models\Types\Grass\Moves\" />
+    <Folder Include="Models\Types\Ground\Moves\" />
+    <Folder Include="Models\Types\Normal\Moves\" />
+    <Folder Include="Models\Types\Psychic\Moves\" />
+    <Folder Include="Models\Types\Fairy\Moves\" />
+  </ItemGroup>
+
 </Project>
