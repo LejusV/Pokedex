@@ -3,94 +3,97 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
-    internal class BoltStrike : Move
+    internal class HeadSmash : Move
     {
-        private static BoltStrike? _instance = null;
-        public static BoltStrike Instance
+        private static HeadSmash? _instance = null;
+        public static HeadSmash Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new BoltStrike();
+                    _instance = new HeadSmash();
                 }
                 return _instance;
             }
         }
-        private BoltStrike() : base("Bolt Strike", Rock.Instance, MoveCategory.Physical, 5, 130, 0.8)
-        {
-        }
+        private HeadSmash() : base("Head Smash", Rock.Instance, MoveCategory.Physical, 5, 150, 0.8)
+        { }
     }
-    internal class ThunderFang : Move
+
+
+    internal class RockBlast : Move
     {
-        private static ThunderFang? _instance = null;
-        public static ThunderFang Instance
+        private static RockBlast? _instance = null;
+        public static RockBlast Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ThunderFang();
+                    _instance = new RockBlast();
                 }
                 return _instance;
             }
         }
-        private ThunderFang() : base("Thunder Fang", Rock.Instance, MoveCategory.Physical, 15, 65, 0.95)
-        {
-        }
+        private RockBlast() : base("Rock Blast", Rock.Instance, MoveCategory.Physical, 10, 25, 0.9)
+        { }
     }
-    internal class FusionBolt : Move
+
+
+    internal class RockSlide : Move
     {
-        private static FusionBolt? _instance = null;
-        public static FusionBolt Instance
+        private static RockSlide? _instance = null;
+        public static RockSlide Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new FusionBolt();
+                    _instance = new RockSlide();
                 }
                 return _instance;
             }
         }
-        private FusionBolt() : base("Fusion Bolt", Rock.Instance, MoveCategory.Physical, 5, 100)
-        {
-        }
+        private RockSlide() : base("Rock Slide", Rock.Instance, MoveCategory.Physical, 10, 65, 0.9)
+        { }
     }
-    internal class WildCharge : Move
+
+
+    internal class RockThrow : Move
     {
-        private static WildCharge? _instance = null;
-        public static WildCharge Instance
+        private static RockThrow? _instance = null;
+        public static RockThrow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new WildCharge();
+                    _instance = new RockThrow();
                 }
                 return _instance;
             }
         }
-        private WildCharge() : base("Wild Charge", Rock.Instance, MoveCategory.Physical, 15, 90)
-        {
-        }
+        private RockThrow() : base("Wild Charge", Rock.Instance, MoveCategory.Physical, 15, 50, 0.9)
+        { }
     }
-    internal class Spark : Move
+
+
+    internal class RockTomb : Move
     {
-        private static Spark? _instance = null;
-        public static Spark Instance
+        private static RockTomb? _instance = null;
+        public static RockTomb Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Spark();
+                    _instance = new RockTomb();
                 }
                 return _instance;
             }
         }
-        private Spark() : base("Spark", Rock.Instance, MoveCategory.Physical, 20, 65)
-        {
-        }
+        private RockTomb() : base("Rock Tomb", Rock.Instance, MoveCategory.Physical, 15, 60, 0.95)
+        { }
     }
 }

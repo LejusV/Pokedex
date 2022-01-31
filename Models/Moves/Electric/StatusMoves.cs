@@ -20,7 +20,7 @@ namespace Pokedex.Models.Moves.Categories
         }
         private Charge() : base(
                                     "Charge",
-                                    Fairy.Instance,
+                                    Electric.Instance,
                                     MoveCategory.Status,
                                     20, null, 1
                                )
@@ -42,7 +42,7 @@ namespace Pokedex.Models.Moves.Categories
             }
         }
         private EerieImpulse() : base("Eerie Impulse",
-                                        Fairy.Instance,
+                                        Electric.Instance,
                                         MoveCategory.Status,
                                         15, null, 1)
         { }
@@ -64,7 +64,7 @@ namespace Pokedex.Models.Moves.Categories
         }
         private IonDeluge() : base(
                                     "Ion Deluge",
-                                    Fairy.Instance,
+                                    Electric.Instance,
                                     MoveCategory.Status,
                                     25)
         {}
@@ -86,7 +86,7 @@ namespace Pokedex.Models.Moves.Categories
         }
         private MagnetRise() : base(
                                     "Magnet Rise",
-                                    Fairy.Instance,
+                                    Electric.Instance,
                                     MoveCategory.Status,
                                     10, null, 1
                                    )
@@ -109,7 +109,7 @@ namespace Pokedex.Models.Moves.Categories
             }
         }
         private ThunderWave() : base("Thunder Wave",
-                                    Fairy.Instance,
+                                    Electric.Instance,
                                     MoveCategory.Status,
                                     20, null, 1)
         {}

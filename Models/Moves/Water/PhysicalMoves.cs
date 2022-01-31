@@ -3,94 +3,97 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
-    internal class BoltStrike : Move
+    internal class AquaJet : Move
     {
-        private static BoltStrike? _instance = null;
-        public static BoltStrike Instance
+        private static AquaJet? _instance = null;
+        public static AquaJet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new BoltStrike();
+                    _instance = new AquaJet();
                 }
                 return _instance;
             }
         }
-        private BoltStrike() : base("Bolt Strike", Electric.Instance, MoveCategory.Physical, 5, 130, 0.8)
-        {
-        }
+        private AquaJet() : base("Aqua Jet", Water.Instance, MoveCategory.Physical, 20, 40, 1)
+        { }
     }
-    internal class ThunderFang : Move
+
+
+    internal class AquaTail : Move
     {
-        private static ThunderFang? _instance = null;
-        public static ThunderFang Instance
+        private static AquaTail? _instance = null;
+        public static AquaTail Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ThunderFang();
+                    _instance = new AquaTail();
                 }
                 return _instance;
             }
         }
-        private ThunderFang() : base("Thunder Fang", Electric.Instance, MoveCategory.Physical, 15, 65, 0.95)
-        {
-        }
+        private AquaTail() : base("Aqua Tail", Water.Instance, MoveCategory.Physical, 10, 90, 0.9)
+        { }
     }
-    internal class FusionBolt : Move
+
+
+    internal class Dive : Move
     {
-        private static FusionBolt? _instance = null;
-        public static FusionBolt Instance
+        private static Dive? _instance = null;
+        public static Dive Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new FusionBolt();
+                    _instance = new Dive();
                 }
                 return _instance;
             }
         }
-        private FusionBolt() : base("Fusion Bolt", Electric.Instance, MoveCategory.Physical, 5, 100)
-        {
-        }
+        private Dive() : base("Dive", Water.Instance, MoveCategory.Physical, 10, 80, 1)
+        { }
     }
-    internal class WildCharge : Move
+
+
+    internal class Liquidation : Move
     {
-        private static WildCharge? _instance = null;
-        public static WildCharge Instance
+        private static Liquidation? _instance = null;
+        public static Liquidation Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new WildCharge();
+                    _instance = new Liquidation();
                 }
                 return _instance;
             }
         }
-        private WildCharge() : base("Wild Charge", Electric.Instance, MoveCategory.Physical, 15, 90)
-        {
-        }
+        private Liquidation() : base("Liquidation", Water.Instance, MoveCategory.Physical, 10, 85, 1)
+        { }
     }
-    internal class Spark : Move
+
+
+    internal class RazorShell : Move
     {
-        private static Spark? _instance = null;
-        public static Spark Instance
+        private static RazorShell? _instance = null;
+        public static RazorShell Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Spark();
+                    _instance = new RazorShell();
                 }
                 return _instance;
             }
         }
-        private Spark() : base("Spark", Electric.Instance, MoveCategory.Physical, 20, 65)
-        {
-        }
+        private RazorShell() : base("Razor Shell", Water.Instance, MoveCategory.Physical, 10, 75, 0.95)
+        { }
     }
 }

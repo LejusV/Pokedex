@@ -4,110 +4,119 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
-    internal class ThunderShock : Move
+    internal class Brine : Move
     {
-        private static ThunderShock? _instance = null;
-        public static ThunderShock Instance
+        private static Brine? _instance = null;
+        public static Brine Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ThunderShock();
+                    _instance = new Brine();
                 }
                 return _instance;
             }
         }
 
-        private ThunderShock() : base("Thunder Shock",
-                                        Electric.Instance,
-                                        MoveCategory.Special,
-                                        30, 40, 1
-                                    )
-        {
-        }
+        private Brine() : base("Brine",
+                                Water.Instance,
+                                MoveCategory.Special,
+                                10,
+                                65,
+                                1)
+        { }
     }
-    internal class Thunderbolt : Move
+
+
+    internal class Bubble : Move
     {
-        private static Thunderbolt? _instance = null;
-        public static Thunderbolt Instance
+        private static Bubble? _instance = null;
+        public static Bubble Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Thunderbolt();
+                    _instance = new Bubble();
                 }
                 return _instance;
             }
         }
-        private Thunderbolt() : base(
-                                        "Thunderbolt",
-                                        Electric.Instance,
-                                        MoveCategory.Special,
-                                        15, 95, 1
-                                    )
-        {
-        }
+        private Bubble() : base("Bubble",
+                                Water.Instance,
+                                MoveCategory.Special,
+                                30,
+                                40,
+                                1)
+        { }
     }
-    internal class ShockWave : Move
+
+
+    internal class HydroCannon : Move
     {
-        private static ShockWave? _instance = null;
-        public static ShockWave Instance
+        private static HydroCannon? _instance = null;
+        public static HydroCannon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ShockWave();
+                    _instance = new HydroCannon();
                 }
                 return _instance;
             }
         }
-        private ShockWave() : base(
-                                    "Shock Wave",
-                                    Electric.Instance,
+        private HydroCannon() : base("Hydro Cannon",
+                                    Water.Instance,
                                     MoveCategory.Special,
-                                    20, 60, null
-                                  )
-        {
-        }
+                                    5,
+                                    150,
+                                    0.9)
+        { }
     }
-    internal class Discharge : Move
+    internal class Octazooka : Move
     {
-        private static Discharge? _instance = null;
-        public static Discharge Instance
+        private static Octazooka? _instance = null;
+        public static Octazooka Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Discharge();
+                    _instance = new Octazooka();
                 }
                 return _instance;
             }
         }
-        private Discharge() : base("Discharge",
-                                    Electric.Instance,
+        private Octazooka() : base("Octazooka",
+                                    Water.Instance,
                                     MoveCategory.Special,
-                                    15, 80, 1)
+                                    10,
+                                    65,
+                                    0.85)
         {}
     }
-    internal class Thunder : Move
+    internal class WaterGun : Move
     {
-        private static Thunder? _instance = null;
-        public static Thunder Instance
+        private static WaterGun? _instance = null;
+        public static WaterGun Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Thunder();
+                    _instance = new WaterGun();
                 }
                 return _instance;
             }
         }
-        private Thunder() : base("Thunder", Electric.Instance, MoveCategory.Special, 10, 120, 0.7)
+        private WaterGun() : base("Water Gun",
+                                    Water.Instance,
+                                    MoveCategory.Special,
+                                    25,
+                                    40,
+                                    1)
         {}
     }
 }
