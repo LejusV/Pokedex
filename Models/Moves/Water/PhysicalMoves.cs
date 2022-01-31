@@ -21,26 +21,6 @@ namespace Pokedex.Models.Moves.Categories
         {
         }
     }
-
-    internal class FusionBolt : Move
-    {
-        private static FusionBolt? _instance = null;
-        public static FusionBolt Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new FusionBolt();
-                }
-                return _instance;
-            }
-        }
-        private FusionBolt() : base("Fusion Bolt", Electric.Instance, MoveCategory.Physical, 5, 100)
-        {
-        }
-    }
-
     internal class ThunderFang : Move
     {
         private static ThunderFang? _instance = null;
@@ -59,26 +39,24 @@ namespace Pokedex.Models.Moves.Categories
         {
         }
     }
-
-    internal class Spark : Move
+    internal class FusionBolt : Move
     {
-        private static Spark? _instance = null;
-        public static Spark Instance
+        private static FusionBolt? _instance = null;
+        public static FusionBolt Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Spark();
+                    _instance = new FusionBolt();
                 }
                 return _instance;
             }
         }
-        private Spark() : base("Spark", Electric.Instance, MoveCategory.Physical, 20, 65, 1)
+        private FusionBolt() : base("Fusion Bolt", Electric.Instance, MoveCategory.Physical, 5, 100)
         {
         }
     }
-
     internal class WildCharge : Move
     {
         private static WildCharge? _instance = null;
@@ -93,7 +71,25 @@ namespace Pokedex.Models.Moves.Categories
                 return _instance;
             }
         }
-        private WildCharge() : base("Wild Charge", Electric.Instance, MoveCategory.Physical, 15, 90, 1)
+        private WildCharge() : base("Wild Charge", Electric.Instance, MoveCategory.Physical, 15, 90)
+        {
+        }
+    }
+    internal class Spark : Move
+    {
+        private static Spark? _instance = null;
+        public static Spark Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Spark();
+                }
+                return _instance;
+            }
+        }
+        private Spark() : base("Spark", Electric.Instance, MoveCategory.Physical, 20, 65)
         {
         }
     }
