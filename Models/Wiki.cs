@@ -41,7 +41,7 @@ namespace Pokedex.Models
                 {10, new Caterpie() },
                 {11, new Metapod() },
                 {12, new Butterfree() },
-
+                
                 {25, new Pikachu() },
                 {26, new Raichu() },
 
@@ -59,10 +59,14 @@ namespace Pokedex.Models
         public string Display()
         {
             string res = "";
-            foreach (KeyValuePair<int, Pokemon> entry in this.Pokemons) res += string.Format("id " + entry.Key + "\n" +
-                                                                            entry.Value.Nickname + "\n" +
-                                                                            entry.Value.Shout + "\n" +
-                                                                            "Type" + entry.Value.TypesDisplay + "\n\n");
+            foreach (KeyValuePair<int, Pokemon> entry in this.Pokemons) res += string.Format(
+
+                "id " + entry.Key + "\t" + entry.Value.Nickname + "\n" +
+                entry.Value.Shout + "\n" +
+                "Type" + entry.Value.TypesDisplay + "\n\n"
+
+                );
+
             return res;
         }
     }

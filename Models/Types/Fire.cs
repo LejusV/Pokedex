@@ -24,5 +24,12 @@ namespace Pokedex.Models.Types
         {
 
         }
+
+        protected override void DeclareStrength()
+        {
+            this.p_strength = new List<PokemonType>();
+            this.p_strength.Add(Grass.Instance);
+            this.p_strength.Add(Bug.Instance);
+        }
     }
 }

@@ -111,7 +111,6 @@ namespace Pokedex.Models.Moves.Categories
                                         MoveCategory.Special,
                                         30, 40, 1
                                     )
-        {
-        }
+        { }
     }
 }

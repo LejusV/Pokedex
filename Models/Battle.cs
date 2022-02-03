@@ -8,8 +8,6 @@ namespace Pokedex.Models
 {
     internal class Battle
     {
-        private static Trainer _trainer;
-
 
         public Battle(Trainer trainer, Pokemon[] trainer_poks, Pokemon[] ennemy_poks)
         {

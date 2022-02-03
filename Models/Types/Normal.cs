@@ -1,4 +1,6 @@
-﻿namespace Pokedex.Models.Types
+﻿using System.Collections.Generic;
+
+namespace Pokedex.Models.Types
 {
     internal class Normal : PokemonType
     {
@@ -18,6 +20,10 @@
         private Normal() : base("Normal", "Brown")
         {
 
+        }
+        protected override void DeclareStrength()
+        {
+            this.p_strength = new List<PokemonType>();
         }
     }
 }

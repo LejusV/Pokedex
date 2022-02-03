@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex", "Pokedex.csproj", "{ED4A5940-FEB4-468B-AFE6-80A1BC4D6EE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "..\GUI\GUI.csproj", "{CD86B68D-22BB-4324-8E0C-76A91895700C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED4A5940-FEB4-468B-AFE6-80A1BC4D6EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED4A5940-FEB4-468B-AFE6-80A1BC4D6EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED4A5940-FEB4-468B-AFE6-80A1BC4D6EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED4A5940-FEB4-468B-AFE6-80A1BC4D6EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD86B68D-22BB-4324-8E0C-76A91895700C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD86B68D-22BB-4324-8E0C-76A91895700C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD86B68D-22BB-4324-8E0C-76A91895700C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD86B68D-22BB-4324-8E0C-76A91895700C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

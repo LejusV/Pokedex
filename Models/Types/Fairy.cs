@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace Pokedex.Models.Types
 {
     internal class Fairy : PokemonType
@@ -18,6 +20,12 @@ namespace Pokedex.Models.Types
         private Fairy() : base("Fairy", "Salmon")
         {
 
+        }
+        protected override void DeclareStrength()
+        {
+            this.p_strength = new List<PokemonType>();
+            this.p_strength.Add(Water.Instance);
+            this.p_strength.Add(Flying.Instance);
         }
     }
 }

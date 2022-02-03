@@ -8,6 +8,20 @@ namespace Pokedex
 {
     class Program
     {
+
+        static void Menu()
+        {
+            int answer = 0;
+
+            while (answer < 1 && answer > 3)
+            {
+                Console.WriteLine("Menu :\n" +
+                    "\t1) Look at your Pokemons" + "\n" +
+                    "\t2) FIGHT !" + "\n" +
+                    "\t3) Quit the game");
+            }
+        }
+
         static void Main()
         {
             Console.Write("Choose you gender (F, M or O) : ");
@@ -47,17 +61,19 @@ namespace Pokedex
 
             Player1.Pokemons[0].Rename = Console.ReadLine();
 
+            Menu();
+
             /*foreach (Pokemon poke in pokemons)
             {
                 Player1.AddPokemon(poke);
-            }
+            }*/
 
-            foreach (Pokemon poke in Player1.Pokemons)
+            /*foreach (Pokemon poke in Player1.Pokemons)
             {
                 Console.WriteLine(poke.ToString());
             }*/
 
-            Console.WriteLine(Wiki.Instance.Display());
+            /*Console.WriteLine(Wiki.Instance.Display());*/
 
         }
     }
