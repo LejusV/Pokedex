@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class EnergyBall : Move
     {
         private static EnergyBall? _instance = null;

@@ -3,6 +3,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class AncientPower : Move
     {
         private static AncientPower? _instance = null;

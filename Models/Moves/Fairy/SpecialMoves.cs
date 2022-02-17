@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class DazzlingGleam : Move
     {
         private static DazzlingGleam? _instance = null;

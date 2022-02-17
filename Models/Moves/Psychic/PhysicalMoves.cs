@@ -3,6 +3,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     /// <summary>
     /// 30% chances to put fear on target (can't attack this turn)
     /// </summary>

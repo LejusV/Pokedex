@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class WillOWisp : Move
     {
         private static WillOWisp? _instance = null;

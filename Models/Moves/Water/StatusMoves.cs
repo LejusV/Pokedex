@@ -3,6 +3,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+#nullable enable
     internal class AquaRing : Move
     {
         private static AquaRing? _instance = null;

@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class Aromatherapy : Move
     {
         private static Aromatherapy? _instance = null;

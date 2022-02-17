@@ -2,7 +2,9 @@
 {
     internal class Normal : PokemonType
     {
+#nullable enable
         private static Normal? _instance = null;
+#nullable disable
         public static Normal Instance
         {
             get

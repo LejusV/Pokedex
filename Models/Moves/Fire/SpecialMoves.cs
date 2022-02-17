@@ -6,6 +6,7 @@ namespace Pokedex.Models.Moves.Categories
 {
     internal class BlueFlare : Move
     {
+        #nullable enable
         private static BlueFlare? _instance = null;
         public static BlueFlare Instance
         {

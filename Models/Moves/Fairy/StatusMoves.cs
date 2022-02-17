@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     internal class BabyDollEyes : Move
     {
         private static BabyDollEyes? _instance = null;

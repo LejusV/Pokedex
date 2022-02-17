@@ -2,7 +2,9 @@
 {
     internal class Water : PokemonType
     {
+#nullable enable
         private static Water? _instance = null;
+#nullable disable
         public static Water Instance
         {
             get

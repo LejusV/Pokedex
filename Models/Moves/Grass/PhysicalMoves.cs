@@ -3,6 +3,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     /// <summary>
     /// 
     /// </summary>
@@ -91,21 +92,21 @@ namespace Pokedex.Models.Moves.Categories
     /// <summary>
     /// 
     /// </summary>
-    internal class WoodHammer : Move
+    internal class VineWhip : Move
     {
-        private static WoodHammer? _instance = null;
-        public static WoodHammer Instance
+        private static VineWhip? _instance = null;
+        public static VineWhip Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new WoodHammer();
+                    _instance = new VineWhip();
                 }
                 return _instance;
             }
         }
-        private WoodHammer() : base("Wood Hammer", Grass.Instance, MoveCategory.Physical, 15, 120, 1)
+        private VineWhip() : base("Vine Whip", Grass.Instance, MoveCategory.Physical, 25, 45, 1)
         { }
     }
 }

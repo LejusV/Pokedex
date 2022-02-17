@@ -3,7 +3,9 @@ namespace Pokedex.Models.Types
 {
     internal class Poison : PokemonType
     {
+#nullable enable
         private static Poison? _instance = null;
+#nullable disable
         public static Poison Instance
         {
             get

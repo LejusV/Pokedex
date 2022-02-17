@@ -3,7 +3,9 @@ namespace Pokedex.Models.Types
 {
     internal class Grass : PokemonType
     {
+#nullable enable
         private static Grass? _instance = null;
+#nullable disable
         public static Grass Instance
         {
             get

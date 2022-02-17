@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     /// <summary>
     /// Deals damage and heal 50% inflicted damage if target is asleep
     /// </summary>

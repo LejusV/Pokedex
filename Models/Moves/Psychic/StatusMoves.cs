@@ -4,6 +4,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+    #nullable enable
     /// <summary>
     /// launcher gains two levels of speed
     /// </summary>

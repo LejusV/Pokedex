@@ -1,6 +1,7 @@
 ﻿using Pokedex.Enums;
 using Pokedex.Models;
 using Pokedex.Models.Pokemons;
+using Pokedex.Models.Moves.Categories;
 using System;
 using System.Collections.Generic;
 
@@ -17,19 +18,6 @@ namespace Pokedex
 
             Trainer Player1 = new(Console.ReadLine(), gender);
 
-
-            Pokemon[] starter_pokemons = {
-                new Bulbasaur("Bulbisaur", 1),
-                new Charmander("Charmander", 1),
-                new Squirtle("Squirtle", 1)
-            };
-
-            /*new Meowth("Miaouss", 1),
-            new MrMime("M. Mime", 1),
-            new Pichu("Pika", 1),
-            new Geodude("Racaillou", 1),
-            new Caterpie("Chenipan", 1),*/
-
             Console.WriteLine("What Pokemon do you want to start with :\n" +
                                 "\t- Bulbasaur (1)\n" +
                                 "\t- Charmander (4)\n" +
@@ -37,9 +25,38 @@ namespace Pokedex
 
             if (int.TryParse(Console.ReadLine(), out int answer))
             {
-                foreach (Pokemon p in starter_pokemons)
+                switch (answer)
                 {
-                    if (p.Id == answer) Player1.AddPokemon(p);
+                    case 1 :
+                    {
+                        Pokemon bulbasaur = new Bulbasaur("Bulbasaur", 10);
+                        bulbasaur.AddMove(Tackle.Instance);
+                        bulbasaur.AddMove(Growl.Instance);
+                        bulbasaur.AddMove(LeechSeed.Instance);
+                        bulbasaur.AddMove(VineWhip.Instance);
+                        Player1.AddPokemon(bulbasaur);
+                        break;
+                    }
+
+                    case 4 :
+                    {
+                        Pokemon charmander = new Charmander("Charmander", 10);
+                        charmander.AddMove(Scratch.Instance);
+                        charmander.AddMove(Growl.Instance);
+                        charmander.AddMove(Ember.Instance);
+                        Player1.AddPokemon(charmander);
+                        break;
+                    }
+
+                    case 7 :
+                    {
+                        Pokemon squirtle = new Squirtle("Squirtle", 10);
+                        squirtle.AddMove(AquaJet.Instance);
+                        squirtle.AddMove(TailWhip.Instance);
+                        squirtle.AddMove(Bubble.Instance);
+                        Player1.AddPokemon(squirtle);
+                        break;
+                    }
                 }
             }
             Console.Write("\n" +
@@ -47,17 +64,14 @@ namespace Pokedex
 
             Player1.Pokemons[0].Rename = Console.ReadLine();
 
-            /*foreach (Pokemon poke in pokemons)
-            {
-                Player1.AddPokemon(poke);
-            }
-
             foreach (Pokemon poke in Player1.Pokemons)
             {
-                Console.WriteLine(poke.ToString());
-            }*/
+                Console.WriteLine(poke.ToString() + poke.MovesDisplay());
+            }
 
-            Console.WriteLine(Wiki.Instance.Display());
+            //Console.WriteLine(Wiki.Instance.Display());
+            Battle battle = new Battle(Player1, new List<Pokemon>() { new Metapod("Metapod", 10) });
+
 
         }
     }

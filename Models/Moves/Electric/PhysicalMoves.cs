@@ -3,6 +3,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Moves.Categories
 {
+#nullable enable
     internal class BoltStrike : Move
     {
         private static BoltStrike? _instance = null;

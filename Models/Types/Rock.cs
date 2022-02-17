@@ -2,7 +2,9 @@
 {
     internal class Rock : PokemonType
     {
+#nullable enable
         private static Rock? _instance = null;
+#nullable disable
         public static Rock Instance
         {
             get

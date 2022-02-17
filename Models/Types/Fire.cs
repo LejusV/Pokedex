@@ -8,7 +8,9 @@ namespace Pokedex.Models.Types
 {
     internal class Fire : PokemonType
     {
+#nullable enable
         private static Fire? _instance = null;
+#nullable disable
         public static Fire Instance
         {
             get
