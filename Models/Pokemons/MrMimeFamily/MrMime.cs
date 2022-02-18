@@ -4,7 +4,7 @@
     {
         public MrMime(string nickname = "MrMime", int? level = null) : base(122, nickname, "[...]", level)
         {
-            this._base_stats = new PokemonStats(40, 45, 65, 100, 120, 90);
+            this._natural_fixed_stats = new PokemonStats(40, 45, 65, 100, 120, 90);
             CalculateStats();
         }
     }

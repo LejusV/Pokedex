@@ -13,8 +13,8 @@ namespace Pokedex.Models
             Pokemon player_pok = trainer.Pokemons[0];
             Pokemon opp_pok = opponent_poks[0];
             
-            Console.WriteLine("\t\t\t"+ opp_pok.Nickname+ "\n" +
-            "\t\t\t\tlvl " + opp_pok.Level);
+            Console.WriteLine("\t\t\t\t"+ opp_pok.Nickname+ "\n" +
+            "\t\t\t\t\tlvl " + opp_pok.Level);
         }
     }
 }

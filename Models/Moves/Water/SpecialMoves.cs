@@ -120,4 +120,27 @@ namespace Pokedex.Models.Moves.Categories
                                     1)
         {}
     }
+
+    internal class WaterPulse : Move
+    {
+        private static WaterPulse? _instance = null;
+        public static WaterPulse Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new WaterPulse();
+                }
+                return _instance;
+            }
+        }
+        private WaterPulse() : base("Water Pulse",
+                                    Water.Instance,
+                                    MoveCategory.Special,
+                                    20,
+                                    60,
+                                    1)
+        {}
+    }
 }

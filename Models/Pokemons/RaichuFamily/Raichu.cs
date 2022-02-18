@@ -4,7 +4,7 @@
     {
         public Raichu(string nickname = "Raichu", int? level = null) : base(26, nickname, "Raichu", level)
         {
-            this._base_stats = new PokemonStats(60, 90, 55, 90, 80, 110);
+            this._natural_fixed_stats = new PokemonStats(60, 90, 55, 90, 80, 110);
             CalculateStats();
         }
     }

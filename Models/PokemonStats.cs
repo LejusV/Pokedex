@@ -23,6 +23,11 @@ namespace Pokedex.Models
             _stats[key] = value;
         }
 
+        public void CopyTo(PokemonStats stats_copy)
+        {
+            foreach (string key in Keys) stats_copy.Set(key, this._stats[key]);
+        }
+
         public PokemonStats(int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
         {
             _stats = new Dictionary<string, int>

@@ -95,6 +95,27 @@ namespace Pokedex.Models.Moves.Categories
         {}
     }
 
+    internal class ScaryFace : Move
+    {
+        private static ScaryFace? _instance = null;
+        public static ScaryFace Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ScaryFace();
+                }
+                return _instance;
+            }
+        }
+        private ScaryFace() : base("Scary Face",
+                                    Normal.Instance,
+                                    MoveCategory.Status,
+                                    10, null, 1)
+        { }
+    }
+
     internal class Screech : Move
     {
         private static Screech? _instance = null;
@@ -116,6 +137,27 @@ namespace Pokedex.Models.Moves.Categories
         { }
     }
     
+    internal class Smokescreen : Move
+    {
+        private static Smokescreen? _instance = null;
+        public static Smokescreen Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Smokescreen();
+                }
+                return _instance;
+            }
+        }
+        private Smokescreen() : base("Smokescreen",
+                                        Normal.Instance,
+                                        MoveCategory.Status,
+                                        20, null, 1)
+        { }
+    }
+
     internal class TailWhip : Move
     {
         private static TailWhip? _instance = null;

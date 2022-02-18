@@ -6,13 +6,14 @@ namespace Pokedex.Models
     internal class Pokemon
     {
         private readonly int _id;
-        private int? _level;
+        protected int? _level;
         private string _cry,
                        _nickname;
         protected PokemonType[] _types;
 
-        protected PokemonStats _base_stats;
-        protected PokemonStats _evolutive_stats;
+        protected PokemonStats _natural_fixed_stats;
+        protected PokemonStats _current_base_stats;
+        protected PokemonStats _current_actual_stats;
 
         protected List<Move> _moves;
 
@@ -41,6 +42,16 @@ namespace Pokedex.Models
             get {return _moves;}
         }
 
+        public PokemonStats BaseStats
+        {
+            get { return _current_base_stats;}
+        }
+
+        public PokemonStats ActualStats
+        {
+            get { return _current_actual_stats;}
+        }
+
         public string Cry
         {
             set { this._cry = value; }
@@ -59,9 +70,9 @@ namespace Pokedex.Models
         {
             get
             {
-                string res = "";
+                string res = "Type";
                 foreach (PokemonType type in _types) res += string.Format(" " + type.Name);
-                return res;
+                return res+"\n\n";
             }
         }
 
@@ -69,21 +80,18 @@ namespace Pokedex.Models
         {
             get
             {
-                string res = "";
-                foreach (string key in _evolutive_stats.Keys) res += string.Format("\n\t" + key.ToUpper() + " " + _evolutive_stats.Get(key));
-                return res;
+                string res = "Stats:";
+                foreach (string key in _current_base_stats.Keys) res += string.Format("\n\t" + key.ToUpper() + " " + _current_base_stats.Get(key));
+                return res+"\n\n";
             }
         }
 
         public override string ToString()
         {
-            return string.Format(this._nickname + " : " + "\n" +
-                                "id " + this._id + "\t" +
-                                "Level " + this._level + "\n" +
-                                "My name is {0}", this._nickname + "\n" +
-                                this._cry + "\n" +
-                                "Type" + TypesDisplay + "\n" + 
-                                "Stats:" + StatsDisplay + "\n\n"
+            return string.Format("\n" + 
+                                this._nickname + " : " + "\n" +
+                                "\tLevel " + this._level + "\n" +
+                                "\t" + this._current_actual_stats.Get("hp") + "/" + this._current_base_stats.Get("hp") + "HP" + "\n\n"
                 );
         }
 
@@ -91,19 +99,24 @@ namespace Pokedex.Models
         {
             string res = "";
             foreach (Move m in _moves) res += m.Name + "\n";
-            res += "\n";
-            return res;
+            return res+"\n";
         }
 
-        protected void CalculateStats()
+        public void CalculateStats()
         {
-            foreach(string key in _evolutive_stats.Keys)
+            foreach(string key in _current_base_stats.Keys)
             {
-                int base_stat = _base_stats.Get( key );
-                this._evolutive_stats.Set( key , Convert.ToInt32(base_stat + 0.002*( base_stat * ( _level ?? default(int) - 1)  + 0.1 * base_stat * ( _level ?? default(int) - 1 ) * ( _level ?? default(int) -1 ) )));
+                int natural_stat = _natural_fixed_stats.Get( key );
+                this._current_base_stats.Set( key , Convert.ToInt32(natural_stat + 0.002*( natural_stat * ( _level ?? default(int) - 1)  + 0.1 * natural_stat * ( _level ?? default(int) - 1 ) * ( _level ?? default(int) -1 ) )));
             }
         //    (2*base + iv +  ev/4 * level)/100  + level + 10
         //    (2*base + iv + ev/4 * level)/100  + 5
+        }
+
+        public void ResetActualStats()
+        {
+            this._current_base_stats.CopyTo(this._current_actual_stats);
+            this._current_actual_stats.Set("hp", this._current_actual_stats.Get("hp") - 1);
         }
 
         
@@ -114,7 +127,8 @@ namespace Pokedex.Models
             _level = level;
             _nickname = nickname;
             _types = types;
-            _evolutive_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _current_base_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _current_actual_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
             _moves = new List<Move>();
         }
     }

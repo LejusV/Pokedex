@@ -4,7 +4,7 @@
     {
         public Meowth(string nickname = "Meowth", int? level = null) : base(52, nickname, nickname, level)
         {
-            this._base_stats = new PokemonStats(40, 45, 35, 40, 40, 90);
+            this._natural_fixed_stats = new PokemonStats(40, 45, 35, 40, 40, 90);
             CalculateStats();
         }
     }

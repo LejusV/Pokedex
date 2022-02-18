@@ -30,10 +30,7 @@ namespace Pokedex
                     case 1 :
                     {
                         Pokemon bulbasaur = new Bulbasaur("Bulbasaur", 10);
-                        bulbasaur.AddMove(Tackle.Instance);
-                        bulbasaur.AddMove(Growl.Instance);
-                        bulbasaur.AddMove(LeechSeed.Instance);
-                        bulbasaur.AddMove(VineWhip.Instance);
+                        bulbasaur.ResetActualStats();
                         Player1.AddPokemon(bulbasaur);
                         break;
                     }
@@ -41,9 +38,7 @@ namespace Pokedex
                     case 4 :
                     {
                         Pokemon charmander = new Charmander("Charmander", 10);
-                        charmander.AddMove(Scratch.Instance);
-                        charmander.AddMove(Growl.Instance);
-                        charmander.AddMove(Ember.Instance);
+                        charmander.ResetActualStats();
                         Player1.AddPokemon(charmander);
                         break;
                     }
@@ -51,9 +46,7 @@ namespace Pokedex
                     case 7 :
                     {
                         Pokemon squirtle = new Squirtle("Squirtle", 10);
-                        squirtle.AddMove(AquaJet.Instance);
-                        squirtle.AddMove(TailWhip.Instance);
-                        squirtle.AddMove(Bubble.Instance);
+                        squirtle.ResetActualStats();
                         Player1.AddPokemon(squirtle);
                         break;
                     }

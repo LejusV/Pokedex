@@ -61,6 +61,25 @@ namespace Pokedex.Models.Moves.Categories
         }
     }
 
+    internal class RapidSpin : Move
+    {
+        private static RapidSpin? _instance = null;
+        public static RapidSpin Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new RapidSpin();
+                }
+                return _instance;
+            }
+        }
+        private RapidSpin() : base("Rapid Spin", Normal.Instance, MoveCategory.Physical, 40, 20, 1)
+        {
+        }
+    }
+
     internal class Scratch : Move
     {
 #nullable enable
@@ -76,6 +95,12 @@ namespace Pokedex.Models.Moves.Categories
                 return _instance;
             }
         }
+
+        public string Use(Pokemon sender, Pokemon target)
+        {
+            target.ActualStats.Set("hp", sender.ActualStats.Get("power"))
+        }
+
         private Scratch() : base("Scratch", Normal.Instance, MoveCategory.Physical, 35, 40, 1)
         {
         }
