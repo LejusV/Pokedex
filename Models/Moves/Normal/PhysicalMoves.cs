@@ -96,10 +96,10 @@ namespace Pokedex.Models.Moves.Categories
             }
         }
 
-        public string Use(Pokemon sender, Pokemon target)
+        /*public string Use(Pokemon sender, Pokemon target)
         {
             target.ActualStats.Set("hp", sender.ActualStats.Get("power"))
-        }
+        }*/
 
         private Scratch() : base("Scratch", Normal.Instance, MoveCategory.Physical, 35, 40, 1)
         {

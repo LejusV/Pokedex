@@ -5,6 +5,11 @@ namespace Pokedex.Models
 {
     internal class Pokemon
     {
+        
+        PokemonDB db = new PokemonDB();
+
+        public void connection
+
         private readonly int _id;
         protected int? _level;
         private string _cry,
