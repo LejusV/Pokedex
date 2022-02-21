@@ -8,7 +8,7 @@ namespace Pokedex.Models
         
         PokemonDB db = new PokemonDB();
 
-        public void connection
+        //public void connection
 
         private readonly int _id;
         protected int? _level;
@@ -57,19 +57,23 @@ namespace Pokedex.Models
             get { return _current_actual_stats;}
         }
 
+
         public string Cry
         {
             set { this._cry = value; }
         }
+
         public string Rename
         {
             set { this._nickname = value; }
         }
+
         
         public void AddMove(Move move)
         {
             _moves.Add( move );
         }
+
 
         public string TypesDisplay
         {
@@ -106,6 +110,7 @@ namespace Pokedex.Models
             foreach (Move m in _moves) res += m.Name + "\n";
             return res+"\n";
         }
+        
 
         public void CalculateStats()
         {

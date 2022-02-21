@@ -62,7 +62,7 @@ namespace Pokedex
             }
 
             //Console.WriteLine(Wiki.Instance.Display());
-            Battle battle = new Battle(Player1, new List<Pokemon>() { new Metapod("Metapod", 10) });
+            Battle battle = new Battle(Player1, new List<Pokemon>() { new Metapod("Metapod", Player1.Pokemons[0].Level) });
 
 
         }

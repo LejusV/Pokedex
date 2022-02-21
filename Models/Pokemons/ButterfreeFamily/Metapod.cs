@@ -8,6 +8,7 @@ namespace Pokedex.Models.Pokemons
         {
             this._natural_fixed_stats = new PokemonStats(50, 20, 55, 25, 25, 30);
             CalculateStats();
+            ResetActualStats();
         }
     }
 }
