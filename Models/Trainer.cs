@@ -12,12 +12,11 @@ namespace Pokedex.Models
 
         int InsertByLevel(Pokemon pok)
         {
-            int? level = pok.Level;
 
             int count = p_poks.Count;
             for (int i = 0; i < count; i++)
             {
-                if (p_poks[i].Level < level)
+                if (p_poks[i].Level < pok.Level)
                 {
                     p_poks.Insert(i, pok);
                     return 1;

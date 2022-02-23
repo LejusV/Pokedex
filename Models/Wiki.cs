@@ -144,7 +144,6 @@ namespace Pokedex.Models
                 {
                     res += string.Format("id " + entry.Key + "\n" +
                     entry.Value.Nickname + "\n" +
-                    entry.Value.Shout + "\n" +
                     "Type" + entry.Value.TypesDisplay + "\n\n");
                 }
             }

@@ -38,6 +38,7 @@ namespace Pokedex.Models
             _attack = attack;
             _defense = defense;
             _hp = hp;
+            _name = name;
             _specialAttack = sp_attack;
             _specialDefense = sp_defense;
             _speed = speed;

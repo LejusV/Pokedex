@@ -4,9 +4,9 @@ namespace Pokedex.Models
 {
     public class PokemonStats
     {
-        private Dictionary<string, int> Stats { get; set;}
+        private Dictionary<string, int> _stats;
 
-        private string[] keys = {"hp", "attack", "defense", "sp_attack", "sp_defense", "speed"};
+    private string[] keys = {"hp", "attack", "defense", "sp_attack", "sp_defense", "speed"};
 
         public string[] Keys
         {

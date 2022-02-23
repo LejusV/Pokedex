@@ -5,10 +5,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-<ItemGroup>
-  <Reference Include="DllComunVb2008">
-    <HintPath>C:\Users\Jules\Downloads\MySql.data.dll</HintPath>
-  </Reference>
-</ItemGroup>
-
 </Project>

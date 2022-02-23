@@ -30,7 +30,7 @@ namespace Pokedex.Models
             get { return _id; }
         }
 
-        public int? Level
+        public int Level
         {
             get { return _level; }
         }
