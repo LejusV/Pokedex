@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    internal class PokemonStats
+    public class PokemonStats
     {
-        private Dictionary<string, int> _stats;
+        private Dictionary<string, int> Stats { get; set;}
 
         private string[] keys = {"hp", "attack", "defense", "sp_attack", "sp_defense", "speed"};
 

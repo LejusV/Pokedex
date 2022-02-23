@@ -1,7 +1,7 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Fairy : PokemonType
+    public class Fairy : PokemonType
     {
 #nullable enable
         private static Fairy? _instance = null;

@@ -1,6 +1,5 @@
 ﻿using Pokedex.Enums;
 using Pokedex.Models;
-using Pokedex.Models.Pokemons;
 using System;
 using System.Collections.Generic;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokedex.Models.Types
 {
-    internal class Fire : PokemonType
+    public class Fire : PokemonType
     {
 #nullable enable
         private static Fire? _instance = null;

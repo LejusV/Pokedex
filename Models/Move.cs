@@ -3,53 +3,60 @@ using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    internal abstract class Move
+    public abstract class Move
     {
-        private readonly double? p_accuracy;
-        private readonly MoveCategory p_category;
-        private readonly string p_name;
-        private readonly PokemonType p_pokemontype;
-        private readonly int? p_power;
-        private readonly int p_pp;
+        private readonly double? _accuracy;
+        private readonly MoveCategory _category;
+        private readonly string _name;
+        private readonly PokemonType _pokemontype;
+        private readonly int? _power;
+        private readonly int _pp;
+        private readonly int _priority;
 
         public double? Accuracy
         {
-            get { return p_accuracy; }
+            get { return _accuracy; }
         }
 
         public MoveCategory Category
         {
-            get { return p_category; }
+            get { return _category; }
         }
 
         public string Name
         {
-            get { return p_name; }
+            get { return _name; }
         }
 
         public PokemonType PokemonType
         {
-            get { return p_pokemontype; }
+            get { return _pokemontype; }
         }
 
         public int? Power
         {
-            get { return p_power; }
+            get { return _power; }
         }
 
         public int Pp
         {
-            get { return p_pp; }
+            get { return _pp; }
         }
 
-        public Move(string name, PokemonType type, MoveCategory category, int pp, int? power = null, double? accuracy = null)
+        public int Priority
         {
-            p_accuracy = accuracy;
-            p_category = category;
-            p_name = name;
-            p_pokemontype = type;
-            p_power = power;
-            p_pp = pp;
+            get { return _priority; }
+        }
+
+        public Move(string name, PokemonType type, MoveCategory category, int pp, int? power, double? accuracy, int priority)
+        {
+            _accuracy = accuracy;
+            _category = category;
+            _name = name;
+            _pokemontype = type;
+            _power = power;
+            _pp = pp;
+            _priority = priority;
         }
     }
 }

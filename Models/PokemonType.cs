@@ -1,6 +1,6 @@
 ﻿namespace Pokedex.Models
 {
-    internal abstract class PokemonType
+    public abstract class PokemonType
     {
         private readonly string p_name,
                         p_color;

@@ -1,6 +1,6 @@
 ﻿namespace Pokedex.Models.Types
 {
-    internal class Water : PokemonType
+    public class Water : PokemonType
     {
 #nullable enable
         private static Water? _instance = null;

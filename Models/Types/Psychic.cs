@@ -1,7 +1,7 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Psychic : PokemonType
+    public class Psychic : PokemonType
     {        
 #nullable enable
         private static Psychic? _instance = null;

@@ -3,33 +3,26 @@ using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    internal class Pokemon
+    public class Pokemon
     {
         
-        PokemonDB db = new PokemonDB();
+        //PokemonDB db = new PokemonDB();
 
         //public void connection
 
         private readonly int _id;
-        protected int? _level;
-        private string _cry,
-                       _nickname;
+        protected int _level;
+        private string _nickname;
+        protected PokemonSpecie _specie;
         protected PokemonType[] _types;
-
-        protected PokemonStats _natural_fixed_stats;
-        protected PokemonStats _current_base_stats;
-        protected PokemonStats _current_actual_stats;
+        protected PokemonStats _calculated_stats;
+        protected PokemonStats _current_stats;
 
         protected List<Move> _moves;
 
         public string Nickname
         {
             get { return _nickname; }
-        }
-
-        public string Shout
-        {
-            get { return _cry; }
         }
 
         public int Id
@@ -47,20 +40,14 @@ namespace Pokedex.Models
             get {return _moves;}
         }
 
-        public PokemonStats BaseStats
+        public PokemonStats CalculatedStats
         {
-            get { return _current_base_stats;}
+            get { return _calculated_stats;}
         }
 
-        public PokemonStats ActualStats
+        public PokemonStats CurrentStats
         {
-            get { return _current_actual_stats;}
-        }
-
-
-        public string Cry
-        {
-            set { this._cry = value; }
+            get { return _current_stats;}
         }
 
         public string Rename
@@ -90,7 +77,7 @@ namespace Pokedex.Models
             get
             {
                 string res = "Stats:";
-                foreach (string key in _current_base_stats.Keys) res += string.Format("\n\t" + key.ToUpper() + " " + _current_base_stats.Get(key));
+                foreach (string key in _calculated_stats.Keys) res += string.Format("\n\t" + key.ToUpper() + " " + _calculated_stats.Get(key));
                 return res+"\n\n";
             }
         }
@@ -100,7 +87,7 @@ namespace Pokedex.Models
             return string.Format("\n" + 
                                 this._nickname + " : " + "\n" +
                                 "\tLevel " + this._level + "\n" +
-                                "\t" + this._current_actual_stats.Get("hp") + "/" + this._current_base_stats.Get("hp") + "HP" + "\n\n"
+                                "\t" + this._current_stats.Get("hp") + "/" + this._calculated_stats.Get("hp") + "HP" + "\n\n"
                 );
         }
 
@@ -114,32 +101,51 @@ namespace Pokedex.Models
 
         public void CalculateStats()
         {
-            foreach(string key in _current_base_stats.Keys)
-            {
-                int natural_stat = _natural_fixed_stats.Get( key );
-                this._current_base_stats.Set( key , Convert.ToInt32(natural_stat + 0.002*( natural_stat * ( _level ?? default(int) - 1)  + 0.1 * natural_stat * ( _level ?? default(int) - 1 ) * ( _level ?? default(int) -1 ) )));
-            }
+            this._calculated_stats.Set( "hp" , Convert.ToInt32(_specie.Hp + 0.002*( _specie.Hp * ( _level - 1)  + 0.1 * _specie.Hp * ( _level - 1 ) * ( _level -1 ) )));
+            this._calculated_stats.Set( "attack" , Convert.ToInt32(_specie.Attack + 0.002*( _specie.Attack * ( _level - 1)  + 0.1 * _specie.Attack * ( _level - 1 ) * ( _level -1 ) )));
+            this._calculated_stats.Set( "defense" , Convert.ToInt32(_specie.Defense + 0.002*( _specie.Defense * ( _level - 1)  + 0.1 * _specie.Defense * ( _level - 1 ) * ( _level -1 ) )));
+            this._calculated_stats.Set( "sp_attack" , Convert.ToInt32(_specie.SpecialAttack + 0.002*( _specie.SpecialAttack * ( _level - 1)  + 0.1 * _specie.SpecialAttack * ( _level - 1 ) * ( _level -1 ) )));
+            this._calculated_stats.Set( "sp_defense" , Convert.ToInt32(_specie.SpecialDefense + 0.002*( _specie.SpecialDefense * ( _level - 1)  + 0.1 * _specie.SpecialDefense * ( _level - 1 ) * ( _level -1 ) )));
+            this._calculated_stats.Set( "speed" , Convert.ToInt32(_specie.Speed + 0.002*( _specie.Speed * ( _level - 1)  + 0.1 * _specie.Speed * ( _level - 1 ) * ( _level -1 ) )));
+        }
         //    (2*base + iv +  ev/4 * level)/100  + level + 10
         //    (2*base + iv + ev/4 * level)/100  + 5
-        }
+
 
         public void ResetActualStats()
         {
-            this._current_base_stats.CopyTo(this._current_actual_stats);
-            this._current_actual_stats.Set("hp", this._current_actual_stats.Get("hp") - 1);
+            this._calculated_stats.CopyTo(this._current_stats);
+            this._current_stats.Set("hp", this._current_stats.Get("hp"));
         }
 
         
-        public Pokemon(int id, string nickname, string cry, int? level, params PokemonType[] types)
+        public Pokemon(
+            int id,
+            PokemonSpecie specie,
+            string nickname,
+            int level,
+            params PokemonType[] types
+            )
         {
-            _cry = cry;
             _id = id;
             _level = level;
             _nickname = nickname;
+            _specie = specie;
             _types = types;
-            _current_base_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
-            _current_actual_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _calculated_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _current_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
             _moves = new List<Move>();
+        }
+
+        public Pokemon(
+            int id,
+            PokemonSpecie specie,
+            params PokemonType[] types
+            )
+        {
+            _id = id;
+            _specie = specie;
+            _types = types;
         }
     }
 }

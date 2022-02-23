@@ -1,7 +1,6 @@
-﻿
-namespace Pokedex.Models.Types
+﻿namespace Pokedex.Models.Types
 {
-    internal class Electric : PokemonType
+    public class Electric : PokemonType
     {
 #nullable enable
         private static Electric? _instance = null;

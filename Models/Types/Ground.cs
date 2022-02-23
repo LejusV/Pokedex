@@ -1,7 +1,7 @@
 ﻿
 namespace Pokedex.Models.Types
 {
-    internal class Ground : PokemonType
+    public class Ground : PokemonType
     {
 #nullable enable
         private static Ground? _instance = null;
