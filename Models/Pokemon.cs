@@ -112,7 +112,7 @@ namespace Pokedex.Models
         //    (2*base + iv + ev/4 * level)/100  + 5
 
 
-        public void ResetActualStats()
+        public void ResetCurrentStats()
         {
             this._calculated_stats.CopyTo(this._current_stats);
             this._current_stats.Set("hp", this._current_stats.Get("hp"));

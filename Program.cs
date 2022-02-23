@@ -29,7 +29,6 @@ namespace Pokedex
                     case 1 :
                     {
                         Pokemon bulbasaur = new Bulbasaur("Bulbasaur", 10);
-                        bulbasaur.ResetActualStats();
                         Player1.AddPokemon(bulbasaur);
                         break;
                     }
@@ -37,7 +36,6 @@ namespace Pokedex
                     case 4 :
                     {
                         Pokemon charmander = new Charmander("Charmander", 10);
-                        charmander.ResetActualStats();
                         Player1.AddPokemon(charmander);
                         break;
                     }
@@ -45,7 +43,6 @@ namespace Pokedex
                     case 7 :
                     {
                         Pokemon squirtle = new Squirtle("Squirtle", 10);
-                        squirtle.ResetActualStats();
                         Player1.AddPokemon(squirtle);
                         break;
                     }
