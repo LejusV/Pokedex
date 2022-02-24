@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Octillery(int level)
+		: base(
+				224,
+				SpecieOctillery.Instance, // Pokemon Specie
+				"Octillery", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Octillery() : base(
 			224,
 			SpecieOctillery.Instance, // Pokemon Specie

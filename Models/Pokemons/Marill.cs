@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Marill(int level)
+		: base(
+				183,
+				SpecieMarill.Instance, // Pokemon Specie
+				"Marill", level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Marill() : base(
 			183,
 			SpecieMarill.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swellow(int level)
+		: base(
+				277,
+				SpecieSwellow.Instance, // Pokemon Specie
+				"Swellow", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swellow() : base(
 			277,
 			SpecieSwellow.Instance, // Pokemon Specie

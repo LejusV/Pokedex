@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vespiquen(int level)
+		: base(
+				416,
+				SpecieVespiquen.Instance, // Pokemon Specie
+				"Vespiquen", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vespiquen() : base(
 			416,
 			SpecieVespiquen.Instance, // Pokemon Specie

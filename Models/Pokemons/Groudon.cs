@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Groudon(int level)
+		: base(
+				383,
+				SpecieGroudon.Instance, // Pokemon Specie
+				"Groudon", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Groudon() : base(
 			383,
 			SpecieGroudon.Instance, // Pokemon Specie

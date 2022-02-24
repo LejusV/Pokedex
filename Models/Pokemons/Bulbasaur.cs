@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bulbasaur(int level)
+		: base(
+				1,
+				SpecieBulbasaur.Instance, // Pokemon Specie
+				"Bulbasaur", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bulbasaur() : base(
 			1,
 			SpecieBulbasaur.Instance, // Pokemon Specie

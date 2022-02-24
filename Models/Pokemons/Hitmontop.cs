@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hitmontop(int level)
+		: base(
+				237,
+				SpecieHitmontop.Instance, // Pokemon Specie
+				"Hitmontop", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hitmontop() : base(
 			237,
 			SpecieHitmontop.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Muk(int level)
+		: base(
+				89,
+				SpecieMuk.Instance, // Pokemon Specie
+				"Muk", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Muk() : base(
 			89,
 			SpecieMuk.Instance, // Pokemon Specie

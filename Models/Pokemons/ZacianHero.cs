@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public ZacianHero(int level)
+		: base(
+				888,
+				SpecieZacianHero.Instance, // Pokemon Specie
+				"Zacian-Hero", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public ZacianHero() : base(
 			888,
 			SpecieZacianHero.Instance, // Pokemon Specie

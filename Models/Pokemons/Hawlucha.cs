@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hawlucha(int level)
+		: base(
+				701,
+				SpecieHawlucha.Instance, // Pokemon Specie
+				"Hawlucha", level,
+				Fighting.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hawlucha() : base(
 			701,
 			SpecieHawlucha.Instance, // Pokemon Specie

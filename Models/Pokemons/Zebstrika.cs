@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zebstrika(int level)
+		: base(
+				523,
+				SpecieZebstrika.Instance, // Pokemon Specie
+				"Zebstrika", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zebstrika() : base(
 			523,
 			SpecieZebstrika.Instance, // Pokemon Specie

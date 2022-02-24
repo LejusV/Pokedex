@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Honchkrow(int level)
+		: base(
+				430,
+				SpecieHonchkrow.Instance, // Pokemon Specie
+				"Honchkrow", level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Honchkrow() : base(
 			430,
 			SpecieHonchkrow.Instance, // Pokemon Specie

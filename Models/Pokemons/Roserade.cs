@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Roserade(int level)
+		: base(
+				407,
+				SpecieRoserade.Instance, // Pokemon Specie
+				"Roserade", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Roserade() : base(
 			407,
 			SpecieRoserade.Instance, // Pokemon Specie

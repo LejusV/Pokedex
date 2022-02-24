@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Roggenrola(int level)
+		: base(
+				524,
+				SpecieRoggenrola.Instance, // Pokemon Specie
+				"Roggenrola", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Roggenrola() : base(
 			524,
 			SpecieRoggenrola.Instance, // Pokemon Specie

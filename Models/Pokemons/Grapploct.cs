@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grapploct(int level)
+		: base(
+				853,
+				SpecieGrapploct.Instance, // Pokemon Specie
+				"Grapploct", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grapploct() : base(
 			853,
 			SpecieGrapploct.Instance, // Pokemon Specie

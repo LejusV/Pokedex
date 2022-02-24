@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tropius(int level)
+		: base(
+				357,
+				SpecieTropius.Instance, // Pokemon Specie
+				"Tropius", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tropius() : base(
 			357,
 			SpecieTropius.Instance, // Pokemon Specie

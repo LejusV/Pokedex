@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Manectric(int level)
+		: base(
+				310,
+				SpecieManectric.Instance, // Pokemon Specie
+				"Manectric", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Manectric() : base(
 			310,
 			SpecieManectric.Instance, // Pokemon Specie

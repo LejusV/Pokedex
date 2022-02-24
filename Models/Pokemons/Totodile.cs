@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Totodile(int level)
+		: base(
+				158,
+				SpecieTotodile.Instance, // Pokemon Specie
+				"Totodile", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Totodile() : base(
 			158,
 			SpecieTotodile.Instance, // Pokemon Specie

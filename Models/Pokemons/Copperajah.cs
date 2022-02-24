@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Copperajah(int level)
+		: base(
+				879,
+				SpecieCopperajah.Instance, // Pokemon Specie
+				"Copperajah", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Copperajah() : base(
 			879,
 			SpecieCopperajah.Instance, // Pokemon Specie

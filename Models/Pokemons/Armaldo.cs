@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Armaldo(int level)
+		: base(
+				348,
+				SpecieArmaldo.Instance, // Pokemon Specie
+				"Armaldo", level,
+				Rock.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Armaldo() : base(
 			348,
 			SpecieArmaldo.Instance, // Pokemon Specie

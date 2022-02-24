@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Koffing(int level)
+		: base(
+				109,
+				SpecieKoffing.Instance, // Pokemon Specie
+				"Koffing", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Koffing() : base(
 			109,
 			SpecieKoffing.Instance, // Pokemon Specie

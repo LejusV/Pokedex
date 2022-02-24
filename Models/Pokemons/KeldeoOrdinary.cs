@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public KeldeoOrdinary(int level)
+		: base(
+				647,
+				SpecieKeldeoOrdinary.Instance, // Pokemon Specie
+				"Keldeo-Ordinary", level,
+				Water.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public KeldeoOrdinary() : base(
 			647,
 			SpecieKeldeoOrdinary.Instance, // Pokemon Specie

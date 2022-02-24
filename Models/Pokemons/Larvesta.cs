@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Larvesta(int level)
+		: base(
+				636,
+				SpecieLarvesta.Instance, // Pokemon Specie
+				"Larvesta", level,
+				Bug.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Larvesta() : base(
 			636,
 			SpecieLarvesta.Instance, // Pokemon Specie

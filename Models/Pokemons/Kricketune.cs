@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kricketune(int level)
+		: base(
+				402,
+				SpecieKricketune.Instance, // Pokemon Specie
+				"Kricketune", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kricketune() : base(
 			402,
 			SpecieKricketune.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Exeggcute(int level)
+		: base(
+				102,
+				SpecieExeggcute.Instance, // Pokemon Specie
+				"Exeggcute", level,
+				Grass.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Exeggcute() : base(
 			102,
 			SpecieExeggcute.Instance, // Pokemon Specie

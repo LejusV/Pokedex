@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gumshoos(int level)
+		: base(
+				735,
+				SpecieGumshoos.Instance, // Pokemon Specie
+				"Gumshoos", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gumshoos() : base(
 			735,
 			SpecieGumshoos.Instance, // Pokemon Specie

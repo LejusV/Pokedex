@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Buizel(int level)
+		: base(
+				418,
+				SpecieBuizel.Instance, // Pokemon Specie
+				"Buizel", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Buizel() : base(
 			418,
 			SpecieBuizel.Instance, // Pokemon Specie

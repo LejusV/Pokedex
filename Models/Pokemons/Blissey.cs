@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blissey(int level)
+		: base(
+				242,
+				SpecieBlissey.Instance, // Pokemon Specie
+				"Blissey", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blissey() : base(
 			242,
 			SpecieBlissey.Instance, // Pokemon Specie

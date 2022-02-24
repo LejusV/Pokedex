@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gigalith(int level)
+		: base(
+				526,
+				SpecieGigalith.Instance, // Pokemon Specie
+				"Gigalith", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gigalith() : base(
 			526,
 			SpecieGigalith.Instance, // Pokemon Specie

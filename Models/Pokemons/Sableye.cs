@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sableye(int level)
+		: base(
+				302,
+				SpecieSableye.Instance, // Pokemon Specie
+				"Sableye", level,
+				Dark.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sableye() : base(
 			302,
 			SpecieSableye.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Yamask(int level)
+		: base(
+				562,
+				SpecieYamask.Instance, // Pokemon Specie
+				"Yamask", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Yamask() : base(
 			562,
 			SpecieYamask.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blipbug(int level)
+		: base(
+				824,
+				SpecieBlipbug.Instance, // Pokemon Specie
+				"Blipbug", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blipbug() : base(
 			824,
 			SpecieBlipbug.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Eevee(int level)
+		: base(
+				133,
+				SpecieEevee.Instance, // Pokemon Specie
+				"Eevee", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Eevee() : base(
 			133,
 			SpecieEevee.Instance, // Pokemon Specie

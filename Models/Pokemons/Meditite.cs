@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Meditite(int level)
+		: base(
+				307,
+				SpecieMeditite.Instance, // Pokemon Specie
+				"Meditite", level,
+				Fighting.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Meditite() : base(
 			307,
 			SpecieMeditite.Instance, // Pokemon Specie

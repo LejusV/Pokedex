@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seedot(int level)
+		: base(
+				273,
+				SpecieSeedot.Instance, // Pokemon Specie
+				"Seedot", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seedot() : base(
 			273,
 			SpecieSeedot.Instance, // Pokemon Specie

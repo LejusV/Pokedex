@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mienshao(int level)
+		: base(
+				620,
+				SpecieMienshao.Instance, // Pokemon Specie
+				"Mienshao", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mienshao() : base(
 			620,
 			SpecieMienshao.Instance, // Pokemon Specie

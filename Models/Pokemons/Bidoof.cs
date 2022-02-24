@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bidoof(int level)
+		: base(
+				399,
+				SpecieBidoof.Instance, // Pokemon Specie
+				"Bidoof", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bidoof() : base(
 			399,
 			SpecieBidoof.Instance, // Pokemon Specie

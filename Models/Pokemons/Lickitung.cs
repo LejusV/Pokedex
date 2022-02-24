@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lickitung(int level)
+		: base(
+				108,
+				SpecieLickitung.Instance, // Pokemon Specie
+				"Lickitung", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lickitung() : base(
 			108,
 			SpecieLickitung.Instance, // Pokemon Specie

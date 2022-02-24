@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lotad(int level)
+		: base(
+				270,
+				SpecieLotad.Instance, // Pokemon Specie
+				"Lotad", level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lotad() : base(
 			270,
 			SpecieLotad.Instance, // Pokemon Specie

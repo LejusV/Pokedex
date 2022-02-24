@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bellsprout(int level)
+		: base(
+				69,
+				SpecieBellsprout.Instance, // Pokemon Specie
+				"Bellsprout", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bellsprout() : base(
 			69,
 			SpecieBellsprout.Instance, // Pokemon Specie

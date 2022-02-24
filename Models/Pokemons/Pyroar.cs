@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pyroar(int level)
+		: base(
+				668,
+				SpeciePyroar.Instance, // Pokemon Specie
+				"Pyroar", level,
+				Fire.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pyroar() : base(
 			668,
 			SpeciePyroar.Instance, // Pokemon Specie

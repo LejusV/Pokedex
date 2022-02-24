@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magnemite(int level)
+		: base(
+				81,
+				SpecieMagnemite.Instance, // Pokemon Specie
+				"Magnemite", level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magnemite() : base(
 			81,
 			SpecieMagnemite.Instance, // Pokemon Specie

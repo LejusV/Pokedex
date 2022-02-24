@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Murkrow(int level)
+		: base(
+				198,
+				SpecieMurkrow.Instance, // Pokemon Specie
+				"Murkrow", level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Murkrow() : base(
 			198,
 			SpecieMurkrow.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kingdra(int level)
+		: base(
+				230,
+				SpecieKingdra.Instance, // Pokemon Specie
+				"Kingdra", level,
+				Water.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kingdra() : base(
 			230,
 			SpecieKingdra.Instance, // Pokemon Specie

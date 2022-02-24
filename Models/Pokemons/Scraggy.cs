@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scraggy(int level)
+		: base(
+				559,
+				SpecieScraggy.Instance, // Pokemon Specie
+				"Scraggy", level,
+				Dark.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scraggy() : base(
 			559,
 			SpecieScraggy.Instance, // Pokemon Specie

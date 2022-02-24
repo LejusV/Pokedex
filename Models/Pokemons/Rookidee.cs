@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rookidee(int level)
+		: base(
+				821,
+				SpecieRookidee.Instance, // Pokemon Specie
+				"Rookidee", level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rookidee() : base(
 			821,
 			SpecieRookidee.Instance, // Pokemon Specie

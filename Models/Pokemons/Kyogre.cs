@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kyogre(int level)
+		: base(
+				382,
+				SpecieKyogre.Instance, // Pokemon Specie
+				"Kyogre", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kyogre() : base(
 			382,
 			SpecieKyogre.Instance, // Pokemon Specie

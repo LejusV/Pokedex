@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sandile(int level)
+		: base(
+				551,
+				SpecieSandile.Instance, // Pokemon Specie
+				"Sandile", level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sandile() : base(
 			551,
 			SpecieSandile.Instance, // Pokemon Specie

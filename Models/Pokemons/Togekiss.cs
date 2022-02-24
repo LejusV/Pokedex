@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Togekiss(int level)
+		: base(
+				468,
+				SpecieTogekiss.Instance, // Pokemon Specie
+				"Togekiss", level,
+				Fairy.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Togekiss() : base(
 			468,
 			SpecieTogekiss.Instance, // Pokemon Specie

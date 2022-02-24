@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kabutops(int level)
+		: base(
+				141,
+				SpecieKabutops.Instance, // Pokemon Specie
+				"Kabutops", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kabutops() : base(
 			141,
 			SpecieKabutops.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Poliwag(int level)
+		: base(
+				60,
+				SpeciePoliwag.Instance, // Pokemon Specie
+				"Poliwag", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Poliwag() : base(
 			60,
 			SpeciePoliwag.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Purrloin(int level)
+		: base(
+				509,
+				SpeciePurrloin.Instance, // Pokemon Specie
+				"Purrloin", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Purrloin() : base(
 			509,
 			SpeciePurrloin.Instance, // Pokemon Specie

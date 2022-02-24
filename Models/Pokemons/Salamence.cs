@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Salamence(int level)
+		: base(
+				373,
+				SpecieSalamence.Instance, // Pokemon Specie
+				"Salamence", level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Salamence() : base(
 			373,
 			SpecieSalamence.Instance, // Pokemon Specie

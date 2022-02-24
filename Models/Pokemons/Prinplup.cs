@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Prinplup(int level)
+		: base(
+				394,
+				SpeciePrinplup.Instance, // Pokemon Specie
+				"Prinplup", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Prinplup() : base(
 			394,
 			SpeciePrinplup.Instance, // Pokemon Specie

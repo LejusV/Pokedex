@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Maractus(int level)
+		: base(
+				556,
+				SpecieMaractus.Instance, // Pokemon Specie
+				"Maractus", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Maractus() : base(
 			556,
 			SpecieMaractus.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Purugly(int level)
+		: base(
+				432,
+				SpeciePurugly.Instance, // Pokemon Specie
+				"Purugly", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Purugly() : base(
 			432,
 			SpeciePurugly.Instance, // Pokemon Specie

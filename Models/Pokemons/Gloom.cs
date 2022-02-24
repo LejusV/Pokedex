@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gloom(int level)
+		: base(
+				44,
+				SpecieGloom.Instance, // Pokemon Specie
+				"Gloom", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gloom() : base(
 			44,
 			SpecieGloom.Instance, // Pokemon Specie

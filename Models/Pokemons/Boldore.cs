@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Boldore(int level)
+		: base(
+				525,
+				SpecieBoldore.Instance, // Pokemon Specie
+				"Boldore", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Boldore() : base(
 			525,
 			SpecieBoldore.Instance, // Pokemon Specie

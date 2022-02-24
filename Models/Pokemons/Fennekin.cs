@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fennekin(int level)
+		: base(
+				653,
+				SpecieFennekin.Instance, // Pokemon Specie
+				"Fennekin", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fennekin() : base(
 			653,
 			SpecieFennekin.Instance, // Pokemon Specie

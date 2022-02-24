@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Decidueye(int level)
+		: base(
+				724,
+				SpecieDecidueye.Instance, // Pokemon Specie
+				"Decidueye", level,
+				Grass.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Decidueye() : base(
 			724,
 			SpecieDecidueye.Instance, // Pokemon Specie

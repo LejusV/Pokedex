@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Calyrex(int level)
+		: base(
+				898,
+				SpecieCalyrex.Instance, // Pokemon Specie
+				"Calyrex", level,
+				Psychic.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Calyrex() : base(
 			898,
 			SpecieCalyrex.Instance, // Pokemon Specie

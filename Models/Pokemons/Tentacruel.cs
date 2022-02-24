@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tentacruel(int level)
+		: base(
+				73,
+				SpecieTentacruel.Instance, // Pokemon Specie
+				"Tentacruel", level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tentacruel() : base(
 			73,
 			SpecieTentacruel.Instance, // Pokemon Specie

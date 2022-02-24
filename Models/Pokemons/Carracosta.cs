@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Carracosta(int level)
+		: base(
+				565,
+				SpecieCarracosta.Instance, // Pokemon Specie
+				"Carracosta", level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Carracosta() : base(
 			565,
 			SpecieCarracosta.Instance, // Pokemon Specie

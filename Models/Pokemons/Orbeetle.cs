@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Orbeetle(int level)
+		: base(
+				826,
+				SpecieOrbeetle.Instance, // Pokemon Specie
+				"Orbeetle", level,
+				Bug.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Orbeetle() : base(
 			826,
 			SpecieOrbeetle.Instance, // Pokemon Specie

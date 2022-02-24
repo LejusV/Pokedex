@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Meganium(int level)
+		: base(
+				154,
+				SpecieMeganium.Instance, // Pokemon Specie
+				"Meganium", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Meganium() : base(
 			154,
 			SpecieMeganium.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spinarak(int level)
+		: base(
+				167,
+				SpecieSpinarak.Instance, // Pokemon Specie
+				"Spinarak", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spinarak() : base(
 			167,
 			SpecieSpinarak.Instance, // Pokemon Specie

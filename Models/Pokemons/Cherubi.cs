@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cherubi(int level)
+		: base(
+				420,
+				SpecieCherubi.Instance, // Pokemon Specie
+				"Cherubi", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cherubi() : base(
 			420,
 			SpecieCherubi.Instance, // Pokemon Specie

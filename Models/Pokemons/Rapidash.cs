@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rapidash(int level)
+		: base(
+				78,
+				SpecieRapidash.Instance, // Pokemon Specie
+				"Rapidash", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rapidash() : base(
 			78,
 			SpecieRapidash.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Feraligatr(int level)
+		: base(
+				160,
+				SpecieFeraligatr.Instance, // Pokemon Specie
+				"Feraligatr", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Feraligatr() : base(
 			160,
 			SpecieFeraligatr.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Surskit(int level)
+		: base(
+				283,
+				SpecieSurskit.Instance, // Pokemon Specie
+				"Surskit", level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Surskit() : base(
 			283,
 			SpecieSurskit.Instance, // Pokemon Specie

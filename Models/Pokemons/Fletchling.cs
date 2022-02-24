@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fletchling(int level)
+		: base(
+				661,
+				SpecieFletchling.Instance, // Pokemon Specie
+				"Fletchling", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fletchling() : base(
 			661,
 			SpecieFletchling.Instance, // Pokemon Specie

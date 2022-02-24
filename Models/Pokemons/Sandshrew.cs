@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sandshrew(int level)
+		: base(
+				27,
+				SpecieSandshrew.Instance, // Pokemon Specie
+				"Sandshrew", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sandshrew() : base(
 			27,
 			SpecieSandshrew.Instance, // Pokemon Specie

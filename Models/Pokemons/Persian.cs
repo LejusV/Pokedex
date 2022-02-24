@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Persian(int level)
+		: base(
+				53,
+				SpeciePersian.Instance, // Pokemon Specie
+				"Persian", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Persian() : base(
 			53,
 			SpeciePersian.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Crawdaunt(int level)
+		: base(
+				342,
+				SpecieCrawdaunt.Instance, // Pokemon Specie
+				"Crawdaunt", level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Crawdaunt() : base(
 			342,
 			SpecieCrawdaunt.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Haunter(int level)
+		: base(
+				93,
+				SpecieHaunter.Instance, // Pokemon Specie
+				"Haunter", level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Haunter() : base(
 			93,
 			SpecieHaunter.Instance, // Pokemon Specie

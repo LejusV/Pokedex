@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nihilego(int level)
+		: base(
+				793,
+				SpecieNihilego.Instance, // Pokemon Specie
+				"Nihilego", level,
+				Rock.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nihilego() : base(
 			793,
 			SpecieNihilego.Instance, // Pokemon Specie

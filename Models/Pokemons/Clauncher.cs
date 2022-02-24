@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clauncher(int level)
+		: base(
+				692,
+				SpecieClauncher.Instance, // Pokemon Specie
+				"Clauncher", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clauncher() : base(
 			692,
 			SpecieClauncher.Instance, // Pokemon Specie

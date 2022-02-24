@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Latias(int level)
+		: base(
+				380,
+				SpecieLatias.Instance, // Pokemon Specie
+				"Latias", level,
+				Dragon.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Latias() : base(
 			380,
 			SpecieLatias.Instance, // Pokemon Specie

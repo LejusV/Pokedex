@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mareep(int level)
+		: base(
+				179,
+				SpecieMareep.Instance, // Pokemon Specie
+				"Mareep", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mareep() : base(
 			179,
 			SpecieMareep.Instance, // Pokemon Specie

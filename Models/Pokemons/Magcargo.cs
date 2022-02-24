@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magcargo(int level)
+		: base(
+				219,
+				SpecieMagcargo.Instance, // Pokemon Specie
+				"Magcargo", level,
+				Fire.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magcargo() : base(
 			219,
 			SpecieMagcargo.Instance, // Pokemon Specie

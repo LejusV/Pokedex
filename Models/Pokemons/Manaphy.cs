@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Manaphy(int level)
+		: base(
+				490,
+				SpecieManaphy.Instance, // Pokemon Specie
+				"Manaphy", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Manaphy() : base(
 			490,
 			SpecieManaphy.Instance, // Pokemon Specie

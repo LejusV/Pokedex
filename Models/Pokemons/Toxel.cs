@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Toxel(int level)
+		: base(
+				848,
+				SpecieToxel.Instance, // Pokemon Specie
+				"Toxel", level,
+				Electric.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Toxel() : base(
 			848,
 			SpecieToxel.Instance, // Pokemon Specie

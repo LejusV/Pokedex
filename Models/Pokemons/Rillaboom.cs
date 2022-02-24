@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rillaboom(int level)
+		: base(
+				812,
+				SpecieRillaboom.Instance, // Pokemon Specie
+				"Rillaboom", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rillaboom() : base(
 			812,
 			SpecieRillaboom.Instance, // Pokemon Specie

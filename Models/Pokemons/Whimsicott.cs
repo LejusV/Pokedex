@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Whimsicott(int level)
+		: base(
+				547,
+				SpecieWhimsicott.Instance, // Pokemon Specie
+				"Whimsicott", level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Whimsicott() : base(
 			547,
 			SpecieWhimsicott.Instance, // Pokemon Specie

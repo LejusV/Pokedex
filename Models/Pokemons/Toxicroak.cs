@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Toxicroak(int level)
+		: base(
+				454,
+				SpecieToxicroak.Instance, // Pokemon Specie
+				"Toxicroak", level,
+				Poison.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Toxicroak() : base(
 			454,
 			SpecieToxicroak.Instance, // Pokemon Specie

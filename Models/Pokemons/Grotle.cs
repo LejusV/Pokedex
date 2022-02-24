@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grotle(int level)
+		: base(
+				388,
+				SpecieGrotle.Instance, // Pokemon Specie
+				"Grotle", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grotle() : base(
 			388,
 			SpecieGrotle.Instance, // Pokemon Specie

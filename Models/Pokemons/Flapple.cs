@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Flapple(int level)
+		: base(
+				841,
+				SpecieFlapple.Instance, // Pokemon Specie
+				"Flapple", level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Flapple() : base(
 			841,
 			SpecieFlapple.Instance, // Pokemon Specie

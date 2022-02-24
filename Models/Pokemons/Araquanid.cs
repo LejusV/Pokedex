@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Araquanid(int level)
+		: base(
+				752,
+				SpecieAraquanid.Instance, // Pokemon Specie
+				"Araquanid", level,
+				Water.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Araquanid() : base(
 			752,
 			SpecieAraquanid.Instance, // Pokemon Specie

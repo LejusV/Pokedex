@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vullaby(int level)
+		: base(
+				629,
+				SpecieVullaby.Instance, // Pokemon Specie
+				"Vullaby", level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vullaby() : base(
 			629,
 			SpecieVullaby.Instance, // Pokemon Specie

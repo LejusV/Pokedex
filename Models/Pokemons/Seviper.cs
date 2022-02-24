@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seviper(int level)
+		: base(
+				336,
+				SpecieSeviper.Instance, // Pokemon Specie
+				"Seviper", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seviper() : base(
 			336,
 			SpecieSeviper.Instance, // Pokemon Specie

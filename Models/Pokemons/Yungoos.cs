@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Yungoos(int level)
+		: base(
+				734,
+				SpecieYungoos.Instance, // Pokemon Specie
+				"Yungoos", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Yungoos() : base(
 			734,
 			SpecieYungoos.Instance, // Pokemon Specie

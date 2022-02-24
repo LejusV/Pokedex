@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Krokorok(int level)
+		: base(
+				552,
+				SpecieKrokorok.Instance, // Pokemon Specie
+				"Krokorok", level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Krokorok() : base(
 			552,
 			SpecieKrokorok.Instance, // Pokemon Specie

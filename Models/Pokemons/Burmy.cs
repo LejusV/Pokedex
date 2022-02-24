@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Burmy(int level)
+		: base(
+				412,
+				SpecieBurmy.Instance, // Pokemon Specie
+				"Burmy", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Burmy() : base(
 			412,
 			SpecieBurmy.Instance, // Pokemon Specie

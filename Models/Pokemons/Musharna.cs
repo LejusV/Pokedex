@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Musharna(int level)
+		: base(
+				518,
+				SpecieMusharna.Instance, // Pokemon Specie
+				"Musharna", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Musharna() : base(
 			518,
 			SpecieMusharna.Instance, // Pokemon Specie

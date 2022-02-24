@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gossifleur(int level)
+		: base(
+				829,
+				SpecieGossifleur.Instance, // Pokemon Specie
+				"Gossifleur", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gossifleur() : base(
 			829,
 			SpecieGossifleur.Instance, // Pokemon Specie

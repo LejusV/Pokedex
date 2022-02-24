@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Croconaw(int level)
+		: base(
+				159,
+				SpecieCroconaw.Instance, // Pokemon Specie
+				"Croconaw", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Croconaw() : base(
 			159,
 			SpecieCroconaw.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tympole(int level)
+		: base(
+				535,
+				SpecieTympole.Instance, // Pokemon Specie
+				"Tympole", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tympole() : base(
 			535,
 			SpecieTympole.Instance, // Pokemon Specie

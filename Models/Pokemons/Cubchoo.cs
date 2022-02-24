@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cubchoo(int level)
+		: base(
+				613,
+				SpecieCubchoo.Instance, // Pokemon Specie
+				"Cubchoo", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cubchoo() : base(
 			613,
 			SpecieCubchoo.Instance, // Pokemon Specie

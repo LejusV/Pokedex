@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lickilicky(int level)
+		: base(
+				463,
+				SpecieLickilicky.Instance, // Pokemon Specie
+				"Lickilicky", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lickilicky() : base(
 			463,
 			SpecieLickilicky.Instance, // Pokemon Specie

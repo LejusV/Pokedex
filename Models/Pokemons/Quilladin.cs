@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Quilladin(int level)
+		: base(
+				651,
+				SpecieQuilladin.Instance, // Pokemon Specie
+				"Quilladin", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Quilladin() : base(
 			651,
 			SpecieQuilladin.Instance, // Pokemon Specie

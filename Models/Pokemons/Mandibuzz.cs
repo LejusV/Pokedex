@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mandibuzz(int level)
+		: base(
+				630,
+				SpecieMandibuzz.Instance, // Pokemon Specie
+				"Mandibuzz", level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mandibuzz() : base(
 			630,
 			SpecieMandibuzz.Instance, // Pokemon Specie

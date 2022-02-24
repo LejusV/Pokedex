@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jirachi(int level)
+		: base(
+				385,
+				SpecieJirachi.Instance, // Pokemon Specie
+				"Jirachi", level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jirachi() : base(
 			385,
 			SpecieJirachi.Instance, // Pokemon Specie

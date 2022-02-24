@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Heliolisk(int level)
+		: base(
+				695,
+				SpecieHeliolisk.Instance, // Pokemon Specie
+				"Heliolisk", level,
+				Electric.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Heliolisk() : base(
 			695,
 			SpecieHeliolisk.Instance, // Pokemon Specie

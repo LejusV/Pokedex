@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seadra(int level)
+		: base(
+				117,
+				SpecieSeadra.Instance, // Pokemon Specie
+				"Seadra", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seadra() : base(
 			117,
 			SpecieSeadra.Instance, // Pokemon Specie

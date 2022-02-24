@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Azurill(int level)
+		: base(
+				298,
+				SpecieAzurill.Instance, // Pokemon Specie
+				"Azurill", level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Azurill() : base(
 			298,
 			SpecieAzurill.Instance, // Pokemon Specie

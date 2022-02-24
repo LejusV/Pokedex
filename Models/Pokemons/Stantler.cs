@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stantler(int level)
+		: base(
+				234,
+				SpecieStantler.Instance, // Pokemon Specie
+				"Stantler", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stantler() : base(
 			234,
 			SpecieStantler.Instance, // Pokemon Specie

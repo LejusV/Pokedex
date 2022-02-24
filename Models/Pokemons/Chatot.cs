@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chatot(int level)
+		: base(
+				441,
+				SpecieChatot.Instance, // Pokemon Specie
+				"Chatot", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chatot() : base(
 			441,
 			SpecieChatot.Instance, // Pokemon Specie

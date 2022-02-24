@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Karrablast(int level)
+		: base(
+				588,
+				SpecieKarrablast.Instance, // Pokemon Specie
+				"Karrablast", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Karrablast() : base(
 			588,
 			SpecieKarrablast.Instance, // Pokemon Specie

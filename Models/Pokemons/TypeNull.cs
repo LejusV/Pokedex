@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TypeNull(int level)
+		: base(
+				772,
+				SpecieTypeNull.Instance, // Pokemon Specie
+				"Type-Null", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TypeNull() : base(
 			772,
 			SpecieTypeNull.Instance, // Pokemon Specie

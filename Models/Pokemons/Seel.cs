@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seel(int level)
+		: base(
+				86,
+				SpecieSeel.Instance, // Pokemon Specie
+				"Seel", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seel() : base(
 			86,
 			SpecieSeel.Instance, // Pokemon Specie

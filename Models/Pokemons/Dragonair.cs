@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dragonair(int level)
+		: base(
+				148,
+				SpecieDragonair.Instance, // Pokemon Specie
+				"Dragonair", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dragonair() : base(
 			148,
 			SpecieDragonair.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dubwool(int level)
+		: base(
+				832,
+				SpecieDubwool.Instance, // Pokemon Specie
+				"Dubwool", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dubwool() : base(
 			832,
 			SpecieDubwool.Instance, // Pokemon Specie

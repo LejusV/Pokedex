@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public DeoxysNormal(int level)
+		: base(
+				386,
+				SpecieDeoxysNormal.Instance, // Pokemon Specie
+				"Deoxys-Normal", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public DeoxysNormal() : base(
 			386,
 			SpecieDeoxysNormal.Instance, // Pokemon Specie

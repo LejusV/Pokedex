@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Electrike(int level)
+		: base(
+				309,
+				SpecieElectrike.Instance, // Pokemon Specie
+				"Electrike", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Electrike() : base(
 			309,
 			SpecieElectrike.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Poliwrath(int level)
+		: base(
+				62,
+				SpeciePoliwrath.Instance, // Pokemon Specie
+				"Poliwrath", level,
+				Water.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Poliwrath() : base(
 			62,
 			SpeciePoliwrath.Instance, // Pokemon Specie

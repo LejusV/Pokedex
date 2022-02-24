@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clobbopus(int level)
+		: base(
+				852,
+				SpecieClobbopus.Instance, // Pokemon Specie
+				"Clobbopus", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clobbopus() : base(
 			852,
 			SpecieClobbopus.Instance, // Pokemon Specie

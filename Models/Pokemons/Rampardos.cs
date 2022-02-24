@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rampardos(int level)
+		: base(
+				409,
+				SpecieRampardos.Instance, // Pokemon Specie
+				"Rampardos", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rampardos() : base(
 			409,
 			SpecieRampardos.Instance, // Pokemon Specie

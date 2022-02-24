@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Corphish(int level)
+		: base(
+				341,
+				SpecieCorphish.Instance, // Pokemon Specie
+				"Corphish", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Corphish() : base(
 			341,
 			SpecieCorphish.Instance, // Pokemon Specie

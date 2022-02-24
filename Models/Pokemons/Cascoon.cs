@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cascoon(int level)
+		: base(
+				268,
+				SpecieCascoon.Instance, // Pokemon Specie
+				"Cascoon", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cascoon() : base(
 			268,
 			SpecieCascoon.Instance, // Pokemon Specie

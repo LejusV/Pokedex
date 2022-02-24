@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wooper(int level)
+		: base(
+				194,
+				SpecieWooper.Instance, // Pokemon Specie
+				"Wooper", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wooper() : base(
 			194,
 			SpecieWooper.Instance, // Pokemon Specie

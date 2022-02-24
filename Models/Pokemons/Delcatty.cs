@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Delcatty(int level)
+		: base(
+				301,
+				SpecieDelcatty.Instance, // Pokemon Specie
+				"Delcatty", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Delcatty() : base(
 			301,
 			SpecieDelcatty.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Poliwhirl(int level)
+		: base(
+				61,
+				SpeciePoliwhirl.Instance, // Pokemon Specie
+				"Poliwhirl", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Poliwhirl() : base(
 			61,
 			SpeciePoliwhirl.Instance, // Pokemon Specie

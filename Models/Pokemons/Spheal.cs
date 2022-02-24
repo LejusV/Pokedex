@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spheal(int level)
+		: base(
+				363,
+				SpecieSpheal.Instance, // Pokemon Specie
+				"Spheal", level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spheal() : base(
 			363,
 			SpecieSpheal.Instance, // Pokemon Specie

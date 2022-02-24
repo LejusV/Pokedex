@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Voltorb(int level)
+		: base(
+				100,
+				SpecieVoltorb.Instance, // Pokemon Specie
+				"Voltorb", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Voltorb() : base(
 			100,
 			SpecieVoltorb.Instance, // Pokemon Specie

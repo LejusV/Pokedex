@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Throh(int level)
+		: base(
+				538,
+				SpecieThroh.Instance, // Pokemon Specie
+				"Throh", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Throh() : base(
 			538,
 			SpecieThroh.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chimchar(int level)
+		: base(
+				390,
+				SpecieChimchar.Instance, // Pokemon Specie
+				"Chimchar", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chimchar() : base(
 			390,
 			SpecieChimchar.Instance, // Pokemon Specie

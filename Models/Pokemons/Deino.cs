@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Deino(int level)
+		: base(
+				633,
+				SpecieDeino.Instance, // Pokemon Specie
+				"Deino", level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Deino() : base(
 			633,
 			SpecieDeino.Instance, // Pokemon Specie

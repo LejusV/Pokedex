@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public NidoranF(int level)
+		: base(
+				29,
+				SpecieNidoranF.Instance, // Pokemon Specie
+				"Nidoran-F", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public NidoranF() : base(
 			29,
 			SpecieNidoranF.Instance, // Pokemon Specie

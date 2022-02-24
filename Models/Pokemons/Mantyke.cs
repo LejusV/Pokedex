@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mantyke(int level)
+		: base(
+				458,
+				SpecieMantyke.Instance, // Pokemon Specie
+				"Mantyke", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mantyke() : base(
 			458,
 			SpecieMantyke.Instance, // Pokemon Specie

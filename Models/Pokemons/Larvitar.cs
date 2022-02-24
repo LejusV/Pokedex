@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Larvitar(int level)
+		: base(
+				246,
+				SpecieLarvitar.Instance, // Pokemon Specie
+				"Larvitar", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Larvitar() : base(
 			246,
 			SpecieLarvitar.Instance, // Pokemon Specie

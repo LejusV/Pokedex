@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rotom(int level)
+		: base(
+				479,
+				SpecieRotom.Instance, // Pokemon Specie
+				"Rotom", level,
+				Electric.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rotom() : base(
 			479,
 			SpecieRotom.Instance, // Pokemon Specie

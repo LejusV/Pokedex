@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Buzzwole(int level)
+		: base(
+				794,
+				SpecieBuzzwole.Instance, // Pokemon Specie
+				"Buzzwole", level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Buzzwole() : base(
 			794,
 			SpecieBuzzwole.Instance, // Pokemon Specie

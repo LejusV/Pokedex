@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slakoth(int level)
+		: base(
+				287,
+				SpecieSlakoth.Instance, // Pokemon Specie
+				"Slakoth", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slakoth() : base(
 			287,
 			SpecieSlakoth.Instance, // Pokemon Specie

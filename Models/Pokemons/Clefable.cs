@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clefable(int level)
+		: base(
+				36,
+				SpecieClefable.Instance, // Pokemon Specie
+				"Clefable", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clefable() : base(
 			36,
 			SpecieClefable.Instance, // Pokemon Specie

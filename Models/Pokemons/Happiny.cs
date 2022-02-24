@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Happiny(int level)
+		: base(
+				440,
+				SpecieHappiny.Instance, // Pokemon Specie
+				"Happiny", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Happiny() : base(
 			440,
 			SpecieHappiny.Instance, // Pokemon Specie

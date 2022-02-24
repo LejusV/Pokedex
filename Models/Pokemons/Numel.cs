@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Numel(int level)
+		: base(
+				322,
+				SpecieNumel.Instance, // Pokemon Specie
+				"Numel", level,
+				Fire.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Numel() : base(
 			322,
 			SpecieNumel.Instance, // Pokemon Specie

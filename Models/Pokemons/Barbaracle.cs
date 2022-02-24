@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Barbaracle(int level)
+		: base(
+				689,
+				SpecieBarbaracle.Instance, // Pokemon Specie
+				"Barbaracle", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Barbaracle() : base(
 			689,
 			SpecieBarbaracle.Instance, // Pokemon Specie

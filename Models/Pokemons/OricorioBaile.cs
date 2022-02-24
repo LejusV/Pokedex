@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public OricorioBaile(int level)
+		: base(
+				741,
+				SpecieOricorioBaile.Instance, // Pokemon Specie
+				"Oricorio-Baile", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public OricorioBaile() : base(
 			741,
 			SpecieOricorioBaile.Instance, // Pokemon Specie

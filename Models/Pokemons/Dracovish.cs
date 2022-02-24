@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dracovish(int level)
+		: base(
+				882,
+				SpecieDracovish.Instance, // Pokemon Specie
+				"Dracovish", level,
+				Water.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dracovish() : base(
 			882,
 			SpecieDracovish.Instance, // Pokemon Specie

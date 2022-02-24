@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Froakie(int level)
+		: base(
+				656,
+				SpecieFroakie.Instance, // Pokemon Specie
+				"Froakie", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Froakie() : base(
 			656,
 			SpecieFroakie.Instance, // Pokemon Specie

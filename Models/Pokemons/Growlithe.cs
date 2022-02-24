@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Growlithe(int level)
+		: base(
+				58,
+				SpecieGrowlithe.Instance, // Pokemon Specie
+				"Growlithe", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Growlithe() : base(
 			58,
 			SpecieGrowlithe.Instance, // Pokemon Specie

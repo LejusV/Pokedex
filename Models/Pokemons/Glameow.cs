@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Glameow(int level)
+		: base(
+				431,
+				SpecieGlameow.Instance, // Pokemon Specie
+				"Glameow", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Glameow() : base(
 			431,
 			SpecieGlameow.Instance, // Pokemon Specie

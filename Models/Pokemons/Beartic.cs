@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Beartic(int level)
+		: base(
+				614,
+				SpecieBeartic.Instance, // Pokemon Specie
+				"Beartic", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Beartic() : base(
 			614,
 			SpecieBeartic.Instance, // Pokemon Specie

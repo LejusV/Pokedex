@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lileep(int level)
+		: base(
+				345,
+				SpecieLileep.Instance, // Pokemon Specie
+				"Lileep", level,
+				Rock.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lileep() : base(
 			345,
 			SpecieLileep.Instance, // Pokemon Specie

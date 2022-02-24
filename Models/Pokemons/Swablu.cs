@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swablu(int level)
+		: base(
+				333,
+				SpecieSwablu.Instance, // Pokemon Specie
+				"Swablu", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swablu() : base(
 			333,
 			SpecieSwablu.Instance, // Pokemon Specie

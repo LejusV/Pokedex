@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Weedle(int level)
+		: base(
+				13,
+				SpecieWeedle.Instance, // Pokemon Specie
+				"Weedle", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Weedle() : base(
 			13,
 			SpecieWeedle.Instance, // Pokemon Specie

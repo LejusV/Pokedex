@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Virizion(int level)
+		: base(
+				640,
+				SpecieVirizion.Instance, // Pokemon Specie
+				"Virizion", level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Virizion() : base(
 			640,
 			SpecieVirizion.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swampert(int level)
+		: base(
+				260,
+				SpecieSwampert.Instance, // Pokemon Specie
+				"Swampert", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swampert() : base(
 			260,
 			SpecieSwampert.Instance, // Pokemon Specie

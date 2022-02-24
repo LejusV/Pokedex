@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public WormadamPlant(int level)
+		: base(
+				413,
+				SpecieWormadamPlant.Instance, // Pokemon Specie
+				"Wormadam-Plant", level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public WormadamPlant() : base(
 			413,
 			SpecieWormadamPlant.Instance, // Pokemon Specie

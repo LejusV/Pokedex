@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zeraora(int level)
+		: base(
+				807,
+				SpecieZeraora.Instance, // Pokemon Specie
+				"Zeraora", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zeraora() : base(
 			807,
 			SpecieZeraora.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Starly(int level)
+		: base(
+				396,
+				SpecieStarly.Instance, // Pokemon Specie
+				"Starly", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Starly() : base(
 			396,
 			SpecieStarly.Instance, // Pokemon Specie

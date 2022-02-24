@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Venomoth(int level)
+		: base(
+				49,
+				SpecieVenomoth.Instance, // Pokemon Specie
+				"Venomoth", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Venomoth() : base(
 			49,
 			SpecieVenomoth.Instance, // Pokemon Specie

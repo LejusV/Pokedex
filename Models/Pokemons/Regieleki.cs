@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Regieleki(int level)
+		: base(
+				894,
+				SpecieRegieleki.Instance, // Pokemon Specie
+				"Regieleki", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Regieleki() : base(
 			894,
 			SpecieRegieleki.Instance, // Pokemon Specie

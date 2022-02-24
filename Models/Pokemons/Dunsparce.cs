@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dunsparce(int level)
+		: base(
+				206,
+				SpecieDunsparce.Instance, // Pokemon Specie
+				"Dunsparce", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dunsparce() : base(
 			206,
 			SpecieDunsparce.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dracozolt(int level)
+		: base(
+				880,
+				SpecieDracozolt.Instance, // Pokemon Specie
+				"Dracozolt", level,
+				Electric.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dracozolt() : base(
 			880,
 			SpecieDracozolt.Instance, // Pokemon Specie

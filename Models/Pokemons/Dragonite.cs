@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dragonite(int level)
+		: base(
+				149,
+				SpecieDragonite.Instance, // Pokemon Specie
+				"Dragonite", level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dragonite() : base(
 			149,
 			SpecieDragonite.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Galvantula(int level)
+		: base(
+				596,
+				SpecieGalvantula.Instance, // Pokemon Specie
+				"Galvantula", level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Galvantula() : base(
 			596,
 			SpecieGalvantula.Instance, // Pokemon Specie

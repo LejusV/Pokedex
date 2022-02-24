@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tauros(int level)
+		: base(
+				128,
+				SpecieTauros.Instance, // Pokemon Specie
+				"Tauros", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tauros() : base(
 			128,
 			SpecieTauros.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Leafeon(int level)
+		: base(
+				470,
+				SpecieLeafeon.Instance, // Pokemon Specie
+				"Leafeon", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Leafeon() : base(
 			470,
 			SpecieLeafeon.Instance, // Pokemon Specie

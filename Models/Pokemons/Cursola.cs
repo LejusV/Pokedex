@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cursola(int level)
+		: base(
+				864,
+				SpecieCursola.Instance, // Pokemon Specie
+				"Cursola", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cursola() : base(
 			864,
 			SpecieCursola.Instance, // Pokemon Specie

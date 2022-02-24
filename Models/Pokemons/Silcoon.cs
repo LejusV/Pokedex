@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Silcoon(int level)
+		: base(
+				266,
+				SpecieSilcoon.Instance, // Pokemon Specie
+				"Silcoon", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Silcoon() : base(
 			266,
 			SpecieSilcoon.Instance, // Pokemon Specie

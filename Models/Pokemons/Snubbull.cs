@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snubbull(int level)
+		: base(
+				209,
+				SpecieSnubbull.Instance, // Pokemon Specie
+				"Snubbull", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snubbull() : base(
 			209,
 			SpecieSnubbull.Instance, // Pokemon Specie

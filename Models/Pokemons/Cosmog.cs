@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cosmog(int level)
+		: base(
+				789,
+				SpecieCosmog.Instance, // Pokemon Specie
+				"Cosmog", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cosmog() : base(
 			789,
 			SpecieCosmog.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Marshadow(int level)
+		: base(
+				802,
+				SpecieMarshadow.Instance, // Pokemon Specie
+				"Marshadow", level,
+				Fighting.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Marshadow() : base(
 			802,
 			SpecieMarshadow.Instance, // Pokemon Specie

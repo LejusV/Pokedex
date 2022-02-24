@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Weezing(int level)
+		: base(
+				110,
+				SpecieWeezing.Instance, // Pokemon Specie
+				"Weezing", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Weezing() : base(
 			110,
 			SpecieWeezing.Instance, // Pokemon Specie

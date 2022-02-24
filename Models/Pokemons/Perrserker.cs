@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Perrserker(int level)
+		: base(
+				863,
+				SpeciePerrserker.Instance, // Pokemon Specie
+				"Perrserker", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Perrserker() : base(
 			863,
 			SpeciePerrserker.Instance, // Pokemon Specie

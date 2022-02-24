@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cubone(int level)
+		: base(
+				104,
+				SpecieCubone.Instance, // Pokemon Specie
+				"Cubone", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cubone() : base(
 			104,
 			SpecieCubone.Instance, // Pokemon Specie

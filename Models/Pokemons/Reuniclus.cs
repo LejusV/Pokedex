@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Reuniclus(int level)
+		: base(
+				579,
+				SpecieReuniclus.Instance, // Pokemon Specie
+				"Reuniclus", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Reuniclus() : base(
 			579,
 			SpecieReuniclus.Instance, // Pokemon Specie

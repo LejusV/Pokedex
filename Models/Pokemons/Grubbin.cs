@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grubbin(int level)
+		: base(
+				736,
+				SpecieGrubbin.Instance, // Pokemon Specie
+				"Grubbin", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grubbin() : base(
 			736,
 			SpecieGrubbin.Instance, // Pokemon Specie

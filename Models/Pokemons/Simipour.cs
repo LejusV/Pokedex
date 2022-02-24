@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Simipour(int level)
+		: base(
+				516,
+				SpecieSimipour.Instance, // Pokemon Specie
+				"Simipour", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Simipour() : base(
 			516,
 			SpecieSimipour.Instance, // Pokemon Specie

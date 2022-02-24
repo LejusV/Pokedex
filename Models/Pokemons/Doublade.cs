@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Doublade(int level)
+		: base(
+				680,
+				SpecieDoublade.Instance, // Pokemon Specie
+				"Doublade", level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Doublade() : base(
 			680,
 			SpecieDoublade.Instance, // Pokemon Specie

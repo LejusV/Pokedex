@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Politoed(int level)
+		: base(
+				186,
+				SpeciePolitoed.Instance, // Pokemon Specie
+				"Politoed", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Politoed() : base(
 			186,
 			SpeciePolitoed.Instance, // Pokemon Specie

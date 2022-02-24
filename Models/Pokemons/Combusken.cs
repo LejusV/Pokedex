@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Combusken(int level)
+		: base(
+				256,
+				SpecieCombusken.Instance, // Pokemon Specie
+				"Combusken", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Combusken() : base(
 			256,
 			SpecieCombusken.Instance, // Pokemon Specie

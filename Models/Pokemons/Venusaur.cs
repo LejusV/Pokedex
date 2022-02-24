@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Venusaur(int level)
+		: base(
+				3,
+				SpecieVenusaur.Instance, // Pokemon Specie
+				"Venusaur", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Venusaur() : base(
 			3,
 			SpecieVenusaur.Instance, // Pokemon Specie

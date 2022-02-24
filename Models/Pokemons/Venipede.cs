@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Venipede(int level)
+		: base(
+				543,
+				SpecieVenipede.Instance, // Pokemon Specie
+				"Venipede", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Venipede() : base(
 			543,
 			SpecieVenipede.Instance, // Pokemon Specie

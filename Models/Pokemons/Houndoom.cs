@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Houndoom(int level)
+		: base(
+				229,
+				SpecieHoundoom.Instance, // Pokemon Specie
+				"Houndoom", level,
+				Dark.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Houndoom() : base(
 			229,
 			SpecieHoundoom.Instance, // Pokemon Specie

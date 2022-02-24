@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bastiodon(int level)
+		: base(
+				411,
+				SpecieBastiodon.Instance, // Pokemon Specie
+				"Bastiodon", level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bastiodon() : base(
 			411,
 			SpecieBastiodon.Instance, // Pokemon Specie

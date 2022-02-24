@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Turtonator(int level)
+		: base(
+				776,
+				SpecieTurtonator.Instance, // Pokemon Specie
+				"Turtonator", level,
+				Fire.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Turtonator() : base(
 			776,
 			SpecieTurtonator.Instance, // Pokemon Specie

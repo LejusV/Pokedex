@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Incineroar(int level)
+		: base(
+				727,
+				SpecieIncineroar.Instance, // Pokemon Specie
+				"Incineroar", level,
+				Fire.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Incineroar() : base(
 			727,
 			SpecieIncineroar.Instance, // Pokemon Specie

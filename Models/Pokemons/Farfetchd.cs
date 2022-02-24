@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Farfetchd(int level)
+		: base(
+				83,
+				SpecieFarfetchd.Instance, // Pokemon Specie
+				"Farfetchd", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Farfetchd() : base(
 			83,
 			SpecieFarfetchd.Instance, // Pokemon Specie

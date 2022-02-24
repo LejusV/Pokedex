@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Floatzel(int level)
+		: base(
+				419,
+				SpecieFloatzel.Instance, // Pokemon Specie
+				"Floatzel", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Floatzel() : base(
 			419,
 			SpecieFloatzel.Instance, // Pokemon Specie

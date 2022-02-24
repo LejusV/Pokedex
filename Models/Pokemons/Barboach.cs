@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Barboach(int level)
+		: base(
+				339,
+				SpecieBarboach.Instance, // Pokemon Specie
+				"Barboach", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Barboach() : base(
 			339,
 			SpecieBarboach.Instance, // Pokemon Specie

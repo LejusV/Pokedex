@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Steelix(int level)
+		: base(
+				208,
+				SpecieSteelix.Instance, // Pokemon Specie
+				"Steelix", level,
+				Steel.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Steelix() : base(
 			208,
 			SpecieSteelix.Instance, // Pokemon Specie

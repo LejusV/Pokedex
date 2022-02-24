@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Komala(int level)
+		: base(
+				775,
+				SpecieKomala.Instance, // Pokemon Specie
+				"Komala", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Komala() : base(
 			775,
 			SpecieKomala.Instance, // Pokemon Specie

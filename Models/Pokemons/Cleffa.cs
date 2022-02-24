@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cleffa(int level)
+		: base(
+				173,
+				SpecieCleffa.Instance, // Pokemon Specie
+				"Cleffa", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cleffa() : base(
 			173,
 			SpecieCleffa.Instance, // Pokemon Specie

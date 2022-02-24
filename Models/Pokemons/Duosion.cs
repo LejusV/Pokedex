@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Duosion(int level)
+		: base(
+				578,
+				SpecieDuosion.Instance, // Pokemon Specie
+				"Duosion", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Duosion() : base(
 			578,
 			SpecieDuosion.Instance, // Pokemon Specie

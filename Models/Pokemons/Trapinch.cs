@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Trapinch(int level)
+		: base(
+				328,
+				SpecieTrapinch.Instance, // Pokemon Specie
+				"Trapinch", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Trapinch() : base(
 			328,
 			SpecieTrapinch.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dartrix(int level)
+		: base(
+				723,
+				SpecieDartrix.Instance, // Pokemon Specie
+				"Dartrix", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dartrix() : base(
 			723,
 			SpecieDartrix.Instance, // Pokemon Specie

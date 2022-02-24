@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pyukumuku(int level)
+		: base(
+				771,
+				SpeciePyukumuku.Instance, // Pokemon Specie
+				"Pyukumuku", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pyukumuku() : base(
 			771,
 			SpeciePyukumuku.Instance, // Pokemon Specie

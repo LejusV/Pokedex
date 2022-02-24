@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Popplio(int level)
+		: base(
+				728,
+				SpeciePopplio.Instance, // Pokemon Specie
+				"Popplio", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Popplio() : base(
 			728,
 			SpeciePopplio.Instance, // Pokemon Specie

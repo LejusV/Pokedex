@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zoroark(int level)
+		: base(
+				571,
+				SpecieZoroark.Instance, // Pokemon Specie
+				"Zoroark", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zoroark() : base(
 			571,
 			SpecieZoroark.Instance, // Pokemon Specie

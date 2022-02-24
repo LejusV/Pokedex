@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golem(int level)
+		: base(
+				76,
+				SpecieGolem.Instance, // Pokemon Specie
+				"Golem", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golem() : base(
 			76,
 			SpecieGolem.Instance, // Pokemon Specie

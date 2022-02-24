@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Infernape(int level)
+		: base(
+				392,
+				SpecieInfernape.Instance, // Pokemon Specie
+				"Infernape", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Infernape() : base(
 			392,
 			SpecieInfernape.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wurmple(int level)
+		: base(
+				265,
+				SpecieWurmple.Instance, // Pokemon Specie
+				"Wurmple", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wurmple() : base(
 			265,
 			SpecieWurmple.Instance, // Pokemon Specie

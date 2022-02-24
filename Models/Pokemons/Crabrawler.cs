@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Crabrawler(int level)
+		: base(
+				739,
+				SpecieCrabrawler.Instance, // Pokemon Specie
+				"Crabrawler", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Crabrawler() : base(
 			739,
 			SpecieCrabrawler.Instance, // Pokemon Specie

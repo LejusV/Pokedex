@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bunnelby(int level)
+		: base(
+				659,
+				SpecieBunnelby.Instance, // Pokemon Specie
+				"Bunnelby", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bunnelby() : base(
 			659,
 			SpecieBunnelby.Instance, // Pokemon Specie

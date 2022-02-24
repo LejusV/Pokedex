@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arctovish(int level)
+		: base(
+				883,
+				SpecieArctovish.Instance, // Pokemon Specie
+				"Arctovish", level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arctovish() : base(
 			883,
 			SpecieArctovish.Instance, // Pokemon Specie

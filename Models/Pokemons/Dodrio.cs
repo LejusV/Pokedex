@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dodrio(int level)
+		: base(
+				85,
+				SpecieDodrio.Instance, // Pokemon Specie
+				"Dodrio", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dodrio() : base(
 			85,
 			SpecieDodrio.Instance, // Pokemon Specie

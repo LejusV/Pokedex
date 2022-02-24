@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lombre(int level)
+		: base(
+				271,
+				SpecieLombre.Instance, // Pokemon Specie
+				"Lombre", level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lombre() : base(
 			271,
 			SpecieLombre.Instance, // Pokemon Specie

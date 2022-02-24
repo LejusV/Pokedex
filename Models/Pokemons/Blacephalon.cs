@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blacephalon(int level)
+		: base(
+				806,
+				SpecieBlacephalon.Instance, // Pokemon Specie
+				"Blacephalon", level,
+				Fire.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blacephalon() : base(
 			806,
 			SpecieBlacephalon.Instance, // Pokemon Specie

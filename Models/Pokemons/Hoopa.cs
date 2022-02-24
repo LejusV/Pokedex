@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hoopa(int level)
+		: base(
+				720,
+				SpecieHoopa.Instance, // Pokemon Specie
+				"Hoopa", level,
+				Psychic.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hoopa() : base(
 			720,
 			SpecieHoopa.Instance, // Pokemon Specie

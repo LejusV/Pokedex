@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rayquaza(int level)
+		: base(
+				384,
+				SpecieRayquaza.Instance, // Pokemon Specie
+				"Rayquaza", level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rayquaza() : base(
 			384,
 			SpecieRayquaza.Instance, // Pokemon Specie

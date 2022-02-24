@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skitty(int level)
+		: base(
+				300,
+				SpecieSkitty.Instance, // Pokemon Specie
+				"Skitty", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skitty() : base(
 			300,
 			SpecieSkitty.Instance, // Pokemon Specie

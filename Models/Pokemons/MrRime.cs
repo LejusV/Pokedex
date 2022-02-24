@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MrRime(int level)
+		: base(
+				866,
+				SpecieMrRime.Instance, // Pokemon Specie
+				"Mr-Rime", level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MrRime() : base(
 			866,
 			SpecieMrRime.Instance, // Pokemon Specie

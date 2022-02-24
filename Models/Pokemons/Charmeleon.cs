@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Charmeleon(int level)
+		: base(
+				5,
+				SpecieCharmeleon.Instance, // Pokemon Specie
+				"Charmeleon", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Charmeleon() : base(
 			5,
 			SpecieCharmeleon.Instance, // Pokemon Specie

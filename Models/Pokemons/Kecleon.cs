@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kecleon(int level)
+		: base(
+				352,
+				SpecieKecleon.Instance, // Pokemon Specie
+				"Kecleon", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kecleon() : base(
 			352,
 			SpecieKecleon.Instance, // Pokemon Specie

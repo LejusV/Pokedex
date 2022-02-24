@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kangaskhan(int level)
+		: base(
+				115,
+				SpecieKangaskhan.Instance, // Pokemon Specie
+				"Kangaskhan", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kangaskhan() : base(
 			115,
 			SpecieKangaskhan.Instance, // Pokemon Specie

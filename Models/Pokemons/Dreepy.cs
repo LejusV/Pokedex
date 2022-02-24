@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dreepy(int level)
+		: base(
+				885,
+				SpecieDreepy.Instance, // Pokemon Specie
+				"Dreepy", level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dreepy() : base(
 			885,
 			SpecieDreepy.Instance, // Pokemon Specie

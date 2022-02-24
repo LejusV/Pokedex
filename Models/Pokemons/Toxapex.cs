@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Toxapex(int level)
+		: base(
+				748,
+				SpecieToxapex.Instance, // Pokemon Specie
+				"Toxapex", level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Toxapex() : base(
 			748,
 			SpecieToxapex.Instance, // Pokemon Specie

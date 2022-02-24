@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rhyperior(int level)
+		: base(
+				464,
+				SpecieRhyperior.Instance, // Pokemon Specie
+				"Rhyperior", level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rhyperior() : base(
 			464,
 			SpecieRhyperior.Instance, // Pokemon Specie

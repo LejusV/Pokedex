@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TapuFini(int level)
+		: base(
+				788,
+				SpecieTapuFini.Instance, // Pokemon Specie
+				"Tapu-Fini", level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TapuFini() : base(
 			788,
 			SpecieTapuFini.Instance, // Pokemon Specie

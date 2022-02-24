@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arbok(int level)
+		: base(
+				24,
+				SpecieArbok.Instance, // Pokemon Specie
+				"Arbok", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arbok() : base(
 			24,
 			SpecieArbok.Instance, // Pokemon Specie

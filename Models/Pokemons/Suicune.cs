@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Suicune(int level)
+		: base(
+				245,
+				SpecieSuicune.Instance, // Pokemon Specie
+				"Suicune", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Suicune() : base(
 			245,
 			SpecieSuicune.Instance, // Pokemon Specie

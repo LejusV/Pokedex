@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Staryu(int level)
+		: base(
+				120,
+				SpecieStaryu.Instance, // Pokemon Specie
+				"Staryu", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Staryu() : base(
 			120,
 			SpecieStaryu.Instance, // Pokemon Specie

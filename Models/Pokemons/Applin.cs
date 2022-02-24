@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Applin(int level)
+		: base(
+				840,
+				SpecieApplin.Instance, // Pokemon Specie
+				"Applin", level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Applin() : base(
 			840,
 			SpecieApplin.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Delphox(int level)
+		: base(
+				655,
+				SpecieDelphox.Instance, // Pokemon Specie
+				"Delphox", level,
+				Fire.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Delphox() : base(
 			655,
 			SpecieDelphox.Instance, // Pokemon Specie

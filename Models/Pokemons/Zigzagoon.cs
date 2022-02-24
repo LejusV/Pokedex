@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zigzagoon(int level)
+		: base(
+				263,
+				SpecieZigzagoon.Instance, // Pokemon Specie
+				"Zigzagoon", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zigzagoon() : base(
 			263,
 			SpecieZigzagoon.Instance, // Pokemon Specie

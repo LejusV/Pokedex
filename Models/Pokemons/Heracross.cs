@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Heracross(int level)
+		: base(
+				214,
+				SpecieHeracross.Instance, // Pokemon Specie
+				"Heracross", level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Heracross() : base(
 			214,
 			SpecieHeracross.Instance, // Pokemon Specie

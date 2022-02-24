@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Steenee(int level)
+		: base(
+				762,
+				SpecieSteenee.Instance, // Pokemon Specie
+				"Steenee", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Steenee() : base(
 			762,
 			SpecieSteenee.Instance, // Pokemon Specie

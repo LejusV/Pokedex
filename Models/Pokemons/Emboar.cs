@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Emboar(int level)
+		: base(
+				500,
+				SpecieEmboar.Instance, // Pokemon Specie
+				"Emboar", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Emboar() : base(
 			500,
 			SpecieEmboar.Instance, // Pokemon Specie

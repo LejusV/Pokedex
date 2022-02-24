@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Butterfree(int level)
+		: base(
+				12,
+				SpecieButterfree.Instance, // Pokemon Specie
+				"Butterfree", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Butterfree() : base(
 			12,
 			SpecieButterfree.Instance, // Pokemon Specie

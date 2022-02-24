@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Poochyena(int level)
+		: base(
+				261,
+				SpeciePoochyena.Instance, // Pokemon Specie
+				"Poochyena", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Poochyena() : base(
 			261,
 			SpeciePoochyena.Instance, // Pokemon Specie

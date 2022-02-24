@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Remoraid(int level)
+		: base(
+				223,
+				SpecieRemoraid.Instance, // Pokemon Specie
+				"Remoraid", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Remoraid() : base(
 			223,
 			SpecieRemoraid.Instance, // Pokemon Specie

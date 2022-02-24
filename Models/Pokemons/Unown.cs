@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Unown(int level)
+		: base(
+				201,
+				SpecieUnown.Instance, // Pokemon Specie
+				"Unown", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Unown() : base(
 			201,
 			SpecieUnown.Instance, // Pokemon Specie

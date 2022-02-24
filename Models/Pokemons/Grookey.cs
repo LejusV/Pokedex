@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grookey(int level)
+		: base(
+				810,
+				SpecieGrookey.Instance, // Pokemon Specie
+				"Grookey", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grookey() : base(
 			810,
 			SpecieGrookey.Instance, // Pokemon Specie

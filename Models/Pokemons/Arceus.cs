@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arceus(int level)
+		: base(
+				493,
+				SpecieArceus.Instance, // Pokemon Specie
+				"Arceus", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arceus() : base(
 			493,
 			SpecieArceus.Instance, // Pokemon Specie

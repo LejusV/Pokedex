@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Helioptile(int level)
+		: base(
+				694,
+				SpecieHelioptile.Instance, // Pokemon Specie
+				"Helioptile", level,
+				Electric.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Helioptile() : base(
 			694,
 			SpecieHelioptile.Instance, // Pokemon Specie

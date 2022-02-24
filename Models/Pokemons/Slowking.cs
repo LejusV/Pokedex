@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slowking(int level)
+		: base(
+				199,
+				SpecieSlowking.Instance, // Pokemon Specie
+				"Slowking", level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slowking() : base(
 			199,
 			SpecieSlowking.Instance, // Pokemon Specie

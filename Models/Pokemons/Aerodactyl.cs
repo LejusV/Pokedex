@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aerodactyl(int level)
+		: base(
+				142,
+				SpecieAerodactyl.Instance, // Pokemon Specie
+				"Aerodactyl", level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aerodactyl() : base(
 			142,
 			SpecieAerodactyl.Instance, // Pokemon Specie

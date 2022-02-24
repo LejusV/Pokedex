@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Crustle(int level)
+		: base(
+				558,
+				SpecieCrustle.Instance, // Pokemon Specie
+				"Crustle", level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Crustle() : base(
 			558,
 			SpecieCrustle.Instance, // Pokemon Specie

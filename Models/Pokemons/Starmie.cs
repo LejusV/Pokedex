@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Starmie(int level)
+		: base(
+				121,
+				SpecieStarmie.Instance, // Pokemon Specie
+				"Starmie", level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Starmie() : base(
 			121,
 			SpecieStarmie.Instance, // Pokemon Specie

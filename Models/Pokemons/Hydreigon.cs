@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hydreigon(int level)
+		: base(
+				635,
+				SpecieHydreigon.Instance, // Pokemon Specie
+				"Hydreigon", level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hydreigon() : base(
 			635,
 			SpecieHydreigon.Instance, // Pokemon Specie

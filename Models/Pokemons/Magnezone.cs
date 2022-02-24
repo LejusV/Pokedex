@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magnezone(int level)
+		: base(
+				462,
+				SpecieMagnezone.Instance, // Pokemon Specie
+				"Magnezone", level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magnezone() : base(
 			462,
 			SpecieMagnezone.Instance, // Pokemon Specie

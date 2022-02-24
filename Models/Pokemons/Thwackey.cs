@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Thwackey(int level)
+		: base(
+				811,
+				SpecieThwackey.Instance, // Pokemon Specie
+				"Thwackey", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Thwackey() : base(
 			811,
 			SpecieThwackey.Instance, // Pokemon Specie

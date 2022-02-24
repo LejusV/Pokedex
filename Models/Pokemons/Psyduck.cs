@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Psyduck(int level)
+		: base(
+				54,
+				SpeciePsyduck.Instance, // Pokemon Specie
+				"Psyduck", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Psyduck() : base(
 			54,
 			SpeciePsyduck.Instance, // Pokemon Specie

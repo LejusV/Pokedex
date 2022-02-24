@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Qwilfish(int level)
+		: base(
+				211,
+				SpecieQwilfish.Instance, // Pokemon Specie
+				"Qwilfish", level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Qwilfish() : base(
 			211,
 			SpecieQwilfish.Instance, // Pokemon Specie

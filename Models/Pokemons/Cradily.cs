@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cradily(int level)
+		: base(
+				346,
+				SpecieCradily.Instance, // Pokemon Specie
+				"Cradily", level,
+				Rock.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cradily() : base(
 			346,
 			SpecieCradily.Instance, // Pokemon Specie

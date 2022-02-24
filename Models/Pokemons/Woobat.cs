@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Woobat(int level)
+		: base(
+				527,
+				SpecieWoobat.Instance, // Pokemon Specie
+				"Woobat", level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Woobat() : base(
 			527,
 			SpecieWoobat.Instance, // Pokemon Specie

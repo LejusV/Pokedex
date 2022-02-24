@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hitmonlee(int level)
+		: base(
+				106,
+				SpecieHitmonlee.Instance, // Pokemon Specie
+				"Hitmonlee", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hitmonlee() : base(
 			106,
 			SpecieHitmonlee.Instance, // Pokemon Specie

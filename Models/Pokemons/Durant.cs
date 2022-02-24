@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Durant(int level)
+		: base(
+				632,
+				SpecieDurant.Instance, // Pokemon Specie
+				"Durant", level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Durant() : base(
 			632,
 			SpecieDurant.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Naganadel(int level)
+		: base(
+				804,
+				SpecieNaganadel.Instance, // Pokemon Specie
+				"Naganadel", level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Naganadel() : base(
 			804,
 			SpecieNaganadel.Instance, // Pokemon Specie

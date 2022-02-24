@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tsareena(int level)
+		: base(
+				763,
+				SpecieTsareena.Instance, // Pokemon Specie
+				"Tsareena", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tsareena() : base(
 			763,
 			SpecieTsareena.Instance, // Pokemon Specie

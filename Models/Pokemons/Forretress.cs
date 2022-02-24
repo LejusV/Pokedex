@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Forretress(int level)
+		: base(
+				205,
+				SpecieForretress.Instance, // Pokemon Specie
+				"Forretress", level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Forretress() : base(
 			205,
 			SpecieForretress.Instance, // Pokemon Specie

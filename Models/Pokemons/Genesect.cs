@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Genesect(int level)
+		: base(
+				649,
+				SpecieGenesect.Instance, // Pokemon Specie
+				"Genesect", level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Genesect() : base(
 			649,
 			SpecieGenesect.Instance, // Pokemon Specie

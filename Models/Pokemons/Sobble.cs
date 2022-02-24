@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sobble(int level)
+		: base(
+				816,
+				SpecieSobble.Instance, // Pokemon Specie
+				"Sobble", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sobble() : base(
 			816,
 			SpecieSobble.Instance, // Pokemon Specie

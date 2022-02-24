@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sizzlipede(int level)
+		: base(
+				850,
+				SpecieSizzlipede.Instance, // Pokemon Specie
+				"Sizzlipede", level,
+				Fire.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sizzlipede() : base(
 			850,
 			SpecieSizzlipede.Instance, // Pokemon Specie

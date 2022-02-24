@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Teddiursa(int level)
+		: base(
+				216,
+				SpecieTeddiursa.Instance, // Pokemon Specie
+				"Teddiursa", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Teddiursa() : base(
 			216,
 			SpecieTeddiursa.Instance, // Pokemon Specie

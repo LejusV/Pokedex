@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skarmory(int level)
+		: base(
+				227,
+				SpecieSkarmory.Instance, // Pokemon Specie
+				"Skarmory", level,
+				Steel.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skarmory() : base(
 			227,
 			SpecieSkarmory.Instance, // Pokemon Specie

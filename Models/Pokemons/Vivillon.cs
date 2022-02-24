@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vivillon(int level)
+		: base(
+				666,
+				SpecieVivillon.Instance, // Pokemon Specie
+				"Vivillon", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vivillon() : base(
 			666,
 			SpecieVivillon.Instance, // Pokemon Specie

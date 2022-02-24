@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dhelmise(int level)
+		: base(
+				781,
+				SpecieDhelmise.Instance, // Pokemon Specie
+				"Dhelmise", level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dhelmise() : base(
 			781,
 			SpecieDhelmise.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Volcarona(int level)
+		: base(
+				637,
+				SpecieVolcarona.Instance, // Pokemon Specie
+				"Volcarona", level,
+				Bug.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Volcarona() : base(
 			637,
 			SpecieVolcarona.Instance, // Pokemon Specie

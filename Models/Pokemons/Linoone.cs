@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Linoone(int level)
+		: base(
+				264,
+				SpecieLinoone.Instance, // Pokemon Specie
+				"Linoone", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Linoone() : base(
 			264,
 			SpecieLinoone.Instance, // Pokemon Specie

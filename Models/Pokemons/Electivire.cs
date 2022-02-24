@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Electivire(int level)
+		: base(
+				466,
+				SpecieElectivire.Instance, // Pokemon Specie
+				"Electivire", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Electivire() : base(
 			466,
 			SpecieElectivire.Instance, // Pokemon Specie

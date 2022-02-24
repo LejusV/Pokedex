@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Accelgor(int level)
+		: base(
+				617,
+				SpecieAccelgor.Instance, // Pokemon Specie
+				"Accelgor", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Accelgor() : base(
 			617,
 			SpecieAccelgor.Instance, // Pokemon Specie

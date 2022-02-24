@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Munchlax(int level)
+		: base(
+				446,
+				SpecieMunchlax.Instance, // Pokemon Specie
+				"Munchlax", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Munchlax() : base(
 			446,
 			SpecieMunchlax.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cufant(int level)
+		: base(
+				878,
+				SpecieCufant.Instance, // Pokemon Specie
+				"Cufant", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cufant() : base(
 			878,
 			SpecieCufant.Instance, // Pokemon Specie

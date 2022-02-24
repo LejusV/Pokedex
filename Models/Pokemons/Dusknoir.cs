@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dusknoir(int level)
+		: base(
+				477,
+				SpecieDusknoir.Instance, // Pokemon Specie
+				"Dusknoir", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dusknoir() : base(
 			477,
 			SpecieDusknoir.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lapras(int level)
+		: base(
+				131,
+				SpecieLapras.Instance, // Pokemon Specie
+				"Lapras", level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lapras() : base(
 			131,
 			SpecieLapras.Instance, // Pokemon Specie

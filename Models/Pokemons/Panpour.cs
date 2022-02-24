@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Panpour(int level)
+		: base(
+				515,
+				SpeciePanpour.Instance, // Pokemon Specie
+				"Panpour", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Panpour() : base(
 			515,
 			SpeciePanpour.Instance, // Pokemon Specie

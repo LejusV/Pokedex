@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Talonflame(int level)
+		: base(
+				663,
+				SpecieTalonflame.Instance, // Pokemon Specie
+				"Talonflame", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Talonflame() : base(
 			663,
 			SpecieTalonflame.Instance, // Pokemon Specie

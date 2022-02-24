@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ledian(int level)
+		: base(
+				166,
+				SpecieLedian.Instance, // Pokemon Specie
+				"Ledian", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ledian() : base(
 			166,
 			SpecieLedian.Instance, // Pokemon Specie

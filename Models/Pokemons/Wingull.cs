@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wingull(int level)
+		: base(
+				278,
+				SpecieWingull.Instance, // Pokemon Specie
+				"Wingull", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wingull() : base(
 			278,
 			SpecieWingull.Instance, // Pokemon Specie

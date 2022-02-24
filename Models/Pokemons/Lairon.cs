@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lairon(int level)
+		: base(
+				305,
+				SpecieLairon.Instance, // Pokemon Specie
+				"Lairon", level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lairon() : base(
 			305,
 			SpecieLairon.Instance, // Pokemon Specie

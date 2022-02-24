@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Goodra(int level)
+		: base(
+				706,
+				SpecieGoodra.Instance, // Pokemon Specie
+				"Goodra", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Goodra() : base(
 			706,
 			SpecieGoodra.Instance, // Pokemon Specie

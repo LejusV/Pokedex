@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Weavile(int level)
+		: base(
+				461,
+				SpecieWeavile.Instance, // Pokemon Specie
+				"Weavile", level,
+				Dark.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Weavile() : base(
 			461,
 			SpecieWeavile.Instance, // Pokemon Specie

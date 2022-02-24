@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cranidos(int level)
+		: base(
+				408,
+				SpecieCranidos.Instance, // Pokemon Specie
+				"Cranidos", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cranidos() : base(
 			408,
 			SpecieCranidos.Instance, // Pokemon Specie

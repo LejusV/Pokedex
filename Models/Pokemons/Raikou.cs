@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Raikou(int level)
+		: base(
+				243,
+				SpecieRaikou.Instance, // Pokemon Specie
+				"Raikou", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Raikou() : base(
 			243,
 			SpecieRaikou.Instance, // Pokemon Specie

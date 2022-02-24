@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Samurott(int level)
+		: base(
+				503,
+				SpecieSamurott.Instance, // Pokemon Specie
+				"Samurott", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Samurott() : base(
 			503,
 			SpecieSamurott.Instance, // Pokemon Specie

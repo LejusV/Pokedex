@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Abomasnow(int level)
+		: base(
+				460,
+				SpecieAbomasnow.Instance, // Pokemon Specie
+				"Abomasnow", level,
+				Grass.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Abomasnow() : base(
 			460,
 			SpecieAbomasnow.Instance, // Pokemon Specie

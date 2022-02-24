@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Greninja(int level)
+		: base(
+				658,
+				SpecieGreninja.Instance, // Pokemon Specie
+				"Greninja", level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Greninja() : base(
 			658,
 			SpecieGreninja.Instance, // Pokemon Specie

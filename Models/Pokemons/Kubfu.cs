@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kubfu(int level)
+		: base(
+				891,
+				SpecieKubfu.Instance, // Pokemon Specie
+				"Kubfu", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kubfu() : base(
 			891,
 			SpecieKubfu.Instance, // Pokemon Specie

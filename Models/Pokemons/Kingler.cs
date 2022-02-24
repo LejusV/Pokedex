@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kingler(int level)
+		: base(
+				99,
+				SpecieKingler.Instance, // Pokemon Specie
+				"Kingler", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kingler() : base(
 			99,
 			SpecieKingler.Instance, // Pokemon Specie

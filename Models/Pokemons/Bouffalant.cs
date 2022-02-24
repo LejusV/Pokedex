@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bouffalant(int level)
+		: base(
+				626,
+				SpecieBouffalant.Instance, // Pokemon Specie
+				"Bouffalant", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bouffalant() : base(
 			626,
 			SpecieBouffalant.Instance, // Pokemon Specie

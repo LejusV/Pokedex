@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ferrothorn(int level)
+		: base(
+				598,
+				SpecieFerrothorn.Instance, // Pokemon Specie
+				"Ferrothorn", level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ferrothorn() : base(
 			598,
 			SpecieFerrothorn.Instance, // Pokemon Specie

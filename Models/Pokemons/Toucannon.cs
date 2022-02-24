@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Toucannon(int level)
+		: base(
+				733,
+				SpecieToucannon.Instance, // Pokemon Specie
+				"Toucannon", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Toucannon() : base(
 			733,
 			SpecieToucannon.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Corviknight(int level)
+		: base(
+				823,
+				SpecieCorviknight.Instance, // Pokemon Specie
+				"Corviknight", level,
+				Flying.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Corviknight() : base(
 			823,
 			SpecieCorviknight.Instance, // Pokemon Specie

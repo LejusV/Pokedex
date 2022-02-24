@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Frogadier(int level)
+		: base(
+				657,
+				SpecieFrogadier.Instance, // Pokemon Specie
+				"Frogadier", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Frogadier() : base(
 			657,
 			SpecieFrogadier.Instance, // Pokemon Specie

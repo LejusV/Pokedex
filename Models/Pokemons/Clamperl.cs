@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clamperl(int level)
+		: base(
+				366,
+				SpecieClamperl.Instance, // Pokemon Specie
+				"Clamperl", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clamperl() : base(
 			366,
 			SpecieClamperl.Instance, // Pokemon Specie

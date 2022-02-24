@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Guzzlord(int level)
+		: base(
+				799,
+				SpecieGuzzlord.Instance, // Pokemon Specie
+				"Guzzlord", level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Guzzlord() : base(
 			799,
 			SpecieGuzzlord.Instance, // Pokemon Specie

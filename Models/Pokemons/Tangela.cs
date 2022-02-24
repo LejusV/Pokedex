@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tangela(int level)
+		: base(
+				114,
+				SpecieTangela.Instance, // Pokemon Specie
+				"Tangela", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tangela() : base(
 			114,
 			SpecieTangela.Instance, // Pokemon Specie

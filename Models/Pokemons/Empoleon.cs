@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Empoleon(int level)
+		: base(
+				395,
+				SpecieEmpoleon.Instance, // Pokemon Specie
+				"Empoleon", level,
+				Water.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Empoleon() : base(
 			395,
 			SpecieEmpoleon.Instance, // Pokemon Specie

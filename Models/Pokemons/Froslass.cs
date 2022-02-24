@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Froslass(int level)
+		: base(
+				478,
+				SpecieFroslass.Instance, // Pokemon Specie
+				"Froslass", level,
+				Ice.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Froslass() : base(
 			478,
 			SpecieFroslass.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mudkip(int level)
+		: base(
+				258,
+				SpecieMudkip.Instance, // Pokemon Specie
+				"Mudkip", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mudkip() : base(
 			258,
 			SpecieMudkip.Instance, // Pokemon Specie

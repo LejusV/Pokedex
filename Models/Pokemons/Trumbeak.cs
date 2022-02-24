@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Trumbeak(int level)
+		: base(
+				732,
+				SpecieTrumbeak.Instance, // Pokemon Specie
+				"Trumbeak", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Trumbeak() : base(
 			732,
 			SpecieTrumbeak.Instance, // Pokemon Specie

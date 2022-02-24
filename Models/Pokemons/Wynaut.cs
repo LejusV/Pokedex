@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wynaut(int level)
+		: base(
+				360,
+				SpecieWynaut.Instance, // Pokemon Specie
+				"Wynaut", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wynaut() : base(
 			360,
 			SpecieWynaut.Instance, // Pokemon Specie

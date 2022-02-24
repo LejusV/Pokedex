@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Patrat(int level)
+		: base(
+				504,
+				SpeciePatrat.Instance, // Pokemon Specie
+				"Patrat", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Patrat() : base(
 			504,
 			SpeciePatrat.Instance, // Pokemon Specie

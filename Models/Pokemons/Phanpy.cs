@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Phanpy(int level)
+		: base(
+				231,
+				SpeciePhanpy.Instance, // Pokemon Specie
+				"Phanpy", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Phanpy() : base(
 			231,
 			SpeciePhanpy.Instance, // Pokemon Specie

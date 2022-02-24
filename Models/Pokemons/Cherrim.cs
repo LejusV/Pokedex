@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cherrim(int level)
+		: base(
+				421,
+				SpecieCherrim.Instance, // Pokemon Specie
+				"Cherrim", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cherrim() : base(
 			421,
 			SpecieCherrim.Instance, // Pokemon Specie

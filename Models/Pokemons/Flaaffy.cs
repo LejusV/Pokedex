@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Flaaffy(int level)
+		: base(
+				180,
+				SpecieFlaaffy.Instance, // Pokemon Specie
+				"Flaaffy", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Flaaffy() : base(
 			180,
 			SpecieFlaaffy.Instance, // Pokemon Specie

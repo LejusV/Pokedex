@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shellos(int level)
+		: base(
+				422,
+				SpecieShellos.Instance, // Pokemon Specie
+				"Shellos", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shellos() : base(
 			422,
 			SpecieShellos.Instance, // Pokemon Specie

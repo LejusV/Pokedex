@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gastrodon(int level)
+		: base(
+				423,
+				SpecieGastrodon.Instance, // Pokemon Specie
+				"Gastrodon", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gastrodon() : base(
 			423,
 			SpecieGastrodon.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slowbro(int level)
+		: base(
+				80,
+				SpecieSlowbro.Instance, // Pokemon Specie
+				"Slowbro", level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slowbro() : base(
 			80,
 			SpecieSlowbro.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aromatisse(int level)
+		: base(
+				683,
+				SpecieAromatisse.Instance, // Pokemon Specie
+				"Aromatisse", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aromatisse() : base(
 			683,
 			SpecieAromatisse.Instance, // Pokemon Specie

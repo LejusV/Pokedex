@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swadloon(int level)
+		: base(
+				541,
+				SpecieSwadloon.Instance, // Pokemon Specie
+				"Swadloon", level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swadloon() : base(
 			541,
 			SpecieSwadloon.Instance, // Pokemon Specie

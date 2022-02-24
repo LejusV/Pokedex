@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nosepass(int level)
+		: base(
+				299,
+				SpecieNosepass.Instance, // Pokemon Specie
+				"Nosepass", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nosepass() : base(
 			299,
 			SpecieNosepass.Instance, // Pokemon Specie

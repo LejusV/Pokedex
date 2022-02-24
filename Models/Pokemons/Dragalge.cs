@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dragalge(int level)
+		: base(
+				691,
+				SpecieDragalge.Instance, // Pokemon Specie
+				"Dragalge", level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dragalge() : base(
 			691,
 			SpecieDragalge.Instance, // Pokemon Specie

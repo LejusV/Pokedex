@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wigglytuff(int level)
+		: base(
+				40,
+				SpecieWigglytuff.Instance, // Pokemon Specie
+				"Wigglytuff", level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wigglytuff() : base(
 			40,
 			SpecieWigglytuff.Instance, // Pokemon Specie

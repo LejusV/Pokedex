@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golbat(int level)
+		: base(
+				42,
+				SpecieGolbat.Instance, // Pokemon Specie
+				"Golbat", level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golbat() : base(
 			42,
 			SpecieGolbat.Instance, // Pokemon Specie

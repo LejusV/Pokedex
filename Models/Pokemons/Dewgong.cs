@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dewgong(int level)
+		: base(
+				87,
+				SpecieDewgong.Instance, // Pokemon Specie
+				"Dewgong", level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dewgong() : base(
 			87,
 			SpecieDewgong.Instance, // Pokemon Specie

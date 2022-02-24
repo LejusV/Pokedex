@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gurdurr(int level)
+		: base(
+				533,
+				SpecieGurdurr.Instance, // Pokemon Specie
+				"Gurdurr", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gurdurr() : base(
 			533,
 			SpecieGurdurr.Instance, // Pokemon Specie

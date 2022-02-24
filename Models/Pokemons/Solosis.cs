@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Solosis(int level)
+		: base(
+				577,
+				SpecieSolosis.Instance, // Pokemon Specie
+				"Solosis", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Solosis() : base(
 			577,
 			SpecieSolosis.Instance, // Pokemon Specie

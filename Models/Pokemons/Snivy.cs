@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snivy(int level)
+		: base(
+				495,
+				SpecieSnivy.Instance, // Pokemon Specie
+				"Snivy", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snivy() : base(
 			495,
 			SpecieSnivy.Instance, // Pokemon Specie

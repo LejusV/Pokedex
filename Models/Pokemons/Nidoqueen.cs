@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nidoqueen(int level)
+		: base(
+				31,
+				SpecieNidoqueen.Instance, // Pokemon Specie
+				"Nidoqueen", level,
+				Poison.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nidoqueen() : base(
 			31,
 			SpecieNidoqueen.Instance, // Pokemon Specie

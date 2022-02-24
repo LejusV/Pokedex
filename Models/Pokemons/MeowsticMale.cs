@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MeowsticMale(int level)
+		: base(
+				678,
+				SpecieMeowsticMale.Instance, // Pokemon Specie
+				"Meowstic-Male", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MeowsticMale() : base(
 			678,
 			SpecieMeowsticMale.Instance, // Pokemon Specie

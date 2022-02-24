@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Morgrem(int level)
+		: base(
+				860,
+				SpecieMorgrem.Instance, // Pokemon Specie
+				"Morgrem", level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Morgrem() : base(
 			860,
 			SpecieMorgrem.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Alcremie(int level)
+		: base(
+				869,
+				SpecieAlcremie.Instance, // Pokemon Specie
+				"Alcremie", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Alcremie() : base(
 			869,
 			SpecieAlcremie.Instance, // Pokemon Specie

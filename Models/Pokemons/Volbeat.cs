@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Volbeat(int level)
+		: base(
+				313,
+				SpecieVolbeat.Instance, // Pokemon Specie
+				"Volbeat", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Volbeat() : base(
 			313,
 			SpecieVolbeat.Instance, // Pokemon Specie

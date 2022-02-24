@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bayleef(int level)
+		: base(
+				153,
+				SpecieBayleef.Instance, // Pokemon Specie
+				"Bayleef", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bayleef() : base(
 			153,
 			SpecieBayleef.Instance, // Pokemon Specie

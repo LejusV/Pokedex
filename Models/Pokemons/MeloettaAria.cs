@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MeloettaAria(int level)
+		: base(
+				648,
+				SpecieMeloettaAria.Instance, // Pokemon Specie
+				"Meloetta-Aria", level,
+				Normal.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MeloettaAria() : base(
 			648,
 			SpecieMeloettaAria.Instance, // Pokemon Specie

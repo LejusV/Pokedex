@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blitzle(int level)
+		: base(
+				522,
+				SpecieBlitzle.Instance, // Pokemon Specie
+				"Blitzle", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blitzle() : base(
 			522,
 			SpecieBlitzle.Instance, // Pokemon Specie

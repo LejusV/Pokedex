@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Doduo(int level)
+		: base(
+				84,
+				SpecieDoduo.Instance, // Pokemon Specie
+				"Doduo", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Doduo() : base(
 			84,
 			SpecieDoduo.Instance, // Pokemon Specie

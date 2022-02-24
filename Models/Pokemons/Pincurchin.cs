@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pincurchin(int level)
+		: base(
+				871,
+				SpeciePincurchin.Instance, // Pokemon Specie
+				"Pincurchin", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pincurchin() : base(
 			871,
 			SpeciePincurchin.Instance, // Pokemon Specie

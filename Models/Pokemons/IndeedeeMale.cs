@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public IndeedeeMale(int level)
+		: base(
+				876,
+				SpecieIndeedeeMale.Instance, // Pokemon Specie
+				"Indeedee-Male", level,
+				Psychic.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public IndeedeeMale() : base(
 			876,
 			SpecieIndeedeeMale.Instance, // Pokemon Specie

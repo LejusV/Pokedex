@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dialga(int level)
+		: base(
+				483,
+				SpecieDialga.Instance, // Pokemon Specie
+				"Dialga", level,
+				Steel.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dialga() : base(
 			483,
 			SpecieDialga.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arcanine(int level)
+		: base(
+				59,
+				SpecieArcanine.Instance, // Pokemon Specie
+				"Arcanine", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arcanine() : base(
 			59,
 			SpecieArcanine.Instance, // Pokemon Specie

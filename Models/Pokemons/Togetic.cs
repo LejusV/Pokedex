@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Togetic(int level)
+		: base(
+				176,
+				SpecieTogetic.Instance, // Pokemon Specie
+				"Togetic", level,
+				Fairy.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Togetic() : base(
 			176,
 			SpecieTogetic.Instance, // Pokemon Specie

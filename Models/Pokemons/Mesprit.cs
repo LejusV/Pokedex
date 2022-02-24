@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mesprit(int level)
+		: base(
+				481,
+				SpecieMesprit.Instance, // Pokemon Specie
+				"Mesprit", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mesprit() : base(
 			481,
 			SpecieMesprit.Instance, // Pokemon Specie

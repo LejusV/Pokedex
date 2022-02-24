@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Minccino(int level)
+		: base(
+				572,
+				SpecieMinccino.Instance, // Pokemon Specie
+				"Minccino", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Minccino() : base(
 			572,
 			SpecieMinccino.Instance, // Pokemon Specie

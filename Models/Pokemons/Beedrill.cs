@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Beedrill(int level)
+		: base(
+				15,
+				SpecieBeedrill.Instance, // Pokemon Specie
+				"Beedrill", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Beedrill() : base(
 			15,
 			SpecieBeedrill.Instance, // Pokemon Specie

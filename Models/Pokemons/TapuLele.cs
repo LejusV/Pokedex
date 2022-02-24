@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TapuLele(int level)
+		: base(
+				786,
+				SpecieTapuLele.Instance, // Pokemon Specie
+				"Tapu-Lele", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TapuLele() : base(
 			786,
 			SpecieTapuLele.Instance, // Pokemon Specie

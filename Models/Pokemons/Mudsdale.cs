@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mudsdale(int level)
+		: base(
+				750,
+				SpecieMudsdale.Instance, // Pokemon Specie
+				"Mudsdale", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mudsdale() : base(
 			750,
 			SpecieMudsdale.Instance, // Pokemon Specie

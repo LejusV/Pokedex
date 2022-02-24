@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Celebi(int level)
+		: base(
+				251,
+				SpecieCelebi.Instance, // Pokemon Specie
+				"Celebi", level,
+				Psychic.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Celebi() : base(
 			251,
 			SpecieCelebi.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bisharp(int level)
+		: base(
+				625,
+				SpecieBisharp.Instance, // Pokemon Specie
+				"Bisharp", level,
+				Dark.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bisharp() : base(
 			625,
 			SpecieBisharp.Instance, // Pokemon Specie

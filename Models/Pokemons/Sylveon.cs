@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sylveon(int level)
+		: base(
+				700,
+				SpecieSylveon.Instance, // Pokemon Specie
+				"Sylveon", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sylveon() : base(
 			700,
 			SpecieSylveon.Instance, // Pokemon Specie

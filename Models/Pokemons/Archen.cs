@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Archen(int level)
+		: base(
+				566,
+				SpecieArchen.Instance, // Pokemon Specie
+				"Archen", level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Archen() : base(
 			566,
 			SpecieArchen.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Volcanion(int level)
+		: base(
+				721,
+				SpecieVolcanion.Instance, // Pokemon Specie
+				"Volcanion", level,
+				Fire.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Volcanion() : base(
 			721,
 			SpecieVolcanion.Instance, // Pokemon Specie

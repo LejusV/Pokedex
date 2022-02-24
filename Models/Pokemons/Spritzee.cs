@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spritzee(int level)
+		: base(
+				682,
+				SpecieSpritzee.Instance, // Pokemon Specie
+				"Spritzee", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spritzee() : base(
 			682,
 			SpecieSpritzee.Instance, // Pokemon Specie

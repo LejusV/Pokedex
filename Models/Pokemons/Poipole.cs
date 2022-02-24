@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Poipole(int level)
+		: base(
+				803,
+				SpeciePoipole.Instance, // Pokemon Specie
+				"Poipole", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Poipole() : base(
 			803,
 			SpeciePoipole.Instance, // Pokemon Specie

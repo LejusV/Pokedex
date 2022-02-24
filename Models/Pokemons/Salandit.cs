@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Salandit(int level)
+		: base(
+				757,
+				SpecieSalandit.Instance, // Pokemon Specie
+				"Salandit", level,
+				Poison.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Salandit() : base(
 			757,
 			SpecieSalandit.Instance, // Pokemon Specie

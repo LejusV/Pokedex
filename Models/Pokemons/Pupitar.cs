@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pupitar(int level)
+		: base(
+				247,
+				SpeciePupitar.Instance, // Pokemon Specie
+				"Pupitar", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pupitar() : base(
 			247,
 			SpeciePupitar.Instance, // Pokemon Specie

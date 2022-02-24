@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shelmet(int level)
+		: base(
+				616,
+				SpecieShelmet.Instance, // Pokemon Specie
+				"Shelmet", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shelmet() : base(
 			616,
 			SpecieShelmet.Instance, // Pokemon Specie

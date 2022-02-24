@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Misdreavus(int level)
+		: base(
+				200,
+				SpecieMisdreavus.Instance, // Pokemon Specie
+				"Misdreavus", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Misdreavus() : base(
 			200,
 			SpecieMisdreavus.Instance, // Pokemon Specie

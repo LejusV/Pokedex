@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Litten(int level)
+		: base(
+				725,
+				SpecieLitten.Instance, // Pokemon Specie
+				"Litten", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Litten() : base(
 			725,
 			SpecieLitten.Instance, // Pokemon Specie

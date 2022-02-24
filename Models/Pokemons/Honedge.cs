@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Honedge(int level)
+		: base(
+				679,
+				SpecieHonedge.Instance, // Pokemon Specie
+				"Honedge", level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Honedge() : base(
 			679,
 			SpecieHonedge.Instance, // Pokemon Specie

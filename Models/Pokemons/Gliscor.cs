@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gliscor(int level)
+		: base(
+				472,
+				SpecieGliscor.Instance, // Pokemon Specie
+				"Gliscor", level,
+				Ground.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gliscor() : base(
 			472,
 			SpecieGliscor.Instance, // Pokemon Specie

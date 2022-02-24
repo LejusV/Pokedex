@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grimmsnarl(int level)
+		: base(
+				861,
+				SpecieGrimmsnarl.Instance, // Pokemon Specie
+				"Grimmsnarl", level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grimmsnarl() : base(
 			861,
 			SpecieGrimmsnarl.Instance, // Pokemon Specie

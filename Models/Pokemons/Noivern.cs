@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Noivern(int level)
+		: base(
+				715,
+				SpecieNoivern.Instance, // Pokemon Specie
+				"Noivern", level,
+				Flying.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Noivern() : base(
 			715,
 			SpecieNoivern.Instance, // Pokemon Specie

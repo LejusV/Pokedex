@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lunala(int level)
+		: base(
+				792,
+				SpecieLunala.Instance, // Pokemon Specie
+				"Lunala", level,
+				Psychic.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lunala() : base(
 			792,
 			SpecieLunala.Instance, // Pokemon Specie

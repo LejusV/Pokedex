@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public GourgeistAverage(int level)
+		: base(
+				711,
+				SpecieGourgeistAverage.Instance, // Pokemon Specie
+				"Gourgeist-Average", level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public GourgeistAverage() : base(
 			711,
 			SpecieGourgeistAverage.Instance, // Pokemon Specie

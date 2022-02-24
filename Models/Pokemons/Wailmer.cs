@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wailmer(int level)
+		: base(
+				320,
+				SpecieWailmer.Instance, // Pokemon Specie
+				"Wailmer", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wailmer() : base(
 			320,
 			SpecieWailmer.Instance, // Pokemon Specie

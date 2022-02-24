@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stoutland(int level)
+		: base(
+				508,
+				SpecieStoutland.Instance, // Pokemon Specie
+				"Stoutland", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stoutland() : base(
 			508,
 			SpecieStoutland.Instance, // Pokemon Specie

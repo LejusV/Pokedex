@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Charizard(int level)
+		: base(
+				6,
+				SpecieCharizard.Instance, // Pokemon Specie
+				"Charizard", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Charizard() : base(
 			6,
 			SpecieCharizard.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Reshiram(int level)
+		: base(
+				643,
+				SpecieReshiram.Instance, // Pokemon Specie
+				"Reshiram", level,
+				Dragon.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Reshiram() : base(
 			643,
 			SpecieReshiram.Instance, // Pokemon Specie

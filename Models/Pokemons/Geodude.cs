@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Geodude(int level)
+		: base(
+				74,
+				SpecieGeodude.Instance, // Pokemon Specie
+				"Geodude", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Geodude() : base(
 			74,
 			SpecieGeodude.Instance, // Pokemon Specie

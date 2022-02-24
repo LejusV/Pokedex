@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Regirock(int level)
+		: base(
+				377,
+				SpecieRegirock.Instance, // Pokemon Specie
+				"Regirock", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Regirock() : base(
 			377,
 			SpecieRegirock.Instance, // Pokemon Specie

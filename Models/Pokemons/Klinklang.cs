@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Klinklang(int level)
+		: base(
+				601,
+				SpecieKlinklang.Instance, // Pokemon Specie
+				"Klinklang", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Klinklang() : base(
 			601,
 			SpecieKlinklang.Instance, // Pokemon Specie

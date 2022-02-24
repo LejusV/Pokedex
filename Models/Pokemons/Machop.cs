@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Machop(int level)
+		: base(
+				66,
+				SpecieMachop.Instance, // Pokemon Specie
+				"Machop", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Machop() : base(
 			66,
 			SpecieMachop.Instance, // Pokemon Specie

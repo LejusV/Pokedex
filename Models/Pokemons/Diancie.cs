@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Diancie(int level)
+		: base(
+				719,
+				SpecieDiancie.Instance, // Pokemon Specie
+				"Diancie", level,
+				Rock.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Diancie() : base(
 			719,
 			SpecieDiancie.Instance, // Pokemon Specie

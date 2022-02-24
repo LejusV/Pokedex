@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cramorant(int level)
+		: base(
+				845,
+				SpecieCramorant.Instance, // Pokemon Specie
+				"Cramorant", level,
+				Flying.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cramorant() : base(
 			845,
 			SpecieCramorant.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Staravia(int level)
+		: base(
+				397,
+				SpecieStaravia.Instance, // Pokemon Specie
+				"Staravia", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Staravia() : base(
 			397,
 			SpecieStaravia.Instance, // Pokemon Specie

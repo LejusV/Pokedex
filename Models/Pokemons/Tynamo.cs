@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tynamo(int level)
+		: base(
+				602,
+				SpecieTynamo.Instance, // Pokemon Specie
+				"Tynamo", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tynamo() : base(
 			602,
 			SpecieTynamo.Instance, // Pokemon Specie

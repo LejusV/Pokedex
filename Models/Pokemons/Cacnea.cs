@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cacnea(int level)
+		: base(
+				331,
+				SpecieCacnea.Instance, // Pokemon Specie
+				"Cacnea", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cacnea() : base(
 			331,
 			SpecieCacnea.Instance, // Pokemon Specie

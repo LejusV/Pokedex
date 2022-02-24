@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Charmander(int level)
+		: base(
+				4,
+				SpecieCharmander.Instance, // Pokemon Specie
+				"Charmander", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Charmander() : base(
 			4,
 			SpecieCharmander.Instance, // Pokemon Specie

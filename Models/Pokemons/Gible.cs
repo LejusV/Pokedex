@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gible(int level)
+		: base(
+				443,
+				SpecieGible.Instance, // Pokemon Specie
+				"Gible", level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gible() : base(
 			443,
 			SpecieGible.Instance, // Pokemon Specie

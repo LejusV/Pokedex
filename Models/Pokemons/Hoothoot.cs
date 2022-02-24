@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hoothoot(int level)
+		: base(
+				163,
+				SpecieHoothoot.Instance, // Pokemon Specie
+				"Hoothoot", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hoothoot() : base(
 			163,
 			SpecieHoothoot.Instance, // Pokemon Specie

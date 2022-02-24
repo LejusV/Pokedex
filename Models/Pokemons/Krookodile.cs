@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Krookodile(int level)
+		: base(
+				553,
+				SpecieKrookodile.Instance, // Pokemon Specie
+				"Krookodile", level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Krookodile() : base(
 			553,
 			SpecieKrookodile.Instance, // Pokemon Specie

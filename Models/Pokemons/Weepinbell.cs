@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Weepinbell(int level)
+		: base(
+				70,
+				SpecieWeepinbell.Instance, // Pokemon Specie
+				"Weepinbell", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Weepinbell() : base(
 			70,
 			SpecieWeepinbell.Instance, // Pokemon Specie

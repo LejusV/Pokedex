@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shinx(int level)
+		: base(
+				403,
+				SpecieShinx.Instance, // Pokemon Specie
+				"Shinx", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shinx() : base(
 			403,
 			SpecieShinx.Instance, // Pokemon Specie

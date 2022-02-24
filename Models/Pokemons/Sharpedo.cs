@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sharpedo(int level)
+		: base(
+				319,
+				SpecieSharpedo.Instance, // Pokemon Specie
+				"Sharpedo", level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sharpedo() : base(
 			319,
 			SpecieSharpedo.Instance, // Pokemon Specie

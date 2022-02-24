@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Machamp(int level)
+		: base(
+				68,
+				SpecieMachamp.Instance, // Pokemon Specie
+				"Machamp", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Machamp() : base(
 			68,
 			SpecieMachamp.Instance, // Pokemon Specie

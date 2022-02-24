@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sunkern(int level)
+		: base(
+				191,
+				SpecieSunkern.Instance, // Pokemon Specie
+				"Sunkern", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sunkern() : base(
 			191,
 			SpecieSunkern.Instance, // Pokemon Specie

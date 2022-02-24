@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arrokuda(int level)
+		: base(
+				846,
+				SpecieArrokuda.Instance, // Pokemon Specie
+				"Arrokuda", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arrokuda() : base(
 			846,
 			SpecieArrokuda.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Croagunk(int level)
+		: base(
+				453,
+				SpecieCroagunk.Instance, // Pokemon Specie
+				"Croagunk", level,
+				Poison.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Croagunk() : base(
 			453,
 			SpecieCroagunk.Instance, // Pokemon Specie

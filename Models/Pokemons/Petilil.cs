@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Petilil(int level)
+		: base(
+				548,
+				SpeciePetilil.Instance, // Pokemon Specie
+				"Petilil", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Petilil() : base(
 			548,
 			SpeciePetilil.Instance, // Pokemon Specie

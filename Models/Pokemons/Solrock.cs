@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Solrock(int level)
+		: base(
+				338,
+				SpecieSolrock.Instance, // Pokemon Specie
+				"Solrock", level,
+				Rock.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Solrock() : base(
 			338,
 			SpecieSolrock.Instance, // Pokemon Specie

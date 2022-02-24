@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Druddigon(int level)
+		: base(
+				621,
+				SpecieDruddigon.Instance, // Pokemon Specie
+				"Druddigon", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Druddigon() : base(
 			621,
 			SpecieDruddigon.Instance, // Pokemon Specie

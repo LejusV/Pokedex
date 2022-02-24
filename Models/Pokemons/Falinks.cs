@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Falinks(int level)
+		: base(
+				870,
+				SpecieFalinks.Instance, // Pokemon Specie
+				"Falinks", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Falinks() : base(
 			870,
 			SpecieFalinks.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Salazzle(int level)
+		: base(
+				758,
+				SpecieSalazzle.Instance, // Pokemon Specie
+				"Salazzle", level,
+				Poison.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Salazzle() : base(
 			758,
 			SpecieSalazzle.Instance, // Pokemon Specie

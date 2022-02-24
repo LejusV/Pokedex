@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cottonee(int level)
+		: base(
+				546,
+				SpecieCottonee.Instance, // Pokemon Specie
+				"Cottonee", level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cottonee() : base(
 			546,
 			SpecieCottonee.Instance, // Pokemon Specie

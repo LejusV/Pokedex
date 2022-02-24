@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golett(int level)
+		: base(
+				622,
+				SpecieGolett.Instance, // Pokemon Specie
+				"Golett", level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golett() : base(
 			622,
 			SpecieGolett.Instance, // Pokemon Specie

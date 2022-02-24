@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Smoochum(int level)
+		: base(
+				238,
+				SpecieSmoochum.Instance, // Pokemon Specie
+				"Smoochum", level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Smoochum() : base(
 			238,
 			SpecieSmoochum.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Inteleon(int level)
+		: base(
+				818,
+				SpecieInteleon.Instance, // Pokemon Specie
+				"Inteleon", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Inteleon() : base(
 			818,
 			SpecieInteleon.Instance, // Pokemon Specie

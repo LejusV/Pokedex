@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chinchou(int level)
+		: base(
+				170,
+				SpecieChinchou.Instance, // Pokemon Specie
+				"Chinchou", level,
+				Water.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chinchou() : base(
 			170,
 			SpecieChinchou.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ninjask(int level)
+		: base(
+				291,
+				SpecieNinjask.Instance, // Pokemon Specie
+				"Ninjask", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ninjask() : base(
 			291,
 			SpecieNinjask.Instance, // Pokemon Specie

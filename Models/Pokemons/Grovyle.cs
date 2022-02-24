@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grovyle(int level)
+		: base(
+				253,
+				SpecieGrovyle.Instance, // Pokemon Specie
+				"Grovyle", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grovyle() : base(
 			253,
 			SpecieGrovyle.Instance, // Pokemon Specie

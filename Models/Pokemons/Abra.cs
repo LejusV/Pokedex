@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Abra(int level)
+		: base(
+				63,
+				SpecieAbra.Instance, // Pokemon Specie
+				"Abra", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Abra() : base(
 			63,
 			SpecieAbra.Instance, // Pokemon Specie

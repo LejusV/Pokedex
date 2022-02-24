@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clefairy(int level)
+		: base(
+				35,
+				SpecieClefairy.Instance, // Pokemon Specie
+				"Clefairy", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clefairy() : base(
 			35,
 			SpecieClefairy.Instance, // Pokemon Specie

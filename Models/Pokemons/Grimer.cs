@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grimer(int level)
+		: base(
+				88,
+				SpecieGrimer.Instance, // Pokemon Specie
+				"Grimer", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grimer() : base(
 			88,
 			SpecieGrimer.Instance, // Pokemon Specie

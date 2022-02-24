@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skrelp(int level)
+		: base(
+				690,
+				SpecieSkrelp.Instance, // Pokemon Specie
+				"Skrelp", level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skrelp() : base(
 			690,
 			SpecieSkrelp.Instance, // Pokemon Specie

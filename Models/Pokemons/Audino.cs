@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Audino(int level)
+		: base(
+				531,
+				SpecieAudino.Instance, // Pokemon Specie
+				"Audino", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Audino() : base(
 			531,
 			SpecieAudino.Instance, // Pokemon Specie

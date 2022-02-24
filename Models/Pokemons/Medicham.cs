@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Medicham(int level)
+		: base(
+				308,
+				SpecieMedicham.Instance, // Pokemon Specie
+				"Medicham", level,
+				Fighting.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Medicham() : base(
 			308,
 			SpecieMedicham.Instance, // Pokemon Specie

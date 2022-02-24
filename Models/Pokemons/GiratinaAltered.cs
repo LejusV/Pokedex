@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public GiratinaAltered(int level)
+		: base(
+				487,
+				SpecieGiratinaAltered.Instance, // Pokemon Specie
+				"Giratina-Altered", level,
+				Ghost.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public GiratinaAltered() : base(
 			487,
 			SpecieGiratinaAltered.Instance, // Pokemon Specie

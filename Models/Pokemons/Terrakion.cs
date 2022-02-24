@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Terrakion(int level)
+		: base(
+				639,
+				SpecieTerrakion.Instance, // Pokemon Specie
+				"Terrakion", level,
+				Rock.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Terrakion() : base(
 			639,
 			SpecieTerrakion.Instance, // Pokemon Specie

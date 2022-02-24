@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vaporeon(int level)
+		: base(
+				134,
+				SpecieVaporeon.Instance, // Pokemon Specie
+				"Vaporeon", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vaporeon() : base(
 			134,
 			SpecieVaporeon.Instance, // Pokemon Specie

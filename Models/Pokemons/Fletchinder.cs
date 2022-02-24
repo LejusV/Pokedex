@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fletchinder(int level)
+		: base(
+				662,
+				SpecieFletchinder.Instance, // Pokemon Specie
+				"Fletchinder", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fletchinder() : base(
 			662,
 			SpecieFletchinder.Instance, // Pokemon Specie

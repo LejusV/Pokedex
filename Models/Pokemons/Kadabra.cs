@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kadabra(int level)
+		: base(
+				64,
+				SpecieKadabra.Instance, // Pokemon Specie
+				"Kadabra", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kadabra() : base(
 			64,
 			SpecieKadabra.Instance, // Pokemon Specie

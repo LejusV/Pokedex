@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lopunny(int level)
+		: base(
+				428,
+				SpecieLopunny.Instance, // Pokemon Specie
+				"Lopunny", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lopunny() : base(
 			428,
 			SpecieLopunny.Instance, // Pokemon Specie

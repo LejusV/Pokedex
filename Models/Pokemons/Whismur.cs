@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Whismur(int level)
+		: base(
+				293,
+				SpecieWhismur.Instance, // Pokemon Specie
+				"Whismur", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Whismur() : base(
 			293,
 			SpecieWhismur.Instance, // Pokemon Specie

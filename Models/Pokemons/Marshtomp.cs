@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Marshtomp(int level)
+		: base(
+				259,
+				SpecieMarshtomp.Instance, // Pokemon Specie
+				"Marshtomp", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Marshtomp() : base(
 			259,
 			SpecieMarshtomp.Instance, // Pokemon Specie

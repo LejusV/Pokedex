@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public KommoO(int level)
+		: base(
+				784,
+				SpecieKommoO.Instance, // Pokemon Specie
+				"Kommo-O", level,
+				Dragon.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public KommoO() : base(
 			784,
 			SpecieKommoO.Instance, // Pokemon Specie

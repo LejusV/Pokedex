@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Regice(int level)
+		: base(
+				378,
+				SpecieRegice.Instance, // Pokemon Specie
+				"Regice", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Regice() : base(
 			378,
 			SpecieRegice.Instance, // Pokemon Specie

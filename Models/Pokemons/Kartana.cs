@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kartana(int level)
+		: base(
+				798,
+				SpecieKartana.Instance, // Pokemon Specie
+				"Kartana", level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kartana() : base(
 			798,
 			SpecieKartana.Instance, // Pokemon Specie

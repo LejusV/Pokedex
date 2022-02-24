@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Metapod(int level)
+		: base(
+				11,
+				SpecieMetapod.Instance, // Pokemon Specie
+				"Metapod", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Metapod() : base(
 			11,
 			SpecieMetapod.Instance, // Pokemon Specie

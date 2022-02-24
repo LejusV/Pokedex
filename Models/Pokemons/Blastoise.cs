@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blastoise(int level)
+		: base(
+				9,
+				SpecieBlastoise.Instance, // Pokemon Specie
+				"Blastoise", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blastoise() : base(
 			9,
 			SpecieBlastoise.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wartortle(int level)
+		: base(
+				8,
+				SpecieWartortle.Instance, // Pokemon Specie
+				"Wartortle", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wartortle() : base(
 			8,
 			SpecieWartortle.Instance, // Pokemon Specie

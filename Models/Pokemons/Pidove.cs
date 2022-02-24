@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pidove(int level)
+		: base(
+				519,
+				SpeciePidove.Instance, // Pokemon Specie
+				"Pidove", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pidove() : base(
 			519,
 			SpeciePidove.Instance, // Pokemon Specie

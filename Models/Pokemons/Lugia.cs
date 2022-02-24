@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lugia(int level)
+		: base(
+				249,
+				SpecieLugia.Instance, // Pokemon Specie
+				"Lugia", level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lugia() : base(
 			249,
 			SpecieLugia.Instance, // Pokemon Specie

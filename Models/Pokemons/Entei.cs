@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Entei(int level)
+		: base(
+				244,
+				SpecieEntei.Instance, // Pokemon Specie
+				"Entei", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Entei() : base(
 			244,
 			SpecieEntei.Instance, // Pokemon Specie

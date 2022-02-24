@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spiritomb(int level)
+		: base(
+				442,
+				SpecieSpiritomb.Instance, // Pokemon Specie
+				"Spiritomb", level,
+				Ghost.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spiritomb() : base(
 			442,
 			SpecieSpiritomb.Instance, // Pokemon Specie

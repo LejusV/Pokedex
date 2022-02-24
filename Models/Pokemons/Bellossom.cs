@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bellossom(int level)
+		: base(
+				182,
+				SpecieBellossom.Instance, // Pokemon Specie
+				"Bellossom", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bellossom() : base(
 			182,
 			SpecieBellossom.Instance, // Pokemon Specie

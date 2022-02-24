@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sewaddle(int level)
+		: base(
+				540,
+				SpecieSewaddle.Instance, // Pokemon Specie
+				"Sewaddle", level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sewaddle() : base(
 			540,
 			SpecieSewaddle.Instance, // Pokemon Specie

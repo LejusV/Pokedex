@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Carbink(int level)
+		: base(
+				703,
+				SpecieCarbink.Instance, // Pokemon Specie
+				"Carbink", level,
+				Rock.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Carbink() : base(
 			703,
 			SpecieCarbink.Instance, // Pokemon Specie

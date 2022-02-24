@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Camerupt(int level)
+		: base(
+				323,
+				SpecieCamerupt.Instance, // Pokemon Specie
+				"Camerupt", level,
+				Fire.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Camerupt() : base(
 			323,
 			SpecieCamerupt.Instance, // Pokemon Specie

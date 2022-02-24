@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Eelektrik(int level)
+		: base(
+				603,
+				SpecieEelektrik.Instance, // Pokemon Specie
+				"Eelektrik", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Eelektrik() : base(
 			603,
 			SpecieEelektrik.Instance, // Pokemon Specie

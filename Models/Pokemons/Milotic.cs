@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Milotic(int level)
+		: base(
+				350,
+				SpecieMilotic.Instance, // Pokemon Specie
+				"Milotic", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Milotic() : base(
 			350,
 			SpecieMilotic.Instance, // Pokemon Specie

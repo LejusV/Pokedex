@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chespin(int level)
+		: base(
+				650,
+				SpecieChespin.Instance, // Pokemon Specie
+				"Chespin", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chespin() : base(
 			650,
 			SpecieChespin.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snom(int level)
+		: base(
+				872,
+				SpecieSnom.Instance, // Pokemon Specie
+				"Snom", level,
+				Ice.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snom() : base(
 			872,
 			SpecieSnom.Instance, // Pokemon Specie

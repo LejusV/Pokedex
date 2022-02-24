@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Oddish(int level)
+		: base(
+				43,
+				SpecieOddish.Instance, // Pokemon Specie
+				"Oddish", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Oddish() : base(
 			43,
 			SpecieOddish.Instance, // Pokemon Specie

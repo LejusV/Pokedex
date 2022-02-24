@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scyther(int level)
+		: base(
+				123,
+				SpecieScyther.Instance, // Pokemon Specie
+				"Scyther", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scyther() : base(
 			123,
 			SpecieScyther.Instance, // Pokemon Specie

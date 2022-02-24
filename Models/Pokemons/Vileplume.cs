@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vileplume(int level)
+		: base(
+				45,
+				SpecieVileplume.Instance, // Pokemon Specie
+				"Vileplume", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vileplume() : base(
 			45,
 			SpecieVileplume.Instance, // Pokemon Specie

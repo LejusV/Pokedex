@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magikarp(int level)
+		: base(
+				129,
+				SpecieMagikarp.Instance, // Pokemon Specie
+				"Magikarp", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magikarp() : base(
 			129,
 			SpecieMagikarp.Instance, // Pokemon Specie

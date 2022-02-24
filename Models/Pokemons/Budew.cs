@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Budew(int level)
+		: base(
+				406,
+				SpecieBudew.Instance, // Pokemon Specie
+				"Budew", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Budew() : base(
 			406,
 			SpecieBudew.Instance, // Pokemon Specie

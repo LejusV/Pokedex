@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Banette(int level)
+		: base(
+				354,
+				SpecieBanette.Instance, // Pokemon Specie
+				"Banette", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Banette() : base(
 			354,
 			SpecieBanette.Instance, // Pokemon Specie

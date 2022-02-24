@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Primeape(int level)
+		: base(
+				57,
+				SpeciePrimeape.Instance, // Pokemon Specie
+				"Primeape", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Primeape() : base(
 			57,
 			SpeciePrimeape.Instance, // Pokemon Specie

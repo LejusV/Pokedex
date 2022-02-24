@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public JangmoO(int level)
+		: base(
+				782,
+				SpecieJangmoO.Instance, // Pokemon Specie
+				"Jangmo-O", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public JangmoO() : base(
 			782,
 			SpecieJangmoO.Instance, // Pokemon Specie

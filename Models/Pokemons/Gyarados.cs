@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gyarados(int level)
+		: base(
+				130,
+				SpecieGyarados.Instance, // Pokemon Specie
+				"Gyarados", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gyarados() : base(
 			130,
 			SpecieGyarados.Instance, // Pokemon Specie

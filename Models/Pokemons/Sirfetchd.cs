@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sirfetchd(int level)
+		: base(
+				865,
+				SpecieSirfetchd.Instance, // Pokemon Specie
+				"Sirfetchd", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sirfetchd() : base(
 			865,
 			SpecieSirfetchd.Instance, // Pokemon Specie

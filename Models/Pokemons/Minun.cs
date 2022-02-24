@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Minun(int level)
+		: base(
+				312,
+				SpecieMinun.Instance, // Pokemon Specie
+				"Minun", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Minun() : base(
 			312,
 			SpecieMinun.Instance, // Pokemon Specie

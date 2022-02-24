@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Breloom(int level)
+		: base(
+				286,
+				SpecieBreloom.Instance, // Pokemon Specie
+				"Breloom", level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Breloom() : base(
 			286,
 			SpecieBreloom.Instance, // Pokemon Specie

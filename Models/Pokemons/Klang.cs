@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Klang(int level)
+		: base(
+				600,
+				SpecieKlang.Instance, // Pokemon Specie
+				"Klang", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Klang() : base(
 			600,
 			SpecieKlang.Instance, // Pokemon Specie

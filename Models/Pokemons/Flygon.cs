@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Flygon(int level)
+		: base(
+				330,
+				SpecieFlygon.Instance, // Pokemon Specie
+				"Flygon", level,
+				Ground.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Flygon() : base(
 			330,
 			SpecieFlygon.Instance, // Pokemon Specie

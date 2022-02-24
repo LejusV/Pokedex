@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Azelf(int level)
+		: base(
+				482,
+				SpecieAzelf.Instance, // Pokemon Specie
+				"Azelf", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Azelf() : base(
 			482,
 			SpecieAzelf.Instance, // Pokemon Specie

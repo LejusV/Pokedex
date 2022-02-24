@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zygarde(int level)
+		: base(
+				718,
+				SpecieZygarde.Instance, // Pokemon Specie
+				"Zygarde", level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zygarde() : base(
 			718,
 			SpecieZygarde.Instance, // Pokemon Specie

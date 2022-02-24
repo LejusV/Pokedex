@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stunky(int level)
+		: base(
+				434,
+				SpecieStunky.Instance, // Pokemon Specie
+				"Stunky", level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stunky() : base(
 			434,
 			SpecieStunky.Instance, // Pokemon Specie

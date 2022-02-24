@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Natu(int level)
+		: base(
+				177,
+				SpecieNatu.Instance, // Pokemon Specie
+				"Natu", level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Natu() : base(
 			177,
 			SpecieNatu.Instance, // Pokemon Specie

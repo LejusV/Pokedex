@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pangoro(int level)
+		: base(
+				675,
+				SpeciePangoro.Instance, // Pokemon Specie
+				"Pangoro", level,
+				Fighting.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pangoro() : base(
 			675,
 			SpeciePangoro.Instance, // Pokemon Specie

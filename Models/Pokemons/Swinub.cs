@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swinub(int level)
+		: base(
+				220,
+				SpecieSwinub.Instance, // Pokemon Specie
+				"Swinub", level,
+				Ice.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swinub() : base(
 			220,
 			SpecieSwinub.Instance, // Pokemon Specie

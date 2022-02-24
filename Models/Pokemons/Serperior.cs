@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Serperior(int level)
+		: base(
+				497,
+				SpecieSerperior.Instance, // Pokemon Specie
+				"Serperior", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Serperior() : base(
 			497,
 			SpecieSerperior.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hatenna(int level)
+		: base(
+				856,
+				SpecieHatenna.Instance, // Pokemon Specie
+				"Hatenna", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hatenna() : base(
 			856,
 			SpecieHatenna.Instance, // Pokemon Specie

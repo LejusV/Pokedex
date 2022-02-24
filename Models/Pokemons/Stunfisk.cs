@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stunfisk(int level)
+		: base(
+				618,
+				SpecieStunfisk.Instance, // Pokemon Specie
+				"Stunfisk", level,
+				Ground.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stunfisk() : base(
 			618,
 			SpecieStunfisk.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tyrantrum(int level)
+		: base(
+				697,
+				SpecieTyrantrum.Instance, // Pokemon Specie
+				"Tyrantrum", level,
+				Rock.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tyrantrum() : base(
 			697,
 			SpecieTyrantrum.Instance, // Pokemon Specie

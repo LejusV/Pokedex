@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cobalion(int level)
+		: base(
+				638,
+				SpecieCobalion.Instance, // Pokemon Specie
+				"Cobalion", level,
+				Steel.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cobalion() : base(
 			638,
 			SpecieCobalion.Instance, // Pokemon Specie

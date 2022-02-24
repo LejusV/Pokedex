@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Illumise(int level)
+		: base(
+				314,
+				SpecieIllumise.Instance, // Pokemon Specie
+				"Illumise", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Illumise() : base(
 			314,
 			SpecieIllumise.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pignite(int level)
+		: base(
+				499,
+				SpeciePignite.Instance, // Pokemon Specie
+				"Pignite", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pignite() : base(
 			499,
 			SpeciePignite.Instance, // Pokemon Specie

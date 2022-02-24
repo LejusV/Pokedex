@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cinccino(int level)
+		: base(
+				573,
+				SpecieCinccino.Instance, // Pokemon Specie
+				"Cinccino", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cinccino() : base(
 			573,
 			SpecieCinccino.Instance, // Pokemon Specie

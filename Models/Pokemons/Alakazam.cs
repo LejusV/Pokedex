@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Alakazam(int level)
+		: base(
+				65,
+				SpecieAlakazam.Instance, // Pokemon Specie
+				"Alakazam", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Alakazam() : base(
 			65,
 			SpecieAlakazam.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Greedent(int level)
+		: base(
+				820,
+				SpecieGreedent.Instance, // Pokemon Specie
+				"Greedent", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Greedent() : base(
 			820,
 			SpecieGreedent.Instance, // Pokemon Specie

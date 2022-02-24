@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cosmoem(int level)
+		: base(
+				790,
+				SpecieCosmoem.Instance, // Pokemon Specie
+				"Cosmoem", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cosmoem() : base(
 			790,
 			SpecieCosmoem.Instance, // Pokemon Specie

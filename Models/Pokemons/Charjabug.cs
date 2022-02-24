@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Charjabug(int level)
+		: base(
+				737,
+				SpecieCharjabug.Instance, // Pokemon Specie
+				"Charjabug", level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Charjabug() : base(
 			737,
 			SpecieCharjabug.Instance, // Pokemon Specie

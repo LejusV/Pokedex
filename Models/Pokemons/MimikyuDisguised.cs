@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MimikyuDisguised(int level)
+		: base(
+				778,
+				SpecieMimikyuDisguised.Instance, // Pokemon Specie
+				"Mimikyu-Disguised", level,
+				Ghost.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MimikyuDisguised() : base(
 			778,
 			SpecieMimikyuDisguised.Instance, // Pokemon Specie

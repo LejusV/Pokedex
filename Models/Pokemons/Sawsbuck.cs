@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sawsbuck(int level)
+		: base(
+				586,
+				SpecieSawsbuck.Instance, // Pokemon Specie
+				"Sawsbuck", level,
+				Normal.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sawsbuck() : base(
 			586,
 			SpecieSawsbuck.Instance, // Pokemon Specie

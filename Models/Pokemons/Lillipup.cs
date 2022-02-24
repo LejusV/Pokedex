@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lillipup(int level)
+		: base(
+				506,
+				SpecieLillipup.Instance, // Pokemon Specie
+				"Lillipup", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lillipup() : base(
 			506,
 			SpecieLillipup.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skiploom(int level)
+		: base(
+				188,
+				SpecieSkiploom.Instance, // Pokemon Specie
+				"Skiploom", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skiploom() : base(
 			188,
 			SpecieSkiploom.Instance, // Pokemon Specie

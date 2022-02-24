@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hoppip(int level)
+		: base(
+				187,
+				SpecieHoppip.Instance, // Pokemon Specie
+				"Hoppip", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hoppip() : base(
 			187,
 			SpecieHoppip.Instance, // Pokemon Specie

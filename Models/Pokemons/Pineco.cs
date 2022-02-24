@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pineco(int level)
+		: base(
+				204,
+				SpeciePineco.Instance, // Pokemon Specie
+				"Pineco", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pineco() : base(
 			204,
 			SpeciePineco.Instance, // Pokemon Specie

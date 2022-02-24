@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Torchic(int level)
+		: base(
+				255,
+				SpecieTorchic.Instance, // Pokemon Specie
+				"Torchic", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Torchic() : base(
 			255,
 			SpecieTorchic.Instance, // Pokemon Specie

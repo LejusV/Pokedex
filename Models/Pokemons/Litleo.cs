@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Litleo(int level)
+		: base(
+				667,
+				SpecieLitleo.Instance, // Pokemon Specie
+				"Litleo", level,
+				Fire.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Litleo() : base(
 			667,
 			SpecieLitleo.Instance, // Pokemon Specie

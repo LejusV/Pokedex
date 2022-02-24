@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public DarmanitanStandard(int level)
+		: base(
+				555,
+				SpecieDarmanitanStandard.Instance, // Pokemon Specie
+				"Darmanitan-Standard", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public DarmanitanStandard() : base(
 			555,
 			SpecieDarmanitanStandard.Instance, // Pokemon Specie

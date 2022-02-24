@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lucario(int level)
+		: base(
+				448,
+				SpecieLucario.Instance, // Pokemon Specie
+				"Lucario", level,
+				Fighting.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lucario() : base(
 			448,
 			SpecieLucario.Instance, // Pokemon Specie

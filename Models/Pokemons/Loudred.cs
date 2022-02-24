@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Loudred(int level)
+		: base(
+				294,
+				SpecieLoudred.Instance, // Pokemon Specie
+				"Loudred", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Loudred() : base(
 			294,
 			SpecieLoudred.Instance, // Pokemon Specie

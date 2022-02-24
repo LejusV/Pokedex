@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Electabuzz(int level)
+		: base(
+				125,
+				SpecieElectabuzz.Instance, // Pokemon Specie
+				"Electabuzz", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Electabuzz() : base(
 			125,
 			SpecieElectabuzz.Instance, // Pokemon Specie

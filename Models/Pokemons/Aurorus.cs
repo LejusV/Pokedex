@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aurorus(int level)
+		: base(
+				699,
+				SpecieAurorus.Instance, // Pokemon Specie
+				"Aurorus", level,
+				Rock.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aurorus() : base(
 			699,
 			SpecieAurorus.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Combee(int level)
+		: base(
+				415,
+				SpecieCombee.Instance, // Pokemon Specie
+				"Combee", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Combee() : base(
 			415,
 			SpecieCombee.Instance, // Pokemon Specie

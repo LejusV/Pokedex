@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tyrogue(int level)
+		: base(
+				236,
+				SpecieTyrogue.Instance, // Pokemon Specie
+				"Tyrogue", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tyrogue() : base(
 			236,
 			SpecieTyrogue.Instance, // Pokemon Specie

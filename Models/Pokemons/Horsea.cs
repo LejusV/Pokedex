@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Horsea(int level)
+		: base(
+				116,
+				SpecieHorsea.Instance, // Pokemon Specie
+				"Horsea", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Horsea() : base(
 			116,
 			SpecieHorsea.Instance, // Pokemon Specie

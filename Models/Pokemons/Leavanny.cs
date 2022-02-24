@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Leavanny(int level)
+		: base(
+				542,
+				SpecieLeavanny.Instance, // Pokemon Specie
+				"Leavanny", level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Leavanny() : base(
 			542,
 			SpecieLeavanny.Instance, // Pokemon Specie

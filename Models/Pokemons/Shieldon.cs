@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shieldon(int level)
+		: base(
+				410,
+				SpecieShieldon.Instance, // Pokemon Specie
+				"Shieldon", level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shieldon() : base(
 			410,
 			SpecieShieldon.Instance, // Pokemon Specie

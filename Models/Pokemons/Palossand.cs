@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Palossand(int level)
+		: base(
+				770,
+				SpeciePalossand.Instance, // Pokemon Specie
+				"Palossand", level,
+				Ghost.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Palossand() : base(
 			770,
 			SpeciePalossand.Instance, // Pokemon Specie

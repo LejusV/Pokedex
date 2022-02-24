@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shellder(int level)
+		: base(
+				90,
+				SpecieShellder.Instance, // Pokemon Specie
+				"Shellder", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shellder() : base(
 			90,
 			SpecieShellder.Instance, // Pokemon Specie

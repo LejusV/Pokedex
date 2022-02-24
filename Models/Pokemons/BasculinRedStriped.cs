@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public BasculinRedStriped(int level)
+		: base(
+				550,
+				SpecieBasculinRedStriped.Instance, // Pokemon Specie
+				"Basculin-Red-Striped", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public BasculinRedStriped() : base(
 			550,
 			SpecieBasculinRedStriped.Instance, // Pokemon Specie

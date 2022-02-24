@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mamoswine(int level)
+		: base(
+				473,
+				SpecieMamoswine.Instance, // Pokemon Specie
+				"Mamoswine", level,
+				Ice.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mamoswine() : base(
 			473,
 			SpecieMamoswine.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Appletun(int level)
+		: base(
+				842,
+				SpecieAppletun.Instance, // Pokemon Specie
+				"Appletun", level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Appletun() : base(
 			842,
 			SpecieAppletun.Instance, // Pokemon Specie

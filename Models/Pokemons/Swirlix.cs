@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swirlix(int level)
+		: base(
+				684,
+				SpecieSwirlix.Instance, // Pokemon Specie
+				"Swirlix", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swirlix() : base(
 			684,
 			SpecieSwirlix.Instance, // Pokemon Specie

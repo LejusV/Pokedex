@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jigglypuff(int level)
+		: base(
+				39,
+				SpecieJigglypuff.Instance, // Pokemon Specie
+				"Jigglypuff", level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jigglypuff() : base(
 			39,
 			SpecieJigglypuff.Instance, // Pokemon Specie

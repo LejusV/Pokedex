@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cyndaquil(int level)
+		: base(
+				155,
+				SpecieCyndaquil.Instance, // Pokemon Specie
+				"Cyndaquil", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cyndaquil() : base(
 			155,
 			SpecieCyndaquil.Instance, // Pokemon Specie

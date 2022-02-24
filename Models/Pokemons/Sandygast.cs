@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sandygast(int level)
+		: base(
+				769,
+				SpecieSandygast.Instance, // Pokemon Specie
+				"Sandygast", level,
+				Ghost.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sandygast() : base(
 			769,
 			SpecieSandygast.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hatterene(int level)
+		: base(
+				858,
+				SpecieHatterene.Instance, // Pokemon Specie
+				"Hatterene", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hatterene() : base(
 			858,
 			SpecieHatterene.Instance, // Pokemon Specie

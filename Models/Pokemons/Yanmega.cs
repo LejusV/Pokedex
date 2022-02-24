@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Yanmega(int level)
+		: base(
+				469,
+				SpecieYanmega.Instance, // Pokemon Specie
+				"Yanmega", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Yanmega() : base(
 			469,
 			SpecieYanmega.Instance, // Pokemon Specie

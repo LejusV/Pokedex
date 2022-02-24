@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Turtwig(int level)
+		: base(
+				387,
+				SpecieTurtwig.Instance, // Pokemon Specie
+				"Turtwig", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Turtwig() : base(
 			387,
 			SpecieTurtwig.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zorua(int level)
+		: base(
+				570,
+				SpecieZorua.Instance, // Pokemon Specie
+				"Zorua", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zorua() : base(
 			570,
 			SpecieZorua.Instance, // Pokemon Specie

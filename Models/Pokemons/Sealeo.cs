@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sealeo(int level)
+		: base(
+				364,
+				SpecieSealeo.Instance, // Pokemon Specie
+				"Sealeo", level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sealeo() : base(
 			364,
 			SpecieSealeo.Instance, // Pokemon Specie

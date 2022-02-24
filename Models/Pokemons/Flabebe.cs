@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Flabebe(int level)
+		: base(
+				669,
+				SpecieFlabebe.Instance, // Pokemon Specie
+				"Flabebe", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Flabebe() : base(
 			669,
 			SpecieFlabebe.Instance, // Pokemon Specie

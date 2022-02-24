@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ralts(int level)
+		: base(
+				280,
+				SpecieRalts.Instance, // Pokemon Specie
+				"Ralts", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ralts() : base(
 			280,
 			SpecieRalts.Instance, // Pokemon Specie

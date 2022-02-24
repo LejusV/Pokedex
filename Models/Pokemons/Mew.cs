@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mew(int level)
+		: base(
+				151,
+				SpecieMew.Instance, // Pokemon Specie
+				"Mew", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mew() : base(
 			151,
 			SpecieMew.Instance, // Pokemon Specie

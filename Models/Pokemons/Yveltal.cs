@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Yveltal(int level)
+		: base(
+				717,
+				SpecieYveltal.Instance, // Pokemon Specie
+				"Yveltal", level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Yveltal() : base(
 			717,
 			SpecieYveltal.Instance, // Pokemon Specie

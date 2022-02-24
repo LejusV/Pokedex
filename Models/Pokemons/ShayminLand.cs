@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public ShayminLand(int level)
+		: base(
+				492,
+				SpecieShayminLand.Instance, // Pokemon Specie
+				"Shaymin-Land", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public ShayminLand() : base(
 			492,
 			SpecieShayminLand.Instance, // Pokemon Specie

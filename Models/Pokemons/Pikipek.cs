@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pikipek(int level)
+		: base(
+				731,
+				SpeciePikipek.Instance, // Pokemon Specie
+				"Pikipek", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pikipek() : base(
 			731,
 			SpeciePikipek.Instance, // Pokemon Specie

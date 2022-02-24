@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pinsir(int level)
+		: base(
+				127,
+				SpeciePinsir.Instance, // Pokemon Specie
+				"Pinsir", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pinsir() : base(
 			127,
 			SpeciePinsir.Instance, // Pokemon Specie

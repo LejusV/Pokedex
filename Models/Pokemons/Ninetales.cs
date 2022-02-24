@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ninetales(int level)
+		: base(
+				38,
+				SpecieNinetales.Instance, // Pokemon Specie
+				"Ninetales", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ninetales() : base(
 			38,
 			SpecieNinetales.Instance, // Pokemon Specie

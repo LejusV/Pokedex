@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Feebas(int level)
+		: base(
+				349,
+				SpecieFeebas.Instance, // Pokemon Specie
+				"Feebas", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Feebas() : base(
 			349,
 			SpecieFeebas.Instance, // Pokemon Specie

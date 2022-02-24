@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drifblim(int level)
+		: base(
+				426,
+				SpecieDrifblim.Instance, // Pokemon Specie
+				"Drifblim", level,
+				Ghost.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drifblim() : base(
 			426,
 			SpecieDrifblim.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scatterbug(int level)
+		: base(
+				664,
+				SpecieScatterbug.Instance, // Pokemon Specie
+				"Scatterbug", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scatterbug() : base(
 			664,
 			SpecieScatterbug.Instance, // Pokemon Specie

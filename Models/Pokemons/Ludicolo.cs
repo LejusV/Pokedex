@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ludicolo(int level)
+		: base(
+				272,
+				SpecieLudicolo.Instance, // Pokemon Specie
+				"Ludicolo", level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ludicolo() : base(
 			272,
 			SpecieLudicolo.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shelgon(int level)
+		: base(
+				372,
+				SpecieShelgon.Instance, // Pokemon Specie
+				"Shelgon", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shelgon() : base(
 			372,
 			SpecieShelgon.Instance, // Pokemon Specie

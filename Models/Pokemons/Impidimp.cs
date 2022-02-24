@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Impidimp(int level)
+		: base(
+				859,
+				SpecieImpidimp.Instance, // Pokemon Specie
+				"Impidimp", level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Impidimp() : base(
 			859,
 			SpecieImpidimp.Instance, // Pokemon Specie

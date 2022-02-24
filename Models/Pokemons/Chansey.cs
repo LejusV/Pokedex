@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chansey(int level)
+		: base(
+				113,
+				SpecieChansey.Instance, // Pokemon Specie
+				"Chansey", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chansey() : base(
 			113,
 			SpecieChansey.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vikavolt(int level)
+		: base(
+				738,
+				SpecieVikavolt.Instance, // Pokemon Specie
+				"Vikavolt", level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vikavolt() : base(
 			738,
 			SpecieVikavolt.Instance, // Pokemon Specie

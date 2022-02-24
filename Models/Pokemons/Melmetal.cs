@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Melmetal(int level)
+		: base(
+				809,
+				SpecieMelmetal.Instance, // Pokemon Specie
+				"Melmetal", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Melmetal() : base(
 			809,
 			SpecieMelmetal.Instance, // Pokemon Specie

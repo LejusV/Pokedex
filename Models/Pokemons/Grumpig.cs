@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Grumpig(int level)
+		: base(
+				326,
+				SpecieGrumpig.Instance, // Pokemon Specie
+				"Grumpig", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Grumpig() : base(
 			326,
 			SpecieGrumpig.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chandelure(int level)
+		: base(
+				609,
+				SpecieChandelure.Instance, // Pokemon Specie
+				"Chandelure", level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chandelure() : base(
 			609,
 			SpecieChandelure.Instance, // Pokemon Specie

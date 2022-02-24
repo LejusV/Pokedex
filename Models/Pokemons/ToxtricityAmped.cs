@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public ToxtricityAmped(int level)
+		: base(
+				849,
+				SpecieToxtricityAmped.Instance, // Pokemon Specie
+				"Toxtricity-Amped", level,
+				Electric.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public ToxtricityAmped() : base(
 			849,
 			SpecieToxtricityAmped.Instance, // Pokemon Specie

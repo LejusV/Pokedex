@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wobbuffet(int level)
+		: base(
+				202,
+				SpecieWobbuffet.Instance, // Pokemon Specie
+				"Wobbuffet", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wobbuffet() : base(
 			202,
 			SpecieWobbuffet.Instance, // Pokemon Specie

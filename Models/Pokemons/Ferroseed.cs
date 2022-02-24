@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ferroseed(int level)
+		: base(
+				597,
+				SpecieFerroseed.Instance, // Pokemon Specie
+				"Ferroseed", level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ferroseed() : base(
 			597,
 			SpecieFerroseed.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Marowak(int level)
+		: base(
+				105,
+				SpecieMarowak.Instance, // Pokemon Specie
+				"Marowak", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Marowak() : base(
 			105,
 			SpecieMarowak.Instance, // Pokemon Specie

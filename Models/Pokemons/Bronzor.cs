@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bronzor(int level)
+		: base(
+				436,
+				SpecieBronzor.Instance, // Pokemon Specie
+				"Bronzor", level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bronzor() : base(
 			436,
 			SpecieBronzor.Instance, // Pokemon Specie

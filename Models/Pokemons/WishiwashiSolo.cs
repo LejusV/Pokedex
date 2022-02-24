@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public WishiwashiSolo(int level)
+		: base(
+				746,
+				SpecieWishiwashiSolo.Instance, // Pokemon Specie
+				"Wishiwashi-Solo", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public WishiwashiSolo() : base(
 			746,
 			SpecieWishiwashiSolo.Instance, // Pokemon Specie

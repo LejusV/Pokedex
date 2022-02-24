@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Omastar(int level)
+		: base(
+				139,
+				SpecieOmastar.Instance, // Pokemon Specie
+				"Omastar", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Omastar() : base(
 			139,
 			SpecieOmastar.Instance, // Pokemon Specie

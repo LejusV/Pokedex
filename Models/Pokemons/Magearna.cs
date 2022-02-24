@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magearna(int level)
+		: base(
+				801,
+				SpecieMagearna.Instance, // Pokemon Specie
+				"Magearna", level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magearna() : base(
 			801,
 			SpecieMagearna.Instance, // Pokemon Specie

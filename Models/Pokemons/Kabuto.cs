@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kabuto(int level)
+		: base(
+				140,
+				SpecieKabuto.Instance, // Pokemon Specie
+				"Kabuto", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kabuto() : base(
 			140,
 			SpecieKabuto.Instance, // Pokemon Specie

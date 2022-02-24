@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drizzile(int level)
+		: base(
+				817,
+				SpecieDrizzile.Instance, // Pokemon Specie
+				"Drizzile", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drizzile() : base(
 			817,
 			SpecieDrizzile.Instance, // Pokemon Specie

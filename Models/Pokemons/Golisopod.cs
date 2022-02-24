@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golisopod(int level)
+		: base(
+				768,
+				SpecieGolisopod.Instance, // Pokemon Specie
+				"Golisopod", level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golisopod() : base(
 			768,
 			SpecieGolisopod.Instance, // Pokemon Specie

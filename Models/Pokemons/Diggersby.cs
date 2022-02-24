@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Diggersby(int level)
+		: base(
+				660,
+				SpecieDiggersby.Instance, // Pokemon Specie
+				"Diggersby", level,
+				Normal.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Diggersby() : base(
 			660,
 			SpecieDiggersby.Instance, // Pokemon Specie

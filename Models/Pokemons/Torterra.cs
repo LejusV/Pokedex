@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Torterra(int level)
+		: base(
+				389,
+				SpecieTorterra.Instance, // Pokemon Specie
+				"Torterra", level,
+				Grass.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Torterra() : base(
 			389,
 			SpecieTorterra.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rowlet(int level)
+		: base(
+				722,
+				SpecieRowlet.Instance, // Pokemon Specie
+				"Rowlet", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rowlet() : base(
 			722,
 			SpecieRowlet.Instance, // Pokemon Specie

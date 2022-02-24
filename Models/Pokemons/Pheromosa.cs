@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pheromosa(int level)
+		: base(
+				795,
+				SpeciePheromosa.Instance, // Pokemon Specie
+				"Pheromosa", level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pheromosa() : base(
 			795,
 			SpeciePheromosa.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Thievul(int level)
+		: base(
+				828,
+				SpecieThievul.Instance, // Pokemon Specie
+				"Thievul", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Thievul() : base(
 			828,
 			SpecieThievul.Instance, // Pokemon Specie

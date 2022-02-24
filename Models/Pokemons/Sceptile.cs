@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sceptile(int level)
+		: base(
+				254,
+				SpecieSceptile.Instance, // Pokemon Specie
+				"Sceptile", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sceptile() : base(
 			254,
 			SpecieSceptile.Instance, // Pokemon Specie

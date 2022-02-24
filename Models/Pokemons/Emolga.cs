@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Emolga(int level)
+		: base(
+				587,
+				SpecieEmolga.Instance, // Pokemon Specie
+				"Emolga", level,
+				Electric.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Emolga() : base(
 			587,
 			SpecieEmolga.Instance, // Pokemon Specie

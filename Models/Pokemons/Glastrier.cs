@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Glastrier(int level)
+		: base(
+				896,
+				SpecieGlastrier.Instance, // Pokemon Specie
+				"Glastrier", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Glastrier() : base(
 			896,
 			SpecieGlastrier.Instance, // Pokemon Specie

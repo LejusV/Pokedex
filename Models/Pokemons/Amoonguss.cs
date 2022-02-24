@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Amoonguss(int level)
+		: base(
+				591,
+				SpecieAmoonguss.Instance, // Pokemon Specie
+				"Amoonguss", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Amoonguss() : base(
 			591,
 			SpecieAmoonguss.Instance, // Pokemon Specie

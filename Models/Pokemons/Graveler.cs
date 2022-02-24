@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Graveler(int level)
+		: base(
+				75,
+				SpecieGraveler.Instance, // Pokemon Specie
+				"Graveler", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Graveler() : base(
 			75,
 			SpecieGraveler.Instance, // Pokemon Specie

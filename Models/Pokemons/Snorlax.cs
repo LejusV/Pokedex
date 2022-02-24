@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snorlax(int level)
+		: base(
+				143,
+				SpecieSnorlax.Instance, // Pokemon Specie
+				"Snorlax", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snorlax() : base(
 			143,
 			SpecieSnorlax.Instance, // Pokemon Specie

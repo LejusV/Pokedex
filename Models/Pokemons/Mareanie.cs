@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mareanie(int level)
+		: base(
+				747,
+				SpecieMareanie.Instance, // Pokemon Specie
+				"Mareanie", level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mareanie() : base(
 			747,
 			SpecieMareanie.Instance, // Pokemon Specie

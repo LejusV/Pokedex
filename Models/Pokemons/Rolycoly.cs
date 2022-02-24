@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rolycoly(int level)
+		: base(
+				837,
+				SpecieRolycoly.Instance, // Pokemon Specie
+				"Rolycoly", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rolycoly() : base(
 			837,
 			SpecieRolycoly.Instance, // Pokemon Specie

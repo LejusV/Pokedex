@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Smeargle(int level)
+		: base(
+				235,
+				SpecieSmeargle.Instance, // Pokemon Specie
+				"Smeargle", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Smeargle() : base(
 			235,
 			SpecieSmeargle.Instance, // Pokemon Specie

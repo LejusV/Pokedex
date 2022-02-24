@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sawk(int level)
+		: base(
+				539,
+				SpecieSawk.Instance, // Pokemon Specie
+				"Sawk", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sawk() : base(
 			539,
 			SpecieSawk.Instance, // Pokemon Specie

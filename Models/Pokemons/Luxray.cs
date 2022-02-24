@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Luxray(int level)
+		: base(
+				405,
+				SpecieLuxray.Instance, // Pokemon Specie
+				"Luxray", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Luxray() : base(
 			405,
 			SpecieLuxray.Instance, // Pokemon Specie

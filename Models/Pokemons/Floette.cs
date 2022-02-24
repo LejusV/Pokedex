@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Floette(int level)
+		: base(
+				670,
+				SpecieFloette.Instance, // Pokemon Specie
+				"Floette", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Floette() : base(
 			670,
 			SpecieFloette.Instance, // Pokemon Specie

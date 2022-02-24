@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drowzee(int level)
+		: base(
+				96,
+				SpecieDrowzee.Instance, // Pokemon Specie
+				"Drowzee", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drowzee() : base(
 			96,
 			SpecieDrowzee.Instance, // Pokemon Specie

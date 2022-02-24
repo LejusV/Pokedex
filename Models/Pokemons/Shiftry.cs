@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shiftry(int level)
+		: base(
+				275,
+				SpecieShiftry.Instance, // Pokemon Specie
+				"Shiftry", level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shiftry() : base(
 			275,
 			SpecieShiftry.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spewpa(int level)
+		: base(
+				665,
+				SpecieSpewpa.Instance, // Pokemon Specie
+				"Spewpa", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spewpa() : base(
 			665,
 			SpecieSpewpa.Instance, // Pokemon Specie

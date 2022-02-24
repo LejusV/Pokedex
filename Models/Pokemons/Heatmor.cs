@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Heatmor(int level)
+		: base(
+				631,
+				SpecieHeatmor.Instance, // Pokemon Specie
+				"Heatmor", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Heatmor() : base(
 			631,
 			SpecieHeatmor.Instance, // Pokemon Specie

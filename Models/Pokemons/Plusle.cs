@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Plusle(int level)
+		: base(
+				311,
+				SpeciePlusle.Instance, // Pokemon Specie
+				"Plusle", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Plusle() : base(
 			311,
 			SpeciePlusle.Instance, // Pokemon Specie

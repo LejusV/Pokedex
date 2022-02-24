@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Uxie(int level)
+		: base(
+				480,
+				SpecieUxie.Instance, // Pokemon Specie
+				"Uxie", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Uxie() : base(
 			480,
 			SpecieUxie.Instance, // Pokemon Specie

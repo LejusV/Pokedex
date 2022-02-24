@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drapion(int level)
+		: base(
+				452,
+				SpecieDrapion.Instance, // Pokemon Specie
+				"Drapion", level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drapion() : base(
 			452,
 			SpecieDrapion.Instance, // Pokemon Specie

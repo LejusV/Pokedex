@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Silvally(int level)
+		: base(
+				773,
+				SpecieSilvally.Instance, // Pokemon Specie
+				"Silvally", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Silvally() : base(
 			773,
 			SpecieSilvally.Instance, // Pokemon Specie

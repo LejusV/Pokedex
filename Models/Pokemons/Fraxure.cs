@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fraxure(int level)
+		: base(
+				611,
+				SpecieFraxure.Instance, // Pokemon Specie
+				"Fraxure", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fraxure() : base(
 			611,
 			SpecieFraxure.Instance, // Pokemon Specie

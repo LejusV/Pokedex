@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Primarina(int level)
+		: base(
+				730,
+				SpeciePrimarina.Instance, // Pokemon Specie
+				"Primarina", level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Primarina() : base(
 			730,
 			SpeciePrimarina.Instance, // Pokemon Specie

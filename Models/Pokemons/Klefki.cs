@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Klefki(int level)
+		: base(
+				707,
+				SpecieKlefki.Instance, // Pokemon Specie
+				"Klefki", level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Klefki() : base(
 			707,
 			SpecieKlefki.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Krabby(int level)
+		: base(
+				98,
+				SpecieKrabby.Instance, // Pokemon Specie
+				"Krabby", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Krabby() : base(
 			98,
 			SpecieKrabby.Instance, // Pokemon Specie

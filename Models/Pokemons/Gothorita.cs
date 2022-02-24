@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gothorita(int level)
+		: base(
+				575,
+				SpecieGothorita.Instance, // Pokemon Specie
+				"Gothorita", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gothorita() : base(
 			575,
 			SpecieGothorita.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cacturne(int level)
+		: base(
+				332,
+				SpecieCacturne.Instance, // Pokemon Specie
+				"Cacturne", level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cacturne() : base(
 			332,
 			SpecieCacturne.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spinda(int level)
+		: base(
+				327,
+				SpecieSpinda.Instance, // Pokemon Specie
+				"Spinda", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spinda() : base(
 			327,
 			SpecieSpinda.Instance, // Pokemon Specie

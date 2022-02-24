@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gorebyss(int level)
+		: base(
+				368,
+				SpecieGorebyss.Instance, // Pokemon Specie
+				"Gorebyss", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gorebyss() : base(
 			368,
 			SpecieGorebyss.Instance, // Pokemon Specie

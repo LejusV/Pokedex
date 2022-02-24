@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public LycanrocMidday(int level)
+		: base(
+				745,
+				SpecieLycanrocMidday.Instance, // Pokemon Specie
+				"Lycanroc-Midday", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public LycanrocMidday() : base(
 			745,
 			SpecieLycanrocMidday.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hippowdon(int level)
+		: base(
+				450,
+				SpecieHippowdon.Instance, // Pokemon Specie
+				"Hippowdon", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hippowdon() : base(
 			450,
 			SpecieHippowdon.Instance, // Pokemon Specie

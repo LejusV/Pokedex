@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Palpitoad(int level)
+		: base(
+				536,
+				SpeciePalpitoad.Instance, // Pokemon Specie
+				"Palpitoad", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Palpitoad() : base(
 			536,
 			SpeciePalpitoad.Instance, // Pokemon Specie

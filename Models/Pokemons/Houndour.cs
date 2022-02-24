@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Houndour(int level)
+		: base(
+				228,
+				SpecieHoundour.Instance, // Pokemon Specie
+				"Houndour", level,
+				Dark.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Houndour() : base(
 			228,
 			SpecieHoundour.Instance, // Pokemon Specie

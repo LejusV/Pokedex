@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ampharos(int level)
+		: base(
+				181,
+				SpecieAmpharos.Instance, // Pokemon Specie
+				"Ampharos", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ampharos() : base(
 			181,
 			SpecieAmpharos.Instance, // Pokemon Specie

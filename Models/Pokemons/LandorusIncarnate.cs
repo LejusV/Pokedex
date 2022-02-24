@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public LandorusIncarnate(int level)
+		: base(
+				645,
+				SpecieLandorusIncarnate.Instance, // Pokemon Specie
+				"Landorus-Incarnate", level,
+				Ground.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public LandorusIncarnate() : base(
 			645,
 			SpecieLandorusIncarnate.Instance, // Pokemon Specie

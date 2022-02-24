@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ekans(int level)
+		: base(
+				23,
+				SpecieEkans.Instance, // Pokemon Specie
+				"Ekans", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ekans() : base(
 			23,
 			SpecieEkans.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mawile(int level)
+		: base(
+				303,
+				SpecieMawile.Instance, // Pokemon Specie
+				"Mawile", level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mawile() : base(
 			303,
 			SpecieMawile.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Axew(int level)
+		: base(
+				610,
+				SpecieAxew.Instance, // Pokemon Specie
+				"Axew", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Axew() : base(
 			610,
 			SpecieAxew.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Flareon(int level)
+		: base(
+				136,
+				SpecieFlareon.Instance, // Pokemon Specie
+				"Flareon", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Flareon() : base(
 			136,
 			SpecieFlareon.Instance, // Pokemon Specie

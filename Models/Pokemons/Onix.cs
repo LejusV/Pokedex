@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Onix(int level)
+		: base(
+				95,
+				SpecieOnix.Instance, // Pokemon Specie
+				"Onix", level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Onix() : base(
 			95,
 			SpecieOnix.Instance, // Pokemon Specie

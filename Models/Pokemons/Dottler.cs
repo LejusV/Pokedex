@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dottler(int level)
+		: base(
+				825,
+				SpecieDottler.Instance, // Pokemon Specie
+				"Dottler", level,
+				Bug.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dottler() : base(
 			825,
 			SpecieDottler.Instance, // Pokemon Specie

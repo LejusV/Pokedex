@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Masquerain(int level)
+		: base(
+				284,
+				SpecieMasquerain.Instance, // Pokemon Specie
+				"Masquerain", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Masquerain() : base(
 			284,
 			SpecieMasquerain.Instance, // Pokemon Specie

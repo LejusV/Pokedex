@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Anorith(int level)
+		: base(
+				347,
+				SpecieAnorith.Instance, // Pokemon Specie
+				"Anorith", level,
+				Rock.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Anorith() : base(
 			347,
 			SpecieAnorith.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pancham(int level)
+		: base(
+				674,
+				SpeciePancham.Instance, // Pokemon Specie
+				"Pancham", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pancham() : base(
 			674,
 			SpeciePancham.Instance, // Pokemon Specie

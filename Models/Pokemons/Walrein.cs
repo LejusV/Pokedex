@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Walrein(int level)
+		: base(
+				365,
+				SpecieWalrein.Instance, // Pokemon Specie
+				"Walrein", level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Walrein() : base(
 			365,
 			SpecieWalrein.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jellicent(int level)
+		: base(
+				593,
+				SpecieJellicent.Instance, // Pokemon Specie
+				"Jellicent", level,
+				Water.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jellicent() : base(
 			593,
 			SpecieJellicent.Instance, // Pokemon Specie

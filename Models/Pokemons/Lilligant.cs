@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lilligant(int level)
+		: base(
+				549,
+				SpecieLilligant.Instance, // Pokemon Specie
+				"Lilligant", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lilligant() : base(
 			549,
 			SpecieLilligant.Instance, // Pokemon Specie

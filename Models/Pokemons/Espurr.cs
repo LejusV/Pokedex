@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Espurr(int level)
+		: base(
+				677,
+				SpecieEspurr.Instance, // Pokemon Specie
+				"Espurr", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Espurr() : base(
 			677,
 			SpecieEspurr.Instance, // Pokemon Specie

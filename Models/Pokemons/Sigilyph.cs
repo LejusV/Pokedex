@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sigilyph(int level)
+		: base(
+				561,
+				SpecieSigilyph.Instance, // Pokemon Specie
+				"Sigilyph", level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sigilyph() : base(
 			561,
 			SpecieSigilyph.Instance, // Pokemon Specie

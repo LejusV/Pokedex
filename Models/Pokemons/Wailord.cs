@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wailord(int level)
+		: base(
+				321,
+				SpecieWailord.Instance, // Pokemon Specie
+				"Wailord", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wailord() : base(
 			321,
 			SpecieWailord.Instance, // Pokemon Specie

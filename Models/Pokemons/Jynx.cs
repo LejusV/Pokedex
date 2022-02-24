@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jynx(int level)
+		: base(
+				124,
+				SpecieJynx.Instance, // Pokemon Specie
+				"Jynx", level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jynx() : base(
 			124,
 			SpecieJynx.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pikachu(int level)
+		: base(
+				25,
+				SpeciePikachu.Instance, // Pokemon Specie
+				"Pikachu", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pikachu() : base(
 			25,
 			SpeciePikachu.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Morpeko(int level)
+		: base(
+				877,
+				SpecieMorpeko.Instance, // Pokemon Specie
+				"Morpeko", level,
+				Electric.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Morpeko() : base(
 			877,
 			SpecieMorpeko.Instance, // Pokemon Specie

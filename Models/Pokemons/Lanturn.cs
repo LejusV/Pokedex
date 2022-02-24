@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lanturn(int level)
+		: base(
+				171,
+				SpecieLanturn.Instance, // Pokemon Specie
+				"Lanturn", level,
+				Water.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lanturn() : base(
 			171,
 			SpecieLanturn.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Articuno(int level)
+		: base(
+				144,
+				SpecieArticuno.Instance, // Pokemon Specie
+				"Articuno", level,
+				Ice.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Articuno() : base(
 			144,
 			SpecieArticuno.Instance, // Pokemon Specie

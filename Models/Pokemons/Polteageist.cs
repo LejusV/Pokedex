@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Polteageist(int level)
+		: base(
+				855,
+				SpeciePolteageist.Instance, // Pokemon Specie
+				"Polteageist", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Polteageist() : base(
 			855,
 			SpeciePolteageist.Instance, // Pokemon Specie

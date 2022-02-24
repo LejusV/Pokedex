@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Quagsire(int level)
+		: base(
+				195,
+				SpecieQuagsire.Instance, // Pokemon Specie
+				"Quagsire", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Quagsire() : base(
 			195,
 			SpecieQuagsire.Instance, // Pokemon Specie

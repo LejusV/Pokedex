@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gulpin(int level)
+		: base(
+				316,
+				SpecieGulpin.Instance, // Pokemon Specie
+				"Gulpin", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gulpin() : base(
 			316,
 			SpecieGulpin.Instance, // Pokemon Specie

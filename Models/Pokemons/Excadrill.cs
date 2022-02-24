@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Excadrill(int level)
+		: base(
+				530,
+				SpecieExcadrill.Instance, // Pokemon Specie
+				"Excadrill", level,
+				Ground.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Excadrill() : base(
 			530,
 			SpecieExcadrill.Instance, // Pokemon Specie

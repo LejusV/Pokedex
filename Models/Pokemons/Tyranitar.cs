@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tyranitar(int level)
+		: base(
+				248,
+				SpecieTyranitar.Instance, // Pokemon Specie
+				"Tyranitar", level,
+				Rock.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tyranitar() : base(
 			248,
 			SpecieTyranitar.Instance, // Pokemon Specie

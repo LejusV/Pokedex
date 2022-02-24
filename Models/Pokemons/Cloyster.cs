@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cloyster(int level)
+		: base(
+				91,
+				SpecieCloyster.Instance, // Pokemon Specie
+				"Cloyster", level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cloyster() : base(
 			91,
 			SpecieCloyster.Instance, // Pokemon Specie

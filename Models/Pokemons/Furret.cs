@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Furret(int level)
+		: base(
+				162,
+				SpecieFurret.Instance, // Pokemon Specie
+				"Furret", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Furret() : base(
 			162,
 			SpecieFurret.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Phione(int level)
+		: base(
+				489,
+				SpeciePhione.Instance, // Pokemon Specie
+				"Phione", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Phione() : base(
 			489,
 			SpeciePhione.Instance, // Pokemon Specie

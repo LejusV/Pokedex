@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dewott(int level)
+		: base(
+				502,
+				SpecieDewott.Instance, // Pokemon Specie
+				"Dewott", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dewott() : base(
 			502,
 			SpecieDewott.Instance, // Pokemon Specie

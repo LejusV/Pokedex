@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rhyhorn(int level)
+		: base(
+				111,
+				SpecieRhyhorn.Instance, // Pokemon Specie
+				"Rhyhorn", level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rhyhorn() : base(
 			111,
 			SpecieRhyhorn.Instance, // Pokemon Specie

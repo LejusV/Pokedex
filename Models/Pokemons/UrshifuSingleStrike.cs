@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public UrshifuSingleStrike(int level)
+		: base(
+				892,
+				SpecieUrshifuSingleStrike.Instance, // Pokemon Specie
+				"Urshifu-Single-Strike", level,
+				Fighting.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public UrshifuSingleStrike() : base(
 			892,
 			SpecieUrshifuSingleStrike.Instance, // Pokemon Specie

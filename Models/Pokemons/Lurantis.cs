@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lurantis(int level)
+		: base(
+				754,
+				SpecieLurantis.Instance, // Pokemon Specie
+				"Lurantis", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lurantis() : base(
 			754,
 			SpecieLurantis.Instance, // Pokemon Specie

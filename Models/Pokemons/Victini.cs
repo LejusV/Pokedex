@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Victini(int level)
+		: base(
+				494,
+				SpecieVictini.Instance, // Pokemon Specie
+				"Victini", level,
+				Psychic.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Victini() : base(
 			494,
 			SpecieVictini.Instance, // Pokemon Specie

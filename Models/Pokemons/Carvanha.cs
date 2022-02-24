@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Carvanha(int level)
+		: base(
+				318,
+				SpecieCarvanha.Instance, // Pokemon Specie
+				"Carvanha", level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Carvanha() : base(
 			318,
 			SpecieCarvanha.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Conkeldurr(int level)
+		: base(
+				534,
+				SpecieConkeldurr.Instance, // Pokemon Specie
+				"Conkeldurr", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Conkeldurr() : base(
 			534,
 			SpecieConkeldurr.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rufflet(int level)
+		: base(
+				627,
+				SpecieRufflet.Instance, // Pokemon Specie
+				"Rufflet", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rufflet() : base(
 			627,
 			SpecieRufflet.Instance, // Pokemon Specie

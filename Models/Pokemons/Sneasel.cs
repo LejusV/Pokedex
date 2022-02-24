@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sneasel(int level)
+		: base(
+				215,
+				SpecieSneasel.Instance, // Pokemon Specie
+				"Sneasel", level,
+				Dark.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sneasel() : base(
 			215,
 			SpecieSneasel.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scolipede(int level)
+		: base(
+				545,
+				SpecieScolipede.Instance, // Pokemon Specie
+				"Scolipede", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scolipede() : base(
 			545,
 			SpecieScolipede.Instance, // Pokemon Specie

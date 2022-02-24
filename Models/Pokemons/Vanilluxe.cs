@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vanilluxe(int level)
+		: base(
+				584,
+				SpecieVanilluxe.Instance, // Pokemon Specie
+				"Vanilluxe", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vanilluxe() : base(
 			584,
 			SpecieVanilluxe.Instance, // Pokemon Specie

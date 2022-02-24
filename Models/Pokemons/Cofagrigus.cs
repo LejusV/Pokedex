@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cofagrigus(int level)
+		: base(
+				563,
+				SpecieCofagrigus.Instance, // Pokemon Specie
+				"Cofagrigus", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cofagrigus() : base(
 			563,
 			SpecieCofagrigus.Instance, // Pokemon Specie

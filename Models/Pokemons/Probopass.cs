@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Probopass(int level)
+		: base(
+				476,
+				SpecieProbopass.Instance, // Pokemon Specie
+				"Probopass", level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Probopass() : base(
 			476,
 			SpecieProbopass.Instance, // Pokemon Specie

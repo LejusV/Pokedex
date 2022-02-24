@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cinderace(int level)
+		: base(
+				815,
+				SpecieCinderace.Instance, // Pokemon Specie
+				"Cinderace", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cinderace() : base(
 			815,
 			SpecieCinderace.Instance, // Pokemon Specie

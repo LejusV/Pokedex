@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magneton(int level)
+		: base(
+				82,
+				SpecieMagneton.Instance, // Pokemon Specie
+				"Magneton", level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magneton() : base(
 			82,
 			SpecieMagneton.Instance, // Pokemon Specie

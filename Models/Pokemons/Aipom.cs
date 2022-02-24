@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aipom(int level)
+		: base(
+				190,
+				SpecieAipom.Instance, // Pokemon Specie
+				"Aipom", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aipom() : base(
 			190,
 			SpecieAipom.Instance, // Pokemon Specie

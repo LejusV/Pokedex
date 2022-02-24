@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Centiskorch(int level)
+		: base(
+				851,
+				SpecieCentiskorch.Instance, // Pokemon Specie
+				"Centiskorch", level,
+				Fire.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Centiskorch() : base(
 			851,
 			SpecieCentiskorch.Instance, // Pokemon Specie

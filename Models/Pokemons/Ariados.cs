@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ariados(int level)
+		: base(
+				168,
+				SpecieAriados.Instance, // Pokemon Specie
+				"Ariados", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ariados() : base(
 			168,
 			SpecieAriados.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skiddo(int level)
+		: base(
+				672,
+				SpecieSkiddo.Instance, // Pokemon Specie
+				"Skiddo", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skiddo() : base(
 			672,
 			SpecieSkiddo.Instance, // Pokemon Specie

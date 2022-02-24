@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Unfezant(int level)
+		: base(
+				521,
+				SpecieUnfezant.Instance, // Pokemon Specie
+				"Unfezant", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Unfezant() : base(
 			521,
 			SpecieUnfezant.Instance, // Pokemon Specie

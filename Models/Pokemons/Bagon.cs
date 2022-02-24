@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bagon(int level)
+		: base(
+				371,
+				SpecieBagon.Instance, // Pokemon Specie
+				"Bagon", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bagon() : base(
 			371,
 			SpecieBagon.Instance, // Pokemon Specie

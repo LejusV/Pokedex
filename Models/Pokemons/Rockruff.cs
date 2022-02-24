@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rockruff(int level)
+		: base(
+				744,
+				SpecieRockruff.Instance, // Pokemon Specie
+				"Rockruff", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rockruff() : base(
 			744,
 			SpecieRockruff.Instance, // Pokemon Specie

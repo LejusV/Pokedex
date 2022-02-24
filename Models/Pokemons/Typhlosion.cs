@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Typhlosion(int level)
+		: base(
+				157,
+				SpecieTyphlosion.Instance, // Pokemon Specie
+				"Typhlosion", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Typhlosion() : base(
 			157,
 			SpecieTyphlosion.Instance, // Pokemon Specie

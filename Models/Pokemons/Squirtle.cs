@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Squirtle(int level)
+		: base(
+				7,
+				SpecieSquirtle.Instance, // Pokemon Specie
+				"Squirtle", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Squirtle() : base(
 			7,
 			SpecieSquirtle.Instance, // Pokemon Specie

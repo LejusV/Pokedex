@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TornadusIncarnate(int level)
+		: base(
+				641,
+				SpecieTornadusIncarnate.Instance, // Pokemon Specie
+				"Tornadus-Incarnate", level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TornadusIncarnate() : base(
 			641,
 			SpecieTornadusIncarnate.Instance, // Pokemon Specie

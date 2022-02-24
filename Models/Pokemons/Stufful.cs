@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stufful(int level)
+		: base(
+				759,
+				SpecieStufful.Instance, // Pokemon Specie
+				"Stufful", level,
+				Normal.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stufful() : base(
 			759,
 			SpecieStufful.Instance, // Pokemon Specie

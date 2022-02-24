@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public HoOh(int level)
+		: base(
+				250,
+				SpecieHoOh.Instance, // Pokemon Specie
+				"Ho-Oh", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public HoOh() : base(
 			250,
 			SpecieHoOh.Instance, // Pokemon Specie

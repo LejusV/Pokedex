@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Noctowl(int level)
+		: base(
+				164,
+				SpecieNoctowl.Instance, // Pokemon Specie
+				"Noctowl", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Noctowl() : base(
 			164,
 			SpecieNoctowl.Instance, // Pokemon Specie

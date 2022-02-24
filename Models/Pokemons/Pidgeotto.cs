@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pidgeotto(int level)
+		: base(
+				17,
+				SpeciePidgeotto.Instance, // Pokemon Specie
+				"Pidgeotto", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pidgeotto() : base(
 			17,
 			SpeciePidgeotto.Instance, // Pokemon Specie

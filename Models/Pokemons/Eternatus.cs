@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Eternatus(int level)
+		: base(
+				890,
+				SpecieEternatus.Instance, // Pokemon Specie
+				"Eternatus", level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Eternatus() : base(
 			890,
 			SpecieEternatus.Instance, // Pokemon Specie

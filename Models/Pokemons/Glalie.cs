@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Glalie(int level)
+		: base(
+				362,
+				SpecieGlalie.Instance, // Pokemon Specie
+				"Glalie", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Glalie() : base(
 			362,
 			SpecieGlalie.Instance, // Pokemon Specie

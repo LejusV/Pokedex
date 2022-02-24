@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zangoose(int level)
+		: base(
+				335,
+				SpecieZangoose.Instance, // Pokemon Specie
+				"Zangoose", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zangoose() : base(
 			335,
 			SpecieZangoose.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public EiscueIce(int level)
+		: base(
+				875,
+				SpecieEiscueIce.Instance, // Pokemon Specie
+				"Eiscue-Ice", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public EiscueIce() : base(
 			875,
 			SpecieEiscueIce.Instance, // Pokemon Specie

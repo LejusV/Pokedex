@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Quilava(int level)
+		: base(
+				156,
+				SpecieQuilava.Instance, // Pokemon Specie
+				"Quilava", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Quilava() : base(
 			156,
 			SpecieQuilava.Instance, // Pokemon Specie

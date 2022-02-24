@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dragapult(int level)
+		: base(
+				887,
+				SpecieDragapult.Instance, // Pokemon Specie
+				"Dragapult", level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dragapult() : base(
 			887,
 			SpecieDragapult.Instance, // Pokemon Specie

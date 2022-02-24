@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zweilous(int level)
+		: base(
+				634,
+				SpecieZweilous.Instance, // Pokemon Specie
+				"Zweilous", level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zweilous() : base(
 			634,
 			SpecieZweilous.Instance, // Pokemon Specie

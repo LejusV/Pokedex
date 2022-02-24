@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Huntail(int level)
+		: base(
+				367,
+				SpecieHuntail.Instance, // Pokemon Specie
+				"Huntail", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Huntail() : base(
 			367,
 			SpecieHuntail.Instance, // Pokemon Specie

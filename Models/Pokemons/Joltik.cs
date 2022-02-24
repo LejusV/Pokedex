@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Joltik(int level)
+		: base(
+				595,
+				SpecieJoltik.Instance, // Pokemon Specie
+				"Joltik", level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Joltik() : base(
 			595,
 			SpecieJoltik.Instance, // Pokemon Specie

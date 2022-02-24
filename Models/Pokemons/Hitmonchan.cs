@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hitmonchan(int level)
+		: base(
+				107,
+				SpecieHitmonchan.Instance, // Pokemon Specie
+				"Hitmonchan", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hitmonchan() : base(
 			107,
 			SpecieHitmonchan.Instance, // Pokemon Specie

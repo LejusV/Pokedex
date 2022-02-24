@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Luvdisc(int level)
+		: base(
+				370,
+				SpecieLuvdisc.Instance, // Pokemon Specie
+				"Luvdisc", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Luvdisc() : base(
 			370,
 			SpecieLuvdisc.Instance, // Pokemon Specie

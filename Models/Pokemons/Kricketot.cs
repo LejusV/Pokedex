@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kricketot(int level)
+		: base(
+				401,
+				SpecieKricketot.Instance, // Pokemon Specie
+				"Kricketot", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kricketot() : base(
 			401,
 			SpecieKricketot.Instance, // Pokemon Specie

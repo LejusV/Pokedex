@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Paras(int level)
+		: base(
+				46,
+				SpecieParas.Instance, // Pokemon Specie
+				"Paras", level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Paras() : base(
 			46,
 			SpecieParas.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Whirlipede(int level)
+		: base(
+				544,
+				SpecieWhirlipede.Instance, // Pokemon Specie
+				"Whirlipede", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Whirlipede() : base(
 			544,
 			SpecieWhirlipede.Instance, // Pokemon Specie

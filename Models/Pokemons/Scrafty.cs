@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scrafty(int level)
+		: base(
+				560,
+				SpecieScrafty.Instance, // Pokemon Specie
+				"Scrafty", level,
+				Dark.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scrafty() : base(
 			560,
 			SpecieScrafty.Instance, // Pokemon Specie

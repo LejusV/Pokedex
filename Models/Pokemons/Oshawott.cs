@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Oshawott(int level)
+		: base(
+				501,
+				SpecieOshawott.Instance, // Pokemon Specie
+				"Oshawott", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Oshawott() : base(
 			501,
 			SpecieOshawott.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chewtle(int level)
+		: base(
+				833,
+				SpecieChewtle.Instance, // Pokemon Specie
+				"Chewtle", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chewtle() : base(
 			833,
 			SpecieChewtle.Instance, // Pokemon Specie

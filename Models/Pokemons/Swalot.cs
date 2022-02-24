@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swalot(int level)
+		: base(
+				317,
+				SpecieSwalot.Instance, // Pokemon Specie
+				"Swalot", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swalot() : base(
 			317,
 			SpecieSwalot.Instance, // Pokemon Specie

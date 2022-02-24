@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Exploud(int level)
+		: base(
+				295,
+				SpecieExploud.Instance, // Pokemon Specie
+				"Exploud", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Exploud() : base(
 			295,
 			SpecieExploud.Instance, // Pokemon Specie

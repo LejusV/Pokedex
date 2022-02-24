@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Swanna(int level)
+		: base(
+				581,
+				SpecieSwanna.Instance, // Pokemon Specie
+				"Swanna", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Swanna() : base(
 			581,
 			SpecieSwanna.Instance, // Pokemon Specie

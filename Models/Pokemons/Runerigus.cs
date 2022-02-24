@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Runerigus(int level)
+		: base(
+				867,
+				SpecieRunerigus.Instance, // Pokemon Specie
+				"Runerigus", level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Runerigus() : base(
 			867,
 			SpecieRunerigus.Instance, // Pokemon Specie

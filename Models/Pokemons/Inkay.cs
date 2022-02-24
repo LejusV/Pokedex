@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Inkay(int level)
+		: base(
+				686,
+				SpecieInkay.Instance, // Pokemon Specie
+				"Inkay", level,
+				Dark.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Inkay() : base(
 			686,
 			SpecieInkay.Instance, // Pokemon Specie

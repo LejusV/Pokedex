@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ivysaur(int level)
+		: base(
+				2,
+				SpecieIvysaur.Instance, // Pokemon Specie
+				"Ivysaur", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ivysaur() : base(
 			2,
 			SpecieIvysaur.Instance, // Pokemon Specie

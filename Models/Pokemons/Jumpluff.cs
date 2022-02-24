@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jumpluff(int level)
+		: base(
+				189,
+				SpecieJumpluff.Instance, // Pokemon Specie
+				"Jumpluff", level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jumpluff() : base(
 			189,
 			SpecieJumpluff.Instance, // Pokemon Specie

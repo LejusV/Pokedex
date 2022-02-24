@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Donphan(int level)
+		: base(
+				232,
+				SpecieDonphan.Instance, // Pokemon Specie
+				"Donphan", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Donphan() : base(
 			232,
 			SpecieDonphan.Instance, // Pokemon Specie

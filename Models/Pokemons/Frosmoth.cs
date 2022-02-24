@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Frosmoth(int level)
+		: base(
+				873,
+				SpecieFrosmoth.Instance, // Pokemon Specie
+				"Frosmoth", level,
+				Ice.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Frosmoth() : base(
 			873,
 			SpecieFrosmoth.Instance, // Pokemon Specie

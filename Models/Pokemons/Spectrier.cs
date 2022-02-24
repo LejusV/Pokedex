@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spectrier(int level)
+		: base(
+				897,
+				SpecieSpectrier.Instance, // Pokemon Specie
+				"Spectrier", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spectrier() : base(
 			897,
 			SpecieSpectrier.Instance, // Pokemon Specie

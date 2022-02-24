@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Oranguru(int level)
+		: base(
+				765,
+				SpecieOranguru.Instance, // Pokemon Specie
+				"Oranguru", level,
+				Normal.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Oranguru() : base(
 			765,
 			SpecieOranguru.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Boltund(int level)
+		: base(
+				836,
+				SpecieBoltund.Instance, // Pokemon Specie
+				"Boltund", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Boltund() : base(
 			836,
 			SpecieBoltund.Instance, // Pokemon Specie

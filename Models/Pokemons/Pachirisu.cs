@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pachirisu(int level)
+		: base(
+				417,
+				SpeciePachirisu.Instance, // Pokemon Specie
+				"Pachirisu", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pachirisu() : base(
 			417,
 			SpeciePachirisu.Instance, // Pokemon Specie

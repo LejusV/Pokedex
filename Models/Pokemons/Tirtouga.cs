@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tirtouga(int level)
+		: base(
+				564,
+				SpecieTirtouga.Instance, // Pokemon Specie
+				"Tirtouga", level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tirtouga() : base(
 			564,
 			SpecieTirtouga.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Heatran(int level)
+		: base(
+				485,
+				SpecieHeatran.Instance, // Pokemon Specie
+				"Heatran", level,
+				Fire.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Heatran() : base(
 			485,
 			SpecieHeatran.Instance, // Pokemon Specie

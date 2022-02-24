@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golurk(int level)
+		: base(
+				623,
+				SpecieGolurk.Instance, // Pokemon Specie
+				"Golurk", level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golurk() : base(
 			623,
 			SpecieGolurk.Instance, // Pokemon Specie

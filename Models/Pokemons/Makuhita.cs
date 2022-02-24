@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Makuhita(int level)
+		: base(
+				296,
+				SpecieMakuhita.Instance, // Pokemon Specie
+				"Makuhita", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Makuhita() : base(
 			296,
 			SpecieMakuhita.Instance, // Pokemon Specie

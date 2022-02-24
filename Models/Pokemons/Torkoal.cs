@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Torkoal(int level)
+		: base(
+				324,
+				SpecieTorkoal.Instance, // Pokemon Specie
+				"Torkoal", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Torkoal() : base(
 			324,
 			SpecieTorkoal.Instance, // Pokemon Specie

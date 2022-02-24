@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kirlia(int level)
+		: base(
+				281,
+				SpecieKirlia.Instance, // Pokemon Specie
+				"Kirlia", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kirlia() : base(
 			281,
 			SpecieKirlia.Instance, // Pokemon Specie

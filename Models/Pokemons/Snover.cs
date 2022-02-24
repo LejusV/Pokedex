@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snover(int level)
+		: base(
+				459,
+				SpecieSnover.Instance, // Pokemon Specie
+				"Snover", level,
+				Grass.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snover() : base(
 			459,
 			SpecieSnover.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Servine(int level)
+		: base(
+				496,
+				SpecieServine.Instance, // Pokemon Specie
+				"Servine", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Servine() : base(
 			496,
 			SpecieServine.Instance, // Pokemon Specie

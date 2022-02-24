@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chikorita(int level)
+		: base(
+				152,
+				SpecieChikorita.Instance, // Pokemon Specie
+				"Chikorita", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chikorita() : base(
 			152,
 			SpecieChikorita.Instance, // Pokemon Specie

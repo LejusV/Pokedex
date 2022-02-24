@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ledyba(int level)
+		: base(
+				165,
+				SpecieLedyba.Instance, // Pokemon Specie
+				"Ledyba", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ledyba() : base(
 			165,
 			SpecieLedyba.Instance, // Pokemon Specie

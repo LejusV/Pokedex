@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shroomish(int level)
+		: base(
+				285,
+				SpecieShroomish.Instance, // Pokemon Specie
+				"Shroomish", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shroomish() : base(
 			285,
 			SpecieShroomish.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pelipper(int level)
+		: base(
+				279,
+				SpeciePelipper.Instance, // Pokemon Specie
+				"Pelipper", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pelipper() : base(
 			279,
 			SpeciePelipper.Instance, // Pokemon Specie

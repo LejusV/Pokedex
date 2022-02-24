@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skorupi(int level)
+		: base(
+				451,
+				SpecieSkorupi.Instance, // Pokemon Specie
+				"Skorupi", level,
+				Poison.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skorupi() : base(
 			451,
 			SpecieSkorupi.Instance, // Pokemon Specie

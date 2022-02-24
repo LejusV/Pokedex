@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Frillish(int level)
+		: base(
+				592,
+				SpecieFrillish.Instance, // Pokemon Specie
+				"Frillish", level,
+				Water.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Frillish() : base(
 			592,
 			SpecieFrillish.Instance, // Pokemon Specie

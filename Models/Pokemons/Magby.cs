@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magby(int level)
+		: base(
+				240,
+				SpecieMagby.Instance, // Pokemon Specie
+				"Magby", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magby() : base(
 			240,
 			SpecieMagby.Instance, // Pokemon Specie

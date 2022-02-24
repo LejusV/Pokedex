@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Archeops(int level)
+		: base(
+				567,
+				SpecieArcheops.Instance, // Pokemon Specie
+				"Archeops", level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Archeops() : base(
 			567,
 			SpecieArcheops.Instance, // Pokemon Specie

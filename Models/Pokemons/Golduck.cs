@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Golduck(int level)
+		: base(
+				55,
+				SpecieGolduck.Instance, // Pokemon Specie
+				"Golduck", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Golduck() : base(
 			55,
 			SpecieGolduck.Instance, // Pokemon Specie

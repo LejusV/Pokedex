@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Omanyte(int level)
+		: base(
+				138,
+				SpecieOmanyte.Instance, // Pokemon Specie
+				"Omanyte", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Omanyte() : base(
 			138,
 			SpecieOmanyte.Instance, // Pokemon Specie

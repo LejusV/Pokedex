@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ditto(int level)
+		: base(
+				132,
+				SpecieDitto.Instance, // Pokemon Specie
+				"Ditto", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ditto() : base(
 			132,
 			SpecieDitto.Instance, // Pokemon Specie

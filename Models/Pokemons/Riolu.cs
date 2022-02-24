@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Riolu(int level)
+		: base(
+				447,
+				SpecieRiolu.Instance, // Pokemon Specie
+				"Riolu", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Riolu() : base(
 			447,
 			SpecieRiolu.Instance, // Pokemon Specie

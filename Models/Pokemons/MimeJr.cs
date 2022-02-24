@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MimeJr(int level)
+		: base(
+				439,
+				SpecieMimeJr.Instance, // Pokemon Specie
+				"Mime-Jr", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MimeJr() : base(
 			439,
 			SpecieMimeJr.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Monferno(int level)
+		: base(
+				391,
+				SpecieMonferno.Instance, // Pokemon Specie
+				"Monferno", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Monferno() : base(
 			391,
 			SpecieMonferno.Instance, // Pokemon Specie

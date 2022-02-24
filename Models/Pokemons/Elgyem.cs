@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Elgyem(int level)
+		: base(
+				605,
+				SpecieElgyem.Instance, // Pokemon Specie
+				"Elgyem", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Elgyem() : base(
 			605,
 			SpecieElgyem.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nickit(int level)
+		: base(
+				827,
+				SpecieNickit.Instance, // Pokemon Specie
+				"Nickit", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nickit() : base(
 			827,
 			SpecieNickit.Instance, // Pokemon Specie

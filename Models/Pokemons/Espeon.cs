@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Espeon(int level)
+		: base(
+				196,
+				SpecieEspeon.Instance, // Pokemon Specie
+				"Espeon", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Espeon() : base(
 			196,
 			SpecieEspeon.Instance, // Pokemon Specie

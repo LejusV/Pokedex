@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Moltres(int level)
+		: base(
+				146,
+				SpecieMoltres.Instance, // Pokemon Specie
+				"Moltres", level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Moltres() : base(
 			146,
 			SpecieMoltres.Instance, // Pokemon Specie

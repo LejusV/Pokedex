@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sliggoo(int level)
+		: base(
+				705,
+				SpecieSliggoo.Instance, // Pokemon Specie
+				"Sliggoo", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sliggoo() : base(
 			705,
 			SpecieSliggoo.Instance, // Pokemon Specie

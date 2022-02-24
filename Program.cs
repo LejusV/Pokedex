@@ -2,7 +2,9 @@
 using Pokedex.Models;
 using Pokedex.Models.Pokemons;
 using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Pokedex
 {
@@ -10,58 +12,67 @@ namespace Pokedex
     {
         static void Main()
         {
+            int lineIndex = 0;
+            List<string> inputLines = new List<string>();
+            foreach (string line in File.ReadLines("Data\\Input.txt")) inputLines.Add(line);
             Console.Write("Choose you gender (F, M or O) : ");
-            string g = Console.ReadLine();
+            Console.WriteLine(inputLines[lineIndex]);
+            string g = inputLines[lineIndex++];
             Gender gender = (Gender)Enum.Parse(typeof(Gender), g);
             Console.Write("Choose your Trainer name : ");
-
-            Trainer Player1 = new(Console.ReadLine(), gender);
+            
+            Console.WriteLine(inputLines[lineIndex]);
+            Trainer Player1 = new(inputLines[lineIndex++], gender);
 
             Console.WriteLine("What Pokemon do you want to start with :\n" +
                                 "\t- Bulbasaur (1)\n" +
                                 "\t- Charmander (4)\n" +
                                 "\t- Squirtle (7)\n");
 
-            if (int.TryParse(Console.ReadLine(), out int answer))
+            Console.WriteLine(inputLines[lineIndex]);
+            switch (new CultureInfo("en").TextInfo.ToTitleCase(inputLines[lineIndex++].ToLower()))
             {
-                switch (answer)
+                case "Bulbasaur" :
                 {
-                    case 1 :
-                    {
-                        Pokemon bulbasaur = new Bulbasaur("Bulbasaur", 10);
-                        Player1.AddPokemon(bulbasaur);
-                        break;
-                    }
+                    Pokemon bulbasaur = new Bulbasaur("Bulbasaur", 10);
+                    Player1.AddPokemon(bulbasaur);
+                    break;
+                }
 
-                    case 4 :
-                    {
-                        Pokemon charmander = new Charmander("Charmander", 10);
-                        Player1.AddPokemon(charmander);
-                        break;
-                    }
+                case "Charmander" :
+                {
+                    Pokemon charmander = new Charmander("Charmander", 10);
+                    Player1.AddPokemon(charmander);
+                    break;
+                }
 
-                    case 7 :
-                    {
-                        Pokemon squirtle = new Squirtle("Squirtle", 10);
-                        Player1.AddPokemon(squirtle);
-                        break;
-                    }
+                case "Squirtle" :
+                {
+                    Pokemon squirtle = new Squirtle("Squirtle", 10);
+                    Player1.AddPokemon(squirtle);
+                    break;
                 }
             }
             Console.Write("\n" +
                 "How should it be called ? ");
-
-            Player1.Pokemons[0].Rename = Console.ReadLine();
+            
+            Console.WriteLine(inputLines[lineIndex]);
+            Player1.Pokemons[0].Rename = inputLines[lineIndex++];
 
             foreach (Pokemon poke in Player1.Pokemons)
             {
                 Console.WriteLine(poke.ToString() + poke.StatsString + poke.MovesDisplay());
             }
 
-            Console.WriteLine(Wiki.Instance.Display());
+            //Console.WriteLine(Wiki.Instance.Display());
             
-            Battle battle = new Battle(Player1, new List<Pokemon>() { new Metapod("Metapod", Player1.Pokemons[0].Level) });
-
+            Battle battle = new Battle(
+                Player1,
+                new List<Pokemon>()
+                { 
+                    new Metapod(Player1.Pokemons[0].Level)
+                }
+            );
 
         }
     }

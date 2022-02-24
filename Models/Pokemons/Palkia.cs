@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Palkia(int level)
+		: base(
+				484,
+				SpeciePalkia.Instance, // Pokemon Specie
+				"Palkia", level,
+				Water.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Palkia() : base(
 			484,
 			SpeciePalkia.Instance, // Pokemon Specie

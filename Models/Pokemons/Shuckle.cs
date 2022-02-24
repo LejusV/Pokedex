@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shuckle(int level)
+		: base(
+				213,
+				SpecieShuckle.Instance, // Pokemon Specie
+				"Shuckle", level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shuckle() : base(
 			213,
 			SpecieShuckle.Instance, // Pokemon Specie

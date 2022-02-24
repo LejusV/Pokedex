@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Buneary(int level)
+		: base(
+				427,
+				SpecieBuneary.Instance, // Pokemon Specie
+				"Buneary", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Buneary() : base(
 			427,
 			SpecieBuneary.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hypno(int level)
+		: base(
+				97,
+				SpecieHypno.Instance, // Pokemon Specie
+				"Hypno", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hypno() : base(
 			97,
 			SpecieHypno.Instance, // Pokemon Specie

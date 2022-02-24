@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nidorina(int level)
+		: base(
+				30,
+				SpecieNidorina.Instance, // Pokemon Specie
+				"Nidorina", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nidorina() : base(
 			30,
 			SpecieNidorina.Instance, // Pokemon Specie

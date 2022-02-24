@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Taillow(int level)
+		: base(
+				276,
+				SpecieTaillow.Instance, // Pokemon Specie
+				"Taillow", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Taillow() : base(
 			276,
 			SpecieTaillow.Instance, // Pokemon Specie

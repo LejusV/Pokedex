@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Roselia(int level)
+		: base(
+				315,
+				SpecieRoselia.Instance, // Pokemon Specie
+				"Roselia", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Roselia() : base(
 			315,
 			SpecieRoselia.Instance, // Pokemon Specie

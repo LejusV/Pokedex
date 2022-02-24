@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tepig(int level)
+		: base(
+				498,
+				SpecieTepig.Instance, // Pokemon Specie
+				"Tepig", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tepig() : base(
 			498,
 			SpecieTepig.Instance, // Pokemon Specie

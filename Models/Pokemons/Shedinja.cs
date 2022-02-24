@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shedinja(int level)
+		: base(
+				292,
+				SpecieShedinja.Instance, // Pokemon Specie
+				"Shedinja", level,
+				Bug.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shedinja() : base(
 			292,
 			SpecieShedinja.Instance, // Pokemon Specie

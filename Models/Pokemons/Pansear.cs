@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pansear(int level)
+		: base(
+				513,
+				SpeciePansear.Instance, // Pokemon Specie
+				"Pansear", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pansear() : base(
 			513,
 			SpeciePansear.Instance, // Pokemon Specie

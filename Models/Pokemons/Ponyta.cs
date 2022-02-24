@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ponyta(int level)
+		: base(
+				77,
+				SpeciePonyta.Instance, // Pokemon Specie
+				"Ponyta", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ponyta() : base(
 			77,
 			SpeciePonyta.Instance, // Pokemon Specie

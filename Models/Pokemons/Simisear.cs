@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Simisear(int level)
+		: base(
+				514,
+				SpecieSimisear.Instance, // Pokemon Specie
+				"Simisear", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Simisear() : base(
 			514,
 			SpecieSimisear.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Corvisquire(int level)
+		: base(
+				822,
+				SpecieCorvisquire.Instance, // Pokemon Specie
+				"Corvisquire", level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Corvisquire() : base(
 			822,
 			SpecieCorvisquire.Instance, // Pokemon Specie

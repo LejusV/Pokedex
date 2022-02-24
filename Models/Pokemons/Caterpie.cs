@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Caterpie(int level)
+		: base(
+				10,
+				SpecieCaterpie.Instance, // Pokemon Specie
+				"Caterpie", level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Caterpie() : base(
 			10,
 			SpecieCaterpie.Instance, // Pokemon Specie

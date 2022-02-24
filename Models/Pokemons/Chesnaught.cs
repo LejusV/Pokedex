@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chesnaught(int level)
+		: base(
+				652,
+				SpecieChesnaught.Instance, // Pokemon Specie
+				"Chesnaught", level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chesnaught() : base(
 			652,
 			SpecieChesnaught.Instance, // Pokemon Specie

@@ -9,7 +9,7 @@ with open("Data\\pokemon.json", encoding="utf-8") as F:
 
 	# If the file alreay exist, don't touch it
 	#if (os.path.isfile(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs")): continue
-	nl = ",\n"
+	nl = ",\n\t\t\t\t"
 
 	# Create the PokemonMove class, by opening a file
 	with open(f"Models\\Wiki.cs", 'w', encoding="utf-8") as f:
@@ -45,15 +45,6 @@ namespace Pokedex.Models
         public Dictionary<int, Pokemon?> Pokemons
         {{ get {{ return _pokemons; }} }} 
 
-        public Wiki()
-        {{
-
-            _pokemons = new Dictionary<int, Pokemon?>()
-            {{
-				{nl.join([f'{{ {poke["id"]},		new {"".join([c for c in poke["name"].title() if c not in (" ", "-")]) }() }}' for poke in data.values()]) }
-			}};
-
-        }}
 
         public string Display()
         {{
@@ -68,6 +59,16 @@ namespace Pokedex.Models
                 }}
             }}
             return res;
+        }}
+
+        public Wiki()
+        {{
+            #region PokemonDictionary
+            _pokemons = new Dictionary<int, Pokemon?>()
+            {{
+				{nl.join([f'{{ {poke["id"]},		new {"".join([c for c in poke["name"].title() if c not in (" ", "-")]) }() }}' for poke in data.values()]) }
+			}};
+            #endregion
         }}
     }}
 }}

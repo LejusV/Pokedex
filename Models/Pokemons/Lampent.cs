@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lampent(int level)
+		: base(
+				608,
+				SpecieLampent.Instance, // Pokemon Specie
+				"Lampent", level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lampent() : base(
 			608,
 			SpecieLampent.Instance, // Pokemon Specie

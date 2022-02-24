@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Snorunt(int level)
+		: base(
+				361,
+				SpecieSnorunt.Instance, // Pokemon Specie
+				"Snorunt", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Snorunt() : base(
 			361,
 			SpecieSnorunt.Instance, // Pokemon Specie

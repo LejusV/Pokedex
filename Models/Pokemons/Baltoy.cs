@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Baltoy(int level)
+		: base(
+				343,
+				SpecieBaltoy.Instance, // Pokemon Specie
+				"Baltoy", level,
+				Ground.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Baltoy() : base(
 			343,
 			SpecieBaltoy.Instance, // Pokemon Specie

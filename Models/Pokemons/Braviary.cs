@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Braviary(int level)
+		: base(
+				628,
+				SpecieBraviary.Instance, // Pokemon Specie
+				"Braviary", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Braviary() : base(
 			628,
 			SpecieBraviary.Instance, // Pokemon Specie

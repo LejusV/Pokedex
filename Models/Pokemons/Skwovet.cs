@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skwovet(int level)
+		: base(
+				819,
+				SpecieSkwovet.Instance, // Pokemon Specie
+				"Skwovet", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skwovet() : base(
 			819,
 			SpecieSkwovet.Instance, // Pokemon Specie

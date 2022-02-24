@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public AegislashShield(int level)
+		: base(
+				681,
+				SpecieAegislashShield.Instance, // Pokemon Specie
+				"Aegislash-Shield", level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public AegislashShield() : base(
 			681,
 			SpecieAegislashShield.Instance, // Pokemon Specie

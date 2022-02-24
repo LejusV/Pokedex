@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vigoroth(int level)
+		: base(
+				288,
+				SpecieVigoroth.Instance, // Pokemon Specie
+				"Vigoroth", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vigoroth() : base(
 			288,
 			SpecieVigoroth.Instance, // Pokemon Specie

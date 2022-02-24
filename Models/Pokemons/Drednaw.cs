@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drednaw(int level)
+		: base(
+				834,
+				SpecieDrednaw.Instance, // Pokemon Specie
+				"Drednaw", level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drednaw() : base(
 			834,
 			SpecieDrednaw.Instance, // Pokemon Specie

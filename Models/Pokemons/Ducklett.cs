@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ducklett(int level)
+		: base(
+				580,
+				SpecieDucklett.Instance, // Pokemon Specie
+				"Ducklett", level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ducklett() : base(
 			580,
 			SpecieDucklett.Instance, // Pokemon Specie

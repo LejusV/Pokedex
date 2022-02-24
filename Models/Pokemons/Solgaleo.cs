@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Solgaleo(int level)
+		: base(
+				791,
+				SpecieSolgaleo.Instance, // Pokemon Specie
+				"Solgaleo", level,
+				Psychic.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Solgaleo() : base(
 			791,
 			SpecieSolgaleo.Instance, // Pokemon Specie

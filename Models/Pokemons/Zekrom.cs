@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zekrom(int level)
+		: base(
+				644,
+				SpecieZekrom.Instance, // Pokemon Specie
+				"Zekrom", level,
+				Dragon.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zekrom() : base(
 			644,
 			SpecieZekrom.Instance, // Pokemon Specie

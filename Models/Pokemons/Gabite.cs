@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gabite(int level)
+		: base(
+				444,
+				SpecieGabite.Instance, // Pokemon Specie
+				"Gabite", level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gabite() : base(
 			444,
 			SpecieGabite.Instance, // Pokemon Specie

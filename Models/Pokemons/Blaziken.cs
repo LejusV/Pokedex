@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Blaziken(int level)
+		: base(
+				257,
+				SpecieBlaziken.Instance, // Pokemon Specie
+				"Blaziken", level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Blaziken() : base(
 			257,
 			SpecieBlaziken.Instance, // Pokemon Specie

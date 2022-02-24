@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Duraludon(int level)
+		: base(
+				884,
+				SpecieDuraludon.Instance, // Pokemon Specie
+				"Duraludon", level,
+				Steel.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Duraludon() : base(
 			884,
 			SpecieDuraludon.Instance, // Pokemon Specie

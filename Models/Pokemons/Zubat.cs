@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zubat(int level)
+		: base(
+				41,
+				SpecieZubat.Instance, // Pokemon Specie
+				"Zubat", level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zubat() : base(
 			41,
 			SpecieZubat.Instance, // Pokemon Specie

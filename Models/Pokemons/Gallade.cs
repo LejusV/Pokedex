@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gallade(int level)
+		: base(
+				475,
+				SpecieGallade.Instance, // Pokemon Specie
+				"Gallade", level,
+				Psychic.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gallade() : base(
 			475,
 			SpecieGallade.Instance, // Pokemon Specie

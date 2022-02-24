@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vibrava(int level)
+		: base(
+				329,
+				SpecieVibrava.Instance, // Pokemon Specie
+				"Vibrava", level,
+				Ground.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vibrava() : base(
 			329,
 			SpecieVibrava.Instance, // Pokemon Specie

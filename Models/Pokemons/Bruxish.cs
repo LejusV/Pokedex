@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bruxish(int level)
+		: base(
+				779,
+				SpecieBruxish.Instance, // Pokemon Specie
+				"Bruxish", level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bruxish() : base(
 			779,
 			SpecieBruxish.Instance, // Pokemon Specie

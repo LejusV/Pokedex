@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Meltan(int level)
+		: base(
+				808,
+				SpecieMeltan.Instance, // Pokemon Specie
+				"Meltan", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Meltan() : base(
 			808,
 			SpecieMeltan.Instance, // Pokemon Specie

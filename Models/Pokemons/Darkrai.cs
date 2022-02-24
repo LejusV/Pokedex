@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Darkrai(int level)
+		: base(
+				491,
+				SpecieDarkrai.Instance, // Pokemon Specie
+				"Darkrai", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Darkrai() : base(
 			491,
 			SpecieDarkrai.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fomantis(int level)
+		: base(
+				753,
+				SpecieFomantis.Instance, // Pokemon Specie
+				"Fomantis", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fomantis() : base(
 			753,
 			SpecieFomantis.Instance, // Pokemon Specie

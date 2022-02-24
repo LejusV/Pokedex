@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seaking(int level)
+		: base(
+				119,
+				SpecieSeaking.Instance, // Pokemon Specie
+				"Seaking", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seaking() : base(
 			119,
 			SpecieSeaking.Instance, // Pokemon Specie

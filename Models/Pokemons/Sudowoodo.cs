@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sudowoodo(int level)
+		: base(
+				185,
+				SpecieSudowoodo.Instance, // Pokemon Specie
+				"Sudowoodo", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sudowoodo() : base(
 			185,
 			SpecieSudowoodo.Instance, // Pokemon Specie

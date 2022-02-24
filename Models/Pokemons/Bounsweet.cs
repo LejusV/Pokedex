@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bounsweet(int level)
+		: base(
+				761,
+				SpecieBounsweet.Instance, // Pokemon Specie
+				"Bounsweet", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bounsweet() : base(
 			761,
 			SpecieBounsweet.Instance, // Pokemon Specie

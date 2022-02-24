@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Togedemaru(int level)
+		: base(
+				777,
+				SpecieTogedemaru.Instance, // Pokemon Specie
+				"Togedemaru", level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Togedemaru() : base(
 			777,
 			SpecieTogedemaru.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lumineon(int level)
+		: base(
+				457,
+				SpecieLumineon.Instance, // Pokemon Specie
+				"Lumineon", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lumineon() : base(
 			457,
 			SpecieLumineon.Instance, // Pokemon Specie

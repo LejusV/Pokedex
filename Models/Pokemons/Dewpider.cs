@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dewpider(int level)
+		: base(
+				751,
+				SpecieDewpider.Instance, // Pokemon Specie
+				"Dewpider", level,
+				Water.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dewpider() : base(
 			751,
 			SpecieDewpider.Instance, // Pokemon Specie

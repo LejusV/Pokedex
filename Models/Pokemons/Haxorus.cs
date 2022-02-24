@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Haxorus(int level)
+		: base(
+				612,
+				SpecieHaxorus.Instance, // Pokemon Specie
+				"Haxorus", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Haxorus() : base(
 			612,
 			SpecieHaxorus.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bibarel(int level)
+		: base(
+				400,
+				SpecieBibarel.Instance, // Pokemon Specie
+				"Bibarel", level,
+				Normal.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bibarel() : base(
 			400,
 			SpecieBibarel.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slaking(int level)
+		: base(
+				289,
+				SpecieSlaking.Instance, // Pokemon Specie
+				"Slaking", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slaking() : base(
 			289,
 			SpecieSlaking.Instance, // Pokemon Specie

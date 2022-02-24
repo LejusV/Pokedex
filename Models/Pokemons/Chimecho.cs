@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chimecho(int level)
+		: base(
+				358,
+				SpecieChimecho.Instance, // Pokemon Specie
+				"Chimecho", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chimecho() : base(
 			358,
 			SpecieChimecho.Instance, // Pokemon Specie

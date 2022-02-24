@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Machoke(int level)
+		: base(
+				67,
+				SpecieMachoke.Instance, // Pokemon Specie
+				"Machoke", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Machoke() : base(
 			67,
 			SpecieMachoke.Instance, // Pokemon Specie

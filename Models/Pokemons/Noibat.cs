@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Noibat(int level)
+		: base(
+				714,
+				SpecieNoibat.Instance, // Pokemon Specie
+				"Noibat", level,
+				Flying.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Noibat() : base(
 			714,
 			SpecieNoibat.Instance, // Pokemon Specie

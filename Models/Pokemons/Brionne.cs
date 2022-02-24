@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Brionne(int level)
+		: base(
+				729,
+				SpecieBrionne.Instance, // Pokemon Specie
+				"Brionne", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Brionne() : base(
 			729,
 			SpecieBrionne.Instance, // Pokemon Specie

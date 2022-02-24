@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Timburr(int level)
+		: base(
+				532,
+				SpecieTimburr.Instance, // Pokemon Specie
+				"Timburr", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Timburr() : base(
 			532,
 			SpecieTimburr.Instance, // Pokemon Specie

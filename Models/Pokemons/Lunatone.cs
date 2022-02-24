@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Lunatone(int level)
+		: base(
+				337,
+				SpecieLunatone.Instance, // Pokemon Specie
+				"Lunatone", level,
+				Rock.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Lunatone() : base(
 			337,
 			SpecieLunatone.Instance, // Pokemon Specie

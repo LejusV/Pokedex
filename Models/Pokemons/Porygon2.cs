@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Porygon2(int level)
+		: base(
+				233,
+				SpeciePorygon2.Instance, // Pokemon Specie
+				"Porygon2", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Porygon2() : base(
 			233,
 			SpeciePorygon2.Instance, // Pokemon Specie

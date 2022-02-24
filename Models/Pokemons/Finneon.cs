@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Finneon(int level)
+		: base(
+				456,
+				SpecieFinneon.Instance, // Pokemon Specie
+				"Finneon", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Finneon() : base(
 			456,
 			SpecieFinneon.Instance, // Pokemon Specie

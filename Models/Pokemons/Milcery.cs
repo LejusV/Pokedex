@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Milcery(int level)
+		: base(
+				868,
+				SpecieMilcery.Instance, // Pokemon Specie
+				"Milcery", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Milcery() : base(
 			868,
 			SpecieMilcery.Instance, // Pokemon Specie

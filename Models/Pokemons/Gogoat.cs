@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gogoat(int level)
+		: base(
+				673,
+				SpecieGogoat.Instance, // Pokemon Specie
+				"Gogoat", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gogoat() : base(
 			673,
 			SpecieGogoat.Instance, // Pokemon Specie

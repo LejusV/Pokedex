@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Staraptor(int level)
+		: base(
+				398,
+				SpecieStaraptor.Instance, // Pokemon Specie
+				"Staraptor", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Staraptor() : base(
 			398,
 			SpecieStaraptor.Instance, // Pokemon Specie

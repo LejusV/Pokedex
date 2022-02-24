@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Garchomp(int level)
+		: base(
+				445,
+				SpecieGarchomp.Instance, // Pokemon Specie
+				"Garchomp", level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Garchomp() : base(
 			445,
 			SpecieGarchomp.Instance, // Pokemon Specie

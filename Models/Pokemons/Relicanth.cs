@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Relicanth(int level)
+		: base(
+				369,
+				SpecieRelicanth.Instance, // Pokemon Specie
+				"Relicanth", level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Relicanth() : base(
 			369,
 			SpecieRelicanth.Instance, // Pokemon Specie

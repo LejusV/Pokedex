@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tangrowth(int level)
+		: base(
+				465,
+				SpecieTangrowth.Instance, // Pokemon Specie
+				"Tangrowth", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tangrowth() : base(
 			465,
 			SpecieTangrowth.Instance, // Pokemon Specie

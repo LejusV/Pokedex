@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aron(int level)
+		: base(
+				304,
+				SpecieAron.Instance, // Pokemon Specie
+				"Aron", level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aron() : base(
 			304,
 			SpecieAron.Instance, // Pokemon Specie

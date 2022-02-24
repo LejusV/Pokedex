@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Malamar(int level)
+		: base(
+				687,
+				SpecieMalamar.Instance, // Pokemon Specie
+				"Malamar", level,
+				Dark.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Malamar() : base(
 			687,
 			SpecieMalamar.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Coalossal(int level)
+		: base(
+				839,
+				SpecieCoalossal.Instance, // Pokemon Specie
+				"Coalossal", level,
+				Rock.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Coalossal() : base(
 			839,
 			SpecieCoalossal.Instance, // Pokemon Specie

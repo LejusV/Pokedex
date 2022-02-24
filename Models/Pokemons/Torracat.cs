@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Torracat(int level)
+		: base(
+				726,
+				SpecieTorracat.Instance, // Pokemon Specie
+				"Torracat", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Torracat() : base(
 			726,
 			SpecieTorracat.Instance, // Pokemon Specie

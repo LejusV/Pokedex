@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kakuna(int level)
+		: base(
+				14,
+				SpecieKakuna.Instance, // Pokemon Specie
+				"Kakuna", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kakuna() : base(
 			14,
 			SpecieKakuna.Instance, // Pokemon Specie

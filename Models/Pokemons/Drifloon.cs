@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drifloon(int level)
+		: base(
+				425,
+				SpecieDrifloon.Instance, // Pokemon Specie
+				"Drifloon", level,
+				Ghost.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drifloon() : base(
 			425,
 			SpecieDrifloon.Instance, // Pokemon Specie

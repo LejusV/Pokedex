@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Vulpix(int level)
+		: base(
+				37,
+				SpecieVulpix.Instance, // Pokemon Specie
+				"Vulpix", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Vulpix() : base(
 			37,
 			SpecieVulpix.Instance, // Pokemon Specie

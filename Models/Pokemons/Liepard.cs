@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Liepard(int level)
+		: base(
+				510,
+				SpecieLiepard.Instance, // Pokemon Specie
+				"Liepard", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Liepard() : base(
 			510,
 			SpecieLiepard.Instance, // Pokemon Specie

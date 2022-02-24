@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mothim(int level)
+		: base(
+				414,
+				SpecieMothim.Instance, // Pokemon Specie
+				"Mothim", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mothim() : base(
 			414,
 			SpecieMothim.Instance, // Pokemon Specie

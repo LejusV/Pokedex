@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Raichu(int level)
+		: base(
+				26,
+				SpecieRaichu.Instance, // Pokemon Specie
+				"Raichu", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Raichu() : base(
 			26,
 			SpecieRaichu.Instance, // Pokemon Specie

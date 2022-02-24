@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Luxio(int level)
+		: base(
+				404,
+				SpecieLuxio.Instance, // Pokemon Specie
+				"Luxio", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Luxio() : base(
 			404,
 			SpecieLuxio.Instance, // Pokemon Specie

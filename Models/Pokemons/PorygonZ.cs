@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public PorygonZ(int level)
+		: base(
+				474,
+				SpeciePorygonZ.Instance, // Pokemon Specie
+				"Porygon-Z", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public PorygonZ() : base(
 			474,
 			SpeciePorygonZ.Instance, // Pokemon Specie

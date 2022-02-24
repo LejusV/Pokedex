@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hariyama(int level)
+		: base(
+				297,
+				SpecieHariyama.Instance, // Pokemon Specie
+				"Hariyama", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hariyama() : base(
 			297,
 			SpecieHariyama.Instance, // Pokemon Specie

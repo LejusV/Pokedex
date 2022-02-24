@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Garbodor(int level)
+		: base(
+				569,
+				SpecieGarbodor.Instance, // Pokemon Specie
+				"Garbodor", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Garbodor() : base(
 			569,
 			SpecieGarbodor.Instance, // Pokemon Specie

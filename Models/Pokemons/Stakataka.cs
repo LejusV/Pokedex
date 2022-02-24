@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stakataka(int level)
+		: base(
+				805,
+				SpecieStakataka.Instance, // Pokemon Specie
+				"Stakataka", level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stakataka() : base(
 			805,
 			SpecieStakataka.Instance, // Pokemon Specie

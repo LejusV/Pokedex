@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drakloak(int level)
+		: base(
+				886,
+				SpecieDrakloak.Instance, // Pokemon Specie
+				"Drakloak", level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drakloak() : base(
 			886,
 			SpecieDrakloak.Instance, // Pokemon Specie

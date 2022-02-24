@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cresselia(int level)
+		: base(
+				488,
+				SpecieCresselia.Instance, // Pokemon Specie
+				"Cresselia", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cresselia() : base(
 			488,
 			SpecieCresselia.Instance, // Pokemon Specie

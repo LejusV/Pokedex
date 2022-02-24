@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cutiefly(int level)
+		: base(
+				742,
+				SpecieCutiefly.Instance, // Pokemon Specie
+				"Cutiefly", level,
+				Bug.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cutiefly() : base(
 			742,
 			SpecieCutiefly.Instance, // Pokemon Specie

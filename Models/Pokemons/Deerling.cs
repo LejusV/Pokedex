@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Deerling(int level)
+		: base(
+				585,
+				SpecieDeerling.Instance, // Pokemon Specie
+				"Deerling", level,
+				Normal.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Deerling() : base(
 			585,
 			SpecieDeerling.Instance, // Pokemon Specie

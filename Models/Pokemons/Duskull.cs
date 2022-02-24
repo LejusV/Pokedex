@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Duskull(int level)
+		: base(
+				355,
+				SpecieDuskull.Instance, // Pokemon Specie
+				"Duskull", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Duskull() : base(
 			355,
 			SpecieDuskull.Instance, // Pokemon Specie

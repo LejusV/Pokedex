@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Jolteon(int level)
+		: base(
+				135,
+				SpecieJolteon.Instance, // Pokemon Specie
+				"Jolteon", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Jolteon() : base(
 			135,
 			SpecieJolteon.Instance, // Pokemon Specie

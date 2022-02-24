@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Xurkitree(int level)
+		: base(
+				796,
+				SpecieXurkitree.Instance, // Pokemon Specie
+				"Xurkitree", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Xurkitree() : base(
 			796,
 			SpecieXurkitree.Instance, // Pokemon Specie

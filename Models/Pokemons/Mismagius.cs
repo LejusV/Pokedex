@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mismagius(int level)
+		: base(
+				429,
+				SpecieMismagius.Instance, // Pokemon Specie
+				"Mismagius", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mismagius() : base(
 			429,
 			SpecieMismagius.Instance, // Pokemon Specie

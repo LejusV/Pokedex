@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gastly(int level)
+		: base(
+				92,
+				SpecieGastly.Instance, // Pokemon Specie
+				"Gastly", level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gastly() : base(
 			92,
 			SpecieGastly.Instance, // Pokemon Specie

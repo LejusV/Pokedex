@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Whiscash(int level)
+		: base(
+				340,
+				SpecieWhiscash.Instance, // Pokemon Specie
+				"Whiscash", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Whiscash() : base(
 			340,
 			SpecieWhiscash.Instance, // Pokemon Specie

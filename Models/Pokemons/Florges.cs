@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Florges(int level)
+		: base(
+				671,
+				SpecieFlorges.Instance, // Pokemon Specie
+				"Florges", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Florges() : base(
 			671,
 			SpecieFlorges.Instance, // Pokemon Specie

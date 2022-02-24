@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sandaconda(int level)
+		: base(
+				844,
+				SpecieSandaconda.Instance, // Pokemon Specie
+				"Sandaconda", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sandaconda() : base(
 			844,
 			SpecieSandaconda.Instance, // Pokemon Specie

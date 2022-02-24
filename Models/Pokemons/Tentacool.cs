@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tentacool(int level)
+		: base(
+				72,
+				SpecieTentacool.Instance, // Pokemon Specie
+				"Tentacool", level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tentacool() : base(
 			72,
 			SpecieTentacool.Instance, // Pokemon Specie

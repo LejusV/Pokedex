@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Granbull(int level)
+		: base(
+				210,
+				SpecieGranbull.Instance, // Pokemon Specie
+				"Granbull", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Granbull() : base(
 			210,
 			SpecieGranbull.Instance, // Pokemon Specie

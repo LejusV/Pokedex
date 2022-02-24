@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Azumarill(int level)
+		: base(
+				184,
+				SpecieAzumarill.Instance, // Pokemon Specie
+				"Azumarill", level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Azumarill() : base(
 			184,
 			SpecieAzumarill.Instance, // Pokemon Specie

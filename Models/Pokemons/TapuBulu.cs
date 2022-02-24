@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TapuBulu(int level)
+		: base(
+				787,
+				SpecieTapuBulu.Instance, // Pokemon Specie
+				"Tapu-Bulu", level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TapuBulu() : base(
 			787,
 			SpecieTapuBulu.Instance, // Pokemon Specie

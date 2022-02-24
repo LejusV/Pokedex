@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Furfrou(int level)
+		: base(
+				676,
+				SpecieFurfrou.Instance, // Pokemon Specie
+				"Furfrou", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Furfrou() : base(
 			676,
 			SpecieFurfrou.Instance, // Pokemon Specie

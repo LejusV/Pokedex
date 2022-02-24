@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Binacle(int level)
+		: base(
+				688,
+				SpecieBinacle.Instance, // Pokemon Specie
+				"Binacle", level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Binacle() : base(
 			688,
 			SpecieBinacle.Instance, // Pokemon Specie

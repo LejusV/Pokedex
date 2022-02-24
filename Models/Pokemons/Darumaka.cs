@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Darumaka(int level)
+		: base(
+				554,
+				SpecieDarumaka.Instance, // Pokemon Specie
+				"Darumaka", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Darumaka() : base(
 			554,
 			SpecieDarumaka.Instance, // Pokemon Specie

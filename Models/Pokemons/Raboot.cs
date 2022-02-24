@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Raboot(int level)
+		: base(
+				814,
+				SpecieRaboot.Instance, // Pokemon Specie
+				"Raboot", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Raboot() : base(
 			814,
 			SpecieRaboot.Instance, // Pokemon Specie

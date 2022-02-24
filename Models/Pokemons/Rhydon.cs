@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rhydon(int level)
+		: base(
+				112,
+				SpecieRhydon.Instance, // Pokemon Specie
+				"Rhydon", level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rhydon() : base(
 			112,
 			SpecieRhydon.Instance, // Pokemon Specie

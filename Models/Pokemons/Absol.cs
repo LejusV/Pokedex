@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Absol(int level)
+		: base(
+				359,
+				SpecieAbsol.Instance, // Pokemon Specie
+				"Absol", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Absol() : base(
 			359,
 			SpecieAbsol.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hattrem(int level)
+		: base(
+				857,
+				SpecieHattrem.Instance, // Pokemon Specie
+				"Hattrem", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hattrem() : base(
 			857,
 			SpecieHattrem.Instance, // Pokemon Specie

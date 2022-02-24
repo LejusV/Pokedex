@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ribombee(int level)
+		: base(
+				743,
+				SpecieRibombee.Instance, // Pokemon Specie
+				"Ribombee", level,
+				Bug.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ribombee() : base(
 			743,
 			SpecieRibombee.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Yamper(int level)
+		: base(
+				835,
+				SpecieYamper.Instance, // Pokemon Specie
+				"Yamper", level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Yamper() : base(
 			835,
 			SpecieYamper.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Eldegoss(int level)
+		: base(
+				830,
+				SpecieEldegoss.Instance, // Pokemon Specie
+				"Eldegoss", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Eldegoss() : base(
 			830,
 			SpecieEldegoss.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sinistea(int level)
+		: base(
+				854,
+				SpecieSinistea.Instance, // Pokemon Specie
+				"Sinistea", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sinistea() : base(
 			854,
 			SpecieSinistea.Instance, // Pokemon Specie

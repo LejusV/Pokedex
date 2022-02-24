@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Igglybuff(int level)
+		: base(
+				174,
+				SpecieIgglybuff.Instance, // Pokemon Specie
+				"Igglybuff", level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Igglybuff() : base(
 			174,
 			SpecieIgglybuff.Instance, // Pokemon Specie

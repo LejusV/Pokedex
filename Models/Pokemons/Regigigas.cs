@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Regigigas(int level)
+		: base(
+				486,
+				SpecieRegigigas.Instance, // Pokemon Specie
+				"Regigigas", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Regigigas() : base(
 			486,
 			SpecieRegigigas.Instance, // Pokemon Specie

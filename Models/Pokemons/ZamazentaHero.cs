@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public ZamazentaHero(int level)
+		: base(
+				889,
+				SpecieZamazentaHero.Instance, // Pokemon Specie
+				"Zamazenta-Hero", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public ZamazentaHero() : base(
 			889,
 			SpecieZamazentaHero.Instance, // Pokemon Specie

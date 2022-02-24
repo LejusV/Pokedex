@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Foongus(int level)
+		: base(
+				590,
+				SpecieFoongus.Instance, // Pokemon Specie
+				"Foongus", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Foongus() : base(
 			590,
 			SpecieFoongus.Instance, // Pokemon Specie

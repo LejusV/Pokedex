@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pawniard(int level)
+		: base(
+				624,
+				SpeciePawniard.Instance, // Pokemon Specie
+				"Pawniard", level,
+				Dark.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pawniard() : base(
 			624,
 			SpeciePawniard.Instance, // Pokemon Specie

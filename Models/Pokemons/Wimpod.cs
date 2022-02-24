@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wimpod(int level)
+		: base(
+				767,
+				SpecieWimpod.Instance, // Pokemon Specie
+				"Wimpod", level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wimpod() : base(
 			767,
 			SpecieWimpod.Instance, // Pokemon Specie

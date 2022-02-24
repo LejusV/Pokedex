@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Xerneas(int level)
+		: base(
+				716,
+				SpecieXerneas.Instance, // Pokemon Specie
+				"Xerneas", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Xerneas() : base(
 			716,
 			SpecieXerneas.Instance, // Pokemon Specie

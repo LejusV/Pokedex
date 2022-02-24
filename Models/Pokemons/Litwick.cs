@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Litwick(int level)
+		: base(
+				607,
+				SpecieLitwick.Instance, // Pokemon Specie
+				"Litwick", level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Litwick() : base(
 			607,
 			SpecieLitwick.Instance, // Pokemon Specie

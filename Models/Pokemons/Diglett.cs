@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Diglett(int level)
+		: base(
+				50,
+				SpecieDiglett.Instance, // Pokemon Specie
+				"Diglett", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Diglett() : base(
 			50,
 			SpecieDiglett.Instance, // Pokemon Specie

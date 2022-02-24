@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Fearow(int level)
+		: base(
+				22,
+				SpecieFearow.Instance, // Pokemon Specie
+				"Fearow", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Fearow() : base(
 			22,
 			SpecieFearow.Instance, // Pokemon Specie

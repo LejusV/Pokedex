@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drilbur(int level)
+		: base(
+				529,
+				SpecieDrilbur.Instance, // Pokemon Specie
+				"Drilbur", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drilbur() : base(
 			529,
 			SpecieDrilbur.Instance, // Pokemon Specie

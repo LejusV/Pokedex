@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nuzleaf(int level)
+		: base(
+				274,
+				SpecieNuzleaf.Instance, // Pokemon Specie
+				"Nuzleaf", level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nuzleaf() : base(
 			274,
 			SpecieNuzleaf.Instance, // Pokemon Specie

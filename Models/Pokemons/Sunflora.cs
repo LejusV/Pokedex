@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sunflora(int level)
+		: base(
+				192,
+				SpecieSunflora.Instance, // Pokemon Specie
+				"Sunflora", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sunflora() : base(
 			192,
 			SpecieSunflora.Instance, // Pokemon Specie

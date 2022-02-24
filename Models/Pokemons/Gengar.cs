@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gengar(int level)
+		: base(
+				94,
+				SpecieGengar.Instance, // Pokemon Specie
+				"Gengar", level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gengar() : base(
 			94,
 			SpecieGengar.Instance, // Pokemon Specie

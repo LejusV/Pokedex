@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Avalugg(int level)
+		: base(
+				713,
+				SpecieAvalugg.Instance, // Pokemon Specie
+				"Avalugg", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Avalugg() : base(
 			713,
 			SpecieAvalugg.Instance, // Pokemon Specie

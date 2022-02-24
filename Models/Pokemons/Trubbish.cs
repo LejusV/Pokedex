@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Trubbish(int level)
+		: base(
+				568,
+				SpecieTrubbish.Instance, // Pokemon Specie
+				"Trubbish", level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Trubbish() : base(
 			568,
 			SpecieTrubbish.Instance, // Pokemon Specie

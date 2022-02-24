@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gligar(int level)
+		: base(
+				207,
+				SpecieGligar.Instance, // Pokemon Specie
+				"Gligar", level,
+				Ground.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gligar() : base(
 			207,
 			SpecieGligar.Instance, // Pokemon Specie

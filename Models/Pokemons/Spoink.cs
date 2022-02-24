@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spoink(int level)
+		: base(
+				325,
+				SpecieSpoink.Instance, // Pokemon Specie
+				"Spoink", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spoink() : base(
 			325,
 			SpecieSpoink.Instance, // Pokemon Specie

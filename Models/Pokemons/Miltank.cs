@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Miltank(int level)
+		: base(
+				241,
+				SpecieMiltank.Instance, // Pokemon Specie
+				"Miltank", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Miltank() : base(
 			241,
 			SpecieMiltank.Instance, // Pokemon Specie

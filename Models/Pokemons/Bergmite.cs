@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bergmite(int level)
+		: base(
+				712,
+				SpecieBergmite.Instance, // Pokemon Specie
+				"Bergmite", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bergmite() : base(
 			712,
 			SpecieBergmite.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Carnivine(int level)
+		: base(
+				455,
+				SpecieCarnivine.Instance, // Pokemon Specie
+				"Carnivine", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Carnivine() : base(
 			455,
 			SpecieCarnivine.Instance, // Pokemon Specie

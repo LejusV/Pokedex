@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Girafarig(int level)
+		: base(
+				203,
+				SpecieGirafarig.Instance, // Pokemon Specie
+				"Girafarig", level,
+				Normal.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Girafarig() : base(
 			203,
 			SpecieGirafarig.Instance, // Pokemon Specie

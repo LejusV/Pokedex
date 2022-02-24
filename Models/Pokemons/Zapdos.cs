@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zapdos(int level)
+		: base(
+				145,
+				SpecieZapdos.Instance, // Pokemon Specie
+				"Zapdos", level,
+				Electric.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zapdos() : base(
 			145,
 			SpecieZapdos.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shiinotic(int level)
+		: base(
+				756,
+				SpecieShiinotic.Instance, // Pokemon Specie
+				"Shiinotic", level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shiinotic() : base(
 			756,
 			SpecieShiinotic.Instance, // Pokemon Specie

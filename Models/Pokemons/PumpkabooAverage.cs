@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public PumpkabooAverage(int level)
+		: base(
+				710,
+				SpeciePumpkabooAverage.Instance, // Pokemon Specie
+				"Pumpkaboo-Average", level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public PumpkabooAverage() : base(
 			710,
 			SpeciePumpkabooAverage.Instance, // Pokemon Specie

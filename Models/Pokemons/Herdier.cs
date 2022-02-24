@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Herdier(int level)
+		: base(
+				507,
+				SpecieHerdier.Instance, // Pokemon Specie
+				"Herdier", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Herdier() : base(
 			507,
 			SpecieHerdier.Instance, // Pokemon Specie

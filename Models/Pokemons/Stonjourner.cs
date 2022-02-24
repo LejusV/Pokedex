@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Stonjourner(int level)
+		: base(
+				874,
+				SpecieStonjourner.Instance, // Pokemon Specie
+				"Stonjourner", level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Stonjourner() : base(
 			874,
 			SpecieStonjourner.Instance, // Pokemon Specie

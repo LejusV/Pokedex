@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Celesteela(int level)
+		: base(
+				797,
+				SpecieCelesteela.Instance, // Pokemon Specie
+				"Celesteela", level,
+				Steel.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Celesteela() : base(
 			797,
 			SpecieCelesteela.Instance, // Pokemon Specie

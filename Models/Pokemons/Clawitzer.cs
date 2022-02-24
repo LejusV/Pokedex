@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Clawitzer(int level)
+		: base(
+				693,
+				SpecieClawitzer.Instance, // Pokemon Specie
+				"Clawitzer", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Clawitzer() : base(
 			693,
 			SpecieClawitzer.Instance, // Pokemon Specie

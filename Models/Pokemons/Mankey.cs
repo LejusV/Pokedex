@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mankey(int level)
+		: base(
+				56,
+				SpecieMankey.Instance, // Pokemon Specie
+				"Mankey", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mankey() : base(
 			56,
 			SpecieMankey.Instance, // Pokemon Specie

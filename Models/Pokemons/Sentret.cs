@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sentret(int level)
+		: base(
+				161,
+				SpecieSentret.Instance, // Pokemon Specie
+				"Sentret", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sentret() : base(
 			161,
 			SpecieSentret.Instance, // Pokemon Specie

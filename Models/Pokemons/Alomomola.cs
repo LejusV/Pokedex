@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Alomomola(int level)
+		: base(
+				594,
+				SpecieAlomomola.Instance, // Pokemon Specie
+				"Alomomola", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Alomomola() : base(
 			594,
 			SpecieAlomomola.Instance, // Pokemon Specie

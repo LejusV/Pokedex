@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magmortar(int level)
+		: base(
+				467,
+				SpecieMagmortar.Instance, // Pokemon Specie
+				"Magmortar", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magmortar() : base(
 			467,
 			SpecieMagmortar.Instance, // Pokemon Specie

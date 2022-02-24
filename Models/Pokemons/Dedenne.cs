@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dedenne(int level)
+		: base(
+				702,
+				SpecieDedenne.Instance, // Pokemon Specie
+				"Dedenne", level,
+				Electric.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dedenne() : base(
 			702,
 			SpecieDedenne.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Braixen(int level)
+		: base(
+				654,
+				SpecieBraixen.Instance, // Pokemon Specie
+				"Braixen", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Braixen() : base(
 			654,
 			SpecieBraixen.Instance, // Pokemon Specie

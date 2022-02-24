@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public TapuKoko(int level)
+		: base(
+				785,
+				SpecieTapuKoko.Instance, // Pokemon Specie
+				"Tapu-Koko", level,
+				Electric.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public TapuKoko() : base(
 			785,
 			SpecieTapuKoko.Instance, // Pokemon Specie

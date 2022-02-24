@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slurpuff(int level)
+		: base(
+				685,
+				SpecieSlurpuff.Instance, // Pokemon Specie
+				"Slurpuff", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slurpuff() : base(
 			685,
 			SpecieSlurpuff.Instance, // Pokemon Specie

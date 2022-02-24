@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Shuppet(int level)
+		: base(
+				353,
+				SpecieShuppet.Instance, // Pokemon Specie
+				"Shuppet", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Shuppet() : base(
 			353,
 			SpecieShuppet.Instance, // Pokemon Specie

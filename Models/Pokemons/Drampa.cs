@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Drampa(int level)
+		: base(
+				780,
+				SpecieDrampa.Instance, // Pokemon Specie
+				"Drampa", level,
+				Normal.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Drampa() : base(
 			780,
 			SpecieDrampa.Instance, // Pokemon Specie

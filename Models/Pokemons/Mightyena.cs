@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mightyena(int level)
+		: base(
+				262,
+				SpecieMightyena.Instance, // Pokemon Specie
+				"Mightyena", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mightyena() : base(
 			262,
 			SpecieMightyena.Instance, // Pokemon Specie

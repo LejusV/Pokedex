@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dugtrio(int level)
+		: base(
+				51,
+				SpecieDugtrio.Instance, // Pokemon Specie
+				"Dugtrio", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dugtrio() : base(
 			51,
 			SpecieDugtrio.Instance, // Pokemon Specie

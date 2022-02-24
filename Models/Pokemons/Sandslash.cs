@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Sandslash(int level)
+		: base(
+				28,
+				SpecieSandslash.Instance, // Pokemon Specie
+				"Sandslash", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Sandslash() : base(
 			28,
 			SpecieSandslash.Instance, // Pokemon Specie

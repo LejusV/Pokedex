@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Chingling(int level)
+		: base(
+				433,
+				SpecieChingling.Instance, // Pokemon Specie
+				"Chingling", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Chingling() : base(
 			433,
 			SpecieChingling.Instance, // Pokemon Specie

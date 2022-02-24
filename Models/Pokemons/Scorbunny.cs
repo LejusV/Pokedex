@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scorbunny(int level)
+		: base(
+				813,
+				SpecieScorbunny.Instance, // Pokemon Specie
+				"Scorbunny", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scorbunny() : base(
 			813,
 			SpecieScorbunny.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Victreebel(int level)
+		: base(
+				71,
+				SpecieVictreebel.Instance, // Pokemon Specie
+				"Victreebel", level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Victreebel() : base(
 			71,
 			SpecieVictreebel.Instance, // Pokemon Specie

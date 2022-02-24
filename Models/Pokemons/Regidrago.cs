@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Regidrago(int level)
+		: base(
+				895,
+				SpecieRegidrago.Instance, // Pokemon Specie
+				"Regidrago", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Regidrago() : base(
 			895,
 			SpecieRegidrago.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public HakamoO(int level)
+		: base(
+				783,
+				SpecieHakamoO.Instance, // Pokemon Specie
+				"Hakamo-O", level,
+				Dragon.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public HakamoO() : base(
 			783,
 			SpecieHakamoO.Instance, // Pokemon Specie

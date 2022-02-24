@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Trevenant(int level)
+		: base(
+				709,
+				SpecieTrevenant.Instance, // Pokemon Specie
+				"Trevenant", level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Trevenant() : base(
 			709,
 			SpecieTrevenant.Instance, // Pokemon Specie

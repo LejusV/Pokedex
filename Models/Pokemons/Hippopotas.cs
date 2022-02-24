@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Hippopotas(int level)
+		: base(
+				449,
+				SpecieHippopotas.Instance, // Pokemon Specie
+				"Hippopotas", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Hippopotas() : base(
 			449,
 			SpecieHippopotas.Instance, // Pokemon Specie

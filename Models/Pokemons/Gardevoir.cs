@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gardevoir(int level)
+		: base(
+				282,
+				SpecieGardevoir.Instance, // Pokemon Specie
+				"Gardevoir", level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gardevoir() : base(
 			282,
 			SpecieGardevoir.Instance, // Pokemon Specie

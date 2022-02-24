@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Glaceon(int level)
+		: base(
+				471,
+				SpecieGlaceon.Instance, // Pokemon Specie
+				"Glaceon", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Glaceon() : base(
 			471,
 			SpecieGlaceon.Instance, // Pokemon Specie

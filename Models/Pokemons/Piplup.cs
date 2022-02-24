@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Piplup(int level)
+		: base(
+				393,
+				SpeciePiplup.Instance, // Pokemon Specie
+				"Piplup", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Piplup() : base(
 			393,
 			SpeciePiplup.Instance, // Pokemon Specie

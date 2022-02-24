@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Wooloo(int level)
+		: base(
+				831,
+				SpecieWooloo.Instance, // Pokemon Specie
+				"Wooloo", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Wooloo() : base(
 			831,
 			SpecieWooloo.Instance, // Pokemon Specie

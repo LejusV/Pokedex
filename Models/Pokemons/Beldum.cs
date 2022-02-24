@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Beldum(int level)
+		: base(
+				374,
+				SpecieBeldum.Instance, // Pokemon Specie
+				"Beldum", level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Beldum() : base(
 			374,
 			SpecieBeldum.Instance, // Pokemon Specie

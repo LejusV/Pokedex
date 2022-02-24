@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public ThundurusIncarnate(int level)
+		: base(
+				642,
+				SpecieThundurusIncarnate.Instance, // Pokemon Specie
+				"Thundurus-Incarnate", level,
+				Electric.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public ThundurusIncarnate() : base(
 			642,
 			SpecieThundurusIncarnate.Instance, // Pokemon Specie

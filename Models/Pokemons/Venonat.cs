@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Venonat(int level)
+		: base(
+				48,
+				SpecieVenonat.Instance, // Pokemon Specie
+				"Venonat", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Venonat() : base(
 			48,
 			SpecieVenonat.Instance, // Pokemon Specie

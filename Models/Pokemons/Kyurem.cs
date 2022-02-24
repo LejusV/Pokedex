@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Kyurem(int level)
+		: base(
+				646,
+				SpecieKyurem.Instance, // Pokemon Specie
+				"Kyurem", level,
+				Dragon.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Kyurem() : base(
 			646,
 			SpecieKyurem.Instance, // Pokemon Specie

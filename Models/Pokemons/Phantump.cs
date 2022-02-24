@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Phantump(int level)
+		: base(
+				708,
+				SpeciePhantump.Instance, // Pokemon Specie
+				"Phantump", level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Phantump() : base(
 			708,
 			SpeciePhantump.Instance, // Pokemon Specie

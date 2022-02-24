@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Simisage(int level)
+		: base(
+				512,
+				SpecieSimisage.Instance, // Pokemon Specie
+				"Simisage", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Simisage() : base(
 			512,
 			SpecieSimisage.Instance, // Pokemon Specie

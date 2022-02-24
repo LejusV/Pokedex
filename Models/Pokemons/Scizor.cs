@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Scizor(int level)
+		: base(
+				212,
+				SpecieScizor.Instance, // Pokemon Specie
+				"Scizor", level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Scizor() : base(
 			212,
 			SpecieScizor.Instance, // Pokemon Specie

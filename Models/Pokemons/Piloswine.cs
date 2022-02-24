@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Piloswine(int level)
+		: base(
+				221,
+				SpeciePiloswine.Instance, // Pokemon Specie
+				"Piloswine", level,
+				Ice.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Piloswine() : base(
 			221,
 			SpeciePiloswine.Instance, // Pokemon Specie

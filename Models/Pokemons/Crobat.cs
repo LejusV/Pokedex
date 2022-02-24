@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Crobat(int level)
+		: base(
+				169,
+				SpecieCrobat.Instance, // Pokemon Specie
+				"Crobat", level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Crobat() : base(
 			169,
 			SpecieCrobat.Instance, // Pokemon Specie

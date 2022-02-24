@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Slugma(int level)
+		: base(
+				218,
+				SpecieSlugma.Instance, // Pokemon Specie
+				"Slugma", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Slugma() : base(
 			218,
 			SpecieSlugma.Instance, // Pokemon Specie

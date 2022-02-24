@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Delibird(int level)
+		: base(
+				225,
+				SpecieDelibird.Instance, // Pokemon Specie
+				"Delibird", level,
+				Ice.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Delibird() : base(
 			225,
 			SpecieDelibird.Instance, // Pokemon Specie

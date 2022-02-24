@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Escavalier(int level)
+		: base(
+				589,
+				SpecieEscavalier.Instance, // Pokemon Specie
+				"Escavalier", level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Escavalier() : base(
 			589,
 			SpecieEscavalier.Instance, // Pokemon Specie

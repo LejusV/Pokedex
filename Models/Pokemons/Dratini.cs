@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dratini(int level)
+		: base(
+				147,
+				SpecieDratini.Instance, // Pokemon Specie
+				"Dratini", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dratini() : base(
 			147,
 			SpecieDratini.Instance, // Pokemon Specie

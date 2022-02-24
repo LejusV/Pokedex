@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Seismitoad(int level)
+		: base(
+				537,
+				SpecieSeismitoad.Instance, // Pokemon Specie
+				"Seismitoad", level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Seismitoad() : base(
 			537,
 			SpecieSeismitoad.Instance, // Pokemon Specie

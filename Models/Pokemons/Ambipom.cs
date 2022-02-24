@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ambipom(int level)
+		: base(
+				424,
+				SpecieAmbipom.Instance, // Pokemon Specie
+				"Ambipom", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ambipom() : base(
 			424,
 			SpecieAmbipom.Instance, // Pokemon Specie

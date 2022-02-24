@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Bewear(int level)
+		: base(
+				760,
+				SpecieBewear.Instance, // Pokemon Specie
+				"Bewear", level,
+				Normal.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Bewear() : base(
 			760,
 			SpecieBewear.Instance, // Pokemon Specie

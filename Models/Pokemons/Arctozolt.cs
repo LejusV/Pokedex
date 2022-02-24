@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Arctozolt(int level)
+		: base(
+				881,
+				SpecieArctozolt.Instance, // Pokemon Specie
+				"Arctozolt", level,
+				Electric.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Arctozolt() : base(
 			881,
 			SpecieArctozolt.Instance, // Pokemon Specie

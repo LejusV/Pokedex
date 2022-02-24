@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Castform(int level)
+		: base(
+				351,
+				SpecieCastform.Instance, // Pokemon Specie
+				"Castform", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Castform() : base(
 			351,
 			SpecieCastform.Instance, // Pokemon Specie

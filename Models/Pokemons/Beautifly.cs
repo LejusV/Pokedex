@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Beautifly(int level)
+		: base(
+				267,
+				SpecieBeautifly.Instance, // Pokemon Specie
+				"Beautifly", level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Beautifly() : base(
 			267,
 			SpecieBeautifly.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Metang(int level)
+		: base(
+				375,
+				SpecieMetang.Instance, // Pokemon Specie
+				"Metang", level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Metang() : base(
 			375,
 			SpecieMetang.Instance, // Pokemon Specie

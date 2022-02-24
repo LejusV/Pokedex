@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Gothitelle(int level)
+		: base(
+				576,
+				SpecieGothitelle.Instance, // Pokemon Specie
+				"Gothitelle", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Gothitelle() : base(
 			576,
 			SpecieGothitelle.Instance, // Pokemon Specie

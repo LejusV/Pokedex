@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Goldeen(int level)
+		: base(
+				118,
+				SpecieGoldeen.Instance, // Pokemon Specie
+				"Goldeen", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Goldeen() : base(
 			118,
 			SpecieGoldeen.Instance, // Pokemon Specie

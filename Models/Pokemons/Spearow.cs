@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Spearow(int level)
+		: base(
+				21,
+				SpecieSpearow.Instance, // Pokemon Specie
+				"Spearow", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Spearow() : base(
 			21,
 			SpecieSpearow.Instance, // Pokemon Specie

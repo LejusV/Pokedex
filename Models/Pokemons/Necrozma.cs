@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Necrozma(int level)
+		: base(
+				800,
+				SpecieNecrozma.Instance, // Pokemon Specie
+				"Necrozma", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Necrozma() : base(
 			800,
 			SpecieNecrozma.Instance, // Pokemon Specie

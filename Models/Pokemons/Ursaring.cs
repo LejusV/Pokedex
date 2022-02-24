@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Ursaring(int level)
+		: base(
+				217,
+				SpecieUrsaring.Instance, // Pokemon Specie
+				"Ursaring", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Ursaring() : base(
 			217,
 			SpecieUrsaring.Instance, // Pokemon Specie

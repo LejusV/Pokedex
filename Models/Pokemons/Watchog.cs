@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Watchog(int level)
+		: base(
+				505,
+				SpecieWatchog.Instance, // Pokemon Specie
+				"Watchog", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Watchog() : base(
 			505,
 			SpecieWatchog.Instance, // Pokemon Specie

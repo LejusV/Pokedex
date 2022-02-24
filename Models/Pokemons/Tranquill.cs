@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Tranquill(int level)
+		: base(
+				520,
+				SpecieTranquill.Instance, // Pokemon Specie
+				"Tranquill", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Tranquill() : base(
 			520,
 			SpecieTranquill.Instance, // Pokemon Specie

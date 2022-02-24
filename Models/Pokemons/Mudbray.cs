@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Mudbray(int level)
+		: base(
+				749,
+				SpecieMudbray.Instance, // Pokemon Specie
+				"Mudbray", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Mudbray() : base(
 			749,
 			SpecieMudbray.Instance, // Pokemon Specie

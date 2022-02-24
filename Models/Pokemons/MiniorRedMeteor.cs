@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public MiniorRedMeteor(int level)
+		: base(
+				774,
+				SpecieMiniorRedMeteor.Instance, // Pokemon Specie
+				"Minior-Red-Meteor", level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public MiniorRedMeteor() : base(
 			774,
 			SpecieMiniorRedMeteor.Instance, // Pokemon Specie

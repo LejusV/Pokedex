@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Obstagoon(int level)
+		: base(
+				862,
+				SpecieObstagoon.Instance, // Pokemon Specie
+				"Obstagoon", level,
+				Dark.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Obstagoon() : base(
 			862,
 			SpecieObstagoon.Instance, // Pokemon Specie

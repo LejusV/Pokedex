@@ -78,6 +78,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}}
 
+		public {pokeNameNoSpace}(int level)
+		: base(
+				{poke["id"]},
+				Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
+				"{pokeName}", level,
+				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
+		)
+		{{
+			CalculateStats();
+			ResetCurrentStats();
+		}}
+
 		public {pokeNameNoSpace}() : base(
 			{poke["id"]},
 			Specie{pokeNameNoSpace}.Instance, // Pokemon Specie

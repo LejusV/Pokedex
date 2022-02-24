@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Zarude(int level)
+		: base(
+				893,
+				SpecieZarude.Instance, // Pokemon Specie
+				"Zarude", level,
+				Dark.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Zarude() : base(
 			893,
 			SpecieZarude.Instance, // Pokemon Specie

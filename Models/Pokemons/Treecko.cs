@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Treecko(int level)
+		: base(
+				252,
+				SpecieTreecko.Instance, // Pokemon Specie
+				"Treecko", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Treecko() : base(
 			252,
 			SpecieTreecko.Instance, // Pokemon Specie

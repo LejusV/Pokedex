@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Crabominable(int level)
+		: base(
+				740,
+				SpecieCrabominable.Instance, // Pokemon Specie
+				"Crabominable", level,
+				Fighting.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Crabominable() : base(
 			740,
 			SpecieCrabominable.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nincada(int level)
+		: base(
+				290,
+				SpecieNincada.Instance, // Pokemon Specie
+				"Nincada", level,
+				Bug.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nincada() : base(
 			290,
 			SpecieNincada.Instance, // Pokemon Specie

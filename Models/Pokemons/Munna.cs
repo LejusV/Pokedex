@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Munna(int level)
+		: base(
+				517,
+				SpecieMunna.Instance, // Pokemon Specie
+				"Munna", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Munna() : base(
 			517,
 			SpecieMunna.Instance, // Pokemon Specie

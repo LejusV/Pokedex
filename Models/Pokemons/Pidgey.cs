@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pidgey(int level)
+		: base(
+				16,
+				SpeciePidgey.Instance, // Pokemon Specie
+				"Pidgey", level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pidgey() : base(
 			16,
 			SpeciePidgey.Instance, // Pokemon Specie

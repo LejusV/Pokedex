@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Aggron(int level)
+		: base(
+				306,
+				SpecieAggron.Instance, // Pokemon Specie
+				"Aggron", level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Aggron() : base(
 			306,
 			SpecieAggron.Instance, // Pokemon Specie

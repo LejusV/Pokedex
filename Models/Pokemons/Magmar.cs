@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Magmar(int level)
+		: base(
+				126,
+				SpecieMagmar.Instance, // Pokemon Specie
+				"Magmar", level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Magmar() : base(
 			126,
 			SpecieMagmar.Instance, // Pokemon Specie

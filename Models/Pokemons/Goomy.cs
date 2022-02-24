@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Goomy(int level)
+		: base(
+				704,
+				SpecieGoomy.Instance, // Pokemon Specie
+				"Goomy", level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Goomy() : base(
 			704,
 			SpecieGoomy.Instance, // Pokemon Specie

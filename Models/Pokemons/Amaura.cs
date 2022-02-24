@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Amaura(int level)
+		: base(
+				698,
+				SpecieAmaura.Instance, // Pokemon Specie
+				"Amaura", level,
+				Rock.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Amaura() : base(
 			698,
 			SpecieAmaura.Instance, // Pokemon Specie

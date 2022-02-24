@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Skuntank(int level)
+		: base(
+				435,
+				SpecieSkuntank.Instance, // Pokemon Specie
+				"Skuntank", level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Skuntank() : base(
 			435,
 			SpecieSkuntank.Instance, // Pokemon Specie

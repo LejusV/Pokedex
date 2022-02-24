@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Claydol(int level)
+		: base(
+				344,
+				SpecieClaydol.Instance, // Pokemon Specie
+				"Claydol", level,
+				Ground.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Claydol() : base(
 			344,
 			SpecieClaydol.Instance, // Pokemon Specie

@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Beheeyem(int level)
+		: base(
+				606,
+				SpecieBeheeyem.Instance, // Pokemon Specie
+				"Beheeyem", level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Beheeyem() : base(
 			606,
 			SpecieBeheeyem.Instance, // Pokemon Specie

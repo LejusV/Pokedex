@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dwebble(int level)
+		: base(
+				557,
+				SpecieDwebble.Instance, // Pokemon Specie
+				"Dwebble", level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dwebble() : base(
 			557,
 			SpecieDwebble.Instance, // Pokemon Specie

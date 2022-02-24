@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Barraskewda(int level)
+		: base(
+				847,
+				SpecieBarraskewda.Instance, // Pokemon Specie
+				"Barraskewda", level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Barraskewda() : base(
 			847,
 			SpecieBarraskewda.Instance, // Pokemon Specie

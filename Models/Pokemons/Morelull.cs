@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Morelull(int level)
+		: base(
+				755,
+				SpecieMorelull.Instance, // Pokemon Specie
+				"Morelull", level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Morelull() : base(
 			755,
 			SpecieMorelull.Instance, // Pokemon Specie

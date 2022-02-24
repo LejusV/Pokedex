@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Xatu(int level)
+		: base(
+				178,
+				SpecieXatu.Instance, // Pokemon Specie
+				"Xatu", level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Xatu() : base(
 			178,
 			SpecieXatu.Instance, // Pokemon Specie

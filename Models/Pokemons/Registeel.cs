@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Registeel(int level)
+		: base(
+				379,
+				SpecieRegisteel.Instance, // Pokemon Specie
+				"Registeel", level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Registeel() : base(
 			379,
 			SpecieRegisteel.Instance, // Pokemon Specie

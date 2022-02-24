@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Rattata(int level)
+		: base(
+				19,
+				SpecieRattata.Instance, // Pokemon Specie
+				"Rattata", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Rattata() : base(
 			19,
 			SpecieRattata.Instance, // Pokemon Specie

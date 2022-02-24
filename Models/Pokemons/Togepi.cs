@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Togepi(int level)
+		: base(
+				175,
+				SpecieTogepi.Instance, // Pokemon Specie
+				"Togepi", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Togepi() : base(
 			175,
 			SpecieTogepi.Instance, // Pokemon Specie

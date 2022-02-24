@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Umbreon(int level)
+		: base(
+				197,
+				SpecieUmbreon.Instance, // Pokemon Specie
+				"Umbreon", level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Umbreon() : base(
 			197,
 			SpecieUmbreon.Instance, // Pokemon Specie

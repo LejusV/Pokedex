@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Cryogonal(int level)
+		: base(
+				615,
+				SpecieCryogonal.Instance, // Pokemon Specie
+				"Cryogonal", level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Cryogonal() : base(
 			615,
 			SpecieCryogonal.Instance, // Pokemon Specie

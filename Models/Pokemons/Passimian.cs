@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Passimian(int level)
+		: base(
+				766,
+				SpeciePassimian.Instance, // Pokemon Specie
+				"Passimian", level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Passimian() : base(
 			766,
 			SpeciePassimian.Instance, // Pokemon Specie

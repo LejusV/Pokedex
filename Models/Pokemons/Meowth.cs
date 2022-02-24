@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Meowth(int level)
+		: base(
+				52,
+				SpecieMeowth.Instance, // Pokemon Specie
+				"Meowth", level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Meowth() : base(
 			52,
 			SpecieMeowth.Instance, // Pokemon Specie

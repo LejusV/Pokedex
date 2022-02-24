@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dustox(int level)
+		: base(
+				269,
+				SpecieDustox.Instance, // Pokemon Specie
+				"Dustox", level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dustox() : base(
 			269,
 			SpecieDustox.Instance, // Pokemon Specie

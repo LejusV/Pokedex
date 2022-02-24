@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Carkol(int level)
+		: base(
+				838,
+				SpecieCarkol.Instance, // Pokemon Specie
+				"Carkol", level,
+				Rock.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Carkol() : base(
 			838,
 			SpecieCarkol.Instance, // Pokemon Specie

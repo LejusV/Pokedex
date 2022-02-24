@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Silicobra(int level)
+		: base(
+				843,
+				SpecieSilicobra.Instance, // Pokemon Specie
+				"Silicobra", level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Silicobra() : base(
 			843,
 			SpecieSilicobra.Instance, // Pokemon Specie

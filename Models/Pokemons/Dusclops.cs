@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Dusclops(int level)
+		: base(
+				356,
+				SpecieDusclops.Instance, // Pokemon Specie
+				"Dusclops", level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Dusclops() : base(
 			356,
 			SpecieDusclops.Instance, // Pokemon Specie

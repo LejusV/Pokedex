@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Nidoking(int level)
+		: base(
+				34,
+				SpecieNidoking.Instance, // Pokemon Specie
+				"Nidoking", level,
+				Poison.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Nidoking() : base(
 			34,
 			SpecieNidoking.Instance, // Pokemon Specie

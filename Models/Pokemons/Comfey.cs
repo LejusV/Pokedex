@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Comfey(int level)
+		: base(
+				764,
+				SpecieComfey.Instance, // Pokemon Specie
+				"Comfey", level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Comfey() : base(
 			764,
 			SpecieComfey.Instance, // Pokemon Specie

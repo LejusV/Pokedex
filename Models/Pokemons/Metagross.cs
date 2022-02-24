@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Metagross(int level)
+		: base(
+				376,
+				SpecieMetagross.Instance, // Pokemon Specie
+				"Metagross", level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Metagross() : base(
 			376,
 			SpecieMetagross.Instance, // Pokemon Specie

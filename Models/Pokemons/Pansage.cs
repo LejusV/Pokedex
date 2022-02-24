@@ -47,6 +47,18 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		public Pansage(int level)
+		: base(
+				511,
+				SpeciePansage.Instance, // Pokemon Specie
+				"Pansage", level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
+
 		public Pansage() : base(
 			511,
 			SpeciePansage.Instance, // Pokemon Specie
