@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class GiratinaAltered : Pokemon
 	{
 
-		public GiratinaAltered(string nickname, int level) : base(
-			487,
-			SpecieGiratinaAltered.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Dragon.Instance			
-		) {}
+		public GiratinaAltered(string nickname, int level)
+		: base(
+				487,
+				SpecieGiratinaAltered.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public GiratinaAltered() : base(
 			487,

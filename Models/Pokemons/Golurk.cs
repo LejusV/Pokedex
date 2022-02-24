@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golurk : Pokemon
 	{
 
-		public Golurk(string nickname, int level) : base(
-			623,
-			SpecieGolurk.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Ghost.Instance			
-		) {}
+		public Golurk(string nickname, int level)
+		: base(
+				623,
+				SpecieGolurk.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golurk() : base(
 			623,

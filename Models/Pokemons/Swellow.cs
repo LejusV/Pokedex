@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swellow : Pokemon
 	{
 
-		public Swellow(string nickname, int level) : base(
-			277,
-			SpecieSwellow.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Swellow(string nickname, int level)
+		: base(
+				277,
+				SpecieSwellow.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swellow() : base(
 			277,

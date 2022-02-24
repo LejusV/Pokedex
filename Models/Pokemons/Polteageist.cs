@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Polteageist : Pokemon
 	{
 
-		public Polteageist(string nickname, int level) : base(
-			855,
-			SpeciePolteageist.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Polteageist(string nickname, int level)
+		: base(
+				855,
+				SpeciePolteageist.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Polteageist() : base(
 			855,

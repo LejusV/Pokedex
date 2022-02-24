@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dialga : Pokemon
 	{
 
-		public Dialga(string nickname, int level) : base(
-			483,
-			SpecieDialga.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Dragon.Instance			
-		) {}
+		public Dialga(string nickname, int level)
+		: base(
+				483,
+				SpecieDialga.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dialga() : base(
 			483,

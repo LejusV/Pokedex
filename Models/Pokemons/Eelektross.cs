@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Eelektross : Pokemon
 	{
 
-		public Eelektross(string nickname, int level) : base(
-			604,
-			SpecieEelektross.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Eelektross(string nickname, int level)
+		: base(
+				604,
+				SpecieEelektross.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Eelektross() : base(
 			604,

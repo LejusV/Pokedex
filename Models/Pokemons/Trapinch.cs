@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Trapinch : Pokemon
 	{
 
-		public Trapinch(string nickname, int level) : base(
-			328,
-			SpecieTrapinch.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Trapinch(string nickname, int level)
+		: base(
+				328,
+				SpecieTrapinch.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Trapinch() : base(
 			328,

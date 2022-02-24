@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stunfisk : Pokemon
 	{
 
-		public Stunfisk(string nickname, int level) : base(
-			618,
-			SpecieStunfisk.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Electric.Instance			
-		) {}
+		public Stunfisk(string nickname, int level)
+		: base(
+				618,
+				SpecieStunfisk.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stunfisk() : base(
 			618,

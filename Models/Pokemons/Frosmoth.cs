@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Frosmoth : Pokemon
 	{
 
-		public Frosmoth(string nickname, int level) : base(
-			873,
-			SpecieFrosmoth.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Bug.Instance			
-		) {}
+		public Frosmoth(string nickname, int level)
+		: base(
+				873,
+				SpecieFrosmoth.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Frosmoth() : base(
 			873,

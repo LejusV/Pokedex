@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stunky : Pokemon
 	{
 
-		public Stunky(string nickname, int level) : base(
-			434,
-			SpecieStunky.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dark.Instance			
-		) {}
+		public Stunky(string nickname, int level)
+		: base(
+				434,
+				SpecieStunky.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stunky() : base(
 			434,

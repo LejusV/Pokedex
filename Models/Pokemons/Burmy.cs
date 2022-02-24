@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Burmy : Pokemon
 	{
 
-		public Burmy(string nickname, int level) : base(
-			412,
-			SpecieBurmy.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Burmy(string nickname, int level)
+		: base(
+				412,
+				SpecieBurmy.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Burmy() : base(
 			412,

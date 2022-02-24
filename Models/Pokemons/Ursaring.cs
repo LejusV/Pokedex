@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ursaring : Pokemon
 	{
 
-		public Ursaring(string nickname, int level) : base(
-			217,
-			SpecieUrsaring.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Ursaring(string nickname, int level)
+		: base(
+				217,
+				SpecieUrsaring.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ursaring() : base(
 			217,

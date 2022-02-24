@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Manectric : Pokemon
 	{
 
-		public Manectric(string nickname, int level) : base(
-			310,
-			SpecieManectric.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Manectric(string nickname, int level)
+		: base(
+				310,
+				SpecieManectric.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Manectric() : base(
 			310,

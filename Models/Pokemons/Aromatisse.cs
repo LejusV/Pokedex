@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aromatisse : Pokemon
 	{
 
-		public Aromatisse(string nickname, int level) : base(
-			683,
-			SpecieAromatisse.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Aromatisse(string nickname, int level)
+		: base(
+				683,
+				SpecieAromatisse.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aromatisse() : base(
 			683,

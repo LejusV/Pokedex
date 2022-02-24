@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Caterpie : Pokemon
 	{
 
-		public Caterpie(string nickname, int level) : base(
-			10,
-			SpecieCaterpie.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Caterpie(string nickname, int level)
+		: base(
+				10,
+				SpecieCaterpie.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Caterpie() : base(
 			10,

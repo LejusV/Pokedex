@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arctovish : Pokemon
 	{
 
-		public Arctovish(string nickname, int level) : base(
-			883,
-			SpecieArctovish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ice.Instance			
-		) {}
+		public Arctovish(string nickname, int level)
+		: base(
+				883,
+				SpecieArctovish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arctovish() : base(
 			883,

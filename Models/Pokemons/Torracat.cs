@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Torracat : Pokemon
 	{
 
-		public Torracat(string nickname, int level) : base(
-			726,
-			SpecieTorracat.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Torracat(string nickname, int level)
+		: base(
+				726,
+				SpecieTorracat.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Torracat() : base(
 			726,

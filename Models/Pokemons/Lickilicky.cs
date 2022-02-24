@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lickilicky : Pokemon
 	{
 
-		public Lickilicky(string nickname, int level) : base(
-			463,
-			SpecieLickilicky.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Lickilicky(string nickname, int level)
+		: base(
+				463,
+				SpecieLickilicky.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lickilicky() : base(
 			463,

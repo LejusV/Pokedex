@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Espeon : Pokemon
 	{
 
-		public Espeon(string nickname, int level) : base(
-			196,
-			SpecieEspeon.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Espeon(string nickname, int level)
+		: base(
+				196,
+				SpecieEspeon.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Espeon() : base(
 			196,

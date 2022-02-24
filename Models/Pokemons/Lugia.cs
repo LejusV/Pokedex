@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lugia : Pokemon
 	{
 
-		public Lugia(string nickname, int level) : base(
-			249,
-			SpecieLugia.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Flying.Instance			
-		) {}
+		public Lugia(string nickname, int level)
+		: base(
+				249,
+				SpecieLugia.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lugia() : base(
 			249,

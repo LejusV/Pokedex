@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Klefki : Pokemon
 	{
 
-		public Klefki(string nickname, int level) : base(
-			707,
-			SpecieKlefki.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Fairy.Instance			
-		) {}
+		public Klefki(string nickname, int level)
+		: base(
+				707,
+				SpecieKlefki.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Klefki() : base(
 			707,

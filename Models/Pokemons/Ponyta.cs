@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ponyta : Pokemon
 	{
 
-		public Ponyta(string nickname, int level) : base(
-			77,
-			SpeciePonyta.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Ponyta(string nickname, int level)
+		: base(
+				77,
+				SpeciePonyta.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ponyta() : base(
 			77,

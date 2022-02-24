@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clefairy : Pokemon
 	{
 
-		public Clefairy(string nickname, int level) : base(
-			35,
-			SpecieClefairy.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Clefairy(string nickname, int level)
+		: base(
+				35,
+				SpecieClefairy.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clefairy() : base(
 			35,

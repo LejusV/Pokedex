@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skorupi : Pokemon
 	{
 
-		public Skorupi(string nickname, int level) : base(
-			451,
-			SpecieSkorupi.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Bug.Instance			
-		) {}
+		public Skorupi(string nickname, int level)
+		: base(
+				451,
+				SpecieSkorupi.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skorupi() : base(
 			451,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Yveltal : Pokemon
 	{
 
-		public Yveltal(string nickname, int level) : base(
-			717,
-			SpecieYveltal.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Flying.Instance			
-		) {}
+		public Yveltal(string nickname, int level)
+		: base(
+				717,
+				SpecieYveltal.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Yveltal() : base(
 			717,

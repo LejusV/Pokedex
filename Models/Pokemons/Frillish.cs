@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Frillish : Pokemon
 	{
 
-		public Frillish(string nickname, int level) : base(
-			592,
-			SpecieFrillish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ghost.Instance			
-		) {}
+		public Frillish(string nickname, int level)
+		: base(
+				592,
+				SpecieFrillish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Frillish() : base(
 			592,

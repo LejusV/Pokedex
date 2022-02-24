@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Glastrier : Pokemon
 	{
 
-		public Glastrier(string nickname, int level) : base(
-			896,
-			SpecieGlastrier.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Glastrier(string nickname, int level)
+		: base(
+				896,
+				SpecieGlastrier.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Glastrier() : base(
 			896,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Espurr : Pokemon
 	{
 
-		public Espurr(string nickname, int level) : base(
-			677,
-			SpecieEspurr.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Espurr(string nickname, int level)
+		: base(
+				677,
+				SpecieEspurr.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Espurr() : base(
 			677,

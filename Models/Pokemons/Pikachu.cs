@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pikachu : Pokemon
 	{
 
-		public Pikachu(string nickname, int level) : base(
-			25,
-			SpeciePikachu.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Pikachu(string nickname, int level)
+		: base(
+				25,
+				SpeciePikachu.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pikachu() : base(
 			25,

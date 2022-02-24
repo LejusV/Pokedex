@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snorunt : Pokemon
 	{
 
-		public Snorunt(string nickname, int level) : base(
-			361,
-			SpecieSnorunt.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Snorunt(string nickname, int level)
+		: base(
+				361,
+				SpecieSnorunt.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snorunt() : base(
 			361,

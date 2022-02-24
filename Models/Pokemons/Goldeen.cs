@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Goldeen : Pokemon
 	{
 
-		public Goldeen(string nickname, int level) : base(
-			118,
-			SpecieGoldeen.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Goldeen(string nickname, int level)
+		: base(
+				118,
+				SpecieGoldeen.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Goldeen() : base(
 			118,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Yamper : Pokemon
 	{
 
-		public Yamper(string nickname, int level) : base(
-			835,
-			SpecieYamper.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Yamper(string nickname, int level)
+		: base(
+				835,
+				SpecieYamper.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Yamper() : base(
 			835,

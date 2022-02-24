@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Croagunk : Pokemon
 	{
 
-		public Croagunk(string nickname, int level) : base(
-			453,
-			SpecieCroagunk.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Fighting.Instance			
-		) {}
+		public Croagunk(string nickname, int level)
+		: base(
+				453,
+				SpecieCroagunk.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Croagunk() : base(
 			453,

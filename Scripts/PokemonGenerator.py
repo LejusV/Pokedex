@@ -66,12 +66,17 @@ namespace Pokedex.Models.Pokemons
 	public class {pokeNameNoSpace} : Pokemon
 	{{
 
-		public {pokeNameNoSpace}(string nickname, int level) : base(
-			{poke["id"]},
-			Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
-			nickname, level,
-			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
-		) {{}}
+		public {pokeNameNoSpace}(string nickname, int level)
+		: base(
+				{poke["id"]},
+				Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
+				nickname, level,
+				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
+		)
+		{{
+			CalculateStats();
+			ResetCurrentStats();
+		}}
 
 		public {pokeNameNoSpace}() : base(
 			{poke["id"]},

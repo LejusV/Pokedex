@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Petilil : Pokemon
 	{
 
-		public Petilil(string nickname, int level) : base(
-			548,
-			SpeciePetilil.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Petilil(string nickname, int level)
+		: base(
+				548,
+				SpeciePetilil.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Petilil() : base(
 			548,

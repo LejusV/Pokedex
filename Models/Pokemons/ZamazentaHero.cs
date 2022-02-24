@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class ZamazentaHero : Pokemon
 	{
 
-		public ZamazentaHero(string nickname, int level) : base(
-			889,
-			SpecieZamazentaHero.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public ZamazentaHero(string nickname, int level)
+		: base(
+				889,
+				SpecieZamazentaHero.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public ZamazentaHero() : base(
 			889,

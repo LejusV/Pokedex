@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stakataka : Pokemon
 	{
 
-		public Stakataka(string nickname, int level) : base(
-			805,
-			SpecieStakataka.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Steel.Instance			
-		) {}
+		public Stakataka(string nickname, int level)
+		: base(
+				805,
+				SpecieStakataka.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stakataka() : base(
 			805,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magcargo : Pokemon
 	{
 
-		public Magcargo(string nickname, int level) : base(
-			219,
-			SpecieMagcargo.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Rock.Instance			
-		) {}
+		public Magcargo(string nickname, int level)
+		: base(
+				219,
+				SpecieMagcargo.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magcargo() : base(
 			219,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Victini : Pokemon
 	{
 
-		public Victini(string nickname, int level) : base(
-			494,
-			SpecieVictini.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fire.Instance			
-		) {}
+		public Victini(string nickname, int level)
+		: base(
+				494,
+				SpecieVictini.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Victini() : base(
 			494,

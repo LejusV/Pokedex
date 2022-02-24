@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drowzee : Pokemon
 	{
 
-		public Drowzee(string nickname, int level) : base(
-			96,
-			SpecieDrowzee.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Drowzee(string nickname, int level)
+		: base(
+				96,
+				SpecieDrowzee.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drowzee() : base(
 			96,

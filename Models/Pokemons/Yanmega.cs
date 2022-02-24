@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Yanmega : Pokemon
 	{
 
-		public Yanmega(string nickname, int level) : base(
-			469,
-			SpecieYanmega.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Yanmega(string nickname, int level)
+		: base(
+				469,
+				SpecieYanmega.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Yanmega() : base(
 			469,

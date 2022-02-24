@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vigoroth : Pokemon
 	{
 
-		public Vigoroth(string nickname, int level) : base(
-			288,
-			SpecieVigoroth.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Vigoroth(string nickname, int level)
+		: base(
+				288,
+				SpecieVigoroth.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vigoroth() : base(
 			288,

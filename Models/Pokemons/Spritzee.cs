@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spritzee : Pokemon
 	{
 
-		public Spritzee(string nickname, int level) : base(
-			682,
-			SpecieSpritzee.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Spritzee(string nickname, int level)
+		: base(
+				682,
+				SpecieSpritzee.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spritzee() : base(
 			682,

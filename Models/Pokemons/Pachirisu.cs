@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pachirisu : Pokemon
 	{
 
-		public Pachirisu(string nickname, int level) : base(
-			417,
-			SpeciePachirisu.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Pachirisu(string nickname, int level)
+		: base(
+				417,
+				SpeciePachirisu.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pachirisu() : base(
 			417,

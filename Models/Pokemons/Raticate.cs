@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Raticate : Pokemon
 	{
 
-		public Raticate(string nickname, int level) : base(
-			20,
-			SpecieRaticate.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Raticate(string nickname, int level)
+		: base(
+				20,
+				SpecieRaticate.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Raticate() : base(
 			20,

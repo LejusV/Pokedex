@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Avalugg : Pokemon
 	{
 
-		public Avalugg(string nickname, int level) : base(
-			713,
-			SpecieAvalugg.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Avalugg(string nickname, int level)
+		: base(
+				713,
+				SpecieAvalugg.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Avalugg() : base(
 			713,

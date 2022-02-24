@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class LycanrocMidday : Pokemon
 	{
 
-		public LycanrocMidday(string nickname, int level) : base(
-			745,
-			SpecieLycanrocMidday.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public LycanrocMidday(string nickname, int level)
+		: base(
+				745,
+				SpecieLycanrocMidday.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public LycanrocMidday() : base(
 			745,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drizzile : Pokemon
 	{
 
-		public Drizzile(string nickname, int level) : base(
-			817,
-			SpecieDrizzile.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Drizzile(string nickname, int level)
+		: base(
+				817,
+				SpecieDrizzile.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drizzile() : base(
 			817,

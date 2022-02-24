@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Abra : Pokemon
 	{
 
-		public Abra(string nickname, int level) : base(
-			63,
-			SpecieAbra.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Abra(string nickname, int level)
+		: base(
+				63,
+				SpecieAbra.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Abra() : base(
 			63,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sandygast : Pokemon
 	{
 
-		public Sandygast(string nickname, int level) : base(
-			769,
-			SpecieSandygast.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Ground.Instance			
-		) {}
+		public Sandygast(string nickname, int level)
+		: base(
+				769,
+				SpecieSandygast.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sandygast() : base(
 			769,

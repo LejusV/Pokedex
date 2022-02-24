@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fletchling : Pokemon
 	{
 
-		public Fletchling(string nickname, int level) : base(
-			661,
-			SpecieFletchling.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Fletchling(string nickname, int level)
+		: base(
+				661,
+				SpecieFletchling.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fletchling() : base(
 			661,

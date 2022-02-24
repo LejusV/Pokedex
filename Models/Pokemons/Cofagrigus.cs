@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cofagrigus : Pokemon
 	{
 
-		public Cofagrigus(string nickname, int level) : base(
-			563,
-			SpecieCofagrigus.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Cofagrigus(string nickname, int level)
+		: base(
+				563,
+				SpecieCofagrigus.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cofagrigus() : base(
 			563,

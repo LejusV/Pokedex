@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Togetic : Pokemon
 	{
 
-		public Togetic(string nickname, int level) : base(
-			176,
-			SpecieTogetic.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance, Flying.Instance			
-		) {}
+		public Togetic(string nickname, int level)
+		: base(
+				176,
+				SpecieTogetic.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Togetic() : base(
 			176,

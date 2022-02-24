@@ -55,10 +55,11 @@ namespace Pokedex
 
             foreach (Pokemon poke in Player1.Pokemons)
             {
-                Console.WriteLine(poke.ToString() + poke.MovesDisplay());
+                Console.WriteLine(poke.ToString() + poke.StatsString + poke.MovesDisplay());
             }
 
-            //Console.WriteLine(Wiki.Instance.Display());
+            Console.WriteLine(Wiki.Instance.Display());
+            
             Battle battle = new Battle(Player1, new List<Pokemon>() { new Metapod("Metapod", Player1.Pokemons[0].Level) });
 
 

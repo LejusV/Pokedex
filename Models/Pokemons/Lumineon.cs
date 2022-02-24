@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lumineon : Pokemon
 	{
 
-		public Lumineon(string nickname, int level) : base(
-			457,
-			SpecieLumineon.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Lumineon(string nickname, int level)
+		: base(
+				457,
+				SpecieLumineon.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lumineon() : base(
 			457,

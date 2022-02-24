@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Accelgor : Pokemon
 	{
 
-		public Accelgor(string nickname, int level) : base(
-			617,
-			SpecieAccelgor.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Accelgor(string nickname, int level)
+		: base(
+				617,
+				SpecieAccelgor.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Accelgor() : base(
 			617,

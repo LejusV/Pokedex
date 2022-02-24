@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Duosion : Pokemon
 	{
 
-		public Duosion(string nickname, int level) : base(
-			578,
-			SpecieDuosion.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Duosion(string nickname, int level)
+		: base(
+				578,
+				SpecieDuosion.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Duosion() : base(
 			578,

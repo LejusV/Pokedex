@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Heatmor : Pokemon
 	{
 
-		public Heatmor(string nickname, int level) : base(
-			631,
-			SpecieHeatmor.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Heatmor(string nickname, int level)
+		: base(
+				631,
+				SpecieHeatmor.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Heatmor() : base(
 			631,

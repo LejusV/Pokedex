@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TapuLele : Pokemon
 	{
 
-		public TapuLele(string nickname, int level) : base(
-			786,
-			SpecieTapuLele.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public TapuLele(string nickname, int level)
+		: base(
+				786,
+				SpecieTapuLele.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TapuLele() : base(
 			786,

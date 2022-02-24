@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Barraskewda : Pokemon
 	{
 
-		public Barraskewda(string nickname, int level) : base(
-			847,
-			SpecieBarraskewda.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Barraskewda(string nickname, int level)
+		: base(
+				847,
+				SpecieBarraskewda.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Barraskewda() : base(
 			847,

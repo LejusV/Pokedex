@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clauncher : Pokemon
 	{
 
-		public Clauncher(string nickname, int level) : base(
-			692,
-			SpecieClauncher.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Clauncher(string nickname, int level)
+		: base(
+				692,
+				SpecieClauncher.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clauncher() : base(
 			692,

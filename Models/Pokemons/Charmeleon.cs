@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Charmeleon : Pokemon
 	{
 
-		public Charmeleon(string nickname, int level) : base(
-			5,
-			SpecieCharmeleon.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Charmeleon(string nickname, int level)
+		: base(
+				5,
+				SpecieCharmeleon.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Charmeleon() : base(
 			5,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Psyduck : Pokemon
 	{
 
-		public Psyduck(string nickname, int level) : base(
-			54,
-			SpeciePsyduck.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Psyduck(string nickname, int level)
+		: base(
+				54,
+				SpeciePsyduck.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Psyduck() : base(
 			54,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Quagsire : Pokemon
 	{
 
-		public Quagsire(string nickname, int level) : base(
-			195,
-			SpecieQuagsire.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Quagsire(string nickname, int level)
+		: base(
+				195,
+				SpecieQuagsire.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Quagsire() : base(
 			195,

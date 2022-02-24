@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Weavile : Pokemon
 	{
 
-		public Weavile(string nickname, int level) : base(
-			461,
-			SpecieWeavile.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Ice.Instance			
-		) {}
+		public Weavile(string nickname, int level)
+		: base(
+				461,
+				SpecieWeavile.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Weavile() : base(
 			461,

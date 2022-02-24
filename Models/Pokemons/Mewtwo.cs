@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mewtwo : Pokemon
 	{
 
-		public Mewtwo(string nickname, int level) : base(
-			150,
-			SpecieMewtwo.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Mewtwo(string nickname, int level)
+		: base(
+				150,
+				SpecieMewtwo.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mewtwo() : base(
 			150,

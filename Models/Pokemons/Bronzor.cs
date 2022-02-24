@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bronzor : Pokemon
 	{
 
-		public Bronzor(string nickname, int level) : base(
-			436,
-			SpecieBronzor.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Psychic.Instance			
-		) {}
+		public Bronzor(string nickname, int level)
+		: base(
+				436,
+				SpecieBronzor.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bronzor() : base(
 			436,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cascoon : Pokemon
 	{
 
-		public Cascoon(string nickname, int level) : base(
-			268,
-			SpecieCascoon.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Cascoon(string nickname, int level)
+		: base(
+				268,
+				SpecieCascoon.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cascoon() : base(
 			268,

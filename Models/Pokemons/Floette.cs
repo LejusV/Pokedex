@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Floette : Pokemon
 	{
 
-		public Floette(string nickname, int level) : base(
-			670,
-			SpecieFloette.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Floette(string nickname, int level)
+		: base(
+				670,
+				SpecieFloette.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Floette() : base(
 			670,

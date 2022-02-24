@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sawsbuck : Pokemon
 	{
 
-		public Sawsbuck(string nickname, int level) : base(
-			586,
-			SpecieSawsbuck.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Grass.Instance			
-		) {}
+		public Sawsbuck(string nickname, int level)
+		: base(
+				586,
+				SpecieSawsbuck.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sawsbuck() : base(
 			586,

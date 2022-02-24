@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Braviary : Pokemon
 	{
 
-		public Braviary(string nickname, int level) : base(
-			628,
-			SpecieBraviary.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Braviary(string nickname, int level)
+		: base(
+				628,
+				SpecieBraviary.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Braviary() : base(
 			628,

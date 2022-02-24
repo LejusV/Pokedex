@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Klang : Pokemon
 	{
 
-		public Klang(string nickname, int level) : base(
-			600,
-			SpecieKlang.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Klang(string nickname, int level)
+		: base(
+				600,
+				SpecieKlang.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Klang() : base(
 			600,

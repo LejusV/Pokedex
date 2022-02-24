@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Toucannon : Pokemon
 	{
 
-		public Toucannon(string nickname, int level) : base(
-			733,
-			SpecieToucannon.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Toucannon(string nickname, int level)
+		: base(
+				733,
+				SpecieToucannon.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Toucannon() : base(
 			733,

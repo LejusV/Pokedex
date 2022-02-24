@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sandile : Pokemon
 	{
 
-		public Sandile(string nickname, int level) : base(
-			551,
-			SpecieSandile.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Dark.Instance			
-		) {}
+		public Sandile(string nickname, int level)
+		: base(
+				551,
+				SpecieSandile.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sandile() : base(
 			551,

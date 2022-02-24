@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spheal : Pokemon
 	{
 
-		public Spheal(string nickname, int level) : base(
-			363,
-			SpecieSpheal.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Water.Instance			
-		) {}
+		public Spheal(string nickname, int level)
+		: base(
+				363,
+				SpecieSpheal.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spheal() : base(
 			363,

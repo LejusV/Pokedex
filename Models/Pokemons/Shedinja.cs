@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shedinja : Pokemon
 	{
 
-		public Shedinja(string nickname, int level) : base(
-			292,
-			SpecieShedinja.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Ghost.Instance			
-		) {}
+		public Shedinja(string nickname, int level)
+		: base(
+				292,
+				SpecieShedinja.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shedinja() : base(
 			292,

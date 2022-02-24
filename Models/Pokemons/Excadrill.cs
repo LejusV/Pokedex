@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Excadrill : Pokemon
 	{
 
-		public Excadrill(string nickname, int level) : base(
-			530,
-			SpecieExcadrill.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Steel.Instance			
-		) {}
+		public Excadrill(string nickname, int level)
+		: base(
+				530,
+				SpecieExcadrill.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Excadrill() : base(
 			530,

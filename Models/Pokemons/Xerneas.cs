@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Xerneas : Pokemon
 	{
 
-		public Xerneas(string nickname, int level) : base(
-			716,
-			SpecieXerneas.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Xerneas(string nickname, int level)
+		: base(
+				716,
+				SpecieXerneas.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Xerneas() : base(
 			716,

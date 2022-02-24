@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aipom : Pokemon
 	{
 
-		public Aipom(string nickname, int level) : base(
-			190,
-			SpecieAipom.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Aipom(string nickname, int level)
+		: base(
+				190,
+				SpecieAipom.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aipom() : base(
 			190,

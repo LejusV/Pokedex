@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Azumarill : Pokemon
 	{
 
-		public Azumarill(string nickname, int level) : base(
-			184,
-			SpecieAzumarill.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fairy.Instance			
-		) {}
+		public Azumarill(string nickname, int level)
+		: base(
+				184,
+				SpecieAzumarill.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Azumarill() : base(
 			184,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Timburr : Pokemon
 	{
 
-		public Timburr(string nickname, int level) : base(
-			532,
-			SpecieTimburr.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Timburr(string nickname, int level)
+		: base(
+				532,
+				SpecieTimburr.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Timburr() : base(
 			532,

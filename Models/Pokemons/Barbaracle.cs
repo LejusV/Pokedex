@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Barbaracle : Pokemon
 	{
 
-		public Barbaracle(string nickname, int level) : base(
-			689,
-			SpecieBarbaracle.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Barbaracle(string nickname, int level)
+		: base(
+				689,
+				SpecieBarbaracle.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Barbaracle() : base(
 			689,

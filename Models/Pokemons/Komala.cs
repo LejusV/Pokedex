@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Komala : Pokemon
 	{
 
-		public Komala(string nickname, int level) : base(
-			775,
-			SpecieKomala.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Komala(string nickname, int level)
+		: base(
+				775,
+				SpecieKomala.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Komala() : base(
 			775,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lilligant : Pokemon
 	{
 
-		public Lilligant(string nickname, int level) : base(
-			549,
-			SpecieLilligant.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Lilligant(string nickname, int level)
+		: base(
+				549,
+				SpecieLilligant.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lilligant() : base(
 			549,

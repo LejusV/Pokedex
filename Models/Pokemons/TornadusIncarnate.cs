@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TornadusIncarnate : Pokemon
 	{
 
-		public TornadusIncarnate(string nickname, int level) : base(
-			641,
-			SpecieTornadusIncarnate.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance			
-		) {}
+		public TornadusIncarnate(string nickname, int level)
+		: base(
+				641,
+				SpecieTornadusIncarnate.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TornadusIncarnate() : base(
 			641,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Venonat : Pokemon
 	{
 
-		public Venonat(string nickname, int level) : base(
-			48,
-			SpecieVenonat.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Venonat(string nickname, int level)
+		: base(
+				48,
+				SpecieVenonat.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Venonat() : base(
 			48,

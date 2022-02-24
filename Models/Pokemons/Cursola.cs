@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cursola : Pokemon
 	{
 
-		public Cursola(string nickname, int level) : base(
-			864,
-			SpecieCursola.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Cursola(string nickname, int level)
+		: base(
+				864,
+				SpecieCursola.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cursola() : base(
 			864,

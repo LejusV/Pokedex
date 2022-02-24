@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Reshiram : Pokemon
 	{
 
-		public Reshiram(string nickname, int level) : base(
-			643,
-			SpecieReshiram.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Fire.Instance			
-		) {}
+		public Reshiram(string nickname, int level)
+		: base(
+				643,
+				SpecieReshiram.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Reshiram() : base(
 			643,

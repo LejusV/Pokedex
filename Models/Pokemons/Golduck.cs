@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golduck : Pokemon
 	{
 
-		public Golduck(string nickname, int level) : base(
-			55,
-			SpecieGolduck.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Golduck(string nickname, int level)
+		: base(
+				55,
+				SpecieGolduck.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golduck() : base(
 			55,

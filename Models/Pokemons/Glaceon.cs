@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Glaceon : Pokemon
 	{
 
-		public Glaceon(string nickname, int level) : base(
-			471,
-			SpecieGlaceon.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Glaceon(string nickname, int level)
+		: base(
+				471,
+				SpecieGlaceon.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Glaceon() : base(
 			471,

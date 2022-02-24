@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tympole : Pokemon
 	{
 
-		public Tympole(string nickname, int level) : base(
-			535,
-			SpecieTympole.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Tympole(string nickname, int level)
+		: base(
+				535,
+				SpecieTympole.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tympole() : base(
 			535,

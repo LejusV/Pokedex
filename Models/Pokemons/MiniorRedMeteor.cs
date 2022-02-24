@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class MiniorRedMeteor : Pokemon
 	{
 
-		public MiniorRedMeteor(string nickname, int level) : base(
-			774,
-			SpecieMiniorRedMeteor.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Flying.Instance			
-		) {}
+		public MiniorRedMeteor(string nickname, int level)
+		: base(
+				774,
+				SpecieMiniorRedMeteor.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public MiniorRedMeteor() : base(
 			774,

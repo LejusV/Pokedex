@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Meowth : Pokemon
 	{
 
-		public Meowth(string nickname, int level) : base(
-			52,
-			SpecieMeowth.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Meowth(string nickname, int level)
+		: base(
+				52,
+				SpecieMeowth.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Meowth() : base(
 			52,

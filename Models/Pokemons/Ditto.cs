@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ditto : Pokemon
 	{
 
-		public Ditto(string nickname, int level) : base(
-			132,
-			SpecieDitto.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Ditto(string nickname, int level)
+		: base(
+				132,
+				SpecieDitto.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ditto() : base(
 			132,

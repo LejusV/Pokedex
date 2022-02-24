@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slowking : Pokemon
 	{
 
-		public Slowking(string nickname, int level) : base(
-			199,
-			SpecieSlowking.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Psychic.Instance			
-		) {}
+		public Slowking(string nickname, int level)
+		: base(
+				199,
+				SpecieSlowking.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slowking() : base(
 			199,

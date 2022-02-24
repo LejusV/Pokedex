@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Celebi : Pokemon
 	{
 
-		public Celebi(string nickname, int level) : base(
-			251,
-			SpecieCelebi.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Grass.Instance			
-		) {}
+		public Celebi(string nickname, int level)
+		: base(
+				251,
+				SpecieCelebi.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Celebi() : base(
 			251,

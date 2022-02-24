@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Phantump : Pokemon
 	{
 
-		public Phantump(string nickname, int level) : base(
-			708,
-			SpeciePhantump.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Grass.Instance			
-		) {}
+		public Phantump(string nickname, int level)
+		: base(
+				708,
+				SpeciePhantump.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Phantump() : base(
 			708,

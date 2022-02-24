@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skrelp : Pokemon
 	{
 
-		public Skrelp(string nickname, int level) : base(
-			690,
-			SpecieSkrelp.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Water.Instance			
-		) {}
+		public Skrelp(string nickname, int level)
+		: base(
+				690,
+				SpecieSkrelp.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skrelp() : base(
 			690,

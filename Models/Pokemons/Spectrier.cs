@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spectrier : Pokemon
 	{
 
-		public Spectrier(string nickname, int level) : base(
-			897,
-			SpecieSpectrier.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Spectrier(string nickname, int level)
+		: base(
+				897,
+				SpecieSpectrier.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spectrier() : base(
 			897,

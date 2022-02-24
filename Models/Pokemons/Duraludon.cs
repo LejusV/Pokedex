@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Duraludon : Pokemon
 	{
 
-		public Duraludon(string nickname, int level) : base(
-			884,
-			SpecieDuraludon.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Dragon.Instance			
-		) {}
+		public Duraludon(string nickname, int level)
+		: base(
+				884,
+				SpecieDuraludon.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Duraludon() : base(
 			884,

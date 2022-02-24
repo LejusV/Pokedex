@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dracovish : Pokemon
 	{
 
-		public Dracovish(string nickname, int level) : base(
-			882,
-			SpecieDracovish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dragon.Instance			
-		) {}
+		public Dracovish(string nickname, int level)
+		: base(
+				882,
+				SpecieDracovish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dracovish() : base(
 			882,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class MimeJr : Pokemon
 	{
 
-		public MimeJr(string nickname, int level) : base(
-			439,
-			SpecieMimeJr.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public MimeJr(string nickname, int level)
+		: base(
+				439,
+				SpecieMimeJr.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public MimeJr() : base(
 			439,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mothim : Pokemon
 	{
 
-		public Mothim(string nickname, int level) : base(
-			414,
-			SpecieMothim.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Mothim(string nickname, int level)
+		: base(
+				414,
+				SpecieMothim.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mothim() : base(
 			414,

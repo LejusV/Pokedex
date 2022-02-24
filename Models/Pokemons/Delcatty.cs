@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Delcatty : Pokemon
 	{
 
-		public Delcatty(string nickname, int level) : base(
-			301,
-			SpecieDelcatty.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Delcatty(string nickname, int level)
+		: base(
+				301,
+				SpecieDelcatty.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Delcatty() : base(
 			301,

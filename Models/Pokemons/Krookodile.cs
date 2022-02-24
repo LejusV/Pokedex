@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Krookodile : Pokemon
 	{
 
-		public Krookodile(string nickname, int level) : base(
-			553,
-			SpecieKrookodile.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Dark.Instance			
-		) {}
+		public Krookodile(string nickname, int level)
+		: base(
+				553,
+				SpecieKrookodile.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Krookodile() : base(
 			553,

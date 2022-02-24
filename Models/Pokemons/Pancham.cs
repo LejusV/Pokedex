@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pancham : Pokemon
 	{
 
-		public Pancham(string nickname, int level) : base(
-			674,
-			SpeciePancham.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Pancham(string nickname, int level)
+		: base(
+				674,
+				SpeciePancham.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pancham() : base(
 			674,

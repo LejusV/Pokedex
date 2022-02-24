@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slakoth : Pokemon
 	{
 
-		public Slakoth(string nickname, int level) : base(
-			287,
-			SpecieSlakoth.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Slakoth(string nickname, int level)
+		: base(
+				287,
+				SpecieSlakoth.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slakoth() : base(
 			287,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Darkrai : Pokemon
 	{
 
-		public Darkrai(string nickname, int level) : base(
-			491,
-			SpecieDarkrai.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Darkrai(string nickname, int level)
+		: base(
+				491,
+				SpecieDarkrai.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Darkrai() : base(
 			491,

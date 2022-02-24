@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kyogre : Pokemon
 	{
 
-		public Kyogre(string nickname, int level) : base(
-			382,
-			SpecieKyogre.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Kyogre(string nickname, int level)
+		: base(
+				382,
+				SpecieKyogre.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kyogre() : base(
 			382,

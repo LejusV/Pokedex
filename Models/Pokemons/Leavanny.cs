@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Leavanny : Pokemon
 	{
 
-		public Leavanny(string nickname, int level) : base(
-			542,
-			SpecieLeavanny.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public Leavanny(string nickname, int level)
+		: base(
+				542,
+				SpecieLeavanny.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Leavanny() : base(
 			542,

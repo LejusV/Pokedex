@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gigalith : Pokemon
 	{
 
-		public Gigalith(string nickname, int level) : base(
-			526,
-			SpecieGigalith.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Gigalith(string nickname, int level)
+		: base(
+				526,
+				SpecieGigalith.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gigalith() : base(
 			526,

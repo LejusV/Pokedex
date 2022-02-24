@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Beartic : Pokemon
 	{
 
-		public Beartic(string nickname, int level) : base(
-			614,
-			SpecieBeartic.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Beartic(string nickname, int level)
+		: base(
+				614,
+				SpecieBeartic.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Beartic() : base(
 			614,

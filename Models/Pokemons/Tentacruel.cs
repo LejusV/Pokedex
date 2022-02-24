@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tentacruel : Pokemon
 	{
 
-		public Tentacruel(string nickname, int level) : base(
-			73,
-			SpecieTentacruel.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Poison.Instance			
-		) {}
+		public Tentacruel(string nickname, int level)
+		: base(
+				73,
+				SpecieTentacruel.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tentacruel() : base(
 			73,

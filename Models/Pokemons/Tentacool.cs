@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tentacool : Pokemon
 	{
 
-		public Tentacool(string nickname, int level) : base(
-			72,
-			SpecieTentacool.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Poison.Instance			
-		) {}
+		public Tentacool(string nickname, int level)
+		: base(
+				72,
+				SpecieTentacool.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tentacool() : base(
 			72,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Morpeko : Pokemon
 	{
 
-		public Morpeko(string nickname, int level) : base(
-			877,
-			SpecieMorpeko.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Dark.Instance			
-		) {}
+		public Morpeko(string nickname, int level)
+		: base(
+				877,
+				SpecieMorpeko.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Morpeko() : base(
 			877,

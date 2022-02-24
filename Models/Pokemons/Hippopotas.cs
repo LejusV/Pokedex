@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hippopotas : Pokemon
 	{
 
-		public Hippopotas(string nickname, int level) : base(
-			449,
-			SpecieHippopotas.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Hippopotas(string nickname, int level)
+		: base(
+				449,
+				SpecieHippopotas.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hippopotas() : base(
 			449,

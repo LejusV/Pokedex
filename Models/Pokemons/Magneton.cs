@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magneton : Pokemon
 	{
 
-		public Magneton(string nickname, int level) : base(
-			82,
-			SpecieMagneton.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Steel.Instance			
-		) {}
+		public Magneton(string nickname, int level)
+		: base(
+				82,
+				SpecieMagneton.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magneton() : base(
 			82,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Diglett : Pokemon
 	{
 
-		public Diglett(string nickname, int level) : base(
-			50,
-			SpecieDiglett.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Diglett(string nickname, int level)
+		: base(
+				50,
+				SpecieDiglett.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Diglett() : base(
 			50,

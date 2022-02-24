@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Coalossal : Pokemon
 	{
 
-		public Coalossal(string nickname, int level) : base(
-			839,
-			SpecieCoalossal.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Fire.Instance			
-		) {}
+		public Coalossal(string nickname, int level)
+		: base(
+				839,
+				SpecieCoalossal.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Coalossal() : base(
 			839,

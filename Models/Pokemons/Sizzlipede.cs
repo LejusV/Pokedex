@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sizzlipede : Pokemon
 	{
 
-		public Sizzlipede(string nickname, int level) : base(
-			850,
-			SpecieSizzlipede.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Bug.Instance			
-		) {}
+		public Sizzlipede(string nickname, int level)
+		: base(
+				850,
+				SpecieSizzlipede.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sizzlipede() : base(
 			850,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pidgey : Pokemon
 	{
 
-		public Pidgey(string nickname, int level) : base(
-			16,
-			SpeciePidgey.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Pidgey(string nickname, int level)
+		: base(
+				16,
+				SpeciePidgey.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pidgey() : base(
 			16,

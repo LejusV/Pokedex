@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aron : Pokemon
 	{
 
-		public Aron(string nickname, int level) : base(
-			304,
-			SpecieAron.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Rock.Instance			
-		) {}
+		public Aron(string nickname, int level)
+		: base(
+				304,
+				SpecieAron.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aron() : base(
 			304,

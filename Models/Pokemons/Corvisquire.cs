@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Corvisquire : Pokemon
 	{
 
-		public Corvisquire(string nickname, int level) : base(
-			822,
-			SpecieCorvisquire.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance			
-		) {}
+		public Corvisquire(string nickname, int level)
+		: base(
+				822,
+				SpecieCorvisquire.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Corvisquire() : base(
 			822,

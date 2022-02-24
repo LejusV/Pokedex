@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drapion : Pokemon
 	{
 
-		public Drapion(string nickname, int level) : base(
-			452,
-			SpecieDrapion.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dark.Instance			
-		) {}
+		public Drapion(string nickname, int level)
+		: base(
+				452,
+				SpecieDrapion.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drapion() : base(
 			452,

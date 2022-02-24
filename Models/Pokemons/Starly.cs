@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Starly : Pokemon
 	{
 
-		public Starly(string nickname, int level) : base(
-			396,
-			SpecieStarly.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Starly(string nickname, int level)
+		: base(
+				396,
+				SpecieStarly.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Starly() : base(
 			396,

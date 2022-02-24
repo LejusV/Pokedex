@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Linoone : Pokemon
 	{
 
-		public Linoone(string nickname, int level) : base(
-			264,
-			SpecieLinoone.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Linoone(string nickname, int level)
+		: base(
+				264,
+				SpecieLinoone.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Linoone() : base(
 			264,

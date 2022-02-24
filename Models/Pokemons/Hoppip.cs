@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hoppip : Pokemon
 	{
 
-		public Hoppip(string nickname, int level) : base(
-			187,
-			SpecieHoppip.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Hoppip(string nickname, int level)
+		: base(
+				187,
+				SpecieHoppip.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hoppip() : base(
 			187,

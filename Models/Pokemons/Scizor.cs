@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scizor : Pokemon
 	{
 
-		public Scizor(string nickname, int level) : base(
-			212,
-			SpecieScizor.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Steel.Instance			
-		) {}
+		public Scizor(string nickname, int level)
+		: base(
+				212,
+				SpecieScizor.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scizor() : base(
 			212,

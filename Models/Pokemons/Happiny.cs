@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Happiny : Pokemon
 	{
 
-		public Happiny(string nickname, int level) : base(
-			440,
-			SpecieHappiny.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Happiny(string nickname, int level)
+		: base(
+				440,
+				SpecieHappiny.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Happiny() : base(
 			440,

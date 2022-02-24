@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swoobat : Pokemon
 	{
 
-		public Swoobat(string nickname, int level) : base(
-			528,
-			SpecieSwoobat.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Flying.Instance			
-		) {}
+		public Swoobat(string nickname, int level)
+		: base(
+				528,
+				SpecieSwoobat.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swoobat() : base(
 			528,

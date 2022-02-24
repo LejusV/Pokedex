@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vivillon : Pokemon
 	{
 
-		public Vivillon(string nickname, int level) : base(
-			666,
-			SpecieVivillon.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Vivillon(string nickname, int level)
+		: base(
+				666,
+				SpecieVivillon.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vivillon() : base(
 			666,

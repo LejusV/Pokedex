@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Milcery : Pokemon
 	{
 
-		public Milcery(string nickname, int level) : base(
-			868,
-			SpecieMilcery.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Milcery(string nickname, int level)
+		: base(
+				868,
+				SpecieMilcery.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Milcery() : base(
 			868,

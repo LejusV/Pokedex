@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class PorygonZ : Pokemon
 	{
 
-		public PorygonZ(string nickname, int level) : base(
-			474,
-			SpeciePorygonZ.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public PorygonZ(string nickname, int level)
+		: base(
+				474,
+				SpeciePorygonZ.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public PorygonZ() : base(
 			474,

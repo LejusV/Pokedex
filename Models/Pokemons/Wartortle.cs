@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wartortle : Pokemon
 	{
 
-		public Wartortle(string nickname, int level) : base(
-			8,
-			SpecieWartortle.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Wartortle(string nickname, int level)
+		: base(
+				8,
+				SpecieWartortle.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wartortle() : base(
 			8,

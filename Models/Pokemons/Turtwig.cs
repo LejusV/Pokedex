@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Turtwig : Pokemon
 	{
 
-		public Turtwig(string nickname, int level) : base(
-			387,
-			SpecieTurtwig.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Turtwig(string nickname, int level)
+		: base(
+				387,
+				SpecieTurtwig.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Turtwig() : base(
 			387,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sinistea : Pokemon
 	{
 
-		public Sinistea(string nickname, int level) : base(
-			854,
-			SpecieSinistea.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Sinistea(string nickname, int level)
+		: base(
+				854,
+				SpecieSinistea.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sinistea() : base(
 			854,

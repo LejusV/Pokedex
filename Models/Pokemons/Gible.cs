@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gible : Pokemon
 	{
 
-		public Gible(string nickname, int level) : base(
-			443,
-			SpecieGible.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ground.Instance			
-		) {}
+		public Gible(string nickname, int level)
+		: base(
+				443,
+				SpecieGible.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gible() : base(
 			443,

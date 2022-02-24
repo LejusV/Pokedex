@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pyukumuku : Pokemon
 	{
 
-		public Pyukumuku(string nickname, int level) : base(
-			771,
-			SpeciePyukumuku.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Pyukumuku(string nickname, int level)
+		: base(
+				771,
+				SpeciePyukumuku.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pyukumuku() : base(
 			771,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hippowdon : Pokemon
 	{
 
-		public Hippowdon(string nickname, int level) : base(
-			450,
-			SpecieHippowdon.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Hippowdon(string nickname, int level)
+		: base(
+				450,
+				SpecieHippowdon.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hippowdon() : base(
 			450,

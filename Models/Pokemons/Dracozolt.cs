@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dracozolt : Pokemon
 	{
 
-		public Dracozolt(string nickname, int level) : base(
-			880,
-			SpecieDracozolt.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Dragon.Instance			
-		) {}
+		public Dracozolt(string nickname, int level)
+		: base(
+				880,
+				SpecieDracozolt.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dracozolt() : base(
 			880,

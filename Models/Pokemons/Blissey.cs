@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blissey : Pokemon
 	{
 
-		public Blissey(string nickname, int level) : base(
-			242,
-			SpecieBlissey.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Blissey(string nickname, int level)
+		: base(
+				242,
+				SpecieBlissey.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blissey() : base(
 			242,

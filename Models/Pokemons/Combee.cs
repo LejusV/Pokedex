@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Combee : Pokemon
 	{
 
-		public Combee(string nickname, int level) : base(
-			415,
-			SpecieCombee.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Combee(string nickname, int level)
+		: base(
+				415,
+				SpecieCombee.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Combee() : base(
 			415,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bidoof : Pokemon
 	{
 
-		public Bidoof(string nickname, int level) : base(
-			399,
-			SpecieBidoof.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Bidoof(string nickname, int level)
+		: base(
+				399,
+				SpecieBidoof.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bidoof() : base(
 			399,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Luvdisc : Pokemon
 	{
 
-		public Luvdisc(string nickname, int level) : base(
-			370,
-			SpecieLuvdisc.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Luvdisc(string nickname, int level)
+		: base(
+				370,
+				SpecieLuvdisc.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Luvdisc() : base(
 			370,

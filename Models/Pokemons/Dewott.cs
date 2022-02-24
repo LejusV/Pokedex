@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dewott : Pokemon
 	{
 
-		public Dewott(string nickname, int level) : base(
-			502,
-			SpecieDewott.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Dewott(string nickname, int level)
+		: base(
+				502,
+				SpecieDewott.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dewott() : base(
 			502,

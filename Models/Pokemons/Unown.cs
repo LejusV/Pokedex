@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Unown : Pokemon
 	{
 
-		public Unown(string nickname, int level) : base(
-			201,
-			SpecieUnown.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Unown(string nickname, int level)
+		: base(
+				201,
+				SpecieUnown.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Unown() : base(
 			201,

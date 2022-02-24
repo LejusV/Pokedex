@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Marshadow : Pokemon
 	{
 
-		public Marshadow(string nickname, int level) : base(
-			802,
-			SpecieMarshadow.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Ghost.Instance			
-		) {}
+		public Marshadow(string nickname, int level)
+		: base(
+				802,
+				SpecieMarshadow.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Marshadow() : base(
 			802,

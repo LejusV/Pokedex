@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ninjask : Pokemon
 	{
 
-		public Ninjask(string nickname, int level) : base(
-			291,
-			SpecieNinjask.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Ninjask(string nickname, int level)
+		: base(
+				291,
+				SpecieNinjask.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ninjask() : base(
 			291,

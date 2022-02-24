@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bonsly : Pokemon
 	{
 
-		public Bonsly(string nickname, int level) : base(
-			438,
-			SpecieBonsly.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Bonsly(string nickname, int level)
+		: base(
+				438,
+				SpecieBonsly.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bonsly() : base(
 			438,

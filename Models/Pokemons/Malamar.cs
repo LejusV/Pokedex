@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Malamar : Pokemon
 	{
 
-		public Malamar(string nickname, int level) : base(
-			687,
-			SpecieMalamar.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Psychic.Instance			
-		) {}
+		public Malamar(string nickname, int level)
+		: base(
+				687,
+				SpecieMalamar.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Malamar() : base(
 			687,

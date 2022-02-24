@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vaporeon : Pokemon
 	{
 
-		public Vaporeon(string nickname, int level) : base(
-			134,
-			SpecieVaporeon.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Vaporeon(string nickname, int level)
+		: base(
+				134,
+				SpecieVaporeon.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vaporeon() : base(
 			134,

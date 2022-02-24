@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bibarel : Pokemon
 	{
 
-		public Bibarel(string nickname, int level) : base(
-			400,
-			SpecieBibarel.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Water.Instance			
-		) {}
+		public Bibarel(string nickname, int level)
+		: base(
+				400,
+				SpecieBibarel.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bibarel() : base(
 			400,

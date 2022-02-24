@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Masquerain : Pokemon
 	{
 
-		public Masquerain(string nickname, int level) : base(
-			284,
-			SpecieMasquerain.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Masquerain(string nickname, int level)
+		: base(
+				284,
+				SpecieMasquerain.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Masquerain() : base(
 			284,

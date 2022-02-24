@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arctozolt : Pokemon
 	{
 
-		public Arctozolt(string nickname, int level) : base(
-			881,
-			SpecieArctozolt.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Ice.Instance			
-		) {}
+		public Arctozolt(string nickname, int level)
+		: base(
+				881,
+				SpecieArctozolt.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arctozolt() : base(
 			881,

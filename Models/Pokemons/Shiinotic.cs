@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shiinotic : Pokemon
 	{
 
-		public Shiinotic(string nickname, int level) : base(
-			756,
-			SpecieShiinotic.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fairy.Instance			
-		) {}
+		public Shiinotic(string nickname, int level)
+		: base(
+				756,
+				SpecieShiinotic.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shiinotic() : base(
 			756,

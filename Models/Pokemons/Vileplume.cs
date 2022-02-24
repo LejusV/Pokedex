@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vileplume : Pokemon
 	{
 
-		public Vileplume(string nickname, int level) : base(
-			45,
-			SpecieVileplume.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Vileplume(string nickname, int level)
+		: base(
+				45,
+				SpecieVileplume.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vileplume() : base(
 			45,

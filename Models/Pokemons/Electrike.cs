@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Electrike : Pokemon
 	{
 
-		public Electrike(string nickname, int level) : base(
-			309,
-			SpecieElectrike.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Electrike(string nickname, int level)
+		: base(
+				309,
+				SpecieElectrike.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Electrike() : base(
 			309,

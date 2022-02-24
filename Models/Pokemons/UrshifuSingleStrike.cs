@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class UrshifuSingleStrike : Pokemon
 	{
 
-		public UrshifuSingleStrike(string nickname, int level) : base(
-			892,
-			SpecieUrshifuSingleStrike.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Dark.Instance			
-		) {}
+		public UrshifuSingleStrike(string nickname, int level)
+		: base(
+				892,
+				SpecieUrshifuSingleStrike.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public UrshifuSingleStrike() : base(
 			892,

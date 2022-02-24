@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zarude : Pokemon
 	{
 
-		public Zarude(string nickname, int level) : base(
-			893,
-			SpecieZarude.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Grass.Instance			
-		) {}
+		public Zarude(string nickname, int level)
+		: base(
+				893,
+				SpecieZarude.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zarude() : base(
 			893,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Florges : Pokemon
 	{
 
-		public Florges(string nickname, int level) : base(
-			671,
-			SpecieFlorges.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Florges(string nickname, int level)
+		: base(
+				671,
+				SpecieFlorges.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Florges() : base(
 			671,

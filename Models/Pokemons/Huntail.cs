@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Huntail : Pokemon
 	{
 
-		public Huntail(string nickname, int level) : base(
-			367,
-			SpecieHuntail.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Huntail(string nickname, int level)
+		: base(
+				367,
+				SpecieHuntail.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Huntail() : base(
 			367,

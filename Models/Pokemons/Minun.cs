@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Minun : Pokemon
 	{
 
-		public Minun(string nickname, int level) : base(
-			312,
-			SpecieMinun.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Minun(string nickname, int level)
+		: base(
+				312,
+				SpecieMinun.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Minun() : base(
 			312,

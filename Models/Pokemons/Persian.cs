@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Persian : Pokemon
 	{
 
-		public Persian(string nickname, int level) : base(
-			53,
-			SpeciePersian.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Persian(string nickname, int level)
+		: base(
+				53,
+				SpeciePersian.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Persian() : base(
 			53,

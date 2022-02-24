@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pheromosa : Pokemon
 	{
 
-		public Pheromosa(string nickname, int level) : base(
-			795,
-			SpeciePheromosa.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fighting.Instance			
-		) {}
+		public Pheromosa(string nickname, int level)
+		: base(
+				795,
+				SpeciePheromosa.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pheromosa() : base(
 			795,

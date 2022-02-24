@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Monferno : Pokemon
 	{
 
-		public Monferno(string nickname, int level) : base(
-			391,
-			SpecieMonferno.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Monferno(string nickname, int level)
+		: base(
+				391,
+				SpecieMonferno.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Monferno() : base(
 			391,

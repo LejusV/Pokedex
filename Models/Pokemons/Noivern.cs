@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Noivern : Pokemon
 	{
 
-		public Noivern(string nickname, int level) : base(
-			715,
-			SpecieNoivern.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance, Dragon.Instance			
-		) {}
+		public Noivern(string nickname, int level)
+		: base(
+				715,
+				SpecieNoivern.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Noivern() : base(
 			715,

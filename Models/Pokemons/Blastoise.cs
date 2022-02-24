@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blastoise : Pokemon
 	{
 
-		public Blastoise(string nickname, int level) : base(
-			9,
-			SpecieBlastoise.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Blastoise(string nickname, int level)
+		: base(
+				9,
+				SpecieBlastoise.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blastoise() : base(
 			9,

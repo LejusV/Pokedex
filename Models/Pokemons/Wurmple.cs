@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wurmple : Pokemon
 	{
 
-		public Wurmple(string nickname, int level) : base(
-			265,
-			SpecieWurmple.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Wurmple(string nickname, int level)
+		: base(
+				265,
+				SpecieWurmple.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wurmple() : base(
 			265,

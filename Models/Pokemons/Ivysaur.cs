@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ivysaur : Pokemon
 	{
 
-		public Ivysaur(string nickname, int level) : base(
-			2,
-			SpecieIvysaur.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Ivysaur(string nickname, int level)
+		: base(
+				2,
+				SpecieIvysaur.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ivysaur() : base(
 			2,

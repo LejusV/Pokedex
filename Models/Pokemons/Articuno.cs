@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Articuno : Pokemon
 	{
 
-		public Articuno(string nickname, int level) : base(
-			144,
-			SpecieArticuno.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Flying.Instance			
-		) {}
+		public Articuno(string nickname, int level)
+		: base(
+				144,
+				SpecieArticuno.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Articuno() : base(
 			144,

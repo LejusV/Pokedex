@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sirfetchd : Pokemon
 	{
 
-		public Sirfetchd(string nickname, int level) : base(
-			865,
-			SpecieSirfetchd.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Sirfetchd(string nickname, int level)
+		: base(
+				865,
+				SpecieSirfetchd.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sirfetchd() : base(
 			865,

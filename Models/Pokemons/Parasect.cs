@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Parasect : Pokemon
 	{
 
-		public Parasect(string nickname, int level) : base(
-			47,
-			SpecieParasect.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public Parasect(string nickname, int level)
+		: base(
+				47,
+				SpecieParasect.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Parasect() : base(
 			47,

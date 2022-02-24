@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zeraora : Pokemon
 	{
 
-		public Zeraora(string nickname, int level) : base(
-			807,
-			SpecieZeraora.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Zeraora(string nickname, int level)
+		: base(
+				807,
+				SpecieZeraora.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zeraora() : base(
 			807,

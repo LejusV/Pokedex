@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sentret : Pokemon
 	{
 
-		public Sentret(string nickname, int level) : base(
-			161,
-			SpecieSentret.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Sentret(string nickname, int level)
+		: base(
+				161,
+				SpecieSentret.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sentret() : base(
 			161,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dragapult : Pokemon
 	{
 
-		public Dragapult(string nickname, int level) : base(
-			887,
-			SpecieDragapult.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ghost.Instance			
-		) {}
+		public Dragapult(string nickname, int level)
+		: base(
+				887,
+				SpecieDragapult.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dragapult() : base(
 			887,

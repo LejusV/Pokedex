@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Infernape : Pokemon
 	{
 
-		public Infernape(string nickname, int level) : base(
-			392,
-			SpecieInfernape.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Infernape(string nickname, int level)
+		: base(
+				392,
+				SpecieInfernape.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Infernape() : base(
 			392,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Herdier : Pokemon
 	{
 
-		public Herdier(string nickname, int level) : base(
-			507,
-			SpecieHerdier.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Herdier(string nickname, int level)
+		: base(
+				507,
+				SpecieHerdier.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Herdier() : base(
 			507,

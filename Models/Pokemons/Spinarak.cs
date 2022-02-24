@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spinarak : Pokemon
 	{
 
-		public Spinarak(string nickname, int level) : base(
-			167,
-			SpecieSpinarak.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Spinarak(string nickname, int level)
+		: base(
+				167,
+				SpecieSpinarak.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spinarak() : base(
 			167,

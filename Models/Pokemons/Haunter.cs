@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Haunter : Pokemon
 	{
 
-		public Haunter(string nickname, int level) : base(
-			93,
-			SpecieHaunter.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Poison.Instance			
-		) {}
+		public Haunter(string nickname, int level)
+		: base(
+				93,
+				SpecieHaunter.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Haunter() : base(
 			93,

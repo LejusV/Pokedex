@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jumpluff : Pokemon
 	{
 
-		public Jumpluff(string nickname, int level) : base(
-			189,
-			SpecieJumpluff.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Jumpluff(string nickname, int level)
+		: base(
+				189,
+				SpecieJumpluff.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jumpluff() : base(
 			189,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Axew : Pokemon
 	{
 
-		public Axew(string nickname, int level) : base(
-			610,
-			SpecieAxew.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Axew(string nickname, int level)
+		: base(
+				610,
+				SpecieAxew.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Axew() : base(
 			610,

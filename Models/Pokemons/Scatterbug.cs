@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scatterbug : Pokemon
 	{
 
-		public Scatterbug(string nickname, int level) : base(
-			664,
-			SpecieScatterbug.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Scatterbug(string nickname, int level)
+		: base(
+				664,
+				SpecieScatterbug.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scatterbug() : base(
 			664,

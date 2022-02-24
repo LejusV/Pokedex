@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Watchog : Pokemon
 	{
 
-		public Watchog(string nickname, int level) : base(
-			505,
-			SpecieWatchog.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Watchog(string nickname, int level)
+		: base(
+				505,
+				SpecieWatchog.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Watchog() : base(
 			505,

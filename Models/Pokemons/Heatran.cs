@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Heatran : Pokemon
 	{
 
-		public Heatran(string nickname, int level) : base(
-			485,
-			SpecieHeatran.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Steel.Instance			
-		) {}
+		public Heatran(string nickname, int level)
+		: base(
+				485,
+				SpecieHeatran.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Heatran() : base(
 			485,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kyurem : Pokemon
 	{
 
-		public Kyurem(string nickname, int level) : base(
-			646,
-			SpecieKyurem.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ice.Instance			
-		) {}
+		public Kyurem(string nickname, int level)
+		: base(
+				646,
+				SpecieKyurem.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kyurem() : base(
 			646,

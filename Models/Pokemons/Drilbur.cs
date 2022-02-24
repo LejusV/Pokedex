@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drilbur : Pokemon
 	{
 
-		public Drilbur(string nickname, int level) : base(
-			529,
-			SpecieDrilbur.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Drilbur(string nickname, int level)
+		: base(
+				529,
+				SpecieDrilbur.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drilbur() : base(
 			529,

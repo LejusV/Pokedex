@@ -35,11 +35,12 @@ namespace Pokedex.Models.Pokemons
 	public class Squirtle : Pokemon
 	{
 
-		public Squirtle(string nickname, int level) : base(
-			7,
-			SpecieSquirtle.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
+		public Squirtle(string nickname, int level)
+		: base(
+				7,
+				SpecieSquirtle.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
 		)
 		{
 			CalculateStats();

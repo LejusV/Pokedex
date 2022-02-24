@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gyarados : Pokemon
 	{
 
-		public Gyarados(string nickname, int level) : base(
-			130,
-			SpecieGyarados.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Gyarados(string nickname, int level)
+		: base(
+				130,
+				SpecieGyarados.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gyarados() : base(
 			130,

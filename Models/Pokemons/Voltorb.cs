@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Voltorb : Pokemon
 	{
 
-		public Voltorb(string nickname, int level) : base(
-			100,
-			SpecieVoltorb.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Voltorb(string nickname, int level)
+		: base(
+				100,
+				SpecieVoltorb.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Voltorb() : base(
 			100,

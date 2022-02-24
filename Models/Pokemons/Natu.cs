@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Natu : Pokemon
 	{
 
-		public Natu(string nickname, int level) : base(
-			177,
-			SpecieNatu.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Flying.Instance			
-		) {}
+		public Natu(string nickname, int level)
+		: base(
+				177,
+				SpecieNatu.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Natu() : base(
 			177,

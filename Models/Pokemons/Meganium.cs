@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Meganium : Pokemon
 	{
 
-		public Meganium(string nickname, int level) : base(
-			154,
-			SpecieMeganium.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Meganium(string nickname, int level)
+		: base(
+				154,
+				SpecieMeganium.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Meganium() : base(
 			154,

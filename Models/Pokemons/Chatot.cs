@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chatot : Pokemon
 	{
 
-		public Chatot(string nickname, int level) : base(
-			441,
-			SpecieChatot.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Chatot(string nickname, int level)
+		: base(
+				441,
+				SpecieChatot.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chatot() : base(
 			441,

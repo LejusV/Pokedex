@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Deino : Pokemon
 	{
 
-		public Deino(string nickname, int level) : base(
-			633,
-			SpecieDeino.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Dragon.Instance			
-		) {}
+		public Deino(string nickname, int level)
+		: base(
+				633,
+				SpecieDeino.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Deino() : base(
 			633,

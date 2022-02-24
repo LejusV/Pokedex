@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Combusken : Pokemon
 	{
 
-		public Combusken(string nickname, int level) : base(
-			256,
-			SpecieCombusken.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Combusken(string nickname, int level)
+		: base(
+				256,
+				SpecieCombusken.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Combusken() : base(
 			256,

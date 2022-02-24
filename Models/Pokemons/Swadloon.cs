@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swadloon : Pokemon
 	{
 
-		public Swadloon(string nickname, int level) : base(
-			541,
-			SpecieSwadloon.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public Swadloon(string nickname, int level)
+		: base(
+				541,
+				SpecieSwadloon.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swadloon() : base(
 			541,

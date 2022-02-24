@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Palossand : Pokemon
 	{
 
-		public Palossand(string nickname, int level) : base(
-			770,
-			SpeciePalossand.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Ground.Instance			
-		) {}
+		public Palossand(string nickname, int level)
+		: base(
+				770,
+				SpeciePalossand.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Palossand() : base(
 			770,

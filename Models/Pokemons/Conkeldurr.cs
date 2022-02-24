@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Conkeldurr : Pokemon
 	{
 
-		public Conkeldurr(string nickname, int level) : base(
-			534,
-			SpecieConkeldurr.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Conkeldurr(string nickname, int level)
+		: base(
+				534,
+				SpecieConkeldurr.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Conkeldurr() : base(
 			534,

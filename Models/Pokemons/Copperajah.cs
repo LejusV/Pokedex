@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Copperajah : Pokemon
 	{
 
-		public Copperajah(string nickname, int level) : base(
-			879,
-			SpecieCopperajah.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Copperajah(string nickname, int level)
+		: base(
+				879,
+				SpecieCopperajah.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Copperajah() : base(
 			879,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Purrloin : Pokemon
 	{
 
-		public Purrloin(string nickname, int level) : base(
-			509,
-			SpeciePurrloin.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Purrloin(string nickname, int level)
+		: base(
+				509,
+				SpeciePurrloin.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Purrloin() : base(
 			509,

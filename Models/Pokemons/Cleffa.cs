@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cleffa : Pokemon
 	{
 
-		public Cleffa(string nickname, int level) : base(
-			173,
-			SpecieCleffa.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Cleffa(string nickname, int level)
+		: base(
+				173,
+				SpecieCleffa.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cleffa() : base(
 			173,

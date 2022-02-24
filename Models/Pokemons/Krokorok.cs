@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Krokorok : Pokemon
 	{
 
-		public Krokorok(string nickname, int level) : base(
-			552,
-			SpecieKrokorok.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Dark.Instance			
-		) {}
+		public Krokorok(string nickname, int level)
+		: base(
+				552,
+				SpecieKrokorok.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Krokorok() : base(
 			552,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Electivire : Pokemon
 	{
 
-		public Electivire(string nickname, int level) : base(
-			466,
-			SpecieElectivire.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Electivire(string nickname, int level)
+		: base(
+				466,
+				SpecieElectivire.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Electivire() : base(
 			466,

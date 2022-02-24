@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Buzzwole : Pokemon
 	{
 
-		public Buzzwole(string nickname, int level) : base(
-			794,
-			SpecieBuzzwole.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fighting.Instance			
-		) {}
+		public Buzzwole(string nickname, int level)
+		: base(
+				794,
+				SpecieBuzzwole.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Buzzwole() : base(
 			794,

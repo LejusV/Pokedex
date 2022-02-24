@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grubbin : Pokemon
 	{
 
-		public Grubbin(string nickname, int level) : base(
-			736,
-			SpecieGrubbin.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Grubbin(string nickname, int level)
+		: base(
+				736,
+				SpecieGrubbin.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grubbin() : base(
 			736,

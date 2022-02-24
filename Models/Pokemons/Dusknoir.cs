@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dusknoir : Pokemon
 	{
 
-		public Dusknoir(string nickname, int level) : base(
-			477,
-			SpecieDusknoir.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Dusknoir(string nickname, int level)
+		: base(
+				477,
+				SpecieDusknoir.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dusknoir() : base(
 			477,

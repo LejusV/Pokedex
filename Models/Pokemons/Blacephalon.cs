@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blacephalon : Pokemon
 	{
 
-		public Blacephalon(string nickname, int level) : base(
-			806,
-			SpecieBlacephalon.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Ghost.Instance			
-		) {}
+		public Blacephalon(string nickname, int level)
+		: base(
+				806,
+				SpecieBlacephalon.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blacephalon() : base(
 			806,

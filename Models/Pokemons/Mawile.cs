@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mawile : Pokemon
 	{
 
-		public Mawile(string nickname, int level) : base(
-			303,
-			SpecieMawile.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Fairy.Instance			
-		) {}
+		public Mawile(string nickname, int level)
+		: base(
+				303,
+				SpecieMawile.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mawile() : base(
 			303,

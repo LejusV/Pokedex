@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Groudon : Pokemon
 	{
 
-		public Groudon(string nickname, int level) : base(
-			383,
-			SpecieGroudon.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Groudon(string nickname, int level)
+		: base(
+				383,
+				SpecieGroudon.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Groudon() : base(
 			383,

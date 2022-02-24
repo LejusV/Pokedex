@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class HakamoO : Pokemon
 	{
 
-		public HakamoO(string nickname, int level) : base(
-			783,
-			SpecieHakamoO.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Fighting.Instance			
-		) {}
+		public HakamoO(string nickname, int level)
+		: base(
+				783,
+				SpecieHakamoO.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public HakamoO() : base(
 			783,

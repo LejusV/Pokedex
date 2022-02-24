@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Octillery : Pokemon
 	{
 
-		public Octillery(string nickname, int level) : base(
-			224,
-			SpecieOctillery.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Octillery(string nickname, int level)
+		: base(
+				224,
+				SpecieOctillery.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Octillery() : base(
 			224,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grookey : Pokemon
 	{
 
-		public Grookey(string nickname, int level) : base(
-			810,
-			SpecieGrookey.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Grookey(string nickname, int level)
+		: base(
+				810,
+				SpecieGrookey.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grookey() : base(
 			810,

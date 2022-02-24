@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Staravia : Pokemon
 	{
 
-		public Staravia(string nickname, int level) : base(
-			397,
-			SpecieStaravia.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Staravia(string nickname, int level)
+		: base(
+				397,
+				SpecieStaravia.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Staravia() : base(
 			397,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Appletun : Pokemon
 	{
 
-		public Appletun(string nickname, int level) : base(
-			842,
-			SpecieAppletun.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dragon.Instance			
-		) {}
+		public Appletun(string nickname, int level)
+		: base(
+				842,
+				SpecieAppletun.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Appletun() : base(
 			842,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dodrio : Pokemon
 	{
 
-		public Dodrio(string nickname, int level) : base(
-			85,
-			SpecieDodrio.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Dodrio(string nickname, int level)
+		: base(
+				85,
+				SpecieDodrio.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dodrio() : base(
 			85,

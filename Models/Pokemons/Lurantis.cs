@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lurantis : Pokemon
 	{
 
-		public Lurantis(string nickname, int level) : base(
-			754,
-			SpecieLurantis.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Lurantis(string nickname, int level)
+		: base(
+				754,
+				SpecieLurantis.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lurantis() : base(
 			754,

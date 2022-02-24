@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bellossom : Pokemon
 	{
 
-		public Bellossom(string nickname, int level) : base(
-			182,
-			SpecieBellossom.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Bellossom(string nickname, int level)
+		: base(
+				182,
+				SpecieBellossom.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bellossom() : base(
 			182,

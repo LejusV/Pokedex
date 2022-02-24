@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class MrRime : Pokemon
 	{
 
-		public MrRime(string nickname, int level) : base(
-			866,
-			SpecieMrRime.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Psychic.Instance			
-		) {}
+		public MrRime(string nickname, int level)
+		: base(
+				866,
+				SpecieMrRime.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public MrRime() : base(
 			866,

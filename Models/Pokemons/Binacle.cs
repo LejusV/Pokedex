@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Binacle : Pokemon
 	{
 
-		public Binacle(string nickname, int level) : base(
-			688,
-			SpecieBinacle.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Binacle(string nickname, int level)
+		: base(
+				688,
+				SpecieBinacle.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Binacle() : base(
 			688,

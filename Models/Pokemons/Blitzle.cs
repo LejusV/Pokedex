@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blitzle : Pokemon
 	{
 
-		public Blitzle(string nickname, int level) : base(
-			522,
-			SpecieBlitzle.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Blitzle(string nickname, int level)
+		: base(
+				522,
+				SpecieBlitzle.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blitzle() : base(
 			522,

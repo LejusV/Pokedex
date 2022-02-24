@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Machop : Pokemon
 	{
 
-		public Machop(string nickname, int level) : base(
-			66,
-			SpecieMachop.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Machop(string nickname, int level)
+		: base(
+				66,
+				SpecieMachop.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Machop() : base(
 			66,

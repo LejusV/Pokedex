@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Weezing : Pokemon
 	{
 
-		public Weezing(string nickname, int level) : base(
-			110,
-			SpecieWeezing.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Weezing(string nickname, int level)
+		: base(
+				110,
+				SpecieWeezing.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Weezing() : base(
 			110,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Beedrill : Pokemon
 	{
 
-		public Beedrill(string nickname, int level) : base(
-			15,
-			SpecieBeedrill.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Beedrill(string nickname, int level)
+		: base(
+				15,
+				SpecieBeedrill.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Beedrill() : base(
 			15,

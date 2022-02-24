@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fomantis : Pokemon
 	{
 
-		public Fomantis(string nickname, int level) : base(
-			753,
-			SpecieFomantis.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Fomantis(string nickname, int level)
+		: base(
+				753,
+				SpecieFomantis.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fomantis() : base(
 			753,

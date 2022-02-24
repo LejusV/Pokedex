@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skuntank : Pokemon
 	{
 
-		public Skuntank(string nickname, int level) : base(
-			435,
-			SpecieSkuntank.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dark.Instance			
-		) {}
+		public Skuntank(string nickname, int level)
+		: base(
+				435,
+				SpecieSkuntank.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skuntank() : base(
 			435,

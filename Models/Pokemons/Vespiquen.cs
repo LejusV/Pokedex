@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vespiquen : Pokemon
 	{
 
-		public Vespiquen(string nickname, int level) : base(
-			416,
-			SpecieVespiquen.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Vespiquen(string nickname, int level)
+		: base(
+				416,
+				SpecieVespiquen.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vespiquen() : base(
 			416,

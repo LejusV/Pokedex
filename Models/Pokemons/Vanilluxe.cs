@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vanilluxe : Pokemon
 	{
 
-		public Vanilluxe(string nickname, int level) : base(
-			584,
-			SpecieVanilluxe.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Vanilluxe(string nickname, int level)
+		: base(
+				584,
+				SpecieVanilluxe.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vanilluxe() : base(
 			584,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dunsparce : Pokemon
 	{
 
-		public Dunsparce(string nickname, int level) : base(
-			206,
-			SpecieDunsparce.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Dunsparce(string nickname, int level)
+		: base(
+				206,
+				SpecieDunsparce.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dunsparce() : base(
 			206,

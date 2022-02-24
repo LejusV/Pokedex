@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Volcanion : Pokemon
 	{
 
-		public Volcanion(string nickname, int level) : base(
-			721,
-			SpecieVolcanion.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Water.Instance			
-		) {}
+		public Volcanion(string nickname, int level)
+		: base(
+				721,
+				SpecieVolcanion.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Volcanion() : base(
 			721,

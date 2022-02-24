@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ralts : Pokemon
 	{
 
-		public Ralts(string nickname, int level) : base(
-			280,
-			SpecieRalts.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public Ralts(string nickname, int level)
+		: base(
+				280,
+				SpecieRalts.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ralts() : base(
 			280,

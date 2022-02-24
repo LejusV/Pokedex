@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lickitung : Pokemon
 	{
 
-		public Lickitung(string nickname, int level) : base(
-			108,
-			SpecieLickitung.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Lickitung(string nickname, int level)
+		: base(
+				108,
+				SpecieLickitung.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lickitung() : base(
 			108,

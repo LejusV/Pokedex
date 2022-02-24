@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Doublade : Pokemon
 	{
 
-		public Doublade(string nickname, int level) : base(
-			680,
-			SpecieDoublade.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Ghost.Instance			
-		) {}
+		public Doublade(string nickname, int level)
+		: base(
+				680,
+				SpecieDoublade.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Doublade() : base(
 			680,

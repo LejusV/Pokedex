@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Liepard : Pokemon
 	{
 
-		public Liepard(string nickname, int level) : base(
-			510,
-			SpecieLiepard.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Liepard(string nickname, int level)
+		: base(
+				510,
+				SpecieLiepard.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Liepard() : base(
 			510,

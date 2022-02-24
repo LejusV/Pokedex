@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rhydon : Pokemon
 	{
 
-		public Rhydon(string nickname, int level) : base(
-			112,
-			SpecieRhydon.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Rock.Instance			
-		) {}
+		public Rhydon(string nickname, int level)
+		: base(
+				112,
+				SpecieRhydon.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rhydon() : base(
 			112,

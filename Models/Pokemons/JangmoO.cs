@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class JangmoO : Pokemon
 	{
 
-		public JangmoO(string nickname, int level) : base(
-			782,
-			SpecieJangmoO.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public JangmoO(string nickname, int level)
+		: base(
+				782,
+				SpecieJangmoO.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public JangmoO() : base(
 			782,

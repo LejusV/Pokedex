@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Relicanth : Pokemon
 	{
 
-		public Relicanth(string nickname, int level) : base(
-			369,
-			SpecieRelicanth.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Rock.Instance			
-		) {}
+		public Relicanth(string nickname, int level)
+		: base(
+				369,
+				SpecieRelicanth.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Relicanth() : base(
 			369,

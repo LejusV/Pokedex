@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Armaldo : Pokemon
 	{
 
-		public Armaldo(string nickname, int level) : base(
-			348,
-			SpecieArmaldo.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Bug.Instance			
-		) {}
+		public Armaldo(string nickname, int level)
+		: base(
+				348,
+				SpecieArmaldo.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Armaldo() : base(
 			348,

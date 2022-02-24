@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Torkoal : Pokemon
 	{
 
-		public Torkoal(string nickname, int level) : base(
-			324,
-			SpecieTorkoal.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Torkoal(string nickname, int level)
+		: base(
+				324,
+				SpecieTorkoal.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Torkoal() : base(
 			324,

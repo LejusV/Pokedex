@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Illumise : Pokemon
 	{
 
-		public Illumise(string nickname, int level) : base(
-			314,
-			SpecieIllumise.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Illumise(string nickname, int level)
+		: base(
+				314,
+				SpecieIllumise.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Illumise() : base(
 			314,

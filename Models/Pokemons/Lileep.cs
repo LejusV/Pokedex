@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lileep : Pokemon
 	{
 
-		public Lileep(string nickname, int level) : base(
-			345,
-			SpecieLileep.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Grass.Instance			
-		) {}
+		public Lileep(string nickname, int level)
+		: base(
+				345,
+				SpecieLileep.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lileep() : base(
 			345,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nidoqueen : Pokemon
 	{
 
-		public Nidoqueen(string nickname, int level) : base(
-			31,
-			SpecieNidoqueen.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Ground.Instance			
-		) {}
+		public Nidoqueen(string nickname, int level)
+		: base(
+				31,
+				SpecieNidoqueen.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nidoqueen() : base(
 			31,

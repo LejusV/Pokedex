@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Luxray : Pokemon
 	{
 
-		public Luxray(string nickname, int level) : base(
-			405,
-			SpecieLuxray.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Luxray(string nickname, int level)
+		: base(
+				405,
+				SpecieLuxray.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Luxray() : base(
 			405,

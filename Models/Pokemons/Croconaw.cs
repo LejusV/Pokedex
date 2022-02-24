@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Croconaw : Pokemon
 	{
 
-		public Croconaw(string nickname, int level) : base(
-			159,
-			SpecieCroconaw.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Croconaw(string nickname, int level)
+		: base(
+				159,
+				SpecieCroconaw.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Croconaw() : base(
 			159,

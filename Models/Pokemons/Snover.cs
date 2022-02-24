@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snover : Pokemon
 	{
 
-		public Snover(string nickname, int level) : base(
-			459,
-			SpecieSnover.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Ice.Instance			
-		) {}
+		public Snover(string nickname, int level)
+		: base(
+				459,
+				SpecieSnover.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snover() : base(
 			459,

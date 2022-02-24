@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nihilego : Pokemon
 	{
 
-		public Nihilego(string nickname, int level) : base(
-			793,
-			SpecieNihilego.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Poison.Instance			
-		) {}
+		public Nihilego(string nickname, int level)
+		: base(
+				793,
+				SpecieNihilego.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nihilego() : base(
 			793,

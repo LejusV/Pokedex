@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cinccino : Pokemon
 	{
 
-		public Cinccino(string nickname, int level) : base(
-			573,
-			SpecieCinccino.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Cinccino(string nickname, int level)
+		: base(
+				573,
+				SpecieCinccino.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cinccino() : base(
 			573,

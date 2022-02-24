@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hatenna : Pokemon
 	{
 
-		public Hatenna(string nickname, int level) : base(
-			856,
-			SpecieHatenna.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Hatenna(string nickname, int level)
+		: base(
+				856,
+				SpecieHatenna.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hatenna() : base(
 			856,

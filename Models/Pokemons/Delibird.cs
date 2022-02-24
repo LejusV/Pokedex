@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Delibird : Pokemon
 	{
 
-		public Delibird(string nickname, int level) : base(
-			225,
-			SpecieDelibird.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Flying.Instance			
-		) {}
+		public Delibird(string nickname, int level)
+		: base(
+				225,
+				SpecieDelibird.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Delibird() : base(
 			225,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wobbuffet : Pokemon
 	{
 
-		public Wobbuffet(string nickname, int level) : base(
-			202,
-			SpecieWobbuffet.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Wobbuffet(string nickname, int level)
+		: base(
+				202,
+				SpecieWobbuffet.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wobbuffet() : base(
 			202,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zapdos : Pokemon
 	{
 
-		public Zapdos(string nickname, int level) : base(
-			145,
-			SpecieZapdos.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Flying.Instance			
-		) {}
+		public Zapdos(string nickname, int level)
+		: base(
+				145,
+				SpecieZapdos.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zapdos() : base(
 			145,

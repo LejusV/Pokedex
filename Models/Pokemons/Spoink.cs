@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spoink : Pokemon
 	{
 
-		public Spoink(string nickname, int level) : base(
-			325,
-			SpecieSpoink.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Spoink(string nickname, int level)
+		: base(
+				325,
+				SpecieSpoink.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spoink() : base(
 			325,

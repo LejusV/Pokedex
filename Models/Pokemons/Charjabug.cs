@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Charjabug : Pokemon
 	{
 
-		public Charjabug(string nickname, int level) : base(
-			737,
-			SpecieCharjabug.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Electric.Instance			
-		) {}
+		public Charjabug(string nickname, int level)
+		: base(
+				737,
+				SpecieCharjabug.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Charjabug() : base(
 			737,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Latias : Pokemon
 	{
 
-		public Latias(string nickname, int level) : base(
-			380,
-			SpecieLatias.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Psychic.Instance			
-		) {}
+		public Latias(string nickname, int level)
+		: base(
+				380,
+				SpecieLatias.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Latias() : base(
 			380,

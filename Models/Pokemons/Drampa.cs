@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drampa : Pokemon
 	{
 
-		public Drampa(string nickname, int level) : base(
-			780,
-			SpecieDrampa.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Dragon.Instance			
-		) {}
+		public Drampa(string nickname, int level)
+		: base(
+				780,
+				SpecieDrampa.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drampa() : base(
 			780,

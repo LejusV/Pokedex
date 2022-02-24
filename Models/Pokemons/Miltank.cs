@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Miltank : Pokemon
 	{
 
-		public Miltank(string nickname, int level) : base(
-			241,
-			SpecieMiltank.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Miltank(string nickname, int level)
+		: base(
+				241,
+				SpecieMiltank.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Miltank() : base(
 			241,

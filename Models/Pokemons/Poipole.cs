@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Poipole : Pokemon
 	{
 
-		public Poipole(string nickname, int level) : base(
-			803,
-			SpeciePoipole.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Poipole(string nickname, int level)
+		: base(
+				803,
+				SpeciePoipole.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Poipole() : base(
 			803,

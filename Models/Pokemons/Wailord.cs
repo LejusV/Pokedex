@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wailord : Pokemon
 	{
 
-		public Wailord(string nickname, int level) : base(
-			321,
-			SpecieWailord.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Wailord(string nickname, int level)
+		: base(
+				321,
+				SpecieWailord.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wailord() : base(
 			321,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chesnaught : Pokemon
 	{
 
-		public Chesnaught(string nickname, int level) : base(
-			652,
-			SpecieChesnaught.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fighting.Instance			
-		) {}
+		public Chesnaught(string nickname, int level)
+		: base(
+				652,
+				SpecieChesnaught.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chesnaught() : base(
 			652,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Thievul : Pokemon
 	{
 
-		public Thievul(string nickname, int level) : base(
-			828,
-			SpecieThievul.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Thievul(string nickname, int level)
+		: base(
+				828,
+				SpecieThievul.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Thievul() : base(
 			828,

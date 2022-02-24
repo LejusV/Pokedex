@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Quilladin : Pokemon
 	{
 
-		public Quilladin(string nickname, int level) : base(
-			651,
-			SpecieQuilladin.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Quilladin(string nickname, int level)
+		: base(
+				651,
+				SpecieQuilladin.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Quilladin() : base(
 			651,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arbok : Pokemon
 	{
 
-		public Arbok(string nickname, int level) : base(
-			24,
-			SpecieArbok.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Arbok(string nickname, int level)
+		: base(
+				24,
+				SpecieArbok.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arbok() : base(
 			24,

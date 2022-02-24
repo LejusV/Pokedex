@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clefable : Pokemon
 	{
 
-		public Clefable(string nickname, int level) : base(
-			36,
-			SpecieClefable.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Clefable(string nickname, int level)
+		: base(
+				36,
+				SpecieClefable.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clefable() : base(
 			36,

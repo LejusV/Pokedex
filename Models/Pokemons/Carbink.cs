@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Carbink : Pokemon
 	{
 
-		public Carbink(string nickname, int level) : base(
-			703,
-			SpecieCarbink.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Fairy.Instance			
-		) {}
+		public Carbink(string nickname, int level)
+		: base(
+				703,
+				SpecieCarbink.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Carbink() : base(
 			703,

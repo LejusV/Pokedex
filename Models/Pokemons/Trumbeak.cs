@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Trumbeak : Pokemon
 	{
 
-		public Trumbeak(string nickname, int level) : base(
-			732,
-			SpecieTrumbeak.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Trumbeak(string nickname, int level)
+		: base(
+				732,
+				SpecieTrumbeak.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Trumbeak() : base(
 			732,

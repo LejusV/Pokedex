@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zygarde : Pokemon
 	{
 
-		public Zygarde(string nickname, int level) : base(
-			718,
-			SpecieZygarde.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ground.Instance			
-		) {}
+		public Zygarde(string nickname, int level)
+		: base(
+				718,
+				SpecieZygarde.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zygarde() : base(
 			718,

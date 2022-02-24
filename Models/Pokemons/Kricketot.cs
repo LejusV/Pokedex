@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kricketot : Pokemon
 	{
 
-		public Kricketot(string nickname, int level) : base(
-			401,
-			SpecieKricketot.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Kricketot(string nickname, int level)
+		: base(
+				401,
+				SpecieKricketot.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kricketot() : base(
 			401,

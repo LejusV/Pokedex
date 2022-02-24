@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chingling : Pokemon
 	{
 
-		public Chingling(string nickname, int level) : base(
-			433,
-			SpecieChingling.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Chingling(string nickname, int level)
+		: base(
+				433,
+				SpecieChingling.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chingling() : base(
 			433,

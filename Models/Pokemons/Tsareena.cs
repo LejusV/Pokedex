@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tsareena : Pokemon
 	{
 
-		public Tsareena(string nickname, int level) : base(
-			763,
-			SpecieTsareena.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Tsareena(string nickname, int level)
+		: base(
+				763,
+				SpecieTsareena.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tsareena() : base(
 			763,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magmar : Pokemon
 	{
 
-		public Magmar(string nickname, int level) : base(
-			126,
-			SpecieMagmar.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Magmar(string nickname, int level)
+		: base(
+				126,
+				SpecieMagmar.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magmar() : base(
 			126,

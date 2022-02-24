@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gurdurr : Pokemon
 	{
 
-		public Gurdurr(string nickname, int level) : base(
-			533,
-			SpecieGurdurr.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Gurdurr(string nickname, int level)
+		: base(
+				533,
+				SpecieGurdurr.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gurdurr() : base(
 			533,

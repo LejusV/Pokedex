@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Abomasnow : Pokemon
 	{
 
-		public Abomasnow(string nickname, int level) : base(
-			460,
-			SpecieAbomasnow.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Ice.Instance			
-		) {}
+		public Abomasnow(string nickname, int level)
+		: base(
+				460,
+				SpecieAbomasnow.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Abomasnow() : base(
 			460,

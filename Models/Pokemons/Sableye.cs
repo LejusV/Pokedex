@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sableye : Pokemon
 	{
 
-		public Sableye(string nickname, int level) : base(
-			302,
-			SpecieSableye.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Ghost.Instance			
-		) {}
+		public Sableye(string nickname, int level)
+		: base(
+				302,
+				SpecieSableye.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sableye() : base(
 			302,

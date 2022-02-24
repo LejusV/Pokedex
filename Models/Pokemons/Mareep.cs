@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mareep : Pokemon
 	{
 
-		public Mareep(string nickname, int level) : base(
-			179,
-			SpecieMareep.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Mareep(string nickname, int level)
+		: base(
+				179,
+				SpecieMareep.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mareep() : base(
 			179,

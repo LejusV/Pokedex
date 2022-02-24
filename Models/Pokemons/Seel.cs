@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seel : Pokemon
 	{
 
-		public Seel(string nickname, int level) : base(
-			86,
-			SpecieSeel.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Seel(string nickname, int level)
+		: base(
+				86,
+				SpecieSeel.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seel() : base(
 			86,

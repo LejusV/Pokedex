@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rolycoly : Pokemon
 	{
 
-		public Rolycoly(string nickname, int level) : base(
-			837,
-			SpecieRolycoly.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Rolycoly(string nickname, int level)
+		: base(
+				837,
+				SpecieRolycoly.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rolycoly() : base(
 			837,

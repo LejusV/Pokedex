@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Politoed : Pokemon
 	{
 
-		public Politoed(string nickname, int level) : base(
-			186,
-			SpeciePolitoed.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Politoed(string nickname, int level)
+		: base(
+				186,
+				SpeciePolitoed.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Politoed() : base(
 			186,

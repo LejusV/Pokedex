@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skiddo : Pokemon
 	{
 
-		public Skiddo(string nickname, int level) : base(
-			672,
-			SpecieSkiddo.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Skiddo(string nickname, int level)
+		: base(
+				672,
+				SpecieSkiddo.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skiddo() : base(
 			672,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pinsir : Pokemon
 	{
 
-		public Pinsir(string nickname, int level) : base(
-			127,
-			SpeciePinsir.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Pinsir(string nickname, int level)
+		: base(
+				127,
+				SpeciePinsir.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pinsir() : base(
 			127,

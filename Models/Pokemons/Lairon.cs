@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lairon : Pokemon
 	{
 
-		public Lairon(string nickname, int level) : base(
-			305,
-			SpecieLairon.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Rock.Instance			
-		) {}
+		public Lairon(string nickname, int level)
+		: base(
+				305,
+				SpecieLairon.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lairon() : base(
 			305,

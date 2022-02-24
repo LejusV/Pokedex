@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Litten : Pokemon
 	{
 
-		public Litten(string nickname, int level) : base(
-			725,
-			SpecieLitten.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Litten(string nickname, int level)
+		: base(
+				725,
+				SpecieLitten.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Litten() : base(
 			725,

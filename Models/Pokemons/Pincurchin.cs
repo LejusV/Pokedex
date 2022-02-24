@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pincurchin : Pokemon
 	{
 
-		public Pincurchin(string nickname, int level) : base(
-			871,
-			SpeciePincurchin.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Pincurchin(string nickname, int level)
+		: base(
+				871,
+				SpeciePincurchin.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pincurchin() : base(
 			871,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wooloo : Pokemon
 	{
 
-		public Wooloo(string nickname, int level) : base(
-			831,
-			SpecieWooloo.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Wooloo(string nickname, int level)
+		: base(
+				831,
+				SpecieWooloo.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wooloo() : base(
 			831,

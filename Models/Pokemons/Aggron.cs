@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aggron : Pokemon
 	{
 
-		public Aggron(string nickname, int level) : base(
-			306,
-			SpecieAggron.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Rock.Instance			
-		) {}
+		public Aggron(string nickname, int level)
+		: base(
+				306,
+				SpecieAggron.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aggron() : base(
 			306,

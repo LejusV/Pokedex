@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Primeape : Pokemon
 	{
 
-		public Primeape(string nickname, int level) : base(
-			57,
-			SpeciePrimeape.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Primeape(string nickname, int level)
+		: base(
+				57,
+				SpeciePrimeape.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Primeape() : base(
 			57,

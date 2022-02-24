@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lotad : Pokemon
 	{
 
-		public Lotad(string nickname, int level) : base(
-			270,
-			SpecieLotad.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Grass.Instance			
-		) {}
+		public Lotad(string nickname, int level)
+		: base(
+				270,
+				SpecieLotad.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lotad() : base(
 			270,

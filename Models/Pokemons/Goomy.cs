@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Goomy : Pokemon
 	{
 
-		public Goomy(string nickname, int level) : base(
-			704,
-			SpecieGoomy.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Goomy(string nickname, int level)
+		: base(
+				704,
+				SpecieGoomy.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Goomy() : base(
 			704,

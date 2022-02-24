@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dartrix : Pokemon
 	{
 
-		public Dartrix(string nickname, int level) : base(
-			723,
-			SpecieDartrix.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Dartrix(string nickname, int level)
+		: base(
+				723,
+				SpecieDartrix.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dartrix() : base(
 			723,

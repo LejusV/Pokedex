@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Totodile : Pokemon
 	{
 
-		public Totodile(string nickname, int level) : base(
-			158,
-			SpecieTotodile.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Totodile(string nickname, int level)
+		: base(
+				158,
+				SpecieTotodile.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Totodile() : base(
 			158,

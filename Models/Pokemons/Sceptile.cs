@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sceptile : Pokemon
 	{
 
-		public Sceptile(string nickname, int level) : base(
-			254,
-			SpecieSceptile.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Sceptile(string nickname, int level)
+		: base(
+				254,
+				SpecieSceptile.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sceptile() : base(
 			254,

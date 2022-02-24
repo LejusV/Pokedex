@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ludicolo : Pokemon
 	{
 
-		public Ludicolo(string nickname, int level) : base(
-			272,
-			SpecieLudicolo.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Grass.Instance			
-		) {}
+		public Ludicolo(string nickname, int level)
+		: base(
+				272,
+				SpecieLudicolo.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ludicolo() : base(
 			272,

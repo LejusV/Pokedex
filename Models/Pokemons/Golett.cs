@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golett : Pokemon
 	{
 
-		public Golett(string nickname, int level) : base(
-			622,
-			SpecieGolett.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Ghost.Instance			
-		) {}
+		public Golett(string nickname, int level)
+		: base(
+				622,
+				SpecieGolett.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golett() : base(
 			622,

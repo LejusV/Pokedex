@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grapploct : Pokemon
 	{
 
-		public Grapploct(string nickname, int level) : base(
-			853,
-			SpecieGrapploct.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Grapploct(string nickname, int level)
+		: base(
+				853,
+				SpecieGrapploct.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grapploct() : base(
 			853,

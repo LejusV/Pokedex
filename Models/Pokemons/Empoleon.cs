@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Empoleon : Pokemon
 	{
 
-		public Empoleon(string nickname, int level) : base(
-			395,
-			SpecieEmpoleon.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Steel.Instance			
-		) {}
+		public Empoleon(string nickname, int level)
+		: base(
+				395,
+				SpecieEmpoleon.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Empoleon() : base(
 			395,

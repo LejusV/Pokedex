@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Girafarig : Pokemon
 	{
 
-		public Girafarig(string nickname, int level) : base(
-			203,
-			SpecieGirafarig.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Psychic.Instance			
-		) {}
+		public Girafarig(string nickname, int level)
+		: base(
+				203,
+				SpecieGirafarig.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Girafarig() : base(
 			203,

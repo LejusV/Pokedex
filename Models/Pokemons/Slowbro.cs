@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slowbro : Pokemon
 	{
 
-		public Slowbro(string nickname, int level) : base(
-			80,
-			SpecieSlowbro.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Psychic.Instance			
-		) {}
+		public Slowbro(string nickname, int level)
+		: base(
+				80,
+				SpecieSlowbro.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slowbro() : base(
 			80,

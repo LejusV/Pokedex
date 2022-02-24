@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gogoat : Pokemon
 	{
 
-		public Gogoat(string nickname, int level) : base(
-			673,
-			SpecieGogoat.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Gogoat(string nickname, int level)
+		: base(
+				673,
+				SpecieGogoat.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gogoat() : base(
 			673,

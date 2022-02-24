@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Exeggcute : Pokemon
 	{
 
-		public Exeggcute(string nickname, int level) : base(
-			102,
-			SpecieExeggcute.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Psychic.Instance			
-		) {}
+		public Exeggcute(string nickname, int level)
+		: base(
+				102,
+				SpecieExeggcute.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Exeggcute() : base(
 			102,

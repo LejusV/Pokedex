@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Boldore : Pokemon
 	{
 
-		public Boldore(string nickname, int level) : base(
-			525,
-			SpecieBoldore.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Boldore(string nickname, int level)
+		: base(
+				525,
+				SpecieBoldore.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Boldore() : base(
 			525,

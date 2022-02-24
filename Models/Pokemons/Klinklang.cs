@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Klinklang : Pokemon
 	{
 
-		public Klinklang(string nickname, int level) : base(
-			601,
-			SpecieKlinklang.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Klinklang(string nickname, int level)
+		: base(
+				601,
+				SpecieKlinklang.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Klinklang() : base(
 			601,

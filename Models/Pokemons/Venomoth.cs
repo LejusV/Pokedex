@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Venomoth : Pokemon
 	{
 
-		public Venomoth(string nickname, int level) : base(
-			49,
-			SpecieVenomoth.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Venomoth(string nickname, int level)
+		: base(
+				49,
+				SpecieVenomoth.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Venomoth() : base(
 			49,

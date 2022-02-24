@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Prinplup : Pokemon
 	{
 
-		public Prinplup(string nickname, int level) : base(
-			394,
-			SpeciePrinplup.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Prinplup(string nickname, int level)
+		: base(
+				394,
+				SpeciePrinplup.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Prinplup() : base(
 			394,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Silvally : Pokemon
 	{
 
-		public Silvally(string nickname, int level) : base(
-			773,
-			SpecieSilvally.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Silvally(string nickname, int level)
+		: base(
+				773,
+				SpecieSilvally.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Silvally() : base(
 			773,

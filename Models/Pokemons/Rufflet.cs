@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rufflet : Pokemon
 	{
 
-		public Rufflet(string nickname, int level) : base(
-			627,
-			SpecieRufflet.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Rufflet(string nickname, int level)
+		: base(
+				627,
+				SpecieRufflet.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rufflet() : base(
 			627,

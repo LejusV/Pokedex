@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Poliwag : Pokemon
 	{
 
-		public Poliwag(string nickname, int level) : base(
-			60,
-			SpeciePoliwag.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Poliwag(string nickname, int level)
+		: base(
+				60,
+				SpeciePoliwag.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Poliwag() : base(
 			60,

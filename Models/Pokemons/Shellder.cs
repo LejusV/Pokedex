@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shellder : Pokemon
 	{
 
-		public Shellder(string nickname, int level) : base(
-			90,
-			SpecieShellder.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Shellder(string nickname, int level)
+		: base(
+				90,
+				SpecieShellder.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shellder() : base(
 			90,

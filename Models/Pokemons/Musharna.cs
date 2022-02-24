@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Musharna : Pokemon
 	{
 
-		public Musharna(string nickname, int level) : base(
-			518,
-			SpecieMusharna.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Musharna(string nickname, int level)
+		: base(
+				518,
+				SpecieMusharna.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Musharna() : base(
 			518,

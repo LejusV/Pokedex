@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grovyle : Pokemon
 	{
 
-		public Grovyle(string nickname, int level) : base(
-			253,
-			SpecieGrovyle.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Grovyle(string nickname, int level)
+		: base(
+				253,
+				SpecieGrovyle.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grovyle() : base(
 			253,

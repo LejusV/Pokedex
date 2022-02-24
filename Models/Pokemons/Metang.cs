@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Metang : Pokemon
 	{
 
-		public Metang(string nickname, int level) : base(
-			375,
-			SpecieMetang.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Psychic.Instance			
-		) {}
+		public Metang(string nickname, int level)
+		: base(
+				375,
+				SpecieMetang.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Metang() : base(
 			375,

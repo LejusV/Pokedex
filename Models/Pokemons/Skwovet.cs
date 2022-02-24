@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skwovet : Pokemon
 	{
 
-		public Skwovet(string nickname, int level) : base(
-			819,
-			SpecieSkwovet.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Skwovet(string nickname, int level)
+		: base(
+				819,
+				SpecieSkwovet.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skwovet() : base(
 			819,

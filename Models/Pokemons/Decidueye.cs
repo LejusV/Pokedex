@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Decidueye : Pokemon
 	{
 
-		public Decidueye(string nickname, int level) : base(
-			724,
-			SpecieDecidueye.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Ghost.Instance			
-		) {}
+		public Decidueye(string nickname, int level)
+		: base(
+				724,
+				SpecieDecidueye.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Decidueye() : base(
 			724,

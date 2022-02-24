@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grumpig : Pokemon
 	{
 
-		public Grumpig(string nickname, int level) : base(
-			326,
-			SpecieGrumpig.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Grumpig(string nickname, int level)
+		: base(
+				326,
+				SpecieGrumpig.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grumpig() : base(
 			326,

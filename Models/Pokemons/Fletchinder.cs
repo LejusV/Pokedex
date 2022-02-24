@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fletchinder : Pokemon
 	{
 
-		public Fletchinder(string nickname, int level) : base(
-			662,
-			SpecieFletchinder.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public Fletchinder(string nickname, int level)
+		: base(
+				662,
+				SpecieFletchinder.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fletchinder() : base(
 			662,

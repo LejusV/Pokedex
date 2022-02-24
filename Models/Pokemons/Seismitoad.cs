@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seismitoad : Pokemon
 	{
 
-		public Seismitoad(string nickname, int level) : base(
-			537,
-			SpecieSeismitoad.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Seismitoad(string nickname, int level)
+		: base(
+				537,
+				SpecieSeismitoad.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seismitoad() : base(
 			537,

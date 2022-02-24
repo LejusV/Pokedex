@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Butterfree : Pokemon
 	{
 
-		public Butterfree(string nickname, int level) : base(
-			12,
-			SpecieButterfree.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Butterfree(string nickname, int level)
+		: base(
+				12,
+				SpecieButterfree.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Butterfree() : base(
 			12,

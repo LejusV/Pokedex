@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Buneary : Pokemon
 	{
 
-		public Buneary(string nickname, int level) : base(
-			427,
-			SpecieBuneary.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Buneary(string nickname, int level)
+		: base(
+				427,
+				SpecieBuneary.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Buneary() : base(
 			427,

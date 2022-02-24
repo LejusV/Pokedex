@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jigglypuff : Pokemon
 	{
 
-		public Jigglypuff(string nickname, int level) : base(
-			39,
-			SpecieJigglypuff.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Fairy.Instance			
-		) {}
+		public Jigglypuff(string nickname, int level)
+		: base(
+				39,
+				SpecieJigglypuff.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jigglypuff() : base(
 			39,

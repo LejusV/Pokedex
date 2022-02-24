@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Entei : Pokemon
 	{
 
-		public Entei(string nickname, int level) : base(
-			244,
-			SpecieEntei.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Entei(string nickname, int level)
+		: base(
+				244,
+				SpecieEntei.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Entei() : base(
 			244,

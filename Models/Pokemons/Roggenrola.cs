@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Roggenrola : Pokemon
 	{
 
-		public Roggenrola(string nickname, int level) : base(
-			524,
-			SpecieRoggenrola.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Roggenrola(string nickname, int level)
+		: base(
+				524,
+				SpecieRoggenrola.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Roggenrola() : base(
 			524,

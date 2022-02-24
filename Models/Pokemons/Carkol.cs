@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Carkol : Pokemon
 	{
 
-		public Carkol(string nickname, int level) : base(
-			838,
-			SpecieCarkol.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Fire.Instance			
-		) {}
+		public Carkol(string nickname, int level)
+		: base(
+				838,
+				SpecieCarkol.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Carkol() : base(
 			838,

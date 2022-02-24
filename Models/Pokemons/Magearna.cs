@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magearna : Pokemon
 	{
 
-		public Magearna(string nickname, int level) : base(
-			801,
-			SpecieMagearna.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Fairy.Instance			
-		) {}
+		public Magearna(string nickname, int level)
+		: base(
+				801,
+				SpecieMagearna.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magearna() : base(
 			801,

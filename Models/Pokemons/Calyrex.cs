@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Calyrex : Pokemon
 	{
 
-		public Calyrex(string nickname, int level) : base(
-			898,
-			SpecieCalyrex.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Grass.Instance			
-		) {}
+		public Calyrex(string nickname, int level)
+		: base(
+				898,
+				SpecieCalyrex.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Calyrex() : base(
 			898,

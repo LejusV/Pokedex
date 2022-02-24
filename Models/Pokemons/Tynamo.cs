@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tynamo : Pokemon
 	{
 
-		public Tynamo(string nickname, int level) : base(
-			602,
-			SpecieTynamo.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Tynamo(string nickname, int level)
+		: base(
+				602,
+				SpecieTynamo.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tynamo() : base(
 			602,

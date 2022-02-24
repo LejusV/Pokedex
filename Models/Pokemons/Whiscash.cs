@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Whiscash : Pokemon
 	{
 
-		public Whiscash(string nickname, int level) : base(
-			340,
-			SpecieWhiscash.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Whiscash(string nickname, int level)
+		: base(
+				340,
+				SpecieWhiscash.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Whiscash() : base(
 			340,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snubbull : Pokemon
 	{
 
-		public Snubbull(string nickname, int level) : base(
-			209,
-			SpecieSnubbull.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Snubbull(string nickname, int level)
+		: base(
+				209,
+				SpecieSnubbull.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snubbull() : base(
 			209,

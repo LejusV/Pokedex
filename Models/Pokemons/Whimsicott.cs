@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Whimsicott : Pokemon
 	{
 
-		public Whimsicott(string nickname, int level) : base(
-			547,
-			SpecieWhimsicott.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fairy.Instance			
-		) {}
+		public Whimsicott(string nickname, int level)
+		: base(
+				547,
+				SpecieWhimsicott.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Whimsicott() : base(
 			547,

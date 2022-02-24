@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pansear : Pokemon
 	{
 
-		public Pansear(string nickname, int level) : base(
-			513,
-			SpeciePansear.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Pansear(string nickname, int level)
+		: base(
+				513,
+				SpeciePansear.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pansear() : base(
 			513,

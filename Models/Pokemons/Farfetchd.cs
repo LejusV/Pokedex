@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Farfetchd : Pokemon
 	{
 
-		public Farfetchd(string nickname, int level) : base(
-			83,
-			SpecieFarfetchd.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Farfetchd(string nickname, int level)
+		: base(
+				83,
+				SpecieFarfetchd.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Farfetchd() : base(
 			83,

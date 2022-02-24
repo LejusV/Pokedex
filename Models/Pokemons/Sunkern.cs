@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sunkern : Pokemon
 	{
 
-		public Sunkern(string nickname, int level) : base(
-			191,
-			SpecieSunkern.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Sunkern(string nickname, int level)
+		: base(
+				191,
+				SpecieSunkern.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sunkern() : base(
 			191,

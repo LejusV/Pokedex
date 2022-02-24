@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Crawdaunt : Pokemon
 	{
 
-		public Crawdaunt(string nickname, int level) : base(
-			342,
-			SpecieCrawdaunt.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dark.Instance			
-		) {}
+		public Crawdaunt(string nickname, int level)
+		: base(
+				342,
+				SpecieCrawdaunt.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Crawdaunt() : base(
 			342,

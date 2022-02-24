@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gallade : Pokemon
 	{
 
-		public Gallade(string nickname, int level) : base(
-			475,
-			SpecieGallade.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fighting.Instance			
-		) {}
+		public Gallade(string nickname, int level)
+		: base(
+				475,
+				SpecieGallade.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gallade() : base(
 			475,

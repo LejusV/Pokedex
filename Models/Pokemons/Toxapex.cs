@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Toxapex : Pokemon
 	{
 
-		public Toxapex(string nickname, int level) : base(
-			748,
-			SpecieToxapex.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Water.Instance			
-		) {}
+		public Toxapex(string nickname, int level)
+		: base(
+				748,
+				SpecieToxapex.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Toxapex() : base(
 			748,

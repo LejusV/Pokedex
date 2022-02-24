@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hitmontop : Pokemon
 	{
 
-		public Hitmontop(string nickname, int level) : base(
-			237,
-			SpecieHitmontop.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Hitmontop(string nickname, int level)
+		: base(
+				237,
+				SpecieHitmontop.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hitmontop() : base(
 			237,

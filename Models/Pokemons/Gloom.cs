@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gloom : Pokemon
 	{
 
-		public Gloom(string nickname, int level) : base(
-			44,
-			SpecieGloom.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Gloom(string nickname, int level)
+		: base(
+				44,
+				SpecieGloom.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gloom() : base(
 			44,

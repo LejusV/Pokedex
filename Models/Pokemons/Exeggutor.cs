@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Exeggutor : Pokemon
 	{
 
-		public Exeggutor(string nickname, int level) : base(
-			103,
-			SpecieExeggutor.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Psychic.Instance			
-		) {}
+		public Exeggutor(string nickname, int level)
+		: base(
+				103,
+				SpecieExeggutor.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Exeggutor() : base(
 			103,

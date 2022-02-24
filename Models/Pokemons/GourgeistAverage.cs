@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class GourgeistAverage : Pokemon
 	{
 
-		public GourgeistAverage(string nickname, int level) : base(
-			711,
-			SpecieGourgeistAverage.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Grass.Instance			
-		) {}
+		public GourgeistAverage(string nickname, int level)
+		: base(
+				711,
+				SpecieGourgeistAverage.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public GourgeistAverage() : base(
 			711,

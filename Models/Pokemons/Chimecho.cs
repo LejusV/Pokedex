@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chimecho : Pokemon
 	{
 
-		public Chimecho(string nickname, int level) : base(
-			358,
-			SpecieChimecho.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Chimecho(string nickname, int level)
+		: base(
+				358,
+				SpecieChimecho.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chimecho() : base(
 			358,

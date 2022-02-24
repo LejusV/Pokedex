@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chinchou : Pokemon
 	{
 
-		public Chinchou(string nickname, int level) : base(
-			170,
-			SpecieChinchou.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Electric.Instance			
-		) {}
+		public Chinchou(string nickname, int level)
+		: base(
+				170,
+				SpecieChinchou.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chinchou() : base(
 			170,

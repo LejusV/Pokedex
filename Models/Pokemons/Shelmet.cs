@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shelmet : Pokemon
 	{
 
-		public Shelmet(string nickname, int level) : base(
-			616,
-			SpecieShelmet.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Shelmet(string nickname, int level)
+		: base(
+				616,
+				SpecieShelmet.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shelmet() : base(
 			616,

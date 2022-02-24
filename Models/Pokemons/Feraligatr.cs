@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Feraligatr : Pokemon
 	{
 
-		public Feraligatr(string nickname, int level) : base(
-			160,
-			SpecieFeraligatr.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Feraligatr(string nickname, int level)
+		: base(
+				160,
+				SpecieFeraligatr.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Feraligatr() : base(
 			160,

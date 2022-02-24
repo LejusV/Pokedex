@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Medicham : Pokemon
 	{
 
-		public Medicham(string nickname, int level) : base(
-			308,
-			SpecieMedicham.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Psychic.Instance			
-		) {}
+		public Medicham(string nickname, int level)
+		: base(
+				308,
+				SpecieMedicham.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Medicham() : base(
 			308,

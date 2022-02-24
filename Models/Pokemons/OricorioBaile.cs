@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class OricorioBaile : Pokemon
 	{
 
-		public OricorioBaile(string nickname, int level) : base(
-			741,
-			SpecieOricorioBaile.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public OricorioBaile(string nickname, int level)
+		: base(
+				741,
+				SpecieOricorioBaile.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public OricorioBaile() : base(
 			741,

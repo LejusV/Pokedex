@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Altaria : Pokemon
 	{
 
-		public Altaria(string nickname, int level) : base(
-			334,
-			SpecieAltaria.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Flying.Instance			
-		) {}
+		public Altaria(string nickname, int level)
+		: base(
+				334,
+				SpecieAltaria.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Altaria() : base(
 			334,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scolipede : Pokemon
 	{
 
-		public Scolipede(string nickname, int level) : base(
-			545,
-			SpecieScolipede.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Scolipede(string nickname, int level)
+		: base(
+				545,
+				SpecieScolipede.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scolipede() : base(
 			545,

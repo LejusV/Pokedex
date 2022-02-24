@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Paras : Pokemon
 	{
 
-		public Paras(string nickname, int level) : base(
-			46,
-			SpecieParas.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public Paras(string nickname, int level)
+		: base(
+				46,
+				SpecieParas.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Paras() : base(
 			46,

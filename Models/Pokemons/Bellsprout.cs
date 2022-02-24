@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bellsprout : Pokemon
 	{
 
-		public Bellsprout(string nickname, int level) : base(
-			69,
-			SpecieBellsprout.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Bellsprout(string nickname, int level)
+		: base(
+				69,
+				SpecieBellsprout.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bellsprout() : base(
 			69,

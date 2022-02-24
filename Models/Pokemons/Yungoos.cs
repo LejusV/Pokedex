@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Yungoos : Pokemon
 	{
 
-		public Yungoos(string nickname, int level) : base(
-			734,
-			SpecieYungoos.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Yungoos(string nickname, int level)
+		: base(
+				734,
+				SpecieYungoos.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Yungoos() : base(
 			734,

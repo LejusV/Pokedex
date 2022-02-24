@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Staryu : Pokemon
 	{
 
-		public Staryu(string nickname, int level) : base(
-			120,
-			SpecieStaryu.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Staryu(string nickname, int level)
+		: base(
+				120,
+				SpecieStaryu.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Staryu() : base(
 			120,

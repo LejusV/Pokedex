@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Beldum : Pokemon
 	{
 
-		public Beldum(string nickname, int level) : base(
-			374,
-			SpecieBeldum.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Psychic.Instance			
-		) {}
+		public Beldum(string nickname, int level)
+		: base(
+				374,
+				SpecieBeldum.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Beldum() : base(
 			374,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ariados : Pokemon
 	{
 
-		public Ariados(string nickname, int level) : base(
-			168,
-			SpecieAriados.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Ariados(string nickname, int level)
+		: base(
+				168,
+				SpecieAriados.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ariados() : base(
 			168,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zoroark : Pokemon
 	{
 
-		public Zoroark(string nickname, int level) : base(
-			571,
-			SpecieZoroark.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Zoroark(string nickname, int level)
+		: base(
+				571,
+				SpecieZoroark.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zoroark() : base(
 			571,

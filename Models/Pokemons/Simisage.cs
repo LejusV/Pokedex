@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Simisage : Pokemon
 	{
 
-		public Simisage(string nickname, int level) : base(
-			512,
-			SpecieSimisage.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Simisage(string nickname, int level)
+		: base(
+				512,
+				SpecieSimisage.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Simisage() : base(
 			512,

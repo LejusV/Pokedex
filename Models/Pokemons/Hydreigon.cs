@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hydreigon : Pokemon
 	{
 
-		public Hydreigon(string nickname, int level) : base(
-			635,
-			SpecieHydreigon.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Dragon.Instance			
-		) {}
+		public Hydreigon(string nickname, int level)
+		: base(
+				635,
+				SpecieHydreigon.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hydreigon() : base(
 			635,

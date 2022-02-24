@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Marshtomp : Pokemon
 	{
 
-		public Marshtomp(string nickname, int level) : base(
-			259,
-			SpecieMarshtomp.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Marshtomp(string nickname, int level)
+		: base(
+				259,
+				SpecieMarshtomp.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Marshtomp() : base(
 			259,

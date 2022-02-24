@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Feebas : Pokemon
 	{
 
-		public Feebas(string nickname, int level) : base(
-			349,
-			SpecieFeebas.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Feebas(string nickname, int level)
+		: base(
+				349,
+				SpecieFeebas.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Feebas() : base(
 			349,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Banette : Pokemon
 	{
 
-		public Banette(string nickname, int level) : base(
-			354,
-			SpecieBanette.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Banette(string nickname, int level)
+		: base(
+				354,
+				SpecieBanette.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Banette() : base(
 			354,

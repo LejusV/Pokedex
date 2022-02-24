@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Phanpy : Pokemon
 	{
 
-		public Phanpy(string nickname, int level) : base(
-			231,
-			SpeciePhanpy.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Phanpy(string nickname, int level)
+		: base(
+				231,
+				SpeciePhanpy.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Phanpy() : base(
 			231,

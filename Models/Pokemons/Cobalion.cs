@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cobalion : Pokemon
 	{
 
-		public Cobalion(string nickname, int level) : base(
-			638,
-			SpecieCobalion.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Fighting.Instance			
-		) {}
+		public Cobalion(string nickname, int level)
+		: base(
+				638,
+				SpecieCobalion.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cobalion() : base(
 			638,

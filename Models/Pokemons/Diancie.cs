@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Diancie : Pokemon
 	{
 
-		public Diancie(string nickname, int level) : base(
-			719,
-			SpecieDiancie.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Fairy.Instance			
-		) {}
+		public Diancie(string nickname, int level)
+		: base(
+				719,
+				SpecieDiancie.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Diancie() : base(
 			719,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clamperl : Pokemon
 	{
 
-		public Clamperl(string nickname, int level) : base(
-			366,
-			SpecieClamperl.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Clamperl(string nickname, int level)
+		: base(
+				366,
+				SpecieClamperl.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clamperl() : base(
 			366,

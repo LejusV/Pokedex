@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Froslass : Pokemon
 	{
 
-		public Froslass(string nickname, int level) : base(
-			478,
-			SpecieFroslass.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Ghost.Instance			
-		) {}
+		public Froslass(string nickname, int level)
+		: base(
+				478,
+				SpecieFroslass.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Froslass() : base(
 			478,

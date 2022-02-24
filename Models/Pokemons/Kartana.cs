@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kartana : Pokemon
 	{
 
-		public Kartana(string nickname, int level) : base(
-			798,
-			SpecieKartana.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Steel.Instance			
-		) {}
+		public Kartana(string nickname, int level)
+		: base(
+				798,
+				SpecieKartana.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kartana() : base(
 			798,

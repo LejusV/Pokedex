@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class ZacianHero : Pokemon
 	{
 
-		public ZacianHero(string nickname, int level) : base(
-			888,
-			SpecieZacianHero.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public ZacianHero(string nickname, int level)
+		: base(
+				888,
+				SpecieZacianHero.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public ZacianHero() : base(
 			888,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Elgyem : Pokemon
 	{
 
-		public Elgyem(string nickname, int level) : base(
-			605,
-			SpecieElgyem.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Elgyem(string nickname, int level)
+		: base(
+				605,
+				SpecieElgyem.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Elgyem() : base(
 			605,

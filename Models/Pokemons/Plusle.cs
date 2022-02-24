@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Plusle : Pokemon
 	{
 
-		public Plusle(string nickname, int level) : base(
-			311,
-			SpeciePlusle.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Plusle(string nickname, int level)
+		: base(
+				311,
+				SpeciePlusle.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Plusle() : base(
 			311,

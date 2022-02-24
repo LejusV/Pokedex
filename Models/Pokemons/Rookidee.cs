@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rookidee : Pokemon
 	{
 
-		public Rookidee(string nickname, int level) : base(
-			821,
-			SpecieRookidee.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance			
-		) {}
+		public Rookidee(string nickname, int level)
+		: base(
+				821,
+				SpecieRookidee.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rookidee() : base(
 			821,

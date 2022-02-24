@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Staraptor : Pokemon
 	{
 
-		public Staraptor(string nickname, int level) : base(
-			398,
-			SpecieStaraptor.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Staraptor(string nickname, int level)
+		: base(
+				398,
+				SpecieStaraptor.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Staraptor() : base(
 			398,

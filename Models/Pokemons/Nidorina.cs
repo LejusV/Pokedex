@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nidorina : Pokemon
 	{
 
-		public Nidorina(string nickname, int level) : base(
-			30,
-			SpecieNidorina.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Nidorina(string nickname, int level)
+		: base(
+				30,
+				SpecieNidorina.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nidorina() : base(
 			30,

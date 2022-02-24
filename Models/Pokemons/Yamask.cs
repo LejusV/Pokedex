@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Yamask : Pokemon
 	{
 
-		public Yamask(string nickname, int level) : base(
-			562,
-			SpecieYamask.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Yamask(string nickname, int level)
+		: base(
+				562,
+				SpecieYamask.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Yamask() : base(
 			562,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sunflora : Pokemon
 	{
 
-		public Sunflora(string nickname, int level) : base(
-			192,
-			SpecieSunflora.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Sunflora(string nickname, int level)
+		: base(
+				192,
+				SpecieSunflora.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sunflora() : base(
 			192,

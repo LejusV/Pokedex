@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class HoOh : Pokemon
 	{
 
-		public HoOh(string nickname, int level) : base(
-			250,
-			SpecieHoOh.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public HoOh(string nickname, int level)
+		: base(
+				250,
+				SpecieHoOh.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public HoOh() : base(
 			250,

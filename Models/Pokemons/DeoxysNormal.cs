@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class DeoxysNormal : Pokemon
 	{
 
-		public DeoxysNormal(string nickname, int level) : base(
-			386,
-			SpecieDeoxysNormal.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public DeoxysNormal(string nickname, int level)
+		: base(
+				386,
+				SpecieDeoxysNormal.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public DeoxysNormal() : base(
 			386,

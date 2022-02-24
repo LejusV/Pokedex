@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Turtonator : Pokemon
 	{
 
-		public Turtonator(string nickname, int level) : base(
-			776,
-			SpecieTurtonator.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Dragon.Instance			
-		) {}
+		public Turtonator(string nickname, int level)
+		: base(
+				776,
+				SpecieTurtonator.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Turtonator() : base(
 			776,

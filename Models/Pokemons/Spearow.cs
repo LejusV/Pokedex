@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spearow : Pokemon
 	{
 
-		public Spearow(string nickname, int level) : base(
-			21,
-			SpecieSpearow.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Spearow(string nickname, int level)
+		: base(
+				21,
+				SpecieSpearow.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spearow() : base(
 			21,

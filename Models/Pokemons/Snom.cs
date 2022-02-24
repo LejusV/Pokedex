@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snom : Pokemon
 	{
 
-		public Snom(string nickname, int level) : base(
-			872,
-			SpecieSnom.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Bug.Instance			
-		) {}
+		public Snom(string nickname, int level)
+		: base(
+				872,
+				SpecieSnom.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snom() : base(
 			872,

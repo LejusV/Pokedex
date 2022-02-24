@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ledyba : Pokemon
 	{
 
-		public Ledyba(string nickname, int level) : base(
-			165,
-			SpecieLedyba.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Ledyba(string nickname, int level)
+		: base(
+				165,
+				SpecieLedyba.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ledyba() : base(
 			165,

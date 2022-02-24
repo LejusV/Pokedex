@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Riolu : Pokemon
 	{
 
-		public Riolu(string nickname, int level) : base(
-			447,
-			SpecieRiolu.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Riolu(string nickname, int level)
+		: base(
+				447,
+				SpecieRiolu.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Riolu() : base(
 			447,

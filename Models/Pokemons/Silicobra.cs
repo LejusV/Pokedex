@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Silicobra : Pokemon
 	{
 
-		public Silicobra(string nickname, int level) : base(
-			843,
-			SpecieSilicobra.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Silicobra(string nickname, int level)
+		: base(
+				843,
+				SpecieSilicobra.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Silicobra() : base(
 			843,

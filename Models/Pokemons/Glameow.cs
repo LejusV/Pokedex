@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Glameow : Pokemon
 	{
 
-		public Glameow(string nickname, int level) : base(
-			431,
-			SpecieGlameow.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Glameow(string nickname, int level)
+		: base(
+				431,
+				SpecieGlameow.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Glameow() : base(
 			431,

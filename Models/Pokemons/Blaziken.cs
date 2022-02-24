@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blaziken : Pokemon
 	{
 
-		public Blaziken(string nickname, int level) : base(
-			257,
-			SpecieBlaziken.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Blaziken(string nickname, int level)
+		: base(
+				257,
+				SpecieBlaziken.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blaziken() : base(
 			257,

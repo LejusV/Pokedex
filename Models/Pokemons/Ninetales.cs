@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ninetales : Pokemon
 	{
 
-		public Ninetales(string nickname, int level) : base(
-			38,
-			SpecieNinetales.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Ninetales(string nickname, int level)
+		: base(
+				38,
+				SpecieNinetales.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ninetales() : base(
 			38,

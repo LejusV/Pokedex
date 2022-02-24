@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pawniard : Pokemon
 	{
 
-		public Pawniard(string nickname, int level) : base(
-			624,
-			SpeciePawniard.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Steel.Instance			
-		) {}
+		public Pawniard(string nickname, int level)
+		: base(
+				624,
+				SpeciePawniard.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pawniard() : base(
 			624,

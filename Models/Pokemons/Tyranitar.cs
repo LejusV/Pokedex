@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tyranitar : Pokemon
 	{
 
-		public Tyranitar(string nickname, int level) : base(
-			248,
-			SpecieTyranitar.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Dark.Instance			
-		) {}
+		public Tyranitar(string nickname, int level)
+		: base(
+				248,
+				SpecieTyranitar.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tyranitar() : base(
 			248,

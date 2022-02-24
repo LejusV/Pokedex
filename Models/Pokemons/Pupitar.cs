@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pupitar : Pokemon
 	{
 
-		public Pupitar(string nickname, int level) : base(
-			247,
-			SpeciePupitar.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Pupitar(string nickname, int level)
+		: base(
+				247,
+				SpeciePupitar.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pupitar() : base(
 			247,

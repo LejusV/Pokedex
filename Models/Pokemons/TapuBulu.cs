@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TapuBulu : Pokemon
 	{
 
-		public TapuBulu(string nickname, int level) : base(
-			787,
-			SpecieTapuBulu.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fairy.Instance			
-		) {}
+		public TapuBulu(string nickname, int level)
+		: base(
+				787,
+				SpecieTapuBulu.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TapuBulu() : base(
 			787,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Trevenant : Pokemon
 	{
 
-		public Trevenant(string nickname, int level) : base(
-			709,
-			SpecieTrevenant.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Grass.Instance			
-		) {}
+		public Trevenant(string nickname, int level)
+		: base(
+				709,
+				SpecieTrevenant.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Trevenant() : base(
 			709,

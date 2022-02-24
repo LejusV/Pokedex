@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stonjourner : Pokemon
 	{
 
-		public Stonjourner(string nickname, int level) : base(
-			874,
-			SpecieStonjourner.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Stonjourner(string nickname, int level)
+		: base(
+				874,
+				SpecieStonjourner.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stonjourner() : base(
 			874,

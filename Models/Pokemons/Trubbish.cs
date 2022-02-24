@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Trubbish : Pokemon
 	{
 
-		public Trubbish(string nickname, int level) : base(
-			568,
-			SpecieTrubbish.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Trubbish(string nickname, int level)
+		: base(
+				568,
+				SpecieTrubbish.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Trubbish() : base(
 			568,

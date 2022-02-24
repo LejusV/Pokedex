@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shiftry : Pokemon
 	{
 
-		public Shiftry(string nickname, int level) : base(
-			275,
-			SpecieShiftry.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dark.Instance			
-		) {}
+		public Shiftry(string nickname, int level)
+		: base(
+				275,
+				SpecieShiftry.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shiftry() : base(
 			275,

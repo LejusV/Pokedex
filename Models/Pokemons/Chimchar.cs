@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chimchar : Pokemon
 	{
 
-		public Chimchar(string nickname, int level) : base(
-			390,
-			SpecieChimchar.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Chimchar(string nickname, int level)
+		: base(
+				390,
+				SpecieChimchar.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chimchar() : base(
 			390,

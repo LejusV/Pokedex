@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Claydol : Pokemon
 	{
 
-		public Claydol(string nickname, int level) : base(
-			344,
-			SpecieClaydol.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Psychic.Instance			
-		) {}
+		public Claydol(string nickname, int level)
+		: base(
+				344,
+				SpecieClaydol.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Claydol() : base(
 			344,

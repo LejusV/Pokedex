@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nosepass : Pokemon
 	{
 
-		public Nosepass(string nickname, int level) : base(
-			299,
-			SpecieNosepass.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Nosepass(string nickname, int level)
+		: base(
+				299,
+				SpecieNosepass.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nosepass() : base(
 			299,

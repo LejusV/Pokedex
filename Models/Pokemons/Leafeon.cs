@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Leafeon : Pokemon
 	{
 
-		public Leafeon(string nickname, int level) : base(
-			470,
-			SpecieLeafeon.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Leafeon(string nickname, int level)
+		: base(
+				470,
+				SpecieLeafeon.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Leafeon() : base(
 			470,

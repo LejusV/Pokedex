@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pidove : Pokemon
 	{
 
-		public Pidove(string nickname, int level) : base(
-			519,
-			SpeciePidove.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Pidove(string nickname, int level)
+		: base(
+				519,
+				SpeciePidove.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pidove() : base(
 			519,

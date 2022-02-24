@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mareanie : Pokemon
 	{
 
-		public Mareanie(string nickname, int level) : base(
-			747,
-			SpecieMareanie.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Water.Instance			
-		) {}
+		public Mareanie(string nickname, int level)
+		: base(
+				747,
+				SpecieMareanie.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mareanie() : base(
 			747,

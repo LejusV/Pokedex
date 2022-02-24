@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aerodactyl : Pokemon
 	{
 
-		public Aerodactyl(string nickname, int level) : base(
-			142,
-			SpecieAerodactyl.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Flying.Instance			
-		) {}
+		public Aerodactyl(string nickname, int level)
+		: base(
+				142,
+				SpecieAerodactyl.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aerodactyl() : base(
 			142,

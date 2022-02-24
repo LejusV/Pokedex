@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chansey : Pokemon
 	{
 
-		public Chansey(string nickname, int level) : base(
-			113,
-			SpecieChansey.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Chansey(string nickname, int level)
+		: base(
+				113,
+				SpecieChansey.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chansey() : base(
 			113,

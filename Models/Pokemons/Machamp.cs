@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Machamp : Pokemon
 	{
 
-		public Machamp(string nickname, int level) : base(
-			68,
-			SpecieMachamp.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Machamp(string nickname, int level)
+		: base(
+				68,
+				SpecieMachamp.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Machamp() : base(
 			68,

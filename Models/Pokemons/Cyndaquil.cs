@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cyndaquil : Pokemon
 	{
 
-		public Cyndaquil(string nickname, int level) : base(
-			155,
-			SpecieCyndaquil.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Cyndaquil(string nickname, int level)
+		: base(
+				155,
+				SpecieCyndaquil.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cyndaquil() : base(
 			155,

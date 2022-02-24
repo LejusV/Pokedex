@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Donphan : Pokemon
 	{
 
-		public Donphan(string nickname, int level) : base(
-			232,
-			SpecieDonphan.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Donphan(string nickname, int level)
+		: base(
+				232,
+				SpecieDonphan.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Donphan() : base(
 			232,

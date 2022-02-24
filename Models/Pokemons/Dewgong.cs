@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dewgong : Pokemon
 	{
 
-		public Dewgong(string nickname, int level) : base(
-			87,
-			SpecieDewgong.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ice.Instance			
-		) {}
+		public Dewgong(string nickname, int level)
+		: base(
+				87,
+				SpecieDewgong.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dewgong() : base(
 			87,

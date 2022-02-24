@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Victreebel : Pokemon
 	{
 
-		public Victreebel(string nickname, int level) : base(
-			71,
-			SpecieVictreebel.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Victreebel(string nickname, int level)
+		: base(
+				71,
+				SpecieVictreebel.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Victreebel() : base(
 			71,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sharpedo : Pokemon
 	{
 
-		public Sharpedo(string nickname, int level) : base(
-			319,
-			SpecieSharpedo.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dark.Instance			
-		) {}
+		public Sharpedo(string nickname, int level)
+		: base(
+				319,
+				SpecieSharpedo.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sharpedo() : base(
 			319,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Piplup : Pokemon
 	{
 
-		public Piplup(string nickname, int level) : base(
-			393,
-			SpeciePiplup.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Piplup(string nickname, int level)
+		: base(
+				393,
+				SpeciePiplup.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Piplup() : base(
 			393,

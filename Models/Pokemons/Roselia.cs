@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Roselia : Pokemon
 	{
 
-		public Roselia(string nickname, int level) : base(
-			315,
-			SpecieRoselia.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Roselia(string nickname, int level)
+		: base(
+				315,
+				SpecieRoselia.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Roselia() : base(
 			315,

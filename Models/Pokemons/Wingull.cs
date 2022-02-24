@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wingull : Pokemon
 	{
 
-		public Wingull(string nickname, int level) : base(
-			278,
-			SpecieWingull.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Wingull(string nickname, int level)
+		: base(
+				278,
+				SpecieWingull.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wingull() : base(
 			278,

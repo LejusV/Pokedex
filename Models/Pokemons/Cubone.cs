@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cubone : Pokemon
 	{
 
-		public Cubone(string nickname, int level) : base(
-			104,
-			SpecieCubone.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Cubone(string nickname, int level)
+		: base(
+				104,
+				SpecieCubone.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cubone() : base(
 			104,

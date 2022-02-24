@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nuzleaf : Pokemon
 	{
 
-		public Nuzleaf(string nickname, int level) : base(
-			274,
-			SpecieNuzleaf.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dark.Instance			
-		) {}
+		public Nuzleaf(string nickname, int level)
+		: base(
+				274,
+				SpecieNuzleaf.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nuzleaf() : base(
 			274,

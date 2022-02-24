@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Venipede : Pokemon
 	{
 
-		public Venipede(string nickname, int level) : base(
-			543,
-			SpecieVenipede.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Venipede(string nickname, int level)
+		: base(
+				543,
+				SpecieVenipede.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Venipede() : base(
 			543,

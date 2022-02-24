@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rowlet : Pokemon
 	{
 
-		public Rowlet(string nickname, int level) : base(
-			722,
-			SpecieRowlet.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Rowlet(string nickname, int level)
+		: base(
+				722,
+				SpecieRowlet.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rowlet() : base(
 			722,

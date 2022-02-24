@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Alcremie : Pokemon
 	{
 
-		public Alcremie(string nickname, int level) : base(
-			869,
-			SpecieAlcremie.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Alcremie(string nickname, int level)
+		: base(
+				869,
+				SpecieAlcremie.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Alcremie() : base(
 			869,

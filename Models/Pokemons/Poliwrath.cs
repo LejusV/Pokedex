@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Poliwrath : Pokemon
 	{
 
-		public Poliwrath(string nickname, int level) : base(
-			62,
-			SpeciePoliwrath.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fighting.Instance			
-		) {}
+		public Poliwrath(string nickname, int level)
+		: base(
+				62,
+				SpeciePoliwrath.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Poliwrath() : base(
 			62,

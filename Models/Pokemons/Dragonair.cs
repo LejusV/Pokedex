@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dragonair : Pokemon
 	{
 
-		public Dragonair(string nickname, int level) : base(
-			148,
-			SpecieDragonair.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Dragonair(string nickname, int level)
+		: base(
+				148,
+				SpecieDragonair.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dragonair() : base(
 			148,

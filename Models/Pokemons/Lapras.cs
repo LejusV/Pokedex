@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lapras : Pokemon
 	{
 
-		public Lapras(string nickname, int level) : base(
-			131,
-			SpecieLapras.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ice.Instance			
-		) {}
+		public Lapras(string nickname, int level)
+		: base(
+				131,
+				SpecieLapras.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lapras() : base(
 			131,

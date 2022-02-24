@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Salamence : Pokemon
 	{
 
-		public Salamence(string nickname, int level) : base(
-			373,
-			SpecieSalamence.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Flying.Instance			
-		) {}
+		public Salamence(string nickname, int level)
+		: base(
+				373,
+				SpecieSalamence.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Salamence() : base(
 			373,

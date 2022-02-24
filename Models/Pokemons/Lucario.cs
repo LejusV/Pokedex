@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lucario : Pokemon
 	{
 
-		public Lucario(string nickname, int level) : base(
-			448,
-			SpecieLucario.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Steel.Instance			
-		) {}
+		public Lucario(string nickname, int level)
+		: base(
+				448,
+				SpecieLucario.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lucario() : base(
 			448,

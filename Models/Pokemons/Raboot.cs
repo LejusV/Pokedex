@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Raboot : Pokemon
 	{
 
-		public Raboot(string nickname, int level) : base(
-			814,
-			SpecieRaboot.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Raboot(string nickname, int level)
+		: base(
+				814,
+				SpecieRaboot.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Raboot() : base(
 			814,

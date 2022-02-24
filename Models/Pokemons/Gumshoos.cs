@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gumshoos : Pokemon
 	{
 
-		public Gumshoos(string nickname, int level) : base(
-			735,
-			SpecieGumshoos.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Gumshoos(string nickname, int level)
+		: base(
+				735,
+				SpecieGumshoos.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gumshoos() : base(
 			735,

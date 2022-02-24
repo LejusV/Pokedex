@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gengar : Pokemon
 	{
 
-		public Gengar(string nickname, int level) : base(
-			94,
-			SpecieGengar.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Poison.Instance			
-		) {}
+		public Gengar(string nickname, int level)
+		: base(
+				94,
+				SpecieGengar.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gengar() : base(
 			94,

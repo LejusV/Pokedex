@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dreepy : Pokemon
 	{
 
-		public Dreepy(string nickname, int level) : base(
-			885,
-			SpecieDreepy.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ghost.Instance			
-		) {}
+		public Dreepy(string nickname, int level)
+		: base(
+				885,
+				SpecieDreepy.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dreepy() : base(
 			885,

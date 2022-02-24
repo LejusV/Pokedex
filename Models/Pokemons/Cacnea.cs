@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cacnea : Pokemon
 	{
 
-		public Cacnea(string nickname, int level) : base(
-			331,
-			SpecieCacnea.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Cacnea(string nickname, int level)
+		: base(
+				331,
+				SpecieCacnea.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cacnea() : base(
 			331,

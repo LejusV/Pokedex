@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Elekid : Pokemon
 	{
 
-		public Elekid(string nickname, int level) : base(
-			239,
-			SpecieElekid.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Elekid(string nickname, int level)
+		: base(
+				239,
+				SpecieElekid.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Elekid() : base(
 			239,

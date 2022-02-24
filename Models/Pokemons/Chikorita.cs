@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chikorita : Pokemon
 	{
 
-		public Chikorita(string nickname, int level) : base(
-			152,
-			SpecieChikorita.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Chikorita(string nickname, int level)
+		: base(
+				152,
+				SpecieChikorita.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chikorita() : base(
 			152,

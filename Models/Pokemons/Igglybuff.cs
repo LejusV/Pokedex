@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Igglybuff : Pokemon
 	{
 
-		public Igglybuff(string nickname, int level) : base(
-			174,
-			SpecieIgglybuff.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Fairy.Instance			
-		) {}
+		public Igglybuff(string nickname, int level)
+		: base(
+				174,
+				SpecieIgglybuff.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Igglybuff() : base(
 			174,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bounsweet : Pokemon
 	{
 
-		public Bounsweet(string nickname, int level) : base(
-			761,
-			SpecieBounsweet.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Bounsweet(string nickname, int level)
+		: base(
+				761,
+				SpecieBounsweet.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bounsweet() : base(
 			761,

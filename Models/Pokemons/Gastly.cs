@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gastly : Pokemon
 	{
 
-		public Gastly(string nickname, int level) : base(
-			92,
-			SpecieGastly.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Poison.Instance			
-		) {}
+		public Gastly(string nickname, int level)
+		: base(
+				92,
+				SpecieGastly.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gastly() : base(
 			92,

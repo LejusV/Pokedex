@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Smoochum : Pokemon
 	{
 
-		public Smoochum(string nickname, int level) : base(
-			238,
-			SpecieSmoochum.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Psychic.Instance			
-		) {}
+		public Smoochum(string nickname, int level)
+		: base(
+				238,
+				SpecieSmoochum.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Smoochum() : base(
 			238,

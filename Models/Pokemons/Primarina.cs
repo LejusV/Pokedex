@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Primarina : Pokemon
 	{
 
-		public Primarina(string nickname, int level) : base(
-			730,
-			SpeciePrimarina.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fairy.Instance			
-		) {}
+		public Primarina(string nickname, int level)
+		: base(
+				730,
+				SpeciePrimarina.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Primarina() : base(
 			730,

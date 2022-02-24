@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Archeops : Pokemon
 	{
 
-		public Archeops(string nickname, int level) : base(
-			567,
-			SpecieArcheops.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Flying.Instance			
-		) {}
+		public Archeops(string nickname, int level)
+		: base(
+				567,
+				SpecieArcheops.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Archeops() : base(
 			567,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Forretress : Pokemon
 	{
 
-		public Forretress(string nickname, int level) : base(
-			205,
-			SpecieForretress.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Steel.Instance			
-		) {}
+		public Forretress(string nickname, int level)
+		: base(
+				205,
+				SpecieForretress.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Forretress() : base(
 			205,

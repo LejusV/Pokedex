@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magby : Pokemon
 	{
 
-		public Magby(string nickname, int level) : base(
-			240,
-			SpecieMagby.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Magby(string nickname, int level)
+		: base(
+				240,
+				SpecieMagby.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magby() : base(
 			240,

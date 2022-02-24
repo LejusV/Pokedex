@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swirlix : Pokemon
 	{
 
-		public Swirlix(string nickname, int level) : base(
-			684,
-			SpecieSwirlix.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Swirlix(string nickname, int level)
+		: base(
+				684,
+				SpecieSwirlix.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swirlix() : base(
 			684,

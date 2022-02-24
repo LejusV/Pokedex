@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Raichu : Pokemon
 	{
 
-		public Raichu(string nickname, int level) : base(
-			26,
-			SpecieRaichu.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Raichu(string nickname, int level)
+		: base(
+				26,
+				SpecieRaichu.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Raichu() : base(
 			26,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Carnivine : Pokemon
 	{
 
-		public Carnivine(string nickname, int level) : base(
-			455,
-			SpecieCarnivine.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Carnivine(string nickname, int level)
+		: base(
+				455,
+				SpecieCarnivine.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Carnivine() : base(
 			455,

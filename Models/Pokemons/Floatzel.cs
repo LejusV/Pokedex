@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Floatzel : Pokemon
 	{
 
-		public Floatzel(string nickname, int level) : base(
-			419,
-			SpecieFloatzel.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Floatzel(string nickname, int level)
+		: base(
+				419,
+				SpecieFloatzel.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Floatzel() : base(
 			419,

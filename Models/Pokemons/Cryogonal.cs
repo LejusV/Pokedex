@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cryogonal : Pokemon
 	{
 
-		public Cryogonal(string nickname, int level) : base(
-			615,
-			SpecieCryogonal.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Cryogonal(string nickname, int level)
+		: base(
+				615,
+				SpecieCryogonal.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cryogonal() : base(
 			615,

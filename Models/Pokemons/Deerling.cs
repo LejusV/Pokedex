@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Deerling : Pokemon
 	{
 
-		public Deerling(string nickname, int level) : base(
-			585,
-			SpecieDeerling.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Grass.Instance			
-		) {}
+		public Deerling(string nickname, int level)
+		: base(
+				585,
+				SpecieDeerling.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Deerling() : base(
 			585,

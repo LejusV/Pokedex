@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Honchkrow : Pokemon
 	{
 
-		public Honchkrow(string nickname, int level) : base(
-			430,
-			SpecieHonchkrow.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Flying.Instance			
-		) {}
+		public Honchkrow(string nickname, int level)
+		: base(
+				430,
+				SpecieHonchkrow.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Honchkrow() : base(
 			430,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shelgon : Pokemon
 	{
 
-		public Shelgon(string nickname, int level) : base(
-			372,
-			SpecieShelgon.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Shelgon(string nickname, int level)
+		: base(
+				372,
+				SpecieShelgon.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shelgon() : base(
 			372,

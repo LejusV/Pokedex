@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lillipup : Pokemon
 	{
 
-		public Lillipup(string nickname, int level) : base(
-			506,
-			SpecieLillipup.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Lillipup(string nickname, int level)
+		: base(
+				506,
+				SpecieLillipup.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lillipup() : base(
 			506,

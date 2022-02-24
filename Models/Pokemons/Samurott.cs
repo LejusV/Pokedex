@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Samurott : Pokemon
 	{
 
-		public Samurott(string nickname, int level) : base(
-			503,
-			SpecieSamurott.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Samurott(string nickname, int level)
+		: base(
+				503,
+				SpecieSamurott.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Samurott() : base(
 			503,

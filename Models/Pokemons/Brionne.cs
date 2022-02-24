@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Brionne : Pokemon
 	{
 
-		public Brionne(string nickname, int level) : base(
-			729,
-			SpecieBrionne.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Brionne(string nickname, int level)
+		: base(
+				729,
+				SpecieBrionne.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Brionne() : base(
 			729,

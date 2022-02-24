@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Crobat : Pokemon
 	{
 
-		public Crobat(string nickname, int level) : base(
-			169,
-			SpecieCrobat.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Flying.Instance			
-		) {}
+		public Crobat(string nickname, int level)
+		: base(
+				169,
+				SpecieCrobat.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Crobat() : base(
 			169,

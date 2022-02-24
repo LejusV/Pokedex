@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swampert : Pokemon
 	{
 
-		public Swampert(string nickname, int level) : base(
-			260,
-			SpecieSwampert.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Swampert(string nickname, int level)
+		: base(
+				260,
+				SpecieSwampert.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swampert() : base(
 			260,

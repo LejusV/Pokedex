@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magikarp : Pokemon
 	{
 
-		public Magikarp(string nickname, int level) : base(
-			129,
-			SpecieMagikarp.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Magikarp(string nickname, int level)
+		: base(
+				129,
+				SpecieMagikarp.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magikarp() : base(
 			129,

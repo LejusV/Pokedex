@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wynaut : Pokemon
 	{
 
-		public Wynaut(string nickname, int level) : base(
-			360,
-			SpecieWynaut.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Wynaut(string nickname, int level)
+		: base(
+				360,
+				SpecieWynaut.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wynaut() : base(
 			360,

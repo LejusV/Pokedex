@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Eternatus : Pokemon
 	{
 
-		public Eternatus(string nickname, int level) : base(
-			890,
-			SpecieEternatus.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dragon.Instance			
-		) {}
+		public Eternatus(string nickname, int level)
+		: base(
+				890,
+				SpecieEternatus.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Eternatus() : base(
 			890,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bruxish : Pokemon
 	{
 
-		public Bruxish(string nickname, int level) : base(
-			779,
-			SpecieBruxish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Psychic.Instance			
-		) {}
+		public Bruxish(string nickname, int level)
+		: base(
+				779,
+				SpecieBruxish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bruxish() : base(
 			779,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Marowak : Pokemon
 	{
 
-		public Marowak(string nickname, int level) : base(
-			105,
-			SpecieMarowak.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Marowak(string nickname, int level)
+		: base(
+				105,
+				SpecieMarowak.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Marowak() : base(
 			105,

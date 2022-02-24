@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Charizard : Pokemon
 	{
 
-		public Charizard(string nickname, int level) : base(
-			6,
-			SpecieCharizard.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public Charizard(string nickname, int level)
+		: base(
+				6,
+				SpecieCharizard.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Charizard() : base(
 			6,

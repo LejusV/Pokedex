@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Teddiursa : Pokemon
 	{
 
-		public Teddiursa(string nickname, int level) : base(
-			216,
-			SpecieTeddiursa.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Teddiursa(string nickname, int level)
+		: base(
+				216,
+				SpecieTeddiursa.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Teddiursa() : base(
 			216,

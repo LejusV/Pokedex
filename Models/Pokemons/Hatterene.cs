@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hatterene : Pokemon
 	{
 
-		public Hatterene(string nickname, int level) : base(
-			858,
-			SpecieHatterene.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public Hatterene(string nickname, int level)
+		: base(
+				858,
+				SpecieHatterene.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hatterene() : base(
 			858,

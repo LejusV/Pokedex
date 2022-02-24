@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tangrowth : Pokemon
 	{
 
-		public Tangrowth(string nickname, int level) : base(
-			465,
-			SpecieTangrowth.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Tangrowth(string nickname, int level)
+		: base(
+				465,
+				SpecieTangrowth.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tangrowth() : base(
 			465,

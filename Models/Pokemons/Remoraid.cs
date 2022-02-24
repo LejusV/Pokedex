@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Remoraid : Pokemon
 	{
 
-		public Remoraid(string nickname, int level) : base(
-			223,
-			SpecieRemoraid.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Remoraid(string nickname, int level)
+		: base(
+				223,
+				SpecieRemoraid.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Remoraid() : base(
 			223,

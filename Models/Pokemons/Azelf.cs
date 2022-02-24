@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Azelf : Pokemon
 	{
 
-		public Azelf(string nickname, int level) : base(
-			482,
-			SpecieAzelf.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Azelf(string nickname, int level)
+		: base(
+				482,
+				SpecieAzelf.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Azelf() : base(
 			482,

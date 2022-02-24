@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Guzzlord : Pokemon
 	{
 
-		public Guzzlord(string nickname, int level) : base(
-			799,
-			SpecieGuzzlord.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Dragon.Instance			
-		) {}
+		public Guzzlord(string nickname, int level)
+		: base(
+				799,
+				SpecieGuzzlord.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Guzzlord() : base(
 			799,

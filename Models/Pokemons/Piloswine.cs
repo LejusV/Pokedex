@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Piloswine : Pokemon
 	{
 
-		public Piloswine(string nickname, int level) : base(
-			221,
-			SpeciePiloswine.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Ground.Instance			
-		) {}
+		public Piloswine(string nickname, int level)
+		: base(
+				221,
+				SpeciePiloswine.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Piloswine() : base(
 			221,

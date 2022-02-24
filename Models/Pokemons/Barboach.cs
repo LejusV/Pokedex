@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Barboach : Pokemon
 	{
 
-		public Barboach(string nickname, int level) : base(
-			339,
-			SpecieBarboach.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Barboach(string nickname, int level)
+		: base(
+				339,
+				SpecieBarboach.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Barboach() : base(
 			339,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Duskull : Pokemon
 	{
 
-		public Duskull(string nickname, int level) : base(
-			355,
-			SpecieDuskull.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Duskull(string nickname, int level)
+		: base(
+				355,
+				SpecieDuskull.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Duskull() : base(
 			355,

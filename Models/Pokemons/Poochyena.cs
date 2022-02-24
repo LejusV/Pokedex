@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Poochyena : Pokemon
 	{
 
-		public Poochyena(string nickname, int level) : base(
-			261,
-			SpeciePoochyena.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Poochyena(string nickname, int level)
+		: base(
+				261,
+				SpeciePoochyena.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Poochyena() : base(
 			261,

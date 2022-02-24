@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Breloom : Pokemon
 	{
 
-		public Breloom(string nickname, int level) : base(
-			286,
-			SpecieBreloom.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fighting.Instance			
-		) {}
+		public Breloom(string nickname, int level)
+		: base(
+				286,
+				SpecieBreloom.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Breloom() : base(
 			286,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dugtrio : Pokemon
 	{
 
-		public Dugtrio(string nickname, int level) : base(
-			51,
-			SpecieDugtrio.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Dugtrio(string nickname, int level)
+		: base(
+				51,
+				SpecieDugtrio.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dugtrio() : base(
 			51,

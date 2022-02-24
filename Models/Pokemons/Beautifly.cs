@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Beautifly : Pokemon
 	{
 
-		public Beautifly(string nickname, int level) : base(
-			267,
-			SpecieBeautifly.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Beautifly(string nickname, int level)
+		: base(
+				267,
+				SpecieBeautifly.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Beautifly() : base(
 			267,

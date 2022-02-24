@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hariyama : Pokemon
 	{
 
-		public Hariyama(string nickname, int level) : base(
-			297,
-			SpecieHariyama.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Hariyama(string nickname, int level)
+		: base(
+				297,
+				SpecieHariyama.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hariyama() : base(
 			297,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Anorith : Pokemon
 	{
 
-		public Anorith(string nickname, int level) : base(
-			347,
-			SpecieAnorith.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Bug.Instance			
-		) {}
+		public Anorith(string nickname, int level)
+		: base(
+				347,
+				SpecieAnorith.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Anorith() : base(
 			347,

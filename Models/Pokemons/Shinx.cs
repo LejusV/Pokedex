@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shinx : Pokemon
 	{
 
-		public Shinx(string nickname, int level) : base(
-			403,
-			SpecieShinx.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Shinx(string nickname, int level)
+		: base(
+				403,
+				SpecieShinx.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shinx() : base(
 			403,

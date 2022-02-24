@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Furret : Pokemon
 	{
 
-		public Furret(string nickname, int level) : base(
-			162,
-			SpecieFurret.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Furret(string nickname, int level)
+		: base(
+				162,
+				SpecieFurret.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Furret() : base(
 			162,

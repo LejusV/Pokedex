@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Boltund : Pokemon
 	{
 
-		public Boltund(string nickname, int level) : base(
-			836,
-			SpecieBoltund.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Boltund(string nickname, int level)
+		: base(
+				836,
+				SpecieBoltund.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Boltund() : base(
 			836,

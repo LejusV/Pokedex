@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lombre : Pokemon
 	{
 
-		public Lombre(string nickname, int level) : base(
-			271,
-			SpecieLombre.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Grass.Instance			
-		) {}
+		public Lombre(string nickname, int level)
+		: base(
+				271,
+				SpecieLombre.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lombre() : base(
 			271,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rhyhorn : Pokemon
 	{
 
-		public Rhyhorn(string nickname, int level) : base(
-			111,
-			SpecieRhyhorn.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Rock.Instance			
-		) {}
+		public Rhyhorn(string nickname, int level)
+		: base(
+				111,
+				SpecieRhyhorn.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rhyhorn() : base(
 			111,

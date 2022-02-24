@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clobbopus : Pokemon
 	{
 
-		public Clobbopus(string nickname, int level) : base(
-			852,
-			SpecieClobbopus.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Clobbopus(string nickname, int level)
+		: base(
+				852,
+				SpecieClobbopus.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clobbopus() : base(
 			852,

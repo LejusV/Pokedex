@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rotom : Pokemon
 	{
 
-		public Rotom(string nickname, int level) : base(
-			479,
-			SpecieRotom.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Ghost.Instance			
-		) {}
+		public Rotom(string nickname, int level)
+		: base(
+				479,
+				SpecieRotom.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rotom() : base(
 			479,

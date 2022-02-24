@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Litleo : Pokemon
 	{
 
-		public Litleo(string nickname, int level) : base(
-			667,
-			SpecieLitleo.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Normal.Instance			
-		) {}
+		public Litleo(string nickname, int level)
+		: base(
+				667,
+				SpecieLitleo.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Litleo() : base(
 			667,

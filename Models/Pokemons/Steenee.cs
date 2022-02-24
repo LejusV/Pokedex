@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Steenee : Pokemon
 	{
 
-		public Steenee(string nickname, int level) : base(
-			762,
-			SpecieSteenee.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Steenee(string nickname, int level)
+		: base(
+				762,
+				SpecieSteenee.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Steenee() : base(
 			762,

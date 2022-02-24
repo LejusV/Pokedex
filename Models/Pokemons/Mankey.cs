@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mankey : Pokemon
 	{
 
-		public Mankey(string nickname, int level) : base(
-			56,
-			SpecieMankey.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Mankey(string nickname, int level)
+		: base(
+				56,
+				SpecieMankey.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mankey() : base(
 			56,

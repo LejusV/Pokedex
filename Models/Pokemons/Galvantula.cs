@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Galvantula : Pokemon
 	{
 
-		public Galvantula(string nickname, int level) : base(
-			596,
-			SpecieGalvantula.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Electric.Instance			
-		) {}
+		public Galvantula(string nickname, int level)
+		: base(
+				596,
+				SpecieGalvantula.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Galvantula() : base(
 			596,

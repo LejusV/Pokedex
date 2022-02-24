@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Flaaffy : Pokemon
 	{
 
-		public Flaaffy(string nickname, int level) : base(
-			180,
-			SpecieFlaaffy.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Flaaffy(string nickname, int level)
+		: base(
+				180,
+				SpecieFlaaffy.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Flaaffy() : base(
 			180,

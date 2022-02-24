@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Togepi : Pokemon
 	{
 
-		public Togepi(string nickname, int level) : base(
-			175,
-			SpecieTogepi.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Togepi(string nickname, int level)
+		: base(
+				175,
+				SpecieTogepi.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Togepi() : base(
 			175,

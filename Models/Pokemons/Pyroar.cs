@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pyroar : Pokemon
 	{
 
-		public Pyroar(string nickname, int level) : base(
-			668,
-			SpeciePyroar.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Normal.Instance			
-		) {}
+		public Pyroar(string nickname, int level)
+		: base(
+				668,
+				SpeciePyroar.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pyroar() : base(
 			668,

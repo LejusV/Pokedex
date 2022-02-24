@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dusclops : Pokemon
 	{
 
-		public Dusclops(string nickname, int level) : base(
-			356,
-			SpecieDusclops.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Dusclops(string nickname, int level)
+		: base(
+				356,
+				SpecieDusclops.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dusclops() : base(
 			356,

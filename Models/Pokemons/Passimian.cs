@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Passimian : Pokemon
 	{
 
-		public Passimian(string nickname, int level) : base(
-			766,
-			SpeciePassimian.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Passimian(string nickname, int level)
+		: base(
+				766,
+				SpeciePassimian.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Passimian() : base(
 			766,

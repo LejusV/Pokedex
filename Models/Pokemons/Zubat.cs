@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zubat : Pokemon
 	{
 
-		public Zubat(string nickname, int level) : base(
-			41,
-			SpecieZubat.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Flying.Instance			
-		) {}
+		public Zubat(string nickname, int level)
+		: base(
+				41,
+				SpecieZubat.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zubat() : base(
 			41,

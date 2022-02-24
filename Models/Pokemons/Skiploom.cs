@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skiploom : Pokemon
 	{
 
-		public Skiploom(string nickname, int level) : base(
-			188,
-			SpecieSkiploom.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Skiploom(string nickname, int level)
+		: base(
+				188,
+				SpecieSkiploom.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skiploom() : base(
 			188,

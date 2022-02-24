@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Simipour : Pokemon
 	{
 
-		public Simipour(string nickname, int level) : base(
-			516,
-			SpecieSimipour.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Simipour(string nickname, int level)
+		: base(
+				516,
+				SpecieSimipour.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Simipour() : base(
 			516,

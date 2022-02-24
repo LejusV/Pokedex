@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Silcoon : Pokemon
 	{
 
-		public Silcoon(string nickname, int level) : base(
-			266,
-			SpecieSilcoon.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Silcoon(string nickname, int level)
+		: base(
+				266,
+				SpecieSilcoon.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Silcoon() : base(
 			266,

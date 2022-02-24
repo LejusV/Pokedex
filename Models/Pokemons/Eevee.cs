@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Eevee : Pokemon
 	{
 
-		public Eevee(string nickname, int level) : base(
-			133,
-			SpecieEevee.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Eevee(string nickname, int level)
+		: base(
+				133,
+				SpecieEevee.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Eevee() : base(
 			133,

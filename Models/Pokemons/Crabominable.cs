@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Crabominable : Pokemon
 	{
 
-		public Crabominable(string nickname, int level) : base(
-			740,
-			SpecieCrabominable.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Ice.Instance			
-		) {}
+		public Crabominable(string nickname, int level)
+		: base(
+				740,
+				SpecieCrabominable.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Crabominable() : base(
 			740,

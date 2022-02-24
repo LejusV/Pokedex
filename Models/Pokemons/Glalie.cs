@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Glalie : Pokemon
 	{
 
-		public Glalie(string nickname, int level) : base(
-			362,
-			SpecieGlalie.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Glalie(string nickname, int level)
+		: base(
+				362,
+				SpecieGlalie.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Glalie() : base(
 			362,

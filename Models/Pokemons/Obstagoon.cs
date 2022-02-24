@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Obstagoon : Pokemon
 	{
 
-		public Obstagoon(string nickname, int level) : base(
-			862,
-			SpecieObstagoon.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Normal.Instance			
-		) {}
+		public Obstagoon(string nickname, int level)
+		: base(
+				862,
+				SpecieObstagoon.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Obstagoon() : base(
 			862,

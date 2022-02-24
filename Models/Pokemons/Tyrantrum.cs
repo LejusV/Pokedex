@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tyrantrum : Pokemon
 	{
 
-		public Tyrantrum(string nickname, int level) : base(
-			697,
-			SpecieTyrantrum.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Dragon.Instance			
-		) {}
+		public Tyrantrum(string nickname, int level)
+		: base(
+				697,
+				SpecieTyrantrum.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tyrantrum() : base(
 			697,

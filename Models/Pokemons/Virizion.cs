@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Virizion : Pokemon
 	{
 
-		public Virizion(string nickname, int level) : base(
-			640,
-			SpecieVirizion.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fighting.Instance			
-		) {}
+		public Virizion(string nickname, int level)
+		: base(
+				640,
+				SpecieVirizion.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Virizion() : base(
 			640,

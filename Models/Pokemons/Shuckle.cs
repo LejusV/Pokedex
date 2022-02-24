@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shuckle : Pokemon
 	{
 
-		public Shuckle(string nickname, int level) : base(
-			213,
-			SpecieShuckle.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Rock.Instance			
-		) {}
+		public Shuckle(string nickname, int level)
+		: base(
+				213,
+				SpecieShuckle.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shuckle() : base(
 			213,

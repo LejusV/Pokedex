@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Haxorus : Pokemon
 	{
 
-		public Haxorus(string nickname, int level) : base(
-			612,
-			SpecieHaxorus.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Haxorus(string nickname, int level)
+		: base(
+				612,
+				SpecieHaxorus.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Haxorus() : base(
 			612,

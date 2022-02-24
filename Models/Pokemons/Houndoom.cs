@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Houndoom : Pokemon
 	{
 
-		public Houndoom(string nickname, int level) : base(
-			229,
-			SpecieHoundoom.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fire.Instance			
-		) {}
+		public Houndoom(string nickname, int level)
+		: base(
+				229,
+				SpecieHoundoom.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Houndoom() : base(
 			229,

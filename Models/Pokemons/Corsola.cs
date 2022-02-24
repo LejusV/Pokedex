@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Corsola : Pokemon
 	{
 
-		public Corsola(string nickname, int level) : base(
-			222,
-			SpecieCorsola.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Rock.Instance			
-		) {}
+		public Corsola(string nickname, int level)
+		: base(
+				222,
+				SpecieCorsola.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Corsola() : base(
 			222,

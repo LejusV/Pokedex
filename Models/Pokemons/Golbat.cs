@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golbat : Pokemon
 	{
 
-		public Golbat(string nickname, int level) : base(
-			42,
-			SpecieGolbat.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Flying.Instance			
-		) {}
+		public Golbat(string nickname, int level)
+		: base(
+				42,
+				SpecieGolbat.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golbat() : base(
 			42,

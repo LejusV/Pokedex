@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dragonite : Pokemon
 	{
 
-		public Dragonite(string nickname, int level) : base(
-			149,
-			SpecieDragonite.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Flying.Instance			
-		) {}
+		public Dragonite(string nickname, int level)
+		: base(
+				149,
+				SpecieDragonite.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dragonite() : base(
 			149,

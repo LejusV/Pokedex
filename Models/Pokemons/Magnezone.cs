@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magnezone : Pokemon
 	{
 
-		public Magnezone(string nickname, int level) : base(
-			462,
-			SpecieMagnezone.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Steel.Instance			
-		) {}
+		public Magnezone(string nickname, int level)
+		: base(
+				462,
+				SpecieMagnezone.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magnezone() : base(
 			462,

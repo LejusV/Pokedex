@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hoopa : Pokemon
 	{
 
-		public Hoopa(string nickname, int level) : base(
-			720,
-			SpecieHoopa.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Ghost.Instance			
-		) {}
+		public Hoopa(string nickname, int level)
+		: base(
+				720,
+				SpecieHoopa.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hoopa() : base(
 			720,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Geodude : Pokemon
 	{
 
-		public Geodude(string nickname, int level) : base(
-			74,
-			SpecieGeodude.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Geodude(string nickname, int level)
+		: base(
+				74,
+				SpecieGeodude.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Geodude() : base(
 			74,

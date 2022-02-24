@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chandelure : Pokemon
 	{
 
-		public Chandelure(string nickname, int level) : base(
-			609,
-			SpecieChandelure.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Fire.Instance			
-		) {}
+		public Chandelure(string nickname, int level)
+		: base(
+				609,
+				SpecieChandelure.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chandelure() : base(
 			609,

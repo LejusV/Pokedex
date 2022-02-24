@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rapidash : Pokemon
 	{
 
-		public Rapidash(string nickname, int level) : base(
-			78,
-			SpecieRapidash.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Rapidash(string nickname, int level)
+		: base(
+				78,
+				SpecieRapidash.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rapidash() : base(
 			78,

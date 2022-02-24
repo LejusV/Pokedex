@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Celesteela : Pokemon
 	{
 
-		public Celesteela(string nickname, int level) : base(
-			797,
-			SpecieCelesteela.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Flying.Instance			
-		) {}
+		public Celesteela(string nickname, int level)
+		: base(
+				797,
+				SpecieCelesteela.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Celesteela() : base(
 			797,

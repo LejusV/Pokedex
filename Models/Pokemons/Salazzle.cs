@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Salazzle : Pokemon
 	{
 
-		public Salazzle(string nickname, int level) : base(
-			758,
-			SpecieSalazzle.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Fire.Instance			
-		) {}
+		public Salazzle(string nickname, int level)
+		: base(
+				758,
+				SpecieSalazzle.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Salazzle() : base(
 			758,

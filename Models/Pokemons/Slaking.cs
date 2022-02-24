@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slaking : Pokemon
 	{
 
-		public Slaking(string nickname, int level) : base(
-			289,
-			SpecieSlaking.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Slaking(string nickname, int level)
+		: base(
+				289,
+				SpecieSlaking.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slaking() : base(
 			289,

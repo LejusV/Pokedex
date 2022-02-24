@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Meltan : Pokemon
 	{
 
-		public Meltan(string nickname, int level) : base(
-			808,
-			SpecieMeltan.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Meltan(string nickname, int level)
+		: base(
+				808,
+				SpecieMeltan.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Meltan() : base(
 			808,

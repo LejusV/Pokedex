@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Houndour : Pokemon
 	{
 
-		public Houndour(string nickname, int level) : base(
-			228,
-			SpecieHoundour.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fire.Instance			
-		) {}
+		public Houndour(string nickname, int level)
+		: base(
+				228,
+				SpecieHoundour.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Houndour() : base(
 			228,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class KeldeoOrdinary : Pokemon
 	{
 
-		public KeldeoOrdinary(string nickname, int level) : base(
-			647,
-			SpecieKeldeoOrdinary.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fighting.Instance			
-		) {}
+		public KeldeoOrdinary(string nickname, int level)
+		: base(
+				647,
+				SpecieKeldeoOrdinary.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public KeldeoOrdinary() : base(
 			647,

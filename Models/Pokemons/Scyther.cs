@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scyther : Pokemon
 	{
 
-		public Scyther(string nickname, int level) : base(
-			123,
-			SpecieScyther.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Scyther(string nickname, int level)
+		: base(
+				123,
+				SpecieScyther.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scyther() : base(
 			123,

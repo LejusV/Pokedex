@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kakuna : Pokemon
 	{
 
-		public Kakuna(string nickname, int level) : base(
-			14,
-			SpecieKakuna.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Kakuna(string nickname, int level)
+		: base(
+				14,
+				SpecieKakuna.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kakuna() : base(
 			14,

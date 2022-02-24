@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zorua : Pokemon
 	{
 
-		public Zorua(string nickname, int level) : base(
-			570,
-			SpecieZorua.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Zorua(string nickname, int level)
+		: base(
+				570,
+				SpecieZorua.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zorua() : base(
 			570,

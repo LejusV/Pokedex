@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spinda : Pokemon
 	{
 
-		public Spinda(string nickname, int level) : base(
-			327,
-			SpecieSpinda.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Spinda(string nickname, int level)
+		: base(
+				327,
+				SpecieSpinda.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spinda() : base(
 			327,

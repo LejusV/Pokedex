@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bergmite : Pokemon
 	{
 
-		public Bergmite(string nickname, int level) : base(
-			712,
-			SpecieBergmite.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Bergmite(string nickname, int level)
+		: base(
+				712,
+				SpecieBergmite.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bergmite() : base(
 			712,

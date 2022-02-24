@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rockruff : Pokemon
 	{
 
-		public Rockruff(string nickname, int level) : base(
-			744,
-			SpecieRockruff.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Rockruff(string nickname, int level)
+		: base(
+				744,
+				SpecieRockruff.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rockruff() : base(
 			744,

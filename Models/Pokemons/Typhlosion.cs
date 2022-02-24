@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Typhlosion : Pokemon
 	{
 
-		public Typhlosion(string nickname, int level) : base(
-			157,
-			SpecieTyphlosion.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Typhlosion(string nickname, int level)
+		: base(
+				157,
+				SpecieTyphlosion.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Typhlosion() : base(
 			157,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Araquanid : Pokemon
 	{
 
-		public Araquanid(string nickname, int level) : base(
-			752,
-			SpecieAraquanid.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Bug.Instance			
-		) {}
+		public Araquanid(string nickname, int level)
+		: base(
+				752,
+				SpecieAraquanid.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Araquanid() : base(
 			752,

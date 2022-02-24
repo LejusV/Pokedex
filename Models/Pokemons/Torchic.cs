@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Torchic : Pokemon
 	{
 
-		public Torchic(string nickname, int level) : base(
-			255,
-			SpecieTorchic.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Torchic(string nickname, int level)
+		: base(
+				255,
+				SpecieTorchic.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Torchic() : base(
 			255,

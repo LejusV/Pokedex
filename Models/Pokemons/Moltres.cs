@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Moltres : Pokemon
 	{
 
-		public Moltres(string nickname, int level) : base(
-			146,
-			SpecieMoltres.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public Moltres(string nickname, int level)
+		: base(
+				146,
+				SpecieMoltres.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Moltres() : base(
 			146,

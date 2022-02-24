@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snorlax : Pokemon
 	{
 
-		public Snorlax(string nickname, int level) : base(
-			143,
-			SpecieSnorlax.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Snorlax(string nickname, int level)
+		: base(
+				143,
+				SpecieSnorlax.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snorlax() : base(
 			143,

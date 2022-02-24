@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seadra : Pokemon
 	{
 
-		public Seadra(string nickname, int level) : base(
-			117,
-			SpecieSeadra.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Seadra(string nickname, int level)
+		: base(
+				117,
+				SpecieSeadra.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seadra() : base(
 			117,

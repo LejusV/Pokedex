@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Weedle : Pokemon
 	{
 
-		public Weedle(string nickname, int level) : base(
-			13,
-			SpecieWeedle.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Weedle(string nickname, int level)
+		: base(
+				13,
+				SpecieWeedle.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Weedle() : base(
 			13,

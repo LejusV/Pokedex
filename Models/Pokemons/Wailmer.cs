@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wailmer : Pokemon
 	{
 
-		public Wailmer(string nickname, int level) : base(
-			320,
-			SpecieWailmer.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Wailmer(string nickname, int level)
+		: base(
+				320,
+				SpecieWailmer.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wailmer() : base(
 			320,

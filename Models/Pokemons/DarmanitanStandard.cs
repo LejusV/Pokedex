@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class DarmanitanStandard : Pokemon
 	{
 
-		public DarmanitanStandard(string nickname, int level) : base(
-			555,
-			SpecieDarmanitanStandard.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public DarmanitanStandard(string nickname, int level)
+		: base(
+				555,
+				SpecieDarmanitanStandard.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public DarmanitanStandard() : base(
 			555,

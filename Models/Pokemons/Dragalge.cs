@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dragalge : Pokemon
 	{
 
-		public Dragalge(string nickname, int level) : base(
-			691,
-			SpecieDragalge.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dragon.Instance			
-		) {}
+		public Dragalge(string nickname, int level)
+		: base(
+				691,
+				SpecieDragalge.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dragalge() : base(
 			691,

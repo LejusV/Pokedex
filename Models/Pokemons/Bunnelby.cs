@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bunnelby : Pokemon
 	{
 
-		public Bunnelby(string nickname, int level) : base(
-			659,
-			SpecieBunnelby.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Bunnelby(string nickname, int level)
+		: base(
+				659,
+				SpecieBunnelby.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bunnelby() : base(
 			659,

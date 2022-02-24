@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Greedent : Pokemon
 	{
 
-		public Greedent(string nickname, int level) : base(
-			820,
-			SpecieGreedent.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Greedent(string nickname, int level)
+		: base(
+				820,
+				SpecieGreedent.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Greedent() : base(
 			820,

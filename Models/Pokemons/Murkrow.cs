@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Murkrow : Pokemon
 	{
 
-		public Murkrow(string nickname, int level) : base(
-			198,
-			SpecieMurkrow.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Flying.Instance			
-		) {}
+		public Murkrow(string nickname, int level)
+		: base(
+				198,
+				SpecieMurkrow.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Murkrow() : base(
 			198,

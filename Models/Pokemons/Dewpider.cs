@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dewpider : Pokemon
 	{
 
-		public Dewpider(string nickname, int level) : base(
-			751,
-			SpecieDewpider.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Bug.Instance			
-		) {}
+		public Dewpider(string nickname, int level)
+		: base(
+				751,
+				SpecieDewpider.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dewpider() : base(
 			751,

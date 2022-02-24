@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class AegislashShield : Pokemon
 	{
 
-		public AegislashShield(string nickname, int level) : base(
-			681,
-			SpecieAegislashShield.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Ghost.Instance			
-		) {}
+		public AegislashShield(string nickname, int level)
+		: base(
+				681,
+				SpecieAegislashShield.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public AegislashShield() : base(
 			681,

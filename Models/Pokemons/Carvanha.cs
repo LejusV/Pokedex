@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Carvanha : Pokemon
 	{
 
-		public Carvanha(string nickname, int level) : base(
-			318,
-			SpecieCarvanha.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dark.Instance			
-		) {}
+		public Carvanha(string nickname, int level)
+		: base(
+				318,
+				SpecieCarvanha.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Carvanha() : base(
 			318,

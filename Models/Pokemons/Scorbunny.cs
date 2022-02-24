@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scorbunny : Pokemon
 	{
 
-		public Scorbunny(string nickname, int level) : base(
-			813,
-			SpecieScorbunny.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Scorbunny(string nickname, int level)
+		: base(
+				813,
+				SpecieScorbunny.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scorbunny() : base(
 			813,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ferroseed : Pokemon
 	{
 
-		public Ferroseed(string nickname, int level) : base(
-			597,
-			SpecieFerroseed.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Steel.Instance			
-		) {}
+		public Ferroseed(string nickname, int level)
+		: base(
+				597,
+				SpecieFerroseed.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ferroseed() : base(
 			597,

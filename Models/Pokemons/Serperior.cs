@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Serperior : Pokemon
 	{
 
-		public Serperior(string nickname, int level) : base(
-			497,
-			SpecieSerperior.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Serperior(string nickname, int level)
+		: base(
+				497,
+				SpecieSerperior.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Serperior() : base(
 			497,

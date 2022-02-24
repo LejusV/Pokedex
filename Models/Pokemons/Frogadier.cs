@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Frogadier : Pokemon
 	{
 
-		public Frogadier(string nickname, int level) : base(
-			657,
-			SpecieFrogadier.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Frogadier(string nickname, int level)
+		: base(
+				657,
+				SpecieFrogadier.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Frogadier() : base(
 			657,

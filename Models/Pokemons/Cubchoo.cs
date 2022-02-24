@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cubchoo : Pokemon
 	{
 
-		public Cubchoo(string nickname, int level) : base(
-			613,
-			SpecieCubchoo.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Cubchoo(string nickname, int level)
+		: base(
+				613,
+				SpecieCubchoo.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cubchoo() : base(
 			613,

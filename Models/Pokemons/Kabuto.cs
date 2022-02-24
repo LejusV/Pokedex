@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kabuto : Pokemon
 	{
 
-		public Kabuto(string nickname, int level) : base(
-			140,
-			SpecieKabuto.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Kabuto(string nickname, int level)
+		: base(
+				140,
+				SpecieKabuto.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kabuto() : base(
 			140,

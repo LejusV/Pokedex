@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Krabby : Pokemon
 	{
 
-		public Krabby(string nickname, int level) : base(
-			98,
-			SpecieKrabby.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Krabby(string nickname, int level)
+		: base(
+				98,
+				SpecieKrabby.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Krabby() : base(
 			98,

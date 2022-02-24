@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cacturne : Pokemon
 	{
 
-		public Cacturne(string nickname, int level) : base(
-			332,
-			SpecieCacturne.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dark.Instance			
-		) {}
+		public Cacturne(string nickname, int level)
+		: base(
+				332,
+				SpecieCacturne.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cacturne() : base(
 			332,

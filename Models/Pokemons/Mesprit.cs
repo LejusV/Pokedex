@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mesprit : Pokemon
 	{
 
-		public Mesprit(string nickname, int level) : base(
-			481,
-			SpecieMesprit.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Mesprit(string nickname, int level)
+		: base(
+				481,
+				SpecieMesprit.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mesprit() : base(
 			481,

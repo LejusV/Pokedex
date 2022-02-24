@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chewtle : Pokemon
 	{
 
-		public Chewtle(string nickname, int level) : base(
-			833,
-			SpecieChewtle.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Chewtle(string nickname, int level)
+		: base(
+				833,
+				SpecieChewtle.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chewtle() : base(
 			833,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Emolga : Pokemon
 	{
 
-		public Emolga(string nickname, int level) : base(
-			587,
-			SpecieEmolga.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Flying.Instance			
-		) {}
+		public Emolga(string nickname, int level)
+		: base(
+				587,
+				SpecieEmolga.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Emolga() : base(
 			587,

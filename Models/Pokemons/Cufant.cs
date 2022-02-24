@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cufant : Pokemon
 	{
 
-		public Cufant(string nickname, int level) : base(
-			878,
-			SpecieCufant.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Cufant(string nickname, int level)
+		: base(
+				878,
+				SpecieCufant.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cufant() : base(
 			878,

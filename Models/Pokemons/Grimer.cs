@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grimer : Pokemon
 	{
 
-		public Grimer(string nickname, int level) : base(
-			88,
-			SpecieGrimer.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Grimer(string nickname, int level)
+		: base(
+				88,
+				SpecieGrimer.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grimer() : base(
 			88,

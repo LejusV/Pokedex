@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Morgrem : Pokemon
 	{
 
-		public Morgrem(string nickname, int level) : base(
-			860,
-			SpecieMorgrem.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fairy.Instance			
-		) {}
+		public Morgrem(string nickname, int level)
+		: base(
+				860,
+				SpecieMorgrem.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Morgrem() : base(
 			860,

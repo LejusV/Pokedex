@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shroomish : Pokemon
 	{
 
-		public Shroomish(string nickname, int level) : base(
-			285,
-			SpecieShroomish.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Shroomish(string nickname, int level)
+		: base(
+				285,
+				SpecieShroomish.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shroomish() : base(
 			285,

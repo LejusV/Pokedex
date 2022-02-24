@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Simisear : Pokemon
 	{
 
-		public Simisear(string nickname, int level) : base(
-			514,
-			SpecieSimisear.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Simisear(string nickname, int level)
+		: base(
+				514,
+				SpecieSimisear.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Simisear() : base(
 			514,

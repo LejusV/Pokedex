@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Graveler : Pokemon
 	{
 
-		public Graveler(string nickname, int level) : base(
-			75,
-			SpecieGraveler.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Graveler(string nickname, int level)
+		: base(
+				75,
+				SpecieGraveler.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Graveler() : base(
 			75,

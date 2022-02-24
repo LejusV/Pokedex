@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bisharp : Pokemon
 	{
 
-		public Bisharp(string nickname, int level) : base(
-			625,
-			SpecieBisharp.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Steel.Instance			
-		) {}
+		public Bisharp(string nickname, int level)
+		: base(
+				625,
+				SpecieBisharp.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bisharp() : base(
 			625,

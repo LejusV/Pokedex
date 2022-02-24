@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fraxure : Pokemon
 	{
 
-		public Fraxure(string nickname, int level) : base(
-			611,
-			SpecieFraxure.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Fraxure(string nickname, int level)
+		: base(
+				611,
+				SpecieFraxure.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fraxure() : base(
 			611,

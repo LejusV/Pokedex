@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Unfezant : Pokemon
 	{
 
-		public Unfezant(string nickname, int level) : base(
-			521,
-			SpecieUnfezant.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Unfezant(string nickname, int level)
+		: base(
+				521,
+				SpecieUnfezant.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Unfezant() : base(
 			521,

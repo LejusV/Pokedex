@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class IndeedeeMale : Pokemon
 	{
 
-		public IndeedeeMale(string nickname, int level) : base(
-			876,
-			SpecieIndeedeeMale.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Normal.Instance			
-		) {}
+		public IndeedeeMale(string nickname, int level)
+		: base(
+				876,
+				SpecieIndeedeeMale.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public IndeedeeMale() : base(
 			876,

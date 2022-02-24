@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Baltoy : Pokemon
 	{
 
-		public Baltoy(string nickname, int level) : base(
-			343,
-			SpecieBaltoy.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Psychic.Instance			
-		) {}
+		public Baltoy(string nickname, int level)
+		: base(
+				343,
+				SpecieBaltoy.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Baltoy() : base(
 			343,

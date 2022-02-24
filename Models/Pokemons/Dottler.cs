@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dottler : Pokemon
 	{
 
-		public Dottler(string nickname, int level) : base(
-			825,
-			SpecieDottler.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Psychic.Instance			
-		) {}
+		public Dottler(string nickname, int level)
+		: base(
+				825,
+				SpecieDottler.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dottler() : base(
 			825,

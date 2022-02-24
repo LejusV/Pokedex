@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class MeowsticMale : Pokemon
 	{
 
-		public MeowsticMale(string nickname, int level) : base(
-			678,
-			SpecieMeowsticMale.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public MeowsticMale(string nickname, int level)
+		: base(
+				678,
+				SpecieMeowsticMale.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public MeowsticMale() : base(
 			678,

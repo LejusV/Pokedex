@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vullaby : Pokemon
 	{
 
-		public Vullaby(string nickname, int level) : base(
-			629,
-			SpecieVullaby.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Flying.Instance			
-		) {}
+		public Vullaby(string nickname, int level)
+		: base(
+				629,
+				SpecieVullaby.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vullaby() : base(
 			629,

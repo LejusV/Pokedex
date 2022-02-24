@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ducklett : Pokemon
 	{
 
-		public Ducklett(string nickname, int level) : base(
-			580,
-			SpecieDucklett.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Ducklett(string nickname, int level)
+		: base(
+				580,
+				SpecieDucklett.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ducklett() : base(
 			580,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cherrim : Pokemon
 	{
 
-		public Cherrim(string nickname, int level) : base(
-			421,
-			SpecieCherrim.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Cherrim(string nickname, int level)
+		: base(
+				421,
+				SpecieCherrim.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cherrim() : base(
 			421,

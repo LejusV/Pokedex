@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mudsdale : Pokemon
 	{
 
-		public Mudsdale(string nickname, int level) : base(
-			750,
-			SpecieMudsdale.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Mudsdale(string nickname, int level)
+		: base(
+				750,
+				SpecieMudsdale.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mudsdale() : base(
 			750,

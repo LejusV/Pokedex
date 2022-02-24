@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class MimikyuDisguised : Pokemon
 	{
 
-		public MimikyuDisguised(string nickname, int level) : base(
-			778,
-			SpecieMimikyuDisguised.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Fairy.Instance			
-		) {}
+		public MimikyuDisguised(string nickname, int level)
+		: base(
+				778,
+				SpecieMimikyuDisguised.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public MimikyuDisguised() : base(
 			778,

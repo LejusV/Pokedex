@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fennekin : Pokemon
 	{
 
-		public Fennekin(string nickname, int level) : base(
-			653,
-			SpecieFennekin.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Fennekin(string nickname, int level)
+		: base(
+				653,
+				SpecieFennekin.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fennekin() : base(
 			653,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Probopass : Pokemon
 	{
 
-		public Probopass(string nickname, int level) : base(
-			476,
-			SpecieProbopass.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Steel.Instance			
-		) {}
+		public Probopass(string nickname, int level)
+		: base(
+				476,
+				SpecieProbopass.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Probopass() : base(
 			476,

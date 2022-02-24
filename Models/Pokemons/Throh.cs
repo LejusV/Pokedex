@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Throh : Pokemon
 	{
 
-		public Throh(string nickname, int level) : base(
-			538,
-			SpecieThroh.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Throh(string nickname, int level)
+		: base(
+				538,
+				SpecieThroh.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Throh() : base(
 			538,

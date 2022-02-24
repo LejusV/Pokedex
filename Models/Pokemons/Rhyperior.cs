@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rhyperior : Pokemon
 	{
 
-		public Rhyperior(string nickname, int level) : base(
-			464,
-			SpecieRhyperior.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Rock.Instance			
-		) {}
+		public Rhyperior(string nickname, int level)
+		: base(
+				464,
+				SpecieRhyperior.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rhyperior() : base(
 			464,

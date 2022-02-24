@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Regieleki : Pokemon
 	{
 
-		public Regieleki(string nickname, int level) : base(
-			894,
-			SpecieRegieleki.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Regieleki(string nickname, int level)
+		: base(
+				894,
+				SpecieRegieleki.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Regieleki() : base(
 			894,

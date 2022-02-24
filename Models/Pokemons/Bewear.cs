@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bewear : Pokemon
 	{
 
-		public Bewear(string nickname, int level) : base(
-			760,
-			SpecieBewear.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Fighting.Instance			
-		) {}
+		public Bewear(string nickname, int level)
+		: base(
+				760,
+				SpecieBewear.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bewear() : base(
 			760,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Minccino : Pokemon
 	{
 
-		public Minccino(string nickname, int level) : base(
-			572,
-			SpecieMinccino.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Minccino(string nickname, int level)
+		: base(
+				572,
+				SpecieMinccino.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Minccino() : base(
 			572,

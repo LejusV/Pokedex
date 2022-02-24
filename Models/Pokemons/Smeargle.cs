@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Smeargle : Pokemon
 	{
 
-		public Smeargle(string nickname, int level) : base(
-			235,
-			SpecieSmeargle.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Smeargle(string nickname, int level)
+		: base(
+				235,
+				SpecieSmeargle.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Smeargle() : base(
 			235,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Munna : Pokemon
 	{
 
-		public Munna(string nickname, int level) : base(
-			517,
-			SpecieMunna.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Munna(string nickname, int level)
+		: base(
+				517,
+				SpecieMunna.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Munna() : base(
 			517,

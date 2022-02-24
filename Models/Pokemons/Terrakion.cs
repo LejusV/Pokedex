@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Terrakion : Pokemon
 	{
 
-		public Terrakion(string nickname, int level) : base(
-			639,
-			SpecieTerrakion.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Fighting.Instance			
-		) {}
+		public Terrakion(string nickname, int level)
+		: base(
+				639,
+				SpecieTerrakion.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Terrakion() : base(
 			639,

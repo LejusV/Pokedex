@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rayquaza : Pokemon
 	{
 
-		public Rayquaza(string nickname, int level) : base(
-			384,
-			SpecieRayquaza.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Flying.Instance			
-		) {}
+		public Rayquaza(string nickname, int level)
+		: base(
+				384,
+				SpecieRayquaza.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rayquaza() : base(
 			384,

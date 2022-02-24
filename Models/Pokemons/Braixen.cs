@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Braixen : Pokemon
 	{
 
-		public Braixen(string nickname, int level) : base(
-			654,
-			SpecieBraixen.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Braixen(string nickname, int level)
+		: base(
+				654,
+				SpecieBraixen.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Braixen() : base(
 			654,

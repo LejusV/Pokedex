@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stoutland : Pokemon
 	{
 
-		public Stoutland(string nickname, int level) : base(
-			508,
-			SpecieStoutland.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Stoutland(string nickname, int level)
+		: base(
+				508,
+				SpecieStoutland.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stoutland() : base(
 			508,

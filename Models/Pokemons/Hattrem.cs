@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hattrem : Pokemon
 	{
 
-		public Hattrem(string nickname, int level) : base(
-			857,
-			SpecieHattrem.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Hattrem(string nickname, int level)
+		: base(
+				857,
+				SpecieHattrem.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hattrem() : base(
 			857,

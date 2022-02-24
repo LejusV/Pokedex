@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rillaboom : Pokemon
 	{
 
-		public Rillaboom(string nickname, int level) : base(
-			812,
-			SpecieRillaboom.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Rillaboom(string nickname, int level)
+		: base(
+				812,
+				SpecieRillaboom.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rillaboom() : base(
 			812,

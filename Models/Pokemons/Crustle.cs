@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Crustle : Pokemon
 	{
 
-		public Crustle(string nickname, int level) : base(
-			558,
-			SpecieCrustle.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Rock.Instance			
-		) {}
+		public Crustle(string nickname, int level)
+		: base(
+				558,
+				SpecieCrustle.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Crustle() : base(
 			558,

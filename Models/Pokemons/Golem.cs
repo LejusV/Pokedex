@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golem : Pokemon
 	{
 
-		public Golem(string nickname, int level) : base(
-			76,
-			SpecieGolem.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Golem(string nickname, int level)
+		: base(
+				76,
+				SpecieGolem.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golem() : base(
 			76,

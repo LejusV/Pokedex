@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Umbreon : Pokemon
 	{
 
-		public Umbreon(string nickname, int level) : base(
-			197,
-			SpecieUmbreon.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Umbreon(string nickname, int level)
+		: base(
+				197,
+				SpecieUmbreon.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Umbreon() : base(
 			197,

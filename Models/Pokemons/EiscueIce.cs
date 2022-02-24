@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class EiscueIce : Pokemon
 	{
 
-		public EiscueIce(string nickname, int level) : base(
-			875,
-			SpecieEiscueIce.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public EiscueIce(string nickname, int level)
+		: base(
+				875,
+				SpecieEiscueIce.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public EiscueIce() : base(
 			875,

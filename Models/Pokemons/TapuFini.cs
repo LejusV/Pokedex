@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TapuFini : Pokemon
 	{
 
-		public TapuFini(string nickname, int level) : base(
-			788,
-			SpecieTapuFini.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fairy.Instance			
-		) {}
+		public TapuFini(string nickname, int level)
+		: base(
+				788,
+				SpecieTapuFini.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TapuFini() : base(
 			788,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Budew : Pokemon
 	{
 
-		public Budew(string nickname, int level) : base(
-			406,
-			SpecieBudew.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Budew(string nickname, int level)
+		: base(
+				406,
+				SpecieBudew.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Budew() : base(
 			406,

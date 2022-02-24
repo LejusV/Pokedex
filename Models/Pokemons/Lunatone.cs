@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lunatone : Pokemon
 	{
 
-		public Lunatone(string nickname, int level) : base(
-			337,
-			SpecieLunatone.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Psychic.Instance			
-		) {}
+		public Lunatone(string nickname, int level)
+		: base(
+				337,
+				SpecieLunatone.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lunatone() : base(
 			337,

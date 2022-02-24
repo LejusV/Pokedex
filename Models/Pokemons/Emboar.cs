@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Emboar : Pokemon
 	{
 
-		public Emboar(string nickname, int level) : base(
-			500,
-			SpecieEmboar.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Emboar(string nickname, int level)
+		: base(
+				500,
+				SpecieEmboar.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Emboar() : base(
 			500,

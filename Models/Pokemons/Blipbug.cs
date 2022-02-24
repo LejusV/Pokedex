@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Blipbug : Pokemon
 	{
 
-		public Blipbug(string nickname, int level) : base(
-			824,
-			SpecieBlipbug.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Blipbug(string nickname, int level)
+		: base(
+				824,
+				SpecieBlipbug.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Blipbug() : base(
 			824,

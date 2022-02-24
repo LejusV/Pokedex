@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Regidrago : Pokemon
 	{
 
-		public Regidrago(string nickname, int level) : base(
-			895,
-			SpecieRegidrago.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Regidrago(string nickname, int level)
+		: base(
+				895,
+				SpecieRegidrago.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Regidrago() : base(
 			895,

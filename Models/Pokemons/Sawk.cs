@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sawk : Pokemon
 	{
 
-		public Sawk(string nickname, int level) : base(
-			539,
-			SpecieSawk.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Sawk(string nickname, int level)
+		: base(
+				539,
+				SpecieSawk.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sawk() : base(
 			539,

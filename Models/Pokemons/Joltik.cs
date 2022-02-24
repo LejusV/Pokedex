@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Joltik : Pokemon
 	{
 
-		public Joltik(string nickname, int level) : base(
-			595,
-			SpecieJoltik.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Electric.Instance			
-		) {}
+		public Joltik(string nickname, int level)
+		: base(
+				595,
+				SpecieJoltik.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Joltik() : base(
 			595,

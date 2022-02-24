@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lopunny : Pokemon
 	{
 
-		public Lopunny(string nickname, int level) : base(
-			428,
-			SpecieLopunny.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Lopunny(string nickname, int level)
+		: base(
+				428,
+				SpecieLopunny.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lopunny() : base(
 			428,

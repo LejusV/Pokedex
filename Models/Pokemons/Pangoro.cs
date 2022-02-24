@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pangoro : Pokemon
 	{
 
-		public Pangoro(string nickname, int level) : base(
-			675,
-			SpeciePangoro.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Dark.Instance			
-		) {}
+		public Pangoro(string nickname, int level)
+		: base(
+				675,
+				SpeciePangoro.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pangoro() : base(
 			675,

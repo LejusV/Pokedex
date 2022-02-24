@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Noibat : Pokemon
 	{
 
-		public Noibat(string nickname, int level) : base(
-			714,
-			SpecieNoibat.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance, Dragon.Instance			
-		) {}
+		public Noibat(string nickname, int level)
+		: base(
+				714,
+				SpecieNoibat.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Noibat() : base(
 			714,

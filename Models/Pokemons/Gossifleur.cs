@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gossifleur : Pokemon
 	{
 
-		public Gossifleur(string nickname, int level) : base(
-			829,
-			SpecieGossifleur.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Gossifleur(string nickname, int level)
+		: base(
+				829,
+				SpecieGossifleur.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gossifleur() : base(
 			829,

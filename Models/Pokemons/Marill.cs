@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Marill : Pokemon
 	{
 
-		public Marill(string nickname, int level) : base(
-			183,
-			SpecieMarill.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Fairy.Instance			
-		) {}
+		public Marill(string nickname, int level)
+		: base(
+				183,
+				SpecieMarill.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Marill() : base(
 			183,

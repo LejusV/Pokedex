@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stantler : Pokemon
 	{
 
-		public Stantler(string nickname, int level) : base(
-			234,
-			SpecieStantler.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Stantler(string nickname, int level)
+		: base(
+				234,
+				SpecieStantler.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stantler() : base(
 			234,

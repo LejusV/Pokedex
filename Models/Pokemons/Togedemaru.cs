@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Togedemaru : Pokemon
 	{
 
-		public Togedemaru(string nickname, int level) : base(
-			777,
-			SpecieTogedemaru.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Steel.Instance			
-		) {}
+		public Togedemaru(string nickname, int level)
+		: base(
+				777,
+				SpecieTogedemaru.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Togedemaru() : base(
 			777,

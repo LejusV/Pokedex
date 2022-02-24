@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Litwick : Pokemon
 	{
 
-		public Litwick(string nickname, int level) : base(
-			607,
-			SpecieLitwick.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Fire.Instance			
-		) {}
+		public Litwick(string nickname, int level)
+		: base(
+				607,
+				SpecieLitwick.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Litwick() : base(
 			607,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Eldegoss : Pokemon
 	{
 
-		public Eldegoss(string nickname, int level) : base(
-			830,
-			SpecieEldegoss.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Eldegoss(string nickname, int level)
+		: base(
+				830,
+				SpecieEldegoss.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Eldegoss() : base(
 			830,

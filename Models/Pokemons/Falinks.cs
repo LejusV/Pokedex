@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Falinks : Pokemon
 	{
 
-		public Falinks(string nickname, int level) : base(
-			870,
-			SpecieFalinks.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Falinks(string nickname, int level)
+		: base(
+				870,
+				SpecieFalinks.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Falinks() : base(
 			870,

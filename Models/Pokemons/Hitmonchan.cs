@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hitmonchan : Pokemon
 	{
 
-		public Hitmonchan(string nickname, int level) : base(
-			107,
-			SpecieHitmonchan.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Hitmonchan(string nickname, int level)
+		: base(
+				107,
+				SpecieHitmonchan.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hitmonchan() : base(
 			107,

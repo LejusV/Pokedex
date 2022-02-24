@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Electrode : Pokemon
 	{
 
-		public Electrode(string nickname, int level) : base(
-			101,
-			SpecieElectrode.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Electrode(string nickname, int level)
+		: base(
+				101,
+				SpecieElectrode.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Electrode() : base(
 			101,

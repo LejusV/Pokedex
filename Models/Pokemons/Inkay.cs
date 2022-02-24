@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Inkay : Pokemon
 	{
 
-		public Inkay(string nickname, int level) : base(
-			686,
-			SpecieInkay.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Psychic.Instance			
-		) {}
+		public Inkay(string nickname, int level)
+		: base(
+				686,
+				SpecieInkay.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Inkay() : base(
 			686,

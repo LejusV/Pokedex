@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arceus : Pokemon
 	{
 
-		public Arceus(string nickname, int level) : base(
-			493,
-			SpecieArceus.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Arceus(string nickname, int level)
+		: base(
+				493,
+				SpecieArceus.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arceus() : base(
 			493,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gligar : Pokemon
 	{
 
-		public Gligar(string nickname, int level) : base(
-			207,
-			SpecieGligar.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Flying.Instance			
-		) {}
+		public Gligar(string nickname, int level)
+		: base(
+				207,
+				SpecieGligar.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gligar() : base(
 			207,

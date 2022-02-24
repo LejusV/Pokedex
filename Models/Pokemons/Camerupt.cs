@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Camerupt : Pokemon
 	{
 
-		public Camerupt(string nickname, int level) : base(
-			323,
-			SpecieCamerupt.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Ground.Instance			
-		) {}
+		public Camerupt(string nickname, int level)
+		: base(
+				323,
+				SpecieCamerupt.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Camerupt() : base(
 			323,

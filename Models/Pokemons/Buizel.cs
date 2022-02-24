@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Buizel : Pokemon
 	{
 
-		public Buizel(string nickname, int level) : base(
-			418,
-			SpecieBuizel.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Buizel(string nickname, int level)
+		: base(
+				418,
+				SpecieBuizel.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Buizel() : base(
 			418,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Patrat : Pokemon
 	{
 
-		public Patrat(string nickname, int level) : base(
-			504,
-			SpeciePatrat.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Patrat(string nickname, int level)
+		: base(
+				504,
+				SpeciePatrat.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Patrat() : base(
 			504,

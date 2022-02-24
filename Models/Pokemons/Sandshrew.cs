@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sandshrew : Pokemon
 	{
 
-		public Sandshrew(string nickname, int level) : base(
-			27,
-			SpecieSandshrew.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Sandshrew(string nickname, int level)
+		: base(
+				27,
+				SpecieSandshrew.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sandshrew() : base(
 			27,

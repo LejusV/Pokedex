@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Qwilfish : Pokemon
 	{
 
-		public Qwilfish(string nickname, int level) : base(
-			211,
-			SpecieQwilfish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Poison.Instance			
-		) {}
+		public Qwilfish(string nickname, int level)
+		: base(
+				211,
+				SpecieQwilfish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Qwilfish() : base(
 			211,

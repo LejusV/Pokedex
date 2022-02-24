@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ambipom : Pokemon
 	{
 
-		public Ambipom(string nickname, int level) : base(
-			424,
-			SpecieAmbipom.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Ambipom(string nickname, int level)
+		: base(
+				424,
+				SpecieAmbipom.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ambipom() : base(
 			424,

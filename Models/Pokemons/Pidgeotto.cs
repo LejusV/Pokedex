@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pidgeotto : Pokemon
 	{
 
-		public Pidgeotto(string nickname, int level) : base(
-			17,
-			SpeciePidgeotto.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Pidgeotto(string nickname, int level)
+		: base(
+				17,
+				SpeciePidgeotto.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pidgeotto() : base(
 			17,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Treecko : Pokemon
 	{
 
-		public Treecko(string nickname, int level) : base(
-			252,
-			SpecieTreecko.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Treecko(string nickname, int level)
+		: base(
+				252,
+				SpecieTreecko.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Treecko() : base(
 			252,

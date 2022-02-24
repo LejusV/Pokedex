@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Purugly : Pokemon
 	{
 
-		public Purugly(string nickname, int level) : base(
-			432,
-			SpeciePurugly.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Purugly(string nickname, int level)
+		: base(
+				432,
+				SpeciePurugly.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Purugly() : base(
 			432,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Regice : Pokemon
 	{
 
-		public Regice(string nickname, int level) : base(
-			378,
-			SpecieRegice.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance			
-		) {}
+		public Regice(string nickname, int level)
+		: base(
+				378,
+				SpecieRegice.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Regice() : base(
 			378,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swinub : Pokemon
 	{
 
-		public Swinub(string nickname, int level) : base(
-			220,
-			SpecieSwinub.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Ground.Instance			
-		) {}
+		public Swinub(string nickname, int level)
+		: base(
+				220,
+				SpecieSwinub.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swinub() : base(
 			220,

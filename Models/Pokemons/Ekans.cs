@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ekans : Pokemon
 	{
 
-		public Ekans(string nickname, int level) : base(
-			23,
-			SpecieEkans.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Ekans(string nickname, int level)
+		: base(
+				23,
+				SpecieEkans.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ekans() : base(
 			23,

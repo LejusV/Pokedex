@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TapuKoko : Pokemon
 	{
 
-		public TapuKoko(string nickname, int level) : base(
-			785,
-			SpecieTapuKoko.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Fairy.Instance			
-		) {}
+		public TapuKoko(string nickname, int level)
+		: base(
+				785,
+				SpecieTapuKoko.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TapuKoko() : base(
 			785,

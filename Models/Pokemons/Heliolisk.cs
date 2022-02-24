@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Heliolisk : Pokemon
 	{
 
-		public Heliolisk(string nickname, int level) : base(
-			695,
-			SpecieHeliolisk.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Normal.Instance			
-		) {}
+		public Heliolisk(string nickname, int level)
+		: base(
+				695,
+				SpecieHeliolisk.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Heliolisk() : base(
 			695,

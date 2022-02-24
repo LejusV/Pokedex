@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class PumpkabooAverage : Pokemon
 	{
 
-		public PumpkabooAverage(string nickname, int level) : base(
-			710,
-			SpeciePumpkabooAverage.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Grass.Instance			
-		) {}
+		public PumpkabooAverage(string nickname, int level)
+		: base(
+				710,
+				SpeciePumpkabooAverage.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public PumpkabooAverage() : base(
 			710,

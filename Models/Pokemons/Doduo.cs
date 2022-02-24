@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Doduo : Pokemon
 	{
 
-		public Doduo(string nickname, int level) : base(
-			84,
-			SpecieDoduo.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Doduo(string nickname, int level)
+		: base(
+				84,
+				SpecieDoduo.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Doduo() : base(
 			84,

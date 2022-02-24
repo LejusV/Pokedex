@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Numel : Pokemon
 	{
 
-		public Numel(string nickname, int level) : base(
-			322,
-			SpecieNumel.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Ground.Instance			
-		) {}
+		public Numel(string nickname, int level)
+		: base(
+				322,
+				SpecieNumel.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Numel() : base(
 			322,

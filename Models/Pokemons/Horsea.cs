@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Horsea : Pokemon
 	{
 
-		public Horsea(string nickname, int level) : base(
-			116,
-			SpecieHorsea.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Horsea(string nickname, int level)
+		: base(
+				116,
+				SpecieHorsea.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Horsea() : base(
 			116,

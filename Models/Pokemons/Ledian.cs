@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ledian : Pokemon
 	{
 
-		public Ledian(string nickname, int level) : base(
-			166,
-			SpecieLedian.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Flying.Instance			
-		) {}
+		public Ledian(string nickname, int level)
+		: base(
+				166,
+				SpecieLedian.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ledian() : base(
 			166,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Koffing : Pokemon
 	{
 
-		public Koffing(string nickname, int level) : base(
-			109,
-			SpecieKoffing.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Koffing(string nickname, int level)
+		: base(
+				109,
+				SpecieKoffing.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Koffing() : base(
 			109,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bouffalant : Pokemon
 	{
 
-		public Bouffalant(string nickname, int level) : base(
-			626,
-			SpecieBouffalant.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Bouffalant(string nickname, int level)
+		: base(
+				626,
+				SpecieBouffalant.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bouffalant() : base(
 			626,

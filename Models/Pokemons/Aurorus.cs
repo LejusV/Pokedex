@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Aurorus : Pokemon
 	{
 
-		public Aurorus(string nickname, int level) : base(
-			699,
-			SpecieAurorus.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ice.Instance			
-		) {}
+		public Aurorus(string nickname, int level)
+		: base(
+				699,
+				SpecieAurorus.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Aurorus() : base(
 			699,

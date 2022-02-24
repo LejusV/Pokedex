@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tyrogue : Pokemon
 	{
 
-		public Tyrogue(string nickname, int level) : base(
-			236,
-			SpecieTyrogue.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Tyrogue(string nickname, int level)
+		: base(
+				236,
+				SpecieTyrogue.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tyrogue() : base(
 			236,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drakloak : Pokemon
 	{
 
-		public Drakloak(string nickname, int level) : base(
-			886,
-			SpecieDrakloak.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ghost.Instance			
-		) {}
+		public Drakloak(string nickname, int level)
+		: base(
+				886,
+				SpecieDrakloak.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drakloak() : base(
 			886,

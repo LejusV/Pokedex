@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drednaw : Pokemon
 	{
 
-		public Drednaw(string nickname, int level) : base(
-			834,
-			SpecieDrednaw.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Rock.Instance			
-		) {}
+		public Drednaw(string nickname, int level)
+		: base(
+				834,
+				SpecieDrednaw.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drednaw() : base(
 			834,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Helioptile : Pokemon
 	{
 
-		public Helioptile(string nickname, int level) : base(
-			694,
-			SpecieHelioptile.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Normal.Instance			
-		) {}
+		public Helioptile(string nickname, int level)
+		: base(
+				694,
+				SpecieHelioptile.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Helioptile() : base(
 			694,

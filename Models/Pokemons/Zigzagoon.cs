@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zigzagoon : Pokemon
 	{
 
-		public Zigzagoon(string nickname, int level) : base(
-			263,
-			SpecieZigzagoon.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Zigzagoon(string nickname, int level)
+		: base(
+				263,
+				SpecieZigzagoon.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zigzagoon() : base(
 			263,

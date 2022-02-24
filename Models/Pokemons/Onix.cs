@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Onix : Pokemon
 	{
 
-		public Onix(string nickname, int level) : base(
-			95,
-			SpecieOnix.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Onix(string nickname, int level)
+		: base(
+				95,
+				SpecieOnix.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Onix() : base(
 			95,

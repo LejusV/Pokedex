@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hitmonlee : Pokemon
 	{
 
-		public Hitmonlee(string nickname, int level) : base(
-			106,
-			SpecieHitmonlee.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Hitmonlee(string nickname, int level)
+		: base(
+				106,
+				SpecieHitmonlee.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hitmonlee() : base(
 			106,

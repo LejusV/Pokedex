@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Garchomp : Pokemon
 	{
 
-		public Garchomp(string nickname, int level) : base(
-			445,
-			SpecieGarchomp.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ground.Instance			
-		) {}
+		public Garchomp(string nickname, int level)
+		: base(
+				445,
+				SpecieGarchomp.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Garchomp() : base(
 			445,

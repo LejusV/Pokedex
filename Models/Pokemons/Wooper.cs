@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wooper : Pokemon
 	{
 
-		public Wooper(string nickname, int level) : base(
-			194,
-			SpecieWooper.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Wooper(string nickname, int level)
+		: base(
+				194,
+				SpecieWooper.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wooper() : base(
 			194,

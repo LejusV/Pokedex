@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kubfu : Pokemon
 	{
 
-		public Kubfu(string nickname, int level) : base(
-			891,
-			SpecieKubfu.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Kubfu(string nickname, int level)
+		: base(
+				891,
+				SpecieKubfu.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kubfu() : base(
 			891,

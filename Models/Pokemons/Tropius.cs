@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tropius : Pokemon
 	{
 
-		public Tropius(string nickname, int level) : base(
-			357,
-			SpecieTropius.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Flying.Instance			
-		) {}
+		public Tropius(string nickname, int level)
+		: base(
+				357,
+				SpecieTropius.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tropius() : base(
 			357,

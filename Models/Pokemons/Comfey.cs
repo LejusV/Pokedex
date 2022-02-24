@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Comfey : Pokemon
 	{
 
-		public Comfey(string nickname, int level) : base(
-			764,
-			SpecieComfey.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Comfey(string nickname, int level)
+		: base(
+				764,
+				SpecieComfey.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Comfey() : base(
 			764,

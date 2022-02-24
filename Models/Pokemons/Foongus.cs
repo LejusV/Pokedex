@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Foongus : Pokemon
 	{
 
-		public Foongus(string nickname, int level) : base(
-			590,
-			SpecieFoongus.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Foongus(string nickname, int level)
+		: base(
+				590,
+				SpecieFoongus.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Foongus() : base(
 			590,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mandibuzz : Pokemon
 	{
 
-		public Mandibuzz(string nickname, int level) : base(
-			630,
-			SpecieMandibuzz.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Flying.Instance			
-		) {}
+		public Mandibuzz(string nickname, int level)
+		: base(
+				630,
+				SpecieMandibuzz.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mandibuzz() : base(
 			630,

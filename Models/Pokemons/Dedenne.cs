@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dedenne : Pokemon
 	{
 
-		public Dedenne(string nickname, int level) : base(
-			702,
-			SpecieDedenne.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Fairy.Instance			
-		) {}
+		public Dedenne(string nickname, int level)
+		: base(
+				702,
+				SpecieDedenne.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dedenne() : base(
 			702,

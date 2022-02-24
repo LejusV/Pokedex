@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gulpin : Pokemon
 	{
 
-		public Gulpin(string nickname, int level) : base(
-			316,
-			SpecieGulpin.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Gulpin(string nickname, int level)
+		: base(
+				316,
+				SpecieGulpin.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gulpin() : base(
 			316,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Audino : Pokemon
 	{
 
-		public Audino(string nickname, int level) : base(
-			531,
-			SpecieAudino.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Audino(string nickname, int level)
+		: base(
+				531,
+				SpecieAudino.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Audino() : base(
 			531,

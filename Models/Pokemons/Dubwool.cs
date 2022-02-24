@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dubwool : Pokemon
 	{
 
-		public Dubwool(string nickname, int level) : base(
-			832,
-			SpecieDubwool.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Dubwool(string nickname, int level)
+		: base(
+				832,
+				SpecieDubwool.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dubwool() : base(
 			832,

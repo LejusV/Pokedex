@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dhelmise : Pokemon
 	{
 
-		public Dhelmise(string nickname, int level) : base(
-			781,
-			SpecieDhelmise.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Grass.Instance			
-		) {}
+		public Dhelmise(string nickname, int level)
+		: base(
+				781,
+				SpecieDhelmise.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dhelmise() : base(
 			781,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tangela : Pokemon
 	{
 
-		public Tangela(string nickname, int level) : base(
-			114,
-			SpecieTangela.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Tangela(string nickname, int level)
+		: base(
+				114,
+				SpecieTangela.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tangela() : base(
 			114,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class WormadamPlant : Pokemon
 	{
 
-		public WormadamPlant(string nickname, int level) : base(
-			413,
-			SpecieWormadamPlant.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public WormadamPlant(string nickname, int level)
+		: base(
+				413,
+				SpecieWormadamPlant.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public WormadamPlant() : base(
 			413,

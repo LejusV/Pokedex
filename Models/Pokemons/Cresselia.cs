@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cresselia : Pokemon
 	{
 
-		public Cresselia(string nickname, int level) : base(
-			488,
-			SpecieCresselia.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Cresselia(string nickname, int level)
+		: base(
+				488,
+				SpecieCresselia.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cresselia() : base(
 			488,

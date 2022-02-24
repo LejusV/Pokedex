@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scraggy : Pokemon
 	{
 
-		public Scraggy(string nickname, int level) : base(
-			559,
-			SpecieScraggy.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fighting.Instance			
-		) {}
+		public Scraggy(string nickname, int level)
+		: base(
+				559,
+				SpecieScraggy.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scraggy() : base(
 			559,

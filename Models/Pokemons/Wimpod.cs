@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wimpod : Pokemon
 	{
 
-		public Wimpod(string nickname, int level) : base(
-			767,
-			SpecieWimpod.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Water.Instance			
-		) {}
+		public Wimpod(string nickname, int level)
+		: base(
+				767,
+				SpecieWimpod.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wimpod() : base(
 			767,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Granbull : Pokemon
 	{
 
-		public Granbull(string nickname, int level) : base(
-			210,
-			SpecieGranbull.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Granbull(string nickname, int level)
+		: base(
+				210,
+				SpecieGranbull.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Granbull() : base(
 			210,

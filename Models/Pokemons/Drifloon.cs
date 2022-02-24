@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drifloon : Pokemon
 	{
 
-		public Drifloon(string nickname, int level) : base(
-			425,
-			SpecieDrifloon.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Flying.Instance			
-		) {}
+		public Drifloon(string nickname, int level)
+		: base(
+				425,
+				SpecieDrifloon.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drifloon() : base(
 			425,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Milotic : Pokemon
 	{
 
-		public Milotic(string nickname, int level) : base(
-			350,
-			SpecieMilotic.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Milotic(string nickname, int level)
+		: base(
+				350,
+				SpecieMilotic.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Milotic() : base(
 			350,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pikipek : Pokemon
 	{
 
-		public Pikipek(string nickname, int level) : base(
-			731,
-			SpeciePikipek.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Pikipek(string nickname, int level)
+		: base(
+				731,
+				SpeciePikipek.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pikipek() : base(
 			731,

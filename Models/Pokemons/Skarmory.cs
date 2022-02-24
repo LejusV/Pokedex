@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skarmory : Pokemon
 	{
 
-		public Skarmory(string nickname, int level) : base(
-			227,
-			SpecieSkarmory.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Flying.Instance			
-		) {}
+		public Skarmory(string nickname, int level)
+		: base(
+				227,
+				SpecieSkarmory.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skarmory() : base(
 			227,

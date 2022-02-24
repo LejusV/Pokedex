@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Uxie : Pokemon
 	{
 
-		public Uxie(string nickname, int level) : base(
-			480,
-			SpecieUxie.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Uxie(string nickname, int level)
+		: base(
+				480,
+				SpecieUxie.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Uxie() : base(
 			480,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Solosis : Pokemon
 	{
 
-		public Solosis(string nickname, int level) : base(
-			577,
-			SpecieSolosis.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Solosis(string nickname, int level)
+		: base(
+				577,
+				SpecieSolosis.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Solosis() : base(
 			577,

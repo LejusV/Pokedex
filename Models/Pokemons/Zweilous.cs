@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zweilous : Pokemon
 	{
 
-		public Zweilous(string nickname, int level) : base(
-			634,
-			SpecieZweilous.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Dragon.Instance			
-		) {}
+		public Zweilous(string nickname, int level)
+		: base(
+				634,
+				SpecieZweilous.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zweilous() : base(
 			634,

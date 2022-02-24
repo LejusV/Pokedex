@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cranidos : Pokemon
 	{
 
-		public Cranidos(string nickname, int level) : base(
-			408,
-			SpecieCranidos.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Cranidos(string nickname, int level)
+		: base(
+				408,
+				SpecieCranidos.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cranidos() : base(
 			408,

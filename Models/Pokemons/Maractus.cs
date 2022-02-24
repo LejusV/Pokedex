@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Maractus : Pokemon
 	{
 
-		public Maractus(string nickname, int level) : base(
-			556,
-			SpecieMaractus.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Maractus(string nickname, int level)
+		: base(
+				556,
+				SpecieMaractus.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Maractus() : base(
 			556,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Palkia : Pokemon
 	{
 
-		public Palkia(string nickname, int level) : base(
-			484,
-			SpeciePalkia.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dragon.Instance			
-		) {}
+		public Palkia(string nickname, int level)
+		: base(
+				484,
+				SpeciePalkia.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Palkia() : base(
 			484,

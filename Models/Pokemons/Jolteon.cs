@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jolteon : Pokemon
 	{
 
-		public Jolteon(string nickname, int level) : base(
-			135,
-			SpecieJolteon.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Jolteon(string nickname, int level)
+		: base(
+				135,
+				SpecieJolteon.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jolteon() : base(
 			135,

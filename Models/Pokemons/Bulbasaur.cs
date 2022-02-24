@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bulbasaur : Pokemon
 	{
 
-		public Bulbasaur(string nickname, int level) : base(
-			1,
-			SpecieBulbasaur.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Bulbasaur(string nickname, int level)
+		: base(
+				1,
+				SpecieBulbasaur.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bulbasaur() : base(
 			1,

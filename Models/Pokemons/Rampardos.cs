@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rampardos : Pokemon
 	{
 
-		public Rampardos(string nickname, int level) : base(
-			409,
-			SpecieRampardos.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Rampardos(string nickname, int level)
+		: base(
+				409,
+				SpecieRampardos.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rampardos() : base(
 			409,

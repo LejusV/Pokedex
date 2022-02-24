@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Durant : Pokemon
 	{
 
-		public Durant(string nickname, int level) : base(
-			632,
-			SpecieDurant.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Steel.Instance			
-		) {}
+		public Durant(string nickname, int level)
+		: base(
+				632,
+				SpecieDurant.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Durant() : base(
 			632,

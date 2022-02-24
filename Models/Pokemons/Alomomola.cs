@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Alomomola : Pokemon
 	{
 
-		public Alomomola(string nickname, int level) : base(
-			594,
-			SpecieAlomomola.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Alomomola(string nickname, int level)
+		: base(
+				594,
+				SpecieAlomomola.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Alomomola() : base(
 			594,

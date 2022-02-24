@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Incineroar : Pokemon
 	{
 
-		public Incineroar(string nickname, int level) : base(
-			727,
-			SpecieIncineroar.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Dark.Instance			
-		) {}
+		public Incineroar(string nickname, int level)
+		: base(
+				727,
+				SpecieIncineroar.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Incineroar() : base(
 			727,

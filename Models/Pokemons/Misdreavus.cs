@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Misdreavus : Pokemon
 	{
 
-		public Misdreavus(string nickname, int level) : base(
-			200,
-			SpecieMisdreavus.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Misdreavus(string nickname, int level)
+		: base(
+				200,
+				SpecieMisdreavus.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Misdreavus() : base(
 			200,

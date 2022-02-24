@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Flareon : Pokemon
 	{
 
-		public Flareon(string nickname, int level) : base(
-			136,
-			SpecieFlareon.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Flareon(string nickname, int level)
+		: base(
+				136,
+				SpecieFlareon.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Flareon() : base(
 			136,

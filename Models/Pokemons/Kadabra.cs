@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kadabra : Pokemon
 	{
 
-		public Kadabra(string nickname, int level) : base(
-			64,
-			SpecieKadabra.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Kadabra(string nickname, int level)
+		: base(
+				64,
+				SpecieKadabra.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kadabra() : base(
 			64,

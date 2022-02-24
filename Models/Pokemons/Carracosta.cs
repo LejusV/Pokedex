@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Carracosta : Pokemon
 	{
 
-		public Carracosta(string nickname, int level) : base(
-			565,
-			SpecieCarracosta.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Rock.Instance			
-		) {}
+		public Carracosta(string nickname, int level)
+		: base(
+				565,
+				SpecieCarracosta.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Carracosta() : base(
 			565,

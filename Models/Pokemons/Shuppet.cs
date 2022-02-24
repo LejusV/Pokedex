@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shuppet : Pokemon
 	{
 
-		public Shuppet(string nickname, int level) : base(
-			353,
-			SpecieShuppet.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Shuppet(string nickname, int level)
+		: base(
+				353,
+				SpecieShuppet.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shuppet() : base(
 			353,

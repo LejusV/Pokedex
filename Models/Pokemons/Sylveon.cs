@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sylveon : Pokemon
 	{
 
-		public Sylveon(string nickname, int level) : base(
-			700,
-			SpecieSylveon.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Sylveon(string nickname, int level)
+		: base(
+				700,
+				SpecieSylveon.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sylveon() : base(
 			700,

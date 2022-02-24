@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Omastar : Pokemon
 	{
 
-		public Omastar(string nickname, int level) : base(
-			139,
-			SpecieOmastar.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Omastar(string nickname, int level)
+		: base(
+				139,
+				SpecieOmastar.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Omastar() : base(
 			139,

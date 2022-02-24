@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gastrodon : Pokemon
 	{
 
-		public Gastrodon(string nickname, int level) : base(
-			423,
-			SpecieGastrodon.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Gastrodon(string nickname, int level)
+		: base(
+				423,
+				SpecieGastrodon.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gastrodon() : base(
 			423,

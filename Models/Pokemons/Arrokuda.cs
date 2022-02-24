@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arrokuda : Pokemon
 	{
 
-		public Arrokuda(string nickname, int level) : base(
-			846,
-			SpecieArrokuda.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Arrokuda(string nickname, int level)
+		: base(
+				846,
+				SpecieArrokuda.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arrokuda() : base(
 			846,

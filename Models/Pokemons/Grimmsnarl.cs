@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grimmsnarl : Pokemon
 	{
 
-		public Grimmsnarl(string nickname, int level) : base(
-			861,
-			SpecieGrimmsnarl.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fairy.Instance			
-		) {}
+		public Grimmsnarl(string nickname, int level)
+		: base(
+				861,
+				SpecieGrimmsnarl.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grimmsnarl() : base(
 			861,

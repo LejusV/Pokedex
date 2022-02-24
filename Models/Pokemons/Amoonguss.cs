@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Amoonguss : Pokemon
 	{
 
-		public Amoonguss(string nickname, int level) : base(
-			591,
-			SpecieAmoonguss.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Amoonguss(string nickname, int level)
+		: base(
+				591,
+				SpecieAmoonguss.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Amoonguss() : base(
 			591,

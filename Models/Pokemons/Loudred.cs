@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Loudred : Pokemon
 	{
 
-		public Loudred(string nickname, int level) : base(
-			294,
-			SpecieLoudred.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Loudred(string nickname, int level)
+		: base(
+				294,
+				SpecieLoudred.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Loudred() : base(
 			294,

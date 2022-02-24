@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Luxio : Pokemon
 	{
 
-		public Luxio(string nickname, int level) : base(
-			404,
-			SpecieLuxio.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Luxio(string nickname, int level)
+		: base(
+				404,
+				SpecieLuxio.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Luxio() : base(
 			404,

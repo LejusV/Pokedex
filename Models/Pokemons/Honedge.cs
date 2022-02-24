@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Honedge : Pokemon
 	{
 
-		public Honedge(string nickname, int level) : base(
-			679,
-			SpecieHonedge.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Ghost.Instance			
-		) {}
+		public Honedge(string nickname, int level)
+		: base(
+				679,
+				SpecieHonedge.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Honedge() : base(
 			679,

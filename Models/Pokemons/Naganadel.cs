@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Naganadel : Pokemon
 	{
 
-		public Naganadel(string nickname, int level) : base(
-			804,
-			SpecieNaganadel.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Dragon.Instance			
-		) {}
+		public Naganadel(string nickname, int level)
+		: base(
+				804,
+				SpecieNaganadel.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Naganadel() : base(
 			804,

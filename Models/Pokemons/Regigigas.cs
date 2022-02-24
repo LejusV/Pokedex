@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Regigigas : Pokemon
 	{
 
-		public Regigigas(string nickname, int level) : base(
-			486,
-			SpecieRegigigas.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Regigigas(string nickname, int level)
+		: base(
+				486,
+				SpecieRegigigas.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Regigigas() : base(
 			486,

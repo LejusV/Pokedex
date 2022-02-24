@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seviper : Pokemon
 	{
 
-		public Seviper(string nickname, int level) : base(
-			336,
-			SpecieSeviper.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Seviper(string nickname, int level)
+		: base(
+				336,
+				SpecieSeviper.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seviper() : base(
 			336,

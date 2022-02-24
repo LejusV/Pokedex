@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Delphox : Pokemon
 	{
 
-		public Delphox(string nickname, int level) : base(
-			655,
-			SpecieDelphox.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Psychic.Instance			
-		) {}
+		public Delphox(string nickname, int level)
+		: base(
+				655,
+				SpecieDelphox.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Delphox() : base(
 			655,

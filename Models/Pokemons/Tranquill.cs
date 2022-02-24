@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tranquill : Pokemon
 	{
 
-		public Tranquill(string nickname, int level) : base(
-			520,
-			SpecieTranquill.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Tranquill(string nickname, int level)
+		: base(
+				520,
+				SpecieTranquill.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tranquill() : base(
 			520,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cottonee : Pokemon
 	{
 
-		public Cottonee(string nickname, int level) : base(
-			546,
-			SpecieCottonee.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fairy.Instance			
-		) {}
+		public Cottonee(string nickname, int level)
+		: base(
+				546,
+				SpecieCottonee.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cottonee() : base(
 			546,

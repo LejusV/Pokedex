@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Stufful : Pokemon
 	{
 
-		public Stufful(string nickname, int level) : base(
-			759,
-			SpecieStufful.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Fighting.Instance			
-		) {}
+		public Stufful(string nickname, int level)
+		: base(
+				759,
+				SpecieStufful.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Stufful() : base(
 			759,

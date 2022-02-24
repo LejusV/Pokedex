@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mienfoo : Pokemon
 	{
 
-		public Mienfoo(string nickname, int level) : base(
-			619,
-			SpecieMienfoo.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Mienfoo(string nickname, int level)
+		: base(
+				619,
+				SpecieMienfoo.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mienfoo() : base(
 			619,

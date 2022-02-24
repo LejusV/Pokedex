@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Flapple : Pokemon
 	{
 
-		public Flapple(string nickname, int level) : base(
-			841,
-			SpecieFlapple.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dragon.Instance			
-		) {}
+		public Flapple(string nickname, int level)
+		: base(
+				841,
+				SpecieFlapple.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Flapple() : base(
 			841,

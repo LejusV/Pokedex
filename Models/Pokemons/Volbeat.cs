@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Volbeat : Pokemon
 	{
 
-		public Volbeat(string nickname, int level) : base(
-			313,
-			SpecieVolbeat.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Volbeat(string nickname, int level)
+		: base(
+				313,
+				SpecieVolbeat.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Volbeat() : base(
 			313,

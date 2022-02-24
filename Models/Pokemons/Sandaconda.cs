@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sandaconda : Pokemon
 	{
 
-		public Sandaconda(string nickname, int level) : base(
-			844,
-			SpecieSandaconda.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Sandaconda(string nickname, int level)
+		: base(
+				844,
+				SpecieSandaconda.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sandaconda() : base(
 			844,

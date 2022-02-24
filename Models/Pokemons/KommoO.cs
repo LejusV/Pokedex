@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class KommoO : Pokemon
 	{
 
-		public KommoO(string nickname, int level) : base(
-			784,
-			SpecieKommoO.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Fighting.Instance			
-		) {}
+		public KommoO(string nickname, int level)
+		: base(
+				784,
+				SpecieKommoO.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public KommoO() : base(
 			784,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sudowoodo : Pokemon
 	{
 
-		public Sudowoodo(string nickname, int level) : base(
-			185,
-			SpecieSudowoodo.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Sudowoodo(string nickname, int level)
+		: base(
+				185,
+				SpecieSudowoodo.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sudowoodo() : base(
 			185,

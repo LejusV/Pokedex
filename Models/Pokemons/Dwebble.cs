@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dwebble : Pokemon
 	{
 
-		public Dwebble(string nickname, int level) : base(
-			557,
-			SpecieDwebble.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Rock.Instance			
-		) {}
+		public Dwebble(string nickname, int level)
+		: base(
+				557,
+				SpecieDwebble.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dwebble() : base(
 			557,

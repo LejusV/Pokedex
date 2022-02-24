@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vikavolt : Pokemon
 	{
 
-		public Vikavolt(string nickname, int level) : base(
-			738,
-			SpecieVikavolt.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Electric.Instance			
-		) {}
+		public Vikavolt(string nickname, int level)
+		: base(
+				738,
+				SpecieVikavolt.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vikavolt() : base(
 			738,

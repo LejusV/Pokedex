@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kabutops : Pokemon
 	{
 
-		public Kabutops(string nickname, int level) : base(
-			141,
-			SpecieKabutops.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Kabutops(string nickname, int level)
+		: base(
+				141,
+				SpecieKabutops.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kabutops() : base(
 			141,

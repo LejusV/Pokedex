@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kirlia : Pokemon
 	{
 
-		public Kirlia(string nickname, int level) : base(
-			281,
-			SpecieKirlia.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public Kirlia(string nickname, int level)
+		: base(
+				281,
+				SpecieKirlia.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kirlia() : base(
 			281,

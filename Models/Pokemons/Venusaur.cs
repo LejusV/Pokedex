@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Venusaur : Pokemon
 	{
 
-		public Venusaur(string nickname, int level) : base(
-			3,
-			SpecieVenusaur.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Venusaur(string nickname, int level)
+		: base(
+				3,
+				SpecieVenusaur.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Venusaur() : base(
 			3,

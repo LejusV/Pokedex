@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Larvesta : Pokemon
 	{
 
-		public Larvesta(string nickname, int level) : base(
-			636,
-			SpecieLarvesta.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fire.Instance			
-		) {}
+		public Larvesta(string nickname, int level)
+		: base(
+				636,
+				SpecieLarvesta.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Larvesta() : base(
 			636,

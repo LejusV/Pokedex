@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Perrserker : Pokemon
 	{
 
-		public Perrserker(string nickname, int level) : base(
-			863,
-			SpeciePerrserker.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Perrserker(string nickname, int level)
+		: base(
+				863,
+				SpeciePerrserker.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Perrserker() : base(
 			863,

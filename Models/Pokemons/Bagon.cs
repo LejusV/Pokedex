@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bagon : Pokemon
 	{
 
-		public Bagon(string nickname, int level) : base(
-			371,
-			SpecieBagon.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Bagon(string nickname, int level)
+		: base(
+				371,
+				SpecieBagon.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bagon() : base(
 			371,

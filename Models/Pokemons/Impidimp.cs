@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Impidimp : Pokemon
 	{
 
-		public Impidimp(string nickname, int level) : base(
-			859,
-			SpecieImpidimp.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fairy.Instance			
-		) {}
+		public Impidimp(string nickname, int level)
+		: base(
+				859,
+				SpecieImpidimp.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Impidimp() : base(
 			859,

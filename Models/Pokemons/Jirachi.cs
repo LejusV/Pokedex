@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jirachi : Pokemon
 	{
 
-		public Jirachi(string nickname, int level) : base(
-			385,
-			SpecieJirachi.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Psychic.Instance			
-		) {}
+		public Jirachi(string nickname, int level)
+		: base(
+				385,
+				SpecieJirachi.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jirachi() : base(
 			385,

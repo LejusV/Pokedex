@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kingler : Pokemon
 	{
 
-		public Kingler(string nickname, int level) : base(
-			99,
-			SpecieKingler.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Kingler(string nickname, int level)
+		: base(
+				99,
+				SpecieKingler.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kingler() : base(
 			99,

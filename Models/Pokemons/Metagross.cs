@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Metagross : Pokemon
 	{
 
-		public Metagross(string nickname, int level) : base(
-			376,
-			SpecieMetagross.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Psychic.Instance			
-		) {}
+		public Metagross(string nickname, int level)
+		: base(
+				376,
+				SpecieMetagross.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Metagross() : base(
 			376,

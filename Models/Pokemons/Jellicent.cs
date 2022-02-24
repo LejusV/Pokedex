@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jellicent : Pokemon
 	{
 
-		public Jellicent(string nickname, int level) : base(
-			593,
-			SpecieJellicent.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ghost.Instance			
-		) {}
+		public Jellicent(string nickname, int level)
+		: base(
+				593,
+				SpecieJellicent.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jellicent() : base(
 			593,

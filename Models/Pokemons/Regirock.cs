@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Regirock : Pokemon
 	{
 
-		public Regirock(string nickname, int level) : base(
-			377,
-			SpecieRegirock.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance			
-		) {}
+		public Regirock(string nickname, int level)
+		: base(
+				377,
+				SpecieRegirock.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Regirock() : base(
 			377,

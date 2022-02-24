@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mantine : Pokemon
 	{
 
-		public Mantine(string nickname, int level) : base(
-			226,
-			SpecieMantine.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Mantine(string nickname, int level)
+		: base(
+				226,
+				SpecieMantine.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mantine() : base(
 			226,

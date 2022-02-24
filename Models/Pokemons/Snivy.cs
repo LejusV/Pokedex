@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Snivy : Pokemon
 	{
 
-		public Snivy(string nickname, int level) : base(
-			495,
-			SpecieSnivy.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Snivy(string nickname, int level)
+		: base(
+				495,
+				SpecieSnivy.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Snivy() : base(
 			495,

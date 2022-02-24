@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Runerigus : Pokemon
 	{
 
-		public Runerigus(string nickname, int level) : base(
-			867,
-			SpecieRunerigus.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Ghost.Instance			
-		) {}
+		public Runerigus(string nickname, int level)
+		: base(
+				867,
+				SpecieRunerigus.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Runerigus() : base(
 			867,

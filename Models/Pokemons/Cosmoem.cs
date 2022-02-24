@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cosmoem : Pokemon
 	{
 
-		public Cosmoem(string nickname, int level) : base(
-			790,
-			SpecieCosmoem.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Cosmoem(string nickname, int level)
+		: base(
+				790,
+				SpecieCosmoem.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cosmoem() : base(
 			790,

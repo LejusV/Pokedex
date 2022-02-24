@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ribombee : Pokemon
 	{
 
-		public Ribombee(string nickname, int level) : base(
-			743,
-			SpecieRibombee.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fairy.Instance			
-		) {}
+		public Ribombee(string nickname, int level)
+		: base(
+				743,
+				SpecieRibombee.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ribombee() : base(
 			743,

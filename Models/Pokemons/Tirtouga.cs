@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tirtouga : Pokemon
 	{
 
-		public Tirtouga(string nickname, int level) : base(
-			564,
-			SpecieTirtouga.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Rock.Instance			
-		) {}
+		public Tirtouga(string nickname, int level)
+		: base(
+				564,
+				SpecieTirtouga.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Rock.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tirtouga() : base(
 			564,

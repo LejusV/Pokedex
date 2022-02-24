@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Druddigon : Pokemon
 	{
 
-		public Druddigon(string nickname, int level) : base(
-			621,
-			SpecieDruddigon.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Druddigon(string nickname, int level)
+		: base(
+				621,
+				SpecieDruddigon.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Druddigon() : base(
 			621,

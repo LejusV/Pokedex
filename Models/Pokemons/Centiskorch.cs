@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Centiskorch : Pokemon
 	{
 
-		public Centiskorch(string nickname, int level) : base(
-			851,
-			SpecieCentiskorch.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Bug.Instance			
-		) {}
+		public Centiskorch(string nickname, int level)
+		: base(
+				851,
+				SpecieCentiskorch.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Centiskorch() : base(
 			851,

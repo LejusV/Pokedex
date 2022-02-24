@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Xurkitree : Pokemon
 	{
 
-		public Xurkitree(string nickname, int level) : base(
-			796,
-			SpecieXurkitree.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Xurkitree(string nickname, int level)
+		: base(
+				796,
+				SpecieXurkitree.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Xurkitree() : base(
 			796,

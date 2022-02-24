@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gliscor : Pokemon
 	{
 
-		public Gliscor(string nickname, int level) : base(
-			472,
-			SpecieGliscor.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Flying.Instance			
-		) {}
+		public Gliscor(string nickname, int level)
+		: base(
+				472,
+				SpecieGliscor.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gliscor() : base(
 			472,

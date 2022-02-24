@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Applin : Pokemon
 	{
 
-		public Applin(string nickname, int level) : base(
-			840,
-			SpecieApplin.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Dragon.Instance			
-		) {}
+		public Applin(string nickname, int level)
+		: base(
+				840,
+				SpecieApplin.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Applin() : base(
 			840,

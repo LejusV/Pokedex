@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Clawitzer : Pokemon
 	{
 
-		public Clawitzer(string nickname, int level) : base(
-			693,
-			SpecieClawitzer.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Clawitzer(string nickname, int level)
+		: base(
+				693,
+				SpecieClawitzer.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Clawitzer() : base(
 			693,

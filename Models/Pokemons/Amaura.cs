@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Amaura : Pokemon
 	{
 
-		public Amaura(string nickname, int level) : base(
-			698,
-			SpecieAmaura.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ice.Instance			
-		) {}
+		public Amaura(string nickname, int level)
+		: base(
+				698,
+				SpecieAmaura.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Amaura() : base(
 			698,

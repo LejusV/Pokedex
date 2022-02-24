@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slurpuff : Pokemon
 	{
 
-		public Slurpuff(string nickname, int level) : base(
-			685,
-			SpecieSlurpuff.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Slurpuff(string nickname, int level)
+		: base(
+				685,
+				SpecieSlurpuff.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slurpuff() : base(
 			685,

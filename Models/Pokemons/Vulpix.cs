@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vulpix : Pokemon
 	{
 
-		public Vulpix(string nickname, int level) : base(
-			37,
-			SpecieVulpix.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Vulpix(string nickname, int level)
+		: base(
+				37,
+				SpecieVulpix.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vulpix() : base(
 			37,

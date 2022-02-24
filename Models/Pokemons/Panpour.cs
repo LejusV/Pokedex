@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Panpour : Pokemon
 	{
 
-		public Panpour(string nickname, int level) : base(
-			515,
-			SpeciePanpour.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Panpour(string nickname, int level)
+		: base(
+				515,
+				SpeciePanpour.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Panpour() : base(
 			515,

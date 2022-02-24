@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zekrom : Pokemon
 	{
 
-		public Zekrom(string nickname, int level) : base(
-			644,
-			SpecieZekrom.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Electric.Instance			
-		) {}
+		public Zekrom(string nickname, int level)
+		: base(
+				644,
+				SpecieZekrom.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zekrom() : base(
 			644,

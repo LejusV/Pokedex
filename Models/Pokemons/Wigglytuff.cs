@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Wigglytuff : Pokemon
 	{
 
-		public Wigglytuff(string nickname, int level) : base(
-			40,
-			SpecieWigglytuff.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Fairy.Instance			
-		) {}
+		public Wigglytuff(string nickname, int level)
+		: base(
+				40,
+				SpecieWigglytuff.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Wigglytuff() : base(
 			40,

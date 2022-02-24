@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Makuhita : Pokemon
 	{
 
-		public Makuhita(string nickname, int level) : base(
-			296,
-			SpecieMakuhita.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Makuhita(string nickname, int level)
+		: base(
+				296,
+				SpecieMakuhita.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Makuhita() : base(
 			296,

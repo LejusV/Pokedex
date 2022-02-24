@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dratini : Pokemon
 	{
 
-		public Dratini(string nickname, int level) : base(
-			147,
-			SpecieDratini.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Dratini(string nickname, int level)
+		: base(
+				147,
+				SpecieDratini.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dratini() : base(
 			147,

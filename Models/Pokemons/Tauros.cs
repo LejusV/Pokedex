@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tauros : Pokemon
 	{
 
-		public Tauros(string nickname, int level) : base(
-			128,
-			SpecieTauros.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Tauros(string nickname, int level)
+		: base(
+				128,
+				SpecieTauros.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tauros() : base(
 			128,

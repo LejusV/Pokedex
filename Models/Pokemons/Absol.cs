@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Absol : Pokemon
 	{
 
-		public Absol(string nickname, int level) : base(
-			359,
-			SpecieAbsol.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Absol(string nickname, int level)
+		: base(
+				359,
+				SpecieAbsol.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Absol() : base(
 			359,

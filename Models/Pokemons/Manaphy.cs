@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Manaphy : Pokemon
 	{
 
-		public Manaphy(string nickname, int level) : base(
-			490,
-			SpecieManaphy.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Manaphy(string nickname, int level)
+		: base(
+				490,
+				SpecieManaphy.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Manaphy() : base(
 			490,

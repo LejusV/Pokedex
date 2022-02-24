@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Togekiss : Pokemon
 	{
 
-		public Togekiss(string nickname, int level) : base(
-			468,
-			SpecieTogekiss.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance, Flying.Instance			
-		) {}
+		public Togekiss(string nickname, int level)
+		: base(
+				468,
+				SpecieTogekiss.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Togekiss() : base(
 			468,

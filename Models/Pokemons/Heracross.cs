@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Heracross : Pokemon
 	{
 
-		public Heracross(string nickname, int level) : base(
-			214,
-			SpecieHeracross.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fighting.Instance			
-		) {}
+		public Heracross(string nickname, int level)
+		: base(
+				214,
+				SpecieHeracross.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Heracross() : base(
 			214,

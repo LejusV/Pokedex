@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Skitty : Pokemon
 	{
 
-		public Skitty(string nickname, int level) : base(
-			300,
-			SpecieSkitty.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Skitty(string nickname, int level)
+		: base(
+				300,
+				SpecieSkitty.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Skitty() : base(
 			300,

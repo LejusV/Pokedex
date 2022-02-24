@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shellos : Pokemon
 	{
 
-		public Shellos(string nickname, int level) : base(
-			422,
-			SpecieShellos.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Shellos(string nickname, int level)
+		: base(
+				422,
+				SpecieShellos.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shellos() : base(
 			422,

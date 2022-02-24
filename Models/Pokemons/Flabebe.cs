@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Flabebe : Pokemon
 	{
 
-		public Flabebe(string nickname, int level) : base(
-			669,
-			SpecieFlabebe.Instance, // Pokemon Specie
-			nickname, level,
-			Fairy.Instance			
-		) {}
+		public Flabebe(string nickname, int level)
+		: base(
+				669,
+				SpecieFlabebe.Instance, // Pokemon Specie
+				nickname, level,
+				Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Flabebe() : base(
 			669,

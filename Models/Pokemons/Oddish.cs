@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Oddish : Pokemon
 	{
 
-		public Oddish(string nickname, int level) : base(
-			43,
-			SpecieOddish.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Oddish(string nickname, int level)
+		: base(
+				43,
+				SpecieOddish.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Oddish() : base(
 			43,

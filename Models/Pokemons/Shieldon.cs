@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Shieldon : Pokemon
 	{
 
-		public Shieldon(string nickname, int level) : base(
-			410,
-			SpecieShieldon.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Steel.Instance			
-		) {}
+		public Shieldon(string nickname, int level)
+		: base(
+				410,
+				SpecieShieldon.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Shieldon() : base(
 			410,

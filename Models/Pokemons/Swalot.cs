@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swalot : Pokemon
 	{
 
-		public Swalot(string nickname, int level) : base(
-			317,
-			SpecieSwalot.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Swalot(string nickname, int level)
+		: base(
+				317,
+				SpecieSwalot.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swalot() : base(
 			317,

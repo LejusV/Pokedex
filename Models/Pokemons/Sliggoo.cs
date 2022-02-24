@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sliggoo : Pokemon
 	{
 
-		public Sliggoo(string nickname, int level) : base(
-			705,
-			SpecieSliggoo.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance			
-		) {}
+		public Sliggoo(string nickname, int level)
+		: base(
+				705,
+				SpecieSliggoo.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sliggoo() : base(
 			705,

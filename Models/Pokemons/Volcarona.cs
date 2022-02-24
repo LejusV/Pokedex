@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Volcarona : Pokemon
 	{
 
-		public Volcarona(string nickname, int level) : base(
-			637,
-			SpecieVolcarona.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Fire.Instance			
-		) {}
+		public Volcarona(string nickname, int level)
+		: base(
+				637,
+				SpecieVolcarona.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Volcarona() : base(
 			637,

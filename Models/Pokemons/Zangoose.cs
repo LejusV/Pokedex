@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zangoose : Pokemon
 	{
 
-		public Zangoose(string nickname, int level) : base(
-			335,
-			SpecieZangoose.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Zangoose(string nickname, int level)
+		: base(
+				335,
+				SpecieZangoose.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zangoose() : base(
 			335,

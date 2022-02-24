@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spiritomb : Pokemon
 	{
 
-		public Spiritomb(string nickname, int level) : base(
-			442,
-			SpecieSpiritomb.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Dark.Instance			
-		) {}
+		public Spiritomb(string nickname, int level)
+		: base(
+				442,
+				SpecieSpiritomb.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spiritomb() : base(
 			442,

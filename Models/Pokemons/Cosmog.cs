@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cosmog : Pokemon
 	{
 
-		public Cosmog(string nickname, int level) : base(
-			789,
-			SpecieCosmog.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Cosmog(string nickname, int level)
+		: base(
+				789,
+				SpecieCosmog.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cosmog() : base(
 			789,

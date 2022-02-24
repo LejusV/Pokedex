@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cloyster : Pokemon
 	{
 
-		public Cloyster(string nickname, int level) : base(
-			91,
-			SpecieCloyster.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ice.Instance			
-		) {}
+		public Cloyster(string nickname, int level)
+		: base(
+				91,
+				SpecieCloyster.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cloyster() : base(
 			91,

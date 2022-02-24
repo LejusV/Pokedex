@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Chespin : Pokemon
 	{
 
-		public Chespin(string nickname, int level) : base(
-			650,
-			SpecieChespin.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Chespin(string nickname, int level)
+		: base(
+				650,
+				SpecieChespin.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Chespin() : base(
 			650,

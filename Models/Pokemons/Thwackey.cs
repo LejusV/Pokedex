@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Thwackey : Pokemon
 	{
 
-		public Thwackey(string nickname, int level) : base(
-			811,
-			SpecieThwackey.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Thwackey(string nickname, int level)
+		: base(
+				811,
+				SpecieThwackey.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Thwackey() : base(
 			811,

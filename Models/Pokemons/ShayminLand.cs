@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class ShayminLand : Pokemon
 	{
 
-		public ShayminLand(string nickname, int level) : base(
-			492,
-			SpecieShayminLand.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public ShayminLand(string nickname, int level)
+		: base(
+				492,
+				SpecieShayminLand.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public ShayminLand() : base(
 			492,

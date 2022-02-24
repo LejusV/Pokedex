@@ -50,6 +50,11 @@ namespace Pokedex.Models
             get { return _current_stats;}
         }
 
+        public PokemonSpecie Specie
+        {
+            get { return _specie;}
+        }
+
         public string Rename
         {
             set { this._nickname = value; }
@@ -62,7 +67,7 @@ namespace Pokedex.Models
         }
 
 
-        public string TypesDisplay
+        public string TypesString
         {
             get
             {
@@ -72,7 +77,7 @@ namespace Pokedex.Models
             }
         }
 
-        public string StatsDisplay
+        public string StatsString
         {
             get
             {

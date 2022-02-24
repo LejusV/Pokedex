@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Slugma : Pokemon
 	{
 
-		public Slugma(string nickname, int level) : base(
-			218,
-			SpecieSlugma.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Slugma(string nickname, int level)
+		: base(
+				218,
+				SpecieSlugma.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Slugma() : base(
 			218,

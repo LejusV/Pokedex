@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Magnemite : Pokemon
 	{
 
-		public Magnemite(string nickname, int level) : base(
-			81,
-			SpecieMagnemite.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Steel.Instance			
-		) {}
+		public Magnemite(string nickname, int level)
+		: base(
+				81,
+				SpecieMagnemite.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Magnemite() : base(
 			81,

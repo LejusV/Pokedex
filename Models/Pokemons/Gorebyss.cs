@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gorebyss : Pokemon
 	{
 
-		public Gorebyss(string nickname, int level) : base(
-			368,
-			SpecieGorebyss.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Gorebyss(string nickname, int level)
+		: base(
+				368,
+				SpecieGorebyss.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gorebyss() : base(
 			368,

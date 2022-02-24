@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Necrozma : Pokemon
 	{
 
-		public Necrozma(string nickname, int level) : base(
-			800,
-			SpecieNecrozma.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Necrozma(string nickname, int level)
+		: base(
+				800,
+				SpecieNecrozma.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Necrozma() : base(
 			800,

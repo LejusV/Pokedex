@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class TypeNull : Pokemon
 	{
 
-		public TypeNull(string nickname, int level) : base(
-			772,
-			SpecieTypeNull.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public TypeNull(string nickname, int level)
+		: base(
+				772,
+				SpecieTypeNull.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public TypeNull() : base(
 			772,

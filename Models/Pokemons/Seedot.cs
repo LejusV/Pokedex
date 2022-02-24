@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seedot : Pokemon
 	{
 
-		public Seedot(string nickname, int level) : base(
-			273,
-			SpecieSeedot.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Seedot(string nickname, int level)
+		: base(
+				273,
+				SpecieSeedot.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seedot() : base(
 			273,

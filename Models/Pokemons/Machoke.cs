@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Machoke : Pokemon
 	{
 
-		public Machoke(string nickname, int level) : base(
-			67,
-			SpecieMachoke.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Machoke(string nickname, int level)
+		: base(
+				67,
+				SpecieMachoke.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Machoke() : base(
 			67,

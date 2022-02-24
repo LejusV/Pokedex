@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lunala : Pokemon
 	{
 
-		public Lunala(string nickname, int level) : base(
-			792,
-			SpecieLunala.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Ghost.Instance			
-		) {}
+		public Lunala(string nickname, int level)
+		: base(
+				792,
+				SpecieLunala.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lunala() : base(
 			792,

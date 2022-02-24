@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Greninja : Pokemon
 	{
 
-		public Greninja(string nickname, int level) : base(
-			658,
-			SpecieGreninja.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Dark.Instance			
-		) {}
+		public Greninja(string nickname, int level)
+		: base(
+				658,
+				SpecieGreninja.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Greninja() : base(
 			658,

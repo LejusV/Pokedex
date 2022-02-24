@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ampharos : Pokemon
 	{
 
-		public Ampharos(string nickname, int level) : base(
-			181,
-			SpecieAmpharos.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Ampharos(string nickname, int level)
+		: base(
+				181,
+				SpecieAmpharos.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ampharos() : base(
 			181,

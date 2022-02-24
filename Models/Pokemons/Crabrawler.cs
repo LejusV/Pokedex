@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Crabrawler : Pokemon
 	{
 
-		public Crabrawler(string nickname, int level) : base(
-			739,
-			SpecieCrabrawler.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance			
-		) {}
+		public Crabrawler(string nickname, int level)
+		: base(
+				739,
+				SpecieCrabrawler.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Crabrawler() : base(
 			739,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sigilyph : Pokemon
 	{
 
-		public Sigilyph(string nickname, int level) : base(
-			561,
-			SpecieSigilyph.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Flying.Instance			
-		) {}
+		public Sigilyph(string nickname, int level)
+		: base(
+				561,
+				SpecieSigilyph.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sigilyph() : base(
 			561,

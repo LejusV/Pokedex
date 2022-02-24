@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mightyena : Pokemon
 	{
 
-		public Mightyena(string nickname, int level) : base(
-			262,
-			SpecieMightyena.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Mightyena(string nickname, int level)
+		: base(
+				262,
+				SpecieMightyena.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mightyena() : base(
 			262,

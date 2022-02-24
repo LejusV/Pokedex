@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Charmander : Pokemon
 	{
 
-		public Charmander(string nickname, int level) : base(
-			4,
-			SpecieCharmander.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Charmander(string nickname, int level)
+		: base(
+				4,
+				SpecieCharmander.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Charmander() : base(
 			4,

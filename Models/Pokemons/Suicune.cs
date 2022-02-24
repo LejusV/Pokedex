@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Suicune : Pokemon
 	{
 
-		public Suicune(string nickname, int level) : base(
-			245,
-			SpecieSuicune.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Suicune(string nickname, int level)
+		: base(
+				245,
+				SpecieSuicune.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Suicune() : base(
 			245,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gabite : Pokemon
 	{
 
-		public Gabite(string nickname, int level) : base(
-			444,
-			SpecieGabite.Instance, // Pokemon Specie
-			nickname, level,
-			Dragon.Instance, Ground.Instance			
-		) {}
+		public Gabite(string nickname, int level)
+		: base(
+				444,
+				SpecieGabite.Instance, // Pokemon Specie
+				nickname, level,
+				Dragon.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gabite() : base(
 			444,

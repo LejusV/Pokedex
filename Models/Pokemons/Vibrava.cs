@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Vibrava : Pokemon
 	{
 
-		public Vibrava(string nickname, int level) : base(
-			329,
-			SpecieVibrava.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Dragon.Instance			
-		) {}
+		public Vibrava(string nickname, int level)
+		: base(
+				329,
+				SpecieVibrava.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Vibrava() : base(
 			329,

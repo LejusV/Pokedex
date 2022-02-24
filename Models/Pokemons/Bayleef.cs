@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bayleef : Pokemon
 	{
 
-		public Bayleef(string nickname, int level) : base(
-			153,
-			SpecieBayleef.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Bayleef(string nickname, int level)
+		: base(
+				153,
+				SpecieBayleef.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bayleef() : base(
 			153,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Noctowl : Pokemon
 	{
 
-		public Noctowl(string nickname, int level) : base(
-			164,
-			SpecieNoctowl.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Noctowl(string nickname, int level)
+		: base(
+				164,
+				SpecieNoctowl.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Noctowl() : base(
 			164,

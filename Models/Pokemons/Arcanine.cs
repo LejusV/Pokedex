@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Arcanine : Pokemon
 	{
 
-		public Arcanine(string nickname, int level) : base(
-			59,
-			SpecieArcanine.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Arcanine(string nickname, int level)
+		: base(
+				59,
+				SpecieArcanine.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Arcanine() : base(
 			59,

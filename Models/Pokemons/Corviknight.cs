@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Corviknight : Pokemon
 	{
 
-		public Corviknight(string nickname, int level) : base(
-			823,
-			SpecieCorviknight.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance, Steel.Instance			
-		) {}
+		public Corviknight(string nickname, int level)
+		: base(
+				823,
+				SpecieCorviknight.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Corviknight() : base(
 			823,

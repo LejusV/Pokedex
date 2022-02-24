@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kangaskhan : Pokemon
 	{
 
-		public Kangaskhan(string nickname, int level) : base(
-			115,
-			SpecieKangaskhan.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Kangaskhan(string nickname, int level)
+		: base(
+				115,
+				SpecieKangaskhan.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kangaskhan() : base(
 			115,

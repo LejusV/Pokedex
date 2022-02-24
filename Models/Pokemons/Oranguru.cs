@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Oranguru : Pokemon
 	{
 
-		public Oranguru(string nickname, int level) : base(
-			765,
-			SpecieOranguru.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Psychic.Instance			
-		) {}
+		public Oranguru(string nickname, int level)
+		: base(
+				765,
+				SpecieOranguru.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Oranguru() : base(
 			765,

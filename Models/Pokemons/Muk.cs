@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Muk : Pokemon
 	{
 
-		public Muk(string nickname, int level) : base(
-			89,
-			SpecieMuk.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Muk(string nickname, int level)
+		: base(
+				89,
+				SpecieMuk.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Muk() : base(
 			89,

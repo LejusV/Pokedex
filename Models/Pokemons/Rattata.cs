@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Rattata : Pokemon
 	{
 
-		public Rattata(string nickname, int level) : base(
-			19,
-			SpecieRattata.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Rattata(string nickname, int level)
+		: base(
+				19,
+				SpecieRattata.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Rattata() : base(
 			19,

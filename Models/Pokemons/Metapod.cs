@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Metapod : Pokemon
 	{
 
-		public Metapod(string nickname, int level) : base(
-			11,
-			SpecieMetapod.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Metapod(string nickname, int level)
+		: base(
+				11,
+				SpecieMetapod.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Metapod() : base(
 			11,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Escavalier : Pokemon
 	{
 
-		public Escavalier(string nickname, int level) : base(
-			589,
-			SpecieEscavalier.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Steel.Instance			
-		) {}
+		public Escavalier(string nickname, int level)
+		: base(
+				589,
+				SpecieEscavalier.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Escavalier() : base(
 			589,

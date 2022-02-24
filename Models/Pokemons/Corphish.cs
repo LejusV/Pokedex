@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Corphish : Pokemon
 	{
 
-		public Corphish(string nickname, int level) : base(
-			341,
-			SpecieCorphish.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Corphish(string nickname, int level)
+		: base(
+				341,
+				SpecieCorphish.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Corphish() : base(
 			341,

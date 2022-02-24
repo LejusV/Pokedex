@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Salandit : Pokemon
 	{
 
-		public Salandit(string nickname, int level) : base(
-			757,
-			SpecieSalandit.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance, Fire.Instance			
-		) {}
+		public Salandit(string nickname, int level)
+		: base(
+				757,
+				SpecieSalandit.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Salandit() : base(
 			757,

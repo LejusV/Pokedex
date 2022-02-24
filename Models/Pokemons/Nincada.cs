@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nincada : Pokemon
 	{
 
-		public Nincada(string nickname, int level) : base(
-			290,
-			SpecieNincada.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Ground.Instance			
-		) {}
+		public Nincada(string nickname, int level)
+		: base(
+				290,
+				SpecieNincada.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nincada() : base(
 			290,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Bastiodon : Pokemon
 	{
 
-		public Bastiodon(string nickname, int level) : base(
-			411,
-			SpecieBastiodon.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Steel.Instance			
-		) {}
+		public Bastiodon(string nickname, int level)
+		: base(
+				411,
+				SpecieBastiodon.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Bastiodon() : base(
 			411,

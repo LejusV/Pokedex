@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Zebstrika : Pokemon
 	{
 
-		public Zebstrika(string nickname, int level) : base(
-			523,
-			SpecieZebstrika.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Zebstrika(string nickname, int level)
+		: base(
+				523,
+				SpecieZebstrika.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Zebstrika() : base(
 			523,

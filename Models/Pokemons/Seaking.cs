@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Seaking : Pokemon
 	{
 
-		public Seaking(string nickname, int level) : base(
-			119,
-			SpecieSeaking.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Seaking(string nickname, int level)
+		: base(
+				119,
+				SpecieSeaking.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Seaking() : base(
 			119,

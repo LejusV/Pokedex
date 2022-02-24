@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Furfrou : Pokemon
 	{
 
-		public Furfrou(string nickname, int level) : base(
-			676,
-			SpecieFurfrou.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Furfrou(string nickname, int level)
+		: base(
+				676,
+				SpecieFurfrou.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Furfrou() : base(
 			676,

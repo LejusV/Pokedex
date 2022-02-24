@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Froakie : Pokemon
 	{
 
-		public Froakie(string nickname, int level) : base(
-			656,
-			SpecieFroakie.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Froakie(string nickname, int level)
+		: base(
+				656,
+				SpecieFroakie.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Froakie() : base(
 			656,

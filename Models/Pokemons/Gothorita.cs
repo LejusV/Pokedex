@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gothorita : Pokemon
 	{
 
-		public Gothorita(string nickname, int level) : base(
-			575,
-			SpecieGothorita.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Gothorita(string nickname, int level)
+		: base(
+				575,
+				SpecieGothorita.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gothorita() : base(
 			575,

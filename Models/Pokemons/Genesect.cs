@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Genesect : Pokemon
 	{
 
-		public Genesect(string nickname, int level) : base(
-			649,
-			SpecieGenesect.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Steel.Instance			
-		) {}
+		public Genesect(string nickname, int level)
+		: base(
+				649,
+				SpecieGenesect.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Genesect() : base(
 			649,

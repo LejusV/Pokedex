@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Steelix : Pokemon
 	{
 
-		public Steelix(string nickname, int level) : base(
-			208,
-			SpecieSteelix.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance, Ground.Instance			
-		) {}
+		public Steelix(string nickname, int level)
+		: base(
+				208,
+				SpecieSteelix.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Steelix() : base(
 			208,

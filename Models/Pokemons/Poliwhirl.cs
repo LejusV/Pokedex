@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Poliwhirl : Pokemon
 	{
 
-		public Poliwhirl(string nickname, int level) : base(
-			61,
-			SpeciePoliwhirl.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Poliwhirl(string nickname, int level)
+		: base(
+				61,
+				SpeciePoliwhirl.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Poliwhirl() : base(
 			61,

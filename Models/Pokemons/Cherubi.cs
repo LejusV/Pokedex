@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cherubi : Pokemon
 	{
 
-		public Cherubi(string nickname, int level) : base(
-			420,
-			SpecieCherubi.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Cherubi(string nickname, int level)
+		: base(
+				420,
+				SpecieCherubi.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cherubi() : base(
 			420,

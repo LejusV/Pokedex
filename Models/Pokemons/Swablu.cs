@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swablu : Pokemon
 	{
 
-		public Swablu(string nickname, int level) : base(
-			333,
-			SpecieSwablu.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Swablu(string nickname, int level)
+		: base(
+				333,
+				SpecieSwablu.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swablu() : base(
 			333,

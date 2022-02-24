@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Diggersby : Pokemon
 	{
 
-		public Diggersby(string nickname, int level) : base(
-			660,
-			SpecieDiggersby.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Ground.Instance			
-		) {}
+		public Diggersby(string nickname, int level)
+		: base(
+				660,
+				SpecieDiggersby.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Diggersby() : base(
 			660,

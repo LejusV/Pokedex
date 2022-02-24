@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hoothoot : Pokemon
 	{
 
-		public Hoothoot(string nickname, int level) : base(
-			163,
-			SpecieHoothoot.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Hoothoot(string nickname, int level)
+		: base(
+				163,
+				SpecieHoothoot.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hoothoot() : base(
 			163,

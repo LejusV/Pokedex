@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Solgaleo : Pokemon
 	{
 
-		public Solgaleo(string nickname, int level) : base(
-			791,
-			SpecieSolgaleo.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Steel.Instance			
-		) {}
+		public Solgaleo(string nickname, int level)
+		: base(
+				791,
+				SpecieSolgaleo.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Solgaleo() : base(
 			791,

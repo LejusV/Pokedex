@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Inteleon : Pokemon
 	{
 
-		public Inteleon(string nickname, int level) : base(
-			818,
-			SpecieInteleon.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Inteleon(string nickname, int level)
+		: base(
+				818,
+				SpecieInteleon.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Inteleon() : base(
 			818,

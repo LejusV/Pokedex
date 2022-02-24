@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Whismur : Pokemon
 	{
 
-		public Whismur(string nickname, int level) : base(
-			293,
-			SpecieWhismur.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Whismur(string nickname, int level)
+		: base(
+				293,
+				SpecieWhismur.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Whismur() : base(
 			293,

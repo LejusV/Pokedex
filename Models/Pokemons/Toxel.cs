@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Toxel : Pokemon
 	{
 
-		public Toxel(string nickname, int level) : base(
-			848,
-			SpecieToxel.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance, Poison.Instance			
-		) {}
+		public Toxel(string nickname, int level)
+		: base(
+				848,
+				SpecieToxel.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Toxel() : base(
 			848,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sealeo : Pokemon
 	{
 
-		public Sealeo(string nickname, int level) : base(
-			364,
-			SpecieSealeo.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Water.Instance			
-		) {}
+		public Sealeo(string nickname, int level)
+		: base(
+				364,
+				SpecieSealeo.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sealeo() : base(
 			364,

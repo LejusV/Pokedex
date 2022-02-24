@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cradily : Pokemon
 	{
 
-		public Cradily(string nickname, int level) : base(
-			346,
-			SpecieCradily.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Grass.Instance			
-		) {}
+		public Cradily(string nickname, int level)
+		: base(
+				346,
+				SpecieCradily.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cradily() : base(
 			346,

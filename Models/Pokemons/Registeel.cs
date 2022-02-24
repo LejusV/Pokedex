@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Registeel : Pokemon
 	{
 
-		public Registeel(string nickname, int level) : base(
-			379,
-			SpecieRegisteel.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Registeel(string nickname, int level)
+		: base(
+				379,
+				SpecieRegisteel.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Registeel() : base(
 			379,

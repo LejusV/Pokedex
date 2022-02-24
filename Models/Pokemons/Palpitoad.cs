@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Palpitoad : Pokemon
 	{
 
-		public Palpitoad(string nickname, int level) : base(
-			536,
-			SpeciePalpitoad.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Ground.Instance			
-		) {}
+		public Palpitoad(string nickname, int level)
+		: base(
+				536,
+				SpeciePalpitoad.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Palpitoad() : base(
 			536,

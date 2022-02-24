@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lampent : Pokemon
 	{
 
-		public Lampent(string nickname, int level) : base(
-			608,
-			SpecieLampent.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Fire.Instance			
-		) {}
+		public Lampent(string nickname, int level)
+		: base(
+				608,
+				SpecieLampent.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lampent() : base(
 			608,

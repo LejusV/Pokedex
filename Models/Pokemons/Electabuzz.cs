@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Electabuzz : Pokemon
 	{
 
-		public Electabuzz(string nickname, int level) : base(
-			125,
-			SpecieElectabuzz.Instance, // Pokemon Specie
-			nickname, level,
-			Electric.Instance			
-		) {}
+		public Electabuzz(string nickname, int level)
+		: base(
+				125,
+				SpecieElectabuzz.Instance, // Pokemon Specie
+				nickname, level,
+				Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Electabuzz() : base(
 			125,

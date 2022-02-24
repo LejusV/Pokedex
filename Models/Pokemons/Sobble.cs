@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sobble : Pokemon
 	{
 
-		public Sobble(string nickname, int level) : base(
-			816,
-			SpecieSobble.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Sobble(string nickname, int level)
+		: base(
+				816,
+				SpecieSobble.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sobble() : base(
 			816,

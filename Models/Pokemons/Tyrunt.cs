@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tyrunt : Pokemon
 	{
 
-		public Tyrunt(string nickname, int level) : base(
-			696,
-			SpecieTyrunt.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Dragon.Instance			
-		) {}
+		public Tyrunt(string nickname, int level)
+		: base(
+				696,
+				SpecieTyrunt.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tyrunt() : base(
 			696,

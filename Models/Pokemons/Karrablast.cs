@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Karrablast : Pokemon
 	{
 
-		public Karrablast(string nickname, int level) : base(
-			588,
-			SpecieKarrablast.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Karrablast(string nickname, int level)
+		: base(
+				588,
+				SpecieKarrablast.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Karrablast() : base(
 			588,

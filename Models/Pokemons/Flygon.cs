@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Flygon : Pokemon
 	{
 
-		public Flygon(string nickname, int level) : base(
-			330,
-			SpecieFlygon.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance, Dragon.Instance			
-		) {}
+		public Flygon(string nickname, int level)
+		: base(
+				330,
+				SpecieFlygon.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance, Dragon.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Flygon() : base(
 			330,

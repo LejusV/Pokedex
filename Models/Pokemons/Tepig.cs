@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Tepig : Pokemon
 	{
 
-		public Tepig(string nickname, int level) : base(
-			498,
-			SpecieTepig.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Tepig(string nickname, int level)
+		: base(
+				498,
+				SpecieTepig.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Tepig() : base(
 			498,

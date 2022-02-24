@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Spewpa : Pokemon
 	{
 
-		public Spewpa(string nickname, int level) : base(
-			665,
-			SpecieSpewpa.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Spewpa(string nickname, int level)
+		: base(
+				665,
+				SpecieSpewpa.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Spewpa() : base(
 			665,

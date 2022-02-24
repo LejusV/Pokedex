@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pineco : Pokemon
 	{
 
-		public Pineco(string nickname, int level) : base(
-			204,
-			SpeciePineco.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance			
-		) {}
+		public Pineco(string nickname, int level)
+		: base(
+				204,
+				SpeciePineco.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pineco() : base(
 			204,

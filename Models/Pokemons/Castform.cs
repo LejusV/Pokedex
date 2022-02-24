@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Castform : Pokemon
 	{
 
-		public Castform(string nickname, int level) : base(
-			351,
-			SpecieCastform.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Castform(string nickname, int level)
+		: base(
+				351,
+				SpecieCastform.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Castform() : base(
 			351,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Servine : Pokemon
 	{
 
-		public Servine(string nickname, int level) : base(
-			496,
-			SpecieServine.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Servine(string nickname, int level)
+		: base(
+				496,
+				SpecieServine.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Servine() : base(
 			496,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Taillow : Pokemon
 	{
 
-		public Taillow(string nickname, int level) : base(
-			276,
-			SpecieTaillow.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Taillow(string nickname, int level)
+		: base(
+				276,
+				SpecieTaillow.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Taillow() : base(
 			276,

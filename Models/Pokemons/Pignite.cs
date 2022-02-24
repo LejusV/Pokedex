@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pignite : Pokemon
 	{
 
-		public Pignite(string nickname, int level) : base(
-			499,
-			SpeciePignite.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Fighting.Instance			
-		) {}
+		public Pignite(string nickname, int level)
+		: base(
+				499,
+				SpeciePignite.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pignite() : base(
 			499,

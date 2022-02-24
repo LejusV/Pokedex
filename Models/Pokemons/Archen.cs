@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Archen : Pokemon
 	{
 
-		public Archen(string nickname, int level) : base(
-			566,
-			SpecieArchen.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Flying.Instance			
-		) {}
+		public Archen(string nickname, int level)
+		: base(
+				566,
+				SpecieArchen.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Archen() : base(
 			566,

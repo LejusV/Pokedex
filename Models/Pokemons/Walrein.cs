@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Walrein : Pokemon
 	{
 
-		public Walrein(string nickname, int level) : base(
-			365,
-			SpecieWalrein.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Water.Instance			
-		) {}
+		public Walrein(string nickname, int level)
+		: base(
+				365,
+				SpecieWalrein.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Walrein() : base(
 			365,

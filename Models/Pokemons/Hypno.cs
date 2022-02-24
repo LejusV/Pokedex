@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hypno : Pokemon
 	{
 
-		public Hypno(string nickname, int level) : base(
-			97,
-			SpecieHypno.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Hypno(string nickname, int level)
+		: base(
+				97,
+				SpecieHypno.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hypno() : base(
 			97,

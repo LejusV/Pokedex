@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sneasel : Pokemon
 	{
 
-		public Sneasel(string nickname, int level) : base(
-			215,
-			SpecieSneasel.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Ice.Instance			
-		) {}
+		public Sneasel(string nickname, int level)
+		: base(
+				215,
+				SpecieSneasel.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Ice.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sneasel() : base(
 			215,

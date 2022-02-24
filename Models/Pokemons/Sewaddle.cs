@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Sewaddle : Pokemon
 	{
 
-		public Sewaddle(string nickname, int level) : base(
-			540,
-			SpecieSewaddle.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Grass.Instance			
-		) {}
+		public Sewaddle(string nickname, int level)
+		: base(
+				540,
+				SpecieSewaddle.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Sewaddle() : base(
 			540,

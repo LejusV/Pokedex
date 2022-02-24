@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Omanyte : Pokemon
 	{
 
-		public Omanyte(string nickname, int level) : base(
-			138,
-			SpecieOmanyte.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Water.Instance			
-		) {}
+		public Omanyte(string nickname, int level)
+		: base(
+				138,
+				SpecieOmanyte.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Omanyte() : base(
 			138,

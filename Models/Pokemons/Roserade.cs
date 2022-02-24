@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Roserade : Pokemon
 	{
 
-		public Roserade(string nickname, int level) : base(
-			407,
-			SpecieRoserade.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Roserade(string nickname, int level)
+		: base(
+				407,
+				SpecieRoserade.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Roserade() : base(
 			407,

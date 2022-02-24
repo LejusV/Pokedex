@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Surskit : Pokemon
 	{
 
-		public Surskit(string nickname, int level) : base(
-			283,
-			SpecieSurskit.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Water.Instance			
-		) {}
+		public Surskit(string nickname, int level)
+		: base(
+				283,
+				SpecieSurskit.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Surskit() : base(
 			283,

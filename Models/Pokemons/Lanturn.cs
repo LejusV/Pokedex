@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Lanturn : Pokemon
 	{
 
-		public Lanturn(string nickname, int level) : base(
-			171,
-			SpecieLanturn.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Electric.Instance			
-		) {}
+		public Lanturn(string nickname, int level)
+		: base(
+				171,
+				SpecieLanturn.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Electric.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Lanturn() : base(
 			171,

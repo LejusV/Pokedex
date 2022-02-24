@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mudbray : Pokemon
 	{
 
-		public Mudbray(string nickname, int level) : base(
-			749,
-			SpecieMudbray.Instance, // Pokemon Specie
-			nickname, level,
-			Ground.Instance			
-		) {}
+		public Mudbray(string nickname, int level)
+		: base(
+				749,
+				SpecieMudbray.Instance, // Pokemon Specie
+				nickname, level,
+				Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mudbray() : base(
 			749,

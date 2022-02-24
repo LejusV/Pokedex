@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Nickit : Pokemon
 	{
 
-		public Nickit(string nickname, int level) : base(
-			827,
-			SpecieNickit.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance			
-		) {}
+		public Nickit(string nickname, int level)
+		: base(
+				827,
+				SpecieNickit.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Nickit() : base(
 			827,

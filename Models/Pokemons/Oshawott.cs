@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Oshawott : Pokemon
 	{
 
-		public Oshawott(string nickname, int level) : base(
-			501,
-			SpecieOshawott.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Oshawott(string nickname, int level)
+		: base(
+				501,
+				SpecieOshawott.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Oshawott() : base(
 			501,

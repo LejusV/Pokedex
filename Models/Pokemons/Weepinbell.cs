@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Weepinbell : Pokemon
 	{
 
-		public Weepinbell(string nickname, int level) : base(
-			70,
-			SpecieWeepinbell.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Poison.Instance			
-		) {}
+		public Weepinbell(string nickname, int level)
+		: base(
+				70,
+				SpecieWeepinbell.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Weepinbell() : base(
 			70,

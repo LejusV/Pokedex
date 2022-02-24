@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Reuniclus : Pokemon
 	{
 
-		public Reuniclus(string nickname, int level) : base(
-			579,
-			SpecieReuniclus.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Reuniclus(string nickname, int level)
+		: base(
+				579,
+				SpecieReuniclus.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Reuniclus() : base(
 			579,

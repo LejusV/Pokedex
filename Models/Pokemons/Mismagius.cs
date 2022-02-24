@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mismagius : Pokemon
 	{
 
-		public Mismagius(string nickname, int level) : base(
-			429,
-			SpecieMismagius.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance			
-		) {}
+		public Mismagius(string nickname, int level)
+		: base(
+				429,
+				SpecieMismagius.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mismagius() : base(
 			429,

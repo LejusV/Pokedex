@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Swanna : Pokemon
 	{
 
-		public Swanna(string nickname, int level) : base(
-			581,
-			SpecieSwanna.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Swanna(string nickname, int level)
+		: base(
+				581,
+				SpecieSwanna.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Swanna() : base(
 			581,

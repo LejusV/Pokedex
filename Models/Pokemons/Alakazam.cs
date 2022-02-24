@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Alakazam : Pokemon
 	{
 
-		public Alakazam(string nickname, int level) : base(
-			65,
-			SpecieAlakazam.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Alakazam(string nickname, int level)
+		: base(
+				65,
+				SpecieAlakazam.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Alakazam() : base(
 			65,

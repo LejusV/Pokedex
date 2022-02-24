@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Exploud : Pokemon
 	{
 
-		public Exploud(string nickname, int level) : base(
-			295,
-			SpecieExploud.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Exploud(string nickname, int level)
+		: base(
+				295,
+				SpecieExploud.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Exploud() : base(
 			295,

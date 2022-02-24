@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Jynx : Pokemon
 	{
 
-		public Jynx(string nickname, int level) : base(
-			124,
-			SpecieJynx.Instance, // Pokemon Specie
-			nickname, level,
-			Ice.Instance, Psychic.Instance			
-		) {}
+		public Jynx(string nickname, int level)
+		: base(
+				124,
+				SpecieJynx.Instance, // Pokemon Specie
+				nickname, level,
+				Ice.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Jynx() : base(
 			124,

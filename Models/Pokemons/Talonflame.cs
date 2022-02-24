@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Talonflame : Pokemon
 	{
 
-		public Talonflame(string nickname, int level) : base(
-			663,
-			SpecieTalonflame.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance, Flying.Instance			
-		) {}
+		public Talonflame(string nickname, int level)
+		: base(
+				663,
+				SpecieTalonflame.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Talonflame() : base(
 			663,

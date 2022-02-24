@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Beheeyem : Pokemon
 	{
 
-		public Beheeyem(string nickname, int level) : base(
-			606,
-			SpecieBeheeyem.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Beheeyem(string nickname, int level)
+		: base(
+				606,
+				SpecieBeheeyem.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Beheeyem() : base(
 			606,

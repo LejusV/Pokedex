@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mantyke : Pokemon
 	{
 
-		public Mantyke(string nickname, int level) : base(
-			458,
-			SpecieMantyke.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Mantyke(string nickname, int level)
+		: base(
+				458,
+				SpecieMantyke.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mantyke() : base(
 			458,

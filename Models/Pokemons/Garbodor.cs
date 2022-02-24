@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Garbodor : Pokemon
 	{
 
-		public Garbodor(string nickname, int level) : base(
-			569,
-			SpecieGarbodor.Instance, // Pokemon Specie
-			nickname, level,
-			Poison.Instance			
-		) {}
+		public Garbodor(string nickname, int level)
+		: base(
+				569,
+				SpecieGarbodor.Instance, // Pokemon Specie
+				nickname, level,
+				Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Garbodor() : base(
 			569,

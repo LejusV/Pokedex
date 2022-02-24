@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Solrock : Pokemon
 	{
 
-		public Solrock(string nickname, int level) : base(
-			338,
-			SpecieSolrock.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Psychic.Instance			
-		) {}
+		public Solrock(string nickname, int level)
+		: base(
+				338,
+				SpecieSolrock.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Solrock() : base(
 			338,

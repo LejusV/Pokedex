@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Meditite : Pokemon
 	{
 
-		public Meditite(string nickname, int level) : base(
-			307,
-			SpecieMeditite.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Psychic.Instance			
-		) {}
+		public Meditite(string nickname, int level)
+		: base(
+				307,
+				SpecieMeditite.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Meditite() : base(
 			307,

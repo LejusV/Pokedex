@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Dustox : Pokemon
 	{
 
-		public Dustox(string nickname, int level) : base(
-			269,
-			SpecieDustox.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Dustox(string nickname, int level)
+		: base(
+				269,
+				SpecieDustox.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Dustox() : base(
 			269,

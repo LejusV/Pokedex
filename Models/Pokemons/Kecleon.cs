@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Kecleon : Pokemon
 	{
 
-		public Kecleon(string nickname, int level) : base(
-			352,
-			SpecieKecleon.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance			
-		) {}
+		public Kecleon(string nickname, int level)
+		: base(
+				352,
+				SpecieKecleon.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Kecleon() : base(
 			352,

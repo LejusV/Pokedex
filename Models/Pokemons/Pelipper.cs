@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Pelipper : Pokemon
 	{
 
-		public Pelipper(string nickname, int level) : base(
-			279,
-			SpeciePelipper.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Flying.Instance			
-		) {}
+		public Pelipper(string nickname, int level)
+		: base(
+				279,
+				SpeciePelipper.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Pelipper() : base(
 			279,

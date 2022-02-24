@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Drifblim : Pokemon
 	{
 
-		public Drifblim(string nickname, int level) : base(
-			426,
-			SpecieDrifblim.Instance, // Pokemon Specie
-			nickname, level,
-			Ghost.Instance, Flying.Instance			
-		) {}
+		public Drifblim(string nickname, int level)
+		: base(
+				426,
+				SpecieDrifblim.Instance, // Pokemon Specie
+				nickname, level,
+				Ghost.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Drifblim() : base(
 			426,

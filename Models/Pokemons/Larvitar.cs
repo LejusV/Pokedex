@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Larvitar : Pokemon
 	{
 
-		public Larvitar(string nickname, int level) : base(
-			246,
-			SpecieLarvitar.Instance, // Pokemon Specie
-			nickname, level,
-			Rock.Instance, Ground.Instance			
-		) {}
+		public Larvitar(string nickname, int level)
+		: base(
+				246,
+				SpecieLarvitar.Instance, // Pokemon Specie
+				nickname, level,
+				Rock.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Larvitar() : base(
 			246,

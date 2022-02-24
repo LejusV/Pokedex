@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Mudkip : Pokemon
 	{
 
-		public Mudkip(string nickname, int level) : base(
-			258,
-			SpecieMudkip.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Mudkip(string nickname, int level)
+		: base(
+				258,
+				SpecieMudkip.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Mudkip() : base(
 			258,

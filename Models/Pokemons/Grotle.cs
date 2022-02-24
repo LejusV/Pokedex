@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Grotle : Pokemon
 	{
 
-		public Grotle(string nickname, int level) : base(
-			388,
-			SpecieGrotle.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance			
-		) {}
+		public Grotle(string nickname, int level)
+		: base(
+				388,
+				SpecieGrotle.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Grotle() : base(
 			388,

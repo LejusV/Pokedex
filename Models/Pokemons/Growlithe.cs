@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Growlithe : Pokemon
 	{
 
-		public Growlithe(string nickname, int level) : base(
-			58,
-			SpecieGrowlithe.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Growlithe(string nickname, int level)
+		: base(
+				58,
+				SpecieGrowlithe.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Growlithe() : base(
 			58,

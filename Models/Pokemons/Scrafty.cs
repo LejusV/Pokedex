@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Scrafty : Pokemon
 	{
 
-		public Scrafty(string nickname, int level) : base(
-			560,
-			SpecieScrafty.Instance, // Pokemon Specie
-			nickname, level,
-			Dark.Instance, Fighting.Instance			
-		) {}
+		public Scrafty(string nickname, int level)
+		: base(
+				560,
+				SpecieScrafty.Instance, // Pokemon Specie
+				nickname, level,
+				Dark.Instance, Fighting.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Scrafty() : base(
 			560,

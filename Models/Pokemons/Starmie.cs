@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Starmie : Pokemon
 	{
 
-		public Starmie(string nickname, int level) : base(
-			121,
-			SpecieStarmie.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance, Psychic.Instance			
-		) {}
+		public Starmie(string nickname, int level)
+		: base(
+				121,
+				SpecieStarmie.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance, Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Starmie() : base(
 			121,

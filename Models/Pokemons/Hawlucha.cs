@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Hawlucha : Pokemon
 	{
 
-		public Hawlucha(string nickname, int level) : base(
-			701,
-			SpecieHawlucha.Instance, // Pokemon Specie
-			nickname, level,
-			Fighting.Instance, Flying.Instance			
-		) {}
+		public Hawlucha(string nickname, int level)
+		: base(
+				701,
+				SpecieHawlucha.Instance, // Pokemon Specie
+				nickname, level,
+				Fighting.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Hawlucha() : base(
 			701,

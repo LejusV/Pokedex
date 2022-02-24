@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Darumaka : Pokemon
 	{
 
-		public Darumaka(string nickname, int level) : base(
-			554,
-			SpecieDarumaka.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Darumaka(string nickname, int level)
+		: base(
+				554,
+				SpecieDarumaka.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Darumaka() : base(
 			554,

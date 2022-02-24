@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Whirlipede : Pokemon
 	{
 
-		public Whirlipede(string nickname, int level) : base(
-			544,
-			SpecieWhirlipede.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Poison.Instance			
-		) {}
+		public Whirlipede(string nickname, int level)
+		: base(
+				544,
+				SpecieWhirlipede.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Poison.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Whirlipede() : base(
 			544,

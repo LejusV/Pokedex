@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gothitelle : Pokemon
 	{
 
-		public Gothitelle(string nickname, int level) : base(
-			576,
-			SpecieGothitelle.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance			
-		) {}
+		public Gothitelle(string nickname, int level)
+		: base(
+				576,
+				SpecieGothitelle.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gothitelle() : base(
 			576,

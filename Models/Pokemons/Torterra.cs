@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Torterra : Pokemon
 	{
 
-		public Torterra(string nickname, int level) : base(
-			389,
-			SpecieTorterra.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Ground.Instance			
-		) {}
+		public Torterra(string nickname, int level)
+		: base(
+				389,
+				SpecieTorterra.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Ground.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Torterra() : base(
 			389,

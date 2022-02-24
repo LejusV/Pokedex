@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Popplio : Pokemon
 	{
 
-		public Popplio(string nickname, int level) : base(
-			728,
-			SpeciePopplio.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public Popplio(string nickname, int level)
+		: base(
+				728,
+				SpeciePopplio.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Popplio() : base(
 			728,

@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Quilava : Pokemon
 	{
 
-		public Quilava(string nickname, int level) : base(
-			156,
-			SpecieQuilava.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Quilava(string nickname, int level)
+		: base(
+				156,
+				SpecieQuilava.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Quilava() : base(
 			156,

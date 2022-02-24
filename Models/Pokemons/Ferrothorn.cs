@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Ferrothorn : Pokemon
 	{
 
-		public Ferrothorn(string nickname, int level) : base(
-			598,
-			SpecieFerrothorn.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Steel.Instance			
-		) {}
+		public Ferrothorn(string nickname, int level)
+		: base(
+				598,
+				SpecieFerrothorn.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Ferrothorn() : base(
 			598,

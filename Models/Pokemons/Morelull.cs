@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Morelull : Pokemon
 	{
 
-		public Morelull(string nickname, int level) : base(
-			755,
-			SpecieMorelull.Instance, // Pokemon Specie
-			nickname, level,
-			Grass.Instance, Fairy.Instance			
-		) {}
+		public Morelull(string nickname, int level)
+		: base(
+				755,
+				SpecieMorelull.Instance, // Pokemon Specie
+				nickname, level,
+				Grass.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Morelull() : base(
 			755,

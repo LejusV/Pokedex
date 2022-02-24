@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Melmetal : Pokemon
 	{
 
-		public Melmetal(string nickname, int level) : base(
-			809,
-			SpecieMelmetal.Instance, // Pokemon Specie
-			nickname, level,
-			Steel.Instance			
-		) {}
+		public Melmetal(string nickname, int level)
+		: base(
+				809,
+				SpecieMelmetal.Instance, // Pokemon Specie
+				nickname, level,
+				Steel.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Melmetal() : base(
 			809,

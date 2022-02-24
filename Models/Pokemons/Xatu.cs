@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Xatu : Pokemon
 	{
 
-		public Xatu(string nickname, int level) : base(
-			178,
-			SpecieXatu.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Flying.Instance			
-		) {}
+		public Xatu(string nickname, int level)
+		: base(
+				178,
+				SpecieXatu.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Xatu() : base(
 			178,

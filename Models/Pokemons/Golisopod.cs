@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Golisopod : Pokemon
 	{
 
-		public Golisopod(string nickname, int level) : base(
-			768,
-			SpecieGolisopod.Instance, // Pokemon Specie
-			nickname, level,
-			Bug.Instance, Water.Instance			
-		) {}
+		public Golisopod(string nickname, int level)
+		: base(
+				768,
+				SpecieGolisopod.Instance, // Pokemon Specie
+				nickname, level,
+				Bug.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Golisopod() : base(
 			768,

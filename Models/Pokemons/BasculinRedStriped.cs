@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class BasculinRedStriped : Pokemon
 	{
 
-		public BasculinRedStriped(string nickname, int level) : base(
-			550,
-			SpecieBasculinRedStriped.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public BasculinRedStriped(string nickname, int level)
+		: base(
+				550,
+				SpecieBasculinRedStriped.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public BasculinRedStriped() : base(
 			550,

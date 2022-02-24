@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Fearow : Pokemon
 	{
 
-		public Fearow(string nickname, int level) : base(
-			22,
-			SpecieFearow.Instance, // Pokemon Specie
-			nickname, level,
-			Normal.Instance, Flying.Instance			
-		) {}
+		public Fearow(string nickname, int level)
+		: base(
+				22,
+				SpecieFearow.Instance, // Pokemon Specie
+				nickname, level,
+				Normal.Instance, Flying.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Fearow() : base(
 			22,

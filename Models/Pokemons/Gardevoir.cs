@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Gardevoir : Pokemon
 	{
 
-		public Gardevoir(string nickname, int level) : base(
-			282,
-			SpecieGardevoir.Instance, // Pokemon Specie
-			nickname, level,
-			Psychic.Instance, Fairy.Instance			
-		) {}
+		public Gardevoir(string nickname, int level)
+		: base(
+				282,
+				SpecieGardevoir.Instance, // Pokemon Specie
+				nickname, level,
+				Psychic.Instance, Fairy.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Gardevoir() : base(
 			282,

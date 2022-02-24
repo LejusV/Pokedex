@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class WishiwashiSolo : Pokemon
 	{
 
-		public WishiwashiSolo(string nickname, int level) : base(
-			746,
-			SpecieWishiwashiSolo.Instance, // Pokemon Specie
-			nickname, level,
-			Water.Instance			
-		) {}
+		public WishiwashiSolo(string nickname, int level)
+		: base(
+				746,
+				SpecieWishiwashiSolo.Instance, // Pokemon Specie
+				nickname, level,
+				Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public WishiwashiSolo() : base(
 			746,

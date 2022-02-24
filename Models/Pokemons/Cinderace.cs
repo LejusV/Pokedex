@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cinderace : Pokemon
 	{
 
-		public Cinderace(string nickname, int level) : base(
-			815,
-			SpecieCinderace.Instance, // Pokemon Specie
-			nickname, level,
-			Fire.Instance			
-		) {}
+		public Cinderace(string nickname, int level)
+		: base(
+				815,
+				SpecieCinderace.Instance, // Pokemon Specie
+				nickname, level,
+				Fire.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cinderace() : base(
 			815,

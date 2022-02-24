@@ -35,12 +35,17 @@ namespace Pokedex.Models.Pokemons
 	public class Cramorant : Pokemon
 	{
 
-		public Cramorant(string nickname, int level) : base(
-			845,
-			SpecieCramorant.Instance, // Pokemon Specie
-			nickname, level,
-			Flying.Instance, Water.Instance			
-		) {}
+		public Cramorant(string nickname, int level)
+		: base(
+				845,
+				SpecieCramorant.Instance, // Pokemon Specie
+				nickname, level,
+				Flying.Instance, Water.Instance			
+		)
+		{
+			CalculateStats();
+			ResetCurrentStats();
+		}
 
 		public Cramorant() : base(
 			845,
