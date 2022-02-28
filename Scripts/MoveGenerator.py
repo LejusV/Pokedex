@@ -41,7 +41,7 @@ namespace Pokedex.Models.Moves
 			{moveType}.Instance, // Move Type
 			MoveCategory.{move["damage_class"].title()}, // Move Category
 			{move["pp"]}, {move["power"] or "null"},// PP & Pow
-			{move["accuracy"] or "null"}, {move["priority"]} // Acc & Priority
+			{move["accuracy"]/100 or "null"}, {move["priority"]} // Acc & Priority
 		) {{}}
 	}}
 }}

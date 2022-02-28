@@ -1,22 +1,23 @@
-﻿using Pokedex.Enums;
-using System.Collections.Generic;
+﻿using System.Linq;
+using Pokedex.Enums;
 
 namespace Pokedex.Models
 {
     public abstract class Move
     {
+        # region Variables
         private readonly double? _accuracy;
         private readonly MoveCategory _category;
+        private readonly int _maxPp;
         private readonly string _name;
         private readonly PokemonType _pokemonType;
         private readonly int? _power;
-        private readonly int _maxPp;
         private readonly int _pp;
         private readonly int _priority;
-        
-        # region Attributes
-        //Values
+        # endregion
 
+        # region Attributes
+        // Values
         public double? Accuracy { get => this._accuracy; }
 
         public MoveCategory Category { get => this._category; }
@@ -34,11 +35,16 @@ namespace Pokedex.Models
         public int Priority { get => this._priority; }
 
         // Display Methods
-        public string Status
+        public string PPStatus
         {
             get => $"{this._name} : {this._pp}/{this._maxPp} PP";
         }
-
+        public string FullStatus { get => string.Join('\n', new string[]{
+			$"{this._name, -16}",
+            $"Type: {this._pokemonType.Name, -9} Category: {this._category}",
+			$"Power:   {this._power?.ToString() ?? "-", -3}    Accuracy: {this._accuracy?.ToString("#%") ?? "-"}",
+			$"PP:   {this._pp, 2}/{this._maxPp, 2}     Priority: {this._priority, 2:+#;-#;0}",
+		}); }
         # endregion
 
         public Move(string name, PokemonType type, MoveCategory category, int maxPp, int? power, double? accuracy, int priority)

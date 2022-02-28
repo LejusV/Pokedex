@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
+using Pokedex.Models.Moves;
 
 namespace Pokedex
 {
@@ -85,6 +86,9 @@ namespace Pokedex
                     new Metapod(Player1.Pokemons[0].Level)
                 }
             );
+
+            Move moveTackle = new MoveTackle();
+            Console.WriteLine(moveTackle.FullStatus);
 
             //Console.WriteLine("hp: " + Player1.Pokemons[0].IV.Get("hp"));
             //Console.WriteLine("attack: " + Player1.Pokemons[0].IV.Get("attack"));
