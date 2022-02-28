@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kingdra Specie to store common natural stats of every {'abilities': ['swift-swim', 'sniper', 'damp'], 'base_experience': 243, 'height': 18, 'id': 230, 'moves': ['headbutt', 'body-slam', 'double-edge', 'leer', 'water-gun', 'hydro-pump', 'surf', 'ice-beam', 'blizzard', 'bubble-beam', 'hyper-beam', 'toxic', 'agility', 'mimic', 'double-team', 'smokescreen', 'focus-energy', 'waterfall', 'swift', 'bubble', 'rest', 'substitute', 'snore', 'curse', 'protect', 'icy-wind', 'outrage', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'dragon-breath', 'hidden-power', 'twister', 'rain-dance', 'whirlpool', 'hail', 'facade', 'yawn', 'secret-power', 'dive', 'signal-beam', 'bounce', 'dragon-dance', 'water-pulse', 'brine', 'natural-gift', 'dragon-pulse', 'giga-impact', 'flash-cannon', 'draco-meteor', 'iron-head', 'captivate', 'round', 'scald', 'quash', 'confide'], 'name': 'kingdra', 'stats': {'hp': 75, 'attack': 95, 'defense': 95, 'special-attack': 95, 'special-defense': 95, 'speed': 85}, 'types': ['water', 'dragon'], 'weight': 1520, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'blue', 'shape': 'blob', 'habitat': 'sea', 'generation': 'generation-ii', 'growth_rate': 'medium', 'egg_groups': ['water1', 'dragon'], 'names': {'ja-Hrkt': 'キングドラ', 'roomaji': 'Kingdra', 'ko': '킹드라', 'zh-Hant': '刺龍王', 'fr': 'Hyporoi', 'de': 'Seedraking', 'es': 'Kingdra', 'it': 'Kingdra', 'en': 'Kingdra', 'ja': 'キングドラ', 'zh-Hans': '刺龙王'}, 'genera': {'ja-Hrkt': 'ドラゴンポケモン', 'ko': '드래곤포켓몬', 'zh-Hant': '龍寶可夢', 'fr': 'Pokémon Dragon', 'de': 'Drache', 'es': 'Pokémon Dragón', 'it': 'Pokémon Drago', 'en': 'Dragon Pokémon', 'ja': 'ドラゴンポケモン', 'zh-Hans': '龙宝可梦'}}
+	//Kingdra Specie to store common natural stats of all Kingdras
+	#region SpecieKingdra
 	public class SpecieKingdra : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieKingdra Builder
 		public SpecieKingdra() : base(
 			"Kingdra",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			95, 95, // Special Attack & Defense
 			85			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Kingdra Pokemon Class
+	#region Kingdra
 	public class Kingdra : Pokemon
 	{
-
+		#region Kingdra Builders
+		/// <summary>
+		/// Kingdra Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Kingdra(string nickname, int level)
 		: base(
 				230,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kingdra Builder only waiting for a Level
+		/// </summary>
 		public Kingdra(int level)
 		: base(
 				230,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kingdra Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Kingdra() : base(
 			230,
 			SpecieKingdra.Instance, // Pokemon Specie
 			Water.Instance, Dragon.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Doublade Specie to store common natural stats of every {'abilities': ['no-guard'], 'base_experience': 157, 'height': 8, 'id': 680, 'moves': ['swords-dance', 'cut', 'tackle', 'toxic', 'double-team', 'reflect', 'rest', 'rock-slide', 'slash', 'substitute', 'snore', 'spite', 'protect', 'false-swipe', 'swagger', 'fury-cutter', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'rain-dance', 'rock-smash', 'facade', 'brick-break', 'secret-power', 'metal-sound', 'aerial-ace', 'iron-defense', 'shock-wave', 'gyro-ball', 'power-trick', 'magnet-rise', 'night-slash', 'shadow-claw', 'shadow-sneak', 'flash-cannon', 'iron-head', 'autotomize', 'after-you', 'retaliate', 'sacred-sword', 'confide', 'brutal-swing'], 'name': 'doublade', 'stats': {'hp': 59, 'attack': 110, 'defense': 150, 'special-attack': 45, 'special-defense': 49, 'speed': 35}, 'types': ['steel', 'ghost'], 'weight': 45, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 90, 'color': 'brown', 'shape': 'heads', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ニダンギル', 'ko': '쌍검킬', 'zh-Hant': '雙劍鞘', 'fr': 'Dimoclès', 'de': 'Duokles', 'es': 'Doublade', 'it': 'Doublade', 'en': 'Doublade', 'ja': 'ニダンギル', 'zh-Hans': '双剑鞘'}, 'genera': {'ja-Hrkt': 'とうけんポケモン', 'ko': '도검포켓몬', 'zh-Hant': '刀劍寶可夢', 'fr': 'Pokémon Glaive', 'de': 'Klingenkraft', 'es': 'Pokémon Tizona', 'it': 'Pokémon Armabianca', 'en': 'Sword Pokémon', 'ja': 'とうけんポケモン', 'zh-Hans': '刀剑宝可梦'}}
+	//Doublade Specie to store common natural stats of all Doublades
+	#region SpecieDoublade
 	public class SpecieDoublade : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDoublade Builder
 		public SpecieDoublade() : base(
 			"Doublade",
 			59, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			45, 49, // Special Attack & Defense
 			35			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Doublade Pokemon Class
+	#region Doublade
 	public class Doublade : Pokemon
 	{
-
+		#region Doublade Builders
+		/// <summary>
+		/// Doublade Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Doublade(string nickname, int level)
 		: base(
 				680,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Doublade Builder only waiting for a Level
+		/// </summary>
 		public Doublade(int level)
 		: base(
 				680,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Doublade Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Doublade() : base(
 			680,
 			SpecieDoublade.Instance, // Pokemon Specie
 			Steel.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

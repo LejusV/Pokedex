@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yamask Specie to store common natural stats of every {'abilities': ['mummy'], 'base_experience': 61, 'height': 5, 'id': 562, 'moves': ['disable', 'toxic', 'psychic', 'night-shade', 'double-team', 'haze', 'dream-eater', 'flash', 'rest', 'substitute', 'thief', 'nightmare', 'snore', 'curse', 'spite', 'protect', 'destiny-bond', 'endure', 'swagger', 'mean-look', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'pain-split', 'hidden-power', 'rain-dance', 'psych-up', 'shadow-ball', 'will-o-wisp', 'memento', 'facade', 'trick', 'role-play', 'magic-coat', 'knock-off', 'skill-swap', 'imprison', 'grudge', 'snatch', 'secret-power', 'astonish', 'fake-tears', 'iron-defense', 'block', 'calm-mind', 'shock-wave', 'payback', 'embargo', 'heal-block', 'toxic-spikes', 'dark-pulse', 'energy-ball', 'nasty-plot', 'zen-headbutt', 'trick-room', 'ominous-wind', 'guard-split', 'power-split', 'wonder-room', 'telekinesis', 'after-you', 'round', 'ally-switch', 'hex', 'crafty-shield', 'confide', 'infestation'], 'name': 'yamask', 'stats': {'hp': 38, 'attack': 30, 'defense': 85, 'special-attack': 55, 'special-defense': 65, 'speed': 30}, 'types': ['ghost'], 'weight': 15, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': 4, 'capture_rate': 190, 'color': 'black', 'shape': 'arms', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['mineral', 'indeterminate'], 'names': {'ja-Hrkt': 'デスマス', 'ko': '데스마스', 'zh-Hant': '哭哭面具', 'fr': 'Tutafeh', 'de': 'Makabaja', 'es': 'Yamask', 'it': 'Yamask', 'en': 'Yamask', 'ja': 'デスマス', 'zh-Hans': '哭哭面具'}, 'genera': {'ja-Hrkt': 'たましいポケモン', 'ko': '영혼포켓몬', 'zh-Hant': '魂寶可夢', 'fr': 'Pokémon Âme', 'de': 'Seele', 'es': 'Pokémon Espíritu', 'it': 'Pokémon Fatuanima', 'en': 'Spirit Pokémon', 'ja': 'たましいポケモン', 'zh-Hans': '魂宝可梦'}}
+	//Yamask Specie to store common natural stats of all Yamasks
+	#region SpecieYamask
 	public class SpecieYamask : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieYamask Builder
 		public SpecieYamask() : base(
 			"Yamask",
 			38, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Yamask Pokemon Class
+	#region Yamask
 	public class Yamask : Pokemon
 	{
-
+		#region Yamask Builders
+		/// <summary>
+		/// Yamask Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Yamask(string nickname, int level)
 		: base(
 				562,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Yamask Builder only waiting for a Level
+		/// </summary>
 		public Yamask(int level)
 		: base(
 				562,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Yamask Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Yamask() : base(
 			562,
 			SpecieYamask.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

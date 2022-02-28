@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Metapod Specie to store common natural stats of every {'abilities': ['shed-skin'], 'base_experience': 72, 'height': 7, 'id': 11, 'moves': ['string-shot', 'harden', 'iron-defense', 'bug-bite', 'electroweb'], 'name': 'metapod', 'stats': {'hp': 50, 'attack': 20, 'defense': 55, 'special-attack': 25, 'special-defense': 25, 'speed': 30}, 'types': ['bug'], 'weight': 99, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'green', 'shape': 'squiggle', 'habitat': 'forest', 'generation': 'generation-i', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'トランセル', 'roomaji': 'Trancell', 'ko': '단데기', 'zh-Hant': '鐵甲蛹', 'fr': 'Chrysacier', 'de': 'Safcon', 'es': 'Metapod', 'it': 'Metapod', 'en': 'Metapod', 'ja': 'トランセル', 'zh-Hans': '铁甲蛹'}, 'genera': {'ja-Hrkt': 'さなぎポケモン', 'ko': '번데기포켓몬', 'zh-Hant': '蛹寶可夢', 'fr': 'Pokémon Cocon', 'de': 'Kokon', 'es': 'Pokémon Capullo', 'it': 'Pokémon Bozzolo', 'en': 'Cocoon Pokémon', 'ja': 'さなぎポケモン', 'zh-Hans': '蛹宝可梦'}}
+	//Metapod Specie to store common natural stats of all Metapods
+	#region SpecieMetapod
 	public class SpecieMetapod : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMetapod Builder
 		public SpecieMetapod() : base(
 			"Metapod",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Metapod Pokemon Class
+	#region Metapod
 	public class Metapod : Pokemon
 	{
-
+		#region Metapod Builders
+		/// <summary>
+		/// Metapod Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Metapod(string nickname, int level)
 		: base(
 				11,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Metapod Builder only waiting for a Level
+		/// </summary>
 		public Metapod(int level)
 		: base(
 				11,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Metapod Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Metapod() : base(
 			11,
 			SpecieMetapod.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

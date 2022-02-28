@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zamazenta-Hero Specie to store common natural stats of every {'abilities': ['dauntless-shield'], 'base_experience': 335, 'height': 29, 'id': 889, 'moves': [], 'name': 'zamazenta-hero', 'stats': {'hp': 92, 'attack': 130, 'defense': 115, 'special-attack': 80, 'special-defense': 115, 'speed': 138}, 'types': ['fighting'], 'weight': 2100, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 10, 'color': 'red', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ザマゼンタ', 'ko': '자마젠타', 'zh-Hant': '藏瑪然特', 'fr': 'Zamazenta', 'de': 'Zamazenta', 'es': 'Zamazenta', 'it': 'Zamazenta', 'en': 'Zamazenta', 'ja': 'ザマゼンタ', 'zh-Hans': '藏玛然特'}, 'genera': {'ja-Hrkt': 'つわものポケモン', 'ko': '강자포켓몬', 'zh-Hant': '強者寶可夢', 'fr': 'Pokémon Valeureux', 'de': 'Krieger', 'es': 'Pokémon Guerrero', 'it': 'Pokémon Guerriero', 'en': 'Warrior Pokémon', 'ja': 'つわものポケモン', 'zh-Hans': '强者宝可梦'}}
+	//Zamazenta-Hero Specie to store common natural stats of all Zamazenta-Heros
+	#region SpecieZamazenta-Hero
 	public class SpecieZamazentaHero : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieZamazenta-Hero Builder
 		public SpecieZamazentaHero() : base(
 			"Zamazenta-Hero",
 			92, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 115, // Special Attack & Defense
 			138			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Zamazenta-Hero Pokemon Class
+	#region Zamazenta-Hero
 	public class ZamazentaHero : Pokemon
 	{
-
+		#region Zamazenta-Hero Builders
+		/// <summary>
+		/// Zamazenta-Hero Builder waiting for a Nickname & a Level
+		/// </summary>
 		public ZamazentaHero(string nickname, int level)
 		: base(
 				889,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zamazenta-Hero Builder only waiting for a Level
+		/// </summary>
 		public ZamazentaHero(int level)
 		: base(
 				889,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zamazenta-Hero Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public ZamazentaHero() : base(
 			889,
 			SpecieZamazentaHero.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

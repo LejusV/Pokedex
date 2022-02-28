@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Morpeko Specie to store common natural stats of every {'abilities': ['hunger-switch'], 'base_experience': 153, 'height': 3, 'id': 877, 'moves': [], 'name': 'morpeko', 'stats': {'hp': 58, 'attack': 95, 'defense': 58, 'special-attack': 70, 'special-defense': 58, 'speed': 97}, 'types': ['electric', 'dark'], 'weight': 30, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 10, 'gender_rate': 4, 'capture_rate': 180, 'color': 'yellow', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'モルペコ', 'ko': '모르페코', 'zh-Hant': '莫魯貝可', 'fr': 'Morpeko', 'de': 'Morpeko', 'es': 'Morpeko', 'it': 'Morpeko', 'en': 'Morpeko', 'ja': 'モルペコ', 'zh-Hans': '莫鲁贝可'}, 'genera': {'ja-Hrkt': 'にめんポケモン', 'ko': '양면포켓몬', 'zh-Hant': '雙面寶可夢', 'fr': 'Pokémon Volt Face', 'de': 'Alter Ego', 'es': 'Pokémon Dos Caras', 'it': 'Pokémon Doppiafaccia', 'en': 'Two-Sided Pokémon', 'ja': 'にめんポケモン', 'zh-Hans': '双面宝可梦'}}
+	//Morpeko Specie to store common natural stats of all Morpekos
+	#region SpecieMorpeko
 	public class SpecieMorpeko : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMorpeko Builder
 		public SpecieMorpeko() : base(
 			"Morpeko",
 			58, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			70, 58, // Special Attack & Defense
 			97			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Morpeko Pokemon Class
+	#region Morpeko
 	public class Morpeko : Pokemon
 	{
-
+		#region Morpeko Builders
+		/// <summary>
+		/// Morpeko Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Morpeko(string nickname, int level)
 		: base(
 				877,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Morpeko Builder only waiting for a Level
+		/// </summary>
 		public Morpeko(int level)
 		: base(
 				877,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Morpeko Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Morpeko() : base(
 			877,
 			SpecieMorpeko.Instance, // Pokemon Specie
 			Electric.Instance, Dark.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

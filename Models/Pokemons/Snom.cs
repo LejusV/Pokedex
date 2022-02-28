@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Snom Specie to store common natural stats of every {'abilities': ['shield-dust', 'ice-scales'], 'base_experience': 37, 'height': 3, 'id': 872, 'moves': [], 'name': 'snom', 'stats': {'hp': 30, 'attack': 25, 'defense': 35, 'special-attack': 45, 'special-defense': 30, 'speed': 20}, 'types': ['ice', 'bug'], 'weight': 38, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 190, 'color': 'white', 'shape': 'squiggle', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ユキハミ', 'ko': '누니머기', 'zh-Hant': '雪吞蟲', 'fr': 'Frissonille', 'de': 'Snomnom', 'es': 'Snom', 'it': 'Snom', 'en': 'Snom', 'ja': 'ユキハミ', 'zh-Hans': '雪吞虫'}, 'genera': {'ja-Hrkt': 'いもむしポケモン', 'ko': '애벌레포켓몬', 'zh-Hant': '蟲寶寶寶可夢', 'fr': 'Pokémon Ver', 'de': 'Wurm', 'es': 'Pokémon Gusano', 'it': 'Pokémon Baco', 'en': 'Worm Pokémon', 'ja': 'いもむしポケモン', 'zh-Hans': '虫宝宝宝可梦'}}
+	//Snom Specie to store common natural stats of all Snoms
+	#region SpecieSnom
 	public class SpecieSnom : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSnom Builder
 		public SpecieSnom() : base(
 			"Snom",
 			30, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			45, 30, // Special Attack & Defense
 			20			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Snom Pokemon Class
+	#region Snom
 	public class Snom : Pokemon
 	{
-
+		#region Snom Builders
+		/// <summary>
+		/// Snom Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Snom(string nickname, int level)
 		: base(
 				872,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Snom Builder only waiting for a Level
+		/// </summary>
 		public Snom(int level)
 		: base(
 				872,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Snom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Snom() : base(
 			872,
 			SpecieSnom.Instance, // Pokemon Specie
 			Ice.Instance, Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

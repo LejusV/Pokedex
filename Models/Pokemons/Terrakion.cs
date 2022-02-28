@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Terrakion Specie to store common natural stats of every {'abilities': ['justified'], 'base_experience': 261, 'height': 19, 'id': 639, 'moves': ['swords-dance', 'cut', 'double-kick', 'take-down', 'leer', 'roar', 'hyper-beam', 'strength', 'earthquake', 'toxic', 'quick-attack', 'double-team', 'reflect', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'sandstorm', 'false-swipe', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'psych-up', 'rock-smash', 'facade', 'taunt', 'helping-hand', 'superpower', 'secret-power', 'rock-tomb', 'aerial-ace', 'block', 'calm-mind', 'close-combat', 'rock-polish', 'poison-jab', 'x-scissor', 'focus-blast', 'earth-power', 'giga-impact', 'zen-headbutt', 'iron-head', 'stone-edge', 'stealth-rock', 'smack-down', 'round', 'quick-guard', 'retaliate', 'bulldoze', 'work-up', 'sacred-sword', 'confide'], 'name': 'terrakion', 'stats': {'hp': 91, 'attack': 129, 'defense': 90, 'special-attack': 72, 'special-defense': 90, 'speed': 108}, 'types': ['rock', 'fighting'], 'weight': 2600, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 80, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'テラキオン', 'ko': '테라키온', 'zh-Hant': '代拉基翁', 'fr': 'Terrakium', 'de': 'Terrakium', 'es': 'Terrakion', 'it': 'Terrakion', 'en': 'Terrakion', 'ja': 'テラキオン', 'zh-Hans': '代拉基翁'}, 'genera': {'ja-Hrkt': 'がんくつポケモン', 'ko': '암굴포켓몬', 'zh-Hant': '岩窟寶可夢', 'fr': 'Pokémon Grotte', 'de': 'Felsenhöhle', 'es': 'Pokémon Gruta', 'it': 'Pokémon Caverna', 'en': 'Cavern Pokémon', 'ja': 'がんくつポケモン', 'zh-Hans': '岩窟宝可梦'}}
+	//Terrakion Specie to store common natural stats of all Terrakions
+	#region SpecieTerrakion
 	public class SpecieTerrakion : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTerrakion Builder
 		public SpecieTerrakion() : base(
 			"Terrakion",
 			91, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			72, 90, // Special Attack & Defense
 			108			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Terrakion Pokemon Class
+	#region Terrakion
 	public class Terrakion : Pokemon
 	{
-
+		#region Terrakion Builders
+		/// <summary>
+		/// Terrakion Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Terrakion(string nickname, int level)
 		: base(
 				639,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Terrakion Builder only waiting for a Level
+		/// </summary>
 		public Terrakion(int level)
 		: base(
 				639,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Terrakion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Terrakion() : base(
 			639,
 			SpecieTerrakion.Instance, // Pokemon Specie
 			Rock.Instance, Fighting.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

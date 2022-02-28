@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Arctozolt Specie to store common natural stats of every {'abilities': ['volt-absorb', 'static', 'slush-rush'], 'base_experience': 177, 'height': 23, 'id': 881, 'moves': [], 'name': 'arctozolt', 'stats': {'hp': 90, 'attack': 100, 'defense': 90, 'special-attack': 90, 'special-defense': 80, 'speed': 55}, 'types': ['electric', 'ice'], 'weight': 1500, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 35, 'gender_rate': -1, 'capture_rate': 45, 'color': 'blue', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'パッチルドン', 'ko': '파치르돈', 'zh-Hant': '雷鳥海獸', 'fr': 'Galvagla', 'de': 'Lecryodon', 'es': 'Arctozolt', 'it': 'Arctozolt', 'en': 'Arctozolt', 'ja': 'パッチルドン', 'zh-Hans': '雷鸟海兽'}, 'genera': {'ja-Hrkt': 'かせきポケモン', 'ko': '화석포켓몬', 'zh-Hant': '化石寶可夢', 'fr': 'Pokémon Fossile', 'de': 'Fossil', 'es': 'Pokémon Fósil', 'it': 'Pokémon Fossile', 'en': 'Fossil Pokémon', 'ja': 'かせきポケモン', 'zh-Hans': '化石宝可梦'}}
+	//Arctozolt Specie to store common natural stats of all Arctozolts
+	#region SpecieArctozolt
 	public class SpecieArctozolt : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieArctozolt Builder
 		public SpecieArctozolt() : base(
 			"Arctozolt",
 			90, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			90, 80, // Special Attack & Defense
 			55			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Arctozolt Pokemon Class
+	#region Arctozolt
 	public class Arctozolt : Pokemon
 	{
-
+		#region Arctozolt Builders
+		/// <summary>
+		/// Arctozolt Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Arctozolt(string nickname, int level)
 		: base(
 				881,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Arctozolt Builder only waiting for a Level
+		/// </summary>
 		public Arctozolt(int level)
 		: base(
 				881,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Arctozolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Arctozolt() : base(
 			881,
 			SpecieArctozolt.Instance, // Pokemon Specie
 			Electric.Instance, Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Medicham Specie to store common natural stats of every {'abilities': ['pure-power', 'telepathy'], 'base_experience': 144, 'height': 13, 'id': 308, 'moves': ['mega-punch', 'fire-punch', 'ice-punch', 'thunder-punch', 'mega-kick', 'headbutt', 'body-slam', 'double-edge', 'hyper-beam', 'low-kick', 'counter', 'seismic-toss', 'strength', 'toxic', 'confusion', 'psychic', 'meditate', 'mimic', 'double-team', 'recover', 'light-screen', 'reflect', 'bide', 'metronome', 'swift', 'high-jump-kick', 'dream-eater', 'flash', 'rest', 'rock-slide', 'substitute', 'mind-reader', 'snore', 'reversal', 'protect', 'mud-slap', 'detect', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pain-split', 'dynamic-punch', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'shadow-ball', 'rock-smash', 'facade', 'focus-punch', 'helping-hand', 'trick', 'role-play', 'magic-coat', 'recycle', 'brick-break', 'secret-power', 'rock-tomb', 'signal-beam', 'bulk-up', 'calm-mind', 'gravity', 'natural-gift', 'feint', 'acupressure', 'fling', 'power-trick', 'force-palm', 'poison-jab', 'drain-punch', 'vacuum-wave', 'focus-blast', 'energy-ball', 'giga-impact', 'zen-headbutt', 'captivate', 'grass-knot', 'psyshock', 'telekinesis', 'low-sweep', 'round', 'retaliate', 'work-up', 'confide', 'power-up-punch'], 'name': 'medicham', 'stats': {'hp': 60, 'attack': 60, 'defense': 75, 'special-attack': 60, 'special-defense': 75, 'speed': 80}, 'types': ['fighting', 'psychic'], 'weight': 315, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 90, 'color': 'red', 'shape': 'humanoid', 'habitat': 'mountain', 'generation': 'generation-iii', 'growth_rate': 'medium', 'egg_groups': ['humanshape'], 'names': {'ja-Hrkt': 'チャーレム', 'roomaji': 'Charem', 'ko': '요가램', 'zh-Hant': '恰雷姆', 'fr': 'Charmina', 'de': 'Meditalis', 'es': 'Medicham', 'it': 'Medicham', 'en': 'Medicham', 'ja': 'チャーレム', 'zh-Hans': '恰雷姆'}, 'genera': {'ja-Hrkt': 'めいそうポケモン', 'ko': '명상포켓몬', 'zh-Hant': '冥想寶可夢', 'fr': 'Pokémon Méditation', 'de': 'Meditation', 'es': 'Pokémon Meditador', 'it': 'Pokémon Meditazione', 'en': 'Meditate Pokémon', 'ja': 'めいそうポケモン', 'zh-Hans': '冥想宝可梦'}}
+	//Medicham Specie to store common natural stats of all Medichams
+	#region SpecieMedicham
 	public class SpecieMedicham : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMedicham Builder
 		public SpecieMedicham() : base(
 			"Medicham",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 75, // Special Attack & Defense
 			80			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Medicham Pokemon Class
+	#region Medicham
 	public class Medicham : Pokemon
 	{
-
+		#region Medicham Builders
+		/// <summary>
+		/// Medicham Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Medicham(string nickname, int level)
 		: base(
 				308,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Medicham Builder only waiting for a Level
+		/// </summary>
 		public Medicham(int level)
 		: base(
 				308,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Medicham Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Medicham() : base(
 			308,
 			SpecieMedicham.Instance, // Pokemon Specie
 			Fighting.Instance, Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

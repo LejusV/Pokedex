@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Marshadow Specie to store common natural stats of every {'abilities': ['technician'], 'base_experience': 270, 'height': 7, 'id': 802, 'moves': ['fire-punch', 'ice-punch', 'thunder-punch', 'jump-kick', 'rolling-kick', 'counter', 'toxic', 'double-team', 'rest', 'rock-slide', 'substitute', 'thief', 'protect', 'false-swipe', 'swagger', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'psych-up', 'shadow-ball', 'will-o-wisp', 'facade', 'role-play', 'brick-break', 'endeavor', 'rock-tomb', 'shadow-punch', 'bulk-up', 'calm-mind', 'feint', 'close-combat', 'payback', 'assurance', 'fling', 'copycat', 'sucker-punch', 'force-palm', 'poison-jab', 'drain-punch', 'focus-blast', 'giga-impact', 'shadow-claw', 'shadow-sneak', 'stone-edge', 'grass-knot', 'smack-down', 'low-sweep', 'round', 'echoed-voice', 'acrobatics', 'work-up', 'confide', 'laser-focus', 'spectral-thief'], 'name': 'marshadow', 'stats': {'hp': 90, 'attack': 125, 'defense': 80, 'special-attack': 90, 'special-defense': 90, 'speed': 125}, 'types': ['fighting', 'ghost'], 'weight': 222, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'マーシャドー', 'ko': '마샤도', 'zh-Hant': '瑪夏多', 'fr': 'Marshadow', 'de': 'Marshadow', 'es': 'Marshadow', 'it': 'Marshadow', 'en': 'Marshadow', 'ja': 'マーシャドー', 'zh-Hans': '玛夏多'}, 'genera': {'ja-Hrkt': 'かげすみポケモン', 'ko': '그림자살이포켓몬', 'zh-Hant': '棲影寶可夢', 'fr': 'Pokémon Ombrefuge', 'de': 'Dunkelwesen', 'es': 'Pokémon Morasombra', 'it': 'Pokémon Vivinombra', 'en': 'Gloomdweller Pokémon', 'ja': 'かげすみポケモン', 'zh-Hans': '栖影宝可梦'}}
+	//Marshadow Specie to store common natural stats of all Marshadows
+	#region SpecieMarshadow
 	public class SpecieMarshadow : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMarshadow Builder
 		public SpecieMarshadow() : base(
 			"Marshadow",
 			90, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			90, 90, // Special Attack & Defense
 			125			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Marshadow Pokemon Class
+	#region Marshadow
 	public class Marshadow : Pokemon
 	{
-
+		#region Marshadow Builders
+		/// <summary>
+		/// Marshadow Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Marshadow(string nickname, int level)
 		: base(
 				802,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Marshadow Builder only waiting for a Level
+		/// </summary>
 		public Marshadow(int level)
 		: base(
 				802,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Marshadow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Marshadow() : base(
 			802,
 			SpecieMarshadow.Instance, // Pokemon Specie
 			Fighting.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

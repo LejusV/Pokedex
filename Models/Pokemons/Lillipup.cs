@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lillipup Specie to store common natural stats of every {'abilities': ['vital-spirit', 'pickup', 'run-away'], 'base_experience': 55, 'height': 4, 'id': 506, 'moves': ['sand-attack', 'tackle', 'take-down', 'leer', 'bite', 'roar', 'thunderbolt', 'thunder-wave', 'dig', 'toxic', 'double-team', 'lick', 'rest', 'substitute', 'snore', 'reversal', 'protect', 'mud-slap', 'endure', 'charm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'rain-dance', 'sunny-day', 'crunch', 'shadow-ball', 'rock-smash', 'uproar', 'facade', 'helping-hand', 'yawn', 'secret-power', 'hyper-voice', 'odor-sleuth', 'rock-tomb', 'aerial-ace', 'howl', 'covet', 'shock-wave', 'last-resort', 'giga-impact', 'thunder-fang', 'ice-fang', 'fire-fang', 'after-you', 'round', 'retaliate', 'work-up', 'wild-charge', 'snarl', 'play-rough', 'confide', 'baby-doll-eyes', 'psychic-fangs'], 'name': 'lillipup', 'stats': {'hp': 45, 'attack': 60, 'defense': 45, 'special-attack': 25, 'special-defense': 45, 'speed': 55}, 'types': ['normal'], 'weight': 41, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'brown', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium-slow', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ヨーテリー', 'ko': '요테리', 'zh-Hant': '小約克', 'fr': 'Ponchiot', 'de': 'Yorkleff', 'es': 'Lillipup', 'it': 'Lillipup', 'en': 'Lillipup', 'ja': 'ヨーテリー', 'zh-Hans': '小约克'}, 'genera': {'ja-Hrkt': 'こいぬポケモン', 'ko': '강아지포켓몬', 'zh-Hant': '小狗寶可夢', 'fr': 'Pokémon Chiot', 'de': 'Hund', 'es': 'Pokémon Perrito', 'it': 'Pokémon Cagnolino', 'en': 'Puppy Pokémon', 'ja': 'こいぬポケモン', 'zh-Hans': '小狗宝可梦'}}
+	//Lillipup Specie to store common natural stats of all Lillipups
+	#region SpecieLillipup
 	public class SpecieLillipup : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieLillipup Builder
 		public SpecieLillipup() : base(
 			"Lillipup",
 			45, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			25, 45, // Special Attack & Defense
 			55			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Lillipup Pokemon Class
+	#region Lillipup
 	public class Lillipup : Pokemon
 	{
-
+		#region Lillipup Builders
+		/// <summary>
+		/// Lillipup Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Lillipup(string nickname, int level)
 		: base(
 				506,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lillipup Builder only waiting for a Level
+		/// </summary>
 		public Lillipup(int level)
 		: base(
 				506,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lillipup Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Lillipup() : base(
 			506,
 			SpecieLillipup.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

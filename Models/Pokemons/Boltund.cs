@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Boltund Specie to store common natural stats of every {'abilities': ['strong-jaw', 'competitive'], 'base_experience': 172, 'height': 10, 'id': 836, 'moves': [], 'name': 'boltund', 'stats': {'hp': 69, 'attack': 90, 'defense': 60, 'special-attack': 90, 'special-defense': 60, 'speed': 121}, 'types': ['electric'], 'weight': 340, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'yellow', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'fast', 'egg_groups': [], 'names': {'ja-Hrkt': 'パルスワン', 'ko': '펄스멍', 'zh-Hant': '逐電犬', 'fr': 'Fulgudog', 'de': 'Bellektro', 'es': 'Boltund', 'it': 'Boltund', 'en': 'Boltund', 'ja': 'パルスワン', 'zh-Hans': '逐电犬'}, 'genera': {'ja-Hrkt': 'いぬポケモン', 'ko': '개포켓몬', 'zh-Hant': '狗寶可夢', 'fr': 'Pokémon Chien', 'de': 'Hund', 'es': 'Pokémon Perro', 'it': 'Pokémon Cane', 'en': 'Dog Pokémon', 'ja': 'いぬポケモン', 'zh-Hans': '狗宝可梦'}}
+	//Boltund Specie to store common natural stats of all Boltunds
+	#region SpecieBoltund
 	public class SpecieBoltund : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBoltund Builder
 		public SpecieBoltund() : base(
 			"Boltund",
 			69, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			90, 60, // Special Attack & Defense
 			121			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Boltund Pokemon Class
+	#region Boltund
 	public class Boltund : Pokemon
 	{
-
+		#region Boltund Builders
+		/// <summary>
+		/// Boltund Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Boltund(string nickname, int level)
 		: base(
 				836,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Boltund Builder only waiting for a Level
+		/// </summary>
 		public Boltund(int level)
 		: base(
 				836,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Boltund Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Boltund() : base(
 			836,
 			SpecieBoltund.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

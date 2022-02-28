@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Crabominable Specie to store common natural stats of every {'abilities': ['hyper-cutter', 'iron-fist', 'anger-point'], 'base_experience': 167, 'height': 17, 'id': 740, 'moves': ['ice-punch', 'leer', 'ice-beam', 'blizzard', 'bubble-beam', 'earthquake', 'toxic', 'double-team', 'bubble', 'dizzy-punch', 'rest', 'rock-slide', 'substitute', 'thief', 'reversal', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'dynamic-punch', 'pursuit', 'hidden-power', 'rain-dance', 'sunny-day', 'rock-smash', 'hail', 'facade', 'brick-break', 'rock-tomb', 'iron-defense', 'bulk-up', 'close-combat', 'payback', 'fling', 'focus-blast', 'giga-impact', 'avalanche', 'stone-edge', 'round', 'scald', 'bulldoze', 'frost-breath', 'work-up', 'confide', 'power-up-punch', 'ice-hammer', 'brutal-swing'], 'name': 'crabominable', 'stats': {'hp': 97, 'attack': 132, 'defense': 77, 'special-attack': 62, 'special-defense': 67, 'speed': 43}, 'types': ['fighting', 'ice'], 'weight': 1800, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 60, 'color': 'white', 'shape': 'armor', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['water3'], 'names': {'ja-Hrkt': 'ケケンカニ', 'ko': '모단단게', 'zh-Hant': '好勝毛蟹', 'fr': 'Crabominable', 'de': 'Krawell', 'es': 'Crabominable', 'it': 'Crabominable', 'en': 'Crabominable', 'ja': 'ケケンカニ', 'zh-Hans': '好胜毛蟹'}, 'genera': {'ja-Hrkt': 'けがにポケモン', 'ko': '털게포켓몬', 'zh-Hant': '毛蟹寶可夢', 'fr': 'Pokémon Crabe Velu', 'de': 'Fellkrabbe', 'es': 'Pokémon Cangrejopelo', 'it': 'Pokémon Peligranchio', 'en': 'Woolly Crab Pokémon', 'ja': 'けがにポケモン', 'zh-Hans': '毛蟹宝可梦'}}
+	//Crabominable Specie to store common natural stats of all Crabominables
+	#region SpecieCrabominable
 	public class SpecieCrabominable : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCrabominable Builder
 		public SpecieCrabominable() : base(
 			"Crabominable",
 			97, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			62, 67, // Special Attack & Defense
 			43			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Crabominable Pokemon Class
+	#region Crabominable
 	public class Crabominable : Pokemon
 	{
-
+		#region Crabominable Builders
+		/// <summary>
+		/// Crabominable Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Crabominable(string nickname, int level)
 		: base(
 				740,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Crabominable Builder only waiting for a Level
+		/// </summary>
 		public Crabominable(int level)
 		: base(
 				740,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Crabominable Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Crabominable() : base(
 			740,
 			SpecieCrabominable.Instance, // Pokemon Specie
 			Fighting.Instance, Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

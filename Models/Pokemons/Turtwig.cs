@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Turtwig Specie to store common natural stats of every {'abilities': ['overgrow', 'shell-armor'], 'base_experience': 64, 'height': 4, 'id': 387, 'moves': ['swords-dance', 'cut', 'headbutt', 'tackle', 'body-slam', 'thrash', 'double-edge', 'bite', 'strength', 'absorb', 'mega-drain', 'leech-seed', 'growth', 'razor-leaf', 'solar-beam', 'toxic', 'double-team', 'withdraw', 'light-screen', 'reflect', 'amnesia', 'flash', 'rest', 'substitute', 'snore', 'curse', 'protect', 'mud-slap', 'giga-drain', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'iron-tail', 'synthesis', 'hidden-power', 'sunny-day', 'crunch', 'rock-smash', 'stockpile', 'spit-up', 'swallow', 'facade', 'nature-power', 'superpower', 'secret-power', 'tickle', 'sand-tomb', 'bullet-seed', 'natural-gift', 'worry-seed', 'seed-bomb', 'energy-ball', 'earth-power', 'rock-climb', 'leaf-storm', 'captivate', 'stealth-rock', 'grass-knot', 'wide-guard', 'heavy-slam', 'round', 'grass-pledge', 'work-up', 'grassy-terrain', 'confide'], 'name': 'turtwig', 'stats': {'hp': 55, 'attack': 68, 'defense': 64, 'special-attack': 45, 'special-defense': 55, 'speed': 31}, 'types': ['grass'], 'weight': 102, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'green', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium-slow', 'egg_groups': ['monster', 'plant'], 'names': {'ja-Hrkt': 'ナエトル', 'roomaji': 'Naetle', 'ko': '모부기', 'zh-Hant': '草苗龜', 'fr': 'Tortipouss', 'de': 'Chelast', 'es': 'Turtwig', 'it': 'Turtwig', 'en': 'Turtwig', 'ja': 'ナエトル', 'zh-Hans': '草苗龟'}, 'genera': {'ja-Hrkt': 'わかばポケモン', 'ko': '어린잎포켓몬', 'zh-Hant': '嫩葉寶可夢', 'fr': 'Pokémon Minifeuille', 'de': 'Winziglaub', 'es': 'Pokémon Hojita', 'it': 'Pokémon Fogliolina', 'en': 'Tiny Leaf Pokémon', 'ja': 'わかばポケモン', 'zh-Hans': '嫩叶宝可梦'}}
+	//Turtwig Specie to store common natural stats of all Turtwigs
+	#region SpecieTurtwig
 	public class SpecieTurtwig : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTurtwig Builder
 		public SpecieTurtwig() : base(
 			"Turtwig",
 			55, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			45, 55, // Special Attack & Defense
 			31			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Turtwig Pokemon Class
+	#region Turtwig
 	public class Turtwig : Pokemon
 	{
-
+		#region Turtwig Builders
+		/// <summary>
+		/// Turtwig Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Turtwig(string nickname, int level)
 		: base(
 				387,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Turtwig Builder only waiting for a Level
+		/// </summary>
 		public Turtwig(int level)
 		: base(
 				387,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Turtwig Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Turtwig() : base(
 			387,
 			SpecieTurtwig.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

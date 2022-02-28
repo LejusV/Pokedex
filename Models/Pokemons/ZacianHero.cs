@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zacian-Hero Specie to store common natural stats of every {'abilities': ['intrepid-sword'], 'base_experience': 335, 'height': 28, 'id': 888, 'moves': [], 'name': 'zacian-hero', 'stats': {'hp': 92, 'attack': 130, 'defense': 115, 'special-attack': 80, 'special-defense': 115, 'speed': 138}, 'types': ['fairy'], 'weight': 1100, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 10, 'color': 'blue', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ザシアン', 'ko': '자시안', 'zh-Hant': '蒼響', 'fr': 'Zacian', 'de': 'Zacian', 'es': 'Zacian', 'it': 'Zacian', 'en': 'Zacian', 'ja': 'ザシアン', 'zh-Hans': '苍响'}, 'genera': {'ja-Hrkt': 'つわものポケモン', 'ko': '강자포켓몬', 'zh-Hant': '強者寶可夢', 'fr': 'Pokémon Valeureux', 'de': 'Krieger', 'es': 'Pokémon Guerrero', 'it': 'Pokémon Guerriero', 'en': 'Warrior Pokémon', 'ja': 'つわものポケモン', 'zh-Hans': '强者宝可梦'}}
+	//Zacian-Hero Specie to store common natural stats of all Zacian-Heros
+	#region SpecieZacian-Hero
 	public class SpecieZacianHero : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieZacian-Hero Builder
 		public SpecieZacianHero() : base(
 			"Zacian-Hero",
 			92, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 115, // Special Attack & Defense
 			138			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Zacian-Hero Pokemon Class
+	#region Zacian-Hero
 	public class ZacianHero : Pokemon
 	{
-
+		#region Zacian-Hero Builders
+		/// <summary>
+		/// Zacian-Hero Builder waiting for a Nickname & a Level
+		/// </summary>
 		public ZacianHero(string nickname, int level)
 		: base(
 				888,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zacian-Hero Builder only waiting for a Level
+		/// </summary>
 		public ZacianHero(int level)
 		: base(
 				888,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zacian-Hero Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public ZacianHero() : base(
 			888,
 			SpecieZacianHero.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

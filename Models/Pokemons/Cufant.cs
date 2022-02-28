@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cufant Specie to store common natural stats of every {'abilities': ['sheer-force', 'heavy-metal'], 'base_experience': 66, 'height': 12, 'id': 878, 'moves': [], 'name': 'cufant', 'stats': {'hp': 72, 'attack': 80, 'defense': 49, 'special-attack': 40, 'special-defense': 49, 'speed': 40}, 'types': ['steel'], 'weight': 1000, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': 4, 'capture_rate': 190, 'color': 'yellow', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ゾウドウ', 'ko': '끼리동', 'zh-Hant': '銅象', 'fr': 'Charibari', 'de': 'Kupfanti', 'es': 'Cufant', 'it': 'Cufant', 'en': 'Cufant', 'ja': 'ゾウドウ', 'zh-Hans': '铜象'}, 'genera': {'ja-Hrkt': 'どうぞうポケモン', 'ko': '동상포켓몬', 'zh-Hant': '像銅寶可夢', 'fr': 'Pokémon Pachycuivre', 'de': 'Kupferfant', 'es': 'Pokémon Broncefante', 'it': 'Pokémon Bronzofante', 'en': 'Copperderm Pokémon', 'ja': 'どうぞうポケモン', 'zh-Hans': '像铜宝可梦'}}
+	//Cufant Specie to store common natural stats of all Cufants
+	#region SpecieCufant
 	public class SpecieCufant : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCufant Builder
 		public SpecieCufant() : base(
 			"Cufant",
 			72, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 49, // Special Attack & Defense
 			40			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Cufant Pokemon Class
+	#region Cufant
 	public class Cufant : Pokemon
 	{
-
+		#region Cufant Builders
+		/// <summary>
+		/// Cufant Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Cufant(string nickname, int level)
 		: base(
 				878,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cufant Builder only waiting for a Level
+		/// </summary>
 		public Cufant(int level)
 		: base(
 				878,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cufant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Cufant() : base(
 			878,
 			SpecieCufant.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

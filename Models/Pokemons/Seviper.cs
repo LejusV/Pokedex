@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Seviper Specie to store common natural stats of every {'abilities': ['shed-skin', 'infiltrator'], 'base_experience': 160, 'height': 27, 'id': 336, 'moves': ['swords-dance', 'bind', 'headbutt', 'body-slam', 'wrap', 'double-edge', 'bite', 'flamethrower', 'strength', 'earthquake', 'dig', 'toxic', 'mimic', 'screech', 'double-team', 'haze', 'lick', 'swift', 'glare', 'rest', 'substitute', 'thief', 'snore', 'protect', 'scary-face', 'sludge-bomb', 'mud-slap', 'giga-drain', 'endure', 'swagger', 'fury-cutter', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'rain-dance', 'sunny-day', 'crunch', 'rock-smash', 'stockpile', 'spit-up', 'swallow', 'facade', 'taunt', 'knock-off', 'snatch', 'secret-power', 'poison-fang', 'poison-tail', 'natural-gift', 'feint', 'payback', 'assurance', 'wring-out', 'gastro-acid', 'punishment', 'sucker-punch', 'poison-jab', 'dark-pulse', 'night-slash', 'aqua-tail', 'x-scissor', 'switcheroo', 'captivate', 'venoshock', 'sludge-wave', 'coil', 'round', 'retaliate', 'final-gambit', 'bulldoze', 'dragon-tail', 'belch', 'confide', 'venom-drench', 'infestation', 'brutal-swing'], 'name': 'seviper', 'stats': {'hp': 73, 'attack': 100, 'defense': 60, 'special-attack': 100, 'special-defense': 60, 'speed': 65}, 'types': ['poison'], 'weight': 525, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 90, 'color': 'black', 'shape': 'squiggle', 'habitat': 'grassland', 'generation': 'generation-iii', 'growth_rate': 'fast-then-very-slow', 'egg_groups': ['ground', 'dragon'], 'names': {'ja-Hrkt': 'ハブネーク', 'roomaji': 'Habunake', 'ko': '세비퍼', 'zh-Hant': '飯匙蛇', 'fr': 'Séviper', 'de': 'Vipitis', 'es': 'Seviper', 'it': 'Seviper', 'en': 'Seviper', 'ja': 'ハブネーク', 'zh-Hans': '饭匙蛇'}, 'genera': {'ja-Hrkt': 'キバへびポケモン', 'ko': '송곳뱀포켓몬', 'zh-Hant': '牙蛇寶可夢', 'fr': 'Pokémon Serpacroc', 'de': 'Reißzahn', 'es': 'Pokémon Colmillos', 'it': 'Pokémon Zannaserpe', 'en': 'Fang Snake Pokémon', 'ja': 'キバへびポケモン', 'zh-Hans': '牙蛇宝可梦'}}
+	//Seviper Specie to store common natural stats of all Sevipers
+	#region SpecieSeviper
 	public class SpecieSeviper : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSeviper Builder
 		public SpecieSeviper() : base(
 			"Seviper",
 			73, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			100, 60, // Special Attack & Defense
 			65			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Seviper Pokemon Class
+	#region Seviper
 	public class Seviper : Pokemon
 	{
-
+		#region Seviper Builders
+		/// <summary>
+		/// Seviper Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Seviper(string nickname, int level)
 		: base(
 				336,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Seviper Builder only waiting for a Level
+		/// </summary>
 		public Seviper(int level)
 		: base(
 				336,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Seviper Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Seviper() : base(
 			336,
 			SpecieSeviper.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dhelmise Specie to store common natural stats of every {'abilities': ['steelworker'], 'base_experience': 181, 'height': 39, 'id': 781, 'moves': ['swords-dance', 'slam', 'wrap', 'surf', 'hyper-beam', 'absorb', 'mega-drain', 'growth', 'solar-beam', 'earthquake', 'toxic', 'double-team', 'rest', 'rock-slide', 'substitute', 'thief', 'protect', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'rapid-spin', 'hidden-power', 'rain-dance', 'sunny-day', 'shadow-ball', 'whirlpool', 'facade', 'brick-break', 'astonish', 'metal-sound', 'aerial-ace', 'gyro-ball', 'payback', 'embargo', 'energy-ball', 'switcheroo', 'giga-impact', 'shadow-claw', 'flash-cannon', 'power-whip', 'grass-knot', 'sludge-wave', 'heavy-slam', 'round', 'bulldoze', 'phantom-force', 'confide', 'anchor-shot', 'brutal-swing'], 'name': 'dhelmise', 'stats': {'hp': 70, 'attack': 131, 'defense': 100, 'special-attack': 86, 'special-defense': 90, 'speed': 40}, 'types': ['ghost', 'grass'], 'weight': 2100, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': -1, 'capture_rate': 25, 'color': 'green', 'shape': 'blob', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ダダリン', 'ko': '타타륜', 'zh-Hant': '破破舵輪', 'fr': 'Sinistrail', 'de': 'Moruda', 'es': 'Dhelmise', 'it': 'Dhelmise', 'en': 'Dhelmise', 'ja': 'ダダリン', 'zh-Hans': '破破舵轮'}, 'genera': {'ja-Hrkt': 'もくずポケモン', 'ko': '해초조각포켓몬', 'zh-Hant': '碎藻寶可夢', 'fr': 'Pokémon Varech', 'de': 'Seetang', 'es': 'Pokémon Alga Ancla', 'it': 'Pokémon Brandellalga', 'en': 'Sea Creeper Pokémon', 'ja': 'もくずポケモン', 'zh-Hans': '碎藻宝可梦'}}
+	//Dhelmise Specie to store common natural stats of all Dhelmises
+	#region SpecieDhelmise
 	public class SpecieDhelmise : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDhelmise Builder
 		public SpecieDhelmise() : base(
 			"Dhelmise",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			86, 90, // Special Attack & Defense
 			40			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Dhelmise Pokemon Class
+	#region Dhelmise
 	public class Dhelmise : Pokemon
 	{
-
+		#region Dhelmise Builders
+		/// <summary>
+		/// Dhelmise Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Dhelmise(string nickname, int level)
 		: base(
 				781,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dhelmise Builder only waiting for a Level
+		/// </summary>
 		public Dhelmise(int level)
 		: base(
 				781,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dhelmise Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Dhelmise() : base(
 			781,
 			SpecieDhelmise.Instance, // Pokemon Specie
 			Ghost.Instance, Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

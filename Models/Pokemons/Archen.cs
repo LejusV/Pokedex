@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Archen Specie to store common natural stats of every {'abilities': ['defeatist'], 'base_experience': 71, 'height': 5, 'id': 566, 'moves': ['cut', 'wing-attack', 'thrash', 'leer', 'bite', 'roar', 'rock-throw', 'earthquake', 'dig', 'toxic', 'agility', 'quick-attack', 'double-team', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'scary-face', 'sandstorm', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'dragon-breath', 'iron-tail', 'hidden-power', 'crunch', 'ancient-power', 'rock-smash', 'uproar', 'heat-wave', 'torment', 'facade', 'taunt', 'knock-off', 'endeavor', 'secret-power', 'rock-tomb', 'aerial-ace', 'iron-defense', 'dragon-claw', 'bounce', 'roost', 'pluck', 'tailwind', 'u-turn', 'rock-polish', 'aqua-tail', 'dragon-pulse', 'earth-power', 'switcheroo', 'shadow-claw', 'zen-headbutt', 'defog', 'stone-edge', 'stealth-rock', 'head-smash', 'hone-claws', 'smack-down', 'round', 'quick-guard', 'ally-switch', 'acrobatics', 'bulldoze', 'confide'], 'name': 'archen', 'stats': {'hp': 55, 'attack': 112, 'defense': 45, 'special-attack': 74, 'special-defense': 45, 'speed': 70}, 'types': ['rock', 'flying'], 'weight': 95, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 30, 'gender_rate': 1, 'capture_rate': 45, 'color': 'yellow', 'shape': 'wings', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['flying', 'water3'], 'names': {'ja-Hrkt': 'アーケン', 'ko': '아켄', 'zh-Hant': '始祖小鳥', 'fr': 'Arkéapti', 'de': 'Flapteryx', 'es': 'Archen', 'it': 'Archen', 'en': 'Archen', 'ja': 'アーケン', 'zh-Hans': '始祖小鸟'}, 'genera': {'ja-Hrkt': 'さいこどりポケモン', 'ko': '최초새포켓몬', 'zh-Hant': '遠古鳥寶可夢', 'fr': 'Pokémon Oisancien', 'de': 'Urzeitvogel', 'es': 'Pokémon Protopájaro', 'it': 'Pokémon Paleouccello', 'en': 'First Bird Pokémon', 'ja': 'さいこどりポケモン', 'zh-Hans': '远古鸟宝可梦'}}
+	//Archen Specie to store common natural stats of all Archens
+	#region SpecieArchen
 	public class SpecieArchen : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieArchen Builder
 		public SpecieArchen() : base(
 			"Archen",
 			55, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			74, 45, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Archen Pokemon Class
+	#region Archen
 	public class Archen : Pokemon
 	{
-
+		#region Archen Builders
+		/// <summary>
+		/// Archen Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Archen(string nickname, int level)
 		: base(
 				566,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Archen Builder only waiting for a Level
+		/// </summary>
 		public Archen(int level)
 		: base(
 				566,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Archen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Archen() : base(
 			566,
 			SpecieArchen.Instance, // Pokemon Specie
 			Rock.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

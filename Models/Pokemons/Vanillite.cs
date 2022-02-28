@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vanillite Specie to store common natural stats of every {'abilities': ['ice-body', 'snow-cloak', 'weak-armor'], 'base_experience': 61, 'height': 4, 'id': 582, 'moves': ['mist', 'ice-beam', 'blizzard', 'toxic', 'double-team', 'harden', 'light-screen', 'acid-armor', 'explosion', 'rest', 'substitute', 'snore', 'powder-snow', 'protect', 'icy-wind', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'mirror-coat', 'uproar', 'hail', 'facade', 'taunt', 'magic-coat', 'imprison', 'secret-power', 'astonish', 'signal-beam', 'sheer-cold', 'icicle-spear', 'iron-defense', 'water-pulse', 'natural-gift', 'magnet-rise', 'avalanche', 'ice-shard', 'mirror-shot', 'flash-cannon', 'autotomize', 'round', 'frost-breath', 'confide'], 'name': 'vanillite', 'stats': {'hp': 36, 'attack': 50, 'defense': 50, 'special-attack': 65, 'special-defense': 60, 'speed': 44}, 'types': ['ice'], 'weight': 57, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 255, 'color': 'white', 'shape': 'blob', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'slow', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'バニプッチ', 'ko': '바닐프티', 'zh-Hant': '迷你冰', 'fr': 'Sorbébé', 'de': 'Gelatini', 'es': 'Vanillite', 'it': 'Vanillite', 'en': 'Vanillite', 'ja': 'バニプッチ', 'zh-Hans': '迷你冰'}, 'genera': {'ja-Hrkt': 'しんせつポケモン', 'ko': '신설포켓몬', 'zh-Hant': '新雪寶可夢', 'fr': 'Pokémon Poudreuse', 'de': 'Neuschnee', 'es': 'Pokémon Nieve Fresca', 'it': 'Pokémon Nevefresca', 'en': 'Fresh Snow Pokémon', 'ja': 'しんせつポケモン', 'zh-Hans': '新雪宝可梦'}}
+	//Vanillite Specie to store common natural stats of all Vanillites
+	#region SpecieVanillite
 	public class SpecieVanillite : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieVanillite Builder
 		public SpecieVanillite() : base(
 			"Vanillite",
 			36, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			65, 60, // Special Attack & Defense
 			44			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Vanillite Pokemon Class
+	#region Vanillite
 	public class Vanillite : Pokemon
 	{
-
+		#region Vanillite Builders
+		/// <summary>
+		/// Vanillite Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Vanillite(string nickname, int level)
 		: base(
 				582,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vanillite Builder only waiting for a Level
+		/// </summary>
 		public Vanillite(int level)
 		: base(
 				582,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vanillite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Vanillite() : base(
 			582,
 			SpecieVanillite.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

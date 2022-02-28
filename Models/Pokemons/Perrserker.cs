@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Perrserker Specie to store common natural stats of every {'abilities': ['battle-armor', 'tough-claws', 'steely-spirit'], 'base_experience': 154, 'height': 8, 'id': 863, 'moves': [], 'name': 'perrserker', 'stats': {'hp': 70, 'attack': 110, 'defense': 100, 'special-attack': 50, 'special-defense': 60, 'speed': 50}, 'types': ['steel'], 'weight': 280, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 90, 'color': 'brown', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ニャイキング', 'ko': '나이킹', 'zh-Hant': '喵頭目', 'fr': 'Berserkatt', 'de': 'Mauzinger', 'es': 'Perrserker', 'it': 'Perrserker', 'en': 'Perrserker', 'ja': 'ニャイキング', 'zh-Hans': '喵头目'}, 'genera': {'ja-Hrkt': 'バイキングポケモン', 'ko': '바이킹포켓몬', 'zh-Hant': '維京寶可夢', 'fr': 'Pokémon Viking', 'de': 'Wikinger', 'es': 'Pokémon Vikingo', 'it': 'Pokémon Vichingo', 'en': 'Viking Pokémon', 'ja': 'バイキングポケモン', 'zh-Hans': '维京宝可梦'}}
+	//Perrserker Specie to store common natural stats of all Perrserkers
+	#region SpeciePerrserker
 	public class SpeciePerrserker : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePerrserker Builder
 		public SpeciePerrserker() : base(
 			"Perrserker",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 60, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Perrserker Pokemon Class
+	#region Perrserker
 	public class Perrserker : Pokemon
 	{
-
+		#region Perrserker Builders
+		/// <summary>
+		/// Perrserker Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Perrserker(string nickname, int level)
 		: base(
 				863,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Perrserker Builder only waiting for a Level
+		/// </summary>
 		public Perrserker(int level)
 		: base(
 				863,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Perrserker Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Perrserker() : base(
 			863,
 			SpeciePerrserker.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

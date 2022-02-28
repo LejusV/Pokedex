@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rolycoly Specie to store common natural stats of every {'abilities': ['steam-engine', 'heatproof', 'flash-fire'], 'base_experience': 48, 'height': 3, 'id': 837, 'moves': [], 'name': 'rolycoly', 'stats': {'hp': 30, 'attack': 40, 'defense': 50, 'special-attack': 40, 'special-defense': 50, 'speed': 30}, 'types': ['rock'], 'weight': 120, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'black', 'shape': 'ball', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'タンドン', 'ko': '탄동', 'zh-Hant': '小炭仔', 'fr': 'Charbi', 'de': 'Klonkett', 'es': 'Rolycoly', 'it': 'Rolycoly', 'en': 'Rolycoly', 'ja': 'タンドン', 'zh-Hans': '小炭仔'}, 'genera': {'ja-Hrkt': 'せきたんポケモン', 'ko': '석탄포켓몬', 'zh-Hant': '煤炭寶可夢', 'fr': 'Pokémon Charbon', 'de': 'Kohle', 'es': 'Pokémon Carbón', 'it': 'Pokémon Carbone', 'en': 'Coal Pokémon', 'ja': 'せきたんポケモン', 'zh-Hans': '煤炭宝可梦'}}
+	//Rolycoly Specie to store common natural stats of all Rolycolys
+	#region SpecieRolycoly
 	public class SpecieRolycoly : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieRolycoly Builder
 		public SpecieRolycoly() : base(
 			"Rolycoly",
 			30, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Rolycoly Pokemon Class
+	#region Rolycoly
 	public class Rolycoly : Pokemon
 	{
-
+		#region Rolycoly Builders
+		/// <summary>
+		/// Rolycoly Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Rolycoly(string nickname, int level)
 		: base(
 				837,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Rolycoly Builder only waiting for a Level
+		/// </summary>
 		public Rolycoly(int level)
 		: base(
 				837,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Rolycoly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Rolycoly() : base(
 			837,
 			SpecieRolycoly.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

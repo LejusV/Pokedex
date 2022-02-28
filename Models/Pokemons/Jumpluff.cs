@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jumpluff Specie to store common natural stats of every {'abilities': ['chlorophyll', 'leaf-guard', 'infiltrator'], 'base_experience': 207, 'height': 8, 'id': 189, 'moves': ['swords-dance', 'headbutt', 'tackle', 'double-edge', 'tail-whip', 'hyper-beam', 'absorb', 'mega-drain', 'leech-seed', 'solar-beam', 'poison-powder', 'stun-spore', 'sleep-powder', 'toxic', 'mimic', 'double-team', 'defense-curl', 'reflect', 'flash', 'splash', 'rest', 'substitute', 'snore', 'curse', 'cotton-spore', 'protect', 'giga-drain', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'sweet-scent', 'synthesis', 'hidden-power', 'sunny-day', 'psych-up', 'memento', 'facade', 'helping-hand', 'secret-power', 'silver-wind', 'bullet-seed', 'aerial-ace', 'bounce', 'natural-gift', 'u-turn', 'worry-seed', 'seed-bomb', 'energy-ball', 'giga-impact', 'captivate', 'grass-knot', 'rage-powder', 'round', 'acrobatics', 'fairy-wind', 'confide', 'dazzling-gleam', 'infestation'], 'name': 'jumpluff', 'stats': {'hp': 75, 'attack': 55, 'defense': 70, 'special-attack': 55, 'special-defense': 95, 'speed': 110}, 'types': ['grass', 'flying'], 'weight': 30, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'blue', 'shape': 'upright', 'habitat': 'grassland', 'generation': 'generation-ii', 'growth_rate': 'medium-slow', 'egg_groups': ['fairy', 'plant'], 'names': {'ja-Hrkt': 'ワタッコ', 'roomaji': 'Watacco', 'ko': '솜솜코', 'zh-Hant': '毽子棉', 'fr': 'Cotovol', 'de': 'Papungha', 'es': 'Jumpluff', 'it': 'Jumpluff', 'en': 'Jumpluff', 'ja': 'ワタッコ', 'zh-Hans': '毽子棉'}, 'genera': {'ja-Hrkt': 'わたくさポケモン', 'ko': '솜풀포켓몬', 'zh-Hant': '棉草寶可夢', 'fr': 'Pokémon Pissenlit', 'de': 'Löwenzahn', 'es': 'Pokémon Algadón', 'it': 'Pokémon Gramigna', 'en': 'Cottonweed Pokémon', 'ja': 'わたくさポケモン', 'zh-Hans': '棉草宝可梦'}}
+	//Jumpluff Specie to store common natural stats of all Jumpluffs
+	#region SpecieJumpluff
 	public class SpecieJumpluff : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieJumpluff Builder
 		public SpecieJumpluff() : base(
 			"Jumpluff",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 95, // Special Attack & Defense
 			110			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Jumpluff Pokemon Class
+	#region Jumpluff
 	public class Jumpluff : Pokemon
 	{
-
+		#region Jumpluff Builders
+		/// <summary>
+		/// Jumpluff Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Jumpluff(string nickname, int level)
 		: base(
 				189,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Jumpluff Builder only waiting for a Level
+		/// </summary>
 		public Jumpluff(int level)
 		: base(
 				189,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Jumpluff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Jumpluff() : base(
 			189,
 			SpecieJumpluff.Instance, // Pokemon Specie
 			Grass.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kyurem Specie to store common natural stats of every {'abilities': ['pressure'], 'base_experience': 297, 'height': 30, 'id': 646, 'moves': ['cut', 'fly', 'ice-beam', 'blizzard', 'hyper-beam', 'strength', 'dragon-rage', 'toxic', 'psychic', 'double-team', 'light-screen', 'reflect', 'rest', 'rock-slide', 'slash', 'substitute', 'snore', 'protect', 'scary-face', 'icy-wind', 'outrage', 'swagger', 'steel-wing', 'sleep-talk', 'return', 'frustration', 'safeguard', 'dragon-breath', 'hidden-power', 'rain-dance', 'sunny-day', 'ancient-power', 'shadow-ball', 'rock-smash', 'hail', 'facade', 'endeavor', 'imprison', 'secret-power', 'hyper-voice', 'rock-tomb', 'signal-beam', 'dragon-claw', 'roost', 'payback', 'fling', 'dragon-pulse', 'focus-blast', 'earth-power', 'giga-impact', 'shadow-claw', 'zen-headbutt', 'flash-cannon', 'draco-meteor', 'iron-head', 'stone-edge', 'hone-claws', 'round', 'echoed-voice', 'dragon-tail', 'glaciate', 'noble-roar', 'confide', 'brutal-swing'], 'name': 'kyurem', 'stats': {'hp': 125, 'attack': 130, 'defense': 90, 'special-attack': 130, 'special-defense': 90, 'speed': 95}, 'types': ['dragon', 'ice'], 'weight': 3250, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'upright', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'キュレム', 'ko': '큐레무', 'zh-Hant': '酋雷姆', 'fr': 'Kyurem', 'de': 'Kyurem', 'es': 'Kyurem', 'it': 'Kyurem', 'en': 'Kyurem', 'ja': 'キュレム', 'zh-Hans': '酋雷姆'}, 'genera': {'ja-Hrkt': 'きょうかいポケモン', 'ko': '경계포켓몬', 'zh-Hant': '境界寶可夢', 'fr': 'Pokémon Frontière', 'de': 'Schwelle', 'es': 'Pokémon Frontera', 'it': 'Pokémon Confine', 'en': 'Boundary Pokémon', 'ja': 'きょうかいポケモン', 'zh-Hans': '境界宝可梦'}}
+	//Kyurem Specie to store common natural stats of all Kyurems
+	#region SpecieKyurem
 	public class SpecieKyurem : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieKyurem Builder
 		public SpecieKyurem() : base(
 			"Kyurem",
 			125, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			130, 90, // Special Attack & Defense
 			95			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Kyurem Pokemon Class
+	#region Kyurem
 	public class Kyurem : Pokemon
 	{
-
+		#region Kyurem Builders
+		/// <summary>
+		/// Kyurem Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Kyurem(string nickname, int level)
 		: base(
 				646,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kyurem Builder only waiting for a Level
+		/// </summary>
 		public Kyurem(int level)
 		: base(
 				646,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kyurem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Kyurem() : base(
 			646,
 			SpecieKyurem.Instance, // Pokemon Specie
 			Dragon.Instance, Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

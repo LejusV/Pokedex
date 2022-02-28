@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Chewtle Specie to store common natural stats of every {'abilities': ['strong-jaw', 'shell-armor', 'swift-swim'], 'base_experience': 57, 'height': 3, 'id': 833, 'moves': [], 'name': 'chewtle', 'stats': {'hp': 50, 'attack': 64, 'defense': 50, 'special-attack': 38, 'special-defense': 38, 'speed': 44}, 'types': ['water'], 'weight': 85, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 255, 'color': 'green', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'カムカメ', 'ko': '깨물부기', 'zh-Hant': '咬咬龜', 'fr': 'Khélocrok', 'de': 'Kamehaps', 'es': 'Chewtle', 'it': 'Chewtle', 'en': 'Chewtle', 'ja': 'カムカメ', 'zh-Hans': '咬咬龟 '}, 'genera': {'ja-Hrkt': 'くいつきポケモン', 'ko': '물고늘어지기포켓몬', 'zh-Hant': '咬住寶可夢', 'fr': 'Pokémon Mordillage', 'de': 'Schnapp', 'es': 'Pokémon Mordedura', 'it': 'Pokémon Mordace', 'en': 'Snapping Pokémon', 'ja': 'くいつきポケモン', 'zh-Hans': '咬住宝可梦'}}
+	//Chewtle Specie to store common natural stats of all Chewtles
+	#region SpecieChewtle
 	public class SpecieChewtle : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieChewtle Builder
 		public SpecieChewtle() : base(
 			"Chewtle",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			38, 38, // Special Attack & Defense
 			44			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Chewtle Pokemon Class
+	#region Chewtle
 	public class Chewtle : Pokemon
 	{
-
+		#region Chewtle Builders
+		/// <summary>
+		/// Chewtle Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Chewtle(string nickname, int level)
 		: base(
 				833,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Chewtle Builder only waiting for a Level
+		/// </summary>
 		public Chewtle(int level)
 		: base(
 				833,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Chewtle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Chewtle() : base(
 			833,
 			SpecieChewtle.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

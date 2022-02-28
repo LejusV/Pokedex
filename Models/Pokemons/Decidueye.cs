@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Decidueye Specie to store common natural stats of every {'abilities': ['overgrow', 'long-reach'], 'base_experience': 239, 'height': 16, 'id': 724, 'moves': ['swords-dance', 'fury-attack', 'tackle', 'growl', 'peck', 'razor-leaf', 'solar-beam', 'toxic', 'double-team', 'light-screen', 'rest', 'substitute', 'protect', 'foresight', 'false-swipe', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'synthesis', 'hidden-power', 'sunny-day', 'shadow-ball', 'facade', 'nature-power', 'feather-dance', 'astonish', 'frenzy-plant', 'leaf-blade', 'roost', 'pluck', 'u-turn', 'sucker-punch', 'energy-ball', 'brave-bird', 'giga-impact', 'nasty-plot', 'shadow-claw', 'shadow-sneak', 'leaf-storm', 'grass-knot', 'ominous-wind', 'smack-down', 'low-sweep', 'round', 'echoed-voice', 'acrobatics', 'grass-pledge', 'work-up', 'phantom-force', 'confide', 'spirit-shackle', 'leafage'], 'name': 'decidueye', 'stats': {'hp': 78, 'attack': 107, 'defense': 75, 'special-attack': 100, 'special-defense': 100, 'speed': 70}, 'types': ['grass', 'ghost'], 'weight': 366, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 1, 'capture_rate': 45, 'color': 'brown', 'shape': 'wings', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'ジュナイパー', 'ko': '모크나이퍼', 'zh-Hant': '狙射樹梟', 'fr': 'Archéduc', 'de': 'Silvarro', 'es': 'Decidueye', 'it': 'Decidueye', 'en': 'Decidueye', 'ja': 'ジュナイパー', 'zh-Hans': '狙射树枭'}, 'genera': {'ja-Hrkt': 'やばねポケモン', 'ko': '화살깃포켓몬', 'zh-Hant': '箭羽寶可夢', 'fr': 'Pokémon Plumeflèche', 'de': 'Pfeilflügel', 'es': 'Pokémon Pluma Flecha', 'it': 'Pokémon Alifreccia', 'en': 'Arrow Quill Pokémon', 'ja': 'やばねポケモン', 'zh-Hans': '箭羽宝可梦'}}
+	//Decidueye Specie to store common natural stats of all Decidueyes
+	#region SpecieDecidueye
 	public class SpecieDecidueye : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDecidueye Builder
 		public SpecieDecidueye() : base(
 			"Decidueye",
 			78, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Decidueye Pokemon Class
+	#region Decidueye
 	public class Decidueye : Pokemon
 	{
-
+		#region Decidueye Builders
+		/// <summary>
+		/// Decidueye Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Decidueye(string nickname, int level)
 		: base(
 				724,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Decidueye Builder only waiting for a Level
+		/// </summary>
 		public Decidueye(int level)
 		: base(
 				724,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Decidueye Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Decidueye() : base(
 			724,
 			SpecieDecidueye.Instance, // Pokemon Specie
 			Grass.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shuppet Specie to store common natural stats of every {'abilities': ['insomnia', 'frisk', 'cursed-body'], 'base_experience': 59, 'height': 6, 'id': 353, 'moves': ['headbutt', 'body-slam', 'double-edge', 'disable', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'psychic', 'night-shade', 'mimic', 'screech', 'double-team', 'confuse-ray', 'dream-eater', 'flash', 'rest', 'substitute', 'thief', 'nightmare', 'snore', 'curse', 'spite', 'protect', 'feint-attack', 'foresight', 'destiny-bond', 'icy-wind', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pain-split', 'pursuit', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'shadow-ball', 'torment', 'will-o-wisp', 'facade', 'taunt', 'trick', 'role-play', 'magic-coat', 'knock-off', 'skill-swap', 'imprison', 'grudge', 'snatch', 'secret-power', 'astonish', 'calm-mind', 'shock-wave', 'natural-gift', 'payback', 'embargo', 'sucker-punch', 'dark-pulse', 'shadow-sneak', 'trick-room', 'gunk-shot', 'captivate', 'charge-beam', 'ominous-wind', 'telekinesis', 'magic-room', 'foul-play', 'round', 'hex', 'phantom-force', 'confide', 'dazzling-gleam'], 'name': 'shuppet', 'stats': {'hp': 44, 'attack': 75, 'defense': 35, 'special-attack': 63, 'special-defense': 33, 'speed': 45}, 'types': ['ghost'], 'weight': 23, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': 4, 'capture_rate': 225, 'color': 'black', 'shape': 'ball', 'habitat': 'urban', 'generation': 'generation-iii', 'growth_rate': 'fast', 'egg_groups': ['indeterminate'], 'names': {'ja-Hrkt': 'カゲボウズ', 'roomaji': 'Kagebouzu', 'ko': '어둠대신', 'zh-Hant': '怨影娃娃', 'fr': 'Polichombr', 'de': 'Shuppet', 'es': 'Shuppet', 'it': 'Shuppet', 'en': 'Shuppet', 'ja': 'カゲボウズ', 'zh-Hans': '怨影娃娃'}, 'genera': {'ja-Hrkt': 'にんぎょうポケモン', 'ko': '인형포켓몬', 'zh-Hant': '人偶寶可夢', 'fr': 'Pokémon Poupée', 'de': 'Puppe', 'es': 'Pokémon Títere', 'it': 'Pokémon Pupazzo', 'en': 'Puppet Pokémon', 'ja': 'にんぎょうポケモン', 'zh-Hans': '人偶宝可梦'}}
+	//Shuppet Specie to store common natural stats of all Shuppets
+	#region SpecieShuppet
 	public class SpecieShuppet : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieShuppet Builder
 		public SpecieShuppet() : base(
 			"Shuppet",
 			44, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			63, 33, // Special Attack & Defense
 			45			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Shuppet Pokemon Class
+	#region Shuppet
 	public class Shuppet : Pokemon
 	{
-
+		#region Shuppet Builders
+		/// <summary>
+		/// Shuppet Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Shuppet(string nickname, int level)
 		: base(
 				353,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shuppet Builder only waiting for a Level
+		/// </summary>
 		public Shuppet(int level)
 		: base(
 				353,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shuppet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Shuppet() : base(
 			353,
 			SpecieShuppet.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

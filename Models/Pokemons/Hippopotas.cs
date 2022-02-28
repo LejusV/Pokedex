@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hippopotas Specie to store common natural stats of every {'abilities': ['sand-stream', 'sand-force'], 'base_experience': 66, 'height': 8, 'id': 449, 'moves': ['whirlwind', 'sand-attack', 'headbutt', 'tackle', 'body-slam', 'take-down', 'double-edge', 'bite', 'roar', 'strength', 'earthquake', 'fissure', 'dig', 'toxic', 'double-team', 'rest', 'rock-slide', 'substitute', 'snore', 'curse', 'protect', 'mud-slap', 'sandstorm', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'sunny-day', 'crunch', 'rock-smash', 'stockpile', 'spit-up', 'swallow', 'facade', 'superpower', 'revenge', 'yawn', 'secret-power', 'slack-off', 'rock-tomb', 'sand-tomb', 'water-pulse', 'natural-gift', 'earth-power', 'captivate', 'stealth-rock', 'round', 'bulldoze', 'confide'], 'name': 'hippopotas', 'stats': {'hp': 68, 'attack': 72, 'defense': 78, 'special-attack': 38, 'special-defense': 42, 'speed': 32}, 'types': ['ground'], 'weight': 495, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 30, 'gender_rate': 4, 'capture_rate': 140, 'color': 'brown', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'slow', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ヒポポタス', 'roomaji': 'Hipopotas', 'ko': '히포포타스', 'zh-Hant': '沙河馬', 'fr': 'Hippopotas', 'de': 'Hippopotas', 'es': 'Hippopotas', 'it': 'Hippopotas', 'en': 'Hippopotas', 'ja': 'ヒポポタス', 'zh-Hans': '沙河马'}, 'genera': {'ja-Hrkt': 'カバポケモン', 'ko': '하마포켓몬', 'zh-Hant': '河馬寶可夢', 'fr': 'Pokémon Hippo', 'de': 'Flusspferd', 'es': 'Pokémon Hipo', 'it': 'Pokémon Ippo', 'en': 'Hippo Pokémon', 'ja': 'カバポケモン', 'zh-Hans': '河马宝可梦'}}
+	//Hippopotas Specie to store common natural stats of all Hippopotass
+	#region SpecieHippopotas
 	public class SpecieHippopotas : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieHippopotas Builder
 		public SpecieHippopotas() : base(
 			"Hippopotas",
 			68, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			38, 42, // Special Attack & Defense
 			32			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Hippopotas Pokemon Class
+	#region Hippopotas
 	public class Hippopotas : Pokemon
 	{
-
+		#region Hippopotas Builders
+		/// <summary>
+		/// Hippopotas Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Hippopotas(string nickname, int level)
 		: base(
 				449,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Hippopotas Builder only waiting for a Level
+		/// </summary>
 		public Hippopotas(int level)
 		: base(
 				449,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Hippopotas Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Hippopotas() : base(
 			449,
 			SpecieHippopotas.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

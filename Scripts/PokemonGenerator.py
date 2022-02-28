@@ -3,25 +3,18 @@ import json
 import os
 
 # Load the json file
+# Database containing all pokemon to generate them
 data = {}
 with open("Data\\pokemon.json", encoding="utf-8") as F:
 	data = json.load(F)
-
-# Give every poke that should be generated
-#nameList = ["squirtle", "bulbasaur", "charmander"]
-#nameList.extend(["fire-punch", "ice-punch", "thunder-punch", "shadow-punch"])
 
 # For each poke in the list
 for poke in data.values():
 
 	# Find the name to use in file names
-	x = 0
 	pokeName: str = poke["name"].title()
 	pokeNameNoSpace: str = ''.join([c for c in pokeName if c not in (' ', '-')])
 	pokeStats = poke["stats"]
-
-	# If the file alreay exist, don't touch it
-	#if (os.path.isfile(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs")): continue
 
 	# Create the PokemonMove class, by opening a file
 	with open(f"Models\\Pokemons\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as f:
@@ -34,7 +27,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {{
-	//{pokeName} Specie to store common natural stats of every {poke}
+	//{pokeName} Specie to store common natural stats of all {pokeName}s
+	#region Specie{pokeName}
 	public class Specie{pokeNameNoSpace} : PokemonSpecie
 	{{
 #nullable enable
@@ -52,6 +46,7 @@ namespace Pokedex.Models.Pokemons
             }}
         }}
 
+		#region Specie{pokeName} Builder
 		public Specie{pokeNameNoSpace}() : base(
 			"{pokeName}",
 			{pokeStats["hp"]}, // HPs
@@ -59,13 +54,18 @@ namespace Pokedex.Models.Pokemons
 			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense
 			{pokeStats["speed"]}			
 		) {{}}
+		#endregion
 	}}
-
+	#endregion
 
 	//{pokeName} Pokemon Class
+	#region {pokeName}
 	public class {pokeNameNoSpace} : Pokemon
 	{{
-
+		#region {pokeName} Builders
+		/// <summary>
+		/// {pokeName} Builder waiting for a Nickname & a Level
+		/// </summary>
 		public {pokeNameNoSpace}(string nickname, int level)
 		: base(
 				{poke["id"]},
@@ -78,6 +78,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}}
 
+		/// <summary>
+		/// {pokeName} Builder only waiting for a Level
+		/// </summary>
 		public {pokeNameNoSpace}(int level)
 		: base(
 				{poke["id"]},
@@ -90,12 +93,17 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}}
 
+		/// <summary>
+		/// {pokeName} Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public {pokeNameNoSpace}() : base(
 			{poke["id"]},
 			Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
 			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		) {{}}
+		#endregion
 	}}
+	#endregion
 }}
 
 """[2:-2]

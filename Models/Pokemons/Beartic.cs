@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Beartic Specie to store common natural stats of every {'abilities': ['snow-cloak', 'slush-rush', 'swift-swim'], 'base_experience': 177, 'height': 26, 'id': 614, 'moves': ['ice-punch', 'swords-dance', 'cut', 'thrash', 'growl', 'roar', 'surf', 'ice-beam', 'blizzard', 'hyper-beam', 'low-kick', 'strength', 'dig', 'toxic', 'double-team', 'bide', 'fury-swipes', 'rest', 'rock-slide', 'slash', 'substitute', 'snore', 'flail', 'powder-snow', 'protect', 'icy-wind', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'rock-smash', 'hail', 'facade', 'focus-punch', 'taunt', 'superpower', 'brick-break', 'secret-power', 'dive', 'rock-tomb', 'sheer-cold', 'aerial-ace', 'bulk-up', 'covet', 'water-pulse', 'brine', 'fling', 'focus-blast', 'giga-impact', 'shadow-claw', 'stone-edge', 'grass-knot', 'aqua-jet', 'hone-claws', 'round', 'echoed-voice', 'bulldoze', 'frost-breath', 'icicle-crash', 'play-nice', 'confide', 'power-up-punch'], 'name': 'beartic', 'stats': {'hp': 95, 'attack': 130, 'defense': 80, 'special-attack': 70, 'special-defense': 80, 'speed': 50}, 'types': ['ice'], 'weight': 2600, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 60, 'color': 'white', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ツンベアー', 'ko': '툰베어', 'zh-Hant': '凍原熊', 'fr': 'Polagriffe', 'de': 'Siberio', 'es': 'Beartic', 'it': 'Beartic', 'en': 'Beartic', 'ja': 'ツンベアー', 'zh-Hans': '冻原熊'}, 'genera': {'ja-Hrkt': 'とうけつポケモン', 'ko': '동결포켓몬', 'zh-Hant': '凍結寶可夢', 'fr': 'Pokémon Congelé', 'de': 'Packeis', 'es': 'Pokémon Glaciación', 'it': 'Pokémon Glaciale', 'en': 'Freezing Pokémon', 'ja': 'とうけつポケモン', 'zh-Hans': '冻结宝可梦'}}
+	//Beartic Specie to store common natural stats of all Beartics
+	#region SpecieBeartic
 	public class SpecieBeartic : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBeartic Builder
 		public SpecieBeartic() : base(
 			"Beartic",
 			95, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Beartic Pokemon Class
+	#region Beartic
 	public class Beartic : Pokemon
 	{
-
+		#region Beartic Builders
+		/// <summary>
+		/// Beartic Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Beartic(string nickname, int level)
 		: base(
 				614,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Beartic Builder only waiting for a Level
+		/// </summary>
 		public Beartic(int level)
 		: base(
 				614,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Beartic Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Beartic() : base(
 			614,
 			SpecieBeartic.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

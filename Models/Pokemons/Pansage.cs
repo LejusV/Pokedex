@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pansage Specie to store common natural stats of every {'abilities': ['gluttony', 'overgrow'], 'base_experience': 63, 'height': 6, 'id': 511, 'moves': ['scratch', 'cut', 'vine-whip', 'leer', 'bite', 'low-kick', 'leech-seed', 'solar-beam', 'dig', 'toxic', 'double-team', 'lick', 'flash', 'fury-swipes', 'rest', 'substitute', 'thief', 'snore', 'protect', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'synthesis', 'hidden-power', 'sunny-day', 'crunch', 'rock-smash', 'uproar', 'torment', 'facade', 'focus-punch', 'nature-power', 'taunt', 'helping-hand', 'role-play', 'recycle', 'knock-off', 'endeavor', 'secret-power', 'astonish', 'rock-tomb', 'grass-whistle', 'tickle', 'bullet-seed', 'covet', 'magical-leaf', 'natural-gift', 'payback', 'fling', 'gastro-acid', 'worry-seed', 'seed-bomb', 'energy-ball', 'nasty-plot', 'shadow-claw', 'leaf-storm', 'gunk-shot', 'grass-knot', 'hone-claws', 'low-sweep', 'round', 'acrobatics', 'grass-pledge', 'work-up', 'disarming-voice', 'play-nice', 'confide', 'spiky-shield'], 'name': 'pansage', 'stats': {'hp': 50, 'attack': 53, 'defense': 48, 'special-attack': 53, 'special-defense': 48, 'speed': 64}, 'types': ['grass'], 'weight': 105, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 190, 'color': 'green', 'shape': 'upright', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ヤナップ', 'ko': '야나프', 'zh-Hant': '花椰猴', 'fr': 'Feuillajou', 'de': 'Vegimak', 'es': 'Pansage', 'it': 'Pansage', 'en': 'Pansage', 'ja': 'ヤナップ', 'zh-Hans': '花椰猴'}, 'genera': {'ja-Hrkt': 'くさざるポケモン', 'ko': '풀원숭이포켓몬', 'zh-Hant': '草猴寶可夢', 'fr': 'Pokémon Singe Herbe', 'de': 'Grasaffe', 'es': 'Pokémon Mono Hierba', 'it': 'Pokémon Scimperba', 'en': 'Grass Monkey Pokémon', 'ja': 'くさざるポケモン', 'zh-Hans': '草猴宝可梦'}}
+	//Pansage Specie to store common natural stats of all Pansages
+	#region SpeciePansage
 	public class SpeciePansage : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePansage Builder
 		public SpeciePansage() : base(
 			"Pansage",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			53, 48, // Special Attack & Defense
 			64			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Pansage Pokemon Class
+	#region Pansage
 	public class Pansage : Pokemon
 	{
-
+		#region Pansage Builders
+		/// <summary>
+		/// Pansage Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Pansage(string nickname, int level)
 		: base(
 				511,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pansage Builder only waiting for a Level
+		/// </summary>
 		public Pansage(int level)
 		: base(
 				511,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pansage Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Pansage() : base(
 			511,
 			SpeciePansage.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

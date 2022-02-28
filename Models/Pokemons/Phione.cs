@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Phione Specie to store common natural stats of every {'abilities': ['hydration'], 'base_experience': 216, 'height': 4, 'id': 489, 'moves': ['supersonic', 'surf', 'ice-beam', 'blizzard', 'bubble-beam', 'toxic', 'double-team', 'waterfall', 'swift', 'bubble', 'acid-armor', 'rest', 'substitute', 'snore', 'protect', 'mud-slap', 'icy-wind', 'endure', 'charm', 'swagger', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'safeguard', 'hidden-power', 'rain-dance', 'psych-up', 'ancient-power', 'whirlpool', 'uproar', 'hail', 'facade', 'helping-hand', 'knock-off', 'secret-power', 'dive', 'signal-beam', 'bounce', 'covet', 'water-sport', 'water-pulse', 'brine', 'natural-gift', 'u-turn', 'fling', 'last-resort', 'aqua-ring', 'grass-knot', 'round', 'scald', 'confide', 'dazzling-gleam'], 'name': 'phione', 'stats': {'hp': 80, 'attack': 80, 'defense': 80, 'special-attack': 80, 'special-defense': 80, 'speed': 80}, 'types': ['water'], 'weight': 31, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 40, 'gender_rate': -1, 'capture_rate': 30, 'color': 'blue', 'shape': 'arms', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'slow', 'egg_groups': ['water1', 'fairy'], 'names': {'ja-Hrkt': 'フィオネ', 'roomaji': 'Phione', 'ko': '피오네', 'zh-Hant': '霏歐納', 'fr': 'Phione', 'de': 'Phione', 'es': 'Phione', 'it': 'Phione', 'en': 'Phione', 'ja': 'フィオネ', 'zh-Hans': '霏欧纳'}, 'genera': {'ja-Hrkt': 'かいようポケモン', 'ko': '해양포켓몬', 'zh-Hant': '海洋寶可夢', 'fr': 'Pokémon Dérivenmer', 'de': 'Seedrift', 'es': 'Pokémon Marino', 'it': 'Pokémon Oceanbondo', 'en': 'Sea Drifter Pokémon', 'ja': 'かいようポケモン', 'zh-Hans': '海洋宝可梦'}}
+	//Phione Specie to store common natural stats of all Phiones
+	#region SpeciePhione
 	public class SpeciePhione : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePhione Builder
 		public SpeciePhione() : base(
 			"Phione",
 			80, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			80			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Phione Pokemon Class
+	#region Phione
 	public class Phione : Pokemon
 	{
-
+		#region Phione Builders
+		/// <summary>
+		/// Phione Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Phione(string nickname, int level)
 		: base(
 				489,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Phione Builder only waiting for a Level
+		/// </summary>
 		public Phione(int level)
 		: base(
 				489,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Phione Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Phione() : base(
 			489,
 			SpeciePhione.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

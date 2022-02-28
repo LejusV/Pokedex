@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magnemite Specie to store common natural stats of every {'abilities': ['magnet-pull', 'sturdy', 'analytic'], 'base_experience': 65, 'height': 3, 'id': 81, 'moves': ['tackle', 'take-down', 'double-edge', 'supersonic', 'sonic-boom', 'thunder-shock', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'rage', 'teleport', 'mimic', 'screech', 'double-team', 'light-screen', 'reflect', 'bide', 'swift', 'flash', 'explosion', 'rest', 'substitute', 'snore', 'curse', 'protect', 'zap-cannon', 'lock-on', 'endure', 'rollout', 'swagger', 'spark', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'facade', 'magic-coat', 'recycle', 'secret-power', 'metal-sound', 'signal-beam', 'iron-defense', 'shock-wave', 'gravity', 'gyro-ball', 'natural-gift', 'magnet-rise', 'mirror-shot', 'flash-cannon', 'discharge', 'magnet-bomb', 'charge-beam', 'electro-ball', 'round', 'volt-switch', 'electroweb', 'wild-charge', 'confide'], 'name': 'magnemite', 'stats': {'hp': 25, 'attack': 35, 'defense': 70, 'special-attack': 95, 'special-defense': 55, 'speed': 45}, 'types': ['electric', 'steel'], 'weight': 60, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 190, 'color': 'gray', 'shape': 'arms', 'habitat': 'rough-terrain', 'generation': 'generation-i', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'コイル', 'roomaji': 'Coil', 'ko': '코일', 'zh-Hant': '小磁怪', 'fr': 'Magnéti', 'de': 'Magnetilo', 'es': 'Magnemite', 'it': 'Magnemite', 'en': 'Magnemite', 'ja': 'コイル', 'zh-Hans': '小磁怪'}, 'genera': {'ja-Hrkt': 'じしゃくポケモン', 'ko': '자석포켓몬', 'zh-Hant': '磁鐵寶可夢', 'fr': 'Pokémon Magnétique', 'de': 'Magnet', 'es': 'Pokémon Imán', 'it': 'Pokémon Calamita', 'en': 'Magnet Pokémon', 'ja': 'じしゃくポケモン', 'zh-Hans': '磁铁宝可梦'}}
+	//Magnemite Specie to store common natural stats of all Magnemites
+	#region SpecieMagnemite
 	public class SpecieMagnemite : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMagnemite Builder
 		public SpecieMagnemite() : base(
 			"Magnemite",
 			25, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			95, 55, // Special Attack & Defense
 			45			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Magnemite Pokemon Class
+	#region Magnemite
 	public class Magnemite : Pokemon
 	{
-
+		#region Magnemite Builders
+		/// <summary>
+		/// Magnemite Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Magnemite(string nickname, int level)
 		: base(
 				81,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Magnemite Builder only waiting for a Level
+		/// </summary>
 		public Magnemite(int level)
 		: base(
 				81,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Magnemite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Magnemite() : base(
 			81,
 			SpecieMagnemite.Instance, // Pokemon Specie
 			Electric.Instance, Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lanturn Specie to store common natural stats of every {'abilities': ['volt-absorb', 'illuminate', 'water-absorb'], 'base_experience': 161, 'height': 12, 'id': 171, 'moves': ['take-down', 'double-edge', 'supersonic', 'water-gun', 'hydro-pump', 'surf', 'ice-beam', 'blizzard', 'bubble-beam', 'hyper-beam', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'mimic', 'double-team', 'confuse-ray', 'waterfall', 'bubble', 'flash', 'rest', 'substitute', 'snore', 'curse', 'flail', 'protect', 'zap-cannon', 'icy-wind', 'endure', 'swagger', 'spark', 'attract', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'hidden-power', 'rain-dance', 'whirlpool', 'stockpile', 'spit-up', 'swallow', 'hail', 'facade', 'charge', 'secret-power', 'dive', 'signal-beam', 'bounce', 'shock-wave', 'water-pulse', 'brine', 'natural-gift', 'sucker-punch', 'aqua-ring', 'aqua-tail', 'giga-impact', 'discharge', 'captivate', 'charge-beam', 'electro-ball', 'round', 'scald', 'volt-switch', 'wild-charge', 'ion-deluge', 'confide', 'eerie-impulse', 'dazzling-gleam', 'spotlight'], 'name': 'lanturn', 'stats': {'hp': 125, 'attack': 58, 'defense': 58, 'special-attack': 76, 'special-defense': 76, 'speed': 67}, 'types': ['water', 'electric'], 'weight': 225, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 75, 'color': 'blue', 'shape': 'fish', 'habitat': 'sea', 'generation': 'generation-ii', 'growth_rate': 'slow', 'egg_groups': ['water2'], 'names': {'ja-Hrkt': 'ランターン', 'roomaji': 'Lantern', 'ko': '랜턴', 'zh-Hant': '電燈怪', 'fr': 'Lanturn', 'de': 'Lanturn', 'es': 'Lanturn', 'it': 'Lanturn', 'en': 'Lanturn', 'ja': 'ランターン', 'zh-Hans': '电灯怪'}, 'genera': {'ja-Hrkt': 'ライトポケモン', 'ko': '라이트포켓몬', 'zh-Hant': '燈寶可夢', 'fr': 'Pokémon Lumière', 'de': 'Leuchte', 'es': 'Pokémon Luz', 'it': 'Pokémon Luce', 'en': 'Light Pokémon', 'ja': 'ライトポケモン', 'zh-Hans': '灯宝可梦'}}
+	//Lanturn Specie to store common natural stats of all Lanturns
+	#region SpecieLanturn
 	public class SpecieLanturn : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieLanturn Builder
 		public SpecieLanturn() : base(
 			"Lanturn",
 			125, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			76, 76, // Special Attack & Defense
 			67			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Lanturn Pokemon Class
+	#region Lanturn
 	public class Lanturn : Pokemon
 	{
-
+		#region Lanturn Builders
+		/// <summary>
+		/// Lanturn Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Lanturn(string nickname, int level)
 		: base(
 				171,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lanturn Builder only waiting for a Level
+		/// </summary>
 		public Lanturn(int level)
 		: base(
 				171,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lanturn Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Lanturn() : base(
 			171,
 			SpecieLanturn.Instance, // Pokemon Specie
 			Water.Instance, Electric.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

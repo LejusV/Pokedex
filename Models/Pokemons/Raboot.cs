@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Raboot Specie to store common natural stats of every {'abilities': ['blaze', 'libero'], 'base_experience': 147, 'height': 6, 'id': 814, 'moves': [], 'name': 'raboot', 'stats': {'hp': 65, 'attack': 86, 'defense': 60, 'special-attack': 55, 'special-defense': 60, 'speed': 94}, 'types': ['fire'], 'weight': 90, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'gray', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ラビフット', 'ko': '래비풋', 'zh-Hant': '騰蹴小將', 'fr': 'Lapyro', 'de': 'Kickerlo', 'es': 'Raboot', 'it': 'Raboot', 'en': 'Raboot', 'ja': 'ラビフット', 'zh-Hans': '腾蹴小将'}, 'genera': {'ja-Hrkt': 'うさぎポケモン', 'ko': '토끼포켓몬', 'zh-Hant': '兔子寶可夢', 'fr': 'Pokémon Lapin', 'de': 'Hase', 'es': 'Pokémon Conejo', 'it': 'Pokémon Coniglio', 'en': 'Rabbit Pokémon', 'ja': 'うさぎポケモン', 'zh-Hans': '兔子宝可梦'}}
+	//Raboot Specie to store common natural stats of all Raboots
+	#region SpecieRaboot
 	public class SpecieRaboot : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieRaboot Builder
 		public SpecieRaboot() : base(
 			"Raboot",
 			65, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			94			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Raboot Pokemon Class
+	#region Raboot
 	public class Raboot : Pokemon
 	{
-
+		#region Raboot Builders
+		/// <summary>
+		/// Raboot Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Raboot(string nickname, int level)
 		: base(
 				814,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Raboot Builder only waiting for a Level
+		/// </summary>
 		public Raboot(int level)
 		: base(
 				814,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Raboot Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Raboot() : base(
 			814,
 			SpecieRaboot.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Inteleon Specie to store common natural stats of every {'abilities': ['torrent', 'sniper'], 'base_experience': 265, 'height': 19, 'id': 818, 'moves': [], 'name': 'inteleon', 'stats': {'hp': 70, 'attack': 85, 'defense': 65, 'special-attack': 125, 'special-defense': 65, 'speed': 120}, 'types': ['water'], 'weight': 452, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'blue', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'インテレオン', 'ko': '인텔리레온', 'zh-Hant': '千面避役', 'fr': 'Lézargus', 'de': 'Intelleon', 'es': 'Inteleon', 'it': 'Inteleon', 'en': 'Inteleon', 'ja': 'インテレオン', 'zh-Hans': '千面避役'}, 'genera': {'ja-Hrkt': 'エージェントポケモン', 'ko': '에이전트포켓몬', 'zh-Hant': '特工寶可夢', 'fr': 'Pokémon Agent Secret', 'de': 'Geheimagent', 'es': 'Pokémon Agente', 'it': 'Pokémon Agente', 'en': 'Secret Agent Pokémon', 'ja': 'エージェントポケモン', 'zh-Hans': '特工宝可梦'}}
+	//Inteleon Specie to store common natural stats of all Inteleons
+	#region SpecieInteleon
 	public class SpecieInteleon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieInteleon Builder
 		public SpecieInteleon() : base(
 			"Inteleon",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			125, 65, // Special Attack & Defense
 			120			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Inteleon Pokemon Class
+	#region Inteleon
 	public class Inteleon : Pokemon
 	{
-
+		#region Inteleon Builders
+		/// <summary>
+		/// Inteleon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Inteleon(string nickname, int level)
 		: base(
 				818,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Inteleon Builder only waiting for a Level
+		/// </summary>
 		public Inteleon(int level)
 		: base(
 				818,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Inteleon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Inteleon() : base(
 			818,
 			SpecieInteleon.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -12,7 +12,6 @@ namespace Pokedex.Models.Moves
 			MoveCategory.Special, // Move Category
 			5, 160,// PP & Pow
 			90, 0 // Acc & Priority
-			
 		) {}
 	}
 }

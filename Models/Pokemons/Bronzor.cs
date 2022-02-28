@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bronzor Specie to store common natural stats of every {'abilities': ['levitate', 'heatproof', 'heavy-metal'], 'base_experience': 60, 'height': 5, 'id': 436, 'moves': ['tackle', 'solar-beam', 'earthquake', 'toxic', 'confusion', 'psychic', 'hypnosis', 'double-team', 'confuse-ray', 'light-screen', 'reflect', 'dream-eater', 'flash', 'psywave', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'feint-attack', 'sandstorm', 'endure', 'rollout', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'ancient-power', 'shadow-ball', 'future-sight', 'facade', 'trick', 'recycle', 'skill-swap', 'imprison', 'secret-power', 'rock-tomb', 'metal-sound', 'signal-beam', 'extrasensory', 'iron-defense', 'calm-mind', 'gravity', 'gyro-ball', 'natural-gift', 'payback', 'heal-block', 'rock-polish', 'flash-cannon', 'trick-room', 'stealth-rock', 'grass-knot', 'charge-beam', 'wonder-room', 'psyshock', 'telekinesis', 'heavy-slam', 'round', 'bulldoze', 'confide'], 'name': 'bronzor', 'stats': {'hp': 57, 'attack': 24, 'defense': 86, 'special-attack': 24, 'special-defense': 86, 'speed': 23}, 'types': ['steel', 'psychic'], 'weight': 605, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 255, 'color': 'green', 'shape': 'ball', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ドーミラー', 'roomaji': 'Domirror', 'ko': '동미러', 'zh-Hant': '銅鏡怪', 'fr': 'Archéomire', 'de': 'Bronzel', 'es': 'Bronzor', 'it': 'Bronzor', 'en': 'Bronzor', 'ja': 'ドーミラー', 'zh-Hans': '铜镜怪'}, 'genera': {'ja-Hrkt': 'せいどうポケモン', 'ko': '청동포켓몬', 'zh-Hant': '青銅寶可夢', 'fr': 'Pokémon Bronze', 'de': 'Bronze', 'es': 'Pokémon Bronce', 'it': 'Pokémon Bronzo', 'en': 'Bronze Pokémon', 'ja': 'せいどうポケモン', 'zh-Hans': '青铜宝可梦'}}
+	//Bronzor Specie to store common natural stats of all Bronzors
+	#region SpecieBronzor
 	public class SpecieBronzor : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBronzor Builder
 		public SpecieBronzor() : base(
 			"Bronzor",
 			57, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			24, 86, // Special Attack & Defense
 			23			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Bronzor Pokemon Class
+	#region Bronzor
 	public class Bronzor : Pokemon
 	{
-
+		#region Bronzor Builders
+		/// <summary>
+		/// Bronzor Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Bronzor(string nickname, int level)
 		: base(
 				436,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Bronzor Builder only waiting for a Level
+		/// </summary>
 		public Bronzor(int level)
 		: base(
 				436,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Bronzor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Bronzor() : base(
 			436,
 			SpecieBronzor.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

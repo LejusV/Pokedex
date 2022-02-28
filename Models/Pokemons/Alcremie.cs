@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Alcremie Specie to store common natural stats of every {'abilities': ['sweet-veil', 'aroma-veil'], 'base_experience': 173, 'height': 3, 'id': 869, 'moves': [], 'name': 'alcremie', 'stats': {'hp': 65, 'attack': 60, 'defense': 75, 'special-attack': 110, 'special-defense': 121, 'speed': 64}, 'types': ['fairy'], 'weight': 5, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 100, 'color': 'white', 'shape': 'blob', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'マホイップ', 'ko': '마휘핑', 'zh-Hant': '霜奶仙', 'fr': 'Charmilly', 'de': 'Pokusan', 'es': 'Alcremie', 'it': 'Alcremie', 'en': 'Alcremie', 'ja': 'マホイップ', 'zh-Hans': '霜奶仙'}, 'genera': {'ja-Hrkt': 'クリームポケモン', 'ko': '크림포켓몬', 'zh-Hant': '鮮奶油寶可夢', 'fr': 'Pokémon Crème', 'de': 'Sahne', 'es': 'Pokémon Nata', 'it': 'Pokémon Pannafresca', 'en': 'Cream Pokémon', 'ja': 'クリームポケモン', 'zh-Hans': '鲜奶油宝可梦'}}
+	//Alcremie Specie to store common natural stats of all Alcremies
+	#region SpecieAlcremie
 	public class SpecieAlcremie : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieAlcremie Builder
 		public SpecieAlcremie() : base(
 			"Alcremie",
 			65, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			110, 121, // Special Attack & Defense
 			64			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Alcremie Pokemon Class
+	#region Alcremie
 	public class Alcremie : Pokemon
 	{
-
+		#region Alcremie Builders
+		/// <summary>
+		/// Alcremie Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Alcremie(string nickname, int level)
 		: base(
 				869,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Alcremie Builder only waiting for a Level
+		/// </summary>
 		public Alcremie(int level)
 		: base(
 				869,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Alcremie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Alcremie() : base(
 			869,
 			SpecieAlcremie.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

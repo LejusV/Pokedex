@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wailord Specie to store common natural stats of every {'abilities': ['water-veil', 'oblivious', 'pressure'], 'base_experience': 175, 'height': 145, 'id': 321, 'moves': ['headbutt', 'body-slam', 'double-edge', 'growl', 'roar', 'mist', 'water-gun', 'hydro-pump', 'surf', 'ice-beam', 'blizzard', 'hyper-beam', 'strength', 'earthquake', 'toxic', 'mimic', 'double-team', 'defense-curl', 'self-destruct', 'waterfall', 'amnesia', 'splash', 'rest', 'substitute', 'snore', 'protect', 'icy-wind', 'endure', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'rock-smash', 'whirlpool', 'hail', 'facade', 'secret-power', 'dive', 'hyper-voice', 'astonish', 'rock-tomb', 'water-spout', 'block', 'bounce', 'water-pulse', 'brine', 'natural-gift', 'giga-impact', 'avalanche', 'zen-headbutt', 'iron-head', 'captivate', 'heavy-slam', 'soak', 'round', 'echoed-voice', 'scald', 'bulldoze', 'noble-roar', 'confide'], 'name': 'wailord', 'stats': {'hp': 170, 'attack': 90, 'defense': 45, 'special-attack': 90, 'special-defense': 45, 'speed': 60}, 'types': ['water'], 'weight': 3980, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 40, 'gender_rate': 4, 'capture_rate': 60, 'color': 'blue', 'shape': 'fish', 'habitat': 'sea', 'generation': 'generation-iii', 'growth_rate': 'fast-then-very-slow', 'egg_groups': ['ground', 'water2'], 'names': {'ja-Hrkt': 'ホエルオー', 'roomaji': 'Whaloh', 'ko': '고래왕', 'zh-Hant': '吼鯨王', 'fr': 'Wailord', 'de': 'Wailord', 'es': 'Wailord', 'it': 'Wailord', 'en': 'Wailord', 'ja': 'ホエルオー', 'zh-Hans': '吼鲸王'}, 'genera': {'ja-Hrkt': 'うきくじらポケモン', 'ko': '뜸고래포켓몬', 'zh-Hant': '浮鯨寶可夢', 'fr': 'Pokémon Cachabouée', 'de': 'Flutwal', 'es': 'Pokémon Ballenaflot', 'it': 'Pokémon Megabalena', 'en': 'Float Whale Pokémon', 'ja': 'うきくじらポケモン', 'zh-Hans': '浮鲸宝可梦'}}
+	//Wailord Specie to store common natural stats of all Wailords
+	#region SpecieWailord
 	public class SpecieWailord : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieWailord Builder
 		public SpecieWailord() : base(
 			"Wailord",
 			170, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			90, 45, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Wailord Pokemon Class
+	#region Wailord
 	public class Wailord : Pokemon
 	{
-
+		#region Wailord Builders
+		/// <summary>
+		/// Wailord Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Wailord(string nickname, int level)
 		: base(
 				321,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wailord Builder only waiting for a Level
+		/// </summary>
 		public Wailord(int level)
 		: base(
 				321,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wailord Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Wailord() : base(
 			321,
 			SpecieWailord.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

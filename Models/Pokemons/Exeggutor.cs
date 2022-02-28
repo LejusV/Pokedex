@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Exeggutor Specie to store common natural stats of every {'abilities': ['chlorophyll', 'harvest'], 'base_experience': 186, 'height': 20, 'id': 103, 'moves': ['swords-dance', 'stomp', 'headbutt', 'take-down', 'double-edge', 'hyper-beam', 'low-kick', 'strength', 'mega-drain', 'solar-beam', 'toxic', 'confusion', 'psychic', 'hypnosis', 'rage', 'teleport', 'mimic', 'double-team', 'light-screen', 'reflect', 'bide', 'self-destruct', 'egg-bomb', 'dream-eater', 'barrage', 'flash', 'psywave', 'explosion', 'rest', 'substitute', 'thief', 'nightmare', 'snore', 'curse', 'protect', 'sludge-bomb', 'giga-drain', 'endure', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'synthesis', 'hidden-power', 'sunny-day', 'psych-up', 'ancient-power', 'facade', 'nature-power', 'skill-swap', 'secret-power', 'bullet-seed', 'block', 'gravity', 'natural-gift', 'worry-seed', 'seed-bomb', 'energy-ball', 'giga-impact', 'zen-headbutt', 'trick-room', 'leaf-storm', 'captivate', 'grass-knot', 'wood-hammer', 'psyshock', 'telekinesis', 'round', 'confide', 'infestation'], 'name': 'exeggutor', 'stats': {'hp': 95, 'attack': 95, 'defense': 85, 'special-attack': 125, 'special-defense': 75, 'speed': 55}, 'types': ['grass', 'psychic'], 'weight': 1200, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'yellow', 'shape': 'legs', 'habitat': 'forest', 'generation': 'generation-i', 'growth_rate': 'slow', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'ナッシー', 'roomaji': 'Nassy', 'ko': '나시', 'zh-Hant': '椰蛋樹', 'fr': 'Noadkoko', 'de': 'Kokowei', 'es': 'Exeggutor', 'it': 'Exeggutor', 'en': 'Exeggutor', 'ja': 'ナッシー', 'zh-Hans': '椰蛋树'}, 'genera': {'ja-Hrkt': 'やしのみポケモン', 'ko': '야자열매포켓몬', 'zh-Hant': '椰子寶可夢', 'fr': 'Pokémon Fruitpalme', 'de': 'Palmfrucht', 'es': 'Pokémon Coco', 'it': 'Pokémon Nocecocco', 'en': 'Coconut Pokémon', 'ja': 'やしのみポケモン', 'zh-Hans': '椰子宝可梦'}}
+	//Exeggutor Specie to store common natural stats of all Exeggutors
+	#region SpecieExeggutor
 	public class SpecieExeggutor : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieExeggutor Builder
 		public SpecieExeggutor() : base(
 			"Exeggutor",
 			95, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			125, 75, // Special Attack & Defense
 			55			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Exeggutor Pokemon Class
+	#region Exeggutor
 	public class Exeggutor : Pokemon
 	{
-
+		#region Exeggutor Builders
+		/// <summary>
+		/// Exeggutor Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Exeggutor(string nickname, int level)
 		: base(
 				103,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Exeggutor Builder only waiting for a Level
+		/// </summary>
 		public Exeggutor(int level)
 		: base(
 				103,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Exeggutor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Exeggutor() : base(
 			103,
 			SpecieExeggutor.Instance, // Pokemon Specie
 			Grass.Instance, Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

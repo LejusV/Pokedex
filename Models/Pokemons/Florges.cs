@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Florges Specie to store common natural stats of every {'abilities': ['flower-veil', 'symbiosis'], 'base_experience': 248, 'height': 11, 'id': 671, 'moves': ['hyper-beam', 'solar-beam', 'petal-dance', 'toxic', 'psychic', 'double-team', 'light-screen', 'flash', 'rest', 'substitute', 'snore', 'protect', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'safeguard', 'synthesis', 'hidden-power', 'rain-dance', 'sunny-day', 'facade', 'nature-power', 'helping-hand', 'wish', 'magic-coat', 'endeavor', 'secret-power', 'aromatherapy', 'covet', 'magical-leaf', 'calm-mind', 'lucky-chant', 'worry-seed', 'seed-bomb', 'energy-ball', 'giga-impact', 'grass-knot', 'after-you', 'round', 'echoed-voice', 'petal-blizzard', 'disarming-voice', 'flower-shield', 'grassy-terrain', 'misty-terrain', 'moonblast', 'confide', 'dazzling-gleam'], 'name': 'florges', 'stats': {'hp': 78, 'attack': 65, 'defense': 68, 'special-attack': 112, 'special-defense': 154, 'speed': 75}, 'types': ['fairy'], 'weight': 100, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 45, 'color': 'white', 'shape': 'arms', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['fairy'], 'names': {'ja-Hrkt': 'フラージェス', 'ko': '플라제스', 'zh-Hant': '花潔夫人', 'fr': 'Florges', 'de': 'Florges', 'es': 'Florges', 'it': 'Florges', 'en': 'Florges', 'ja': 'フラージェス', 'zh-Hans': '花洁夫人'}, 'genera': {'ja-Hrkt': 'ガーデンポケモン', 'ko': '가든포켓몬', 'zh-Hant': '花園寶可夢', 'fr': 'Pokémon Jardin', 'de': 'Garten', 'es': 'Pokémon Jardín', 'it': 'Pokémon Giardino', 'en': 'Garden Pokémon', 'ja': 'ガーデンポケモン', 'zh-Hans': '花园宝可梦'}}
+	//Florges Specie to store common natural stats of all Florgess
+	#region SpecieFlorges
 	public class SpecieFlorges : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieFlorges Builder
 		public SpecieFlorges() : base(
 			"Florges",
 			78, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			112, 154, // Special Attack & Defense
 			75			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Florges Pokemon Class
+	#region Florges
 	public class Florges : Pokemon
 	{
-
+		#region Florges Builders
+		/// <summary>
+		/// Florges Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Florges(string nickname, int level)
 		: base(
 				671,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Florges Builder only waiting for a Level
+		/// </summary>
 		public Florges(int level)
 		: base(
 				671,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Florges Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Florges() : base(
 			671,
 			SpecieFlorges.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

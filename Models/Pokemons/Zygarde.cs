@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zygarde Specie to store common natural stats of every {'abilities': ['aura-break'], 'base_experience': 270, 'height': 50, 'id': 718, 'moves': ['bind', 'bite', 'hyper-beam', 'strength', 'earthquake', 'dig', 'toxic', 'double-team', 'haze', 'glare', 'rest', 'rock-slide', 'substitute', 'snore', 'spite', 'protect', 'outrage', 'sandstorm', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'pain-split', 'dragon-breath', 'iron-tail', 'hidden-power', 'sunny-day', 'crunch', 'extreme-speed', 'rock-smash', 'facade', 'superpower', 'brick-break', 'secret-power', 'camouflage', 'hyper-voice', 'block', 'dragon-dance', 'shock-wave', 'dragon-pulse', 'focus-blast', 'earth-power', 'giga-impact', 'zen-headbutt', 'draco-meteor', 'stone-edge', 'grass-knot', 'sludge-wave', 'coil', 'round', 'bulldoze', 'dragon-tail', 'confide', 'lands-wrath'], 'name': 'zygarde', 'stats': {'hp': 108, 'attack': 100, 'defense': 121, 'special-attack': 81, 'special-defense': 95, 'speed': 95}, 'types': ['dragon', 'ground'], 'weight': 3050, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'green', 'shape': 'squiggle', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'ジガルデ', 'ko': '지가르데', 'zh-Hant': '基格爾德', 'fr': 'Zygarde', 'de': 'Zygarde', 'es': 'Zygarde', 'it': 'Zygarde', 'en': 'Zygarde', 'ja': 'ジガルデ', 'zh-Hans': '基格尔德'}, 'genera': {'ja-Hrkt': 'ちつじょポケモン', 'ko': '질서포켓몬', 'zh-Hant': '秩序寶可夢', 'fr': 'Pokémon Équilibre', 'de': 'Ordnung', 'es': 'Pokémon Equilibrio', 'it': 'Pokémon Equilibrio', 'en': 'Order Pokémon', 'ja': 'ちつじょポケモン', 'zh-Hans': '秩序宝可梦'}}
+	//Zygarde Specie to store common natural stats of all Zygardes
+	#region SpecieZygarde
 	public class SpecieZygarde : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieZygarde Builder
 		public SpecieZygarde() : base(
 			"Zygarde",
 			108, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			81, 95, // Special Attack & Defense
 			95			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Zygarde Pokemon Class
+	#region Zygarde
 	public class Zygarde : Pokemon
 	{
-
+		#region Zygarde Builders
+		/// <summary>
+		/// Zygarde Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Zygarde(string nickname, int level)
 		: base(
 				718,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zygarde Builder only waiting for a Level
+		/// </summary>
 		public Zygarde(int level)
 		: base(
 				718,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zygarde Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Zygarde() : base(
 			718,
 			SpecieZygarde.Instance, // Pokemon Specie
 			Dragon.Instance, Ground.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

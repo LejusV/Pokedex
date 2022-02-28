@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Klink Specie to store common natural stats of every {'abilities': ['plus', 'minus', 'clear-body'], 'base_experience': 60, 'height': 3, 'id': 599, 'moves': ['vice-grip', 'bind', 'hyper-beam', 'thunder-shock', 'thunderbolt', 'thunder-wave', 'toxic', 'screech', 'double-team', 'rest', 'substitute', 'snore', 'protect', 'zap-cannon', 'lock-on', 'sandstorm', 'swagger', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rock-smash', 'uproar', 'facade', 'charge', 'magic-coat', 'recycle', 'secret-power', 'metal-sound', 'signal-beam', 'iron-defense', 'shock-wave', 'gravity', 'magnet-rise', 'rock-polish', 'mirror-shot', 'flash-cannon', 'discharge', 'charge-beam', 'autotomize', 'round', 'shift-gear', 'volt-switch', 'wild-charge', 'gear-grind', 'confide'], 'name': 'klink', 'stats': {'hp': 40, 'attack': 55, 'defense': 70, 'special-attack': 45, 'special-defense': 60, 'speed': 30}, 'types': ['steel'], 'weight': 210, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 130, 'color': 'gray', 'shape': 'heads', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium-slow', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ギアル', 'ko': '기어르', 'zh-Hant': '齒輪兒', 'fr': 'Tic', 'de': 'Klikk', 'es': 'Klink', 'it': 'Klink', 'en': 'Klink', 'ja': 'ギアル', 'zh-Hans': '齿轮儿'}, 'genera': {'ja-Hrkt': 'はぐるまポケモン', 'ko': '톱니바퀴포켓몬', 'zh-Hant': '齒輪寶可夢', 'fr': 'Pokémon Engrenage', 'de': 'Getriebe', 'es': 'Pokémon Engranaje', 'it': 'Pokémon Ingranaggio', 'en': 'Gear Pokémon', 'ja': 'はぐるまポケモン', 'zh-Hans': '齿轮宝可梦'}}
+	//Klink Specie to store common natural stats of all Klinks
+	#region SpecieKlink
 	public class SpecieKlink : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieKlink Builder
 		public SpecieKlink() : base(
 			"Klink",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			45, 60, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Klink Pokemon Class
+	#region Klink
 	public class Klink : Pokemon
 	{
-
+		#region Klink Builders
+		/// <summary>
+		/// Klink Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Klink(string nickname, int level)
 		: base(
 				599,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Klink Builder only waiting for a Level
+		/// </summary>
 		public Klink(int level)
 		: base(
 				599,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Klink Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Klink() : base(
 			599,
 			SpecieKlink.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

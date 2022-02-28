@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mothim Specie to store common natural stats of every {'abilities': ['swarm', 'tinted-lens'], 'base_experience': 148, 'height': 9, 'id': 414, 'moves': ['gust', 'tackle', 'psybeam', 'hyper-beam', 'solar-beam', 'poison-powder', 'string-shot', 'toxic', 'confusion', 'psychic', 'double-team', 'swift', 'dream-eater', 'flash', 'rest', 'substitute', 'thief', 'snore', 'protect', 'mud-slap', 'giga-drain', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'twister', 'rain-dance', 'sunny-day', 'psych-up', 'shadow-ball', 'facade', 'skill-swap', 'secret-power', 'camouflage', 'air-cutter', 'silver-wind', 'signal-beam', 'aerial-ace', 'roost', 'natural-gift', 'tailwind', 'u-turn', 'air-slash', 'bug-buzz', 'energy-ball', 'giga-impact', 'defog', 'captivate', 'bug-bite', 'ominous-wind', 'venoshock', 'quiver-dance', 'round', 'acrobatics', 'struggle-bug', 'electroweb', 'confide', 'infestation', 'lunge'], 'name': 'mothim', 'stats': {'hp': 70, 'attack': 94, 'defense': 50, 'special-attack': 94, 'special-defense': 50, 'speed': 66}, 'types': ['bug', 'flying'], 'weight': 233, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 0, 'capture_rate': 45, 'color': 'yellow', 'shape': 'bug-wings', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'ガーメイル', 'roomaji': 'Garmeil', 'ko': '나메일', 'zh-Hant': '紳士蛾', 'fr': 'Papilord', 'de': 'Moterpel', 'es': 'Mothim', 'it': 'Mothim', 'en': 'Mothim', 'ja': 'ガーメイル', 'zh-Hans': '绅士蛾'}, 'genera': {'ja-Hrkt': 'ミノガポケモン', 'ko': '나방포켓몬', 'zh-Hant': '蓑衣蛾寶可夢', 'fr': 'Pokémon Phalène', 'de': 'Motte', 'es': 'Pokémon Polilla', 'it': 'Pokémon Falena', 'en': 'Moth Pokémon', 'ja': 'ミノガポケモン', 'zh-Hans': '蓑衣蛾宝可梦'}}
+	//Mothim Specie to store common natural stats of all Mothims
+	#region SpecieMothim
 	public class SpecieMothim : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMothim Builder
 		public SpecieMothim() : base(
 			"Mothim",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			94, 50, // Special Attack & Defense
 			66			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Mothim Pokemon Class
+	#region Mothim
 	public class Mothim : Pokemon
 	{
-
+		#region Mothim Builders
+		/// <summary>
+		/// Mothim Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Mothim(string nickname, int level)
 		: base(
 				414,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Mothim Builder only waiting for a Level
+		/// </summary>
 		public Mothim(int level)
 		: base(
 				414,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Mothim Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Mothim() : base(
 			414,
 			SpecieMothim.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

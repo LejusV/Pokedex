@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eiscue-Ice Specie to store common natural stats of every {'abilities': ['ice-face'], 'base_experience': 165, 'height': 14, 'id': 875, 'moves': [], 'name': 'eiscue-ice', 'stats': {'hp': 75, 'attack': 80, 'defense': 110, 'special-attack': 65, 'special-defense': 90, 'speed': 50}, 'types': ['ice'], 'weight': 890, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': 4, 'capture_rate': 60, 'color': 'blue', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'コオリッポ', 'ko': '빙큐보', 'zh-Hant': '冰砌鵝', 'fr': 'Bekaglaçon', 'de': 'Kubuin', 'es': 'Eiscue', 'it': 'Eiscue', 'en': 'Eiscue', 'ja': 'コオリッポ', 'zh-Hans': '冰砌鹅'}, 'genera': {'ja-Hrkt': 'ペンギンポケモン', 'ko': '펭귄포켓몬', 'zh-Hant': '企鵝寶可夢', 'fr': 'Pokémon Pingouin', 'de': 'Pinguin', 'es': 'Pokémon Pingüino', 'it': 'Pokémon Pinguino', 'en': 'Penguin Pokémon', 'ja': 'ペンギンポケモン', 'zh-Hans': '企鹅宝可梦'}}
+	//Eiscue-Ice Specie to store common natural stats of all Eiscue-Ices
+	#region SpecieEiscue-Ice
 	public class SpecieEiscueIce : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieEiscue-Ice Builder
 		public SpecieEiscueIce() : base(
 			"Eiscue-Ice",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			65, 90, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Eiscue-Ice Pokemon Class
+	#region Eiscue-Ice
 	public class EiscueIce : Pokemon
 	{
-
+		#region Eiscue-Ice Builders
+		/// <summary>
+		/// Eiscue-Ice Builder waiting for a Nickname & a Level
+		/// </summary>
 		public EiscueIce(string nickname, int level)
 		: base(
 				875,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Eiscue-Ice Builder only waiting for a Level
+		/// </summary>
 		public EiscueIce(int level)
 		: base(
 				875,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Eiscue-Ice Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public EiscueIce() : base(
 			875,
 			SpecieEiscueIce.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

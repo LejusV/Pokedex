@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Finneon Specie to store common natural stats of every {'abilities': ['swift-swim', 'storm-drain', 'water-veil'], 'base_experience': 66, 'height': 4, 'id': 456, 'moves': ['pound', 'gust', 'water-gun', 'surf', 'ice-beam', 'blizzard', 'psybeam', 'aurora-beam', 'toxic', 'agility', 'double-team', 'confuse-ray', 'waterfall', 'swift', 'flash', 'splash', 'rest', 'substitute', 'snore', 'flail', 'protect', 'sweet-kiss', 'icy-wind', 'endure', 'charm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'twister', 'rain-dance', 'psych-up', 'whirlpool', 'hail', 'facade', 'nature-power', 'secret-power', 'dive', 'air-cutter', 'silver-wind', 'tickle', 'signal-beam', 'bounce', 'water-pulse', 'brine', 'natural-gift', 'tailwind', 'u-turn', 'payback', 'aqua-ring', 'aqua-tail', 'defog', 'captivate', 'ominous-wind', 'soak', 'round', 'scald', 'confide'], 'name': 'finneon', 'stats': {'hp': 49, 'attack': 49, 'defense': 56, 'special-attack': 49, 'special-defense': 61, 'speed': 66}, 'types': ['water'], 'weight': 70, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 190, 'color': 'blue', 'shape': 'fish', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'slow-then-very-fast', 'egg_groups': ['water2'], 'names': {'ja-Hrkt': 'ケイコウオ', 'roomaji': 'Keikouo', 'ko': '형광어', 'zh-Hant': '螢光魚', 'fr': 'Écayon', 'de': 'Finneon', 'es': 'Finneon', 'it': 'Finneon', 'en': 'Finneon', 'ja': 'ケイコウオ', 'zh-Hans': '荧光鱼'}, 'genera': {'ja-Hrkt': 'はねうおポケモン', 'ko': '비어포켓몬', 'zh-Hant': '飛翅魚寶可夢', 'fr': 'Pokémon Poisson Ailé', 'de': 'Flügelfisch', 'es': 'Pokémon Pez Ala', 'it': 'Pokémon Pescealato', 'en': 'Wing Fish Pokémon', 'ja': 'はねうおポケモン', 'zh-Hans': '飞翅鱼宝可梦'}}
+	//Finneon Specie to store common natural stats of all Finneons
+	#region SpecieFinneon
 	public class SpecieFinneon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieFinneon Builder
 		public SpecieFinneon() : base(
 			"Finneon",
 			49, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			49, 61, // Special Attack & Defense
 			66			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Finneon Pokemon Class
+	#region Finneon
 	public class Finneon : Pokemon
 	{
-
+		#region Finneon Builders
+		/// <summary>
+		/// Finneon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Finneon(string nickname, int level)
 		: base(
 				456,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Finneon Builder only waiting for a Level
+		/// </summary>
 		public Finneon(int level)
 		: base(
 				456,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Finneon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Finneon() : base(
 			456,
 			SpecieFinneon.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

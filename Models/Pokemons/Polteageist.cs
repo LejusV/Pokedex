@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Polteageist Specie to store common natural stats of every {'abilities': ['weak-armor', 'cursed-body'], 'base_experience': 178, 'height': 2, 'id': 855, 'moves': [], 'name': 'polteageist', 'stats': {'hp': 60, 'attack': 65, 'defense': 65, 'special-attack': 134, 'special-defense': 114, 'speed': 70}, 'types': ['ghost'], 'weight': 4, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 60, 'color': 'purple', 'shape': 'ball', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ポットデス', 'ko': '포트데스', 'zh-Hant': '怖思壺', 'fr': 'Polthégeist', 'de': 'Mortipot', 'es': 'Polteageist', 'it': 'Polteageist', 'en': 'Polteageist', 'ja': 'ポットデス', 'zh-Hans': '怖思壶'}, 'genera': {'ja-Hrkt': 'こうちゃポケモン', 'ko': '홍차포켓몬', 'zh-Hant': '紅茶寶可夢', 'fr': 'Pokémon Thé Noir', 'de': 'Schwarztee', 'es': 'Pokémon Té', 'it': 'Pokémon Tè', 'en': 'Black Tea Pokémon', 'ja': 'こうちゃポケモン', 'zh-Hans': '红茶宝可梦'}}
+	//Polteageist Specie to store common natural stats of all Polteageists
+	#region SpeciePolteageist
 	public class SpeciePolteageist : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePolteageist Builder
 		public SpeciePolteageist() : base(
 			"Polteageist",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			134, 114, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Polteageist Pokemon Class
+	#region Polteageist
 	public class Polteageist : Pokemon
 	{
-
+		#region Polteageist Builders
+		/// <summary>
+		/// Polteageist Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Polteageist(string nickname, int level)
 		: base(
 				855,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Polteageist Builder only waiting for a Level
+		/// </summary>
 		public Polteageist(int level)
 		: base(
 				855,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Polteageist Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Polteageist() : base(
 			855,
 			SpeciePolteageist.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

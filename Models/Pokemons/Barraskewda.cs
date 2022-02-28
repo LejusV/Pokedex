@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Barraskewda Specie to store common natural stats of every {'abilities': ['swift-swim', 'propeller-tail'], 'base_experience': 172, 'height': 13, 'id': 847, 'moves': [], 'name': 'barraskewda', 'stats': {'hp': 61, 'attack': 123, 'defense': 60, 'special-attack': 60, 'special-defense': 50, 'speed': 136}, 'types': ['water'], 'weight': 300, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 60, 'color': 'brown', 'shape': 'fish', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'カマスジョー', 'ko': '꼬치조', 'zh-Hant': '戽斗尖梭', 'fr': 'Hastacuda', 'de': 'Barrakiefa', 'es': 'Barraskewda', 'it': 'Barraskewda', 'en': 'Barraskewda', 'ja': 'カマスジョー', 'zh-Hans': '戽斗尖梭'}, 'genera': {'ja-Hrkt': 'くしざしポケモン', 'ko': '꼬치포켓몬', 'zh-Hant': '穿刺寶可夢', 'fr': 'Pokémon Transperceur', 'de': 'Spieß', 'es': 'Pokémon Ensarta', 'it': 'Pokémon Spiedo', 'en': 'Skewer Pokémon', 'ja': 'くしざしポケモン', 'zh-Hans': '穿刺宝可梦'}}
+	//Barraskewda Specie to store common natural stats of all Barraskewdas
+	#region SpecieBarraskewda
 	public class SpecieBarraskewda : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBarraskewda Builder
 		public SpecieBarraskewda() : base(
 			"Barraskewda",
 			61, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 50, // Special Attack & Defense
 			136			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Barraskewda Pokemon Class
+	#region Barraskewda
 	public class Barraskewda : Pokemon
 	{
-
+		#region Barraskewda Builders
+		/// <summary>
+		/// Barraskewda Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Barraskewda(string nickname, int level)
 		: base(
 				847,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Barraskewda Builder only waiting for a Level
+		/// </summary>
 		public Barraskewda(int level)
 		: base(
 				847,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Barraskewda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Barraskewda() : base(
 			847,
 			SpecieBarraskewda.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

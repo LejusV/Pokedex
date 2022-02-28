@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kartana Specie to store common natural stats of every {'abilities': ['beast-boost'], 'base_experience': 257, 'height': 3, 'id': 798, 'moves': ['guillotine', 'swords-dance', 'cut', 'razor-leaf', 'toxic', 'double-team', 'rest', 'substitute', 'protect', 'detect', 'false-swipe', 'swagger', 'fury-cutter', 'sleep-talk', 'return', 'frustration', 'synthesis', 'hidden-power', 'brick-break', 'air-cutter', 'aerial-ace', 'calm-mind', 'leaf-blade', 'night-slash', 'air-slash', 'x-scissor', 'vacuum-wave', 'giga-impact', 'psycho-cut', 'defog', 'round', 'sacred-sword', 'confide', 'laser-focus', 'smart-strike'], 'name': 'kartana', 'stats': {'hp': 59, 'attack': 181, 'defense': 131, 'special-attack': 59, 'special-defense': 31, 'speed': 109}, 'types': ['grass', 'steel'], 'weight': 1, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'white', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'カミツルギ', 'ko': '종이신도', 'zh-Hant': '紙御劍', 'fr': 'Katagami', 'de': 'Katagami', 'es': 'Kartana', 'it': 'Kartana', 'en': 'Kartana', 'ja': 'カミツルギ', 'zh-Hans': '纸御剑'}, 'genera': {'ja-Hrkt': 'ばっとうポケモン', 'ko': '발도포켓몬', 'zh-Hant': '拔刀寶可夢', 'fr': 'Pokémon Battô', 'de': 'Schwertkunst', 'es': 'Pokémon Desenvaine', 'it': 'Pokémon Spadatratta', 'en': 'Drawn Sword Pokémon', 'ja': 'ばっとうポケモン', 'zh-Hans': '拔刀宝可梦'}}
+	//Kartana Specie to store common natural stats of all Kartanas
+	#region SpecieKartana
 	public class SpecieKartana : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieKartana Builder
 		public SpecieKartana() : base(
 			"Kartana",
 			59, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			59, 31, // Special Attack & Defense
 			109			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Kartana Pokemon Class
+	#region Kartana
 	public class Kartana : Pokemon
 	{
-
+		#region Kartana Builders
+		/// <summary>
+		/// Kartana Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Kartana(string nickname, int level)
 		: base(
 				798,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kartana Builder only waiting for a Level
+		/// </summary>
 		public Kartana(int level)
 		: base(
 				798,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kartana Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Kartana() : base(
 			798,
 			SpecieKartana.Instance, // Pokemon Specie
 			Grass.Instance, Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

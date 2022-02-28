@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cutiefly Specie to store common natural stats of every {'abilities': ['honey-gather', 'shield-dust', 'sweet-veil'], 'base_experience': 61, 'height': 1, 'id': 742, 'moves': ['absorb', 'stun-spore', 'toxic', 'psychic', 'double-team', 'light-screen', 'reflect', 'dream-eater', 'leech-life', 'rest', 'substitute', 'thief', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'baton-pass', 'sweet-scent', 'hidden-power', 'sunny-day', 'psych-up', 'facade', 'skill-swap', 'aromatherapy', 'silver-wind', 'aerial-ace', 'calm-mind', 'roost', 'u-turn', 'bug-buzz', 'energy-ball', 'quiver-dance', 'round', 'acrobatics', 'bestow', 'struggle-bug', 'sticky-web', 'draining-kiss', 'fairy-wind', 'moonblast', 'confide', 'powder', 'dazzling-gleam', 'infestation', 'speed-swap'], 'name': 'cutiefly', 'stats': {'hp': 40, 'attack': 45, 'defense': 40, 'special-attack': 55, 'special-defense': 40, 'speed': 84}, 'types': ['bug', 'fairy'], 'weight': 2, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 190, 'color': 'yellow', 'shape': 'armor', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['bug', 'fairy'], 'names': {'ja-Hrkt': 'アブリー', 'ko': '에블리', 'zh-Hant': '萌虻', 'fr': 'Bombydou', 'de': 'Wommel', 'es': 'Cutiefly', 'it': 'Cutiefly', 'en': 'Cutiefly', 'ja': 'アブリー', 'zh-Hans': '萌虻'}, 'genera': {'ja-Hrkt': 'ツリアブポケモン', 'ko': '재니등에포켓몬', 'zh-Hant': '蜂虻寶可夢', 'fr': 'Pokémon Bombyle', 'de': 'Hummelfliege', 'es': 'Pokémon Mosca Abeja', 'it': 'Pokémon Bombilide', 'en': 'Bee Fly Pokémon', 'ja': 'ツリアブポケモン', 'zh-Hans': '蜂虻宝可梦'}}
+	//Cutiefly Specie to store common natural stats of all Cutieflys
+	#region SpecieCutiefly
 	public class SpecieCutiefly : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCutiefly Builder
 		public SpecieCutiefly() : base(
 			"Cutiefly",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 40, // Special Attack & Defense
 			84			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Cutiefly Pokemon Class
+	#region Cutiefly
 	public class Cutiefly : Pokemon
 	{
-
+		#region Cutiefly Builders
+		/// <summary>
+		/// Cutiefly Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Cutiefly(string nickname, int level)
 		: base(
 				742,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cutiefly Builder only waiting for a Level
+		/// </summary>
 		public Cutiefly(int level)
 		: base(
 				742,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cutiefly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Cutiefly() : base(
 			742,
 			SpecieCutiefly.Instance, // Pokemon Specie
 			Bug.Instance, Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

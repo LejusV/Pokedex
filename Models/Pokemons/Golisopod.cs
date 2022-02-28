@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golisopod Specie to store common natural stats of every {'abilities': ['emergency-exit'], 'base_experience': 186, 'height': 20, 'id': 768, 'moves': ['swords-dance', 'sand-attack', 'pin-missile', 'surf', 'ice-beam', 'blizzard', 'toxic', 'double-team', 'waterfall', 'leech-life', 'rest', 'rock-slide', 'slash', 'substitute', 'spite', 'protect', 'sludge-bomb', 'false-swipe', 'swagger', 'fury-cutter', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'psych-up', 'rock-smash', 'hail', 'facade', 'taunt', 'brick-break', 'rock-tomb', 'aerial-ace', 'iron-defense', 'bulk-up', 'payback', 'fling', 'sucker-punch', 'poison-jab', 'dark-pulse', 'x-scissor', 'focus-blast', 'giga-impact', 'shadow-claw', 'bug-bite', 'venoshock', 'sludge-wave', 'round', 'scald', 'struggle-bug', 'frost-breath', 'razor-shell', 'snarl', 'confide', 'first-impression', 'liquidation'], 'name': 'golisopod', 'stats': {'hp': 75, 'attack': 125, 'defense': 140, 'special-attack': 60, 'special-defense': 90, 'speed': 40}, 'types': ['bug', 'water'], 'weight': 1080, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'gray', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['bug', 'water3'], 'names': {'ja-Hrkt': 'グソクムシャ', 'ko': '갑주무사', 'zh-Hant': '具甲武者', 'fr': 'Sarmuraï', 'de': 'Tectass', 'es': 'Golisopod', 'it': 'Golisopod', 'en': 'Golisopod', 'ja': 'グソクムシャ', 'zh-Hans': '具甲武者'}, 'genera': {'ja-Hrkt': 'そうこうポケモン', 'ko': '장갑포켓몬', 'zh-Hant': '裝甲寶可夢', 'fr': 'Pokémon Blindé', 'de': 'Rüstung', 'es': 'Pokémon Blindaje', 'it': 'Pokémon Blindato', 'en': 'Hard Scale Pokémon', 'ja': 'そうこうポケモン', 'zh-Hans': '装甲宝可梦'}}
+	//Golisopod Specie to store common natural stats of all Golisopods
+	#region SpecieGolisopod
 	public class SpecieGolisopod : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieGolisopod Builder
 		public SpecieGolisopod() : base(
 			"Golisopod",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 90, // Special Attack & Defense
 			40			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Golisopod Pokemon Class
+	#region Golisopod
 	public class Golisopod : Pokemon
 	{
-
+		#region Golisopod Builders
+		/// <summary>
+		/// Golisopod Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Golisopod(string nickname, int level)
 		: base(
 				768,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Golisopod Builder only waiting for a Level
+		/// </summary>
 		public Golisopod(int level)
 		: base(
 				768,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Golisopod Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Golisopod() : base(
 			768,
 			SpecieGolisopod.Instance, // Pokemon Specie
 			Bug.Instance, Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

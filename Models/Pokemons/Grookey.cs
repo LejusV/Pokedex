@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grookey Specie to store common natural stats of every {'abilities': ['overgrow', 'grassy-surge'], 'base_experience': 62, 'height': 3, 'id': 810, 'moves': [], 'name': 'grookey', 'stats': {'hp': 50, 'attack': 65, 'defense': 50, 'special-attack': 40, 'special-defense': 40, 'speed': 65}, 'types': ['grass'], 'weight': 50, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'green', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'サルノリ', 'ko': '흥나숭', 'zh-Hant': '敲音猴', 'fr': 'Ouistempo', 'de': 'Chimpep', 'es': 'Grookey', 'it': 'Grookey', 'en': 'Grookey', 'ja': 'サルノリ', 'zh-Hans': '敲音猴'}, 'genera': {'ja-Hrkt': 'こざるポケモン', 'ko': '꼬마원숭이포켓몬', 'zh-Hant': '小猴寶可夢', 'fr': 'Pokémon Chimpanzé', 'de': 'Schimpanse', 'es': 'Pokémon Chimpancé', 'it': 'Pokémon Scimpanzé', 'en': 'Chimp Pokémon', 'ja': 'こざるポケモン', 'zh-Hans': '小猴宝可梦'}}
+	//Grookey Specie to store common natural stats of all Grookeys
+	#region SpecieGrookey
 	public class SpecieGrookey : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieGrookey Builder
 		public SpecieGrookey() : base(
 			"Grookey",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			65			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Grookey Pokemon Class
+	#region Grookey
 	public class Grookey : Pokemon
 	{
-
+		#region Grookey Builders
+		/// <summary>
+		/// Grookey Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Grookey(string nickname, int level)
 		: base(
 				810,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Grookey Builder only waiting for a Level
+		/// </summary>
 		public Grookey(int level)
 		: base(
 				810,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Grookey Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Grookey() : base(
 			810,
 			SpecieGrookey.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

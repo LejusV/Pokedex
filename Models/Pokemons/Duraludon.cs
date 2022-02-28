@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Duraludon Specie to store common natural stats of every {'abilities': ['light-metal', 'heavy-metal', 'stalwart'], 'base_experience': 187, 'height': 18, 'id': 884, 'moves': [], 'name': 'duraludon', 'stats': {'hp': 70, 'attack': 95, 'defense': 115, 'special-attack': 120, 'special-defense': 50, 'speed': 85}, 'types': ['steel', 'dragon'], 'weight': 400, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 30, 'gender_rate': 4, 'capture_rate': 45, 'color': 'white', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ジュラルドン', 'ko': '두랄루돈', 'zh-Hant': '鋁鋼龍', 'fr': 'Duralugon', 'de': 'Duraludon', 'es': 'Duraludon', 'it': 'Duraludon', 'en': 'Duraludon', 'ja': 'ジュラルドン', 'zh-Hans': '铝钢龙'}, 'genera': {'ja-Hrkt': 'ごうきんポケモン', 'ko': '합금포켓몬', 'zh-Hant': '合金寶可夢', 'fr': 'Pokémon Alliage', 'de': 'Legierung', 'es': 'Pokémon Aleación', 'it': 'Pokémon Metallolega', 'en': 'Alloy Pokémon', 'ja': 'ごうきんポケモン', 'zh-Hans': '合金宝可梦'}}
+	//Duraludon Specie to store common natural stats of all Duraludons
+	#region SpecieDuraludon
 	public class SpecieDuraludon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDuraludon Builder
 		public SpecieDuraludon() : base(
 			"Duraludon",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			120, 50, // Special Attack & Defense
 			85			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Duraludon Pokemon Class
+	#region Duraludon
 	public class Duraludon : Pokemon
 	{
-
+		#region Duraludon Builders
+		/// <summary>
+		/// Duraludon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Duraludon(string nickname, int level)
 		: base(
 				884,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Duraludon Builder only waiting for a Level
+		/// </summary>
 		public Duraludon(int level)
 		: base(
 				884,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Duraludon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Duraludon() : base(
 			884,
 			SpecieDuraludon.Instance, // Pokemon Specie
 			Steel.Instance, Dragon.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

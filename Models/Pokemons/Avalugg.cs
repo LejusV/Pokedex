@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Avalugg Specie to store common natural stats of every {'abilities': ['own-tempo', 'ice-body', 'sturdy'], 'base_experience': 180, 'height': 20, 'id': 713, 'moves': ['tackle', 'body-slam', 'take-down', 'double-edge', 'bite', 'roar', 'surf', 'ice-beam', 'blizzard', 'hyper-beam', 'strength', 'earthquake', 'toxic', 'double-team', 'recover', 'harden', 'skull-bash', 'flash', 'rest', 'rock-slide', 'sharpen', 'substitute', 'snore', 'curse', 'powder-snow', 'protect', 'icy-wind', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'rapid-spin', 'hidden-power', 'rain-dance', 'crunch', 'rock-smash', 'hail', 'facade', 'superpower', 'secret-power', 'ice-ball', 'rock-tomb', 'iron-defense', 'block', 'water-pulse', 'gyro-ball', 'rock-polish', 'giga-impact', 'avalanche', 'ice-fang', 'flash-cannon', 'iron-head', 'stone-edge', 'wide-guard', 'after-you', 'round', 'bulldoze', 'frost-breath', 'confide'], 'name': 'avalugg', 'stats': {'hp': 95, 'attack': 117, 'defense': 184, 'special-attack': 44, 'special-defense': 46, 'speed': 28}, 'types': ['ice'], 'weight': 5050, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 55, 'color': 'blue', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['monster'], 'names': {'ja-Hrkt': 'クレベース', 'ko': '크레베이스', 'zh-Hant': '冰岩怪', 'fr': 'Séracrawl', 'de': 'Arktilas', 'es': 'Avalugg', 'it': 'Avalugg', 'en': 'Avalugg', 'ja': 'クレベース', 'zh-Hans': '冰岩怪'}, 'genera': {'ja-Hrkt': 'ひょうざんポケモン', 'ko': '빙산포켓몬', 'zh-Hant': '冰山寶可夢', 'fr': 'Pokémon Iceberg', 'de': 'Eisberg', 'es': 'Pokémon Iceberg', 'it': 'Pokémon Iceberg', 'en': 'Iceberg Pokémon', 'ja': 'ひょうざんポケモン', 'zh-Hans': '冰山宝可梦'}}
+	//Avalugg Specie to store common natural stats of all Avaluggs
+	#region SpecieAvalugg
 	public class SpecieAvalugg : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieAvalugg Builder
 		public SpecieAvalugg() : base(
 			"Avalugg",
 			95, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			44, 46, // Special Attack & Defense
 			28			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Avalugg Pokemon Class
+	#region Avalugg
 	public class Avalugg : Pokemon
 	{
-
+		#region Avalugg Builders
+		/// <summary>
+		/// Avalugg Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Avalugg(string nickname, int level)
 		: base(
 				713,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Avalugg Builder only waiting for a Level
+		/// </summary>
 		public Avalugg(int level)
 		: base(
 				713,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Avalugg Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Avalugg() : base(
 			713,
 			SpecieAvalugg.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

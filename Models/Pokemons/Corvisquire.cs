@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Corvisquire Specie to store common natural stats of every {'abilities': ['keen-eye', 'unnerve', 'big-pecks'], 'base_experience': 128, 'height': 8, 'id': 822, 'moves': [], 'name': 'corvisquire', 'stats': {'hp': 68, 'attack': 67, 'defense': 55, 'special-attack': 43, 'special-defense': 55, 'speed': 77}, 'types': ['flying'], 'weight': 160, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'blue', 'shape': 'wings', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'アオガラス', 'ko': '파크로우', 'zh-Hant': '藍鴉', 'fr': 'Bleuseille', 'de': 'Kranoviz', 'es': 'Corvisquire', 'it': 'Corvisquire', 'en': 'Corvisquire', 'ja': 'アオガラス', 'zh-Hans': '蓝鸦'}, 'genera': {'ja-Hrkt': 'カラスポケモン', 'ko': '까마귀포켓몬', 'zh-Hant': '烏鴉寶可夢', 'fr': 'Pokémon Corbeau', 'de': 'Krähe', 'es': 'Pokémon Cuervo', 'it': 'Pokémon Corvo', 'en': 'Raven Pokémon', 'ja': 'カラスポケモン', 'zh-Hans': '乌鸦宝可梦'}}
+	//Corvisquire Specie to store common natural stats of all Corvisquires
+	#region SpecieCorvisquire
 	public class SpecieCorvisquire : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCorvisquire Builder
 		public SpecieCorvisquire() : base(
 			"Corvisquire",
 			68, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			43, 55, // Special Attack & Defense
 			77			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Corvisquire Pokemon Class
+	#region Corvisquire
 	public class Corvisquire : Pokemon
 	{
-
+		#region Corvisquire Builders
+		/// <summary>
+		/// Corvisquire Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Corvisquire(string nickname, int level)
 		: base(
 				822,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Corvisquire Builder only waiting for a Level
+		/// </summary>
 		public Corvisquire(int level)
 		: base(
 				822,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Corvisquire Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Corvisquire() : base(
 			822,
 			SpecieCorvisquire.Instance, // Pokemon Specie
 			Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

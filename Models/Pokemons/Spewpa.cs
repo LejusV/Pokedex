@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spewpa Specie to store common natural stats of every {'abilities': ['shed-skin', 'friend-guard'], 'base_experience': 75, 'height': 3, 'id': 665, 'moves': ['harden', 'protect', 'iron-defense', 'bug-bite', 'electroweb'], 'name': 'spewpa', 'stats': {'hp': 45, 'attack': 22, 'defense': 60, 'special-attack': 27, 'special-defense': 30, 'speed': 29}, 'types': ['bug'], 'weight': 84, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'black', 'shape': 'blob', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'コフーライ', 'ko': '분떠도리', 'zh-Hant': '粉蝶蛹', 'fr': 'Pérégrain', 'de': 'Puponcho', 'es': 'Spewpa', 'it': 'Spewpa', 'en': 'Spewpa', 'ja': 'コフーライ', 'zh-Hans': '粉蝶蛹'}, 'genera': {'ja-Hrkt': 'こなふきポケモン', 'ko': '가루뿜기포켓몬', 'zh-Hant': '噴粉寶可夢', 'fr': 'Pokémon Exhalécaille', 'de': 'Puderinsekt', 'es': 'Pokémon Tiraescamas', 'it': 'Pokémon Tirascaglie', 'en': 'Scatterdust Pokémon', 'ja': 'こなふきポケモン', 'zh-Hans': '喷粉宝可梦'}}
+	//Spewpa Specie to store common natural stats of all Spewpas
+	#region SpecieSpewpa
 	public class SpecieSpewpa : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSpewpa Builder
 		public SpecieSpewpa() : base(
 			"Spewpa",
 			45, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			27, 30, // Special Attack & Defense
 			29			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Spewpa Pokemon Class
+	#region Spewpa
 	public class Spewpa : Pokemon
 	{
-
+		#region Spewpa Builders
+		/// <summary>
+		/// Spewpa Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Spewpa(string nickname, int level)
 		: base(
 				665,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Spewpa Builder only waiting for a Level
+		/// </summary>
 		public Spewpa(int level)
 		: base(
 				665,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Spewpa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Spewpa() : base(
 			665,
 			SpecieSpewpa.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

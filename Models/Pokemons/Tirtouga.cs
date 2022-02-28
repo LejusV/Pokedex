@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tirtouga Specie to store common natural stats of every {'abilities': ['solid-rock', 'sturdy', 'swift-swim'], 'base_experience': 71, 'height': 7, 'id': 564, 'moves': ['slam', 'body-slam', 'bite', 'water-gun', 'hydro-pump', 'surf', 'ice-beam', 'blizzard', 'strength', 'rock-throw', 'earthquake', 'dig', 'toxic', 'double-team', 'withdraw', 'bide', 'waterfall', 'rest', 'rock-slide', 'substitute', 'snore', 'curse', 'flail', 'protect', 'icy-wind', 'sandstorm', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'rain-dance', 'crunch', 'ancient-power', 'rock-smash', 'whirlpool', 'facade', 'knock-off', 'secret-power', 'dive', 'rock-tomb', 'iron-defense', 'block', 'water-pulse', 'brine', 'guard-swap', 'rock-polish', 'aqua-tail', 'earth-power', 'zen-headbutt', 'stone-edge', 'stealth-rock', 'aqua-jet', 'wide-guard', 'smack-down', 'round', 'scald', 'shell-smash', 'bulldoze', 'confide', 'liquidation'], 'name': 'tirtouga', 'stats': {'hp': 54, 'attack': 78, 'defense': 103, 'special-attack': 53, 'special-defense': 45, 'speed': 22}, 'types': ['water', 'rock'], 'weight': 165, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 30, 'gender_rate': 1, 'capture_rate': 45, 'color': 'blue', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['water1', 'water3'], 'names': {'ja-Hrkt': 'プロトーガ', 'ko': '프로토가', 'zh-Hant': '原蓋海龜', 'fr': 'Carapagos', 'de': 'Galapaflos', 'es': 'Tirtouga', 'it': 'Tirtouga', 'en': 'Tirtouga', 'ja': 'プロトーガ', 'zh-Hans': '原盖海龟'}, 'genera': {'ja-Hrkt': 'こだいがめポケモン', 'ko': '옛날거북포켓몬', 'zh-Hant': '古代龜寶可夢', 'fr': 'Pokémon Tortantique', 'de': 'Urzeitkröte', 'es': 'Pokémon Pretortuga', 'it': 'Pokémon Ancestruga', 'en': 'Prototurtle Pokémon', 'ja': 'こだいがめポケモン', 'zh-Hans': '古代龟宝可梦'}}
+	//Tirtouga Specie to store common natural stats of all Tirtougas
+	#region SpecieTirtouga
 	public class SpecieTirtouga : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTirtouga Builder
 		public SpecieTirtouga() : base(
 			"Tirtouga",
 			54, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			53, 45, // Special Attack & Defense
 			22			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Tirtouga Pokemon Class
+	#region Tirtouga
 	public class Tirtouga : Pokemon
 	{
-
+		#region Tirtouga Builders
+		/// <summary>
+		/// Tirtouga Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Tirtouga(string nickname, int level)
 		: base(
 				564,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Tirtouga Builder only waiting for a Level
+		/// </summary>
 		public Tirtouga(int level)
 		: base(
 				564,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Tirtouga Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Tirtouga() : base(
 			564,
 			SpecieTirtouga.Instance, // Pokemon Specie
 			Water.Instance, Rock.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

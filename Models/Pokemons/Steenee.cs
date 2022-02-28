@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Steenee Specie to store common natural stats of every {'abilities': ['leaf-guard', 'oblivious', 'sweet-veil'], 'base_experience': 102, 'height': 7, 'id': 762, 'moves': ['double-slap', 'stomp', 'razor-leaf', 'solar-beam', 'toxic', 'double-team', 'light-screen', 'reflect', 'splash', 'rest', 'substitute', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'rapid-spin', 'sweet-scent', 'hidden-power', 'sunny-day', 'facade', 'nature-power', 'teeter-dance', 'aromatherapy', 'magical-leaf', 'payback', 'fling', 'energy-ball', 'leaf-storm', 'captivate', 'grass-knot', 'low-sweep', 'round', 'play-nice', 'confide', 'aromatic-mist', 'dazzling-gleam'], 'name': 'steenee', 'stats': {'hp': 52, 'attack': 40, 'defense': 48, 'special-attack': 40, 'special-defense': 48, 'speed': 62}, 'types': ['grass'], 'weight': 82, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 120, 'color': 'purple', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'アママイコ', 'ko': '달무리나', 'zh-Hant': '甜舞妮', 'fr': 'Candine', 'de': 'Frubaila', 'es': 'Steenee', 'it': 'Steenee', 'en': 'Steenee', 'ja': 'アママイコ', 'zh-Hans': '甜舞妮'}, 'genera': {'ja-Hrkt': 'フルーツポケモン', 'ko': '후르츠포켓몬', 'zh-Hant': '水果寶可夢', 'fr': 'Pokémon Fruit', 'de': 'Obst', 'es': 'Pokémon Fruto', 'it': 'Pokémon Frutto', 'en': 'Fruit Pokémon', 'ja': 'フルーツポケモン', 'zh-Hans': '水果宝可梦'}}
+	//Steenee Specie to store common natural stats of all Steenees
+	#region SpecieSteenee
 	public class SpecieSteenee : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSteenee Builder
 		public SpecieSteenee() : base(
 			"Steenee",
 			52, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 48, // Special Attack & Defense
 			62			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Steenee Pokemon Class
+	#region Steenee
 	public class Steenee : Pokemon
 	{
-
+		#region Steenee Builders
+		/// <summary>
+		/// Steenee Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Steenee(string nickname, int level)
 		: base(
 				762,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Steenee Builder only waiting for a Level
+		/// </summary>
 		public Steenee(int level)
 		: base(
 				762,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Steenee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Steenee() : base(
 			762,
 			SpecieSteenee.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

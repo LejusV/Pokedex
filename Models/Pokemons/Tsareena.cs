@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tsareena Specie to store common natural stats of every {'abilities': ['leaf-guard', 'queenly-majesty', 'sweet-veil'], 'base_experience': 230, 'height': 12, 'id': 763, 'moves': ['double-slap', 'stomp', 'razor-leaf', 'solar-beam', 'toxic', 'double-team', 'light-screen', 'reflect', 'high-jump-kick', 'splash', 'rest', 'substitute', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'rapid-spin', 'sweet-scent', 'hidden-power', 'sunny-day', 'facade', 'nature-power', 'teeter-dance', 'aromatherapy', 'magical-leaf', 'u-turn', 'payback', 'fling', 'punishment', 'energy-ball', 'giga-impact', 'leaf-storm', 'power-whip', 'captivate', 'grass-knot', 'low-sweep', 'round', 'acrobatics', 'confide', 'aromatic-mist', 'dazzling-gleam', 'trop-kick'], 'name': 'tsareena', 'stats': {'hp': 72, 'attack': 120, 'defense': 98, 'special-attack': 50, 'special-defense': 98, 'speed': 72}, 'types': ['grass'], 'weight': 214, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 45, 'color': 'purple', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'アマージョ', 'ko': '달코퀸', 'zh-Hant': '甜冷美后', 'fr': 'Sucreine', 'de': 'Fruyal', 'es': 'Tsareena', 'it': 'Tsareena', 'en': 'Tsareena', 'ja': 'アマージョ', 'zh-Hans': '甜冷美后'}, 'genera': {'ja-Hrkt': 'フルーツポケモン', 'ko': '후르츠포켓몬', 'zh-Hant': '水果寶可夢', 'fr': 'Pokémon Fruit', 'de': 'Obst', 'es': 'Pokémon Fruto', 'it': 'Pokémon Frutto', 'en': 'Fruit Pokémon', 'ja': 'フルーツポケモン', 'zh-Hans': '水果宝可梦'}}
+	//Tsareena Specie to store common natural stats of all Tsareenas
+	#region SpecieTsareena
 	public class SpecieTsareena : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTsareena Builder
 		public SpecieTsareena() : base(
 			"Tsareena",
 			72, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 98, // Special Attack & Defense
 			72			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Tsareena Pokemon Class
+	#region Tsareena
 	public class Tsareena : Pokemon
 	{
-
+		#region Tsareena Builders
+		/// <summary>
+		/// Tsareena Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Tsareena(string nickname, int level)
 		: base(
 				763,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Tsareena Builder only waiting for a Level
+		/// </summary>
 		public Tsareena(int level)
 		: base(
 				763,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Tsareena Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Tsareena() : base(
 			763,
 			SpecieTsareena.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

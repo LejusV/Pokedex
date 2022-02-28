@@ -8,54 +8,47 @@ namespace Pokedex.Models
         private readonly double? _accuracy;
         private readonly MoveCategory _category;
         private readonly string _name;
-        private readonly PokemonType _pokemontype;
+        private readonly PokemonType _pokemonType;
         private readonly int? _power;
+        private readonly int _maxPp;
         private readonly int _pp;
         private readonly int _priority;
+        
+        # region Attributes
+        //Values
 
-        public double? Accuracy
+        public double? Accuracy { get => this._accuracy; }
+
+        public MoveCategory Category { get => this._category; }
+
+        public int MaxPP { get => this._maxPp; }
+
+        public string Name { get => this._name; }
+
+        public PokemonType PokemonType { get => this._pokemonType; }
+
+        public int? Power { get => this._power; }
+
+        public int PP { get => this._pp; }
+
+        public int Priority { get => this._priority; }
+
+        // Display Methods
+        public string Status
         {
-            get { return _accuracy; }
+            get => $"{this._name} : {this._pp}/{this._maxPp} PP";
         }
 
-        public MoveCategory Category
-        {
-            get { return _category; }
-        }
+        # endregion
 
-        public string Name
-        {
-            get { return _name; }
-        }
-
-        public PokemonType PokemonType
-        {
-            get { return _pokemontype; }
-        }
-
-        public int? Power
-        {
-            get { return _power; }
-        }
-
-        public int Pp
-        {
-            get { return _pp; }
-        }
-
-        public int Priority
-        {
-            get { return _priority; }
-        }
-
-        public Move(string name, PokemonType type, MoveCategory category, int pp, int? power, double? accuracy, int priority)
+        public Move(string name, PokemonType type, MoveCategory category, int maxPp, int? power, double? accuracy, int priority)
         {
             _accuracy = accuracy;
             _category = category;
             _name = name;
-            _pokemontype = type;
-            _power = power;
-            _pp = pp;
+            _pokemonType = type;
+            _power = power; 
+            _pp = _maxPp = maxPp; // initialise maxPp & set current pp to max pp
             _priority = priority;
         }
     }

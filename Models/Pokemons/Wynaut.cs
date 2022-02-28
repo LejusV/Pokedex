@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wynaut Specie to store common natural stats of every {'abilities': ['shadow-tag', 'telepathy'], 'base_experience': 52, 'height': 6, 'id': 360, 'moves': ['counter', 'splash', 'destiny-bond', 'charm', 'safeguard', 'encore', 'mirror-coat'], 'name': 'wynaut', 'stats': {'hp': 95, 'attack': 23, 'defense': 48, 'special-attack': 23, 'special-defense': 48, 'speed': 23}, 'types': ['psychic'], 'weight': 140, 'is_baby': True, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 125, 'color': 'blue', 'shape': 'upright', 'habitat': 'cave', 'generation': 'generation-iii', 'growth_rate': 'medium', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'ソーナノ', 'roomaji': 'Sohnano', 'ko': '마자', 'zh-Hant': '小果然', 'fr': 'Okéoké', 'de': 'Isso', 'es': 'Wynaut', 'it': 'Wynaut', 'en': 'Wynaut', 'ja': 'ソーナノ', 'zh-Hans': '小果然'}, 'genera': {'ja-Hrkt': 'ほがらかポケモン', 'ko': '명랑포켓몬', 'zh-Hant': '開朗寶可夢', 'fr': 'Pokémon Ravi', 'de': 'Strahlekind', 'es': 'Pokémon Radiante', 'it': 'Pokémon Brillante', 'en': 'Bright Pokémon', 'ja': 'ほがらかポケモン', 'zh-Hans': '开朗宝可梦'}}
+	//Wynaut Specie to store common natural stats of all Wynauts
+	#region SpecieWynaut
 	public class SpecieWynaut : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieWynaut Builder
 		public SpecieWynaut() : base(
 			"Wynaut",
 			95, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			23, 48, // Special Attack & Defense
 			23			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Wynaut Pokemon Class
+	#region Wynaut
 	public class Wynaut : Pokemon
 	{
-
+		#region Wynaut Builders
+		/// <summary>
+		/// Wynaut Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Wynaut(string nickname, int level)
 		: base(
 				360,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wynaut Builder only waiting for a Level
+		/// </summary>
 		public Wynaut(int level)
 		: base(
 				360,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wynaut Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Wynaut() : base(
 			360,
 			SpecieWynaut.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

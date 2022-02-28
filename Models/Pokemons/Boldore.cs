@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Boldore Specie to store common natural stats of every {'abilities': ['sturdy', 'weak-armor', 'sand-force'], 'base_experience': 137, 'height': 9, 'id': 525, 'moves': ['sand-attack', 'headbutt', 'tackle', 'strength', 'earthquake', 'toxic', 'double-team', 'harden', 'explosion', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'mud-slap', 'sandstorm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rock-smash', 'facade', 'nature-power', 'secret-power', 'rock-tomb', 'iron-defense', 'block', 'rock-blast', 'gravity', 'rock-polish', 'power-gem', 'earth-power', 'flash-cannon', 'stone-edge', 'stealth-rock', 'smack-down', 'round', 'bulldoze', 'confide'], 'name': 'boldore', 'stats': {'hp': 70, 'attack': 105, 'defense': 105, 'special-attack': 50, 'special-defense': 40, 'speed': 20}, 'types': ['rock'], 'weight': 1020, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'blue', 'shape': 'tentacles', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium-slow', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ガントル', 'ko': '암트르', 'zh-Hant': '地幔岩', 'fr': 'Géolithe', 'de': 'Sedimantur', 'es': 'Boldore', 'it': 'Boldore', 'en': 'Boldore', 'ja': 'ガントル', 'zh-Hans': '地幔岩'}, 'genera': {'ja-Hrkt': 'こうせきポケモン', 'ko': '광석포켓몬', 'zh-Hant': '礦石寶可夢', 'fr': 'Pokémon Minerai', 'de': 'Erz', 'es': 'Pokémon Mineral', 'it': 'Pokémon Minerale', 'en': 'Ore Pokémon', 'ja': 'こうせきポケモン', 'zh-Hans': '矿石宝可梦'}}
+	//Boldore Specie to store common natural stats of all Boldores
+	#region SpecieBoldore
 	public class SpecieBoldore : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBoldore Builder
 		public SpecieBoldore() : base(
 			"Boldore",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 40, // Special Attack & Defense
 			20			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Boldore Pokemon Class
+	#region Boldore
 	public class Boldore : Pokemon
 	{
-
+		#region Boldore Builders
+		/// <summary>
+		/// Boldore Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Boldore(string nickname, int level)
 		: base(
 				525,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Boldore Builder only waiting for a Level
+		/// </summary>
 		public Boldore(int level)
 		: base(
 				525,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Boldore Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Boldore() : base(
 			525,
 			SpecieBoldore.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

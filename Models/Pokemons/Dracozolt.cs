@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dracozolt Specie to store common natural stats of every {'abilities': ['volt-absorb', 'hustle', 'sand-rush'], 'base_experience': 177, 'height': 18, 'id': 880, 'moves': [], 'name': 'dracozolt', 'stats': {'hp': 90, 'attack': 100, 'defense': 90, 'special-attack': 80, 'special-defense': 70, 'speed': 75}, 'types': ['electric', 'dragon'], 'weight': 1900, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 35, 'gender_rate': -1, 'capture_rate': 45, 'color': 'green', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'パッチラゴン', 'ko': '파치래곤', 'zh-Hant': '雷鳥龍', 'fr': 'Galvagon', 'de': 'Lectragon', 'es': 'Dracozolt', 'it': 'Dracozolt', 'en': 'Dracozolt', 'ja': 'パッチラゴン', 'zh-Hans': '雷鸟龙'}, 'genera': {'ja-Hrkt': 'かせきポケモン', 'ko': '화석포켓몬', 'zh-Hant': '化石寶可夢', 'fr': 'Pokémon Fossile', 'de': 'Fossil', 'es': 'Pokémon Fósil', 'it': 'Pokémon Fossile', 'en': 'Fossil Pokémon', 'ja': 'かせきポケモン', 'zh-Hans': '化石宝可梦'}}
+	//Dracozolt Specie to store common natural stats of all Dracozolts
+	#region SpecieDracozolt
 	public class SpecieDracozolt : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDracozolt Builder
 		public SpecieDracozolt() : base(
 			"Dracozolt",
 			90, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 70, // Special Attack & Defense
 			75			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Dracozolt Pokemon Class
+	#region Dracozolt
 	public class Dracozolt : Pokemon
 	{
-
+		#region Dracozolt Builders
+		/// <summary>
+		/// Dracozolt Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Dracozolt(string nickname, int level)
 		: base(
 				880,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dracozolt Builder only waiting for a Level
+		/// </summary>
 		public Dracozolt(int level)
 		: base(
 				880,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dracozolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Dracozolt() : base(
 			880,
 			SpecieDracozolt.Instance, // Pokemon Specie
 			Electric.Instance, Dragon.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

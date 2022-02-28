@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gumshoos Specie to store common natural stats of every {'abilities': ['stakeout', 'strong-jaw', 'adaptability'], 'base_experience': 146, 'height': 7, 'id': 735, 'moves': ['sand-attack', 'tackle', 'take-down', 'thrash', 'leer', 'bite', 'roar', 'earthquake', 'toxic', 'double-team', 'bide', 'rest', 'hyper-fang', 'super-fang', 'substitute', 'thief', 'protect', 'scary-face', 'mud-slap', 'sandstorm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'crunch', 'torment', 'facade', 'taunt', 'yawn', 'odor-sleuth', 'rock-tomb', 'u-turn', 'payback', 'fling', 'round', 'echoed-voice', 'bulldoze', 'work-up', 'confide'], 'name': 'gumshoos', 'stats': {'hp': 88, 'attack': 110, 'defense': 60, 'special-attack': 55, 'special-defense': 60, 'speed': 45}, 'types': ['normal'], 'weight': 142, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 127, 'color': 'brown', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'デカグース', 'ko': '형사구스', 'zh-Hant': '貓鼬探長', 'fr': 'Argouste', 'de': 'Manguspektor', 'es': 'Gumshoos', 'it': 'Gumshoos', 'en': 'Gumshoos', 'ja': 'デカグース', 'zh-Hans': '猫鼬探长'}, 'genera': {'ja-Hrkt': 'はりこみポケモン', 'ko': '잠복포켓몬', 'zh-Hant': '監視寶可夢', 'fr': 'Pokémon Filature', 'de': 'Beschattung', 'es': 'Pokémon Vigilante', 'it': 'Pokémon Sorveglianza', 'en': 'Stakeout Pokémon', 'ja': 'はりこみポケモン', 'zh-Hans': '蹲守宝可梦'}}
+	//Gumshoos Specie to store common natural stats of all Gumshooss
+	#region SpecieGumshoos
 	public class SpecieGumshoos : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieGumshoos Builder
 		public SpecieGumshoos() : base(
 			"Gumshoos",
 			88, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			45			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Gumshoos Pokemon Class
+	#region Gumshoos
 	public class Gumshoos : Pokemon
 	{
-
+		#region Gumshoos Builders
+		/// <summary>
+		/// Gumshoos Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Gumshoos(string nickname, int level)
 		: base(
 				735,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Gumshoos Builder only waiting for a Level
+		/// </summary>
 		public Gumshoos(int level)
 		: base(
 				735,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Gumshoos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Gumshoos() : base(
 			735,
 			SpecieGumshoos.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

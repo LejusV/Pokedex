@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Meltan Specie to store common natural stats of every {'abilities': ['magnet-pull'], 'base_experience': 135, 'height': 2, 'id': 808, 'moves': [], 'name': 'meltan', 'stats': {'hp': 46, 'attack': 65, 'defense': 65, 'special-attack': 55, 'special-defense': 35, 'speed': 34}, 'types': ['steel'], 'weight': 80, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'ball', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'メルタン', 'ko': '멜탄', 'zh-Hant': '美錄坦', 'fr': 'Meltan', 'de': 'Meltan', 'es': 'Meltan', 'it': 'Meltan', 'en': 'Meltan', 'ja': 'メルタン', 'zh-Hans': '美录坦'}, 'genera': {'ja-Hrkt': 'ナットポケモン', 'ko': '너트포켓몬', 'zh-Hant': '螺帽寶可夢', 'fr': 'Pokémon Écrou', 'de': 'Mutter', 'es': 'Pokémon Tuerca', 'it': 'Pokémon Bullone', 'en': 'Hex Nut Pokémon', 'ja': 'ナットポケモン', 'zh-Hans': '螺帽宝可梦'}}
+	//Meltan Specie to store common natural stats of all Meltans
+	#region SpecieMeltan
 	public class SpecieMeltan : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMeltan Builder
 		public SpecieMeltan() : base(
 			"Meltan",
 			46, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 35, // Special Attack & Defense
 			34			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Meltan Pokemon Class
+	#region Meltan
 	public class Meltan : Pokemon
 	{
-
+		#region Meltan Builders
+		/// <summary>
+		/// Meltan Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Meltan(string nickname, int level)
 		: base(
 				808,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Meltan Builder only waiting for a Level
+		/// </summary>
 		public Meltan(int level)
 		: base(
 				808,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Meltan Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Meltan() : base(
 			808,
 			SpecieMeltan.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

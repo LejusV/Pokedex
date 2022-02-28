@@ -12,7 +12,6 @@ namespace Pokedex.Models.Moves
 			MoveCategory.Physical, // Move Category
 			10, 85,// PP & Pow
 			100, 0 // Acc & Priority
-			
 		) {}
 	}
 }

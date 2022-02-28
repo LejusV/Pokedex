@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Litten Specie to store common natural stats of every {'abilities': ['blaze', 'intimidate'], 'base_experience': 64, 'height': 4, 'id': 725, 'moves': ['scratch', 'swords-dance', 'double-kick', 'body-slam', 'thrash', 'leer', 'bite', 'growl', 'roar', 'ember', 'flamethrower', 'toxic', 'double-team', 'lick', 'fire-blast', 'leech-life', 'fury-swipes', 'rest', 'substitute', 'protect', 'scary-face', 'outrage', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'sunny-day', 'crunch', 'fake-out', 'heat-wave', 'torment', 'will-o-wisp', 'facade', 'taunt', 'revenge', 'overheat', 'bulk-up', 'u-turn', 'flare-blitz', 'nasty-plot', 'shadow-claw', 'fire-fang', 'flame-charge', 'round', 'acrobatics', 'fire-pledge', 'work-up', 'confide', 'power-trip'], 'name': 'litten', 'stats': {'hp': 45, 'attack': 65, 'defense': 40, 'special-attack': 60, 'special-defense': 40, 'speed': 70}, 'types': ['fire'], 'weight': 43, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 1, 'capture_rate': 45, 'color': 'red', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ニャビー', 'ko': '냐오불', 'zh-Hant': '火斑喵', 'fr': 'Flamiaou', 'de': 'Flamiau', 'es': 'Litten', 'it': 'Litten', 'en': 'Litten', 'ja': 'ニャビー', 'zh-Hans': '火斑喵'}, 'genera': {'ja-Hrkt': 'ひねこポケモン', 'ko': '불고양이포켓몬', 'zh-Hant': '火貓寶可夢', 'fr': 'Pokémon Chat Feu', 'de': 'Feuerkatze', 'es': 'Pokémon Gato Fuego', 'it': 'Pokémon Pirofelino', 'en': 'Fire Cat Pokémon', 'ja': 'ひねこポケモン', 'zh-Hans': '火猫宝可梦'}}
+	//Litten Specie to store common natural stats of all Littens
+	#region SpecieLitten
 	public class SpecieLitten : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieLitten Builder
 		public SpecieLitten() : base(
 			"Litten",
 			45, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 40, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Litten Pokemon Class
+	#region Litten
 	public class Litten : Pokemon
 	{
-
+		#region Litten Builders
+		/// <summary>
+		/// Litten Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Litten(string nickname, int level)
 		: base(
 				725,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Litten Builder only waiting for a Level
+		/// </summary>
 		public Litten(int level)
 		: base(
 				725,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Litten Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Litten() : base(
 			725,
 			SpecieLitten.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

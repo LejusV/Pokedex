@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lampent Specie to store common natural stats of every {'abilities': ['flash-fire', 'flame-body', 'infiltrator'], 'base_experience': 130, 'height': 6, 'id': 608, 'moves': ['ember', 'flamethrower', 'solar-beam', 'fire-spin', 'toxic', 'psychic', 'night-shade', 'double-team', 'minimize', 'confuse-ray', 'smog', 'fire-blast', 'dream-eater', 'flash', 'rest', 'substitute', 'thief', 'snore', 'curse', 'spite', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'pain-split', 'hidden-power', 'sunny-day', 'psych-up', 'shadow-ball', 'heat-wave', 'will-o-wisp', 'memento', 'facade', 'taunt', 'trick', 'imprison', 'secret-power', 'astonish', 'overheat', 'calm-mind', 'shock-wave', 'payback', 'embargo', 'dark-pulse', 'energy-ball', 'trick-room', 'telekinesis', 'flame-burst', 'flame-charge', 'round', 'hex', 'incinerate', 'inferno', 'confide'], 'name': 'lampent', 'stats': {'hp': 60, 'attack': 40, 'defense': 60, 'special-attack': 95, 'special-defense': 60, 'speed': 55}, 'types': ['ghost', 'fire'], 'weight': 130, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 90, 'color': 'black', 'shape': 'arms', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium-slow', 'egg_groups': ['indeterminate'], 'names': {'ja-Hrkt': 'ランプラー', 'ko': '램프라', 'zh-Hant': '燈火幽靈', 'fr': 'Mélancolux', 'de': 'Laternecto', 'es': 'Lampent', 'it': 'Lampent', 'en': 'Lampent', 'ja': 'ランプラー', 'zh-Hans': '灯火幽灵'}, 'genera': {'ja-Hrkt': 'ランプポケモン', 'ko': '램프포켓몬', 'zh-Hant': '油燈寶可夢', 'fr': 'Pokémon Lampe', 'de': 'Lampe', 'es': 'Pokémon Farolillo', 'it': 'Pokémon Lanterna', 'en': 'Lamp Pokémon', 'ja': 'ランプポケモン', 'zh-Hans': '油灯宝可梦'}}
+	//Lampent Specie to store common natural stats of all Lampents
+	#region SpecieLampent
 	public class SpecieLampent : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieLampent Builder
 		public SpecieLampent() : base(
 			"Lampent",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			95, 60, // Special Attack & Defense
 			55			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Lampent Pokemon Class
+	#region Lampent
 	public class Lampent : Pokemon
 	{
-
+		#region Lampent Builders
+		/// <summary>
+		/// Lampent Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Lampent(string nickname, int level)
 		: base(
 				608,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lampent Builder only waiting for a Level
+		/// </summary>
 		public Lampent(int level)
 		: base(
 				608,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Lampent Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Lampent() : base(
 			608,
 			SpecieLampent.Instance, // Pokemon Specie
 			Ghost.Instance, Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

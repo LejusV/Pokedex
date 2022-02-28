@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Basculin-Red-Striped Specie to store common natural stats of every {'abilities': ['reckless', 'adaptability', 'mold-breaker'], 'base_experience': 161, 'height': 10, 'id': 550, 'moves': ['cut', 'headbutt', 'tackle', 'take-down', 'thrash', 'double-edge', 'tail-whip', 'bite', 'water-gun', 'surf', 'ice-beam', 'bubble-beam', 'toxic', 'agility', 'rage', 'double-team', 'waterfall', 'swift', 'rest', 'substitute', 'snore', 'flail', 'protect', 'scary-face', 'icy-wind', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'crunch', 'whirlpool', 'uproar', 'hail', 'facade', 'taunt', 'superpower', 'revenge', 'endeavor', 'secret-power', 'dive', 'muddy-water', 'bounce', 'mud-shot', 'brine', 'aqua-tail', 'zen-headbutt', 'aqua-jet', 'head-smash', 'soak', 'round', 'chip-away', 'scald', 'final-gambit', 'confide'], 'name': 'basculin-red-striped', 'stats': {'hp': 70, 'attack': 92, 'defense': 65, 'special-attack': 80, 'special-defense': 55, 'speed': 98}, 'types': ['water'], 'weight': 180, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 40, 'gender_rate': 4, 'capture_rate': 25, 'color': 'green', 'shape': 'fish', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['water2'], 'names': {'ja-Hrkt': 'バスラオ', 'ko': '배쓰나이', 'zh-Hant': '野蠻鱸魚', 'fr': 'Bargantua', 'de': 'Barschuft', 'es': 'Basculin', 'it': 'Basculin', 'en': 'Basculin', 'ja': 'バスラオ', 'zh-Hans': '野蛮鲈鱼'}, 'genera': {'ja-Hrkt': 'らんぼうポケモン', 'ko': '흉포포켓몬', 'zh-Hant': '粗暴寶可夢', 'fr': 'Pokémon Violent', 'de': 'Grobheit', 'es': 'Pokémon Violento', 'it': 'Pokémon Irruenza', 'en': 'Hostile Pokémon', 'ja': 'らんぼうポケモン', 'zh-Hans': '粗暴宝可梦'}}
+	//Basculin-Red-Striped Specie to store common natural stats of all Basculin-Red-Stripeds
+	#region SpecieBasculin-Red-Striped
 	public class SpecieBasculinRedStriped : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBasculin-Red-Striped Builder
 		public SpecieBasculinRedStriped() : base(
 			"Basculin-Red-Striped",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 55, // Special Attack & Defense
 			98			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Basculin-Red-Striped Pokemon Class
+	#region Basculin-Red-Striped
 	public class BasculinRedStriped : Pokemon
 	{
-
+		#region Basculin-Red-Striped Builders
+		/// <summary>
+		/// Basculin-Red-Striped Builder waiting for a Nickname & a Level
+		/// </summary>
 		public BasculinRedStriped(string nickname, int level)
 		: base(
 				550,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Basculin-Red-Striped Builder only waiting for a Level
+		/// </summary>
 		public BasculinRedStriped(int level)
 		: base(
 				550,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Basculin-Red-Striped Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public BasculinRedStriped() : base(
 			550,
 			SpecieBasculinRedStriped.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

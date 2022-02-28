@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rookidee Specie to store common natural stats of every {'abilities': ['keen-eye', 'unnerve', 'big-pecks'], 'base_experience': 49, 'height': 2, 'id': 821, 'moves': [], 'name': 'rookidee', 'stats': {'hp': 38, 'attack': 47, 'defense': 35, 'special-attack': 33, 'special-defense': 35, 'speed': 57}, 'types': ['flying'], 'weight': 18, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'blue', 'shape': 'wings', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ココガラ', 'ko': '파라꼬', 'zh-Hant': '稚山雀', 'fr': 'Minisange', 'de': 'Meikro', 'es': 'Rookidee', 'it': 'Rookidee', 'en': 'Rookidee', 'ja': 'ココガラ', 'zh-Hans': '稚山雀'}, 'genera': {'ja-Hrkt': 'ことりポケモン', 'ko': '아기새포켓몬', 'zh-Hant': '小鳥寶可夢', 'fr': 'Pokémon Minoiseau', 'de': 'Kleinvogel', 'es': 'Pokémon Pajarito', 'it': 'Pokémon Uccellino', 'en': 'Tiny Bird Pokémon', 'ja': 'ことりポケモン', 'zh-Hans': '小鸟宝可梦'}}
+	//Rookidee Specie to store common natural stats of all Rookidees
+	#region SpecieRookidee
 	public class SpecieRookidee : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieRookidee Builder
 		public SpecieRookidee() : base(
 			"Rookidee",
 			38, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			33, 35, // Special Attack & Defense
 			57			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Rookidee Pokemon Class
+	#region Rookidee
 	public class Rookidee : Pokemon
 	{
-
+		#region Rookidee Builders
+		/// <summary>
+		/// Rookidee Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Rookidee(string nickname, int level)
 		: base(
 				821,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Rookidee Builder only waiting for a Level
+		/// </summary>
 		public Rookidee(int level)
 		: base(
 				821,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Rookidee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Rookidee() : base(
 			821,
 			SpecieRookidee.Instance, // Pokemon Specie
 			Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gastrodon Specie to store common natural stats of every {'abilities': ['sticky-hold', 'storm-drain', 'sand-force'], 'base_experience': 166, 'height': 9, 'id': 423, 'moves': ['headbutt', 'body-slam', 'surf', 'ice-beam', 'blizzard', 'hyper-beam', 'strength', 'string-shot', 'earthquake', 'dig', 'toxic', 'double-team', 'recover', 'harden', 'waterfall', 'flash', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'sludge-bomb', 'mud-slap', 'icy-wind', 'sandstorm', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pain-split', 'hidden-power', 'rain-dance', 'ancient-power', 'rock-smash', 'whirlpool', 'hail', 'facade', 'secret-power', 'dive', 'mud-sport', 'rock-tomb', 'muddy-water', 'block', 'water-pulse', 'brine', 'natural-gift', 'earth-power', 'giga-impact', 'mud-bomb', 'stone-edge', 'captivate', 'sludge-wave', 'round', 'scald', 'bulldoze', 'confide', 'infestation'], 'name': 'gastrodon', 'stats': {'hp': 111, 'attack': 83, 'defense': 68, 'special-attack': 92, 'special-defense': 82, 'speed': 39}, 'types': ['water', 'ground'], 'weight': 299, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 75, 'color': 'purple', 'shape': 'squiggle', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium', 'egg_groups': ['water1', 'indeterminate'], 'names': {'ja-Hrkt': 'トリトドン', 'roomaji': 'Toritodon', 'ko': '트리토돈', 'zh-Hant': '海兔獸', 'fr': 'Tritosor', 'de': 'Gastrodon', 'es': 'Gastrodon', 'it': 'Gastrodon', 'en': 'Gastrodon', 'ja': 'トリトドン', 'zh-Hans': '海兔兽'}, 'genera': {'ja-Hrkt': 'ウミウシポケモン', 'ko': '갯민숭달팽이포켓몬', 'zh-Hant': '海兔寶可夢', 'fr': 'Pokémon Aqualimace', 'de': 'Seeschnecke', 'es': 'Pokémon Babosa Mar.', 'it': 'Pokémon Lumacomare', 'en': 'Sea Slug Pokémon', 'ja': 'ウミウシポケモン', 'zh-Hans': '海兔宝可梦'}}
+	//Gastrodon Specie to store common natural stats of all Gastrodons
+	#region SpecieGastrodon
 	public class SpecieGastrodon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieGastrodon Builder
 		public SpecieGastrodon() : base(
 			"Gastrodon",
 			111, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			92, 82, // Special Attack & Defense
 			39			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Gastrodon Pokemon Class
+	#region Gastrodon
 	public class Gastrodon : Pokemon
 	{
-
+		#region Gastrodon Builders
+		/// <summary>
+		/// Gastrodon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Gastrodon(string nickname, int level)
 		: base(
 				423,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Gastrodon Builder only waiting for a Level
+		/// </summary>
 		public Gastrodon(int level)
 		: base(
 				423,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Gastrodon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Gastrodon() : base(
 			423,
 			SpecieGastrodon.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

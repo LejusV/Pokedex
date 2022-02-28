@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dartrix Specie to store common natural stats of every {'abilities': ['overgrow', 'long-reach'], 'base_experience': 147, 'height': 7, 'id': 723, 'moves': ['swords-dance', 'fury-attack', 'tackle', 'growl', 'peck', 'razor-leaf', 'solar-beam', 'toxic', 'double-team', 'light-screen', 'rest', 'substitute', 'protect', 'foresight', 'false-swipe', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'synthesis', 'hidden-power', 'sunny-day', 'facade', 'nature-power', 'feather-dance', 'astonish', 'leaf-blade', 'roost', 'pluck', 'sucker-punch', 'energy-ball', 'brave-bird', 'nasty-plot', 'shadow-claw', 'grass-knot', 'ominous-wind', 'round', 'echoed-voice', 'grass-pledge', 'work-up', 'confide', 'leafage'], 'name': 'dartrix', 'stats': {'hp': 78, 'attack': 75, 'defense': 75, 'special-attack': 70, 'special-defense': 70, 'speed': 52}, 'types': ['grass', 'flying'], 'weight': 160, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 1, 'capture_rate': 45, 'color': 'brown', 'shape': 'wings', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'フクスロー', 'ko': '빼미스로우', 'zh-Hant': '投羽梟', 'fr': 'Efflèche', 'de': 'Arboretoss', 'es': 'Dartrix', 'it': 'Dartrix', 'en': 'Dartrix', 'ja': 'フクスロー', 'zh-Hans': '投羽枭'}, 'genera': {'ja-Hrkt': 'はばねポケモン', 'ko': '칼날깃포켓몬', 'zh-Hant': '刃羽寶可夢', 'fr': 'Pokémon Plum’acérée', 'de': 'Flügelklinge', 'es': 'Pokémon Pluma Filo', 'it': 'Pokémon Piumaffilata', 'en': 'Blade Quill Pokémon', 'ja': 'はばねポケモン', 'zh-Hans': '刃羽宝可梦'}}
+	//Dartrix Specie to store common natural stats of all Dartrixs
+	#region SpecieDartrix
 	public class SpecieDartrix : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDartrix Builder
 		public SpecieDartrix() : base(
 			"Dartrix",
 			78, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			70, 70, // Special Attack & Defense
 			52			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Dartrix Pokemon Class
+	#region Dartrix
 	public class Dartrix : Pokemon
 	{
-
+		#region Dartrix Builders
+		/// <summary>
+		/// Dartrix Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Dartrix(string nickname, int level)
 		: base(
 				723,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dartrix Builder only waiting for a Level
+		/// </summary>
 		public Dartrix(int level)
 		: base(
 				723,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dartrix Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Dartrix() : base(
 			723,
 			SpecieDartrix.Instance, // Pokemon Specie
 			Grass.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

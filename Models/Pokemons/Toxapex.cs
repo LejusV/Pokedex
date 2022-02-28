@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toxapex Specie to store common natural stats of every {'abilities': ['merciless', 'limber', 'regenerator'], 'base_experience': 173, 'height': 7, 'id': 748, 'moves': ['poison-sting', 'pin-missile', 'bite', 'surf', 'ice-beam', 'blizzard', 'peck', 'toxic', 'double-team', 'recover', 'light-screen', 'spike-cannon', 'rest', 'substitute', 'protect', 'sludge-bomb', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'rain-dance', 'hail', 'facade', 'payback', 'toxic-spikes', 'poison-jab', 'wide-guard', 'venoshock', 'smack-down', 'sludge-wave', 'round', 'scald', 'frost-breath', 'confide', 'venom-drench', 'infestation', 'baneful-bunker', 'liquidation'], 'name': 'toxapex', 'stats': {'hp': 50, 'attack': 63, 'defense': 152, 'special-attack': 53, 'special-defense': 142, 'speed': 35}, 'types': ['poison', 'water'], 'weight': 145, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 75, 'color': 'blue', 'shape': 'tentacles', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['water1'], 'names': {'ja-Hrkt': 'ドヒドイデ', 'ko': '더시마사리', 'zh-Hant': '超壞星', 'fr': 'Prédastérie', 'de': 'Aggrostella', 'es': 'Toxapex', 'it': 'Toxapex', 'en': 'Toxapex', 'ja': 'ドヒドイデ', 'zh-Hans': '超坏星'}, 'genera': {'ja-Hrkt': 'ヒトデナシポケモン', 'ko': '깨비사리포켓몬', 'zh-Hant': '非星寶可夢', 'fr': 'Pokémon Cruel', 'de': 'Quäl-Stern', 'es': 'Pokémon Estrellatroz', 'it': 'Pokémon Stellatroce', 'en': 'Brutal Star Pokémon', 'ja': 'ヒトデナシポケモン', 'zh-Hans': '非星宝可梦'}}
+	//Toxapex Specie to store common natural stats of all Toxapexs
+	#region SpecieToxapex
 	public class SpecieToxapex : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieToxapex Builder
 		public SpecieToxapex() : base(
 			"Toxapex",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			53, 142, // Special Attack & Defense
 			35			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Toxapex Pokemon Class
+	#region Toxapex
 	public class Toxapex : Pokemon
 	{
-
+		#region Toxapex Builders
+		/// <summary>
+		/// Toxapex Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Toxapex(string nickname, int level)
 		: base(
 				748,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Toxapex Builder only waiting for a Level
+		/// </summary>
 		public Toxapex(int level)
 		: base(
 				748,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Toxapex Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Toxapex() : base(
 			748,
 			SpecieToxapex.Instance, // Pokemon Specie
 			Poison.Instance, Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

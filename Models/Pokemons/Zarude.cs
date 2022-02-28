@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zarude Specie to store common natural stats of every {'abilities': ['leaf-guard'], 'base_experience': 300, 'height': 18, 'id': 893, 'moves': [], 'name': 'zarude', 'stats': {'hp': 105, 'attack': 120, 'defense': 105, 'special-attack': 70, 'special-defense': 95, 'speed': 105}, 'types': ['dark', 'grass'], 'weight': 700, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'green', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ザルード', 'ko': '자루도', 'zh-Hant': '薩戮德', 'fr': 'Zarude', 'de': 'Zarude', 'es': 'Zarude', 'it': 'Zarude', 'en': 'Zarude', 'ja': 'ザルード', 'zh-Hans': '萨戮德'}, 'genera': {'ja-Hrkt': 'わるざるポケモン', 'ko': '나쁜원숭이포켓몬', 'zh-Hant': '惡猿寶可夢', 'fr': 'Pokémon Vilain Singe', 'de': 'Finsteraffen', 'es': 'Pokémon Simiestro', 'it': 'Pokémon Categoria', 'en': 'Rogue Monkey Pokémon', 'ja': 'わるざるポケモン', 'zh-Hans': '恶猿宝可梦'}}
+	//Zarude Specie to store common natural stats of all Zarudes
+	#region SpecieZarude
 	public class SpecieZarude : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieZarude Builder
 		public SpecieZarude() : base(
 			"Zarude",
 			105, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			70, 95, // Special Attack & Defense
 			105			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Zarude Pokemon Class
+	#region Zarude
 	public class Zarude : Pokemon
 	{
-
+		#region Zarude Builders
+		/// <summary>
+		/// Zarude Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Zarude(string nickname, int level)
 		: base(
 				893,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zarude Builder only waiting for a Level
+		/// </summary>
 		public Zarude(int level)
 		: base(
 				893,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Zarude Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Zarude() : base(
 			893,
 			SpecieZarude.Instance, // Pokemon Specie
 			Dark.Instance, Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

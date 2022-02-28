@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Amoonguss Specie to store common natural stats of every {'abilities': ['effect-spore', 'regenerator'], 'base_experience': 162, 'height': 6, 'id': 591, 'moves': ['hyper-beam', 'absorb', 'mega-drain', 'growth', 'solar-beam', 'toxic', 'double-team', 'bide', 'spore', 'flash', 'rest', 'substitute', 'snore', 'protect', 'feint-attack', 'sludge-bomb', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'sweet-scent', 'synthesis', 'hidden-power', 'rain-dance', 'sunny-day', 'facade', 'nature-power', 'ingrain', 'secret-power', 'astonish', 'payback', 'gastro-acid', 'worry-seed', 'seed-bomb', 'energy-ball', 'giga-impact', 'grass-knot', 'venoshock', 'rage-powder', 'foul-play', 'after-you', 'round', 'clear-smog', 'confide'], 'name': 'amoonguss', 'stats': {'hp': 114, 'attack': 85, 'defense': 70, 'special-attack': 85, 'special-defense': 80, 'speed': 30}, 'types': ['grass', 'poison'], 'weight': 105, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 75, 'color': 'white', 'shape': 'arms', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'モロバレル', 'ko': '뽀록나', 'zh-Hant': '敗露球菇', 'fr': 'Gaulet', 'de': 'Hutsassa', 'es': 'Amoonguss', 'it': 'Amoonguss', 'en': 'Amoonguss', 'ja': 'モロバレル', 'zh-Hans': '败露球菇'}, 'genera': {'ja-Hrkt': 'きのこポケモン', 'ko': '버섯포켓몬', 'zh-Hant': '蘑菇寶可夢', 'fr': 'Pokémon Champignon', 'de': 'Pilz', 'es': 'Pokémon Hongo', 'it': 'Pokémon Fungo', 'en': 'Mushroom Pokémon', 'ja': 'きのこポケモン', 'zh-Hans': '蘑菇宝可梦'}}
+	//Amoonguss Specie to store common natural stats of all Amoongusss
+	#region SpecieAmoonguss
 	public class SpecieAmoonguss : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieAmoonguss Builder
 		public SpecieAmoonguss() : base(
 			"Amoonguss",
 			114, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			85, 80, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Amoonguss Pokemon Class
+	#region Amoonguss
 	public class Amoonguss : Pokemon
 	{
-
+		#region Amoonguss Builders
+		/// <summary>
+		/// Amoonguss Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Amoonguss(string nickname, int level)
 		: base(
 				591,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Amoonguss Builder only waiting for a Level
+		/// </summary>
 		public Amoonguss(int level)
 		: base(
 				591,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Amoonguss Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Amoonguss() : base(
 			591,
 			SpecieAmoonguss.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

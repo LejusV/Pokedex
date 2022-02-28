@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Beldum Specie to store common natural stats of every {'abilities': ['clear-body', 'light-metal'], 'base_experience': 60, 'height': 6, 'id': 374, 'moves': ['headbutt', 'take-down', 'iron-defense', 'zen-headbutt', 'iron-head'], 'name': 'beldum', 'stats': {'hp': 40, 'attack': 55, 'defense': 80, 'special-attack': 35, 'special-defense': 60, 'speed': 30}, 'types': ['steel', 'psychic'], 'weight': 952, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 40, 'gender_rate': -1, 'capture_rate': 3, 'color': 'blue', 'shape': 'blob', 'habitat': 'rough-terrain', 'generation': 'generation-iii', 'growth_rate': 'slow', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ダンバル', 'roomaji': 'Dumbber', 'ko': '메탕', 'zh-Hant': '鐵啞鈴', 'fr': 'Terhal', 'de': 'Tanhel', 'es': 'Beldum', 'it': 'Beldum', 'en': 'Beldum', 'ja': 'ダンバル', 'zh-Hans': '铁哑铃'}, 'genera': {'ja-Hrkt': 'てっきゅうポケモン', 'ko': '철공포켓몬', 'zh-Hant': '鐵球寶可夢', 'fr': 'Pokémon Boulefer', 'de': 'Eisenkugel', 'es': 'Pokémon Bola Hierro', 'it': 'Pokémon Ferrosfera', 'en': 'Iron Ball Pokémon', 'ja': 'てっきゅうポケモン', 'zh-Hans': '铁球宝可梦'}}
+	//Beldum Specie to store common natural stats of all Beldums
+	#region SpecieBeldum
 	public class SpecieBeldum : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBeldum Builder
 		public SpecieBeldum() : base(
 			"Beldum",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			35, 60, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Beldum Pokemon Class
+	#region Beldum
 	public class Beldum : Pokemon
 	{
-
+		#region Beldum Builders
+		/// <summary>
+		/// Beldum Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Beldum(string nickname, int level)
 		: base(
 				374,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Beldum Builder only waiting for a Level
+		/// </summary>
 		public Beldum(int level)
 		: base(
 				374,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Beldum Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Beldum() : base(
 			374,
 			SpecieBeldum.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

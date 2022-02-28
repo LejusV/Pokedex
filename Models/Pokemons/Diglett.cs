@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Diglett Specie to store common natural stats of every {'abilities': ['sand-veil', 'arena-trap', 'sand-force'], 'base_experience': 53, 'height': 2, 'id': 50, 'moves': ['scratch', 'cut', 'sand-attack', 'headbutt', 'body-slam', 'take-down', 'double-edge', 'growl', 'earthquake', 'fissure', 'dig', 'toxic', 'rage', 'mimic', 'screech', 'double-team', 'bide', 'fury-swipes', 'rest', 'rock-slide', 'slash', 'substitute', 'thief', 'snore', 'curse', 'reversal', 'protect', 'feint-attack', 'sludge-bomb', 'mud-slap', 'sandstorm', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'magnitude', 'pursuit', 'hidden-power', 'sunny-day', 'ancient-power', 'rock-smash', 'beat-up', 'uproar', 'memento', 'facade', 'secret-power', 'astonish', 'rock-tomb', 'aerial-ace', 'natural-gift', 'sucker-punch', 'earth-power', 'shadow-claw', 'mud-bomb', 'captivate', 'stealth-rock', 'hone-claws', 'round', 'echoed-voice', 'final-gambit', 'bulldoze', 'confide'], 'name': 'diglett', 'stats': {'hp': 10, 'attack': 55, 'defense': 25, 'special-attack': 35, 'special-defense': 45, 'speed': 95}, 'types': ['ground'], 'weight': 8, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 255, 'color': 'brown', 'shape': 'blob', 'habitat': 'cave', 'generation': 'generation-i', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ディグダ', 'roomaji': 'Digda', 'ko': '디그다', 'zh-Hant': '地鼠', 'fr': 'Taupiqueur', 'de': 'Digda', 'es': 'Diglett', 'it': 'Diglett', 'en': 'Diglett', 'ja': 'ディグダ', 'zh-Hans': '地鼠'}, 'genera': {'ja-Hrkt': 'もぐらポケモン', 'ko': '두더지포켓몬', 'zh-Hant': '鼴鼠寶可夢', 'fr': 'Pokémon Taupe', 'de': 'Maulwurf', 'es': 'Pokémon Topo', 'it': 'Pokémon Talpa', 'en': 'Mole Pokémon', 'ja': 'もぐらポケモン', 'zh-Hans': '鼹鼠宝可梦'}}
+	//Diglett Specie to store common natural stats of all Digletts
+	#region SpecieDiglett
 	public class SpecieDiglett : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDiglett Builder
 		public SpecieDiglett() : base(
 			"Diglett",
 			10, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			35, 45, // Special Attack & Defense
 			95			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Diglett Pokemon Class
+	#region Diglett
 	public class Diglett : Pokemon
 	{
-
+		#region Diglett Builders
+		/// <summary>
+		/// Diglett Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Diglett(string nickname, int level)
 		: base(
 				50,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Diglett Builder only waiting for a Level
+		/// </summary>
 		public Diglett(int level)
 		: base(
 				50,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Diglett Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Diglett() : base(
 			50,
 			SpecieDiglett.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

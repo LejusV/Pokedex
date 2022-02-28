@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dreepy Specie to store common natural stats of every {'abilities': ['clear-body', 'infiltrator', 'cursed-body'], 'base_experience': 54, 'height': 5, 'id': 885, 'moves': [], 'name': 'dreepy', 'stats': {'hp': 28, 'attack': 60, 'defense': 30, 'special-attack': 40, 'special-defense': 30, 'speed': 82}, 'types': ['dragon', 'ghost'], 'weight': 20, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 40, 'gender_rate': 4, 'capture_rate': 45, 'color': 'green', 'shape': 'squiggle', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ドラメシヤ', 'ko': '드라꼰', 'zh-Hant': '多龍梅西亞', 'fr': 'Fantyrm', 'de': 'Grolldra', 'es': 'Dreepy', 'it': 'Dreepy', 'en': 'Dreepy', 'ja': 'ドラメシヤ', 'zh-Hans': '多龙梅西亚'}, 'genera': {'ja-Hrkt': 'うらめしポケモン', 'ko': '원망포켓몬', 'zh-Hant': '哀怨寶可夢', 'fr': 'Pokémon Âme Errante', 'de': 'Missgunst', 'es': 'Pokémon Resentido', 'it': 'Pokémon Risentimento', 'en': 'Lingering Pokémon', 'ja': 'うらめしポケモン', 'zh-Hans': '哀怨宝可梦'}}
+	//Dreepy Specie to store common natural stats of all Dreepys
+	#region SpecieDreepy
 	public class SpecieDreepy : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDreepy Builder
 		public SpecieDreepy() : base(
 			"Dreepy",
 			28, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 30, // Special Attack & Defense
 			82			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Dreepy Pokemon Class
+	#region Dreepy
 	public class Dreepy : Pokemon
 	{
-
+		#region Dreepy Builders
+		/// <summary>
+		/// Dreepy Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Dreepy(string nickname, int level)
 		: base(
 				885,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dreepy Builder only waiting for a Level
+		/// </summary>
 		public Dreepy(int level)
 		: base(
 				885,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dreepy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Dreepy() : base(
 			885,
 			SpecieDreepy.Instance, // Pokemon Specie
 			Dragon.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sunflora Specie to store common natural stats of every {'abilities': ['chlorophyll', 'solar-power', 'early-bird'], 'base_experience': 149, 'height': 8, 'id': 192, 'moves': ['pound', 'swords-dance', 'cut', 'double-edge', 'hyper-beam', 'absorb', 'mega-drain', 'leech-seed', 'growth', 'razor-leaf', 'solar-beam', 'petal-dance', 'toxic', 'mimic', 'double-team', 'light-screen', 'flash', 'rest', 'substitute', 'snore', 'curse', 'protect', 'sludge-bomb', 'giga-drain', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'sweet-scent', 'synthesis', 'hidden-power', 'sunny-day', 'uproar', 'facade', 'nature-power', 'helping-hand', 'ingrain', 'endeavor', 'secret-power', 'grass-whistle', 'bullet-seed', 'natural-gift', 'worry-seed', 'seed-bomb', 'energy-ball', 'earth-power', 'giga-impact', 'leaf-storm', 'captivate', 'grass-knot', 'after-you', 'round', 'petal-blizzard', 'flower-shield', 'confide'], 'name': 'sunflora', 'stats': {'hp': 75, 'attack': 75, 'defense': 55, 'special-attack': 105, 'special-defense': 85, 'speed': 30}, 'types': ['grass'], 'weight': 85, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 120, 'color': 'yellow', 'shape': 'humanoid', 'habitat': 'grassland', 'generation': 'generation-ii', 'growth_rate': 'medium-slow', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'キマワリ', 'roomaji': 'Kimawari', 'ko': '해루미', 'zh-Hant': '向日花怪', 'fr': 'Héliatronc', 'de': 'Sonnflora', 'es': 'Sunflora', 'it': 'Sunflora', 'en': 'Sunflora', 'ja': 'キマワリ', 'zh-Hans': '向日花怪'}, 'genera': {'ja-Hrkt': 'たいようポケモン', 'ko': '태양포켓몬', 'zh-Hant': '太陽寶可夢', 'fr': 'Pokémon Soleil', 'de': 'Sonne', 'es': 'Pokémon Sol', 'it': 'Pokémon Sole', 'en': 'Sun Pokémon', 'ja': 'たいようポケモン', 'zh-Hans': '太阳宝可梦'}}
+	//Sunflora Specie to store common natural stats of all Sunfloras
+	#region SpecieSunflora
 	public class SpecieSunflora : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSunflora Builder
 		public SpecieSunflora() : base(
 			"Sunflora",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			105, 85, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Sunflora Pokemon Class
+	#region Sunflora
 	public class Sunflora : Pokemon
 	{
-
+		#region Sunflora Builders
+		/// <summary>
+		/// Sunflora Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Sunflora(string nickname, int level)
 		: base(
 				192,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Sunflora Builder only waiting for a Level
+		/// </summary>
 		public Sunflora(int level)
 		: base(
 				192,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Sunflora Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Sunflora() : base(
 			192,
 			SpecieSunflora.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

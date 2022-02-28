@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drizzile Specie to store common natural stats of every {'abilities': ['torrent', 'sniper'], 'base_experience': 147, 'height': 7, 'id': 817, 'moves': [], 'name': 'drizzile', 'stats': {'hp': 65, 'attack': 60, 'defense': 55, 'special-attack': 95, 'special-defense': 55, 'speed': 90}, 'types': ['water'], 'weight': 115, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'blue', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ジメレオン', 'ko': '누겔레온', 'zh-Hant': '變澀蜥', 'fr': 'Arrozard', 'de': 'Phlegleon', 'es': 'Drizzile', 'it': 'Drizzile', 'en': 'Drizzile', 'ja': 'ジメレオン', 'zh-Hans': '变涩蜥'}, 'genera': {'ja-Hrkt': 'みずとかげポケモン', 'ko': '물도마뱀포켓몬', 'zh-Hant': '水蜥寶可夢', 'fr': "Pokémon Lézard'Eau", 'de': 'Wasserechse', 'es': 'Pokémon Acuartija', 'it': 'Pokémon Acquacertola', 'en': 'Water Lizard Pokémon', 'ja': 'みずとかげポケモン', 'zh-Hans': '水蜥宝可梦'}}
+	//Drizzile Specie to store common natural stats of all Drizziles
+	#region SpecieDrizzile
 	public class SpecieDrizzile : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDrizzile Builder
 		public SpecieDrizzile() : base(
 			"Drizzile",
 			65, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			95, 55, // Special Attack & Defense
 			90			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Drizzile Pokemon Class
+	#region Drizzile
 	public class Drizzile : Pokemon
 	{
-
+		#region Drizzile Builders
+		/// <summary>
+		/// Drizzile Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Drizzile(string nickname, int level)
 		: base(
 				817,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Drizzile Builder only waiting for a Level
+		/// </summary>
 		public Drizzile(int level)
 		: base(
 				817,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Drizzile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Drizzile() : base(
 			817,
 			SpecieDrizzile.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

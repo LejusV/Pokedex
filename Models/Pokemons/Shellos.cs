@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shellos Specie to store common natural stats of every {'abilities': ['sticky-hold', 'storm-drain', 'sand-force'], 'base_experience': 65, 'height': 3, 'id': 422, 'moves': ['headbutt', 'body-slam', 'mist', 'surf', 'ice-beam', 'blizzard', 'counter', 'string-shot', 'fissure', 'toxic', 'double-team', 'recover', 'harden', 'sludge', 'amnesia', 'acid-armor', 'rest', 'substitute', 'snore', 'curse', 'protect', 'mud-slap', 'icy-wind', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pain-split', 'hidden-power', 'rain-dance', 'mirror-coat', 'ancient-power', 'whirlpool', 'stockpile', 'spit-up', 'swallow', 'hail', 'memento', 'facade', 'yawn', 'secret-power', 'dive', 'mud-sport', 'muddy-water', 'water-pulse', 'brine', 'natural-gift', 'trump-card', 'earth-power', 'mud-bomb', 'captivate', 'round', 'clear-smog', 'scald', 'confide', 'infestation'], 'name': 'shellos', 'stats': {'hp': 76, 'attack': 48, 'defense': 48, 'special-attack': 57, 'special-defense': 62, 'speed': 34}, 'types': ['water'], 'weight': 63, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 190, 'color': 'purple', 'shape': 'squiggle', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium', 'egg_groups': ['water1', 'indeterminate'], 'names': {'ja-Hrkt': 'カラナクシ', 'roomaji': 'Karanakushi', 'ko': '깝질무', 'zh-Hant': '無殼海兔', 'fr': 'Sancoki', 'de': 'Schalellos', 'es': 'Shellos', 'it': 'Shellos', 'en': 'Shellos', 'ja': 'カラナクシ', 'zh-Hans': '无壳海兔'}, 'genera': {'ja-Hrkt': 'ウミウシポケモン', 'ko': '갯민숭달팽이포켓몬', 'zh-Hant': '海兔寶可夢', 'fr': 'Pokémon Aqualimace', 'de': 'Seeschnecke', 'es': 'Pokémon Babosa Mar.', 'it': 'Pokémon Lumacomare', 'en': 'Sea Slug Pokémon', 'ja': 'ウミウシポケモン', 'zh-Hans': '海兔宝可梦'}}
+	//Shellos Specie to store common natural stats of all Shelloss
+	#region SpecieShellos
 	public class SpecieShellos : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieShellos Builder
 		public SpecieShellos() : base(
 			"Shellos",
 			76, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			57, 62, // Special Attack & Defense
 			34			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Shellos Pokemon Class
+	#region Shellos
 	public class Shellos : Pokemon
 	{
-
+		#region Shellos Builders
+		/// <summary>
+		/// Shellos Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Shellos(string nickname, int level)
 		: base(
 				422,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shellos Builder only waiting for a Level
+		/// </summary>
 		public Shellos(int level)
 		: base(
 				422,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shellos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Shellos() : base(
 			422,
 			SpecieShellos.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kingler Specie to store common natural stats of every {'abilities': ['hyper-cutter', 'shell-armor', 'sheer-force'], 'base_experience': 166, 'height': 13, 'id': 99, 'moves': ['vice-grip', 'guillotine', 'swords-dance', 'cut', 'slam', 'stomp', 'body-slam', 'take-down', 'double-edge', 'leer', 'water-gun', 'surf', 'ice-beam', 'blizzard', 'bubble-beam', 'hyper-beam', 'strength', 'dig', 'toxic', 'rage', 'mimic', 'double-team', 'harden', 'bide', 'bubble', 'crabhammer', 'rest', 'rock-slide', 'substitute', 'thief', 'snore', 'curse', 'flail', 'protect', 'mud-slap', 'icy-wind', 'endure', 'false-swipe', 'swagger', 'fury-cutter', 'attract', 'sleep-talk', 'return', 'frustration', 'metal-claw', 'hidden-power', 'rain-dance', 'ancient-power', 'rock-smash', 'whirlpool', 'hail', 'facade', 'superpower', 'brick-break', 'knock-off', 'secret-power', 'dive', 'mud-sport', 'rock-tomb', 'iron-defense', 'mud-shot', 'water-pulse', 'brine', 'natural-gift', 'fling', 'x-scissor', 'giga-impact', 'captivate', 'hone-claws', 'wide-guard', 'round', 'scald', 'quash', 'confide'], 'name': 'kingler', 'stats': {'hp': 55, 'attack': 130, 'defense': 115, 'special-attack': 50, 'special-defense': 50, 'speed': 75}, 'types': ['water'], 'weight': 600, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 60, 'color': 'red', 'shape': 'armor', 'habitat': 'waters-edge', 'generation': 'generation-i', 'growth_rate': 'medium', 'egg_groups': ['water3'], 'names': {'ja-Hrkt': 'キングラー', 'roomaji': 'Kingler', 'ko': '킹크랩', 'zh-Hant': '巨鉗蟹', 'fr': 'Krabboss', 'de': 'Kingler', 'es': 'Kingler', 'it': 'Kingler', 'en': 'Kingler', 'ja': 'キングラー', 'zh-Hans': '巨钳蟹'}, 'genera': {'ja-Hrkt': 'はさみポケモン', 'ko': '집게포켓몬', 'zh-Hant': '鉗子寶可夢', 'fr': 'Pokémon Pince', 'de': 'Kneifer', 'es': 'Pokémon Tenaza', 'it': 'Pokémon Chela', 'en': 'Pincer Pokémon', 'ja': 'はさみポケモン', 'zh-Hans': '钳子宝可梦'}}
+	//Kingler Specie to store common natural stats of all Kinglers
+	#region SpecieKingler
 	public class SpecieKingler : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieKingler Builder
 		public SpecieKingler() : base(
 			"Kingler",
 			55, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			75			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Kingler Pokemon Class
+	#region Kingler
 	public class Kingler : Pokemon
 	{
-
+		#region Kingler Builders
+		/// <summary>
+		/// Kingler Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Kingler(string nickname, int level)
 		: base(
 				99,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kingler Builder only waiting for a Level
+		/// </summary>
 		public Kingler(int level)
 		: base(
 				99,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Kingler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Kingler() : base(
 			99,
 			SpecieKingler.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

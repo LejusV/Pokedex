@@ -12,7 +12,6 @@ namespace Pokedex.Models.Moves
 			MoveCategory.Status, // Move Category
 			20, null,// PP & Pow
 			null, -6 // Acc & Priority
-			
 		) {}
 	}
 }

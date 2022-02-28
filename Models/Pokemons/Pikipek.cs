@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pikipek Specie to store common natural stats of every {'abilities': ['keen-eye', 'skill-link', 'pickup'], 'base_experience': 53, 'height': 3, 'id': 731, 'moves': ['swords-dance', 'fly', 'fury-attack', 'growl', 'supersonic', 'peck', 'drill-peck', 'toxic', 'screech', 'double-team', 'mirror-move', 'rest', 'substitute', 'thief', 'protect', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'sunny-day', 'rock-smash', 'uproar', 'brick-break', 'feather-dance', 'hyper-voice', 'bullet-seed', 'aerial-ace', 'roost', 'pluck', 'tailwind', 'u-turn', 'brave-bird', 'smack-down', 'flame-charge', 'round', 'echoed-voice', 'work-up', 'boomburst', 'confide'], 'name': 'pikipek', 'stats': {'hp': 35, 'attack': 75, 'defense': 30, 'special-attack': 30, 'special-defense': 30, 'speed': 65}, 'types': ['normal', 'flying'], 'weight': 12, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'black', 'shape': 'wings', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'ツツケラ', 'ko': '콕코구리', 'zh-Hant': '小篤兒', 'fr': 'Picassaut', 'de': 'Peppeck', 'es': 'Pikipek', 'it': 'Pikipek', 'en': 'Pikipek', 'ja': 'ツツケラ', 'zh-Hans': '小笃儿'}, 'genera': {'ja-Hrkt': 'きつつきポケモン', 'ko': '딱따구리포켓몬', 'zh-Hant': '啄木鳥寶可夢', 'fr': 'Pokémon Pivert', 'de': 'Specht', 'es': 'Pokémon Carpintero', 'it': 'Pokémon Picchio', 'en': 'Woodpecker Pokémon', 'ja': 'きつつきポケモン', 'zh-Hans': '啄木鸟宝可梦'}}
+	//Pikipek Specie to store common natural stats of all Pikipeks
+	#region SpeciePikipek
 	public class SpeciePikipek : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePikipek Builder
 		public SpeciePikipek() : base(
 			"Pikipek",
 			35, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			65			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Pikipek Pokemon Class
+	#region Pikipek
 	public class Pikipek : Pokemon
 	{
-
+		#region Pikipek Builders
+		/// <summary>
+		/// Pikipek Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Pikipek(string nickname, int level)
 		: base(
 				731,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pikipek Builder only waiting for a Level
+		/// </summary>
 		public Pikipek(int level)
 		: base(
 				731,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pikipek Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Pikipek() : base(
 			731,
 			SpeciePikipek.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

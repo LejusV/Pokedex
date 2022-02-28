@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Togedemaru Specie to store common natural stats of every {'abilities': ['iron-barbs', 'lightning-rod', 'sturdy'], 'base_experience': 152, 'height': 3, 'id': 777, 'moves': ['tackle', 'twineedle', 'pin-missile', 'thunder-shock', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'double-team', 'defense-curl', 'reflect', 'rest', 'substitute', 'thief', 'flail', 'reversal', 'protect', 'rollout', 'swagger', 'spark', 'attract', 'sleep-talk', 'return', 'present', 'frustration', 'encore', 'hidden-power', 'fake-out', 'facade', 'charge', 'wish', 'tickle', 'gyro-ball', 'u-turn', 'payback', 'fling', 'magnet-rise', 'poison-jab', 'giga-impact', 'discharge', 'grass-knot', 'charge-beam', 'round', 'volt-switch', 'work-up', 'wild-charge', 'fell-stinger', 'disarming-voice', 'confide', 'spiky-shield', 'electric-terrain', 'nuzzle', 'zing-zap'], 'name': 'togedemaru', 'stats': {'hp': 65, 'attack': 98, 'defense': 63, 'special-attack': 40, 'special-defense': 73, 'speed': 96}, 'types': ['electric', 'steel'], 'weight': 33, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 10, 'gender_rate': 4, 'capture_rate': 180, 'color': 'gray', 'shape': 'upright', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['ground', 'fairy'], 'names': {'ja-Hrkt': 'トゲデマル', 'ko': '토게데마루', 'zh-Hant': '托戈德瑪爾', 'fr': 'Togedemaru', 'de': 'Togedemaru', 'es': 'Togedemaru', 'it': 'Togedemaru', 'en': 'Togedemaru', 'ja': 'トゲデマル', 'zh-Hans': '托戈德玛尔'}, 'genera': {'ja-Hrkt': 'まるまりポケモン', 'ko': '동글동글포켓몬', 'zh-Hant': '蜷縮寶可夢', 'fr': 'Pokémon Roulenboule', 'de': 'Einigler', 'es': 'Pokémon Bolita', 'it': 'Pokémon Ricciopalla', 'en': 'Roly-Poly Pokémon', 'ja': 'まるまりポケモン', 'zh-Hans': '蜷缩宝可梦'}}
+	//Togedemaru Specie to store common natural stats of all Togedemarus
+	#region SpecieTogedemaru
 	public class SpecieTogedemaru : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTogedemaru Builder
 		public SpecieTogedemaru() : base(
 			"Togedemaru",
 			65, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 73, // Special Attack & Defense
 			96			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Togedemaru Pokemon Class
+	#region Togedemaru
 	public class Togedemaru : Pokemon
 	{
-
+		#region Togedemaru Builders
+		/// <summary>
+		/// Togedemaru Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Togedemaru(string nickname, int level)
 		: base(
 				777,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Togedemaru Builder only waiting for a Level
+		/// </summary>
 		public Togedemaru(int level)
 		: base(
 				777,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Togedemaru Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Togedemaru() : base(
 			777,
 			SpecieTogedemaru.Instance, // Pokemon Specie
 			Electric.Instance, Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

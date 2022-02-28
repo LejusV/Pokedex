@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sinistea Specie to store common natural stats of every {'abilities': ['weak-armor', 'cursed-body'], 'base_experience': 62, 'height': 1, 'id': 854, 'moves': [], 'name': 'sinistea', 'stats': {'hp': 40, 'attack': 45, 'defense': 45, 'special-attack': 74, 'special-defense': 54, 'speed': 50}, 'types': ['ghost'], 'weight': 2, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 120, 'color': 'purple', 'shape': 'ball', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ヤバチャ', 'ko': '데인차', 'zh-Hant': '來悲茶', 'fr': 'Théffroi', 'de': 'Fatalitee', 'es': 'Sinistea', 'it': 'Sinistea', 'en': 'Sinistea', 'ja': 'ヤバチャ', 'zh-Hans': '来悲茶'}, 'genera': {'ja-Hrkt': 'こうちゃポケモン', 'ko': '홍차포켓몬', 'zh-Hant': '紅茶寶可夢', 'fr': 'Pokémon Thé Noir', 'de': 'Schwarztee', 'es': 'Pokémon Té', 'it': 'Pokémon Tè', 'en': 'Black Tea Pokémon', 'ja': 'こうちゃポケモン', 'zh-Hans': '红茶宝可梦'}}
+	//Sinistea Specie to store common natural stats of all Sinisteas
+	#region SpecieSinistea
 	public class SpecieSinistea : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSinistea Builder
 		public SpecieSinistea() : base(
 			"Sinistea",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			74, 54, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Sinistea Pokemon Class
+	#region Sinistea
 	public class Sinistea : Pokemon
 	{
-
+		#region Sinistea Builders
+		/// <summary>
+		/// Sinistea Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Sinistea(string nickname, int level)
 		: base(
 				854,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Sinistea Builder only waiting for a Level
+		/// </summary>
 		public Sinistea(int level)
 		: base(
 				854,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Sinistea Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Sinistea() : base(
 			854,
 			SpecieSinistea.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

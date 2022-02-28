@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pansear Specie to store common natural stats of every {'abilities': ['gluttony', 'blaze'], 'base_experience': 63, 'height': 6, 'id': 513, 'moves': ['fire-punch', 'scratch', 'cut', 'leer', 'bite', 'flamethrower', 'low-kick', 'solar-beam', 'fire-spin', 'dig', 'toxic', 'double-team', 'lick', 'fire-blast', 'amnesia', 'fury-swipes', 'rest', 'substitute', 'thief', 'snore', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'sunny-day', 'crunch', 'rock-smash', 'uproar', 'heat-wave', 'torment', 'will-o-wisp', 'facade', 'focus-punch', 'taunt', 'helping-hand', 'role-play', 'recycle', 'yawn', 'knock-off', 'endeavor', 'secret-power', 'astonish', 'overheat', 'rock-tomb', 'tickle', 'covet', 'natural-gift', 'payback', 'fling', 'gastro-acid', 'flare-blitz', 'nasty-plot', 'shadow-claw', 'gunk-shot', 'grass-knot', 'hone-claws', 'flame-burst', 'flame-charge', 'low-sweep', 'round', 'incinerate', 'acrobatics', 'fire-pledge', 'work-up', 'belch', 'disarming-voice', 'play-nice', 'confide'], 'name': 'pansear', 'stats': {'hp': 50, 'attack': 53, 'defense': 48, 'special-attack': 53, 'special-defense': 48, 'speed': 64}, 'types': ['fire'], 'weight': 110, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 190, 'color': 'red', 'shape': 'upright', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'バオップ', 'ko': '바오프', 'zh-Hant': '爆香猴', 'fr': 'Flamajou', 'de': 'Grillmak', 'es': 'Pansear', 'it': 'Pansear', 'en': 'Pansear', 'ja': 'バオップ', 'zh-Hans': '爆香猴'}, 'genera': {'ja-Hrkt': 'こうおんポケモン', 'ko': '고온포켓몬', 'zh-Hant': '高溫寶可夢', 'fr': 'Pokémon Brûlant', 'de': 'Hitze', 'es': 'Pokémon Ardiente', 'it': 'Pokémon Testacalda', 'en': 'High Temp Pokémon', 'ja': 'こうおんポケモン', 'zh-Hans': '高温宝可梦'}}
+	//Pansear Specie to store common natural stats of all Pansears
+	#region SpeciePansear
 	public class SpeciePansear : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePansear Builder
 		public SpeciePansear() : base(
 			"Pansear",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			53, 48, // Special Attack & Defense
 			64			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Pansear Pokemon Class
+	#region Pansear
 	public class Pansear : Pokemon
 	{
-
+		#region Pansear Builders
+		/// <summary>
+		/// Pansear Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Pansear(string nickname, int level)
 		: base(
 				513,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pansear Builder only waiting for a Level
+		/// </summary>
 		public Pansear(int level)
 		: base(
 				513,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pansear Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Pansear() : base(
 			513,
 			SpeciePansear.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

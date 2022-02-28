@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spritzee Specie to store common natural stats of every {'abilities': ['healer', 'aroma-veil'], 'base_experience': 68, 'height': 2, 'id': 682, 'moves': ['disable', 'thunderbolt', 'toxic', 'psychic', 'double-team', 'light-screen', 'reflect', 'dream-eater', 'flash', 'rest', 'substitute', 'snore', 'flail', 'protect', 'sweet-kiss', 'charm', 'swagger', 'attract', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'sweet-scent', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'torment', 'facade', 'helping-hand', 'wish', 'magic-coat', 'endeavor', 'skill-swap', 'refresh', 'secret-power', 'aromatherapy', 'odor-sleuth', 'covet', 'calm-mind', 'gyro-ball', 'energy-ball', 'nasty-plot', 'flash-cannon', 'trick-room', 'captivate', 'charge-beam', 'after-you', 'round', 'echoed-voice', 'disarming-voice', 'draining-kiss', 'misty-terrain', 'fairy-wind', 'moonblast', 'confide', 'dazzling-gleam'], 'name': 'spritzee', 'stats': {'hp': 78, 'attack': 52, 'defense': 60, 'special-attack': 63, 'special-defense': 65, 'speed': 23}, 'types': ['fairy'], 'weight': 5, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 200, 'color': 'pink', 'shape': 'arms', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['fairy'], 'names': {'ja-Hrkt': 'シュシュプ', 'ko': '슈쁘', 'zh-Hant': '粉香香', 'fr': 'Fluvetin', 'de': 'Parfi', 'es': 'Spritzee', 'it': 'Spritzee', 'en': 'Spritzee', 'ja': 'シュシュプ', 'zh-Hans': '粉香香'}, 'genera': {'ja-Hrkt': 'こうすいポケモン', 'ko': '향수포켓몬', 'zh-Hant': '香水寶可夢', 'fr': 'Pokémon Fragrance', 'de': 'Parfüm', 'es': 'Pokémon Aroma', 'it': 'Pokémon Profumo', 'en': 'Perfume Pokémon', 'ja': 'こうすいポケモン', 'zh-Hans': '香水宝可梦'}}
+	//Spritzee Specie to store common natural stats of all Spritzees
+	#region SpecieSpritzee
 	public class SpecieSpritzee : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSpritzee Builder
 		public SpecieSpritzee() : base(
 			"Spritzee",
 			78, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			63, 65, // Special Attack & Defense
 			23			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Spritzee Pokemon Class
+	#region Spritzee
 	public class Spritzee : Pokemon
 	{
-
+		#region Spritzee Builders
+		/// <summary>
+		/// Spritzee Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Spritzee(string nickname, int level)
 		: base(
 				682,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Spritzee Builder only waiting for a Level
+		/// </summary>
 		public Spritzee(int level)
 		: base(
 				682,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Spritzee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Spritzee() : base(
 			682,
 			SpecieSpritzee.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

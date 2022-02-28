@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Smeargle Specie to store common natural stats of every {'abilities': ['own-tempo', 'technician', 'moody'], 'base_experience': 88, 'height': 12, 'id': 235, 'moves': ['sketch'], 'name': 'smeargle', 'stats': {'hp': 55, 'attack': 20, 'defense': 35, 'special-attack': 20, 'special-defense': 45, 'speed': 75}, 'types': ['normal'], 'weight': 580, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'white', 'shape': 'upright', 'habitat': 'urban', 'generation': 'generation-ii', 'growth_rate': 'fast', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ドーブル', 'roomaji': 'Doble', 'ko': '루브도', 'zh-Hant': '圖圖犬', 'fr': 'Queulorior', 'de': 'Farbeagle', 'es': 'Smeargle', 'it': 'Smeargle', 'en': 'Smeargle', 'ja': 'ドーブル', 'zh-Hans': '图图犬'}, 'genera': {'ja-Hrkt': 'えかきポケモン', 'ko': '그림장이포켓몬', 'zh-Hant': '畫畫寶可夢', 'fr': 'Pokémon Peintre', 'de': 'Maler', 'es': 'Pokémon Pintor', 'it': 'Pokémon Pittore', 'en': 'Painter Pokémon', 'ja': 'えかきポケモン', 'zh-Hans': '画画宝可梦'}}
+	//Smeargle Specie to store common natural stats of all Smeargles
+	#region SpecieSmeargle
 	public class SpecieSmeargle : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSmeargle Builder
 		public SpecieSmeargle() : base(
 			"Smeargle",
 			55, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			20, 45, // Special Attack & Defense
 			75			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Smeargle Pokemon Class
+	#region Smeargle
 	public class Smeargle : Pokemon
 	{
-
+		#region Smeargle Builders
+		/// <summary>
+		/// Smeargle Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Smeargle(string nickname, int level)
 		: base(
 				235,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Smeargle Builder only waiting for a Level
+		/// </summary>
 		public Smeargle(int level)
 		: base(
 				235,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Smeargle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Smeargle() : base(
 			235,
 			SpecieSmeargle.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

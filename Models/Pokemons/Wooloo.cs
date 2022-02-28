@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wooloo Specie to store common natural stats of every {'abilities': ['fluffy', 'run-away', 'bulletproof'], 'base_experience': 122, 'height': 6, 'id': 831, 'moves': [], 'name': 'wooloo', 'stats': {'hp': 42, 'attack': 40, 'defense': 55, 'special-attack': 40, 'special-defense': 45, 'speed': 48}, 'types': ['normal'], 'weight': 60, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'white', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ウールー', 'ko': '우르', 'zh-Hant': '毛辮羊', 'fr': 'Moumouton', 'de': 'Wolly', 'es': 'Wooloo', 'it': 'Wooloo', 'en': 'Wooloo', 'ja': 'ウールー', 'zh-Hans': '毛辫羊'}, 'genera': {'ja-Hrkt': 'ひつじポケモン', 'ko': '양포켓몬', 'zh-Hant': '綿羊寶可夢', 'fr': 'Pokémon Mouton', 'de': 'Schaf', 'es': 'Pokémon Oveja', 'it': 'Pokémon Pecora', 'en': 'Sheep Pokémon', 'ja': 'ひつじポケモン', 'zh-Hans': '绵羊宝可梦'}}
+	//Wooloo Specie to store common natural stats of all Wooloos
+	#region SpecieWooloo
 	public class SpecieWooloo : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieWooloo Builder
 		public SpecieWooloo() : base(
 			"Wooloo",
 			42, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 45, // Special Attack & Defense
 			48			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Wooloo Pokemon Class
+	#region Wooloo
 	public class Wooloo : Pokemon
 	{
-
+		#region Wooloo Builders
+		/// <summary>
+		/// Wooloo Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Wooloo(string nickname, int level)
 		: base(
 				831,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wooloo Builder only waiting for a Level
+		/// </summary>
 		public Wooloo(int level)
 		: base(
 				831,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Wooloo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Wooloo() : base(
 			831,
 			SpecieWooloo.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

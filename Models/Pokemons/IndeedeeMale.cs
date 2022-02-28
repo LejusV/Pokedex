@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Indeedee-Male Specie to store common natural stats of every {'abilities': ['inner-focus', 'synchronize', 'psychic-surge'], 'base_experience': 166, 'height': 9, 'id': 876, 'moves': [], 'name': 'indeedee-male', 'stats': {'hp': 60, 'attack': 65, 'defense': 55, 'special-attack': 105, 'special-defense': 95, 'speed': 95}, 'types': ['psychic', 'normal'], 'weight': 280, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 40, 'gender_rate': 4, 'capture_rate': 30, 'color': 'purple', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'fast', 'egg_groups': [], 'names': {'ja-Hrkt': 'イエッサン', 'ko': '에써르', 'zh-Hant': '愛管侍', 'fr': 'Wimessir', 'de': 'Servol', 'es': 'Indeedee', 'it': 'Indeedee', 'en': 'Indeedee', 'ja': 'イエッサン', 'zh-Hans': '爱管侍'}, 'genera': {'ja-Hrkt': 'かんじょうポケモン', 'ko': '감정포켓몬', 'zh-Hant': '感情寶可夢', 'fr': 'Pokémon Émotion', 'de': 'Emotion', 'es': 'Pokémon Sensorio', 'it': 'Pokémon Emozione', 'en': 'Emotion Pokémon', 'ja': 'かんじょうポケモン', 'zh-Hans': '感情宝可梦'}}
+	//Indeedee-Male Specie to store common natural stats of all Indeedee-Males
+	#region SpecieIndeedee-Male
 	public class SpecieIndeedeeMale : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieIndeedee-Male Builder
 		public SpecieIndeedeeMale() : base(
 			"Indeedee-Male",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			105, 95, // Special Attack & Defense
 			95			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Indeedee-Male Pokemon Class
+	#region Indeedee-Male
 	public class IndeedeeMale : Pokemon
 	{
-
+		#region Indeedee-Male Builders
+		/// <summary>
+		/// Indeedee-Male Builder waiting for a Nickname & a Level
+		/// </summary>
 		public IndeedeeMale(string nickname, int level)
 		: base(
 				876,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Indeedee-Male Builder only waiting for a Level
+		/// </summary>
 		public IndeedeeMale(int level)
 		: base(
 				876,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Indeedee-Male Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public IndeedeeMale() : base(
 			876,
 			SpecieIndeedeeMale.Instance, // Pokemon Specie
 			Psychic.Instance, Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drifloon Specie to store common natural stats of every {'abilities': ['aftermath', 'unburden', 'flare-boost'], 'base_experience': 70, 'height': 4, 'id': 425, 'moves': ['cut', 'gust', 'bind', 'body-slam', 'disable', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'psychic', 'hypnosis', 'double-team', 'minimize', 'haze', 'focus-energy', 'swift', 'constrict', 'amnesia', 'dream-eater', 'flash', 'explosion', 'rest', 'substitute', 'thief', 'snore', 'spite', 'protect', 'mud-slap', 'destiny-bond', 'icy-wind', 'endure', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pain-split', 'baton-pass', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'shadow-ball', 'stockpile', 'spit-up', 'swallow', 'will-o-wisp', 'memento', 'facade', 'trick', 'magic-coat', 'recycle', 'knock-off', 'skill-swap', 'secret-power', 'astonish', 'weather-ball', 'air-cutter', 'silver-wind', 'calm-mind', 'shock-wave', 'gyro-ball', 'natural-gift', 'tailwind', 'payback', 'embargo', 'sucker-punch', 'defog', 'captivate', 'charge-beam', 'ominous-wind', 'telekinesis', 'round', 'clear-smog', 'hex', 'acrobatics', 'confide'], 'name': 'drifloon', 'stats': {'hp': 90, 'attack': 50, 'defense': 34, 'special-attack': 60, 'special-defense': 44, 'speed': 70}, 'types': ['ghost', 'flying'], 'weight': 12, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 30, 'gender_rate': 4, 'capture_rate': 125, 'color': 'purple', 'shape': 'arms', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'fast-then-very-slow', 'egg_groups': ['indeterminate'], 'names': {'ja-Hrkt': 'フワンテ', 'roomaji': 'Fuwante', 'ko': '흔들풍손', 'zh-Hant': '飄飄球', 'fr': 'Baudrive', 'de': 'Driftlon', 'es': 'Drifloon', 'it': 'Drifloon', 'en': 'Drifloon', 'ja': 'フワンテ', 'zh-Hans': '飘飘球'}, 'genera': {'ja-Hrkt': 'ふうせんポケモン', 'ko': '풍선포켓몬', 'zh-Hant': '氣球寶可夢', 'fr': 'Pokémon Bouboule', 'de': 'Ballon', 'es': 'Pokémon Globo', 'it': 'Pokémon Pallone', 'en': 'Balloon Pokémon', 'ja': 'ふうせんポケモン', 'zh-Hans': '气球宝可梦'}}
+	//Drifloon Specie to store common natural stats of all Drifloons
+	#region SpecieDrifloon
 	public class SpecieDrifloon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDrifloon Builder
 		public SpecieDrifloon() : base(
 			"Drifloon",
 			90, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 44, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Drifloon Pokemon Class
+	#region Drifloon
 	public class Drifloon : Pokemon
 	{
-
+		#region Drifloon Builders
+		/// <summary>
+		/// Drifloon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Drifloon(string nickname, int level)
 		: base(
 				425,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Drifloon Builder only waiting for a Level
+		/// </summary>
 		public Drifloon(int level)
 		: base(
 				425,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Drifloon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Drifloon() : base(
 			425,
 			SpecieDrifloon.Instance, // Pokemon Specie
 			Ghost.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

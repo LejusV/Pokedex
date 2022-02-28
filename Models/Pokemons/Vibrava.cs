@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vibrava Specie to store common natural stats of every {'abilities': ['levitate'], 'base_experience': 119, 'height': 11, 'id': 329, 'moves': ['fly', 'sand-attack', 'headbutt', 'body-slam', 'double-edge', 'bite', 'supersonic', 'sonic-boom', 'hyper-beam', 'strength', 'solar-beam', 'earthquake', 'dig', 'toxic', 'mimic', 'screech', 'double-team', 'bide', 'swift', 'rest', 'rock-slide', 'substitute', 'snore', 'protect', 'feint-attack', 'mud-slap', 'outrage', 'sandstorm', 'giga-drain', 'endure', 'swagger', 'fury-cutter', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'dragon-breath', 'hidden-power', 'twister', 'sunny-day', 'crunch', 'rock-smash', 'uproar', 'heat-wave', 'facade', 'superpower', 'secret-power', 'air-cutter', 'rock-tomb', 'silver-wind', 'signal-beam', 'sand-tomb', 'roost', 'natural-gift', 'tailwind', 'u-turn', 'bug-buzz', 'dragon-pulse', 'earth-power', 'defog', 'draco-meteor', 'captivate', 'bug-bite', 'ominous-wind', 'round', 'struggle-bug', 'bulldoze', 'boomburst', 'confide'], 'name': 'vibrava', 'stats': {'hp': 50, 'attack': 70, 'defense': 50, 'special-attack': 50, 'special-defense': 50, 'speed': 70}, 'types': ['ground', 'dragon'], 'weight': 153, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 120, 'color': 'green', 'shape': 'bug-wings', 'habitat': 'rough-terrain', 'generation': 'generation-iii', 'growth_rate': 'medium-slow', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'ビブラーバ', 'roomaji': 'Vibrava', 'ko': '비브라바', 'zh-Hant': '超音波幼蟲', 'fr': 'Vibraninf', 'de': 'Vibrava', 'es': 'Vibrava', 'it': 'Vibrava', 'en': 'Vibrava', 'ja': 'ビブラーバ', 'zh-Hans': '超音波幼虫'}, 'genera': {'ja-Hrkt': 'しんどうポケモン', 'ko': '진동포켓몬', 'zh-Hant': '震動寶可夢', 'fr': 'Pokémon Vibration', 'de': 'Vibration', 'es': 'Pokémon Vibrante', 'it': 'Pokémon Vibrazione', 'en': 'Vibration Pokémon', 'ja': 'しんどうポケモン', 'zh-Hans': '振动宝可梦'}}
+	//Vibrava Specie to store common natural stats of all Vibravas
+	#region SpecieVibrava
 	public class SpecieVibrava : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieVibrava Builder
 		public SpecieVibrava() : base(
 			"Vibrava",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Vibrava Pokemon Class
+	#region Vibrava
 	public class Vibrava : Pokemon
 	{
-
+		#region Vibrava Builders
+		/// <summary>
+		/// Vibrava Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Vibrava(string nickname, int level)
 		: base(
 				329,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vibrava Builder only waiting for a Level
+		/// </summary>
 		public Vibrava(int level)
 		: base(
 				329,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vibrava Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Vibrava() : base(
 			329,
 			SpecieVibrava.Instance, // Pokemon Specie
 			Ground.Instance, Dragon.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

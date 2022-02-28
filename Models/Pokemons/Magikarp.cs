@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magikarp Specie to store common natural stats of every {'abilities': ['swift-swim', 'rattled'], 'base_experience': 40, 'height': 9, 'id': 129, 'moves': ['tackle', 'splash', 'flail', 'bounce'], 'name': 'magikarp', 'stats': {'hp': 20, 'attack': 10, 'defense': 55, 'special-attack': 15, 'special-defense': 20, 'speed': 80}, 'types': ['water'], 'weight': 100, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 5, 'gender_rate': 4, 'capture_rate': 255, 'color': 'red', 'shape': 'fish', 'habitat': 'waters-edge', 'generation': 'generation-i', 'growth_rate': 'slow', 'egg_groups': ['water2', 'dragon'], 'names': {'ja-Hrkt': 'コイキング', 'roomaji': 'Koiking', 'ko': '잉어킹', 'zh-Hant': '鯉魚王', 'fr': 'Magicarpe', 'de': 'Karpador', 'es': 'Magikarp', 'it': 'Magikarp', 'en': 'Magikarp', 'ja': 'コイキング', 'zh-Hans': '鲤鱼王'}, 'genera': {'ja-Hrkt': 'さかなポケモン', 'ko': '물고기포켓몬', 'zh-Hant': '魚寶可夢', 'fr': 'Pokémon Poisson', 'de': 'Fisch', 'es': 'Pokémon Pez', 'it': 'Pokémon Pesce', 'en': 'Fish Pokémon', 'ja': 'さかなポケモン', 'zh-Hans': '鱼宝可梦'}}
+	//Magikarp Specie to store common natural stats of all Magikarps
+	#region SpecieMagikarp
 	public class SpecieMagikarp : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMagikarp Builder
 		public SpecieMagikarp() : base(
 			"Magikarp",
 			20, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			15, 20, // Special Attack & Defense
 			80			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Magikarp Pokemon Class
+	#region Magikarp
 	public class Magikarp : Pokemon
 	{
-
+		#region Magikarp Builders
+		/// <summary>
+		/// Magikarp Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Magikarp(string nickname, int level)
 		: base(
 				129,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Magikarp Builder only waiting for a Level
+		/// </summary>
 		public Magikarp(int level)
 		: base(
 				129,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Magikarp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Magikarp() : base(
 			129,
 			SpecieMagikarp.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

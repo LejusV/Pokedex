@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shaymin-Land Specie to store common natural stats of every {'abilities': ['natural-cure'], 'base_experience': 270, 'height': 2, 'id': 492, 'moves': ['swords-dance', 'headbutt', 'hyper-beam', 'leech-seed', 'growth', 'solar-beam', 'toxic', 'psychic', 'double-team', 'defense-curl', 'swift', 'flash', 'rest', 'substitute', 'snore', 'protect', 'sweet-kiss', 'mud-slap', 'giga-drain', 'endure', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'sweet-scent', 'synthesis', 'hidden-power', 'sunny-day', 'psych-up', 'facade', 'nature-power', 'endeavor', 'secret-power', 'aromatherapy', 'grass-whistle', 'bullet-seed', 'covet', 'magical-leaf', 'healing-wish', 'natural-gift', 'lucky-chant', 'last-resort', 'worry-seed', 'seed-bomb', 'energy-ball', 'earth-power', 'giga-impact', 'zen-headbutt', 'grass-knot', 'seed-flare', 'round', 'confide', 'dazzling-gleam'], 'name': 'shaymin-land', 'stats': {'hp': 100, 'attack': 100, 'defense': 100, 'special-attack': 100, 'special-defense': 100, 'speed': 100}, 'types': ['grass'], 'weight': 21, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'green', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium-slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'シェイミ', 'roomaji': 'Shaymin', 'ko': '쉐이미', 'zh-Hant': '謝米', 'fr': 'Shaymin', 'de': 'Shaymin', 'es': 'Shaymin', 'it': 'Shaymin', 'en': 'Shaymin', 'ja': 'シェイミ', 'zh-Hans': '谢米'}, 'genera': {'ja-Hrkt': 'かんしゃポケモン', 'ko': '감사포켓몬', 'zh-Hant': '感謝寶可夢', 'fr': 'Pokémon Gratitude', 'de': 'Dankbarkeit', 'es': 'Pokémon Gratitud', 'it': 'Pokémon Gratitudine', 'en': 'Gratitude Pokémon', 'ja': 'かんしゃポケモン', 'zh-Hans': '感谢宝可梦'}}
+	//Shaymin-Land Specie to store common natural stats of all Shaymin-Lands
+	#region SpecieShaymin-Land
 	public class SpecieShayminLand : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieShaymin-Land Builder
 		public SpecieShayminLand() : base(
 			"Shaymin-Land",
 			100, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			100			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Shaymin-Land Pokemon Class
+	#region Shaymin-Land
 	public class ShayminLand : Pokemon
 	{
-
+		#region Shaymin-Land Builders
+		/// <summary>
+		/// Shaymin-Land Builder waiting for a Nickname & a Level
+		/// </summary>
 		public ShayminLand(string nickname, int level)
 		: base(
 				492,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shaymin-Land Builder only waiting for a Level
+		/// </summary>
 		public ShayminLand(int level)
 		: base(
 				492,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shaymin-Land Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public ShayminLand() : base(
 			492,
 			SpecieShayminLand.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

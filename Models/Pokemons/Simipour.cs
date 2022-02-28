@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Simipour Specie to store common natural stats of every {'abilities': ['gluttony', 'torrent'], 'base_experience': 174, 'height': 10, 'id': 516, 'moves': ['ice-punch', 'cut', 'leer', 'surf', 'ice-beam', 'blizzard', 'hyper-beam', 'low-kick', 'dig', 'toxic', 'double-team', 'lick', 'waterfall', 'fury-swipes', 'rest', 'rock-slide', 'substitute', 'thief', 'snore', 'protect', 'icy-wind', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'rain-dance', 'rock-smash', 'uproar', 'hail', 'torment', 'facade', 'focus-punch', 'taunt', 'helping-hand', 'role-play', 'superpower', 'recycle', 'brick-break', 'knock-off', 'endeavor', 'secret-power', 'dive', 'rock-tomb', 'covet', 'water-pulse', 'payback', 'fling', 'gastro-acid', 'aqua-tail', 'focus-blast', 'giga-impact', 'shadow-claw', 'gunk-shot', 'grass-knot', 'hone-claws', 'low-sweep', 'round', 'scald', 'acrobatics', 'water-pledge', 'work-up', 'confide', 'power-up-punch'], 'name': 'simipour', 'stats': {'hp': 75, 'attack': 98, 'defense': 63, 'special-attack': 98, 'special-defense': 63, 'speed': 101}, 'types': ['water'], 'weight': 290, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 75, 'color': 'blue', 'shape': 'upright', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ヒヤッキー', 'ko': '앗차키', 'zh-Hant': '冷水猿', 'fr': 'Flotoutan', 'de': 'Sodachita', 'es': 'Simipour', 'it': 'Simipour', 'en': 'Simipour', 'ja': 'ヒヤッキー', 'zh-Hans': '冷水猿'}, 'genera': {'ja-Hrkt': 'ほうすいポケモン', 'ko': '방수포켓몬', 'zh-Hant': '放水寶可夢', 'fr': 'Pokémon Drainage', 'de': 'Drainage', 'es': 'Pokémon Drenaje', 'it': 'Pokémon Spruzzacqua', 'en': 'Geyser Pokémon', 'ja': 'ほうすいポケモン', 'zh-Hans': '放水宝可梦'}}
+	//Simipour Specie to store common natural stats of all Simipours
+	#region SpecieSimipour
 	public class SpecieSimipour : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSimipour Builder
 		public SpecieSimipour() : base(
 			"Simipour",
 			75, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			98, 63, // Special Attack & Defense
 			101			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Simipour Pokemon Class
+	#region Simipour
 	public class Simipour : Pokemon
 	{
-
+		#region Simipour Builders
+		/// <summary>
+		/// Simipour Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Simipour(string nickname, int level)
 		: base(
 				516,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Simipour Builder only waiting for a Level
+		/// </summary>
 		public Simipour(int level)
 		: base(
 				516,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Simipour Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Simipour() : base(
 			516,
 			SpecieSimipour.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

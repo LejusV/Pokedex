@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Infernape Specie to store common natural stats of every {'abilities': ['blaze', 'iron-fist'], 'base_experience': 240, 'height': 12, 'id': 392, 'moves': ['fire-punch', 'thunder-punch', 'scratch', 'swords-dance', 'cut', 'headbutt', 'leer', 'roar', 'ember', 'flamethrower', 'hyper-beam', 'low-kick', 'strength', 'solar-beam', 'fire-spin', 'earthquake', 'dig', 'toxic', 'double-team', 'fire-blast', 'swift', 'fury-swipes', 'rest', 'rock-slide', 'substitute', 'flame-wheel', 'snore', 'protect', 'mach-punch', 'mud-slap', 'endure', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'sunny-day', 'rock-smash', 'heat-wave', 'torment', 'will-o-wisp', 'facade', 'focus-punch', 'taunt', 'helping-hand', 'role-play', 'brick-break', 'endeavor', 'secret-power', 'blast-burn', 'overheat', 'rock-tomb', 'aerial-ace', 'bulk-up', 'covet', 'calm-mind', 'natural-gift', 'feint', 'u-turn', 'close-combat', 'fling', 'punishment', 'flare-blitz', 'poison-jab', 'vacuum-wave', 'focus-blast', 'giga-impact', 'shadow-claw', 'rock-climb', 'gunk-shot', 'stone-edge', 'captivate', 'stealth-rock', 'grass-knot', 'hone-claws', 'flame-charge', 'low-sweep', 'round', 'incinerate', 'acrobatics', 'retaliate', 'fire-pledge', 'bulldoze', 'work-up', 'dual-chop', 'confide', 'power-up-punch'], 'name': 'infernape', 'stats': {'hp': 76, 'attack': 104, 'defense': 71, 'special-attack': 104, 'special-defense': 71, 'speed': 108}, 'types': ['fire', 'fighting'], 'weight': 550, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'brown', 'shape': 'upright', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium-slow', 'egg_groups': ['ground', 'humanshape'], 'names': {'ja-Hrkt': 'ゴウカザル', 'roomaji': 'Gōkazaru', 'ko': '초염몽', 'zh-Hant': '烈焰猴', 'fr': 'Simiabraz', 'de': 'Panferno', 'es': 'Infernape', 'it': 'Infernape', 'en': 'Infernape', 'ja': 'ゴウカザル', 'zh-Hans': '烈焰猴'}, 'genera': {'ja-Hrkt': 'かえんポケモン', 'ko': '화염포켓몬', 'zh-Hant': '火焰寶可夢', 'fr': 'Pokémon Flamme', 'de': 'Flamme', 'es': 'Pokémon Llama', 'it': 'Pokémon Fiamma', 'en': 'Flame Pokémon', 'ja': 'かえんポケモン', 'zh-Hans': '火焰宝可梦'}}
+	//Infernape Specie to store common natural stats of all Infernapes
+	#region SpecieInfernape
 	public class SpecieInfernape : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieInfernape Builder
 		public SpecieInfernape() : base(
 			"Infernape",
 			76, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			104, 71, // Special Attack & Defense
 			108			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Infernape Pokemon Class
+	#region Infernape
 	public class Infernape : Pokemon
 	{
-
+		#region Infernape Builders
+		/// <summary>
+		/// Infernape Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Infernape(string nickname, int level)
 		: base(
 				392,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Infernape Builder only waiting for a Level
+		/// </summary>
 		public Infernape(int level)
 		: base(
 				392,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Infernape Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Infernape() : base(
 			392,
 			SpecieInfernape.Instance, // Pokemon Specie
 			Fire.Instance, Fighting.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

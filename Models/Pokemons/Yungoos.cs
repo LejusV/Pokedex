@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yungoos Specie to store common natural stats of every {'abilities': ['stakeout', 'strong-jaw', 'adaptability'], 'base_experience': 51, 'height': 4, 'id': 734, 'moves': ['sand-attack', 'tackle', 'take-down', 'thrash', 'leer', 'bite', 'earthquake', 'toxic', 'double-team', 'bide', 'rest', 'hyper-fang', 'super-fang', 'substitute', 'thief', 'protect', 'scary-face', 'mud-slap', 'sandstorm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'crunch', 'torment', 'facade', 'taunt', 'revenge', 'yawn', 'odor-sleuth', 'rock-tomb', 'u-turn', 'payback', 'last-resort', 'thunder-fang', 'ice-fang', 'fire-fang', 'round', 'echoed-voice', 'work-up', 'confide'], 'name': 'yungoos', 'stats': {'hp': 48, 'attack': 70, 'defense': 30, 'special-attack': 30, 'special-defense': 30, 'speed': 45}, 'types': ['normal'], 'weight': 60, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'brown', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'ヤングース', 'ko': '영구스', 'zh-Hant': '貓鼬少', 'fr': 'Manglouton', 'de': 'Mangunior', 'es': 'Yungoos', 'it': 'Yungoos', 'en': 'Yungoos', 'ja': 'ヤングース', 'zh-Hans': '猫鼬少'}, 'genera': {'ja-Hrkt': 'うろつきポケモン', 'ko': '순회포켓몬', 'zh-Hant': '巡迴寶可夢', 'fr': 'Pokémon Patrouille', 'de': 'Patrouille', 'es': 'Pokémon Patrulla', 'it': 'Pokémon Pattuglia', 'en': 'Loitering Pokémon', 'ja': 'うろつきポケモン', 'zh-Hans': '巡回宝可梦'}}
+	//Yungoos Specie to store common natural stats of all Yungooss
+	#region SpecieYungoos
 	public class SpecieYungoos : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieYungoos Builder
 		public SpecieYungoos() : base(
 			"Yungoos",
 			48, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			45			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Yungoos Pokemon Class
+	#region Yungoos
 	public class Yungoos : Pokemon
 	{
-
+		#region Yungoos Builders
+		/// <summary>
+		/// Yungoos Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Yungoos(string nickname, int level)
 		: base(
 				734,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Yungoos Builder only waiting for a Level
+		/// </summary>
 		public Yungoos(int level)
 		: base(
 				734,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Yungoos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Yungoos() : base(
 			734,
 			SpecieYungoos.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

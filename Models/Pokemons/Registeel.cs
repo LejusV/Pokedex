@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Registeel Specie to store common natural stats of every {'abilities': ['clear-body', 'light-metal'], 'base_experience': 261, 'height': 19, 'id': 379, 'moves': ['mega-punch', 'ice-punch', 'thunder-punch', 'stomp', 'mega-kick', 'headbutt', 'body-slam', 'double-edge', 'hyper-beam', 'counter', 'seismic-toss', 'strength', 'thunderbolt', 'thunder-wave', 'thunder', 'earthquake', 'toxic', 'mimic', 'double-team', 'defense-curl', 'self-destruct', 'amnesia', 'explosion', 'rest', 'rock-slide', 'substitute', 'snore', 'curse', 'protect', 'mud-slap', 'zap-cannon', 'lock-on', 'sandstorm', 'endure', 'rollout', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'dynamic-punch', 'metal-claw', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'ancient-power', 'rock-smash', 'facade', 'focus-punch', 'superpower', 'brick-break', 'secret-power', 'rock-tomb', 'aerial-ace', 'iron-defense', 'block', 'shock-wave', 'gravity', 'hammer-arm', 'natural-gift', 'fling', 'magnet-rise', 'rock-polish', 'focus-blast', 'giga-impact', 'shadow-claw', 'flash-cannon', 'rock-climb', 'iron-head', 'stealth-rock', 'charge-beam', 'hone-claws', 'round', 'bulldoze', 'confide', 'power-up-punch'], 'name': 'registeel', 'stats': {'hp': 80, 'attack': 75, 'defense': 150, 'special-attack': 75, 'special-defense': 150, 'speed': 50}, 'types': ['steel'], 'weight': 2050, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 80, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'humanoid', 'habitat': 'cave', 'generation': 'generation-iii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'レジスチル', 'roomaji': 'Registeel', 'ko': '레지스틸', 'zh-Hant': '雷吉斯奇魯', 'fr': 'Registeel', 'de': 'Registeel', 'es': 'Registeel', 'it': 'Registeel', 'en': 'Registeel', 'ja': 'レジスチル', 'zh-Hans': '雷吉斯奇鲁'}, 'genera': {'ja-Hrkt': 'くろがねポケモン', 'ko': '쇠철포켓몬', 'zh-Hant': '黑金寶可夢', 'fr': 'Pokémon Fer', 'de': 'Eisen', 'es': 'Pokémon Hierro', 'it': 'Pokémon Ferro', 'en': 'Iron Pokémon', 'ja': 'くろがねポケモン', 'zh-Hans': '黑金宝可梦'}}
+	//Registeel Specie to store common natural stats of all Registeels
+	#region SpecieRegisteel
 	public class SpecieRegisteel : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieRegisteel Builder
 		public SpecieRegisteel() : base(
 			"Registeel",
 			80, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			75, 150, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Registeel Pokemon Class
+	#region Registeel
 	public class Registeel : Pokemon
 	{
-
+		#region Registeel Builders
+		/// <summary>
+		/// Registeel Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Registeel(string nickname, int level)
 		: base(
 				379,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Registeel Builder only waiting for a Level
+		/// </summary>
 		public Registeel(int level)
 		: base(
 				379,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Registeel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Registeel() : base(
 			379,
 			SpecieRegisteel.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

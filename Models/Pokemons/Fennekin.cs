@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Fennekin Specie to store common natural stats of every {'abilities': ['blaze', 'magician'], 'base_experience': 61, 'height': 4, 'id': 653, 'moves': ['scratch', 'cut', 'tail-whip', 'ember', 'flamethrower', 'psybeam', 'solar-beam', 'fire-spin', 'toxic', 'psychic', 'hypnosis', 'double-team', 'light-screen', 'fire-blast', 'dream-eater', 'rest', 'substitute', 'thief', 'snore', 'protect', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'iron-tail', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'heat-wave', 'will-o-wisp', 'facade', 'wish', 'magic-coat', 'secret-power', 'overheat', 'howl', 'covet', 'embargo', 'lucky-chant', 'grass-knot', 'psyshock', 'magic-room', 'flame-charge', 'foul-play', 'round', 'echoed-voice', 'incinerate', 'fire-pledge', 'work-up', 'confide', 'power-up-punch', 'psychic-terrain'], 'name': 'fennekin', 'stats': {'hp': 40, 'attack': 45, 'defense': 40, 'special-attack': 62, 'special-defense': 60, 'speed': 60}, 'types': ['fire'], 'weight': 94, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'red', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium-slow', 'egg_groups': ['ground'], 'names': {'ja-Hrkt': 'フォッコ', 'ko': '푸호꼬', 'zh-Hant': '火狐狸', 'fr': 'Feunnec', 'de': 'Fynx', 'es': 'Fennekin', 'it': 'Fennekin', 'en': 'Fennekin', 'ja': 'フォッコ', 'zh-Hans': '火狐狸'}, 'genera': {'ja-Hrkt': 'キツネポケモン', 'ko': '여우포켓몬', 'zh-Hant': '狐狸寶可夢', 'fr': 'Pokémon Renard', 'de': 'Fuchs', 'es': 'Pokémon Zorro', 'it': 'Pokémon Volpe', 'en': 'Fox Pokémon', 'ja': 'キツネポケモン', 'zh-Hans': '狐狸宝可梦'}}
+	//Fennekin Specie to store common natural stats of all Fennekins
+	#region SpecieFennekin
 	public class SpecieFennekin : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieFennekin Builder
 		public SpecieFennekin() : base(
 			"Fennekin",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			62, 60, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Fennekin Pokemon Class
+	#region Fennekin
 	public class Fennekin : Pokemon
 	{
-
+		#region Fennekin Builders
+		/// <summary>
+		/// Fennekin Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Fennekin(string nickname, int level)
 		: base(
 				653,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Fennekin Builder only waiting for a Level
+		/// </summary>
 		public Fennekin(int level)
 		: base(
 				653,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Fennekin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Fennekin() : base(
 			653,
 			SpecieFennekin.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

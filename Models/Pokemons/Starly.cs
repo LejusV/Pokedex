@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Starly Specie to store common natural stats of every {'abilities': ['keen-eye', 'reckless'], 'base_experience': 49, 'height': 3, 'id': 396, 'moves': ['wing-attack', 'whirlwind', 'fly', 'sand-attack', 'fury-attack', 'tackle', 'take-down', 'double-edge', 'growl', 'toxic', 'agility', 'quick-attack', 'double-team', 'mirror-move', 'swift', 'rest', 'substitute', 'thief', 'snore', 'protect', 'mud-slap', 'foresight', 'detect', 'endure', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'twister', 'rain-dance', 'sunny-day', 'uproar', 'heat-wave', 'facade', 'revenge', 'endeavor', 'secret-power', 'feather-dance', 'astonish', 'air-cutter', 'aerial-ace', 'roost', 'natural-gift', 'pluck', 'tailwind', 'u-turn', 'brave-bird', 'defog', 'captivate', 'ominous-wind', 'round', 'echoed-voice', 'final-gambit', 'work-up', 'confide'], 'name': 'starly', 'stats': {'hp': 40, 'attack': 55, 'defense': 30, 'special-attack': 30, 'special-defense': 30, 'speed': 60}, 'types': ['normal', 'flying'], 'weight': 20, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'brown', 'shape': 'wings', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium-slow', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'ムックル', 'roomaji': 'Mukkuru', 'ko': '찌르꼬', 'zh-Hant': '姆克兒', 'fr': 'Étourmi', 'de': 'Staralili', 'es': 'Starly', 'it': 'Starly', 'en': 'Starly', 'ja': 'ムックル', 'zh-Hans': '姆克儿'}, 'genera': {'ja-Hrkt': 'むくどりポケモン', 'ko': '찌르레기포켓몬', 'zh-Hant': '椋鳥寶可夢', 'fr': 'Pokémon Étourneau', 'de': 'Star', 'es': 'Pokémon Estornino', 'it': 'Pokémon Storno', 'en': 'Starling Pokémon', 'ja': 'むくどりポケモン', 'zh-Hans': '椋鸟宝可梦'}}
+	//Starly Specie to store common natural stats of all Starlys
+	#region SpecieStarly
 	public class SpecieStarly : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieStarly Builder
 		public SpecieStarly() : base(
 			"Starly",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Starly Pokemon Class
+	#region Starly
 	public class Starly : Pokemon
 	{
-
+		#region Starly Builders
+		/// <summary>
+		/// Starly Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Starly(string nickname, int level)
 		: base(
 				396,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Starly Builder only waiting for a Level
+		/// </summary>
 		public Starly(int level)
 		: base(
 				396,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Starly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Starly() : base(
 			396,
 			SpecieStarly.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

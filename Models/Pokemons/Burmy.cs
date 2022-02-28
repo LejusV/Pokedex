@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Burmy Specie to store common natural stats of every {'abilities': ['shed-skin', 'overcoat'], 'base_experience': 45, 'height': 2, 'id': 412, 'moves': ['tackle', 'string-shot', 'snore', 'protect', 'hidden-power', 'bug-bite', 'electroweb'], 'name': 'burmy', 'stats': {'hp': 40, 'attack': 29, 'defense': 45, 'special-attack': 29, 'special-defense': 45, 'speed': 36}, 'types': ['bug'], 'weight': 34, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'green', 'shape': 'blob', 'habitat': None, 'generation': 'generation-iv', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'ミノムッチ', 'roomaji': 'Minomucchi', 'ko': '도롱충이', 'zh-Hant': '結草兒', 'fr': 'Cheniti', 'de': 'Burmy', 'es': 'Burmy', 'it': 'Burmy', 'en': 'Burmy', 'ja': 'ミノムッチ', 'zh-Hans': '结草儿'}, 'genera': {'ja-Hrkt': 'みのむしポケモン', 'ko': '도롱이벌레포켓몬', 'zh-Hant': '蓑衣蟲寶可夢', 'fr': 'Pokémon Ver Caché', 'de': 'Beutelwurm', 'es': 'Pokémon Larva', 'it': 'Pokémon Larva', 'en': 'Bagworm Pokémon', 'ja': 'みのむしポケモン', 'zh-Hans': '蓑衣虫宝可梦'}}
+	//Burmy Specie to store common natural stats of all Burmys
+	#region SpecieBurmy
 	public class SpecieBurmy : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBurmy Builder
 		public SpecieBurmy() : base(
 			"Burmy",
 			40, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			29, 45, // Special Attack & Defense
 			36			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Burmy Pokemon Class
+	#region Burmy
 	public class Burmy : Pokemon
 	{
-
+		#region Burmy Builders
+		/// <summary>
+		/// Burmy Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Burmy(string nickname, int level)
 		: base(
 				412,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Burmy Builder only waiting for a Level
+		/// </summary>
 		public Burmy(int level)
 		: base(
 				412,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Burmy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Burmy() : base(
 			412,
 			SpecieBurmy.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

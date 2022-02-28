@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toucannon Specie to store common natural stats of every {'abilities': ['keen-eye', 'skill-link', 'sheer-force'], 'base_experience': 218, 'height': 11, 'id': 733, 'moves': ['swords-dance', 'fly', 'fury-attack', 'growl', 'supersonic', 'peck', 'drill-peck', 'toxic', 'screech', 'double-team', 'rest', 'substitute', 'thief', 'protect', 'swagger', 'steel-wing', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'sunny-day', 'rock-smash', 'brick-break', 'feather-dance', 'hyper-voice', 'overheat', 'bullet-seed', 'aerial-ace', 'rock-blast', 'roost', 'pluck', 'u-turn', 'flash-cannon', 'smack-down', 'flame-charge', 'round', 'echoed-voice', 'work-up', 'confide', 'beak-blast'], 'name': 'toucannon', 'stats': {'hp': 80, 'attack': 120, 'defense': 75, 'special-attack': 75, 'special-defense': 75, 'speed': 60}, 'types': ['normal', 'flying'], 'weight': 260, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 45, 'color': 'black', 'shape': 'wings', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'ドデカバシ', 'ko': '왕큰부리', 'zh-Hant': '銃嘴大鳥', 'fr': 'Bazoucan', 'de': 'Tukanon', 'es': 'Toucannon', 'it': 'Toucannon', 'en': 'Toucannon', 'ja': 'ドデカバシ', 'zh-Hans': '铳嘴大鸟'}, 'genera': {'ja-Hrkt': 'おおづつポケモン', 'ko': '대포포켓몬', 'zh-Hant': '銃炮寶可夢', 'fr': 'Pokémon Canon', 'de': 'Kanone', 'es': 'Pokémon Cañón', 'it': 'Pokémon Cannone', 'en': 'Cannon Pokémon', 'ja': 'おおづつポケモン', 'zh-Hans': '铳炮宝可梦'}}
+	//Toucannon Specie to store common natural stats of all Toucannons
+	#region SpecieToucannon
 	public class SpecieToucannon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieToucannon Builder
 		public SpecieToucannon() : base(
 			"Toucannon",
 			80, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			75, 75, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Toucannon Pokemon Class
+	#region Toucannon
 	public class Toucannon : Pokemon
 	{
-
+		#region Toucannon Builders
+		/// <summary>
+		/// Toucannon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Toucannon(string nickname, int level)
 		: base(
 				733,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Toucannon Builder only waiting for a Level
+		/// </summary>
 		public Toucannon(int level)
 		: base(
 				733,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Toucannon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Toucannon() : base(
 			733,
 			SpecieToucannon.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

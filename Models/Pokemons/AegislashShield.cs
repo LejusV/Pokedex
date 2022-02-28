@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Aegislash-Shield Specie to store common natural stats of every {'abilities': ['stance-change'], 'base_experience': 234, 'height': 17, 'id': 681, 'moves': ['swords-dance', 'cut', 'hyper-beam', 'toxic', 'double-team', 'reflect', 'rest', 'rock-slide', 'slash', 'substitute', 'snore', 'spite', 'protect', 'false-swipe', 'swagger', 'fury-cutter', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'rain-dance', 'sunny-day', 'shadow-ball', 'rock-smash', 'facade', 'brick-break', 'secret-power', 'aerial-ace', 'iron-defense', 'block', 'shock-wave', 'gyro-ball', 'power-trick', 'magnet-rise', 'night-slash', 'giga-impact', 'shadow-claw', 'shadow-sneak', 'flash-cannon', 'iron-head', 'head-smash', 'autotomize', 'after-you', 'round', 'retaliate', 'sacred-sword', 'kings-shield', 'confide', 'brutal-swing'], 'name': 'aegislash-shield', 'stats': {'hp': 60, 'attack': 50, 'defense': 140, 'special-attack': 50, 'special-defense': 140, 'speed': 60}, 'types': ['steel', 'ghost'], 'weight': 530, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'brown', 'shape': 'blob', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ギルガルド', 'ko': '킬가르도', 'zh-Hant': '堅盾劍怪', 'fr': 'Exagide', 'de': 'Durengard', 'es': 'Aegislash', 'it': 'Aegislash', 'en': 'Aegislash', 'ja': 'ギルガルド', 'zh-Hans': '坚盾剑怪'}, 'genera': {'ja-Hrkt': 'おうけんポケモン', 'ko': '왕검포켓몬', 'zh-Hant': '王劍寶可夢', 'fr': 'Pokémon Noble Lame', 'de': 'Königsklinge', 'es': 'Pokémon Espada Real', 'it': 'Pokémon Spadareale', 'en': 'Royal Sword Pokémon', 'ja': 'おうけんポケモン', 'zh-Hans': '王剑宝可梦'}}
+	//Aegislash-Shield Specie to store common natural stats of all Aegislash-Shields
+	#region SpecieAegislash-Shield
 	public class SpecieAegislashShield : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieAegislash-Shield Builder
 		public SpecieAegislashShield() : base(
 			"Aegislash-Shield",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 140, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Aegislash-Shield Pokemon Class
+	#region Aegislash-Shield
 	public class AegislashShield : Pokemon
 	{
-
+		#region Aegislash-Shield Builders
+		/// <summary>
+		/// Aegislash-Shield Builder waiting for a Nickname & a Level
+		/// </summary>
 		public AegislashShield(string nickname, int level)
 		: base(
 				681,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Aegislash-Shield Builder only waiting for a Level
+		/// </summary>
 		public AegislashShield(int level)
 		: base(
 				681,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Aegislash-Shield Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public AegislashShield() : base(
 			681,
 			SpecieAegislashShield.Instance, // Pokemon Specie
 			Steel.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

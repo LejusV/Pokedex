@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shedinja Specie to store common natural stats of every {'abilities': ['wonder-guard'], 'base_experience': 83, 'height': 8, 'id': 292, 'moves': ['scratch', 'cut', 'sand-attack', 'double-edge', 'hyper-beam', 'absorb', 'solar-beam', 'string-shot', 'dig', 'toxic', 'mimic', 'double-team', 'harden', 'confuse-ray', 'dream-eater', 'leech-life', 'flash', 'fury-swipes', 'rest', 'substitute', 'thief', 'mind-reader', 'nightmare', 'snore', 'spite', 'protect', 'mud-slap', 'sandstorm', 'giga-drain', 'endure', 'false-swipe', 'swagger', 'fury-cutter', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'sunny-day', 'shadow-ball', 'will-o-wisp', 'facade', 'trick', 'grudge', 'secret-power', 'aerial-ace', 'natural-gift', 'heal-block', 'sucker-punch', 'x-scissor', 'giga-impact', 'shadow-claw', 'shadow-sneak', 'bug-bite', 'hone-claws', 'telekinesis', 'round', 'struggle-bug', 'phantom-force', 'confide'], 'name': 'shedinja', 'stats': {'hp': 1, 'attack': 90, 'defense': 45, 'special-attack': 30, 'special-defense': 30, 'speed': 40}, 'types': ['bug', 'ghost'], 'weight': 12, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': -1, 'capture_rate': 45, 'color': 'brown', 'shape': 'blob', 'habitat': 'forest', 'generation': 'generation-iii', 'growth_rate': 'slow-then-very-fast', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ヌケニン', 'roomaji': 'Nukenin', 'ko': '껍질몬', 'zh-Hant': '脫殼忍者', 'fr': 'Munja', 'de': 'Ninjatom', 'es': 'Shedinja', 'it': 'Shedinja', 'en': 'Shedinja', 'ja': 'ヌケニン', 'zh-Hans': '脱壳忍者'}, 'genera': {'ja-Hrkt': 'ぬけがらポケモン', 'ko': '허물포켓몬', 'zh-Hant': '空殼寶可夢', 'fr': 'Pokémon Exuvie', 'de': 'Häutung', 'es': 'Pokémon Muda', 'it': 'Pokémon Cambiapelle', 'en': 'Shed Pokémon', 'ja': 'ぬけがらポケモン', 'zh-Hans': '空壳宝可梦'}}
+	//Shedinja Specie to store common natural stats of all Shedinjas
+	#region SpecieShedinja
 	public class SpecieShedinja : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieShedinja Builder
 		public SpecieShedinja() : base(
 			"Shedinja",
 			1, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			40			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Shedinja Pokemon Class
+	#region Shedinja
 	public class Shedinja : Pokemon
 	{
-
+		#region Shedinja Builders
+		/// <summary>
+		/// Shedinja Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Shedinja(string nickname, int level)
 		: base(
 				292,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shedinja Builder only waiting for a Level
+		/// </summary>
 		public Shedinja(int level)
 		: base(
 				292,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Shedinja Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Shedinja() : base(
 			292,
 			SpecieShedinja.Instance, // Pokemon Specie
 			Bug.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

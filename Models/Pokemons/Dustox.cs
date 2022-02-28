@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dustox Specie to store common natural stats of every {'abilities': ['shield-dust', 'compound-eyes'], 'base_experience': 173, 'height': 12, 'id': 269, 'moves': ['gust', 'whirlwind', 'double-edge', 'psybeam', 'hyper-beam', 'solar-beam', 'poison-powder', 'string-shot', 'toxic', 'confusion', 'psychic', 'mimic', 'double-team', 'light-screen', 'swift', 'flash', 'rest', 'substitute', 'thief', 'snore', 'protect', 'sludge-bomb', 'giga-drain', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'moonlight', 'hidden-power', 'twister', 'sunny-day', 'shadow-ball', 'facade', 'secret-power', 'air-cutter', 'silver-wind', 'signal-beam', 'aerial-ace', 'roost', 'natural-gift', 'tailwind', 'u-turn', 'bug-buzz', 'energy-ball', 'giga-impact', 'defog', 'captivate', 'bug-bite', 'ominous-wind', 'venoshock', 'quiver-dance', 'round', 'acrobatics', 'struggle-bug', 'electroweb', 'confide', 'infestation'], 'name': 'dustox', 'stats': {'hp': 60, 'attack': 50, 'defense': 70, 'special-attack': 50, 'special-defense': 90, 'speed': 65}, 'types': ['bug', 'poison'], 'weight': 316, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 45, 'color': 'green', 'shape': 'bug-wings', 'habitat': 'forest', 'generation': 'generation-iii', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'ドクケイル', 'roomaji': 'Dokucale', 'ko': '독케일', 'zh-Hant': '毒粉蛾', 'fr': 'Papinox', 'de': 'Pudox', 'es': 'Dustox', 'it': 'Dustox', 'en': 'Dustox', 'ja': 'ドクケイル', 'zh-Hans': '毒粉蛾'}, 'genera': {'ja-Hrkt': 'どくがポケモン', 'ko': '독나방포켓몬', 'zh-Hant': '毒蛾寶可夢', 'fr': 'Pokémon Papipoison', 'de': 'Giftmotte', 'es': 'Pokémon Polilla Ven.', 'it': 'Pokémon Velentarma', 'en': 'Poison Moth Pokémon', 'ja': 'どくがポケモン', 'zh-Hans': '毒蛾宝可梦'}}
+	//Dustox Specie to store common natural stats of all Dustoxs
+	#region SpecieDustox
 	public class SpecieDustox : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieDustox Builder
 		public SpecieDustox() : base(
 			"Dustox",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 90, // Special Attack & Defense
 			65			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Dustox Pokemon Class
+	#region Dustox
 	public class Dustox : Pokemon
 	{
-
+		#region Dustox Builders
+		/// <summary>
+		/// Dustox Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Dustox(string nickname, int level)
 		: base(
 				269,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dustox Builder only waiting for a Level
+		/// </summary>
 		public Dustox(int level)
 		: base(
 				269,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Dustox Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Dustox() : base(
 			269,
 			SpecieDustox.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

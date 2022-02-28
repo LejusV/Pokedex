@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vullaby Specie to store common natural stats of every {'abilities': ['big-pecks', 'overcoat', 'weak-armor'], 'base_experience': 74, 'height': 5, 'id': 629, 'moves': ['cut', 'gust', 'whirlwind', 'fly', 'fury-attack', 'leer', 'toxic', 'double-team', 'mirror-move', 'rest', 'substitute', 'thief', 'snore', 'protect', 'scary-face', 'feint-attack', 'swagger', 'steel-wing', 'mean-look', 'attract', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'sunny-day', 'psych-up', 'shadow-ball', 'rock-smash', 'heat-wave', 'torment', 'flatter', 'facade', 'taunt', 'knock-off', 'snatch', 'secret-power', 'fake-tears', 'rock-tomb', 'aerial-ace', 'iron-defense', 'block', 'roost', 'pluck', 'tailwind', 'u-turn', 'payback', 'embargo', 'punishment', 'dark-pulse', 'air-slash', 'brave-bird', 'nasty-plot', 'defog', 'foul-play', 'round', 'incinerate', 'retaliate', 'snarl', 'confide'], 'name': 'vullaby', 'stats': {'hp': 70, 'attack': 55, 'defense': 75, 'special-attack': 45, 'special-defense': 65, 'speed': 60}, 'types': ['dark', 'flying'], 'weight': 90, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 190, 'color': 'brown', 'shape': 'wings', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'slow', 'egg_groups': ['flying'], 'names': {'ja-Hrkt': 'バルチャイ', 'ko': '벌차이', 'zh-Hant': '禿鷹丫頭', 'fr': 'Vostourno', 'de': 'Skallyk', 'es': 'Vullaby', 'it': 'Vullaby', 'en': 'Vullaby', 'ja': 'バルチャイ', 'zh-Hans': '秃鹰丫头'}, 'genera': {'ja-Hrkt': 'おむつポケモン', 'ko': '기저귀포켓몬', 'zh-Hant': '尿布寶可夢', 'fr': 'Pokémon Couche', 'de': 'Windel', 'es': 'Pokémon Pañal', 'it': 'Pokémon Pannolino', 'en': 'Diapered Pokémon', 'ja': 'おむつポケモン', 'zh-Hans': '尿布宝可梦'}}
+	//Vullaby Specie to store common natural stats of all Vullabys
+	#region SpecieVullaby
 	public class SpecieVullaby : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieVullaby Builder
 		public SpecieVullaby() : base(
 			"Vullaby",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			45, 65, // Special Attack & Defense
 			60			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Vullaby Pokemon Class
+	#region Vullaby
 	public class Vullaby : Pokemon
 	{
-
+		#region Vullaby Builders
+		/// <summary>
+		/// Vullaby Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Vullaby(string nickname, int level)
 		: base(
 				629,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vullaby Builder only waiting for a Level
+		/// </summary>
 		public Vullaby(int level)
 		: base(
 				629,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Vullaby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Vullaby() : base(
 			629,
 			SpecieVullaby.Instance, // Pokemon Specie
 			Dark.Instance, Flying.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Thwackey Specie to store common natural stats of every {'abilities': ['overgrow', 'grassy-surge'], 'base_experience': 147, 'height': 7, 'id': 811, 'moves': [], 'name': 'thwackey', 'stats': {'hp': 70, 'attack': 85, 'defense': 70, 'special-attack': 55, 'special-defense': 60, 'speed': 80}, 'types': ['grass'], 'weight': 140, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'green', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'バチンキー', 'ko': '채키몽', 'zh-Hant': '啪咚猴', 'fr': 'Badabouin', 'de': 'Chimstix', 'es': 'Thwackey', 'it': 'Thwackey', 'en': 'Thwackey', 'ja': 'バチンキー', 'zh-Hans': '啪咚猴'}, 'genera': {'ja-Hrkt': 'ビートポケモン', 'ko': '비트포켓몬', 'zh-Hant': '節拍寶可夢', 'fr': 'Pokémon Percussions', 'de': 'Beat', 'es': 'Pokémon Ritmo', 'it': 'Pokémon Ritmo', 'en': 'Beat Pokémon', 'ja': 'ビートポケモン', 'zh-Hans': '节拍宝可梦'}}
+	//Thwackey Specie to store common natural stats of all Thwackeys
+	#region SpecieThwackey
 	public class SpecieThwackey : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieThwackey Builder
 		public SpecieThwackey() : base(
 			"Thwackey",
 			70, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			80			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Thwackey Pokemon Class
+	#region Thwackey
 	public class Thwackey : Pokemon
 	{
-
+		#region Thwackey Builders
+		/// <summary>
+		/// Thwackey Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Thwackey(string nickname, int level)
 		: base(
 				811,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Thwackey Builder only waiting for a Level
+		/// </summary>
 		public Thwackey(int level)
 		: base(
 				811,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Thwackey Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Thwackey() : base(
 			811,
 			SpecieThwackey.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

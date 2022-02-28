@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pincurchin Specie to store common natural stats of every {'abilities': ['lightning-rod', 'electric-surge'], 'base_experience': 152, 'height': 3, 'id': 871, 'moves': [], 'name': 'pincurchin', 'stats': {'hp': 48, 'attack': 101, 'defense': 95, 'special-attack': 91, 'special-defense': 85, 'speed': 15}, 'types': ['electric'], 'weight': 10, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 75, 'color': 'purple', 'shape': 'tentacles', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'バチンウニ', 'ko': '찌르성게', 'zh-Hant': '啪嚓海膽', 'fr': 'Wattapik', 'de': 'Britzigel', 'es': 'Pincurchin', 'it': 'Pincurchin', 'en': 'Pincurchin', 'ja': 'バチンウニ', 'zh-Hans': '啪嚓海胆'}, 'genera': {'ja-Hrkt': 'うにポケモン', 'ko': '성게포켓몬', 'zh-Hant': '海膽寶可夢', 'fr': 'Pokémon Oursin', 'de': 'Seeigel', 'es': 'Pokémon Erizo de Mar', 'it': 'Pokémon Echino', 'en': 'Sea Urchin Pokémon', 'ja': 'うにポケモン', 'zh-Hans': '海胆宝可梦'}}
+	//Pincurchin Specie to store common natural stats of all Pincurchins
+	#region SpeciePincurchin
 	public class SpeciePincurchin : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePincurchin Builder
 		public SpeciePincurchin() : base(
 			"Pincurchin",
 			48, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			91, 85, // Special Attack & Defense
 			15			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Pincurchin Pokemon Class
+	#region Pincurchin
 	public class Pincurchin : Pokemon
 	{
-
+		#region Pincurchin Builders
+		/// <summary>
+		/// Pincurchin Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Pincurchin(string nickname, int level)
 		: base(
 				871,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pincurchin Builder only waiting for a Level
+		/// </summary>
 		public Pincurchin(int level)
 		: base(
 				871,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Pincurchin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Pincurchin() : base(
 			871,
 			SpeciePincurchin.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Totodile Specie to store common natural stats of every {'abilities': ['torrent', 'sheer-force'], 'base_experience': 63, 'height': 6, 'id': 158, 'moves': ['mega-punch', 'ice-punch', 'scratch', 'razor-wind', 'swords-dance', 'cut', 'mega-kick', 'headbutt', 'body-slam', 'thrash', 'double-edge', 'leer', 'bite', 'water-gun', 'hydro-pump', 'surf', 'ice-beam', 'blizzard', 'low-kick', 'counter', 'seismic-toss', 'dig', 'toxic', 'rage', 'mimic', 'screech', 'double-team', 'waterfall', 'rest', 'rock-slide', 'slash', 'substitute', 'snore', 'curse', 'flail', 'spite', 'protect', 'scary-face', 'mud-slap', 'icy-wind', 'detect', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'dynamic-punch', 'iron-tail', 'metal-claw', 'hidden-power', 'rain-dance', 'crunch', 'ancient-power', 'whirlpool', 'uproar', 'hail', 'flatter', 'facade', 'focus-punch', 'superpower', 'brick-break', 'secret-power', 'dive', 'mud-sport', 'fake-tears', 'rock-tomb', 'aerial-ace', 'block', 'dragon-claw', 'water-sport', 'dragon-dance', 'water-pulse', 'natural-gift', 'fling', 'aqua-tail', 'shadow-claw', 'ice-fang', 'captivate', 'aqua-jet', 'hone-claws', 'round', 'chip-away', 'scald', 'water-pledge', 'work-up', 'confide', 'power-up-punch'], 'name': 'totodile', 'stats': {'hp': 50, 'attack': 65, 'defense': 64, 'special-attack': 44, 'special-defense': 48, 'speed': 43}, 'types': ['water'], 'weight': 95, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'blue', 'shape': 'upright', 'habitat': 'waters-edge', 'generation': 'generation-ii', 'growth_rate': 'medium-slow', 'egg_groups': ['monster', 'water1'], 'names': {'ja-Hrkt': 'ワニノコ', 'roomaji': 'Waninoko', 'ko': '리아코', 'zh-Hant': '小鋸鱷', 'fr': 'Kaiminus', 'de': 'Karnimani', 'es': 'Totodile', 'it': 'Totodile', 'en': 'Totodile', 'ja': 'ワニノコ', 'zh-Hans': '小锯鳄'}, 'genera': {'ja-Hrkt': 'おおあごポケモン', 'ko': '큰턱포켓몬', 'zh-Hant': '大顎寶可夢', 'fr': 'Pokémon Mâchoire', 'de': 'Großmaul', 'es': 'Pokémon Fauces', 'it': 'Pokémon Mascellone', 'en': 'Big Jaw Pokémon', 'ja': 'おおあごポケモン', 'zh-Hans': '大颚宝可梦'}}
+	//Totodile Specie to store common natural stats of all Totodiles
+	#region SpecieTotodile
 	public class SpecieTotodile : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieTotodile Builder
 		public SpecieTotodile() : base(
 			"Totodile",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			44, 48, // Special Attack & Defense
 			43			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Totodile Pokemon Class
+	#region Totodile
 	public class Totodile : Pokemon
 	{
-
+		#region Totodile Builders
+		/// <summary>
+		/// Totodile Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Totodile(string nickname, int level)
 		: base(
 				158,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Totodile Builder only waiting for a Level
+		/// </summary>
 		public Totodile(int level)
 		: base(
 				158,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Totodile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Totodile() : base(
 			158,
 			SpecieTotodile.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

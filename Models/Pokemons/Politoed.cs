@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Politoed Specie to store common natural stats of every {'abilities': ['water-absorb', 'damp', 'drizzle'], 'base_experience': 225, 'height': 11, 'id': 186, 'moves': ['double-slap', 'mega-punch', 'ice-punch', 'mega-kick', 'headbutt', 'body-slam', 'double-edge', 'water-gun', 'surf', 'ice-beam', 'blizzard', 'bubble-beam', 'hyper-beam', 'counter', 'seismic-toss', 'strength', 'earthquake', 'dig', 'toxic', 'psychic', 'hypnosis', 'mimic', 'double-team', 'defense-curl', 'metronome', 'waterfall', 'rest', 'substitute', 'thief', 'snore', 'curse', 'protect', 'mud-slap', 'perish-song', 'icy-wind', 'detect', 'endure', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'dynamic-punch', 'hidden-power', 'rain-dance', 'rock-smash', 'whirlpool', 'hail', 'facade', 'focus-punch', 'helping-hand', 'brick-break', 'endeavor', 'secret-power', 'dive', 'hyper-voice', 'bounce', 'water-pulse', 'natural-gift', 'payback', 'fling', 'focus-blast', 'giga-impact', 'captivate', 'round', 'echoed-voice', 'scald', 'bulldoze', 'confide', 'power-up-punch'], 'name': 'politoed', 'stats': {'hp': 90, 'attack': 75, 'defense': 75, 'special-attack': 90, 'special-defense': 100, 'speed': 70}, 'types': ['water'], 'weight': 339, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 45, 'color': 'green', 'shape': 'humanoid', 'habitat': 'waters-edge', 'generation': 'generation-ii', 'growth_rate': 'medium-slow', 'egg_groups': ['water1'], 'names': {'ja-Hrkt': 'ニョロトノ', 'roomaji': 'Nyorotono', 'ko': '왕구리', 'zh-Hant': '蚊香蛙皇', 'fr': 'Tarpaud', 'de': 'Quaxo', 'es': 'Politoed', 'it': 'Politoed', 'en': 'Politoed', 'ja': 'ニョロトノ', 'zh-Hans': '蚊香蛙皇'}, 'genera': {'ja-Hrkt': 'かえるポケモン', 'ko': '개구리포켓몬', 'zh-Hant': '蛙寶可夢', 'fr': 'Pokémon Grenouille', 'de': 'Frosch', 'es': 'Pokémon Rana', 'it': 'Pokémon Rana', 'en': 'Frog Pokémon', 'ja': 'かえるポケモン', 'zh-Hans': '蛙宝可梦'}}
+	//Politoed Specie to store common natural stats of all Politoeds
+	#region SpeciePolitoed
 	public class SpeciePolitoed : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpeciePolitoed Builder
 		public SpeciePolitoed() : base(
 			"Politoed",
 			90, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			90, 100, // Special Attack & Defense
 			70			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Politoed Pokemon Class
+	#region Politoed
 	public class Politoed : Pokemon
 	{
-
+		#region Politoed Builders
+		/// <summary>
+		/// Politoed Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Politoed(string nickname, int level)
 		: base(
 				186,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Politoed Builder only waiting for a Level
+		/// </summary>
 		public Politoed(int level)
 		: base(
 				186,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Politoed Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Politoed() : base(
 			186,
 			SpeciePolitoed.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

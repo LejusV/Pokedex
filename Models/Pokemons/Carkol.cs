@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Carkol Specie to store common natural stats of every {'abilities': ['steam-engine', 'flame-body', 'flash-fire'], 'base_experience': 144, 'height': 11, 'id': 838, 'moves': [], 'name': 'carkol', 'stats': {'hp': 80, 'attack': 60, 'defense': 90, 'special-attack': 60, 'special-defense': 70, 'speed': 50}, 'types': ['rock', 'fire'], 'weight': 780, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'black', 'shape': 'legs', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'トロッゴン', 'ko': '탄차곤', 'zh-Hant': '大炭車', 'fr': 'Wagomine', 'de': 'Wagong', 'es': 'Carkol', 'it': 'Carkol', 'en': 'Carkol', 'ja': 'トロッゴン', 'zh-Hans': '大炭车'}, 'genera': {'ja-Hrkt': 'せきたんポケモン', 'ko': '석탄포켓몬', 'zh-Hant': '煤炭寶可夢', 'fr': 'Pokémon Charbon', 'de': 'Kohle', 'es': 'Pokémon Carbón', 'it': 'Pokémon Carbone', 'en': 'Coal Pokémon', 'ja': 'せきたんポケモン', 'zh-Hans': '煤炭宝可梦'}}
+	//Carkol Specie to store common natural stats of all Carkols
+	#region SpecieCarkol
 	public class SpecieCarkol : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCarkol Builder
 		public SpecieCarkol() : base(
 			"Carkol",
 			80, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			60, 70, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Carkol Pokemon Class
+	#region Carkol
 	public class Carkol : Pokemon
 	{
-
+		#region Carkol Builders
+		/// <summary>
+		/// Carkol Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Carkol(string nickname, int level)
 		: base(
 				838,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Carkol Builder only waiting for a Level
+		/// </summary>
 		public Carkol(int level)
 		: base(
 				838,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Carkol Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Carkol() : base(
 			838,
 			SpecieCarkol.Instance, // Pokemon Specie
 			Rock.Instance, Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

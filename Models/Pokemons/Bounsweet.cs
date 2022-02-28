@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bounsweet Specie to store common natural stats of every {'abilities': ['leaf-guard', 'oblivious', 'sweet-veil'], 'base_experience': 42, 'height': 3, 'id': 761, 'moves': ['razor-leaf', 'solar-beam', 'toxic', 'double-team', 'light-screen', 'reflect', 'splash', 'rest', 'substitute', 'flail', 'protect', 'charm', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'safeguard', 'rapid-spin', 'sweet-scent', 'synthesis', 'hidden-power', 'sunny-day', 'facade', 'nature-power', 'teeter-dance', 'grass-whistle', 'magical-leaf', 'feint', 'acupressure', 'energy-ball', 'grass-knot', 'round', 'play-rough', 'play-nice', 'confide', 'aromatic-mist', 'dazzling-gleam'], 'name': 'bounsweet', 'stats': {'hp': 42, 'attack': 30, 'defense': 38, 'special-attack': 30, 'special-defense': 38, 'speed': 32}, 'types': ['grass'], 'weight': 32, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 235, 'color': 'purple', 'shape': 'legs', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'medium-slow', 'egg_groups': ['plant'], 'names': {'ja-Hrkt': 'アマカジ', 'ko': '달콤아', 'zh-Hant': '甜竹竹', 'fr': 'Croquine', 'de': 'Frubberl', 'es': 'Bounsweet', 'it': 'Bounsweet', 'en': 'Bounsweet', 'ja': 'アマカジ', 'zh-Hans': '甜竹竹'}, 'genera': {'ja-Hrkt': 'フルーツポケモン', 'ko': '후르츠포켓몬', 'zh-Hant': '水果寶可夢', 'fr': 'Pokémon Fruit', 'de': 'Obst', 'es': 'Pokémon Fruto', 'it': 'Pokémon Frutto', 'en': 'Fruit Pokémon', 'ja': 'フルーツポケモン', 'zh-Hans': '水果宝可梦'}}
+	//Bounsweet Specie to store common natural stats of all Bounsweets
+	#region SpecieBounsweet
 	public class SpecieBounsweet : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBounsweet Builder
 		public SpecieBounsweet() : base(
 			"Bounsweet",
 			42, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 38, // Special Attack & Defense
 			32			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Bounsweet Pokemon Class
+	#region Bounsweet
 	public class Bounsweet : Pokemon
 	{
-
+		#region Bounsweet Builders
+		/// <summary>
+		/// Bounsweet Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Bounsweet(string nickname, int level)
 		: base(
 				761,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Bounsweet Builder only waiting for a Level
+		/// </summary>
 		public Bounsweet(int level)
 		: base(
 				761,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Bounsweet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Bounsweet() : base(
 			761,
 			SpecieBounsweet.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

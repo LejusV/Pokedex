@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Scorbunny Specie to store common natural stats of every {'abilities': ['blaze', 'libero'], 'base_experience': 62, 'height': 3, 'id': 813, 'moves': [], 'name': 'scorbunny', 'stats': {'hp': 50, 'attack': 71, 'defense': 40, 'special-attack': 40, 'special-defense': 40, 'speed': 69}, 'types': ['fire'], 'weight': 45, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 1, 'capture_rate': 45, 'color': 'white', 'shape': 'upright', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium-slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ヒバニー', 'ko': '염버니', 'zh-Hant': '炎兔兒', 'fr': 'Flambino', 'de': 'Hopplo', 'es': 'Scorbunny', 'it': 'Scorbunny', 'en': 'Scorbunny', 'ja': 'ヒバニー', 'zh-Hans': '炎兔儿'}, 'genera': {'ja-Hrkt': 'うさぎポケモン', 'ko': '토끼포켓몬', 'zh-Hant': '兔子寶可夢', 'fr': 'Pokémon Lapin', 'de': 'Hase', 'es': 'Pokémon Conejo', 'it': 'Pokémon Coniglio', 'en': 'Rabbit Pokémon', 'ja': 'うさぎポケモン', 'zh-Hans': '兔子宝可梦'}}
+	//Scorbunny Specie to store common natural stats of all Scorbunnys
+	#region SpecieScorbunny
 	public class SpecieScorbunny : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieScorbunny Builder
 		public SpecieScorbunny() : base(
 			"Scorbunny",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			69			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Scorbunny Pokemon Class
+	#region Scorbunny
 	public class Scorbunny : Pokemon
 	{
-
+		#region Scorbunny Builders
+		/// <summary>
+		/// Scorbunny Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Scorbunny(string nickname, int level)
 		: base(
 				813,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Scorbunny Builder only waiting for a Level
+		/// </summary>
 		public Scorbunny(int level)
 		: base(
 				813,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Scorbunny Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Scorbunny() : base(
 			813,
 			SpecieScorbunny.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

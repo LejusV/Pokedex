@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Melmetal Specie to store common natural stats of every {'abilities': ['iron-fist'], 'base_experience': 270, 'height': 25, 'id': 809, 'moves': [], 'name': 'melmetal', 'stats': {'hp': 135, 'attack': 143, 'defense': 143, 'special-attack': 80, 'special-defense': 65, 'speed': 34}, 'types': ['steel'], 'weight': 8000, 'is_baby': False, 'is_legendary': False, 'is_mythical': True, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 3, 'color': 'gray', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'メルメタル', 'ko': '멜메탈', 'zh-Hant': '美錄梅塔', 'fr': 'Melmetal', 'de': 'Melmetal', 'es': 'Melmetal', 'it': 'Melmetal', 'en': 'Melmetal', 'ja': 'メルメタル', 'zh-Hans': '美录梅塔'}, 'genera': {'ja-Hrkt': 'ナットポケモン', 'ko': '너트포켓몬', 'zh-Hant': '螺帽寶可夢', 'fr': 'Pokémon Écrou', 'de': 'Mutter', 'es': 'Pokémon Tuerca', 'it': 'Pokémon Bullone', 'en': 'Hex Nut Pokémon', 'ja': 'ナットポケモン', 'zh-Hans': '螺帽宝可梦'}}
+	//Melmetal Specie to store common natural stats of all Melmetals
+	#region SpecieMelmetal
 	public class SpecieMelmetal : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieMelmetal Builder
 		public SpecieMelmetal() : base(
 			"Melmetal",
 			135, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 65, // Special Attack & Defense
 			34			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Melmetal Pokemon Class
+	#region Melmetal
 	public class Melmetal : Pokemon
 	{
-
+		#region Melmetal Builders
+		/// <summary>
+		/// Melmetal Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Melmetal(string nickname, int level)
 		: base(
 				809,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Melmetal Builder only waiting for a Level
+		/// </summary>
 		public Melmetal(int level)
 		: base(
 				809,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Melmetal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Melmetal() : base(
 			809,
 			SpecieMelmetal.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

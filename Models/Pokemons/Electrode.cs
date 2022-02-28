@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Electrode Specie to store common natural stats of every {'abilities': ['soundproof', 'static', 'aftermath'], 'base_experience': 172, 'height': 12, 'id': 101, 'moves': ['headbutt', 'tackle', 'take-down', 'sonic-boom', 'hyper-beam', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'rage', 'teleport', 'mimic', 'screech', 'double-team', 'light-screen', 'reflect', 'bide', 'self-destruct', 'swift', 'skull-bash', 'flash', 'explosion', 'rest', 'substitute', 'thief', 'snore', 'curse', 'protect', 'zap-cannon', 'endure', 'rollout', 'swagger', 'spark', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'rain-dance', 'mirror-coat', 'torment', 'facade', 'charge', 'taunt', 'magic-coat', 'secret-power', 'signal-beam', 'shock-wave', 'gyro-ball', 'natural-gift', 'sucker-punch', 'magnet-rise', 'giga-impact', 'discharge', 'charge-beam', 'electro-ball', 'foul-play', 'round', 'volt-switch', 'wild-charge', 'confide', 'eerie-impulse', 'magnetic-flux'], 'name': 'electrode', 'stats': {'hp': 60, 'attack': 50, 'defense': 70, 'special-attack': 80, 'special-defense': 80, 'speed': 150}, 'types': ['electric'], 'weight': 666, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': -1, 'capture_rate': 60, 'color': 'red', 'shape': 'ball', 'habitat': 'urban', 'generation': 'generation-i', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'マルマイン', 'roomaji': 'Marumine', 'ko': '붐볼', 'zh-Hant': '頑皮雷彈', 'fr': 'Électrode', 'de': 'Lektrobal', 'es': 'Electrode', 'it': 'Electrode', 'en': 'Electrode', 'ja': 'マルマイン', 'zh-Hans': '顽皮雷弹'}, 'genera': {'ja-Hrkt': 'ボールポケモン', 'ko': '볼포켓몬', 'zh-Hant': '球寶可夢', 'fr': 'Pokémon Balle', 'de': 'Ball', 'es': 'Pokémon Bola', 'it': 'Pokémon Ball', 'en': 'Ball Pokémon', 'ja': 'ボールポケモン', 'zh-Hans': '球宝可梦'}}
+	//Electrode Specie to store common natural stats of all Electrodes
+	#region SpecieElectrode
 	public class SpecieElectrode : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieElectrode Builder
 		public SpecieElectrode() : base(
 			"Electrode",
 			60, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			150			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Electrode Pokemon Class
+	#region Electrode
 	public class Electrode : Pokemon
 	{
-
+		#region Electrode Builders
+		/// <summary>
+		/// Electrode Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Electrode(string nickname, int level)
 		: base(
 				101,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Electrode Builder only waiting for a Level
+		/// </summary>
 		public Electrode(int level)
 		: base(
 				101,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Electrode Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Electrode() : base(
 			101,
 			SpecieElectrode.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

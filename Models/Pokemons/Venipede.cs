@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Venipede Specie to store common natural stats of every {'abilities': ['poison-point', 'swarm', 'speed-boost'], 'base_experience': 52, 'height': 4, 'id': 543, 'moves': ['take-down', 'double-edge', 'poison-sting', 'twineedle', 'pin-missile', 'solar-beam', 'toxic', 'agility', 'screech', 'double-team', 'defense-curl', 'rest', 'substitute', 'snore', 'protect', 'sludge-bomb', 'spikes', 'rollout', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'pursuit', 'hidden-power', 'sunny-day', 'rock-smash', 'facade', 'endeavor', 'secret-power', 'signal-beam', 'iron-defense', 'poison-tail', 'gyro-ball', 'payback', 'toxic-spikes', 'poison-jab', 'rock-climb', 'bug-bite', 'venoshock', 'round', 'struggle-bug', 'steamroller', 'confide', 'venom-drench', 'infestation'], 'name': 'venipede', 'stats': {'hp': 30, 'attack': 45, 'defense': 59, 'special-attack': 30, 'special-defense': 39, 'speed': 57}, 'types': ['bug', 'poison'], 'weight': 53, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'red', 'shape': 'armor', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium-slow', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'フシデ', 'ko': '마디네', 'zh-Hant': '百足蜈蚣', 'fr': 'Venipatte', 'de': 'Toxiped', 'es': 'Venipede', 'it': 'Venipede', 'en': 'Venipede', 'ja': 'フシデ', 'zh-Hans': '百足蜈蚣'}, 'genera': {'ja-Hrkt': 'ムカデポケモン', 'ko': '지네포켓몬', 'zh-Hant': '蜈蚣寶可夢', 'fr': 'Pokémon Chilopode', 'de': 'Tausendfüßer', 'es': 'Pokémon Ciempiés', 'it': 'Pokémon Centipede', 'en': 'Centipede Pokémon', 'ja': 'ムカデポケモン', 'zh-Hans': '蜈蚣宝可梦'}}
+	//Venipede Specie to store common natural stats of all Venipedes
+	#region SpecieVenipede
 	public class SpecieVenipede : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieVenipede Builder
 		public SpecieVenipede() : base(
 			"Venipede",
 			30, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			30, 39, // Special Attack & Defense
 			57			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Venipede Pokemon Class
+	#region Venipede
 	public class Venipede : Pokemon
 	{
-
+		#region Venipede Builders
+		/// <summary>
+		/// Venipede Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Venipede(string nickname, int level)
 		: base(
 				543,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Venipede Builder only waiting for a Level
+		/// </summary>
 		public Venipede(int level)
 		: base(
 				543,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Venipede Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Venipede() : base(
 			543,
 			SpecieVenipede.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

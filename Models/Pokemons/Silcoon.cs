@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Silcoon Specie to store common natural stats of every {'abilities': ['shed-skin'], 'base_experience': 72, 'height': 6, 'id': 266, 'moves': ['string-shot', 'harden', 'iron-defense', 'bug-bite', 'electroweb'], 'name': 'silcoon', 'stats': {'hp': 50, 'attack': 35, 'defense': 55, 'special-attack': 25, 'special-defense': 25, 'speed': 15}, 'types': ['bug'], 'weight': 100, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 120, 'color': 'white', 'shape': 'ball', 'habitat': 'forest', 'generation': 'generation-iii', 'growth_rate': 'medium', 'egg_groups': ['bug'], 'names': {'ja-Hrkt': 'カラサリス', 'roomaji': 'Karasalis', 'ko': '실쿤', 'zh-Hant': '甲殼繭', 'fr': 'Armulys', 'de': 'Schaloko', 'es': 'Silcoon', 'it': 'Silcoon', 'en': 'Silcoon', 'ja': 'カラサリス', 'zh-Hans': '甲壳茧'}, 'genera': {'ja-Hrkt': 'さなぎポケモン', 'ko': '번데기포켓몬', 'zh-Hant': '蛹寶可夢', 'fr': 'Pokémon Cocon', 'de': 'Kokon', 'es': 'Pokémon Capullo', 'it': 'Pokémon Bozzolo', 'en': 'Cocoon Pokémon', 'ja': 'さなぎポケモン', 'zh-Hans': '蛹宝可梦'}}
+	//Silcoon Specie to store common natural stats of all Silcoons
+	#region SpecieSilcoon
 	public class SpecieSilcoon : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSilcoon Builder
 		public SpecieSilcoon() : base(
 			"Silcoon",
 			50, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			15			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Silcoon Pokemon Class
+	#region Silcoon
 	public class Silcoon : Pokemon
 	{
-
+		#region Silcoon Builders
+		/// <summary>
+		/// Silcoon Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Silcoon(string nickname, int level)
 		: base(
 				266,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Silcoon Builder only waiting for a Level
+		/// </summary>
 		public Silcoon(int level)
 		: base(
 				266,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Silcoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Silcoon() : base(
 			266,
 			SpecieSilcoon.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

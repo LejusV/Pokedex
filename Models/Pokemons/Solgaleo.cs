@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Solgaleo Specie to store common natural stats of every {'abilities': ['full-metal-body'], 'base_experience': 306, 'height': 34, 'id': 791, 'moves': ['roar', 'flamethrower', 'hyper-beam', 'solar-beam', 'thunderbolt', 'thunder-wave', 'thunder', 'earthquake', 'toxic', 'psychic', 'teleport', 'double-team', 'light-screen', 'reflect', 'fire-blast', 'rest', 'rock-slide', 'substitute', 'protect', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'metal-claw', 'morning-sun', 'hidden-power', 'sunny-day', 'crunch', 'psych-up', 'facade', 'rock-tomb', 'metal-sound', 'cosmic-power', 'calm-mind', 'wake-up-slap', 'gyro-ball', 'metal-burst', 'flare-blitz', 'focus-blast', 'giga-impact', 'zen-headbutt', 'flash-cannon', 'trick-room', 'iron-head', 'stone-edge', 'wide-guard', 'psyshock', 'flame-charge', 'round', 'bulldoze', 'work-up', 'wild-charge', 'snarl', 'noble-roar', 'confide', 'sunsteel-strike'], 'name': 'solgaleo', 'stats': {'hp': 137, 'attack': 137, 'defense': 107, 'special-attack': 113, 'special-defense': 89, 'speed': 97}, 'types': ['psychic', 'steel'], 'weight': 2300, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'white', 'shape': 'quadruped', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'ソルガレオ', 'ko': '솔가레오', 'zh-Hant': '索爾迦雷歐', 'fr': 'Solgaleo', 'de': 'Solgaleo', 'es': 'Solgaleo', 'it': 'Solgaleo', 'en': 'Solgaleo', 'ja': 'ソルガレオ', 'zh-Hans': '索尔迦雷欧'}, 'genera': {'ja-Hrkt': 'にちりんポケモン', 'ko': '일륜포켓몬', 'zh-Hant': '日輪寶可夢', 'fr': 'Pokémon Halo Solaire', 'de': 'Sonnenkreis', 'es': 'Pokémon Corona Solar', 'it': 'Pokémon Solare', 'en': 'Sunne Pokémon', 'ja': 'にちりんポケモン', 'zh-Hans': '日轮宝可梦'}}
+	//Solgaleo Specie to store common natural stats of all Solgaleos
+	#region SpecieSolgaleo
 	public class SpecieSolgaleo : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieSolgaleo Builder
 		public SpecieSolgaleo() : base(
 			"Solgaleo",
 			137, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			113, 89, // Special Attack & Defense
 			97			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Solgaleo Pokemon Class
+	#region Solgaleo
 	public class Solgaleo : Pokemon
 	{
-
+		#region Solgaleo Builders
+		/// <summary>
+		/// Solgaleo Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Solgaleo(string nickname, int level)
 		: base(
 				791,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Solgaleo Builder only waiting for a Level
+		/// </summary>
 		public Solgaleo(int level)
 		: base(
 				791,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Solgaleo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Solgaleo() : base(
 			791,
 			SpecieSolgaleo.Instance, // Pokemon Specie
 			Psychic.Instance, Steel.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

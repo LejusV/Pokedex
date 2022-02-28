@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Runerigus Specie to store common natural stats of every {'abilities': ['wandering-spirit'], 'base_experience': 169, 'height': 16, 'id': 867, 'moves': [], 'name': 'runerigus', 'stats': {'hp': 58, 'attack': 95, 'defense': 145, 'special-attack': 50, 'special-defense': 105, 'speed': 30}, 'types': ['ground', 'ghost'], 'weight': 666, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': 4, 'capture_rate': 90, 'color': 'gray', 'shape': 'blob', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'デスバーン', 'ko': '데스판', 'zh-Hant': '死神板', 'fr': 'Tutétékri', 'de': 'Oghnatoll', 'es': 'Runerigus', 'it': 'Runerigus', 'en': 'Runerigus', 'ja': 'デスバーン', 'zh-Hans': '死神板'}, 'genera': {'ja-Hrkt': 'おんねんポケモン', 'ko': '원념포켓몬', 'zh-Hant': '怨念寶可夢', 'fr': 'Pokémon Rancune', 'de': 'Gram', 'es': 'Pokémon Resquemor', 'it': 'Pokémon Rancore', 'en': 'Grudge Pokémon', 'ja': 'おんねんポケモン', 'zh-Hans': '怨念宝可梦'}}
+	//Runerigus Specie to store common natural stats of all Runeriguss
+	#region SpecieRunerigus
 	public class SpecieRunerigus : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieRunerigus Builder
 		public SpecieRunerigus() : base(
 			"Runerigus",
 			58, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			50, 105, // Special Attack & Defense
 			30			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Runerigus Pokemon Class
+	#region Runerigus
 	public class Runerigus : Pokemon
 	{
-
+		#region Runerigus Builders
+		/// <summary>
+		/// Runerigus Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Runerigus(string nickname, int level)
 		: base(
 				867,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Runerigus Builder only waiting for a Level
+		/// </summary>
 		public Runerigus(int level)
 		: base(
 				867,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Runerigus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Runerigus() : base(
 			867,
 			SpecieRunerigus.Instance, // Pokemon Specie
 			Ground.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

@@ -6,7 +6,7 @@ namespace Pokedex.Models
     internal class Wiki
     {
         #nullable enable
-        private static Dictionary<int, Pokemon?>
+        private static Dictionary<int, Pokemon>
         #nullable restore
          _pokemons;
         #nullable enable
@@ -23,14 +23,14 @@ namespace Pokedex.Models
             }
         }
 
-        public Dictionary<int, Pokemon?> Pokemons
+        public Dictionary<int, Pokemon> Pokemons
         { get { return _pokemons; } } 
 
 
         public string Display()
         {
             string res = "";
-            foreach (KeyValuePair<int, Pokemon?> entry in this.Pokemons) 
+            foreach (KeyValuePair<int, Pokemon> entry in this.Pokemons) 
             {
                 if (entry.Value != null)
                 {
@@ -45,7 +45,7 @@ namespace Pokedex.Models
         public Wiki()
         {
             
-            _pokemons = new Dictionary<int, Pokemon?>()
+            _pokemons = new Dictionary<int, Pokemon>()
             #region PokemonDictionary
             {
 				{ 1,		new Bulbasaur() },

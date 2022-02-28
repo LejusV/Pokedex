@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golurk Specie to store common natural stats of every {'abilities': ['iron-fist', 'klutz', 'no-guard'], 'base_experience': 169, 'height': 28, 'id': 623, 'moves': ['pound', 'mega-punch', 'fire-punch', 'ice-punch', 'thunder-punch', 'fly', 'ice-beam', 'hyper-beam', 'low-kick', 'strength', 'solar-beam', 'thunderbolt', 'earthquake', 'toxic', 'psychic', 'night-shade', 'double-team', 'defense-curl', 'flash', 'rest', 'rock-slide', 'substitute', 'thief', 'snore', 'curse', 'protect', 'mud-slap', 'icy-wind', 'rollout', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'magnitude', 'dynamic-punch', 'hidden-power', 'rain-dance', 'shadow-ball', 'rock-smash', 'facade', 'focus-punch', 'superpower', 'magic-coat', 'brick-break', 'secret-power', 'astonish', 'rock-tomb', 'signal-beam', 'shadow-punch', 'iron-defense', 'block', 'shock-wave', 'gravity', 'hammer-arm', 'gyro-ball', 'fling', 'rock-polish', 'drain-punch', 'focus-blast', 'earth-power', 'giga-impact', 'zen-headbutt', 'flash-cannon', 'stone-edge', 'stealth-rock', 'grass-knot', 'charge-beam', 'telekinesis', 'heavy-slam', 'low-sweep', 'round', 'bulldoze', 'phantom-force', 'confide', 'power-up-punch', 'high-horsepower', 'stomping-tantrum'], 'name': 'golurk', 'stats': {'hp': 89, 'attack': 124, 'defense': 80, 'special-attack': 55, 'special-defense': 80, 'speed': 55}, 'types': ['ground', 'ghost'], 'weight': 3300, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 25, 'gender_rate': -1, 'capture_rate': 90, 'color': 'green', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'medium', 'egg_groups': ['mineral'], 'names': {'ja-Hrkt': 'ゴルーグ', 'ko': '골루그', 'zh-Hant': '泥偶巨人', 'fr': 'Golemastoc', 'de': 'Golgantes', 'es': 'Golurk', 'it': 'Golurk', 'en': 'Golurk', 'ja': 'ゴルーグ', 'zh-Hans': '泥偶巨人'}, 'genera': {'ja-Hrkt': 'ゴーレムポケモン', 'ko': '골렘포켓몬', 'zh-Hant': '魔像寶可夢', 'fr': 'Pokémon Golem Ancien', 'de': 'Urgolem', 'es': 'Pokémon Autómata', 'it': 'Pokémon Statuanimata', 'en': 'Automaton Pokémon', 'ja': 'ゴーレムポケモン', 'zh-Hans': '魔像宝可梦'}}
+	//Golurk Specie to store common natural stats of all Golurks
+	#region SpecieGolurk
 	public class SpecieGolurk : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieGolurk Builder
 		public SpecieGolurk() : base(
 			"Golurk",
 			89, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 80, // Special Attack & Defense
 			55			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Golurk Pokemon Class
+	#region Golurk
 	public class Golurk : Pokemon
 	{
-
+		#region Golurk Builders
+		/// <summary>
+		/// Golurk Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Golurk(string nickname, int level)
 		: base(
 				623,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Golurk Builder only waiting for a Level
+		/// </summary>
 		public Golurk(int level)
 		: base(
 				623,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Golurk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Golurk() : base(
 			623,
 			SpecieGolurk.Instance, // Pokemon Specie
 			Ground.Instance, Ghost.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

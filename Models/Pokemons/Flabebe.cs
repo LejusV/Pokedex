@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Flabebe Specie to store common natural stats of every {'abilities': ['flower-veil', 'symbiosis'], 'base_experience': 61, 'height': 1, 'id': 669, 'moves': ['vine-whip', 'tackle', 'razor-leaf', 'solar-beam', 'petal-dance', 'toxic', 'psychic', 'double-team', 'flash', 'rest', 'substitute', 'snore', 'protect', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'safeguard', 'synthesis', 'hidden-power', 'rain-dance', 'sunny-day', 'facade', 'nature-power', 'helping-hand', 'wish', 'magic-coat', 'endeavor', 'secret-power', 'camouflage', 'aromatherapy', 'covet', 'magical-leaf', 'calm-mind', 'lucky-chant', 'copycat', 'worry-seed', 'seed-bomb', 'energy-ball', 'captivate', 'grass-knot', 'after-you', 'round', 'echoed-voice', 'petal-blizzard', 'grassy-terrain', 'misty-terrain', 'fairy-wind', 'moonblast', 'confide', 'dazzling-gleam', 'tearful-look'], 'name': 'flabebe', 'stats': {'hp': 44, 'attack': 38, 'defense': 39, 'special-attack': 61, 'special-defense': 79, 'speed': 42}, 'types': ['fairy'], 'weight': 1, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 225, 'color': 'white', 'shape': 'arms', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['fairy'], 'names': {'ja-Hrkt': 'フラベベ', 'ko': '플라베베', 'zh-Hant': '花蓓蓓', 'fr': 'Flabébé', 'de': 'Flabébé', 'es': 'Flabébé', 'it': 'Flabébé', 'en': 'Flabébé', 'ja': 'フラベベ', 'zh-Hans': '花蓓蓓'}, 'genera': {'ja-Hrkt': 'いちりんポケモン', 'ko': '한송이포켓몬', 'zh-Hant': '單朵寶可夢', 'fr': 'Pokémon Uniflore', 'de': 'Einblütler', 'es': 'Pokémon Monoflor', 'it': 'Pokémon Monofiore', 'en': 'Single Bloom Pokémon', 'ja': 'いちりんポケモン', 'zh-Hans': '单朵宝可梦'}}
+	//Flabebe Specie to store common natural stats of all Flabebes
+	#region SpecieFlabebe
 	public class SpecieFlabebe : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieFlabebe Builder
 		public SpecieFlabebe() : base(
 			"Flabebe",
 			44, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			61, 79, // Special Attack & Defense
 			42			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Flabebe Pokemon Class
+	#region Flabebe
 	public class Flabebe : Pokemon
 	{
-
+		#region Flabebe Builders
+		/// <summary>
+		/// Flabebe Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Flabebe(string nickname, int level)
 		: base(
 				669,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Flabebe Builder only waiting for a Level
+		/// </summary>
 		public Flabebe(int level)
 		: base(
 				669,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Flabebe Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Flabebe() : base(
 			669,
 			SpecieFlabebe.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

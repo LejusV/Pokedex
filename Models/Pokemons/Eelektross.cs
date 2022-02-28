@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eelektross Specie to store common natural stats of every {'abilities': ['levitate'], 'base_experience': 232, 'height': 21, 'id': 604, 'moves': ['fire-punch', 'thunder-punch', 'cut', 'bind', 'headbutt', 'thrash', 'roar', 'acid', 'flamethrower', 'hyper-beam', 'strength', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'double-team', 'light-screen', 'flash', 'rest', 'rock-slide', 'super-fang', 'substitute', 'snore', 'protect', 'zap-cannon', 'outrage', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'return', 'frustration', 'iron-tail', 'hidden-power', 'rain-dance', 'crunch', 'rock-smash', 'facade', 'focus-punch', 'superpower', 'brick-break', 'knock-off', 'secret-power', 'crush-claw', 'rock-tomb', 'signal-beam', 'dragon-claw', 'bounce', 'shock-wave', 'u-turn', 'gastro-acid', 'magnet-rise', 'aqua-tail', 'dragon-pulse', 'drain-punch', 'giga-impact', 'flash-cannon', 'discharge', 'grass-knot', 'charge-beam', 'hone-claws', 'coil', 'round', 'acrobatics', 'volt-switch', 'dragon-tail', 'wild-charge', 'ion-deluge', 'confide', 'power-up-punch'], 'name': 'eelektross', 'stats': {'hp': 85, 'attack': 115, 'defense': 80, 'special-attack': 105, 'special-defense': 80, 'speed': 50}, 'types': ['electric'], 'weight': 805, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 4, 'capture_rate': 30, 'color': 'blue', 'shape': 'fish', 'habitat': None, 'generation': 'generation-v', 'growth_rate': 'slow', 'egg_groups': ['indeterminate'], 'names': {'ja-Hrkt': 'シビルドン', 'ko': '저리더프', 'zh-Hant': '麻麻鰻魚王', 'fr': 'Ohmassacre', 'de': 'Zapplarang', 'es': 'Eelektross', 'it': 'Eelektross', 'en': 'Eelektross', 'ja': 'シビルドン', 'zh-Hans': '麻麻鳗鱼王'}, 'genera': {'ja-Hrkt': 'でんきうおポケモン', 'ko': '전기물고기포켓몬', 'zh-Hant': '電魚寶可夢', 'fr': 'Pokémon Électrophore', 'de': 'Stromfisch', 'es': 'Pokémon Electropez', 'it': 'Pokémon Elettropesce', 'en': 'EleFish Pokémon', 'ja': 'でんきうおポケモン', 'zh-Hans': '电鱼宝可梦'}}
+	//Eelektross Specie to store common natural stats of all Eelektrosss
+	#region SpecieEelektross
 	public class SpecieEelektross : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieEelektross Builder
 		public SpecieEelektross() : base(
 			"Eelektross",
 			85, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			105, 80, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Eelektross Pokemon Class
+	#region Eelektross
 	public class Eelektross : Pokemon
 	{
-
+		#region Eelektross Builders
+		/// <summary>
+		/// Eelektross Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Eelektross(string nickname, int level)
 		: base(
 				604,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Eelektross Builder only waiting for a Level
+		/// </summary>
 		public Eelektross(int level)
 		: base(
 				604,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Eelektross Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Eelektross() : base(
 			604,
 			SpecieEelektross.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

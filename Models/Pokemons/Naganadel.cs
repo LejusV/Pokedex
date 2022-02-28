@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Naganadel Specie to store common natural stats of every {'abilities': ['beast-boost'], 'base_experience': 243, 'height': 36, 'id': 804, 'moves': ['fly', 'fury-attack', 'growl', 'acid', 'flamethrower', 'hyper-beam', 'peck', 'thunderbolt', 'toxic', 'double-team', 'fire-blast', 'leech-life', 'rest', 'substitute', 'thief', 'protect', 'sludge-bomb', 'charm', 'sleep-talk', 'return', 'frustration', 'hidden-power', 'facade', 'helping-hand', 'air-cutter', 'aerial-ace', 'dragon-claw', 'u-turn', 'poison-jab', 'dark-pulse', 'air-slash', 'x-scissor', 'dragon-pulse', 'nasty-plot', 'shadow-claw', 'draco-meteor', 'venoshock', 'sludge-wave', 'round', 'echoed-voice', 'sky-drop', 'acrobatics', 'dragon-tail', 'snarl', 'fell-stinger', 'confide', 'venom-drench', 'smart-strike'], 'name': 'naganadel', 'stats': {'hp': 73, 'attack': 73, 'defense': 73, 'special-attack': 127, 'special-defense': 73, 'speed': 121}, 'types': ['poison', 'dragon'], 'weight': 1500, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'purple', 'shape': 'wings', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'アーゴヨン', 'ko': '아고용', 'zh-Hant': '四顎針龍', 'fr': 'Mandrillon', 'de': 'Agoyon', 'es': 'Naganadel', 'it': 'Naganadel', 'en': 'Naganadel', 'ja': 'アーゴヨン', 'zh-Hans': '四颚针龙'}, 'genera': {'ja-Hrkt': 'どくばりポケモン', 'ko': '독침포켓몬', 'zh-Hant': '毒針寶可夢', 'fr': 'Pokémon Vénépic', 'de': 'Giftdorn', 'es': 'Pokémon Pin Veneno', 'it': 'Pokémon Velenago', 'en': 'Poison Pin Pokémon', 'ja': 'どくばりポケモン', 'zh-Hans': '毒针宝可梦'}}
+	//Naganadel Specie to store common natural stats of all Naganadels
+	#region SpecieNaganadel
 	public class SpecieNaganadel : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieNaganadel Builder
 		public SpecieNaganadel() : base(
 			"Naganadel",
 			73, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			127, 73, // Special Attack & Defense
 			121			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Naganadel Pokemon Class
+	#region Naganadel
 	public class Naganadel : Pokemon
 	{
-
+		#region Naganadel Builders
+		/// <summary>
+		/// Naganadel Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Naganadel(string nickname, int level)
 		: base(
 				804,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Naganadel Builder only waiting for a Level
+		/// </summary>
 		public Naganadel(int level)
 		: base(
 				804,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Naganadel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Naganadel() : base(
 			804,
 			SpecieNaganadel.Instance, // Pokemon Specie
 			Poison.Instance, Dragon.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

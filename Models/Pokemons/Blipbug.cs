@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Blipbug Specie to store common natural stats of every {'abilities': ['swarm', 'compound-eyes', 'telepathy'], 'base_experience': 36, 'height': 4, 'id': 824, 'moves': [], 'name': 'blipbug', 'stats': {'hp': 25, 'attack': 20, 'defense': 20, 'special-attack': 25, 'special-defense': 45, 'speed': 45}, 'types': ['bug'], 'weight': 80, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 15, 'gender_rate': 4, 'capture_rate': 255, 'color': 'blue', 'shape': 'armor', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'サッチムシ', 'ko': '두루지벌레', 'zh-Hant': '索偵蟲', 'fr': 'Larvadar', 'de': 'Sensect', 'es': 'Blipbug', 'it': 'Blipbug', 'en': 'Blipbug', 'ja': 'サッチムシ', 'zh-Hans': '索侦虫'}, 'genera': {'ja-Hrkt': 'ようちゅうポケモン', 'ko': '유충포켓몬', 'zh-Hant': '幼蟲寶可夢', 'fr': 'Pokémon Larve', 'de': 'Larve', 'es': 'Pokémon Pupa', 'it': 'Pokémon Coleolarva', 'en': 'Larva Pokémon', 'ja': 'ようちゅうポケモン', 'zh-Hans': '幼虫宝可梦'}}
+	//Blipbug Specie to store common natural stats of all Blipbugs
+	#region SpecieBlipbug
 	public class SpecieBlipbug : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieBlipbug Builder
 		public SpecieBlipbug() : base(
 			"Blipbug",
 			25, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			25, 45, // Special Attack & Defense
 			45			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Blipbug Pokemon Class
+	#region Blipbug
 	public class Blipbug : Pokemon
 	{
-
+		#region Blipbug Builders
+		/// <summary>
+		/// Blipbug Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Blipbug(string nickname, int level)
 		: base(
 				824,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Blipbug Builder only waiting for a Level
+		/// </summary>
 		public Blipbug(int level)
 		: base(
 				824,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Blipbug Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Blipbug() : base(
 			824,
 			SpecieBlipbug.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

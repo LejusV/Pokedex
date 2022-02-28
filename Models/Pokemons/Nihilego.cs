@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nihilego Specie to store common natural stats of every {'abilities': ['beast-boost'], 'base_experience': 257, 'height': 12, 'id': 793, 'moves': ['pound', 'headbutt', 'acid', 'thunderbolt', 'thunder-wave', 'thunder', 'toxic', 'psychic', 'double-team', 'light-screen', 'reflect', 'constrict', 'psywave', 'rest', 'substitute', 'protect', 'sludge-bomb', 'sandstorm', 'swagger', 'sleep-talk', 'return', 'frustration', 'safeguard', 'hidden-power', 'mirror-coat', 'facade', 'tickle', 'toxic-spikes', 'poison-jab', 'power-gem', 'trick-room', 'stealth-rock', 'grass-knot', 'charge-beam', 'head-smash', 'guard-split', 'power-split', 'wonder-room', 'psyshock', 'venoshock', 'sludge-wave', 'acid-spray', 'round', 'echoed-voice', 'clear-smog', 'confide', 'venom-drench', 'dazzling-gleam', 'brutal-swing'], 'name': 'nihilego', 'stats': {'hp': 109, 'attack': 53, 'defense': 47, 'special-attack': 127, 'special-defense': 131, 'speed': 103}, 'types': ['rock', 'poison'], 'weight': 555, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'white', 'shape': 'tentacles', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'ウツロイド', 'ko': '텅비드', 'zh-Hant': '虛吾伊德', 'fr': 'Zéroïd', 'de': 'Anego', 'es': 'Nihilego', 'it': 'Nihilego', 'en': 'Nihilego', 'ja': 'ウツロイド', 'zh-Hans': '虛吾伊德'}, 'genera': {'ja-Hrkt': 'きせいポケモン', 'ko': '기생포켓몬', 'zh-Hant': '寄生寶可夢', 'fr': 'Pokémon Parasite', 'de': 'Parasit', 'es': 'Pokémon Parásito', 'it': 'Pokémon Parassita', 'en': 'Parasite Pokémon', 'ja': 'きせいポケモン', 'zh-Hans': '寄生宝可梦'}}
+	//Nihilego Specie to store common natural stats of all Nihilegos
+	#region SpecieNihilego
 	public class SpecieNihilego : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieNihilego Builder
 		public SpecieNihilego() : base(
 			"Nihilego",
 			109, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			127, 131, // Special Attack & Defense
 			103			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Nihilego Pokemon Class
+	#region Nihilego
 	public class Nihilego : Pokemon
 	{
-
+		#region Nihilego Builders
+		/// <summary>
+		/// Nihilego Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Nihilego(string nickname, int level)
 		: base(
 				793,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Nihilego Builder only waiting for a Level
+		/// </summary>
 		public Nihilego(int level)
 		: base(
 				793,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Nihilego Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Nihilego() : base(
 			793,
 			SpecieNihilego.Instance, // Pokemon Specie
 			Rock.Instance, Poison.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

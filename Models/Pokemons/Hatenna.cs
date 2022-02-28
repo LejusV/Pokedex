@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hatenna Specie to store common natural stats of every {'abilities': ['healer', 'anticipation', 'magic-bounce'], 'base_experience': 53, 'height': 4, 'id': 856, 'moves': [], 'name': 'hatenna', 'stats': {'hp': 42, 'attack': 30, 'defense': 45, 'special-attack': 56, 'special-defense': 53, 'speed': 39}, 'types': ['psychic'], 'weight': 34, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 235, 'color': 'pink', 'shape': 'legs', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'slow', 'egg_groups': [], 'names': {'ja-Hrkt': 'ミブリム', 'ko': '몸지브림', 'zh-Hant': '迷布莉姆', 'fr': 'Bibichut', 'de': 'Brimova', 'es': 'Hatenna', 'it': 'Hatenna', 'en': 'Hatenna', 'ja': 'ミブリム', 'zh-Hans': '迷布莉姆'}, 'genera': {'ja-Hrkt': 'おだやかポケモン', 'ko': '차분포켓몬', 'zh-Hant': '寧靜寶可夢', 'fr': 'Pokémon Calme', 'de': 'Geruhsam', 'es': 'Pokémon Calma', 'it': 'Pokémon Calma', 'en': 'Calm Pokémon', 'ja': 'おだやかポケモン', 'zh-Hans': '宁静宝可梦'}}
+	//Hatenna Specie to store common natural stats of all Hatennas
+	#region SpecieHatenna
 	public class SpecieHatenna : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieHatenna Builder
 		public SpecieHatenna() : base(
 			"Hatenna",
 			42, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			56, 53, // Special Attack & Defense
 			39			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Hatenna Pokemon Class
+	#region Hatenna
 	public class Hatenna : Pokemon
 	{
-
+		#region Hatenna Builders
+		/// <summary>
+		/// Hatenna Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Hatenna(string nickname, int level)
 		: base(
 				856,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Hatenna Builder only waiting for a Level
+		/// </summary>
 		public Hatenna(int level)
 		: base(
 				856,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Hatenna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Hatenna() : base(
 			856,
 			SpecieHatenna.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

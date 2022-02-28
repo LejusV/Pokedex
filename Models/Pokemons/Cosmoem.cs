@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cosmoem Specie to store common natural stats of every {'abilities': ['sturdy'], 'base_experience': 140, 'height': 1, 'id': 790, 'moves': ['teleport', 'cosmic-power'], 'name': 'cosmoem', 'stats': {'hp': 43, 'attack': 29, 'defense': 131, 'special-attack': 29, 'special-defense': 131, 'speed': 37}, 'types': ['psychic'], 'weight': 9999, 'is_baby': False, 'is_legendary': True, 'is_mythical': False, 'hatch_counter': 120, 'gender_rate': -1, 'capture_rate': 45, 'color': 'blue', 'shape': 'ball', 'habitat': None, 'generation': 'generation-vii', 'growth_rate': 'slow', 'egg_groups': ['no-eggs'], 'names': {'ja-Hrkt': 'コスモウム', 'ko': '코스모움', 'zh-Hant': '科斯莫姆', 'fr': 'Cosmovum', 'de': 'Cosmovum', 'es': 'Cosmoem', 'it': 'Cosmoem', 'en': 'Cosmoem', 'ja': 'コスモウム', 'zh-Hans': '科斯莫姆'}, 'genera': {'ja-Hrkt': 'げんしせいポケモン', 'ko': '원시성포켓몬', 'zh-Hant': '原始星寶可夢', 'fr': 'Pokémon Proto-Étoile', 'de': 'Urgestirn', 'es': 'Pokémon Protostrella', 'it': 'Pokémon Protostella', 'en': 'Protostar Pokémon', 'ja': 'げんしせいポケモン', 'zh-Hans': '原始星宝可梦'}}
+	//Cosmoem Specie to store common natural stats of all Cosmoems
+	#region SpecieCosmoem
 	public class SpecieCosmoem : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieCosmoem Builder
 		public SpecieCosmoem() : base(
 			"Cosmoem",
 			43, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			29, 131, // Special Attack & Defense
 			37			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Cosmoem Pokemon Class
+	#region Cosmoem
 	public class Cosmoem : Pokemon
 	{
-
+		#region Cosmoem Builders
+		/// <summary>
+		/// Cosmoem Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Cosmoem(string nickname, int level)
 		: base(
 				790,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cosmoem Builder only waiting for a Level
+		/// </summary>
 		public Cosmoem(int level)
 		: base(
 				790,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Cosmoem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Cosmoem() : base(
 			790,
 			SpecieCosmoem.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

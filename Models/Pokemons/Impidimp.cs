@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Impidimp Specie to store common natural stats of every {'abilities': ['prankster', 'frisk', 'pickpocket'], 'base_experience': 53, 'height': 4, 'id': 859, 'moves': [], 'name': 'impidimp', 'stats': {'hp': 45, 'attack': 45, 'defense': 30, 'special-attack': 55, 'special-defense': 40, 'speed': 50}, 'types': ['dark', 'fairy'], 'weight': 55, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 0, 'capture_rate': 255, 'color': 'pink', 'shape': 'humanoid', 'habitat': None, 'generation': 'generation-viii', 'growth_rate': 'medium', 'egg_groups': [], 'names': {'ja-Hrkt': 'ベロバー', 'ko': '메롱꿍', 'zh-Hant': '搗蛋小妖', 'fr': 'Grimalin', 'de': 'Bähmon', 'es': 'Impidimp', 'it': 'Impidimp', 'en': 'Impidimp', 'ja': 'ベロバー', 'zh-Hans': '捣蛋小妖'}, 'genera': {'ja-Hrkt': 'いじわるポケモン', 'ko': '꾀부리기포켓몬', 'zh-Hant': '捉弄寶可夢', 'fr': 'Pokémon Malin', 'de': 'Hinterlist', 'es': 'Pokémon Astuto', 'it': 'Pokémon Scaltro', 'en': 'Wily Pokémon', 'ja': 'いじわるポケモン', 'zh-Hans': '捉弄宝可梦'}}
+	//Impidimp Specie to store common natural stats of all Impidimps
+	#region SpecieImpidimp
 	public class SpecieImpidimp : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieImpidimp Builder
 		public SpecieImpidimp() : base(
 			"Impidimp",
 			45, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			55, 40, // Special Attack & Defense
 			50			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Impidimp Pokemon Class
+	#region Impidimp
 	public class Impidimp : Pokemon
 	{
-
+		#region Impidimp Builders
+		/// <summary>
+		/// Impidimp Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Impidimp(string nickname, int level)
 		: base(
 				859,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Impidimp Builder only waiting for a Level
+		/// </summary>
 		public Impidimp(int level)
 		: base(
 				859,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Impidimp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Impidimp() : base(
 			859,
 			SpecieImpidimp.Instance, // Pokemon Specie
 			Dark.Instance, Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }

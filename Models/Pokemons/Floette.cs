@@ -3,7 +3,8 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Floette Specie to store common natural stats of every {'abilities': ['flower-veil', 'symbiosis'], 'base_experience': 130, 'height': 2, 'id': 670, 'moves': ['vine-whip', 'tackle', 'razor-leaf', 'solar-beam', 'petal-dance', 'toxic', 'psychic', 'double-team', 'flash', 'rest', 'substitute', 'snore', 'protect', 'giga-drain', 'swagger', 'attract', 'sleep-talk', 'heal-bell', 'return', 'frustration', 'safeguard', 'synthesis', 'hidden-power', 'rain-dance', 'sunny-day', 'facade', 'nature-power', 'helping-hand', 'wish', 'magic-coat', 'endeavor', 'secret-power', 'aromatherapy', 'covet', 'magical-leaf', 'calm-mind', 'lucky-chant', 'worry-seed', 'seed-bomb', 'energy-ball', 'grass-knot', 'after-you', 'round', 'echoed-voice', 'petal-blizzard', 'grassy-terrain', 'misty-terrain', 'fairy-wind', 'moonblast', 'confide', 'dazzling-gleam'], 'name': 'floette', 'stats': {'hp': 54, 'attack': 45, 'defense': 47, 'special-attack': 75, 'special-defense': 98, 'speed': 52}, 'types': ['fairy'], 'weight': 9, 'is_baby': False, 'is_legendary': False, 'is_mythical': False, 'hatch_counter': 20, 'gender_rate': 8, 'capture_rate': 120, 'color': 'white', 'shape': 'arms', 'habitat': None, 'generation': 'generation-vi', 'growth_rate': 'medium', 'egg_groups': ['fairy'], 'names': {'ja-Hrkt': 'フラエッテ', 'ko': '플라엣테', 'zh-Hant': '花葉蒂', 'fr': 'Floette', 'de': 'Floette', 'es': 'Floette', 'it': 'Floette', 'en': 'Floette', 'ja': 'フラエッテ', 'zh-Hans': '花叶蒂'}, 'genera': {'ja-Hrkt': 'いちりんポケモン', 'ko': '한송이포켓몬', 'zh-Hant': '單朵寶可夢', 'fr': 'Pokémon Uniflore', 'de': 'Einblütler', 'es': 'Pokémon Monoflor', 'it': 'Pokémon Monofiore', 'en': 'Single Bloom Pokémon', 'ja': 'いちりんポケモン', 'zh-Hans': '单朵宝可梦'}}
+	//Floette Specie to store common natural stats of all Floettes
+	#region SpecieFloette
 	public class SpecieFloette : PokemonSpecie
 	{
 #nullable enable
@@ -21,6 +22,7 @@ namespace Pokedex.Models.Pokemons
             }
         }
 
+		#region SpecieFloette Builder
 		public SpecieFloette() : base(
 			"Floette",
 			54, // HPs
@@ -28,13 +30,18 @@ namespace Pokedex.Models.Pokemons
 			75, 98, // Special Attack & Defense
 			52			
 		) {}
+		#endregion
 	}
-
+	#endregion
 
 	//Floette Pokemon Class
+	#region Floette
 	public class Floette : Pokemon
 	{
-
+		#region Floette Builders
+		/// <summary>
+		/// Floette Builder waiting for a Nickname & a Level
+		/// </summary>
 		public Floette(string nickname, int level)
 		: base(
 				670,
@@ -47,6 +54,9 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Floette Builder only waiting for a Level
+		/// </summary>
 		public Floette(int level)
 		: base(
 				670,
@@ -59,10 +69,15 @@ namespace Pokedex.Models.Pokemons
 			ResetCurrentStats();
 		}
 
+		/// <summary>
+		/// Floette Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// </summary>
 		public Floette() : base(
 			670,
 			SpecieFloette.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		#endregion
 	}
+	#endregion
 }
