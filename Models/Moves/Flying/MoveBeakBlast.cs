@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Flying.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			15, 100,// PP & Pow
-			100, -3 // Acc & Priority
+			1.0, -3 // Acc & Priority
 		) {}
 	}
 }

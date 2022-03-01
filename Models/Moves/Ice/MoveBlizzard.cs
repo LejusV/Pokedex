@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Ice.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			5, 110,// PP & Pow
-			70, 0 // Acc & Priority
+			0.7, 0 // Acc & Priority
 		) {}
 	}
 }

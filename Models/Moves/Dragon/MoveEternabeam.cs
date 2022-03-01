@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Dragon.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			5, 160,// PP & Pow
-			90, 0 // Acc & Priority
+			0.9, 0 // Acc & Priority
 		) {}
 	}
 }

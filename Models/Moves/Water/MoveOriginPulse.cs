@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Water.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			10, 110,// PP & Pow
-			85, 0 // Acc & Priority
+			0.85, 0 // Acc & Priority
 		) {}
 	}
 }

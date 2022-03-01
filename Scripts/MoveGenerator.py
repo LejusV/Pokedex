@@ -1,4 +1,5 @@
 # Imports
+from asyncio.windows_events import NULL
 import json
 import os
 
@@ -41,7 +42,7 @@ namespace Pokedex.Models.Moves
 			{moveType}.Instance, // Move Type
 			MoveCategory.{move["damage_class"].title()}, // Move Category
 			{move["pp"]}, {move["power"] or "null"},// PP & Pow
-			{move["accuracy"]/100 or "null"}, {move["priority"]} // Acc & Priority
+			{move["accuracy"]/100 if move["accuracy"] else "null"}, {move["priority"]} // Acc & Priority
 		) {{}}
 	}}
 }}

@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Fighting.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			10, 10,// PP & Pow
-			90, 0 // Acc & Priority
+			0.9, 0 // Acc & Priority
 		) {}
 	}
 }

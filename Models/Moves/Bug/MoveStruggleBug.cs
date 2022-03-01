@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Bug.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			20, 50,// PP & Pow
-			100, 0 // Acc & Priority
+			1.0, 0 // Acc & Priority
 		) {}
 	}
 }

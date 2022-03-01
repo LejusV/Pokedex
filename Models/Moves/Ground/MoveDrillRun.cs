@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Ground.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			10, 80,// PP & Pow
-			95, 0 // Acc & Priority
+			0.95, 0 // Acc & Priority
 		) {}
 	}
 }
