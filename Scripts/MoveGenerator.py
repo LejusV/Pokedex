@@ -1,16 +1,11 @@
 # Imports
 from asyncio.windows_events import NULL
 import json
-import os
 
 # Load the json file
 data = {}
 with open("Data\\moves.json", encoding="utf-8") as f:
 	data = json.load(f)
-
-# Give every move that should be generated
-nameList = ["scratch", "tackle", "ember"]
-#nameList.extend(["fire-punch", "ice-punch", "thunder-punch", "shadow-punch"])
 
 # For each move in the list
 for move in data.values():
@@ -21,6 +16,7 @@ for move in data.values():
 	moveType: str = move["type"].title()
 
 	# If the file alreay exist, don't touch it
+	# I do want to touch it !
 	#if (os.path.isfile(f"Models\\Moves\\{moveType}\\Move{moveNameNoSpace}.cs")): continue
 
 	# Create the PokemonMove class, by opening a file
@@ -42,7 +38,7 @@ namespace Pokedex.Models.Moves
 			{moveType}.Instance, // Move Type
 			MoveCategory.{move["damage_class"].title()}, // Move Category
 			{move["pp"]}, {move["power"] or "null"},// PP & Pow
-			{move["accuracy"]/100 if move["accuracy"] else "null"}, {move["priority"]} // Acc & Priority
+			{move["accuracy"] or "null"}, {move["priority"]} // Acc & Priority
 		) {{}}
 	}}
 }}

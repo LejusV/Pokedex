@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Fairy.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			10, 90,// PP & Pow
-			0.95, 0 // Acc & Priority
+			95, 0 // Acc & Priority
 		) {}
 	}
 }

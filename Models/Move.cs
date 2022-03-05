@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Text;
 using Pokedex.Enums;
 
 namespace Pokedex.Models
@@ -6,7 +7,7 @@ namespace Pokedex.Models
     public abstract class Move
     {
         # region Variables
-        private readonly double? _accuracy;
+        private readonly int? _accuracy;
         private readonly MoveCategory _category;
         private readonly int _maxPp;
         private readonly string _name;
@@ -18,7 +19,7 @@ namespace Pokedex.Models
 
         # region Attributes
         // Values
-        public double? Accuracy { get => this._accuracy; }
+        public int? Accuracy { get => this._accuracy; }
 
         public MoveCategory Category { get => this._category; }
 
@@ -39,23 +40,43 @@ namespace Pokedex.Models
         {
             get => $"{this._name} : {this._pp}/{this._maxPp} PP";
         }
-        public string FullStatus { get => string.Join('\n', new string[]{
-			$"{this._name, -16}",
-            $"Type: {this._pokemonType.Name, -9} Category: {this._category}",
-			$"Power:   {this._power?.ToString() ?? "-", -3}    Accuracy: {this._accuracy?.ToString("#%") ?? "-"}",
-			$"PP:   {this._pp, 2}/{this._maxPp, 2}     Priority: {this._priority, 2:+#;-#;0}",
-		}); }
+        public string FullStatus {
+
+            get {
+                StringBuilder output = new StringBuilder();
+
+                output.AppendLine($"{this._name, -16}");
+
+                output.Append($"Type: {this._pokemonType.Name, -9} ");
+                output.AppendLine($"Category: {this._category}");
+
+                output.Append($"Power:   {this._power?.ToString() ?? "-", -3}    ");
+                output.AppendLine($"Accuracy: {this._accuracy?.ToString("#'%'") ?? "-"}");
+
+                output.Append($"PP:   {this._pp, 2}/{this._maxPp, 2}     ");
+                output.AppendLine($"Priority: {this._priority, 2:+#;-#;0}");
+
+                return output.ToString();
+            }
+        }
         # endregion
 
-        public Move(string name, PokemonType type, MoveCategory category, int maxPp, int? power, double? accuracy, int priority)
+        # region Constructors
+        public Move(string name, PokemonType type, MoveCategory category, int maxPp, int? power, int? accuracy, int priority)
         {
             _accuracy = accuracy;
             _category = category;
-            _name = name;
+            if (name != "")
+                _name = name;
+			else throw new ArgumentException("Name cannot be empty");
             _pokemonType = type;
             _power = power; 
             _pp = _maxPp = maxPp; // initialise maxPp & set current pp to max pp
             _priority = priority;
         }
+        # endregion
+
+        # region Methods
+        public 
     }
 }

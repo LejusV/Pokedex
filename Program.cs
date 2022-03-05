@@ -77,7 +77,7 @@ namespace Pokedex
                 Console.WriteLine(poke.ToString() + poke.StatsString + poke.MovesDisplay());
             }
 
-            //Console.WriteLine(Wiki.Instance.Display());
+            //Console.WriteLine(Wiki.Instance.ToString());
             
             Battle battle = new Battle(
                 Player1,

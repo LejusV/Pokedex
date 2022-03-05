@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Electric.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			5, 130,// PP & Pow
-			0.85, 0 // Acc & Priority
+			85, 0 // Acc & Priority
 		) {}
 	}
 }

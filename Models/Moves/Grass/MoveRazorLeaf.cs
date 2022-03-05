@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Grass.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			25, 55,// PP & Pow
-			0.95, 0 // Acc & Priority
+			95, 0 // Acc & Priority
 		) {}
 	}
 }

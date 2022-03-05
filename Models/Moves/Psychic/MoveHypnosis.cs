@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Psychic.Instance, // Move Type
 			MoveCategory.Status, // Move Category
 			20, null,// PP & Pow
-			0.6, 0 // Acc & Priority
+			60, 0 // Acc & Priority
 		) {}
 	}
 }

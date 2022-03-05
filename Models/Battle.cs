@@ -6,12 +6,24 @@ namespace Pokedex.Models
     internal class Battle
     {
 
-        public Battle(Trainer trainer, List<Pokemon> opponent_poks)
+        public Battle(Player player1, Player player2)
         {
+            private static Bug? _instance = null;
+            public static Bug Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new Bug();
+                    }
+                    return _instance;
+                }
+            }
             Console.WriteLine("A new battle is about to happen !");
             
-            Pokemon player_pok = trainer.Pokemons[0];
-            Pokemon opponent_pok = opponent_poks[0];
+            Pokemon player1Pok = player1.Pokemons[0];
+            Pokemon player2Pok = opponent_poks[0];
             
             Console.WriteLine(
                 "\t\t\t\t"+ opponent_pok.Nickname+ "\n" +

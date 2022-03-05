@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Fire.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			5, 120,// PP & Pow
-			0.9, 0 // Acc & Priority
+			90, 0 // Acc & Priority
 		) {}
 	}
 }

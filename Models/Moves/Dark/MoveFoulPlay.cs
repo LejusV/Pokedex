@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Dark.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			15, 95,// PP & Pow
-			1.0, 0 // Acc & Priority
+			100, 0 // Acc & Priority
 		) {}
 	}
 }

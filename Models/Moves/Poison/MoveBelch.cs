@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Poison.Instance, // Move Type
 			MoveCategory.Special, // Move Category
 			10, 120,// PP & Pow
-			0.9, 0 // Acc & Priority
+			90, 0 // Acc & Priority
 		) {}
 	}
 }

@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Rock.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			15, 50,// PP & Pow
-			0.9, 0 // Acc & Priority
+			90, 0 // Acc & Priority
 		) {}
 	}
 }

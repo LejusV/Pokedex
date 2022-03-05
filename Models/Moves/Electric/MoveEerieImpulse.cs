@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Electric.Instance, // Move Type
 			MoveCategory.Status, // Move Category
 			15, null,// PP & Pow
-			1.0, 0 // Acc & Priority
+			100, 0 // Acc & Priority
 		) {}
 	}
 }

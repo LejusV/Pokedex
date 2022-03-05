@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Steel.Instance, // Move Type
 			MoveCategory.Status, // Move Category
 			40, null,// PP & Pow
-			0.85, 0 // Acc & Priority
+			85, 0 // Acc & Priority
 		) {}
 	}
 }

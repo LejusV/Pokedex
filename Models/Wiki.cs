@@ -27,7 +27,7 @@ namespace Pokedex.Models
         { get { return _pokemons; } } 
 
 
-        public string Display()
+        public override string ToString()
         {
             string res = "";
             foreach (KeyValuePair<int, Pokemon> entry in this.Pokemons) 

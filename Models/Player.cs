@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    internal class Trainer
+    internal class Player
     {
         private string p_name = "";
         private Gender? p_gender = null;
@@ -49,7 +49,7 @@ namespace Pokedex.Models
             get { return p_poks; }
         }
 
-        public Trainer(string name, Gender gender, List<Pokemon> poks = null)
+        public Player(string name, Gender gender, List<Pokemon> poks = null)
         {
             p_gender = gender;
             p_name = name;

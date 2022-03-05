@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Normal.Instance, // Move Type
 			MoveCategory.Physical, // Move Category
 			5, 120,// PP & Pow
-			0.75, 0 // Acc & Priority
+			75, 0 // Acc & Priority
 		) {}
 	}
 }

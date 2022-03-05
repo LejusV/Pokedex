@@ -11,7 +11,7 @@ namespace Pokedex.Models.Moves
 			Dark.Instance, // Move Type
 			MoveCategory.Status, // Move Category
 			20, null,// PP & Pow
-			1.0, 0 // Acc & Priority
+			100, 0 // Acc & Priority
 		) {}
 	}
 }

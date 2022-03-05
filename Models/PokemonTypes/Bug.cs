@@ -2,9 +2,7 @@
 {
     public class Bug : PokemonType
     {
-#nullable enable
         private static Bug? _instance = null;
-#nullable disable
         public static Bug Instance
         {
             get
