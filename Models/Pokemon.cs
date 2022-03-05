@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
+using Pokedex;
 
 namespace Pokedex.Models
 {
@@ -110,7 +112,9 @@ namespace Pokedex.Models
             /// Types Getter
             /// </summary>
             /// <returns>Returns the Types tuple</returns>
+            #nullable enable
             public (PokemonType, PokemonType?) Types { get => (this._type, this._type2); }
+            #nullable restore
             #endregion
 
             #region Level Getter
@@ -178,9 +182,10 @@ namespace Pokedex.Models
             {
                 get
                 {
-                    string res = "Type";
-                    foreach (PokemonType type in _types) res += string.Format(" " + type.Name);
-                    return res+"\n\n";
+                    if (_type2 != null)
+                        return $"{this._type} Type";
+                    else
+                        return $"{this._type} - {this._type2} Types";
                 }
             }
             #endregion
@@ -216,8 +221,14 @@ namespace Pokedex.Models
 
                     output.AppendLine($"\tSpecie Attributes :");
 
-                    output.Append($"\t\t{}")
-                    return output;
+                    output.Append($"\t\tStats : ");
+                    output.AppendLine($"\t\t\tHP {this._specie.Stats.Get("hp"), 3}");
+                    output.Append($"\t\t\tATK {this._specie.Stats.Get("attack"), 3}, ");
+                    output.AppendLine($"DEF {this._specie.Stats.Get("defense"), 3}");
+                    output.Append($"\t\t\tSP_ATK {this._specie.Stats.Get("sp_attack"), 3}, ");
+                    output.AppendLine($"\t\t\tSP_DEF {this._specie.Stats.Get("sp_defense"), 3}");
+                    output.AppendLine($"\t\t\tSPEED {this._specie.Stats.Get("speed"), 3}");
+                    return output.ToString();
                 }
             }
             #endregion
@@ -272,7 +283,7 @@ namespace Pokedex.Models
 
         public void GenerateIV()
         {
-            Random rnd = new Random();
+            Random rnd = Program.Random;
             _iv = new PokemonStats(rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31));
         }
             

@@ -23,7 +23,7 @@ for poke in data.values():
 		outfile = f"""
 
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {{

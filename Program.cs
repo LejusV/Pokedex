@@ -11,6 +11,7 @@ namespace Pokedex
 {
     class Program
     {
+        public static Random Random = new Random();
         static void Main()
         {
             int lineIndex = 0;
@@ -28,7 +29,7 @@ namespace Pokedex
             Console.Write("Choose your Trainer name : ");
             
             Console.WriteLine(inputLines[lineIndex]);
-            Trainer Player1 = new(inputLines[lineIndex++], gender);
+            Player Player1 = new(inputLines[lineIndex++], gender);
 
 
             Console.WriteLine("What Pokemon do you want to start with ?\n" +
@@ -60,6 +61,9 @@ namespace Pokedex
                 case "Squirtle" :
                 {
                     Player1.AddPokemon(new Squirtle( 100 ));
+                    Move avalanche = new MoveAvalanche();
+                    Player1.Pokemons[0].AddMove(avalanche);
+                    Console.WriteLine(avalanche.FullStatus);
                     break;
                 }
             }
@@ -74,17 +78,14 @@ namespace Pokedex
 
             foreach (Pokemon poke in Player1.Pokemons)
             {
-                Console.WriteLine(poke.ToString() + poke.StatsString + poke.MovesDisplay());
+                Console.WriteLine(poke.ToString() + poke.FullStatus);
             }
 
             //Console.WriteLine(Wiki.Instance.ToString());
             
             Battle battle = new Battle(
                 Player1,
-                new List<Pokemon>()
-                { 
-                    new Metapod(Player1.Pokemons[0].Level)
-                }
+                AIPlayer.Instance
             );
 
             Move moveTackle = new MoveTackle();

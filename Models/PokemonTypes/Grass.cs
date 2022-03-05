@@ -1,5 +1,4 @@
-﻿
-namespace Pokedex.Models.Types
+﻿namespace Pokedex.Models.PokemonTypes
 {
     public class Grass : PokemonType
     {

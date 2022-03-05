@@ -1,4 +1,4 @@
-namespace Pokedex.Models.Types
+namespace Pokedex.Models.PokemonTypes
 {
     public class Ice : PokemonType
     {

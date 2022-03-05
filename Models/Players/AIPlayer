@@ -1,0 +1,27 @@
+using Pokedex.Enums;
+using System;
+using System.Collections.Generic;
+
+namespace Pokedex.Models
+{
+    internal class AIPlayer : Player
+    {
+        #nullable enable
+        private static AIPlayer? _instance = null;
+        #nullable restore
+        public static AIPlayer Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new AIPlayer();
+                }
+                return _instance;
+            }
+        }
+        public AIPlayer()
+        : base("", Enums.Gender.O)
+        {}
+    }
+}

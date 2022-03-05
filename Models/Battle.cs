@@ -1,38 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Text;
 
 namespace Pokedex.Models
 {
     internal class Battle
     {
+        # region Attributes
+        # endregion
+
 
         public Battle(Player player1, Player player2)
         {
-            private static Bug? _instance = null;
-            public static Bug Instance
-            {
-                get
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new Bug();
-                    }
-                    return _instance;
-                }
-            }
+            
             Console.WriteLine("A new battle is about to happen !");
             
             Pokemon player1Pok = player1.Pokemons[0];
-            Pokemon player2Pok = opponent_poks[0];
+            Pokemon player2Pok = player2.Pokemons[0];
             
-            Console.WriteLine(
-                "\t\t\t\t"+ opponent_pok.Nickname+ "\n" +
-                "\t\t\t\t\tlvl " + opponent_pok.Level + "\n" +
-                "\t\t\t\t\t" + opponent_pok.CurrentStats.Get("hp") + "/" + opponent_pok.CalculatedStats.Get("hp") + "HP" + "\n\n" +
-                player_pok.Nickname + "\n" + 
-                "\tlvl " + player_pok.Level + "\n" +
-                "\t" + player_pok.CurrentStats.Get("hp") + "/" + player_pok.CalculatedStats.Get("hp") + "HP" + "\n\n"
-            );
+            StringBuilder output = new ();
+
+            output.AppendLine($"\t\t\t\t {player2Pok.Nickname}");
+
+            output.AppendLine($"\t\t\t\t\tLvL {player2Pok.Level}");
+
+            output.Append($"\t\t\t\t\t{player2Pok.CurrentStats.Get("hp")} ");
+            output.AppendLine($"/ {player2Pok.CalculatedStats.Get("hp")} HP");
+
+            output.AppendLine($"{player1Pok.Nickname}");
+
+            output.AppendLine($"\tLvL {player1Pok.Level}");
+
+            output.Append($"\t\t\t\t\t{player1Pok.CurrentStats.Get("hp")} ");
+            output.AppendLine($"/ {player1Pok.CalculatedStats.Get("hp")} HP");
+
+            Console.WriteLine(output);
         }
     }
 }
