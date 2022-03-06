@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			126, // HPs
 			131, 95, // Attack & Defense
 			131, 98, // Special Attack & Defense
-			99			
-		) {}
+			99		
+		)
+		{
+			this._height = 30;
+			this._weight = 2150;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Xerneas Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Xerneas() : base(
 			716,
 			SpecieXerneas.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

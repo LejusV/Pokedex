@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			69, // HPs
 			69, 76, // Attack & Defense
 			69, 86, // Special Attack & Defense
-			91			
-		) {}
+			91		
+		)
+		{
+			this._height = 12;
+			this._weight = 240;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lumineon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lumineon() : base(
 			457,
 			SpecieLumineon.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

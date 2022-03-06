@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			89, // HPs
 			124, 80, // Attack & Defense
 			55, 80, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 28;
+			this._weight = 3300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golurk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Golurk() : base(
 			623,
 			SpecieGolurk.Instance, // Pokemon Specie
 			Ground.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

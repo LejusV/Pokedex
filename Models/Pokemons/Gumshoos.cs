@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			88, // HPs
 			110, 60, // Attack & Defense
 			55, 60, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 7;
+			this._weight = 142;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gumshoos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Gumshoos() : base(
 			735,
 			SpecieGumshoos.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

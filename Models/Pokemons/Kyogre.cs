@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			100, 90, // Attack & Defense
 			150, 140, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 45;
+			this._weight = 3520;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kyogre Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Kyogre() : base(
 			382,
 			SpecieKyogre.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

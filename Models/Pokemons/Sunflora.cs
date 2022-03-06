@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			75, 55, // Attack & Defense
 			105, 85, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 8;
+			this._weight = 85;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sunflora Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sunflora() : base(
 			192,
 			SpecieSunflora.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

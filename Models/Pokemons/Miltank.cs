@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			80, 105, // Attack & Defense
 			40, 70, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 12;
+			this._weight = 755;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Miltank Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Miltank() : base(
 			241,
 			SpecieMiltank.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

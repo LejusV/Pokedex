@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			20, 40, // Attack & Defense
 			20, 40, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 2;
+			this._weight = 20;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Azurill Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Azurill() : base(
 			298,
 			SpecieAzurill.Instance, // Pokemon Specie
 			Normal.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

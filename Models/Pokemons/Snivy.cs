@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			45, 55, // Attack & Defense
 			45, 55, // Special Attack & Defense
-			63			
-		) {}
+			63		
+		)
+		{
+			this._height = 6;
+			this._weight = 81;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Snivy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Snivy() : base(
 			495,
 			SpecieSnivy.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

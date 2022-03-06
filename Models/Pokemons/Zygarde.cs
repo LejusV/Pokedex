@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			108, // HPs
 			100, 121, // Attack & Defense
 			81, 95, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 50;
+			this._weight = 3050;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zygarde Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zygarde() : base(
 			718,
 			SpecieZygarde.Instance, // Pokemon Specie
 			Dragon.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

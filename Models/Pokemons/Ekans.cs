@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			35, // HPs
 			60, 44, // Attack & Defense
 			40, 54, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 20;
+			this._weight = 69;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ekans Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ekans() : base(
 			23,
 			SpecieEkans.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

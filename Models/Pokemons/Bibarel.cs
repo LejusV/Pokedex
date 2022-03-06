@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			79, // HPs
 			85, 60, // Attack & Defense
 			55, 60, // Special Attack & Defense
-			71			
-		) {}
+			71		
+		)
+		{
+			this._height = 10;
+			this._weight = 315;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bibarel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bibarel() : base(
 			400,
 			SpecieBibarel.Instance, // Pokemon Specie
 			Normal.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

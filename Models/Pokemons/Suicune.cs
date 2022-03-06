@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			75, 115, // Attack & Defense
 			90, 115, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 20;
+			this._weight = 1870;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Suicune Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Suicune() : base(
 			245,
 			SpecieSuicune.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

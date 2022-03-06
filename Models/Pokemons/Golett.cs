@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			59, // HPs
 			74, 50, // Attack & Defense
 			35, 50, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 10;
+			this._weight = 920;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golett Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Golett() : base(
 			622,
 			SpecieGolett.Instance, // Pokemon Specie
 			Ground.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

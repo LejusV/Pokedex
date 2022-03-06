@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			98, 63, // Attack & Defense
 			98, 63, // Special Attack & Defense
-			101			
-		) {}
+			101		
+		)
+		{
+			this._height = 10;
+			this._weight = 290;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Simipour Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Simipour() : base(
 			516,
 			SpecieSimipour.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

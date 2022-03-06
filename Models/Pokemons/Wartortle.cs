@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			59, // HPs
 			63, 80, // Attack & Defense
 			65, 80, // Special Attack & Defense
-			58			
-		) {}
+			58		
+		)
+		{
+			this._height = 10;
+			this._weight = 225;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wartortle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Wartortle() : base(
 			8,
 			SpecieWartortle.Instance, // Pokemon Specie
 			Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			75, 150, // Attack & Defense
 			75, 150, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 19;
+			this._weight = 2050;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Registeel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Registeel() : base(
 			379,
 			SpecieRegisteel.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

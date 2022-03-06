@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			41, // HPs
 			50, 37, // Attack & Defense
 			50, 37, // Special Attack & Defense
-			66			
-		) {}
+			66		
+		)
+		{
+			this._height = 4;
+			this._weight = 101;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Purrloin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Purrloin() : base(
 			509,
 			SpeciePurrloin.Instance, // Pokemon Specie
 			Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

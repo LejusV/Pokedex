@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			58, // HPs
 			95, 145, // Attack & Defense
 			50, 105, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 16;
+			this._weight = 666;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Runerigus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Runerigus() : base(
 			867,
 			SpecieRunerigus.Instance, // Pokemon Specie
 			Ground.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

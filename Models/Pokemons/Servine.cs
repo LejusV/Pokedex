@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			60, 75, // Attack & Defense
 			60, 75, // Special Attack & Defense
-			83			
-		) {}
+			83		
+		)
+		{
+			this._height = 8;
+			this._weight = 160;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Servine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Servine() : base(
 			496,
 			SpecieServine.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			55, 75, // Attack & Defense
 			45, 65, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 5;
+			this._weight = 90;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vullaby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Vullaby() : base(
 			629,
 			SpecieVullaby.Instance, // Pokemon Specie
 			Dark.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

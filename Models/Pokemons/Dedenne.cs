@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			67, // HPs
 			58, 57, // Attack & Defense
 			81, 67, // Special Attack & Defense
-			101			
-		) {}
+			101		
+		)
+		{
+			this._height = 2;
+			this._weight = 22;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dedenne Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dedenne() : base(
 			702,
 			SpecieDedenne.Instance, // Pokemon Specie
 			Electric.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

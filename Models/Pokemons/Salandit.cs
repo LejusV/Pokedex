@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			48, // HPs
 			44, 40, // Attack & Defense
 			71, 40, // Special Attack & Defense
-			77			
-		) {}
+			77		
+		)
+		{
+			this._height = 6;
+			this._weight = 48;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Salandit Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Salandit() : base(
 			757,
 			SpecieSalandit.Instance, // Pokemon Specie
 			Poison.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

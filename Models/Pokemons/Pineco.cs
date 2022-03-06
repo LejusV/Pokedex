@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			65, 90, // Attack & Defense
 			35, 35, // Special Attack & Defense
-			15			
-		) {}
+			15		
+		)
+		{
+			this._height = 6;
+			this._weight = 72;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pineco Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pineco() : base(
 			204,
 			SpeciePineco.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

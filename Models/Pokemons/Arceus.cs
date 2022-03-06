@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			120, // HPs
 			120, 120, // Attack & Defense
 			120, 120, // Special Attack & Defense
-			120			
-		) {}
+			120		
+		)
+		{
+			this._height = 32;
+			this._weight = 3200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arceus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Arceus() : base(
 			493,
 			SpecieArceus.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

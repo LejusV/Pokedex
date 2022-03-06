@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			60, 70, // Attack & Defense
 			85, 75, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 8;
+			this._weight = 365;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Porygon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Porygon() : base(
 			137,
 			SpeciePorygon.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

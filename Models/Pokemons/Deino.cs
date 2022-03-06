@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			52, // HPs
 			65, 50, // Attack & Defense
 			45, 50, // Special Attack & Defense
-			38			
-		) {}
+			38		
+		)
+		{
+			this._height = 8;
+			this._weight = 173;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Deino Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Deino() : base(
 			633,
 			SpecieDeino.Instance, // Pokemon Specie
 			Dark.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

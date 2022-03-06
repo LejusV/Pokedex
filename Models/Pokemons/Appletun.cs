@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			110, // HPs
 			85, 80, // Attack & Defense
 			100, 80, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 4;
+			this._weight = 130;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Appletun Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Appletun() : base(
 			842,
 			SpecieAppletun.Instance, // Pokemon Specie
 			Grass.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

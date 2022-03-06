@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			120, 98, // Attack & Defense
 			50, 98, // Special Attack & Defense
-			72			
-		) {}
+			72		
+		)
+		{
+			this._height = 12;
+			this._weight = 214;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tsareena Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Tsareena() : base(
 			763,
 			SpecieTsareena.Instance, // Pokemon Specie
 			Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

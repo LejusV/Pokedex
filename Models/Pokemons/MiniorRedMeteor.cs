@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			60, 100, // Attack & Defense
 			60, 100, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 3;
+			this._weight = 400;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Minior-Red-Meteor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public MiniorRedMeteor() : base(
 			774,
 			SpecieMiniorRedMeteor.Instance, // Pokemon Specie
 			Rock.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

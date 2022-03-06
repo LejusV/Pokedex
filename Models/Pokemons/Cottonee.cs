@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			27, 60, // Attack & Defense
 			37, 50, // Special Attack & Defense
-			66			
-		) {}
+			66		
+		)
+		{
+			this._height = 3;
+			this._weight = 6;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cottonee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cottonee() : base(
 			546,
 			SpecieCottonee.Instance, // Pokemon Specie
 			Grass.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

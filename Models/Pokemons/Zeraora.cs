@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			88, // HPs
 			112, 75, // Attack & Defense
 			102, 80, // Special Attack & Defense
-			143			
-		) {}
+			143		
+		)
+		{
+			this._height = 15;
+			this._weight = 445;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zeraora Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zeraora() : base(
 			807,
 			SpecieZeraora.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

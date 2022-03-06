@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			90, 60, // Attack & Defense
 			53, 50, // Special Attack & Defense
-			72			
-		) {}
+			72		
+		)
+		{
+			this._height = 6;
+			this._weight = 120;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kubfu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Kubfu() : base(
 			891,
 			SpecieKubfu.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

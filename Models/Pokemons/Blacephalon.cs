@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			53, // HPs
 			127, 53, // Attack & Defense
 			151, 79, // Special Attack & Defense
-			107			
-		) {}
+			107		
+		)
+		{
+			this._height = 18;
+			this._weight = 130;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Blacephalon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Blacephalon() : base(
 			806,
 			SpecieBlacephalon.Instance, // Pokemon Specie
 			Fire.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

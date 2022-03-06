@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			70, 50, // Attack & Defense
 			100, 50, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 10;
+			this._weight = 284;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Beautifly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Beautifly() : base(
 			267,
 			SpecieBeautifly.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

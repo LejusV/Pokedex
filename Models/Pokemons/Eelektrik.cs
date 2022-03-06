@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			85, 70, // Attack & Defense
 			75, 70, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 12;
+			this._weight = 220;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eelektrik Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Eelektrik() : base(
 			603,
 			SpecieEelektrik.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

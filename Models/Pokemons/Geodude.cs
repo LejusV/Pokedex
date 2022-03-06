@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			80, 100, // Attack & Defense
 			30, 30, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 4;
+			this._weight = 200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Geodude Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Geodude() : base(
 			74,
 			SpecieGeodude.Instance, // Pokemon Specie
 			Rock.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

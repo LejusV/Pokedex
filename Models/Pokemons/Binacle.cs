@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			42, // HPs
 			52, 67, // Attack & Defense
 			39, 56, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 5;
+			this._weight = 310;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Binacle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Binacle() : base(
 			688,
 			SpecieBinacle.Instance, // Pokemon Specie
 			Rock.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

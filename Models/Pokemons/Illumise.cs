@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			47, 75, // Attack & Defense
 			73, 85, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 6;
+			this._weight = 177;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Illumise Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Illumise() : base(
 			314,
 			SpecieIllumise.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

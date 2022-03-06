@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			60, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 6;
+			this._weight = 195;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Deerling Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Deerling() : base(
 			585,
 			SpecieDeerling.Instance, // Pokemon Specie
 			Normal.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

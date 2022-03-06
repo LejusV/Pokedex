@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			124, 78, // Attack & Defense
 			69, 71, // Special Attack & Defense
-			58			
-		) {}
+			58		
+		)
+		{
+			this._height = 21;
+			this._weight = 1360;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pangoro Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pangoro() : base(
 			675,
 			SpeciePangoro.Instance, // Pokemon Specie
 			Fighting.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

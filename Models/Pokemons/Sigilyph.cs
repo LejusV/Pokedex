@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			58, 80, // Attack & Defense
 			103, 80, // Special Attack & Defense
-			97			
-		) {}
+			97		
+		)
+		{
+			this._height = 14;
+			this._weight = 140;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sigilyph Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sigilyph() : base(
 			561,
 			SpecieSigilyph.Instance, // Pokemon Specie
 			Psychic.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

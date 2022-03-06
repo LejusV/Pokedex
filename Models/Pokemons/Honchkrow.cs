@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			125, 52, // Attack & Defense
 			105, 52, // Special Attack & Defense
-			71			
-		) {}
+			71		
+		)
+		{
+			this._height = 9;
+			this._weight = 273;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Honchkrow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Honchkrow() : base(
 			430,
 			SpecieHonchkrow.Instance, // Pokemon Specie
 			Dark.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

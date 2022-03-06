@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			66, // HPs
 			117, 70, // Attack & Defense
 			40, 50, // Special Attack & Defense
-			67			
-		) {}
+			67		
+		)
+		{
+			this._height = 10;
+			this._weight = 360;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Fraxure Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Fraxure() : base(
 			611,
 			SpecieFraxure.Instance, // Pokemon Specie
 			Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

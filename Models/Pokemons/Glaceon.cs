@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			60, 110, // Attack & Defense
 			130, 95, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 8;
+			this._weight = 259;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glaceon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Glaceon() : base(
 			471,
 			SpecieGlaceon.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

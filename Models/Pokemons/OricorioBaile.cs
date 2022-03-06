@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			70, 70, // Attack & Defense
 			98, 70, // Special Attack & Defense
-			93			
-		) {}
+			93		
+		)
+		{
+			this._height = 6;
+			this._weight = 34;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Oricorio-Baile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public OricorioBaile() : base(
 			741,
 			SpecieOricorioBaile.Instance, // Pokemon Specie
 			Fire.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

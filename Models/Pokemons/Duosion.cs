@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			40, 50, // Attack & Defense
 			125, 60, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 6;
+			this._weight = 80;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Duosion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Duosion() : base(
 			578,
 			SpecieDuosion.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

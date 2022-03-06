@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			73, // HPs
 			95, 62, // Attack & Defense
 			85, 65, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 14;
+			this._weight = 712;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stantler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Stantler() : base(
 			234,
 			SpecieStantler.Instance, // Pokemon Specie
 			Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			125, 79, // Attack & Defense
 			60, 100, // Special Attack & Defense
-			81			
-		) {}
+			81		
+		)
+		{
+			this._height = 65;
+			this._weight = 2350;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gyarados Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Gyarados() : base(
 			130,
 			SpecieGyarados.Instance, // Pokemon Specie
 			Water.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

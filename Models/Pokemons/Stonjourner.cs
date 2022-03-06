@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			125, 135, // Attack & Defense
 			20, 20, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 25;
+			this._weight = 5200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stonjourner Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Stonjourner() : base(
 			874,
 			SpecieStonjourner.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

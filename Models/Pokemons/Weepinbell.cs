@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			90, 50, // Attack & Defense
 			85, 45, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 10;
+			this._weight = 64;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weepinbell Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Weepinbell() : base(
 			70,
 			SpecieWeepinbell.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

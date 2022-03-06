@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			43, // HPs
 			29, 31, // Attack & Defense
 			29, 31, // Special Attack & Defense
-			37			
-		) {}
+			37		
+		)
+		{
+			this._height = 2;
+			this._weight = 1;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cosmog Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cosmog() : base(
 			789,
 			SpecieCosmog.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

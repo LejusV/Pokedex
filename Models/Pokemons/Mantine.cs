@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			85, // HPs
 			40, 70, // Attack & Defense
 			80, 140, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 21;
+			this._weight = 2200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mantine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Mantine() : base(
 			226,
 			SpecieMantine.Instance, // Pokemon Specie
 			Water.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

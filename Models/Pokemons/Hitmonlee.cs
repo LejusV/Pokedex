@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			120, 53, // Attack & Defense
 			35, 110, // Special Attack & Defense
-			87			
-		) {}
+			87		
+		)
+		{
+			this._height = 15;
+			this._weight = 498;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hitmonlee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hitmonlee() : base(
 			106,
 			SpecieHitmonlee.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

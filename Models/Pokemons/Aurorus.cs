@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			123, // HPs
 			77, 72, // Attack & Defense
 			99, 92, // Special Attack & Defense
-			58			
-		) {}
+			58		
+		)
+		{
+			this._height = 27;
+			this._weight = 2250;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aurorus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Aurorus() : base(
 			699,
 			SpecieAurorus.Instance, // Pokemon Specie
 			Rock.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

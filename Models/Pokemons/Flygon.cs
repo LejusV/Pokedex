@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			100, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 20;
+			this._weight = 820;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Flygon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Flygon() : base(
 			330,
 			SpecieFlygon.Instance, // Pokemon Specie
 			Ground.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

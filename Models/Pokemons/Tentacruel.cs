@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			70, 65, // Attack & Defense
 			80, 120, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 16;
+			this._weight = 550;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tentacruel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Tentacruel() : base(
 			73,
 			SpecieTentacruel.Instance, // Pokemon Specie
 			Water.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			97, // HPs
 			101, 103, // Attack & Defense
 			107, 101, // Special Attack & Defense
-			61			
-		) {}
+			61		
+		)
+		{
+			this._height = 92;
+			this._weight = 9999;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Celesteela Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Celesteela() : base(
 			797,
 			SpecieCelesteela.Instance, // Pokemon Specie
 			Steel.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			30, 32, // Attack & Defense
 			50, 52, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 5;
+			this._weight = 17;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Surskit Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Surskit() : base(
 			283,
 			SpecieSurskit.Instance, // Pokemon Specie
 			Bug.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

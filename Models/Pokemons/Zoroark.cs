@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			105, 60, // Attack & Defense
 			120, 60, // Special Attack & Defense
-			105			
-		) {}
+			105		
+		)
+		{
+			this._height = 16;
+			this._weight = 811;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zoroark Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zoroark() : base(
 			571,
 			SpecieZoroark.Instance, // Pokemon Specie
 			Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

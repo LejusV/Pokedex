@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			70, 45, // Attack & Defense
 			70, 50, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 7;
+			this._weight = 190;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Growlithe Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Growlithe() : base(
 			58,
 			SpecieGrowlithe.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

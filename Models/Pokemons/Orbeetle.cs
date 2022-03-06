@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			45, 110, // Attack & Defense
 			80, 120, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 4;
+			this._weight = 408;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Orbeetle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Orbeetle() : base(
 			826,
 			SpecieOrbeetle.Instance, // Pokemon Specie
 			Bug.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

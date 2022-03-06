@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			130, // HPs
 			85, 80, // Attack & Defense
 			85, 95, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 25;
+			this._weight = 2200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lapras Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lapras() : base(
 			131,
 			SpecieLapras.Instance, // Pokemon Specie
 			Water.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

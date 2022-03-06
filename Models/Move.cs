@@ -77,8 +77,10 @@ namespace Pokedex.Models
         }
         # endregion
 
+        /*
         # region Methods
         public abstract void Use();
         #endregion
+        */
     }
 }

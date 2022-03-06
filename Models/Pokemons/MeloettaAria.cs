@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			77, 77, // Attack & Defense
 			128, 128, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 6;
+			this._weight = 65;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Meloetta-Aria Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public MeloettaAria() : base(
 			648,
 			SpecieMeloettaAria.Instance, // Pokemon Specie
 			Normal.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

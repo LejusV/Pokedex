@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			85, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 6;
+			this._weight = 148;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Trumbeak Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Trumbeak() : base(
 			732,
 			SpecieTrumbeak.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			126, // HPs
 			131, 95, // Attack & Defense
 			131, 98, // Special Attack & Defense
-			99			
-		) {}
+			99		
+		)
+		{
+			this._height = 58;
+			this._weight = 2030;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yveltal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Yveltal() : base(
 			717,
 			SpecieYveltal.Instance, // Pokemon Specie
 			Dark.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

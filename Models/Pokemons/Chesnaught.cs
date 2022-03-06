@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			88, // HPs
 			107, 122, // Attack & Defense
 			74, 75, // Special Attack & Defense
-			64			
-		) {}
+			64		
+		)
+		{
+			this._height = 16;
+			this._weight = 900;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Chesnaught Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Chesnaught() : base(
 			652,
 			SpecieChesnaught.Instance, // Pokemon Specie
 			Grass.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

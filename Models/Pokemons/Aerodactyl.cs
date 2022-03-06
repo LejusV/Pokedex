@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			105, 65, // Attack & Defense
 			60, 75, // Special Attack & Defense
-			130			
-		) {}
+			130		
+		)
+		{
+			this._height = 18;
+			this._weight = 590;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aerodactyl Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Aerodactyl() : base(
 			142,
 			SpecieAerodactyl.Instance, // Pokemon Specie
 			Rock.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

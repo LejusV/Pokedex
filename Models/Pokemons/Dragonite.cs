@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			91, // HPs
 			134, 95, // Attack & Defense
 			100, 100, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 22;
+			this._weight = 2100;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dragonite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dragonite() : base(
 			149,
 			SpecieDragonite.Instance, // Pokemon Specie
 			Dragon.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

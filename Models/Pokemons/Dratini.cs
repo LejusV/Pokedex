@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			41, // HPs
 			64, 45, // Attack & Defense
 			50, 50, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 18;
+			this._weight = 33;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dratini Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dratini() : base(
 			147,
 			SpecieDratini.Instance, // Pokemon Specie
 			Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

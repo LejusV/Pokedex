@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			110, // HPs
 			80, 90, // Attack & Defense
 			95, 90, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 14;
+			this._weight = 1506;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Walrein Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Walrein() : base(
 			365,
 			SpecieWalrein.Instance, // Pokemon Specie
 			Ice.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

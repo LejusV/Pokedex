@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			90, 50, // Attack & Defense
 			110, 80, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 14;
+			this._weight = 350;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Houndoom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Houndoom() : base(
 			229,
 			SpecieHoundoom.Instance, // Pokemon Specie
 			Dark.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

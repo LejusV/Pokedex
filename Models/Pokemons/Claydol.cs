@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			70, 105, // Attack & Defense
 			70, 120, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 15;
+			this._weight = 1080;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Claydol Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Claydol() : base(
 			344,
 			SpecieClaydol.Instance, // Pokemon Specie
 			Ground.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

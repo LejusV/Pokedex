@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			97, // HPs
 			107, 101, // Attack & Defense
 			127, 89, // Special Attack & Defense
-			79			
-		) {}
+			79		
+		)
+		{
+			this._height = 24;
+			this._weight = 2300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Necrozma Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Necrozma() : base(
 			800,
 			SpecieNecrozma.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

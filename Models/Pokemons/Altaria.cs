@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			70, 90, // Attack & Defense
 			70, 105, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 11;
+			this._weight = 206;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Altaria Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Altaria() : base(
 			334,
 			SpecieAltaria.Instance, // Pokemon Specie
 			Dragon.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

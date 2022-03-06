@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			106, // HPs
 			90, 130, // Attack & Defense
 			90, 154, // Special Attack & Defense
-			110			
-		) {}
+			110		
+		)
+		{
+			this._height = 52;
+			this._weight = 2160;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lugia Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lugia() : base(
 			249,
 			SpecieLugia.Instance, // Pokemon Specie
 			Psychic.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

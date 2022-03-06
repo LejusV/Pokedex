@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			137, // HPs
 			113, 89, // Attack & Defense
 			137, 107, // Special Attack & Defense
-			97			
-		) {}
+			97		
+		)
+		{
+			this._height = 40;
+			this._weight = 1200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lunala Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lunala() : base(
 			792,
 			SpecieLunala.Instance, // Pokemon Specie
 			Psychic.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

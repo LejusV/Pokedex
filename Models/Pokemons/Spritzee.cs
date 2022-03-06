@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			78, // HPs
 			52, 60, // Attack & Defense
 			63, 65, // Special Attack & Defense
-			23			
-		) {}
+			23		
+		)
+		{
+			this._height = 2;
+			this._weight = 5;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spritzee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Spritzee() : base(
 			682,
 			SpecieSpritzee.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

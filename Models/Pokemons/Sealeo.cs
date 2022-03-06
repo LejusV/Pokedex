@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			60, 70, // Attack & Defense
 			75, 70, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 11;
+			this._weight = 876;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sealeo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sealeo() : base(
 			364,
 			SpecieSealeo.Instance, // Pokemon Specie
 			Ice.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

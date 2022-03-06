@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			65, 65, // Attack & Defense
 			40, 40, // Special Attack & Defense
-			15			
-		) {}
+			15		
+		)
+		{
+			this._height = 12;
+			this._weight = 360;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Slowpoke Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Slowpoke() : base(
 			79,
 			SpecieSlowpoke.Instance, // Pokemon Specie
 			Water.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

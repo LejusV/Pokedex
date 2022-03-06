@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			76, // HPs
 			147, 90, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			97			
-		) {}
+			97		
+		)
+		{
+			this._height = 18;
+			this._weight = 1055;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Haxorus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Haxorus() : base(
 			612,
 			SpecieHaxorus.Instance, // Pokemon Specie
 			Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

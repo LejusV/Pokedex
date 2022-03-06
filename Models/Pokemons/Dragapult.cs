@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			88, // HPs
 			120, 75, // Attack & Defense
 			100, 75, // Special Attack & Defense
-			142			
-		) {}
+			142		
+		)
+		{
+			this._height = 30;
+			this._weight = 500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dragapult Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dragapult() : base(
 			887,
 			SpecieDragapult.Instance, // Pokemon Specie
 			Dragon.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

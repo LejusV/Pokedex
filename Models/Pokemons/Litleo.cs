@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			62, // HPs
 			50, 58, // Attack & Defense
 			73, 54, // Special Attack & Defense
-			72			
-		) {}
+			72		
+		)
+		{
+			this._height = 6;
+			this._weight = 135;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Litleo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Litleo() : base(
 			667,
 			SpecieLitleo.Instance, // Pokemon Specie
 			Fire.Instance, Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

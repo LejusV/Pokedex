@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			80, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 15;
+			this._weight = 2565;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glalie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Glalie() : base(
 			362,
 			SpecieGlalie.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			47, // HPs
 			62, 45, // Attack & Defense
 			55, 45, // Special Attack & Defense
-			46			
-		) {}
+			46		
+		)
+		{
+			this._height = 4;
+			this._weight = 44;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grubbin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Grubbin() : base(
 			736,
 			SpecieGrubbin.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

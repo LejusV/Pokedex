@@ -52,8 +52,12 @@ namespace Pokedex.Models.Pokemons
 			{pokeStats["hp"]}, // HPs
 			{pokeStats["attack"]}, {pokeStats["defense"]}, // Attack & Defense
 			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense
-			{pokeStats["speed"]}			
-		) {{}}
+			{pokeStats["speed"]}		
+		)
+		{{
+			this._height = {poke["height"]};
+			this._weight = {poke["weight"]};
+		}}
 		#endregion
 	}}
 	#endregion
@@ -96,11 +100,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// {pokeName} Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public {pokeNameNoSpace}() : base(
 			{poke["id"]},
 			Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
 			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		) {{}}
+		*/
 		#endregion
 	}}
 	#endregion

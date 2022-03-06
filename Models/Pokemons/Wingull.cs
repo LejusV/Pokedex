@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			30, 30, // Attack & Defense
 			55, 30, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 6;
+			this._weight = 95;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wingull Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Wingull() : base(
 			278,
 			SpecieWingull.Instance, // Pokemon Specie
 			Water.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

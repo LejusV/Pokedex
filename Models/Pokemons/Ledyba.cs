@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			20, 30, // Attack & Defense
 			40, 80, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 10;
+			this._weight = 108;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ledyba Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ledyba() : base(
 			165,
 			SpecieLedyba.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

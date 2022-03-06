@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			48, 45, // Attack & Defense
 			43, 90, // Special Attack & Defense
-			42			
-		) {}
+			42		
+		)
+		{
+			this._height = 10;
+			this._weight = 324;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drowzee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Drowzee() : base(
 			96,
 			SpecieDrowzee.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

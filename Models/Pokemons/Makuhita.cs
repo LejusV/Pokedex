@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			60, 30, // Attack & Defense
 			20, 30, // Special Attack & Defense
-			25			
-		) {}
+			25		
+		)
+		{
+			this._height = 10;
+			this._weight = 864;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Makuhita Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Makuhita() : base(
 			296,
 			SpecieMakuhita.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

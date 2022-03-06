@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			65, 60, // Attack & Defense
 			110, 95, // Special Attack & Defense
-			130			
-		) {}
+			130		
+		)
+		{
+			this._height = 8;
+			this._weight = 245;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jolteon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Jolteon() : base(
 			135,
 			SpecieJolteon.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

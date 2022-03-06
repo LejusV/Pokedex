@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			80, 70, // Attack & Defense
 			65, 75, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 16;
+			this._weight = 550;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golbat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Golbat() : base(
 			42,
 			SpecieGolbat.Instance, // Pokemon Specie
 			Poison.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

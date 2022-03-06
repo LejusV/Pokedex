@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			190, // HPs
 			33, 58, // Attack & Defense
 			33, 58, // Special Attack & Defense
-			33			
-		) {}
+			33		
+		)
+		{
+			this._height = 13;
+			this._weight = 285;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wobbuffet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Wobbuffet() : base(
 			202,
 			SpecieWobbuffet.Instance, // Pokemon Specie
 			Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

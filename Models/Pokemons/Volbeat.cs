@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			73, 75, // Attack & Defense
 			47, 85, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 7;
+			this._weight = 177;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Volbeat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Volbeat() : base(
 			313,
 			SpecieVolbeat.Instance, // Pokemon Specie
 			Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

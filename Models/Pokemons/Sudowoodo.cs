@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			100, 115, // Attack & Defense
 			30, 65, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 12;
+			this._weight = 380;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sudowoodo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sudowoodo() : base(
 			185,
 			SpecieSudowoodo.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

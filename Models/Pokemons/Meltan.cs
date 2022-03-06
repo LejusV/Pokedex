@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			46, // HPs
 			65, 65, // Attack & Defense
 			55, 35, // Special Attack & Defense
-			34			
-		) {}
+			34		
+		)
+		{
+			this._height = 2;
+			this._weight = 80;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Meltan Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Meltan() : base(
 			808,
 			SpecieMeltan.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

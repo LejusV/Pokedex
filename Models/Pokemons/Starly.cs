@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			55, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 3;
+			this._weight = 20;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Starly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Starly() : base(
 			396,
 			SpecieStarly.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			81, // HPs
 			102, 77, // Attack & Defense
 			85, 75, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 14;
+			this._weight = 620;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nidoking Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Nidoking() : base(
 			34,
 			SpecieNidoking.Instance, // Pokemon Specie
 			Poison.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			105, 125, // Attack & Defense
 			65, 75, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 14;
+			this._weight = 2000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Crustle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Crustle() : base(
 			558,
 			SpecieCrustle.Instance, // Pokemon Specie
 			Bug.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

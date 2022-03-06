@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			92, // HPs
 			130, 115, // Attack & Defense
 			80, 115, // Special Attack & Defense
-			138			
-		) {}
+			138		
+		)
+		{
+			this._height = 28;
+			this._weight = 1100;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zacian-Hero Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public ZacianHero() : base(
 			888,
 			SpecieZacianHero.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

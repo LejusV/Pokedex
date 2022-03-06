@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			120, 100, // Attack & Defense
 			150, 120, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 42;
+			this._weight = 3360;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Palkia Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Palkia() : base(
 			484,
 			SpeciePalkia.Instance, // Pokemon Specie
 			Water.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

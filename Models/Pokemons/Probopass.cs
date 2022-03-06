@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			55, 145, // Attack & Defense
 			75, 150, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 14;
+			this._weight = 3400;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Probopass Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Probopass() : base(
 			476,
 			SpecieProbopass.Instance, // Pokemon Specie
 			Rock.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

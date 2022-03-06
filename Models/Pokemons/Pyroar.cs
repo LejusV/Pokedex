@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			86, // HPs
 			68, 72, // Attack & Defense
 			109, 66, // Special Attack & Defense
-			106			
-		) {}
+			106		
+		)
+		{
+			this._height = 15;
+			this._weight = 815;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pyroar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pyroar() : base(
 			668,
 			SpeciePyroar.Instance, // Pokemon Specie
 			Fire.Instance, Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

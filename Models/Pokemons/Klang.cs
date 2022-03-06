@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			80, 95, // Attack & Defense
 			70, 85, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 6;
+			this._weight = 510;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Klang Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Klang() : base(
 			600,
 			SpecieKlang.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

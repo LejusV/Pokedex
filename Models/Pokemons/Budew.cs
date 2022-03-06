@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			30, 35, // Attack & Defense
 			50, 70, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 2;
+			this._weight = 12;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Budew Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Budew() : base(
 			406,
 			SpecieBudew.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

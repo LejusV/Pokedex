@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			78, // HPs
 			60, 85, // Attack & Defense
 			135, 91, // Special Attack & Defense
-			36			
-		) {}
+			36		
+		)
+		{
+			this._height = 30;
+			this._weight = 1850;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drampa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Drampa() : base(
 			780,
 			SpecieDrampa.Instance, // Pokemon Specie
 			Normal.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

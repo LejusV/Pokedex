@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			20, // HPs
 			40, 15, // Attack & Defense
 			35, 35, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 3;
+			this._weight = 20;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pichu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pichu() : base(
 			172,
 			SpeciePichu.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

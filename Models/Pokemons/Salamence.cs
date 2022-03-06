@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			135, 80, // Attack & Defense
 			110, 80, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 15;
+			this._weight = 1026;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Salamence Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Salamence() : base(
 			373,
 			SpecieSalamence.Instance, // Pokemon Specie
 			Dragon.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

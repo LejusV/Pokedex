@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			68, // HPs
 			70, 92, // Attack & Defense
 			50, 132, // Special Attack & Defense
-			42			
-		) {}
+			42		
+		)
+		{
+			this._height = 18;
+			this._weight = 820;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Araquanid Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Araquanid() : base(
 			752,
 			SpecieAraquanid.Instance, // Pokemon Specie
 			Water.Instance, Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

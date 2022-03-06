@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			100, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 19;
+			this._weight = 925;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sawsbuck Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sawsbuck() : base(
 			586,
 			SpecieSawsbuck.Instance, // Pokemon Specie
 			Normal.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

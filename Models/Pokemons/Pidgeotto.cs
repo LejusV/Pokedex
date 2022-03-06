@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			63, // HPs
 			60, 55, // Attack & Defense
 			50, 50, // Special Attack & Defense
-			71			
-		) {}
+			71		
+		)
+		{
+			this._height = 11;
+			this._weight = 300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pidgeotto Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pidgeotto() : base(
 			17,
 			SpeciePidgeotto.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

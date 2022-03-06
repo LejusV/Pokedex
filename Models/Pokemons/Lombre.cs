@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			50, 50, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 12;
+			this._weight = 325;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lombre Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lombre() : base(
 			271,
 			SpecieLombre.Instance, // Pokemon Specie
 			Water.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

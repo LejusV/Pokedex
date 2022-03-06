@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			68, // HPs
 			90, 65, // Attack & Defense
 			50, 55, // Special Attack & Defense
-			82			
-		) {}
+			82		
+		)
+		{
+			this._height = 14;
+			this._weight = 560;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gabite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Gabite() : base(
 			444,
 			SpecieGabite.Instance, // Pokemon Specie
 			Dragon.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

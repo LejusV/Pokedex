@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			100, 89, // Attack & Defense
 			55, 69, // Special Attack & Defense
-			112			
-		) {}
+			112		
+		)
+		{
+			this._height = 25;
+			this._weight = 2005;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scolipede Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Scolipede() : base(
 			545,
 			SpecieScolipede.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			90, 130, // Attack & Defense
 			45, 65, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 10;
+			this._weight = 234;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Relicanth Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Relicanth() : base(
 			369,
 			SpecieRelicanth.Instance, // Pokemon Specie
 			Water.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

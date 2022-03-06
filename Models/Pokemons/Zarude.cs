@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			120, 105, // Attack & Defense
 			70, 95, // Special Attack & Defense
-			105			
-		) {}
+			105		
+		)
+		{
+			this._height = 18;
+			this._weight = 700;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zarude Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zarude() : base(
 			893,
 			SpecieZarude.Instance, // Pokemon Specie
 			Dark.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

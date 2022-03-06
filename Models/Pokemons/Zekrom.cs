@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			150, 120, // Attack & Defense
 			120, 100, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 29;
+			this._weight = 3450;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zekrom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zekrom() : base(
 			644,
 			SpecieZekrom.Instance, // Pokemon Specie
 			Dragon.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

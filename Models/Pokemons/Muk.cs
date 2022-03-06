@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			105, 75, // Attack & Defense
 			65, 100, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 12;
+			this._weight = 300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Muk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Muk() : base(
 			89,
 			SpecieMuk.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

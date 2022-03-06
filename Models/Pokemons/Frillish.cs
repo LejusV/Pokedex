@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			40, 50, // Attack & Defense
 			65, 85, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 12;
+			this._weight = 330;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Frillish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Frillish() : base(
 			592,
 			SpecieFrillish.Instance, // Pokemon Specie
 			Water.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

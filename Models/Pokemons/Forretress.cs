@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			90, 140, // Attack & Defense
 			60, 60, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 12;
+			this._weight = 1258;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Forretress Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Forretress() : base(
 			205,
 			SpecieForretress.Instance, // Pokemon Specie
 			Bug.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

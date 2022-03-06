@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			74, // HPs
 			108, 133, // Attack & Defense
 			83, 65, // Special Attack & Defense
-			32			
-		) {}
+			32		
+		)
+		{
+			this._height = 12;
+			this._weight = 810;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carracosta Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Carracosta() : base(
 			565,
 			SpecieCarracosta.Instance, // Pokemon Specie
 			Water.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

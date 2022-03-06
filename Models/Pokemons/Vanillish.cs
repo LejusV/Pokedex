@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			51, // HPs
 			65, 65, // Attack & Defense
 			80, 75, // Special Attack & Defense
-			59			
-		) {}
+			59		
+		)
+		{
+			this._height = 11;
+			this._weight = 410;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vanillish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Vanillish() : base(
 			583,
 			SpecieVanillish.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

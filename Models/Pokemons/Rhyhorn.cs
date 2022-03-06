@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			85, 95, // Attack & Defense
 			30, 30, // Special Attack & Defense
-			25			
-		) {}
+			25		
+		)
+		{
+			this._height = 10;
+			this._weight = 1150;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rhyhorn Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rhyhorn() : base(
 			111,
 			SpecieRhyhorn.Instance, // Pokemon Specie
 			Ground.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

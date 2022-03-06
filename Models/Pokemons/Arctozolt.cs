@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			100, 90, // Attack & Defense
 			90, 80, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 23;
+			this._weight = 1500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arctozolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Arctozolt() : base(
 			881,
 			SpecieArctozolt.Instance, // Pokemon Specie
 			Electric.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

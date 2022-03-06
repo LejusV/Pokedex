@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			70, 65, // Attack & Defense
 			125, 105, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 9;
+			this._weight = 145;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Roserade Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Roserade() : base(
 			407,
 			SpecieRoserade.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

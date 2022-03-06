@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			85, // HPs
 			50, 95, // Attack & Defense
 			120, 115, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 15;
+			this._weight = 380;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Togekiss Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Togekiss() : base(
 			468,
 			SpecieTogekiss.Instance, // Pokemon Specie
 			Fairy.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

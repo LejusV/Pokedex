@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			123, 67, // Attack & Defense
 			95, 85, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 18;
+			this._weight = 1386;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Electivire Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Electivire() : base(
 			466,
 			SpecieElectivire.Instance, // Pokemon Specie
 			Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

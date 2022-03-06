@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			64, // HPs
 			88, 50, // Attack & Defense
 			88, 50, // Special Attack & Defense
-			106			
-		) {}
+			106		
+		)
+		{
+			this._height = 11;
+			this._weight = 375;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Liepard Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Liepard() : base(
 			510,
 			SpecieLiepard.Instance, // Pokemon Specie
 			Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

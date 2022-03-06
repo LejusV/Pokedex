@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			109, // HPs
 			66, 84, // Attack & Defense
 			81, 99, // Special Attack & Defense
-			32			
-		) {}
+			32		
+		)
+		{
+			this._height = 7;
+			this._weight = 110;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stunfisk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Stunfisk() : base(
 			618,
 			SpecieStunfisk.Instance, // Pokemon Specie
 			Ground.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			69, 85, // Attack & Defense
 			32, 35, // Special Attack & Defense
-			28			
-		) {}
+			28		
+		)
+		{
+			this._height = 10;
+			this._weight = 995;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bergmite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bergmite() : base(
 			712,
 			SpecieBergmite.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

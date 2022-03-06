@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			44, // HPs
 			50, 91, // Attack & Defense
 			24, 86, // Special Attack & Defense
-			10			
-		) {}
+			10		
+		)
+		{
+			this._height = 6;
+			this._weight = 188;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ferroseed Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ferroseed() : base(
 			597,
 			SpecieFerroseed.Instance, // Pokemon Specie
 			Grass.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

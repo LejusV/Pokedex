@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			63, // HPs
 			120, 85, // Attack & Defense
 			90, 55, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 11;
+			this._weight = 328;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Crawdaunt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Crawdaunt() : base(
 			342,
 			SpecieCrawdaunt.Instance, // Pokemon Specie
 			Water.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

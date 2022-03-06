@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			109, // HPs
 			53, 47, // Attack & Defense
 			127, 131, // Special Attack & Defense
-			103			
-		) {}
+			103		
+		)
+		{
+			this._height = 12;
+			this._weight = 555;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nihilego Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Nihilego() : base(
 			793,
 			SpecieNihilego.Instance, // Pokemon Specie
 			Rock.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

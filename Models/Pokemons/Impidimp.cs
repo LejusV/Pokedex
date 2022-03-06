@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			45, 30, // Attack & Defense
 			55, 40, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 4;
+			this._weight = 55;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Impidimp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Impidimp() : base(
 			859,
 			SpecieImpidimp.Instance, // Pokemon Specie
 			Dark.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

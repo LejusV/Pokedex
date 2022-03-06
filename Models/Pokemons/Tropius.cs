@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			99, // HPs
 			68, 83, // Attack & Defense
 			72, 87, // Special Attack & Defense
-			51			
-		) {}
+			51		
+		)
+		{
+			this._height = 20;
+			this._weight = 1000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tropius Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Tropius() : base(
 			357,
 			SpecieTropius.Instance, // Pokemon Specie
 			Grass.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

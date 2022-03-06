@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			82, 45, // Attack & Defense
 			45, 45, // Special Attack & Defense
-			74			
-		) {}
+			74		
+		)
+		{
+			this._height = 10;
+			this._weight = 334;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Krokorok Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Krokorok() : base(
 			552,
 			SpecieKrokorok.Instance, // Pokemon Specie
 			Ground.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

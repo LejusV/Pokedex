@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			85, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 7;
+			this._weight = 280;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Marshtomp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Marshtomp() : base(
 			259,
 			SpecieMarshtomp.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

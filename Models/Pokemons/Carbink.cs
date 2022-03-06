@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			50, 150, // Attack & Defense
 			50, 150, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 3;
+			this._weight = 57;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carbink Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Carbink() : base(
 			703,
 			SpecieCarbink.Instance, // Pokemon Specie
 			Rock.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

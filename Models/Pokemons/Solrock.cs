@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			95, 85, // Attack & Defense
 			55, 65, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 12;
+			this._weight = 1540;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Solrock Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Solrock() : base(
 			338,
 			SpecieSolrock.Instance, // Pokemon Specie
 			Rock.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

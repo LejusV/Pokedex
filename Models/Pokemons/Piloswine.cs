@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			100, 80, // Attack & Defense
 			60, 60, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 11;
+			this._weight = 558;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Piloswine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Piloswine() : base(
 			221,
 			SpeciePiloswine.Instance, // Pokemon Specie
 			Ice.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

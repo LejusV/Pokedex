@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			84, 70, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			51			
-		) {}
+			51		
+		)
+		{
+			this._height = 12;
+			this._weight = 1520;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pupitar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pupitar() : base(
 			247,
 			SpeciePupitar.Instance, // Pokemon Specie
 			Rock.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

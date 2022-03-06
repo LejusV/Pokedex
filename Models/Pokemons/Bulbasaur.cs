@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			49, 49, // Attack & Defense
 			65, 65, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 7;
+			this._weight = 69;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bulbasaur Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bulbasaur() : base(
 			1,
 			SpecieBulbasaur.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

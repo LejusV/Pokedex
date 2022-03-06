@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			145, 130, // Attack & Defense
 			65, 110, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 22;
+			this._weight = 8000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glastrier Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Glastrier() : base(
 			896,
 			SpecieGlastrier.Instance, // Pokemon Specie
 			Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

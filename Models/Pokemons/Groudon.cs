@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			150, 140, // Attack & Defense
 			100, 90, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 35;
+			this._weight = 9500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Groudon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Groudon() : base(
 			383,
 			SpecieGroudon.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

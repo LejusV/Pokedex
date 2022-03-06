@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			69, // HPs
 			55, 45, // Attack & Defense
 			55, 55, // Special Attack & Defense
-			15			
-		) {}
+			15		
+		)
+		{
+			this._height = 2;
+			this._weight = 10;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Foongus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Foongus() : base(
 			590,
 			SpecieFoongus.Instance, // Pokemon Specie
 			Grass.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

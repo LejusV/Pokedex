@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			90, 80, // Attack & Defense
 			130, 110, // Special Attack & Defense
-			110			
-		) {}
+			110		
+		)
+		{
+			this._height = 20;
+			this._weight = 600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Latios Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Latios() : base(
 			381,
 			SpecieLatios.Instance, // Pokemon Specie
 			Dragon.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

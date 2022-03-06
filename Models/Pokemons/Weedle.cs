@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			35, 30, // Attack & Defense
 			20, 20, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 3;
+			this._weight = 32;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weedle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Weedle() : base(
 			13,
 			SpecieWeedle.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			115, // HPs
 			140, 130, // Attack & Defense
 			55, 55, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 24;
+			this._weight = 2828;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rhyperior Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rhyperior() : base(
 			464,
 			SpecieRhyperior.Instance, // Pokemon Specie
 			Ground.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

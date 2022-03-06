@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			40, 60, // Attack & Defense
 			95, 60, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 6;
+			this._weight = 130;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lampent Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lampent() : base(
 			608,
 			SpecieLampent.Instance, // Pokemon Specie
 			Ghost.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

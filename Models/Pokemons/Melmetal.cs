@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			135, // HPs
 			143, 143, // Attack & Defense
 			80, 65, // Special Attack & Defense
-			34			
-		) {}
+			34		
+		)
+		{
+			this._height = 25;
+			this._weight = 8000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Melmetal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Melmetal() : base(
 			809,
 			SpecieMelmetal.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

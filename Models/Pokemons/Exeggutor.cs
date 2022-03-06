@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			95, 85, // Attack & Defense
 			125, 75, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 20;
+			this._weight = 1200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Exeggutor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Exeggutor() : base(
 			103,
 			SpecieExeggutor.Instance, // Pokemon Specie
 			Grass.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

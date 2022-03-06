@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			40, 40, // Attack & Defense
 			50, 61, // Special Attack & Defense
-			34			
-		) {}
+			34		
+		)
+		{
+			this._height = 2;
+			this._weight = 3;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Milcery Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Milcery() : base(
 			868,
 			SpecieMilcery.Instance, // Pokemon Specie
 			Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

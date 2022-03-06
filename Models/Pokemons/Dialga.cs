@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			120, 120, // Attack & Defense
 			150, 100, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 54;
+			this._weight = 6830;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dialga Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dialga() : base(
 			483,
 			SpecieDialga.Instance, // Pokemon Specie
 			Steel.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

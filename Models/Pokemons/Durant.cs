@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			58, // HPs
 			109, 112, // Attack & Defense
 			48, 48, // Special Attack & Defense
-			109			
-		) {}
+			109		
+		)
+		{
+			this._height = 3;
+			this._weight = 330;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Durant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Durant() : base(
 			632,
 			SpecieDurant.Instance, // Pokemon Specie
 			Bug.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

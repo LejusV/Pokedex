@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			52, 168, // Attack & Defense
 			47, 138, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 13;
+			this._weight = 1495;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bastiodon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bastiodon() : base(
 			411,
 			SpecieBastiodon.Instance, // Pokemon Specie
 			Rock.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

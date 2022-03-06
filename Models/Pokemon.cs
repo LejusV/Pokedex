@@ -15,11 +15,7 @@ namespace Pokedex.Models
         private readonly int _id; // ID of the pokemon in the pokedex determining what pokemon it is
 
         protected int _level; // Level of the Pokemon
-
-        private string _genus;
         private string _nickname; // Name Given by User
-        private double size;
-        private double weight;
 
         protected PokemonSpecie _specie; // Specie of Pokemon (to get his specie stats and name)
         
@@ -241,7 +237,10 @@ namespace Pokedex.Models
             PokemonSpecie specie,
             string nickname,
             int level,
-            PokemonType type
+            PokemonType type,
+            #nullable enable
+            PokemonType? type2
+            #nullable restore
             )
         {
             _id = id;
@@ -251,7 +250,7 @@ namespace Pokedex.Models
             else throw new ArgumentException("Name cannot be empty");
             _specie = specie;
             _type = type;
-            _type2 = null;
+            _type2 = type2;
             GenerateIV();
             _ev = new PokemonStats(0, 0, 0, 0, 0, 0);
             _calculated_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
@@ -262,17 +261,13 @@ namespace Pokedex.Models
         public Pokemon(
             int id,
             PokemonSpecie specie,
-            PokemonType type,
-            #nullable enable
-            PokemonType? type2
-            #nullable restore
+            string nickname,
+            int level,
+            PokemonType type
             )
-        {
-            _id = id;
-            _specie = specie;
-            _type = type;
-            _type2 = type2;
-        }
+            : this(id, specie, nickname, level, type, null)
+        {}
+            
         #endregion
 
         #region Methods

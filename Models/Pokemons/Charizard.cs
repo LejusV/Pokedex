@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			78, // HPs
 			84, 78, // Attack & Defense
 			109, 85, // Special Attack & Defense
-			100			
-		) {}
+			100		
+		)
+		{
+			this._height = 17;
+			this._weight = 905;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Charizard Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Charizard() : base(
 			6,
 			SpecieCharizard.Instance, // Pokemon Specie
 			Fire.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

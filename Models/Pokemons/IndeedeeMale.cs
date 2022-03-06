@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			65, 55, // Attack & Defense
 			105, 95, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 9;
+			this._weight = 280;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Indeedee-Male Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public IndeedeeMale() : base(
 			876,
 			SpecieIndeedeeMale.Instance, // Pokemon Specie
 			Psychic.Instance, Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

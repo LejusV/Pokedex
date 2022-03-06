@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			90, 120, // Attack & Defense
 			85, 70, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 12;
+			this._weight = 95;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weezing Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Weezing() : base(
 			110,
 			SpecieWeezing.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

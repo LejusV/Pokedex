@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			108, // HPs
 			112, 118, // Attack & Defense
 			68, 72, // Special Attack & Defense
-			47			
-		) {}
+			47		
+		)
+		{
+			this._height = 20;
+			this._weight = 3000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hippowdon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hippowdon() : base(
 			450,
 			SpecieHippowdon.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

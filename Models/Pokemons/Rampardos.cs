@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			97, // HPs
 			165, 60, // Attack & Defense
 			65, 50, // Special Attack & Defense
-			58			
-		) {}
+			58		
+		)
+		{
+			this._height = 16;
+			this._weight = 1025;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rampardos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rampardos() : base(
 			409,
 			SpecieRampardos.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

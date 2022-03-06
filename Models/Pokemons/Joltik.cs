@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			47, 50, // Attack & Defense
 			57, 50, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 1;
+			this._weight = 6;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Joltik Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Joltik() : base(
 			595,
 			SpecieJoltik.Instance, // Pokemon Specie
 			Bug.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

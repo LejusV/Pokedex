@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			75, 100, // Attack & Defense
 			55, 80, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 12;
+			this._weight = 2025;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Metang Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Metang() : base(
 			375,
 			SpecieMetang.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

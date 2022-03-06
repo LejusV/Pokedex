@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			120, 40, // Attack & Defense
 			95, 40, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 18;
+			this._weight = 888;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sharpedo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sharpedo() : base(
 			319,
 			SpecieSharpedo.Instance, // Pokemon Specie
 			Water.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

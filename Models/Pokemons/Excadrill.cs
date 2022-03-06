@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			110, // HPs
 			135, 60, // Attack & Defense
 			50, 65, // Special Attack & Defense
-			88			
-		) {}
+			88		
+		)
+		{
+			this._height = 7;
+			this._weight = 404;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Excadrill Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Excadrill() : base(
 			530,
 			SpecieExcadrill.Instance, // Pokemon Specie
 			Ground.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			70, 50, // Attack & Defense
 			50, 50, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 11;
+			this._weight = 153;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vibrava Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Vibrava() : base(
 			329,
 			SpecieVibrava.Instance, // Pokemon Specie
 			Ground.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			87, 63, // Attack & Defense
 			87, 63, // Special Attack & Defense
-			98			
-		) {}
+			98		
+		)
+		{
+			this._height = 13;
+			this._weight = 242;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swanna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Swanna() : base(
 			581,
 			SpecieSwanna.Instance, // Pokemon Specie
 			Water.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

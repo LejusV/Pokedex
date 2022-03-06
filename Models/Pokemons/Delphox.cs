@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			69, 72, // Attack & Defense
 			114, 100, // Special Attack & Defense
-			104			
-		) {}
+			104		
+		)
+		{
+			this._height = 15;
+			this._weight = 390;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Delphox Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Delphox() : base(
 			655,
 			SpecieDelphox.Instance, // Pokemon Specie
 			Fire.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

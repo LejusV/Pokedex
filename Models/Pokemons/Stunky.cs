@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			63, // HPs
 			63, 47, // Attack & Defense
 			41, 41, // Special Attack & Defense
-			74			
-		) {}
+			74		
+		)
+		{
+			this._height = 4;
+			this._weight = 192;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stunky Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Stunky() : base(
 			434,
 			SpecieStunky.Instance, // Pokemon Specie
 			Poison.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

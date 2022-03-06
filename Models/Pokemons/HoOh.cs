@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			106, // HPs
 			130, 90, // Attack & Defense
 			110, 154, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 38;
+			this._weight = 1990;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ho-Oh Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public HoOh() : base(
 			250,
 			SpecieHoOh.Instance, // Pokemon Specie
 			Fire.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

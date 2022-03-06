@@ -1,4 +1,5 @@
-﻿using Pokedex.Models.Pokemons;
+﻿/*
+using Pokedex.Models.Pokemons;
 using System.Collections.Generic;
 
 namespace Pokedex.Models
@@ -953,3 +954,4 @@ namespace Pokedex.Models
     }
 }
 #nullable restore
+*/

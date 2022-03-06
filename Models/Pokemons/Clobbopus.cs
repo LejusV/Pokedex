@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			68, 60, // Attack & Defense
 			50, 50, // Special Attack & Defense
-			32			
-		) {}
+			32		
+		)
+		{
+			this._height = 6;
+			this._weight = 40;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Clobbopus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Clobbopus() : base(
 			852,
 			SpecieClobbopus.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

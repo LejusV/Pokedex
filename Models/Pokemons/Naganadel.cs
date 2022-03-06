@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			73, // HPs
 			73, 73, // Attack & Defense
 			127, 73, // Special Attack & Defense
-			121			
-		) {}
+			121		
+		)
+		{
+			this._height = 36;
+			this._weight = 1500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Naganadel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Naganadel() : base(
 			804,
 			SpecieNaganadel.Instance, // Pokemon Specie
 			Poison.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

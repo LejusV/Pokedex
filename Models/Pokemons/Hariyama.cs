@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			144, // HPs
 			120, 60, // Attack & Defense
 			40, 60, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 23;
+			this._weight = 2538;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hariyama Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hariyama() : base(
 			297,
 			SpecieHariyama.Instance, // Pokemon Specie
 			Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

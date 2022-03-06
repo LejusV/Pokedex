@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			78, // HPs
 			81, 71, // Attack & Defense
 			74, 69, // Special Attack & Defense
-			126			
-		) {}
+			126		
+		)
+		{
+			this._height = 12;
+			this._weight = 245;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Talonflame Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Talonflame() : base(
 			663,
 			SpecieTalonflame.Instance, // Pokemon Specie
 			Fire.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

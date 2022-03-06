@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			65, 95, // Attack & Defense
 			60, 45, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 6;
+			this._weight = 10;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Koffing Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Koffing() : base(
 			109,
 			SpecieKoffing.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

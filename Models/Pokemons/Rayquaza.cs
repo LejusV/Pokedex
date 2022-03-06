@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			150, 90, // Attack & Defense
 			150, 90, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 70;
+			this._weight = 2065;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rayquaza Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rayquaza() : base(
 			384,
 			SpecieRayquaza.Instance, // Pokemon Specie
 			Dragon.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

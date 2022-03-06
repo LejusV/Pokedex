@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			85, // HPs
 			75, 110, // Attack & Defense
 			100, 75, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 13;
+			this._weight = 2500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Palossand Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Palossand() : base(
 			770,
 			SpeciePalossand.Instance, // Pokemon Specie
 			Ghost.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

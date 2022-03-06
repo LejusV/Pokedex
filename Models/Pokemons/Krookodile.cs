@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			117, 80, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			92			
-		) {}
+			92		
+		)
+		{
+			this._height = 15;
+			this._weight = 963;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Krookodile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Krookodile() : base(
 			553,
 			SpecieKrookodile.Instance, // Pokemon Specie
 			Ground.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

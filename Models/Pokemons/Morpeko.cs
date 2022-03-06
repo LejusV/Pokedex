@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			58, // HPs
 			95, 58, // Attack & Defense
 			70, 58, // Special Attack & Defense
-			97			
-		) {}
+			97		
+		)
+		{
+			this._height = 3;
+			this._weight = 30;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Morpeko Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Morpeko() : base(
 			877,
 			SpecieMorpeko.Instance, // Pokemon Specie
 			Electric.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

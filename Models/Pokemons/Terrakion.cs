@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			91, // HPs
 			129, 90, // Attack & Defense
 			72, 90, // Special Attack & Defense
-			108			
-		) {}
+			108		
+		)
+		{
+			this._height = 19;
+			this._weight = 2600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Terrakion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Terrakion() : base(
 			639,
 			SpecieTerrakion.Instance, // Pokemon Specie
 			Rock.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

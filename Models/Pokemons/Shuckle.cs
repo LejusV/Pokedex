@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			20, // HPs
 			10, 230, // Attack & Defense
 			10, 230, // Special Attack & Defense
-			5			
-		) {}
+			5		
+		)
+		{
+			this._height = 6;
+			this._weight = 205;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shuckle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Shuckle() : base(
 			213,
 			SpecieShuckle.Instance, // Pokemon Specie
 			Bug.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			30, // HPs
 			42, 118, // Attack & Defense
 			42, 88, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 5;
+			this._weight = 570;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shieldon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Shieldon() : base(
 			410,
 			SpecieShieldon.Instance, // Pokemon Specie
 			Rock.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			140, 55, // Attack & Defense
 			30, 55, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 13;
+			this._weight = 929;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Darmanitan-Standard Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public DarmanitanStandard() : base(
 			555,
 			SpecieDarmanitanStandard.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

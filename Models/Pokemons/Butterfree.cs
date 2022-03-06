@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			45, 50, // Attack & Defense
 			90, 80, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 11;
+			this._weight = 320;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Butterfree Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Butterfree() : base(
 			12,
 			SpecieButterfree.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

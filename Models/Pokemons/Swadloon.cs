@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			63, 90, // Attack & Defense
 			50, 80, // Special Attack & Defense
-			42			
-		) {}
+			42		
+		)
+		{
+			this._height = 5;
+			this._weight = 73;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swadloon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Swadloon() : base(
 			541,
 			SpecieSwadloon.Instance, // Pokemon Specie
 			Bug.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

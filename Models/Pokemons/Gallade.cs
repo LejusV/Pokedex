@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			68, // HPs
 			125, 65, // Attack & Defense
 			65, 115, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 16;
+			this._weight = 520;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gallade Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Gallade() : base(
 			475,
 			SpecieGallade.Instance, // Pokemon Specie
 			Psychic.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

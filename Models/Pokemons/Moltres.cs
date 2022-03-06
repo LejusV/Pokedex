@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			100, 90, // Attack & Defense
 			125, 85, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 20;
+			this._weight = 600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Moltres Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Moltres() : base(
 			146,
 			SpecieMoltres.Instance, // Pokemon Specie
 			Fire.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

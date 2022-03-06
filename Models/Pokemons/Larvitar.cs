@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			64, 50, // Attack & Defense
 			45, 50, // Special Attack & Defense
-			41			
-		) {}
+			41		
+		)
+		{
+			this._height = 6;
+			this._weight = 720;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Larvitar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Larvitar() : base(
 			246,
 			SpecieLarvitar.Instance, // Pokemon Specie
 			Rock.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

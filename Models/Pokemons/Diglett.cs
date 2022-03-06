@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			10, // HPs
 			55, 25, // Attack & Defense
 			35, 45, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 2;
+			this._weight = 8;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Diglett Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Diglett() : base(
 			50,
 			SpecieDiglett.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

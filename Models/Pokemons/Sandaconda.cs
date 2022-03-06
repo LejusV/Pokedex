@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			107, 125, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			71			
-		) {}
+			71		
+		)
+		{
+			this._height = 38;
+			this._weight = 655;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sandaconda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sandaconda() : base(
 			844,
 			SpecieSandaconda.Instance, // Pokemon Specie
 			Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

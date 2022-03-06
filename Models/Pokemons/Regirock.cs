@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			100, 200, // Attack & Defense
 			50, 100, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 17;
+			this._weight = 2300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Regirock Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Regirock() : base(
 			377,
 			SpecieRegirock.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

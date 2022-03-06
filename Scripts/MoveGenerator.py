@@ -26,7 +26,7 @@ for move in data.values():
 		outfile = f"""
 
 using Pokedex.Enums;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {{

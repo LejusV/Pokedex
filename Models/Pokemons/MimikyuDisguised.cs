@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			90, 80, // Attack & Defense
 			50, 105, // Special Attack & Defense
-			96			
-		) {}
+			96		
+		)
+		{
+			this._height = 2;
+			this._weight = 7;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mimikyu-Disguised Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public MimikyuDisguised() : base(
 			778,
 			SpecieMimikyuDisguised.Instance, // Pokemon Specie
 			Ghost.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

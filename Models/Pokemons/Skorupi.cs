@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			50, 90, // Attack & Defense
 			30, 55, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 8;
+			this._weight = 120;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skorupi Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Skorupi() : base(
 			451,
 			SpecieSkorupi.Instance, // Pokemon Specie
 			Poison.Instance, Bug.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

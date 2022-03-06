@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			67, 85, // Attack & Defense
 			77, 75, // Special Attack & Defense
-			116			
-		) {}
+			116		
+		)
+		{
+			this._height = 7;
+			this._weight = 66;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Whimsicott Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Whimsicott() : base(
 			547,
 			SpecieWhimsicott.Instance, // Pokemon Specie
 			Grass.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

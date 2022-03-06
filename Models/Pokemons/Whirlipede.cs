@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			55, 99, // Attack & Defense
 			40, 79, // Special Attack & Defense
-			47			
-		) {}
+			47		
+		)
+		{
+			this._height = 12;
+			this._weight = 585;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Whirlipede Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Whirlipede() : base(
 			544,
 			SpecieWhirlipede.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

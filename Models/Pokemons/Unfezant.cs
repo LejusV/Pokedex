@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			115, 80, // Attack & Defense
 			65, 55, // Special Attack & Defense
-			93			
-		) {}
+			93		
+		)
+		{
+			this._height = 12;
+			this._weight = 290;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Unfezant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Unfezant() : base(
 			521,
 			SpecieUnfezant.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

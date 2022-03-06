@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			75, 85, // Attack & Defense
 			25, 25, // Special Attack & Defense
-			15			
-		) {}
+			15		
+		)
+		{
+			this._height = 4;
+			this._weight = 180;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Roggenrola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Roggenrola() : base(
 			524,
 			SpecieRoggenrola.Instance, // Pokemon Specie
 			Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

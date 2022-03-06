@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			130, 60, // Attack & Defense
 			95, 110, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 9;
+			this._weight = 250;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Flareon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Flareon() : base(
 			136,
 			SpecieFlareon.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

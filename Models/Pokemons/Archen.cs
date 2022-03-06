@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			112, 45, // Attack & Defense
 			74, 45, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 5;
+			this._weight = 95;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Archen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Archen() : base(
 			566,
 			SpecieArchen.Instance, // Pokemon Specie
 			Rock.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

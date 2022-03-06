@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			55, 60, // Attack & Defense
 			95, 70, // Special Attack & Defense
-			124			
-		) {}
+			124		
+		)
+		{
+			this._height = 2;
+			this._weight = 5;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ribombee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ribombee() : base(
 			743,
 			SpecieRibombee.Instance, // Pokemon Specie
 			Bug.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			91, // HPs
 			90, 106, // Attack & Defense
 			130, 106, // Special Attack & Defense
-			77			
-		) {}
+			77		
+		)
+		{
+			this._height = 17;
+			this._weight = 4300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Heatran Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Heatran() : base(
 			485,
 			SpecieHeatran.Instance, // Pokemon Specie
 			Fire.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

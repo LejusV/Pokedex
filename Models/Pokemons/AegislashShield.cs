@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			50, 140, // Attack & Defense
 			50, 140, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 17;
+			this._weight = 530;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aegislash-Shield Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public AegislashShield() : base(
 			681,
 			SpecieAegislashShield.Instance, // Pokemon Specie
 			Steel.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

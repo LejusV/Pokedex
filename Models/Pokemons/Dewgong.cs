@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			70, 80, // Attack & Defense
 			70, 95, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 17;
+			this._weight = 1200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dewgong Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dewgong() : base(
 			87,
 			SpecieDewgong.Instance, // Pokemon Specie
 			Water.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

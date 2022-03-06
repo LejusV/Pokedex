@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			65, 40, // Attack & Defense
 			60, 40, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 4;
+			this._weight = 43;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Litten Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Litten() : base(
 			725,
 			SpecieLitten.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			55, 65, // Attack & Defense
 			45, 45, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 6;
+			this._weight = 297;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jangmo-O Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public JangmoO() : base(
 			782,
 			SpecieJangmoO.Instance, // Pokemon Specie
 			Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

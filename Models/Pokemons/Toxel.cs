@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			38, 35, // Attack & Defense
 			54, 35, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 4;
+			this._weight = 110;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Toxel() : base(
 			848,
 			SpecieToxel.Instance, // Pokemon Specie
 			Electric.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

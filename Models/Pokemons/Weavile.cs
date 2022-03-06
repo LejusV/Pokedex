@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			120, 65, // Attack & Defense
 			45, 85, // Special Attack & Defense
-			125			
-		) {}
+			125		
+		)
+		{
+			this._height = 11;
+			this._weight = 340;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weavile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Weavile() : base(
 			461,
 			SpecieWeavile.Instance, // Pokemon Specie
 			Dark.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

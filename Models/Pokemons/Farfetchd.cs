@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			52, // HPs
 			90, 55, // Attack & Defense
 			58, 62, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 8;
+			this._weight = 150;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Farfetchd Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Farfetchd() : base(
 			83,
 			SpecieFarfetchd.Instance, // Pokemon Specie
 			Normal.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

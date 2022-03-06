@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			50, 35, // Attack & Defense
 			55, 75, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 3;
+			this._weight = 28;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Goomy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Goomy() : base(
 			704,
 			SpecieGoomy.Instance, // Pokemon Specie
 			Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

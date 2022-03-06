@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			111, // HPs
 			83, 68, // Attack & Defense
 			92, 82, // Special Attack & Defense
-			39			
-		) {}
+			39		
+		)
+		{
+			this._height = 9;
+			this._weight = 299;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gastrodon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Gastrodon() : base(
 			423,
 			SpecieGastrodon.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

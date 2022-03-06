@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			135, 105, // Attack & Defense
 			60, 105, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 10;
+			this._weight = 330;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Escavalier Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Escavalier() : base(
 			589,
 			SpecieEscavalier.Instance, // Pokemon Specie
 			Bug.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

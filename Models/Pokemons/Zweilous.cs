@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			85, 70, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			58			
-		) {}
+			58		
+		)
+		{
+			this._height = 14;
+			this._weight = 500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zweilous Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Zweilous() : base(
 			634,
 			SpecieZweilous.Instance, // Pokemon Specie
 			Dark.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			71, 40, // Attack & Defense
 			40, 40, // Special Attack & Defense
-			69			
-		) {}
+			69		
+		)
+		{
+			this._height = 3;
+			this._weight = 45;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scorbunny Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Scorbunny() : base(
 			813,
 			SpecieScorbunny.Instance, // Pokemon Specie
 			Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

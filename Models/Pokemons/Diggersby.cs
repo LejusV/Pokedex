@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			85, // HPs
 			56, 77, // Attack & Defense
 			50, 77, // Special Attack & Defense
-			78			
-		) {}
+			78		
+		)
+		{
+			this._height = 10;
+			this._weight = 424;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Diggersby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Diggersby() : base(
 			660,
 			SpecieDiggersby.Instance, // Pokemon Specie
 			Normal.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

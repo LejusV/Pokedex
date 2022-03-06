@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			95, 67, // Attack & Defense
 			103, 71, // Special Attack & Defense
-			122			
-		) {}
+			122		
+		)
+		{
+			this._height = 15;
+			this._weight = 400;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Greninja Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Greninja() : base(
 			658,
 			SpecieGreninja.Instance, // Pokemon Specie
 			Water.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

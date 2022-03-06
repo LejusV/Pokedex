@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			110, 60, // Attack & Defense
 			150, 130, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 5;
+			this._weight = 90;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hoopa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hoopa() : base(
 			720,
 			SpecieHoopa.Instance, // Pokemon Specie
 			Psychic.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

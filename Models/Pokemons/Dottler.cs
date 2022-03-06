@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			35, 80, // Attack & Defense
 			50, 90, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 4;
+			this._weight = 195;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dottler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dottler() : base(
 			825,
 			SpecieDottler.Instance, // Pokemon Specie
 			Bug.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

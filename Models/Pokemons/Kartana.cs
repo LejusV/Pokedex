@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			59, // HPs
 			181, 131, // Attack & Defense
 			59, 31, // Special Attack & Defense
-			109			
-		) {}
+			109		
+		)
+		{
+			this._height = 3;
+			this._weight = 1;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kartana Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Kartana() : base(
 			798,
 			SpecieKartana.Instance, // Pokemon Specie
 			Grass.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

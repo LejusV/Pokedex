@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			120, 100, // Attack & Defense
 			150, 120, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 32;
+			this._weight = 3300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Reshiram Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Reshiram() : base(
 			643,
 			SpecieReshiram.Instance, // Pokemon Specie
 			Dragon.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

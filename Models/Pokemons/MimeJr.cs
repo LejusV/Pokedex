@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			20, // HPs
 			25, 45, // Attack & Defense
 			70, 90, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 6;
+			this._weight = 130;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mime-Jr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public MimeJr() : base(
 			439,
 			SpecieMimeJr.Instance, // Pokemon Specie
 			Psychic.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

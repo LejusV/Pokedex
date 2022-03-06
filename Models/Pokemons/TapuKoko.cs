@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			115, 85, // Attack & Defense
 			95, 75, // Special Attack & Defense
-			130			
-		) {}
+			130		
+		)
+		{
+			this._height = 18;
+			this._weight = 205;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tapu-Koko Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public TapuKoko() : base(
 			785,
 			SpecieTapuKoko.Instance, // Pokemon Specie
 			Electric.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			95, 115, // Attack & Defense
 			130, 115, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 10;
+			this._weight = 805;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magearna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Magearna() : base(
 			801,
 			SpecieMagearna.Instance, // Pokemon Specie
 			Steel.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

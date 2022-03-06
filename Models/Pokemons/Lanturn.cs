@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			125, // HPs
 			58, 58, // Attack & Defense
 			76, 76, // Special Attack & Defense
-			67			
-		) {}
+			67		
+		)
+		{
+			this._height = 12;
+			this._weight = 225;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lanturn Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Lanturn() : base(
 			171,
 			SpecieLanturn.Instance, // Pokemon Specie
 			Water.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

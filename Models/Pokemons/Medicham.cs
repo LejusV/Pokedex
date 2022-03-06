@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			60, 75, // Attack & Defense
 			60, 75, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 13;
+			this._weight = 315;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Medicham Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Medicham() : base(
 			308,
 			SpecieMedicham.Instance, // Pokemon Specie
 			Fighting.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

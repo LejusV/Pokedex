@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			55, 70, // Attack & Defense
 			55, 95, // Special Attack & Defense
-			110			
-		) {}
+			110		
+		)
+		{
+			this._height = 8;
+			this._weight = 30;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jumpluff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Jumpluff() : base(
 			189,
 			SpecieJumpluff.Instance, // Pokemon Specie
 			Grass.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			108, // HPs
 			130, 95, // Attack & Defense
 			80, 85, // Special Attack & Defense
-			102			
-		) {}
+			102		
+		)
+		{
+			this._height = 19;
+			this._weight = 950;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Garchomp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Garchomp() : base(
 			445,
 			SpecieGarchomp.Instance, // Pokemon Specie
 			Dragon.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

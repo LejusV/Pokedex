@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			67, // HPs
 			89, 116, // Attack & Defense
 			79, 116, // Special Attack & Defense
-			33			
-		) {}
+			33		
+		)
+		{
+			this._height = 13;
+			this._weight = 1870;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bronzong Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bronzong() : base(
 			437,
 			SpecieBronzong.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			130, 115, // Attack & Defense
 			85, 95, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 19;
+			this._weight = 455;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tapu-Bulu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public TapuBulu() : base(
 			787,
 			SpecieTapuBulu.Instance, // Pokemon Specie
 			Grass.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			80, 49, // Attack & Defense
 			40, 49, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 12;
+			this._weight = 1000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cufant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cufant() : base(
 			878,
 			SpecieCufant.Instance, // Pokemon Specie
 			Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

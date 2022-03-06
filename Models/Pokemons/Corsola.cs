@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			55, 95, // Attack & Defense
 			65, 95, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 6;
+			this._weight = 50;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Corsola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Corsola() : base(
 			222,
 			SpecieCorsola.Instance, // Pokemon Specie
 			Water.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

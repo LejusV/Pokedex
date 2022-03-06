@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			103, // HPs
 			93, 67, // Attack & Defense
 			71, 61, // Special Attack & Defense
-			84			
-		) {}
+			84		
+		)
+		{
+			this._height = 10;
+			this._weight = 380;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skuntank Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Skuntank() : base(
 			435,
 			SpecieSkuntank.Instance, // Pokemon Specie
 			Poison.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

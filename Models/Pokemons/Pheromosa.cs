@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			71, // HPs
 			137, 37, // Attack & Defense
 			137, 37, // Special Attack & Defense
-			151			
-		) {}
+			151		
+		)
+		{
+			this._height = 18;
+			this._weight = 250;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pheromosa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Pheromosa() : base(
 			795,
 			SpeciePheromosa.Instance, // Pokemon Specie
 			Bug.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

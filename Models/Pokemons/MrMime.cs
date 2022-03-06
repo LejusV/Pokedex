@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			45, 65, // Attack & Defense
 			100, 120, // Special Attack & Defense
-			90			
-		) {}
+			90		
+		)
+		{
+			this._height = 13;
+			this._weight = 545;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mr-Mime Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public MrMime() : base(
 			122,
 			SpecieMrMime.Instance, // Pokemon Specie
 			Psychic.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

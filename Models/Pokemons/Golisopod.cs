@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			125, 140, // Attack & Defense
 			60, 90, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 20;
+			this._weight = 1080;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golisopod Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Golisopod() : base(
 			768,
 			SpecieGolisopod.Instance, // Pokemon Specie
 			Bug.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

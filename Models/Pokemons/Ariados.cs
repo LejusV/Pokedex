@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			90, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 11;
+			this._weight = 335;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ariados Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ariados() : base(
 			168,
 			SpecieAriados.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

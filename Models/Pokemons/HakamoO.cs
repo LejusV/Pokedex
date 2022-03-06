@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			75, 90, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 12;
+			this._weight = 470;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hakamo-O Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public HakamoO() : base(
 			783,
 			SpecieHakamoO.Instance, // Pokemon Specie
 			Dragon.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

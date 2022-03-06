@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			40, 50, // Attack & Defense
 			55, 50, // Special Attack & Defense
-			25			
-		) {}
+			25		
+		)
+		{
+			this._height = 8;
+			this._weight = 395;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spheal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Spheal() : base(
 			363,
 			SpecieSpheal.Instance, // Pokemon Specie
 			Ice.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

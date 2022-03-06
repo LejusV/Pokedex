@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			53, // HPs
 			54, 53, // Attack & Defense
 			37, 46, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 4;
+			this._weight = 35;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Inkay Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Inkay() : base(
 			686,
 			SpecieInkay.Instance, // Pokemon Specie
 			Dark.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

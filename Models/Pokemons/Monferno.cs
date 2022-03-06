@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			64, // HPs
 			78, 52, // Attack & Defense
 			78, 52, // Special Attack & Defense
-			81			
-		) {}
+			81		
+		)
+		{
+			this._height = 9;
+			this._weight = 220;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Monferno Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Monferno() : base(
 			391,
 			SpecieMonferno.Instance, // Pokemon Specie
 			Fire.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

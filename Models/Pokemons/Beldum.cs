@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			55, 80, // Attack & Defense
 			35, 60, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 6;
+			this._weight = 952;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Beldum Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Beldum() : base(
 			374,
 			SpecieBeldum.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

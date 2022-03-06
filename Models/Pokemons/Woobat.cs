@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			45, 43, // Attack & Defense
 			55, 43, // Special Attack & Defense
-			72			
-		) {}
+			72		
+		)
+		{
+			this._height = 4;
+			this._weight = 21;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Woobat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Woobat() : base(
 			527,
 			SpecieWoobat.Instance, // Pokemon Specie
 			Psychic.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

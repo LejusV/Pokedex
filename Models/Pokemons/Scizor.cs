@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			130, 100, // Attack & Defense
 			55, 80, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 18;
+			this._weight = 1180;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scizor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Scizor() : base(
 			212,
 			SpecieScizor.Instance, // Pokemon Specie
 			Bug.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

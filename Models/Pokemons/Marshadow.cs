@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			125, 80, // Attack & Defense
 			90, 90, // Special Attack & Defense
-			125			
-		) {}
+			125		
+		)
+		{
+			this._height = 7;
+			this._weight = 222;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Marshadow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Marshadow() : base(
 			802,
 			SpecieMarshadow.Instance, // Pokemon Specie
 			Fighting.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

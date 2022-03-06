@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			120, 65, // Attack & Defense
 			95, 75, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 15;
+			this._weight = 610;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grimmsnarl Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Grimmsnarl() : base(
 			861,
 			SpecieGrimmsnarl.Instance, // Pokemon Specie
 			Dark.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

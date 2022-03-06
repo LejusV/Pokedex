@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			86, // HPs
 			81, 97, // Attack & Defense
 			81, 107, // Special Attack & Defense
-			43			
-		) {}
+			43		
+		)
+		{
+			this._height = 15;
+			this._weight = 604;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cradily Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cradily() : base(
 			346,
 			SpecieCradily.Instance, // Pokemon Specie
 			Rock.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

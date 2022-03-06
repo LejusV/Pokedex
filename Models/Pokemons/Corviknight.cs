@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			98, // HPs
 			87, 105, // Attack & Defense
 			53, 85, // Special Attack & Defense
-			67			
-		) {}
+			67		
+		)
+		{
+			this._height = 22;
+			this._weight = 750;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Corviknight Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Corviknight() : base(
 			823,
 			SpecieCorviknight.Instance, // Pokemon Specie
 			Flying.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

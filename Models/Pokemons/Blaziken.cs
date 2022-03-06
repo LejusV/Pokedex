@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			120, 70, // Attack & Defense
 			110, 70, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 19;
+			this._weight = 520;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Blaziken Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Blaziken() : base(
 			257,
 			SpecieBlaziken.Instance, // Pokemon Specie
 			Fire.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

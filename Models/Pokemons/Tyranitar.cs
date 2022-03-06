@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			100, // HPs
 			134, 110, // Attack & Defense
 			95, 100, // Special Attack & Defense
-			61			
-		) {}
+			61		
+		)
+		{
+			this._height = 20;
+			this._weight = 2020;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tyranitar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Tyranitar() : base(
 			248,
 			SpecieTyranitar.Instance, // Pokemon Specie
 			Rock.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

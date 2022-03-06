@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			60, 45, // Attack & Defense
 			75, 55, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 8;
+			this._weight = 125;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Morgrem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Morgrem() : base(
 			860,
 			SpecieMorgrem.Instance, // Pokemon Specie
 			Dark.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

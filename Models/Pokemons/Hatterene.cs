@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			57, // HPs
 			90, 95, // Attack & Defense
 			136, 103, // Special Attack & Defense
-			29			
-		) {}
+			29		
+		)
+		{
+			this._height = 21;
+			this._weight = 51;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hatterene Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hatterene() : base(
 			858,
 			SpecieHatterene.Instance, // Pokemon Specie
 			Psychic.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

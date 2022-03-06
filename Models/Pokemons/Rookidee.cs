@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			38, // HPs
 			47, 35, // Attack & Defense
 			33, 35, // Special Attack & Defense
-			57			
-		) {}
+			57		
+		)
+		{
+			this._height = 2;
+			this._weight = 18;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rookidee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rookidee() : base(
 			821,
 			SpecieRookidee.Instance, // Pokemon Specie
 			Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

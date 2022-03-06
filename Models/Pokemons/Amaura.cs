@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			77, // HPs
 			59, 50, // Attack & Defense
 			67, 63, // Special Attack & Defense
-			46			
-		) {}
+			46		
+		)
+		{
+			this._height = 13;
+			this._weight = 252;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Amaura Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Amaura() : base(
 			698,
 			SpecieAmaura.Instance, // Pokemon Specie
 			Rock.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

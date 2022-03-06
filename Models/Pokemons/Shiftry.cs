@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			100, 60, // Attack & Defense
 			90, 60, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 13;
+			this._weight = 596;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shiftry Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Shiftry() : base(
 			275,
 			SpecieShiftry.Instance, // Pokemon Specie
 			Grass.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

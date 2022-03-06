@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			38, 38, // Attack & Defense
 			56, 56, // Special Attack & Defense
-			67			
-		) {}
+			67		
+		)
+		{
+			this._height = 5;
+			this._weight = 120;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Chinchou Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Chinchou() : base(
 			170,
 			SpecieChinchou.Instance, // Pokemon Specie
 			Water.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

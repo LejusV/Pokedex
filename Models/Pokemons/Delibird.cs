@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			55, 45, // Attack & Defense
 			65, 45, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 9;
+			this._weight = 160;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Delibird Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Delibird() : base(
 			225,
 			SpecieDelibird.Instance, // Pokemon Specie
 			Ice.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			60, 95, // Attack & Defense
 			120, 70, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 10;
+			this._weight = 600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magneton Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Magneton() : base(
 			82,
 			SpecieMagneton.Instance, // Pokemon Specie
 			Electric.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

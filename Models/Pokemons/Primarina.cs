@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			74, 74, // Attack & Defense
 			126, 116, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 18;
+			this._weight = 440;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Primarina Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Primarina() : base(
 			730,
 			SpeciePrimarina.Instance, // Pokemon Specie
 			Water.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

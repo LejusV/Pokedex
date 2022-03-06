@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			50, 62, // Attack & Defense
 			40, 62, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 6;
+			this._weight = 310;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Trubbish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Trubbish() : base(
 			568,
 			SpecieTrubbish.Instance, // Pokemon Specie
 			Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

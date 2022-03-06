@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			110, // HPs
 			65, 105, // Attack & Defense
 			55, 95, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 12;
+			this._weight = 395;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mandibuzz Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Mandibuzz() : base(
 			630,
 			SpecieMandibuzz.Instance, // Pokemon Specie
 			Dark.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

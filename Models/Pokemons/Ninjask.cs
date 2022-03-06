@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			61, // HPs
 			90, 45, // Attack & Defense
 			50, 50, // Special Attack & Defense
-			160			
-		) {}
+			160		
+		)
+		{
+			this._height = 8;
+			this._weight = 120;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ninjask Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ninjask() : base(
 			291,
 			SpecieNinjask.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

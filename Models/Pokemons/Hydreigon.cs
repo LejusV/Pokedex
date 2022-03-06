@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			92, // HPs
 			105, 90, // Attack & Defense
 			125, 90, // Special Attack & Defense
-			98			
-		) {}
+			98		
+		)
+		{
+			this._height = 18;
+			this._weight = 1600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hydreigon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Hydreigon() : base(
 			635,
 			SpecieHydreigon.Instance, // Pokemon Specie
 			Dark.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

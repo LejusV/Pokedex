@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			45, 45, // Attack & Defense
 			74, 54, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 1;
+			this._weight = 2;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sinistea Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sinistea() : base(
 			854,
 			SpecieSinistea.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

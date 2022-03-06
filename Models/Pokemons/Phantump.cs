@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			43, // HPs
 			70, 48, // Attack & Defense
 			50, 60, // Special Attack & Defense
-			38			
-		) {}
+			38		
+		)
+		{
+			this._height = 4;
+			this._weight = 70;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Phantump Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Phantump() : base(
 			708,
 			SpeciePhantump.Instance, // Pokemon Specie
 			Ghost.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

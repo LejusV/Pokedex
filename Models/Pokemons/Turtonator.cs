@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			78, 135, // Attack & Defense
 			91, 85, // Special Attack & Defense
-			36			
-		) {}
+			36		
+		)
+		{
+			this._height = 20;
+			this._weight = 2120;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Turtonator Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Turtonator() : base(
 			776,
 			SpecieTurtonator.Instance, // Pokemon Specie
 			Fire.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

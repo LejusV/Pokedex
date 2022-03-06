@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			130, 120, // Attack & Defense
 			45, 45, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 19;
+			this._weight = 1200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rhydon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Rhydon() : base(
 			112,
 			SpecieRhydon.Instance, // Pokemon Specie
 			Ground.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

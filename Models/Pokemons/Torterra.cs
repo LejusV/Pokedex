@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			109, 105, // Attack & Defense
 			75, 85, // Special Attack & Defense
-			56			
-		) {}
+			56		
+		)
+		{
+			this._height = 22;
+			this._weight = 3100;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Torterra Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Torterra() : base(
 			389,
 			SpecieTorterra.Instance, // Pokemon Specie
 			Grass.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

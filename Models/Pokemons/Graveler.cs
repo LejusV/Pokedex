@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			95, 115, // Attack & Defense
 			45, 45, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 10;
+			this._weight = 1050;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Graveler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Graveler() : base(
 			75,
 			SpecieGraveler.Instance, // Pokemon Specie
 			Rock.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

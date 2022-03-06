@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			93, // HPs
 			90, 101, // Attack & Defense
 			60, 81, // Special Attack & Defense
-			95			
-		) {}
+			95		
+		)
+		{
+			this._height = 16;
+			this._weight = 460;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Obstagoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Obstagoon() : base(
 			862,
 			SpecieObstagoon.Instance, // Pokemon Specie
 			Dark.Instance, Normal.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

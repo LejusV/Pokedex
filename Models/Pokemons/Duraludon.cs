@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			95, 115, // Attack & Defense
 			120, 50, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 18;
+			this._weight = 400;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Duraludon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Duraludon() : base(
 			884,
 			SpecieDuraludon.Instance, // Pokemon Specie
 			Steel.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

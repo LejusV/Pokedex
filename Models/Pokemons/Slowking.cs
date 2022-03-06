@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			95, // HPs
 			75, 80, // Attack & Defense
 			100, 110, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 20;
+			this._weight = 795;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Slowking Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Slowking() : base(
 			199,
 			SpecieSlowking.Instance, // Pokemon Specie
 			Water.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

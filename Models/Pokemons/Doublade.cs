@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			59, // HPs
 			110, 150, // Attack & Defense
 			45, 49, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 8;
+			this._weight = 45;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Doublade Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Doublade() : base(
 			680,
 			SpecieDoublade.Instance, // Pokemon Specie
 			Steel.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			125, 100, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 16;
+			this._weight = 700;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bisharp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bisharp() : base(
 			625,
 			SpecieBisharp.Instance, // Pokemon Specie
 			Dark.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

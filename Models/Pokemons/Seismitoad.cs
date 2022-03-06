@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			105, // HPs
 			95, 75, // Attack & Defense
 			85, 75, // Special Attack & Defense
-			74			
-		) {}
+			74		
+		)
+		{
+			this._height = 15;
+			this._weight = 620;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Seismitoad Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Seismitoad() : base(
 			537,
 			SpecieSeismitoad.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

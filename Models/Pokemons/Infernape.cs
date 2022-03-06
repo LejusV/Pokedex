@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			76, // HPs
 			104, 71, // Attack & Defense
 			104, 71, // Special Attack & Defense
-			108			
-		) {}
+			108		
+		)
+		{
+			this._height = 12;
+			this._weight = 550;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Infernape Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Infernape() : base(
 			392,
 			SpecieInfernape.Instance, // Pokemon Specie
 			Fire.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

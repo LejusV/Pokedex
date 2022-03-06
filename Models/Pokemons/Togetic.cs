@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			40, 85, // Attack & Defense
 			80, 105, // Special Attack & Defense
-			40			
-		) {}
+			40		
+		)
+		{
+			this._height = 6;
+			this._weight = 32;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Togetic Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Togetic() : base(
 			176,
 			SpecieTogetic.Instance, // Pokemon Specie
 			Fairy.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

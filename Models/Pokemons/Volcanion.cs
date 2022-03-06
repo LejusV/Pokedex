@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			110, 120, // Attack & Defense
 			130, 90, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 17;
+			this._weight = 1950;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Volcanion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Volcanion() : base(
 			721,
 			SpecieVolcanion.Instance, // Pokemon Specie
 			Fire.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

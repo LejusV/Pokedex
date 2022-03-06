@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			49, // HPs
 			66, 70, // Attack & Defense
 			44, 55, // Special Attack & Defense
-			51			
-		) {}
+			51		
+		)
+		{
+			this._height = 4;
+			this._weight = 50;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pumpkaboo-Average Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public PumpkabooAverage() : base(
 			710,
 			SpeciePumpkabooAverage.Instance, // Pokemon Specie
 			Ghost.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

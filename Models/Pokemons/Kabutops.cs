@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			115, 105, // Attack & Defense
 			65, 70, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 13;
+			this._weight = 405;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kabutops Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Kabutops() : base(
 			141,
 			SpecieKabutops.Instance, // Pokemon Specie
 			Rock.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

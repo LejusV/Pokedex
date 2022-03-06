@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			35, // HPs
 			55, 35, // Attack & Defense
 			30, 30, // Special Attack & Defense
-			35			
-		) {}
+			35		
+		)
+		{
+			this._height = 5;
+			this._weight = 136;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Poochyena Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Poochyena() : base(
 			261,
 			SpeciePoochyena.Instance, // Pokemon Specie
 			Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

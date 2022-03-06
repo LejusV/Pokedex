@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			45, 40, // Attack & Defense
 			55, 40, // Special Attack & Defense
-			84			
-		) {}
+			84		
+		)
+		{
+			this._height = 1;
+			this._weight = 2;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cutiefly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cutiefly() : base(
 			742,
 			SpecieCutiefly.Instance, // Pokemon Specie
 			Bug.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

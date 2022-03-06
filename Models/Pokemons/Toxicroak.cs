@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			83, // HPs
 			106, 65, // Attack & Defense
 			86, 65, // Special Attack & Defense
-			85			
-		) {}
+			85		
+		)
+		{
+			this._height = 13;
+			this._weight = 444;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxicroak Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Toxicroak() : base(
 			454,
 			SpecieToxicroak.Instance, // Pokemon Specie
 			Poison.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

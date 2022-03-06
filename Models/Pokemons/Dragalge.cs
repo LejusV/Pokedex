@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			65, // HPs
 			75, 90, // Attack & Defense
 			97, 123, // Special Attack & Defense
-			44			
-		) {}
+			44		
+		)
+		{
+			this._height = 18;
+			this._weight = 815;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dragalge Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dragalge() : base(
 			691,
 			SpecieDragalge.Instance, // Pokemon Specie
 			Poison.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

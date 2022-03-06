@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			45, // HPs
 			30, 15, // Attack & Defense
 			85, 65, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 4;
+			this._weight = 60;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Smoochum Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Smoochum() : base(
 			238,
 			SpecieSmoochum.Instance, // Pokemon Specie
 			Ice.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

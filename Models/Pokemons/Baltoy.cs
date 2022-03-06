@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			40, 55, // Attack & Defense
 			40, 70, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 5;
+			this._weight = 215;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Baltoy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Baltoy() : base(
 			343,
 			SpecieBaltoy.Instance, // Pokemon Specie
 			Ground.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

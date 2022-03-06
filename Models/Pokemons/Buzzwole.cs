@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			107, // HPs
 			139, 139, // Attack & Defense
 			53, 53, // Special Attack & Defense
-			79			
-		) {}
+			79		
+		)
+		{
+			this._height = 24;
+			this._weight = 3336;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Buzzwole Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Buzzwole() : base(
 			794,
 			SpecieBuzzwole.Instance, // Pokemon Specie
 			Bug.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

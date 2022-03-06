@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			130, 80, // Attack & Defense
 			60, 60, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 12;
+			this._weight = 392;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Breloom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Breloom() : base(
 			286,
 			SpecieBreloom.Instance, // Pokemon Specie
 			Grass.Instance, Fighting.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

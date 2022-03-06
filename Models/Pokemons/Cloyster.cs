@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			95, 180, // Attack & Defense
 			85, 45, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 15;
+			this._weight = 1325;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cloyster Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Cloyster() : base(
 			91,
 			SpecieCloyster.Instance, // Pokemon Specie
 			Water.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

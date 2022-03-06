@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			74, // HPs
 			94, 131, // Attack & Defense
 			54, 116, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 10;
+			this._weight = 1100;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ferrothorn Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Ferrothorn() : base(
 			598,
 			SpecieFerrothorn.Instance, // Pokemon Specie
 			Grass.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

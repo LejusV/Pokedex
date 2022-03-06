@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			77, // HPs
 			70, 90, // Attack & Defense
 			145, 75, // Special Attack & Defense
-			43			
-		) {}
+			43		
+		)
+		{
+			this._height = 15;
+			this._weight = 450;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vikavolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Vikavolt() : base(
 			738,
 			SpecieVikavolt.Instance, // Pokemon Specie
 			Bug.Instance, Electric.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

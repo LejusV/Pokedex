@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			137, // HPs
 			137, 107, // Attack & Defense
 			113, 89, // Special Attack & Defense
-			97			
-		) {}
+			97		
+		)
+		{
+			this._height = 34;
+			this._weight = 2300;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Solgaleo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Solgaleo() : base(
 			791,
 			SpecieSolgaleo.Instance, // Pokemon Specie
 			Psychic.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			60, 90, // Attack & Defense
 			60, 70, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 11;
+			this._weight = 780;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carkol Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Carkol() : base(
 			838,
 			SpecieCarkol.Instance, // Pokemon Specie
 			Rock.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			80, // HPs
 			135, 130, // Attack & Defense
 			95, 90, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 16;
+			this._weight = 5500;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Metagross Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Metagross() : base(
 			376,
 			SpecieMetagross.Instance, // Pokemon Specie
 			Steel.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

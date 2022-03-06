@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			90, // HPs
 			90, 100, // Attack & Defense
 			80, 90, // Special Attack & Defense
-			55			
-		) {}
+			55		
+		)
+		{
+			this._height = 20;
+			this._weight = 1750;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arctovish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Arctovish() : base(
 			883,
 			SpecieArctovish.Instance, // Pokemon Specie
 			Water.Instance, Ice.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

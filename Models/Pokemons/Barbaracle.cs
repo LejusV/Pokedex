@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			72, // HPs
 			105, 115, // Attack & Defense
 			54, 86, // Special Attack & Defense
-			68			
-		) {}
+			68		
+		)
+		{
+			this._height = 13;
+			this._weight = 960;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Barbaracle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Barbaracle() : base(
 			689,
 			SpecieBarbaracle.Instance, // Pokemon Specie
 			Rock.Instance, Water.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

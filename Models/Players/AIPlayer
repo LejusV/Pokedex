@@ -1,8 +1,4 @@
-using Pokedex.Enums;
-using System;
-using System.Collections.Generic;
-
-namespace Pokedex.Models
+namespace Pokedex.Models.Players
 {
     internal class AIPlayer : Player
     {

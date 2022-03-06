@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			55, 90, // Attack & Defense
 			145, 90, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 10;
+			this._weight = 343;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Chandelure Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Chandelure() : base(
 			609,
 			SpecieChandelure.Instance, // Pokemon Specie
 			Ghost.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

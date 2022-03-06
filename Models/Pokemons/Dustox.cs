@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			50, 70, // Attack & Defense
 			50, 90, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 12;
+			this._weight = 316;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dustox Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Dustox() : base(
 			269,
 			SpecieDustox.Instance, // Pokemon Specie
 			Bug.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

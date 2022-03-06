@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			85, // HPs
 			110, 76, // Attack & Defense
 			65, 82, // Special Attack & Defense
-			56			
-		) {}
+			56		
+		)
+		{
+			this._height = 15;
+			this._weight = 710;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Trevenant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Trevenant() : base(
 			709,
 			SpecieTrevenant.Instance, // Pokemon Specie
 			Ghost.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

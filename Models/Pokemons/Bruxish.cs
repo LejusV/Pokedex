@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			68, // HPs
 			105, 70, // Attack & Defense
 			70, 70, // Special Attack & Defense
-			92			
-		) {}
+			92		
+		)
+		{
+			this._height = 9;
+			this._weight = 190;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bruxish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Bruxish() : base(
 			779,
 			SpecieBruxish.Instance, // Pokemon Specie
 			Water.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			110, // HPs
 			80, 120, // Attack & Defense
 			80, 90, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 28;
+			this._weight = 3105;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Coalossal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Coalossal() : base(
 			839,
 			SpecieCoalossal.Instance, // Pokemon Specie
 			Rock.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

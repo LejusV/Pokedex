@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			48, 43, // Attack & Defense
 			46, 41, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 4;
+			this._weight = 19;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Barboach Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Barboach() : base(
 			339,
 			SpecieBarboach.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			85, 55, // Attack & Defense
 			50, 55, // Special Attack & Defense
-			60			
-		) {}
+			60		
+		)
+		{
+			this._height = 11;
+			this._weight = 288;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Larvesta Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Larvesta() : base(
 			636,
 			SpecieLarvesta.Instance, // Pokemon Specie
 			Bug.Instance, Fire.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			50, // HPs
 			72, 35, // Attack & Defense
 			35, 35, // Special Attack & Defense
-			65			
-		) {}
+			65		
+		)
+		{
+			this._height = 7;
+			this._weight = 152;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sandile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Sandile() : base(
 			551,
 			SpecieSandile.Instance, // Pokemon Specie
 			Ground.Instance, Dark.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

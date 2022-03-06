@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			60, 62, // Attack & Defense
 			100, 82, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 8;
+			this._weight = 36;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Masquerain Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Masquerain() : base(
 			284,
 			SpecieMasquerain.Instance, // Pokemon Specie
 			Bug.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			78, // HPs
 			107, 75, // Attack & Defense
 			100, 100, // Special Attack & Defense
-			70			
-		) {}
+			70		
+		)
+		{
+			this._height = 16;
+			this._weight = 366;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Decidueye Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Decidueye() : base(
 			724,
 			SpecieDecidueye.Instance, // Pokemon Specie
 			Grass.Instance, Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			20, // HPs
 			40, 90, // Attack & Defense
 			30, 90, // Special Attack & Defense
-			25			
-		) {}
+			25		
+		)
+		{
+			this._height = 8;
+			this._weight = 150;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Duskull Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Duskull() : base(
 			355,
 			SpecieDuskull.Instance, // Pokemon Specie
 			Ghost.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

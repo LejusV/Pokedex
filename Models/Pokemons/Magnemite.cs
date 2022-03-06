@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			25, // HPs
 			35, 70, // Attack & Defense
 			95, 55, // Special Attack & Defense
-			45			
-		) {}
+			45		
+		)
+		{
+			this._height = 3;
+			this._weight = 60;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magnemite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Magnemite() : base(
 			81,
 			SpecieMagnemite.Instance, // Pokemon Specie
 			Electric.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

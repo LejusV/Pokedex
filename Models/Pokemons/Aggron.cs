@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			70, // HPs
 			110, 180, // Attack & Defense
 			60, 60, // Special Attack & Defense
-			50			
-		) {}
+			50		
+		)
+		{
+			this._height = 21;
+			this._weight = 3600;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aggron Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Aggron() : base(
 			306,
 			SpecieAggron.Instance, // Pokemon Specie
 			Steel.Instance, Rock.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			40, // HPs
 			40, 80, // Attack & Defense
 			40, 40, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 2;
+			this._weight = 5;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Applin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Applin() : base(
 			840,
 			SpecieApplin.Instance, // Pokemon Specie
 			Grass.Instance, Dragon.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			45, 50, // Attack & Defense
 			45, 65, // Special Attack & Defense
-			80			
-		) {}
+			80		
+		)
+		{
+			this._height = 6;
+			this._weight = 10;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skiploom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Skiploom() : base(
 			188,
 			SpecieSkiploom.Instance, // Pokemon Specie
 			Grass.Instance, Flying.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

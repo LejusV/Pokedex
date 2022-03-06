@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			115, // HPs
 			45, 20, // Attack & Defense
 			45, 25, // Special Attack & Defense
-			20			
-		) {}
+			20		
+		)
+		{
+			this._height = 5;
+			this._weight = 55;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jigglypuff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Jigglypuff() : base(
 			39,
 			SpecieJigglypuff.Instance, // Pokemon Specie
 			Normal.Instance, Fairy.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

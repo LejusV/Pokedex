@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			55, // HPs
 			45, 45, // Attack & Defense
 			25, 25, // Special Attack & Defense
-			15			
-		) {}
+			15		
+		)
+		{
+			this._height = 4;
+			this._weight = 85;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wooper Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Wooper() : base(
 			194,
 			SpecieWooper.Instance, // Pokemon Specie
 			Water.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

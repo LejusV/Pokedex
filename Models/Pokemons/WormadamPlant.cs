@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			60, // HPs
 			59, 85, // Attack & Defense
 			79, 105, // Special Attack & Defense
-			36			
-		) {}
+			36		
+		)
+		{
+			this._height = 5;
+			this._weight = 65;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wormadam-Plant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public WormadamPlant() : base(
 			413,
 			SpecieWormadamPlant.Instance, // Pokemon Specie
 			Bug.Instance, Grass.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			86, // HPs
 			92, 88, // Attack & Defense
 			68, 75, // Special Attack & Defense
-			73			
-		) {}
+			73		
+		)
+		{
+			this._height = 15;
+			this._weight = 470;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Malamar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Malamar() : base(
 			687,
 			SpecieMalamar.Instance, // Pokemon Specie
 			Dark.Instance, Psychic.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

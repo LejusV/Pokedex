@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			98, 70, // Attack & Defense
 			114, 70, // Special Attack & Defense
-			75			
-		) {}
+			75		
+		)
+		{
+			this._height = 16;
+			this._weight = 400;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxtricity-Amped Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public ToxtricityAmped() : base(
 			849,
 			SpecieToxtricityAmped.Instance, // Pokemon Specie
 			Electric.Instance, Poison.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

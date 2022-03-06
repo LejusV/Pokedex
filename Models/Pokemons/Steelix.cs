@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			75, // HPs
 			85, 200, // Attack & Defense
 			55, 65, // Special Attack & Defense
-			30			
-		) {}
+			30		
+		)
+		{
+			this._height = 92;
+			this._weight = 4000;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Steelix Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Steelix() : base(
 			208,
 			SpecieSteelix.Instance, // Pokemon Specie
 			Steel.Instance, Ground.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion

@@ -1,5 +1,5 @@
 using Pokedex.Models;
-using Pokedex.Models.Types;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Pokemons
 {
@@ -28,8 +28,12 @@ namespace Pokedex.Models.Pokemons
 			61, // HPs
 			131, 211, // Attack & Defense
 			53, 101, // Special Attack & Defense
-			13			
-		) {}
+			13		
+		)
+		{
+			this._height = 55;
+			this._weight = 8200;
+		}
 		#endregion
 	}
 	#endregion
@@ -72,11 +76,13 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stakataka Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
 		/// </summary>
+		/*
 		public Stakataka() : base(
 			805,
 			SpecieStakataka.Instance, // Pokemon Specie
 			Rock.Instance, Steel.Instance			
 		) {}
+		*/
 		#endregion
 	}
 	#endregion
