@@ -49,15 +49,14 @@ namespace Pokedex.Models.Pokemons
 		#region Specie{pokeName} Builder
 		public Specie{pokeNameNoSpace}() : base(
 			"{pokeName}",
+			{poke["height"]},
+			{poke["weight"]},
 			{pokeStats["hp"]}, // HPs
 			{pokeStats["attack"]}, {pokeStats["defense"]}, // Attack & Defense
 			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense
 			{pokeStats["speed"]}		
 		)
-		{{
-			this._height = {poke["height"]};
-			this._weight = {poke["weight"]};
-		}}
+		{{}}
 		#endregion
 	}}
 	#endregion

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using Pokedex;
 
 namespace Pokedex.Models
 {
-    public class Pokemon
+    public abstract class Pokemon
     {
         #region Variables
         //PokemonDB db = new PokemonDB();
@@ -218,12 +217,12 @@ namespace Pokedex.Models
                     output.AppendLine($"\tSpecie Attributes :");
 
                     output.Append($"\t\tStats : ");
-                    output.AppendLine($"\t\t\tHP {this._specie.Stats.Get("hp"), 3}");
-                    output.Append($"\t\t\tATK {this._specie.Stats.Get("attack"), 3}, ");
-                    output.AppendLine($"DEF {this._specie.Stats.Get("defense"), 3}");
-                    output.Append($"\t\t\tSP_ATK {this._specie.Stats.Get("sp_attack"), 3}, ");
-                    output.AppendLine($"\t\t\tSP_DEF {this._specie.Stats.Get("sp_defense"), 3}");
-                    output.AppendLine($"\t\t\tSPEED {this._specie.Stats.Get("speed"), 3}");
+                    output.AppendLine($"\t\t\tHP {this._specie.Stats.Get("HP"), 3}");
+                    output.Append($"\t\t\tATK {this._specie.Stats.Get("ATK"), 3}, ");
+                    output.AppendLine($"DEF {this._specie.Stats.Get("DEF"), 3}");
+                    output.Append($"\t\t\tSP_ATK {this._specie.Stats.Get("SP_ATK"), 3}, ");
+                    output.AppendLine($"\t\t\tSP_DEF {this._specie.Stats.Get("SP_DEF"), 3}");
+                    output.AppendLine($"\t\t\tSPEED {this._specie.Stats.Get("SPEED"), 3}");
                     return output.ToString();
                 }
             }
@@ -285,10 +284,9 @@ namespace Pokedex.Models
 
         public void CalculateStats()
         {
-            this._calculated_stats.Set( "hp" , (int) ( ( 2 * _specie.Stats.Get("hp") + _iv.Get("hp") + (_ev.Get("hp") / 4) ) * _level / 100 ) + _level + 10 );
+            this._calculated_stats.Set( "HP" , (int) ( ( 2 * _specie.Stats.Get("HP") + _iv.Get("HP") + (_ev.Get("HP") / 4) ) * _level / 100 ) + _level + 10 );
 
-            string[] keys = {"attack", "defense", "sp_attack", "sp_defense", "speed"};
-            foreach (string key in keys)
+            foreach (string key in PokemonStats.Keys)
             {
                 int _base = _specie.Stats.Get(key);
                 int iv = _iv.Get(key);
@@ -304,7 +302,7 @@ namespace Pokedex.Models
         public void ResetCurrentStats()
         {
             this._calculated_stats.CopyTo(this._current_stats);
-            this._current_stats.Set("hp", this._current_stats.Get("hp"));
+            this._current_stats.Set("HP", this._current_stats.Get("HP"));
         }
         #endregion
     }

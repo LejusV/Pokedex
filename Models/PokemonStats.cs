@@ -6,12 +6,7 @@ namespace Pokedex.Models
     {
         private Dictionary<string, int> _stats;
 
-    private string[] keys = {"hp", "attack", "defense", "sp_attack", "sp_defense", "speed"};
-
-        public string[] Keys
-        {
-            get {return keys;}
-        }
+        public static readonly string[] Keys = {"HP", "ATK", "DEF", "SP_ATK", "SP_DEF", "SPEED"};
 
         public int Get(string key)
         {
@@ -32,12 +27,12 @@ namespace Pokedex.Models
         {
             _stats = new Dictionary<string, int>
             {
-                {"hp", hp},
-                {"attack", attack},
-                {"defense", defense},
-                {"sp_attack", sp_attack},
-                {"sp_defense", sp_defense},
-                {"speed", speed}
+                {"HP", hp},
+                {"ATK", attack},
+                {"DEF", defense},
+                {"SP_ATK", sp_attack},
+                {"SP_DEF", sp_defense},
+                {"SPEED", speed}
             };
         }
     }
