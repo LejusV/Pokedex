@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVanillish Builder
 		public SpecieVanillish() : base(
 			"Vanillish",
+			1.1,
+			41.0,
 			51, // HPs
 			65, 65, // Attack & Defense
 			80, 75, // Special Attack & Defense
 			59		
 		)
-		{
-			this._height = 11;
-			this._weight = 410;
-		}
+		{}
 		#endregion
 	}
 	#endregion

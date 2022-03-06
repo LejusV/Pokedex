@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnorlax Builder
 		public SpecieSnorlax() : base(
 			"Snorlax",
+			2.1,
+			460.0,
 			160, // HPs
 			110, 65, // Attack & Defense
 			65, 110, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 21;
-			this._weight = 4600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

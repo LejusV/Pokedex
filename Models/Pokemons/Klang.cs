@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKlang Builder
 		public SpecieKlang() : base(
 			"Klang",
+			0.6,
+			51.0,
 			60, // HPs
 			80, 95, // Attack & Defense
 			70, 85, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 510;
-		}
+		{}
 		#endregion
 	}
 	#endregion

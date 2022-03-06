@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLurantis Builder
 		public SpecieLurantis() : base(
 			"Lurantis",
+			0.9,
+			18.5,
 			70, // HPs
 			105, 90, // Attack & Defense
 			80, 90, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 9;
-			this._weight = 185;
-		}
+		{}
 		#endregion
 	}
 	#endregion

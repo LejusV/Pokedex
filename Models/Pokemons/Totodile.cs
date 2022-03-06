@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTotodile Builder
 		public SpecieTotodile() : base(
 			"Totodile",
+			0.6,
+			9.5,
 			50, // HPs
 			65, 64, // Attack & Defense
 			44, 48, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 6;
-			this._weight = 95;
-		}
+		{}
 		#endregion
 	}
 	#endregion

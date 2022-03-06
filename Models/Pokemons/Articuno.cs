@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArticuno Builder
 		public SpecieArticuno() : base(
 			"Articuno",
+			1.7,
+			55.4,
 			90, // HPs
 			85, 100, // Attack & Defense
 			95, 125, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 17;
-			this._weight = 554;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlareon Builder
 		public SpecieFlareon() : base(
 			"Flareon",
+			0.9,
+			25.0,
 			65, // HPs
 			130, 60, // Attack & Defense
 			95, 110, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 9;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

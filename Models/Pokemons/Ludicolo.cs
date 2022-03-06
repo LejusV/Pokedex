@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLudicolo Builder
 		public SpecieLudicolo() : base(
 			"Ludicolo",
+			1.5,
+			55.0,
 			80, // HPs
 			70, 70, // Attack & Defense
 			90, 100, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 15;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

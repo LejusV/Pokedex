@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLugia Builder
 		public SpecieLugia() : base(
 			"Lugia",
+			5.2,
+			216.0,
 			106, // HPs
 			90, 130, // Attack & Defense
 			90, 154, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 52;
-			this._weight = 2160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

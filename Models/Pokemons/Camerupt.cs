@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCamerupt Builder
 		public SpecieCamerupt() : base(
 			"Camerupt",
+			1.9,
+			220.0,
 			70, // HPs
 			100, 70, // Attack & Defense
 			105, 75, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 19;
-			this._weight = 2200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

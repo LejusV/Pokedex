@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNosepass Builder
 		public SpecieNosepass() : base(
 			"Nosepass",
+			1.0,
+			97.0,
 			30, // HPs
 			45, 135, // Attack & Defense
 			45, 90, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 10;
-			this._weight = 970;
-		}
+		{}
 		#endregion
 	}
 	#endregion

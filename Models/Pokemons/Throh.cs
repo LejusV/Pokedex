@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieThroh Builder
 		public SpecieThroh() : base(
 			"Throh",
+			1.3,
+			55.5,
 			120, // HPs
 			100, 85, // Attack & Defense
 			30, 85, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 13;
-			this._weight = 555;
-		}
+		{}
 		#endregion
 	}
 	#endregion

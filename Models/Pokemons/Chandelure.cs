@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChandelure Builder
 		public SpecieChandelure() : base(
 			"Chandelure",
+			1.0,
+			34.3,
 			60, // HPs
 			55, 90, // Attack & Defense
 			145, 90, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 10;
-			this._weight = 343;
-		}
+		{}
 		#endregion
 	}
 	#endregion

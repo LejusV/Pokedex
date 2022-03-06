@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKingdra Builder
 		public SpecieKingdra() : base(
 			"Kingdra",
+			1.8,
+			152.0,
 			75, // HPs
 			95, 95, // Attack & Defense
 			95, 95, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 18;
-			this._weight = 1520;
-		}
+		{}
 		#endregion
 	}
 	#endregion

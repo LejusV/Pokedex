@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGarbodor Builder
 		public SpecieGarbodor() : base(
 			"Garbodor",
+			1.9,
+			107.3,
 			80, // HPs
 			95, 82, // Attack & Defense
 			60, 82, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 19;
-			this._weight = 1073;
-		}
+		{}
 		#endregion
 	}
 	#endregion

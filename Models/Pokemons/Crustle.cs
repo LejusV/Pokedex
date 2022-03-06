@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCrustle Builder
 		public SpecieCrustle() : base(
 			"Crustle",
+			1.4,
+			200.0,
 			70, // HPs
 			105, 125, // Attack & Defense
 			65, 75, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 14;
-			this._weight = 2000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

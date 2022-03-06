@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEelektrik Builder
 		public SpecieEelektrik() : base(
 			"Eelektrik",
+			1.2,
+			22.0,
 			65, // HPs
 			85, 70, // Attack & Defense
 			75, 70, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 12;
-			this._weight = 220;
-		}
+		{}
 		#endregion
 	}
 	#endregion

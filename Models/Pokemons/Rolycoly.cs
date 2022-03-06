@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRolycoly Builder
 		public SpecieRolycoly() : base(
 			"Rolycoly",
+			0.3,
+			12.0,
 			30, // HPs
 			40, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 3;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

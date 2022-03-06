@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMr-Rime Builder
 		public SpecieMrRime() : base(
 			"Mr-Rime",
+			1.5,
+			58.2,
 			80, // HPs
 			85, 75, // Attack & Defense
 			110, 100, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 15;
-			this._weight = 582;
-		}
+		{}
 		#endregion
 	}
 	#endregion

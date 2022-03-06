@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTrubbish Builder
 		public SpecieTrubbish() : base(
 			"Trubbish",
+			0.6,
+			31.0,
 			50, // HPs
 			50, 62, // Attack & Defense
 			40, 62, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 310;
-		}
+		{}
 		#endregion
 	}
 	#endregion

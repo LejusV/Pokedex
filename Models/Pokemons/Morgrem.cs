@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMorgrem Builder
 		public SpecieMorgrem() : base(
 			"Morgrem",
+			0.8,
+			12.5,
 			65, // HPs
 			60, 45, // Attack & Defense
 			75, 55, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 8;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

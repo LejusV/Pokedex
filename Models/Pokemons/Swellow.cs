@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwellow Builder
 		public SpecieSwellow() : base(
 			"Swellow",
+			0.7,
+			19.8,
 			60, // HPs
 			85, 60, // Attack & Defense
 			75, 50, // Special Attack & Defense
 			125		
 		)
-		{
-			this._height = 7;
-			this._weight = 198;
-		}
+		{}
 		#endregion
 	}
 	#endregion

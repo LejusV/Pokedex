@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNincada Builder
 		public SpecieNincada() : base(
 			"Nincada",
+			0.5,
+			5.5,
 			31, // HPs
 			45, 90, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 5;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

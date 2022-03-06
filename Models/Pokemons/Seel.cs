@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeel Builder
 		public SpecieSeel() : base(
 			"Seel",
+			1.1,
+			90.0,
 			65, // HPs
 			45, 55, // Attack & Defense
 			45, 70, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 11;
-			this._weight = 900;
-		}
+		{}
 		#endregion
 	}
 	#endregion

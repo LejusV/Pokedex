@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVanilluxe Builder
 		public SpecieVanilluxe() : base(
 			"Vanilluxe",
+			1.3,
+			57.5,
 			71, // HPs
 			95, 85, // Attack & Defense
 			110, 95, // Special Attack & Defense
 			79		
 		)
-		{
-			this._height = 13;
-			this._weight = 575;
-		}
+		{}
 		#endregion
 	}
 	#endregion

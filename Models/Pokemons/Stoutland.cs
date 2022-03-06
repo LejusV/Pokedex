@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStoutland Builder
 		public SpecieStoutland() : base(
 			"Stoutland",
+			1.2,
+			61.0,
 			85, // HPs
 			110, 90, // Attack & Defense
 			45, 90, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 12;
-			this._weight = 610;
-		}
+		{}
 		#endregion
 	}
 	#endregion

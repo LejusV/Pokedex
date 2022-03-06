@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNumel Builder
 		public SpecieNumel() : base(
 			"Numel",
+			0.7,
+			24.0,
 			60, // HPs
 			60, 40, // Attack & Defense
 			65, 45, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 7;
-			this._weight = 240;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSilicobra Builder
 		public SpecieSilicobra() : base(
 			"Silicobra",
+			2.2,
+			7.6,
 			52, // HPs
 			57, 75, // Attack & Defense
 			35, 50, // Special Attack & Defense
 			46		
 		)
-		{
-			this._height = 22;
-			this._weight = 76;
-		}
+		{}
 		#endregion
 	}
 	#endregion

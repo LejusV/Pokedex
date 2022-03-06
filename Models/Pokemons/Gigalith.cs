@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGigalith Builder
 		public SpecieGigalith() : base(
 			"Gigalith",
+			1.7,
+			260.0,
 			85, // HPs
 			135, 130, // Attack & Defense
 			60, 80, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 17;
-			this._weight = 2600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

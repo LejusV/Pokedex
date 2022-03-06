@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTimburr Builder
 		public SpecieTimburr() : base(
 			"Timburr",
+			0.6,
+			12.5,
 			75, // HPs
 			80, 55, // Attack & Defense
 			25, 35, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

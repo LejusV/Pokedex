@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCorviknight Builder
 		public SpecieCorviknight() : base(
 			"Corviknight",
+			2.2,
+			75.0,
 			98, // HPs
 			87, 105, // Attack & Defense
 			53, 85, // Special Attack & Defense
 			67		
 		)
-		{
-			this._height = 22;
-			this._weight = 750;
-		}
+		{}
 		#endregion
 	}
 	#endregion

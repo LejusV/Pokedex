@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSteenee Builder
 		public SpecieSteenee() : base(
 			"Steenee",
+			0.7,
+			8.2,
 			52, // HPs
 			40, 48, // Attack & Defense
 			40, 48, // Special Attack & Defense
 			62		
 		)
-		{
-			this._height = 7;
-			this._weight = 82;
-		}
+		{}
 		#endregion
 	}
 	#endregion

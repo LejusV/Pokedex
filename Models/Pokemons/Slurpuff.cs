@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlurpuff Builder
 		public SpecieSlurpuff() : base(
 			"Slurpuff",
+			0.8,
+			5.0,
 			82, // HPs
 			80, 86, // Attack & Defense
 			85, 75, // Special Attack & Defense
 			72		
 		)
-		{
-			this._height = 8;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

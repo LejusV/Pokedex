@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrimer Builder
 		public SpecieGrimer() : base(
 			"Grimer",
+			0.9,
+			30.0,
 			80, // HPs
 			80, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 9;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

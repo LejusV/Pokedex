@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWeepinbell Builder
 		public SpecieWeepinbell() : base(
 			"Weepinbell",
+			1.0,
+			6.4,
 			65, // HPs
 			90, 50, // Attack & Defense
 			85, 45, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 10;
-			this._weight = 64;
-		}
+		{}
 		#endregion
 	}
 	#endregion

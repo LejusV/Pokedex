@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMakuhita Builder
 		public SpecieMakuhita() : base(
 			"Makuhita",
+			1.0,
+			86.4,
 			72, // HPs
 			60, 30, // Attack & Defense
 			20, 30, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 10;
-			this._weight = 864;
-		}
+		{}
 		#endregion
 	}
 	#endregion

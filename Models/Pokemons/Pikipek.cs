@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePikipek Builder
 		public SpeciePikipek() : base(
 			"Pikipek",
+			0.3,
+			1.2,
 			35, // HPs
 			75, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 3;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

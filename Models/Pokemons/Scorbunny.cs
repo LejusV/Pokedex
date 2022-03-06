@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScorbunny Builder
 		public SpecieScorbunny() : base(
 			"Scorbunny",
+			0.3,
+			4.5,
 			50, // HPs
 			71, 40, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			69		
 		)
-		{
-			this._height = 3;
-			this._weight = 45;
-		}
+		{}
 		#endregion
 	}
 	#endregion

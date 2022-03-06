@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSalazzle Builder
 		public SpecieSalazzle() : base(
 			"Salazzle",
+			1.2,
+			22.2,
 			68, // HPs
 			64, 60, // Attack & Defense
 			111, 60, // Special Attack & Defense
 			117		
 		)
-		{
-			this._height = 12;
-			this._weight = 222;
-		}
+		{}
 		#endregion
 	}
 	#endregion

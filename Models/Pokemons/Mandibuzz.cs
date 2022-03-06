@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMandibuzz Builder
 		public SpecieMandibuzz() : base(
 			"Mandibuzz",
+			1.2,
+			39.5,
 			110, // HPs
 			65, 105, // Attack & Defense
 			55, 95, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 12;
-			this._weight = 395;
-		}
+		{}
 		#endregion
 	}
 	#endregion

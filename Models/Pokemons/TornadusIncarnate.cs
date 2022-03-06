@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTornadus-Incarnate Builder
 		public SpecieTornadusIncarnate() : base(
 			"Tornadus-Incarnate",
+			1.5,
+			63.0,
 			79, // HPs
 			115, 70, // Attack & Defense
 			125, 80, // Special Attack & Defense
 			111		
 		)
-		{
-			this._height = 15;
-			this._weight = 630;
-		}
+		{}
 		#endregion
 	}
 	#endregion

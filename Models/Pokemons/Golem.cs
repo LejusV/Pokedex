@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolem Builder
 		public SpecieGolem() : base(
 			"Golem",
+			1.4,
+			300.0,
 			80, // HPs
 			120, 130, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 14;
-			this._weight = 3000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

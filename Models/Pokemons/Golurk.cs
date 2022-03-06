@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolurk Builder
 		public SpecieGolurk() : base(
 			"Golurk",
+			2.8,
+			330.0,
 			89, // HPs
 			124, 80, // Attack & Defense
 			55, 80, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 28;
-			this._weight = 3300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

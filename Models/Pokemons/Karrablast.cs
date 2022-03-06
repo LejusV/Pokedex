@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKarrablast Builder
 		public SpecieKarrablast() : base(
 			"Karrablast",
+			0.5,
+			5.9,
 			50, // HPs
 			75, 45, // Attack & Defense
 			40, 45, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 59;
-		}
+		{}
 		#endregion
 	}
 	#endregion

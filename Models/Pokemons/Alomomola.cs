@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAlomomola Builder
 		public SpecieAlomomola() : base(
 			"Alomomola",
+			1.2,
+			31.6,
 			165, // HPs
 			75, 80, // Attack & Defense
 			40, 45, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 12;
-			this._weight = 316;
-		}
+		{}
 		#endregion
 	}
 	#endregion

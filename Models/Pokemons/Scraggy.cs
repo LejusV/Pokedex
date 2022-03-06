@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScraggy Builder
 		public SpecieScraggy() : base(
 			"Scraggy",
+			0.6,
+			11.8,
 			50, // HPs
 			75, 70, // Attack & Defense
 			35, 70, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 6;
-			this._weight = 118;
-		}
+		{}
 		#endregion
 	}
 	#endregion

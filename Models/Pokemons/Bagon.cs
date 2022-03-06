@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBagon Builder
 		public SpecieBagon() : base(
 			"Bagon",
+			0.6,
+			42.1,
 			45, // HPs
 			75, 60, // Attack & Defense
 			40, 30, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 421;
-		}
+		{}
 		#endregion
 	}
 	#endregion

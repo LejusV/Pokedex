@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCarvanha Builder
 		public SpecieCarvanha() : base(
 			"Carvanha",
+			0.8,
+			20.8,
 			45, // HPs
 			90, 20, // Attack & Defense
 			65, 20, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 8;
-			this._weight = 208;
-		}
+		{}
 		#endregion
 	}
 	#endregion

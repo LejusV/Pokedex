@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGuzzlord Builder
 		public SpecieGuzzlord() : base(
 			"Guzzlord",
+			5.5,
+			888.0,
 			223, // HPs
 			101, 53, // Attack & Defense
 			97, 53, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 55;
-			this._weight = 8880;
-		}
+		{}
 		#endregion
 	}
 	#endregion

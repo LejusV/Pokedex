@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCresselia Builder
 		public SpecieCresselia() : base(
 			"Cresselia",
+			1.5,
+			85.6,
 			120, // HPs
 			70, 120, // Attack & Defense
 			75, 130, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 15;
-			this._weight = 856;
-		}
+		{}
 		#endregion
 	}
 	#endregion

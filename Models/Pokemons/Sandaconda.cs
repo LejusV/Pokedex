@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSandaconda Builder
 		public SpecieSandaconda() : base(
 			"Sandaconda",
+			3.8,
+			65.5,
 			72, // HPs
 			107, 125, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			71		
 		)
-		{
-			this._height = 38;
-			this._weight = 655;
-		}
+		{}
 		#endregion
 	}
 	#endregion

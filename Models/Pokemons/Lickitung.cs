@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLickitung Builder
 		public SpecieLickitung() : base(
 			"Lickitung",
+			1.2,
+			65.5,
 			90, // HPs
 			55, 75, // Attack & Defense
 			60, 75, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 12;
-			this._weight = 655;
-		}
+		{}
 		#endregion
 	}
 	#endregion

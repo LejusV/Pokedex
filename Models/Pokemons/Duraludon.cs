@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDuraludon Builder
 		public SpecieDuraludon() : base(
 			"Duraludon",
+			1.8,
+			40.0,
 			70, // HPs
 			95, 115, // Attack & Defense
 			120, 50, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 18;
-			this._weight = 400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

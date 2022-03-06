@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCacturne Builder
 		public SpecieCacturne() : base(
 			"Cacturne",
+			1.3,
+			77.4,
 			70, // HPs
 			115, 60, // Attack & Defense
 			115, 60, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 13;
-			this._weight = 774;
-		}
+		{}
 		#endregion
 	}
 	#endregion

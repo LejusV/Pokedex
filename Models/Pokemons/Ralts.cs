@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRalts Builder
 		public SpecieRalts() : base(
 			"Ralts",
+			0.4,
+			6.6,
 			28, // HPs
 			25, 25, // Attack & Defense
 			45, 35, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 66;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAmpharos Builder
 		public SpecieAmpharos() : base(
 			"Ampharos",
+			1.4,
+			61.5,
 			90, // HPs
 			75, 85, // Attack & Defense
 			115, 90, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 14;
-			this._weight = 615;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHawlucha Builder
 		public SpecieHawlucha() : base(
 			"Hawlucha",
+			0.8,
+			21.5,
 			78, // HPs
 			92, 75, // Attack & Defense
 			74, 63, // Special Attack & Defense
 			118		
 		)
-		{
-			this._height = 8;
-			this._weight = 215;
-		}
+		{}
 		#endregion
 	}
 	#endregion

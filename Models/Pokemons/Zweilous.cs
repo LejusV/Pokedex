@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZweilous Builder
 		public SpecieZweilous() : base(
 			"Zweilous",
+			1.4,
+			50.0,
 			72, // HPs
 			85, 70, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 14;
-			this._weight = 500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

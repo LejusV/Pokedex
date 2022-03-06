@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBisharp Builder
 		public SpecieBisharp() : base(
 			"Bisharp",
+			1.6,
+			70.0,
 			65, // HPs
 			125, 100, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 16;
-			this._weight = 700;
-		}
+		{}
 		#endregion
 	}
 	#endregion

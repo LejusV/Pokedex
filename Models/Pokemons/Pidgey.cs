@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePidgey Builder
 		public SpeciePidgey() : base(
 			"Pidgey",
+			0.3,
+			1.8,
 			40, // HPs
 			45, 40, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			56		
 		)
-		{
-			this._height = 3;
-			this._weight = 18;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGoomy Builder
 		public SpecieGoomy() : base(
 			"Goomy",
+			0.3,
+			2.8,
 			45, // HPs
 			50, 35, // Attack & Defense
 			55, 75, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 3;
-			this._weight = 28;
-		}
+		{}
 		#endregion
 	}
 	#endregion

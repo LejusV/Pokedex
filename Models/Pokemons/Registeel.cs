@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegisteel Builder
 		public SpecieRegisteel() : base(
 			"Registeel",
+			1.9,
+			205.0,
 			80, // HPs
 			75, 150, // Attack & Defense
 			75, 150, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 19;
-			this._weight = 2050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

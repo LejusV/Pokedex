@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieToxapex Builder
 		public SpecieToxapex() : base(
 			"Toxapex",
+			0.7,
+			14.5,
 			50, // HPs
 			63, 152, // Attack & Defense
 			53, 142, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 7;
-			this._weight = 145;
-		}
+		{}
 		#endregion
 	}
 	#endregion

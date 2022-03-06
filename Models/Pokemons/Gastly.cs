@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGastly Builder
 		public SpecieGastly() : base(
 			"Gastly",
+			1.3,
+			0.1,
 			30, // HPs
 			35, 30, // Attack & Defense
 			100, 35, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 13;
-			this._weight = 1;
-		}
+		{}
 		#endregion
 	}
 	#endregion

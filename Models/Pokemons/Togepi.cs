@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTogepi Builder
 		public SpecieTogepi() : base(
 			"Togepi",
+			0.3,
+			1.5,
 			35, // HPs
 			20, 65, // Attack & Defense
 			40, 65, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 3;
-			this._weight = 15;
-		}
+		{}
 		#endregion
 	}
 	#endregion

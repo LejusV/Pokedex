@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpoink Builder
 		public SpecieSpoink() : base(
 			"Spoink",
+			0.7,
+			30.6,
 			60, // HPs
 			25, 35, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 7;
-			this._weight = 306;
-		}
+		{}
 		#endregion
 	}
 	#endregion

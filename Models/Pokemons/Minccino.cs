@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMinccino Builder
 		public SpecieMinccino() : base(
 			"Minccino",
+			0.4,
+			5.8,
 			55, // HPs
 			50, 40, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 4;
-			this._weight = 58;
-		}
+		{}
 		#endregion
 	}
 	#endregion

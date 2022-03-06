@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDusclops Builder
 		public SpecieDusclops() : base(
 			"Dusclops",
+			1.6,
+			30.6,
 			40, // HPs
 			70, 130, // Attack & Defense
 			60, 130, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 16;
-			this._weight = 306;
-		}
+		{}
 		#endregion
 	}
 	#endregion

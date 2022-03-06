@@ -198,11 +198,39 @@ namespace Pokedex.Models
             }
             #endregion
         
-            #region FullStatus ToString
+            #region Status ToString
             /// <summary>
             /// Status Display
             /// </summary>
-            /// <returns>Returns the formated Types string</returns>
+            /// <returns>Returns the fast Status string of this Pokemon</returns>
+            public string Status
+            {
+                get
+                {
+                    StringBuilder output = new StringBuilder();
+
+                    output.AppendLine($"┌------------------┐");
+
+                    output.AppendLine($"| {this.Nickname, -16} |");
+                    output.AppendLine($"| LvL{this.Level, 3}           |");
+
+                    output.AppendLine($"|                  |");
+
+                    output.Append($"|   {this.CurrentStats.Get("HP"), 3}");
+                    output.AppendLine($" / {this.CalculatedStats.Get("HP"), 3} HP   |");
+
+                    output.AppendLine($"└------------------┘");
+
+                    return output.ToString();
+                }
+            }
+            #endregion
+
+            #region FullStatus ToString
+            /// <summary>
+            /// FullStatus Display
+            /// </summary>
+            /// <returns>Returns the full Status string of this Pokemon</returns>
             public string FullStatus
             {
                 get
@@ -211,18 +239,51 @@ namespace Pokedex.Models
 
                     output.AppendLine($"{this._nickname}");
 
-                    output.Append($"\t{this._specie.Name} ");
+                    output.Append($"  {this._specie.Name} ");
                     output.AppendLine($"Lvl.{this._level}");
 
-                    output.AppendLine($"\tSpecie Attributes :");
+                    output.AppendLine("");
 
-                    output.Append($"\t\tStats : ");
-                    output.AppendLine($"\t\t\tHP {this._specie.Stats.Get("HP"), 3}");
-                    output.Append($"\t\t\tATK {this._specie.Stats.Get("ATK"), 3}, ");
-                    output.AppendLine($"DEF {this._specie.Stats.Get("DEF"), 3}");
-                    output.Append($"\t\t\tSP_ATK {this._specie.Stats.Get("SP_ATK"), 3}, ");
-                    output.AppendLine($"\t\t\tSP_DEF {this._specie.Stats.Get("SP_DEF"), 3}");
-                    output.AppendLine($"\t\t\tSPEED {this._specie.Stats.Get("SPEED"), 3}");
+                    output.AppendLine($"  Specie Attributes :");
+
+                    output.AppendLine("");
+
+                    output.AppendLine($"    Morphology :");
+
+                    output.AppendLine($"      Height {string.Format("{0:0.0}",this._specie.Height), 5}m");
+                    output.AppendLine($"      Weight {string.Format("{0:0.0}",this._specie.Weight), 5}kg");
+
+                    output.AppendLine("");
+
+                    output.AppendLine($"    Stats : ");
+
+                    output.Append($"      HP     {this._specie.Stats.Get("HP"), 3}  ");
+                    output.AppendLine($"SPEED  {this._specie.Stats.Get("SPEED"), 3}");
+                    output.Append($"      ATK    {this._specie.Stats.Get("ATK"), 3}  ");
+                    output.AppendLine($"DEF    {this._specie.Stats.Get("DEF"), 3}");
+                    output.Append($"      SP_ATK {this._specie.Stats.Get("SP_ATK"), 3}  ");
+                    output.AppendLine($"SP_DEF {this._specie.Stats.Get("SP_DEF"), 3}");
+
+                    output.AppendLine("");
+
+                    output.AppendLine($"  Actual Status :");
+
+                    output.AppendLine($"           {this._current_stats.Get("HP"), 3} / {this._calculated_stats.Get("HP"), 3} HP     ");
+                    output.Append($"      ATK    {this._current_stats.Get("ATK"), 3}  ");
+                    output.AppendLine($"DEF    {this._current_stats.Get("DEF"), 3}");
+                    output.Append($"      SP_ATK {this._current_stats.Get("SP_ATK"), 3}  ");
+                    output.AppendLine($"SP_DEF {this._current_stats.Get("SP_DEF"), 3}");
+                    output.AppendLine($"            SPEED  {this._current_stats.Get("SPEED"), 3}      ");
+
+                    output.AppendLine("");
+
+                    output.AppendLine($"  Learned Moves :");
+
+                    foreach (Move move in this._moves)
+                        output.AppendLine($"    ({move.PokemonType.Name}) {move.Name}");
+
+                    output.AppendLine("");
+
                     return output.ToString();
                 }
             }

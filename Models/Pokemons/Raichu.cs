@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRaichu Builder
 		public SpecieRaichu() : base(
 			"Raichu",
+			0.8,
+			30.0,
 			60, // HPs
 			90, 55, // Attack & Defense
 			90, 80, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 8;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

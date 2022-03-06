@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePupitar Builder
 		public SpeciePupitar() : base(
 			"Pupitar",
+			1.2,
+			152.0,
 			70, // HPs
 			84, 70, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			51		
 		)
-		{
-			this._height = 12;
-			this._weight = 1520;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHattrem Builder
 		public SpecieHattrem() : base(
 			"Hattrem",
+			0.6,
+			4.8,
 			57, // HPs
 			40, 65, // Attack & Defense
 			86, 73, // Special Attack & Defense
 			49		
 		)
-		{
-			this._height = 6;
-			this._weight = 48;
-		}
+		{}
 		#endregion
 	}
 	#endregion

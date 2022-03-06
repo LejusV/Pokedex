@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDeoxys-Normal Builder
 		public SpecieDeoxysNormal() : base(
 			"Deoxys-Normal",
+			1.7,
+			60.8,
 			50, // HPs
 			150, 50, // Attack & Defense
 			150, 50, // Special Attack & Defense
 			150		
 		)
-		{
-			this._height = 17;
-			this._weight = 608;
-		}
+		{}
 		#endregion
 	}
 	#endregion

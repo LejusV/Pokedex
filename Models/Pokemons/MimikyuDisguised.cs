@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMimikyu-Disguised Builder
 		public SpecieMimikyuDisguised() : base(
 			"Mimikyu-Disguised",
+			0.2,
+			0.7,
 			55, // HPs
 			90, 80, // Attack & Defense
 			50, 105, // Special Attack & Defense
 			96		
 		)
-		{
-			this._height = 2;
-			this._weight = 7;
-		}
+		{}
 		#endregion
 	}
 	#endregion

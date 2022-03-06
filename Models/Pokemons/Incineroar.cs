@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieIncineroar Builder
 		public SpecieIncineroar() : base(
 			"Incineroar",
+			1.8,
+			83.0,
 			95, // HPs
 			115, 90, // Attack & Defense
 			80, 90, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 18;
-			this._weight = 830;
-		}
+		{}
 		#endregion
 	}
 	#endregion

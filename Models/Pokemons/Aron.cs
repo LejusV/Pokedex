@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAron Builder
 		public SpecieAron() : base(
 			"Aron",
+			0.4,
+			60.0,
 			50, // HPs
 			70, 100, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 4;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

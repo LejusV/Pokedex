@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCharmeleon Builder
 		public SpecieCharmeleon() : base(
 			"Charmeleon",
+			1.1,
+			19.0,
 			58, // HPs
 			64, 58, // Attack & Defense
 			80, 65, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 11;
-			this._weight = 190;
-		}
+		{}
 		#endregion
 	}
 	#endregion

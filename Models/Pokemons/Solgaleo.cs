@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSolgaleo Builder
 		public SpecieSolgaleo() : base(
 			"Solgaleo",
+			3.4,
+			230.0,
 			137, // HPs
 			137, 107, // Attack & Defense
 			113, 89, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 34;
-			this._weight = 2300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

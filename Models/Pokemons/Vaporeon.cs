@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVaporeon Builder
 		public SpecieVaporeon() : base(
 			"Vaporeon",
+			1.0,
+			29.0,
 			130, // HPs
 			65, 60, // Attack & Defense
 			110, 95, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 290;
-		}
+		{}
 		#endregion
 	}
 	#endregion

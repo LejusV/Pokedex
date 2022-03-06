@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGirafarig Builder
 		public SpecieGirafarig() : base(
 			"Girafarig",
+			1.5,
+			41.5,
 			70, // HPs
 			80, 65, // Attack & Defense
 			90, 65, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 15;
-			this._weight = 415;
-		}
+		{}
 		#endregion
 	}
 	#endregion

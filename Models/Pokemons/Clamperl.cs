@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClamperl Builder
 		public SpecieClamperl() : base(
 			"Clamperl",
+			0.4,
+			52.5,
 			35, // HPs
 			64, 85, // Attack & Defense
 			74, 55, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 4;
-			this._weight = 525;
-		}
+		{}
 		#endregion
 	}
 	#endregion

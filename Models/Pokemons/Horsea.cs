@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHorsea Builder
 		public SpecieHorsea() : base(
 			"Horsea",
+			0.4,
+			8.0,
 			30, // HPs
 			40, 70, // Attack & Defense
 			70, 25, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 4;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

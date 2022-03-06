@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMetagross Builder
 		public SpecieMetagross() : base(
 			"Metagross",
+			1.6,
+			550.0,
 			80, // HPs
 			135, 130, // Attack & Defense
 			95, 90, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 16;
-			this._weight = 5500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

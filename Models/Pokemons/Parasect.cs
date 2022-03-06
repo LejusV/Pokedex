@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieParasect Builder
 		public SpecieParasect() : base(
 			"Parasect",
+			1.0,
+			29.5,
 			60, // HPs
 			95, 80, // Attack & Defense
 			60, 80, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 10;
-			this._weight = 295;
-		}
+		{}
 		#endregion
 	}
 	#endregion

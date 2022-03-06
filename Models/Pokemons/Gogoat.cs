@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGogoat Builder
 		public SpecieGogoat() : base(
 			"Gogoat",
+			1.7,
+			91.0,
 			123, // HPs
 			100, 62, // Attack & Defense
 			97, 81, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 17;
-			this._weight = 910;
-		}
+		{}
 		#endregion
 	}
 	#endregion

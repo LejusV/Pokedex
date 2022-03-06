@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDoduo Builder
 		public SpecieDoduo() : base(
 			"Doduo",
+			1.4,
+			39.2,
 			35, // HPs
 			85, 45, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 14;
-			this._weight = 392;
-		}
+		{}
 		#endregion
 	}
 	#endregion

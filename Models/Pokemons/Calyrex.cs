@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCalyrex Builder
 		public SpecieCalyrex() : base(
 			"Calyrex",
+			1.1,
+			7.7,
 			100, // HPs
 			80, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 11;
-			this._weight = 77;
-		}
+		{}
 		#endregion
 	}
 	#endregion

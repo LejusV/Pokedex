@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlowbro Builder
 		public SpecieSlowbro() : base(
 			"Slowbro",
+			1.6,
+			78.5,
 			95, // HPs
 			75, 110, // Attack & Defense
 			100, 80, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 16;
-			this._weight = 785;
-		}
+		{}
 		#endregion
 	}
 	#endregion

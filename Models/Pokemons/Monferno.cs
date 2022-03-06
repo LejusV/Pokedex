@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMonferno Builder
 		public SpecieMonferno() : base(
 			"Monferno",
+			0.9,
+			22.0,
 			64, // HPs
 			78, 52, // Attack & Defense
 			78, 52, // Special Attack & Defense
 			81		
 		)
-		{
-			this._height = 9;
-			this._weight = 220;
-		}
+		{}
 		#endregion
 	}
 	#endregion

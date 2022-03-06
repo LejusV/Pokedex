@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArrokuda Builder
 		public SpecieArrokuda() : base(
 			"Arrokuda",
+			0.5,
+			1.0,
 			41, // HPs
 			63, 40, // Attack & Defense
 			40, 30, // Special Attack & Defense
 			66		
 		)
-		{
-			this._height = 5;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

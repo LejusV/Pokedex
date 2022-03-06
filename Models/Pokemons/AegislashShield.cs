@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAegislash-Shield Builder
 		public SpecieAegislashShield() : base(
 			"Aegislash-Shield",
+			1.7,
+			53.0,
 			60, // HPs
 			50, 140, // Attack & Defense
 			50, 140, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 17;
-			this._weight = 530;
-		}
+		{}
 		#endregion
 	}
 	#endregion

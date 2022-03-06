@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShiftry Builder
 		public SpecieShiftry() : base(
 			"Shiftry",
+			1.3,
+			59.6,
 			90, // HPs
 			100, 60, // Attack & Defense
 			90, 60, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 13;
-			this._weight = 596;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOmastar Builder
 		public SpecieOmastar() : base(
 			"Omastar",
+			1.0,
+			35.0,
 			70, // HPs
 			60, 125, // Attack & Defense
 			115, 70, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 10;
-			this._weight = 350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

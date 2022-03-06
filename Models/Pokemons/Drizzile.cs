@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrizzile Builder
 		public SpecieDrizzile() : base(
 			"Drizzile",
+			0.7,
+			11.5,
 			65, // HPs
 			60, 55, // Attack & Defense
 			95, 55, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 7;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

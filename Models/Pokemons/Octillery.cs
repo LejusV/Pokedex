@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOctillery Builder
 		public SpecieOctillery() : base(
 			"Octillery",
+			0.9,
+			28.5,
 			75, // HPs
 			105, 75, // Attack & Defense
 			105, 75, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 9;
-			this._weight = 285;
-		}
+		{}
 		#endregion
 	}
 	#endregion

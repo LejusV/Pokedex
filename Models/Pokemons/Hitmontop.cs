@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHitmontop Builder
 		public SpecieHitmontop() : base(
 			"Hitmontop",
+			1.4,
+			48.0,
 			50, // HPs
 			95, 95, // Attack & Defense
 			35, 110, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 14;
-			this._weight = 480;
-		}
+		{}
 		#endregion
 	}
 	#endregion

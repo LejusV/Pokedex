@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSandshrew Builder
 		public SpecieSandshrew() : base(
 			"Sandshrew",
+			0.6,
+			12.0,
 			50, // HPs
 			75, 85, // Attack & Defense
 			20, 30, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 6;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

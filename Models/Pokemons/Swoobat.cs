@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwoobat Builder
 		public SpecieSwoobat() : base(
 			"Swoobat",
+			0.9,
+			10.5,
 			67, // HPs
 			57, 55, // Attack & Defense
 			77, 55, // Special Attack & Defense
 			114		
 		)
-		{
-			this._height = 9;
-			this._weight = 105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

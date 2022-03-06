@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLedian Builder
 		public SpecieLedian() : base(
 			"Ledian",
+			1.4,
+			35.6,
 			55, // HPs
 			35, 50, // Attack & Defense
 			55, 110, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 14;
-			this._weight = 356;
-		}
+		{}
 		#endregion
 	}
 	#endregion

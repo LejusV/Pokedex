@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVirizion Builder
 		public SpecieVirizion() : base(
 			"Virizion",
+			2.0,
+			200.0,
 			91, // HPs
 			90, 72, // Attack & Defense
 			90, 129, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 20;
-			this._weight = 2000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

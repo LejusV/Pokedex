@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSceptile Builder
 		public SpecieSceptile() : base(
 			"Sceptile",
+			1.7,
+			52.2,
 			70, // HPs
 			85, 65, // Attack & Defense
 			105, 85, // Special Attack & Defense
 			120		
 		)
-		{
-			this._height = 17;
-			this._weight = 522;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWeedle Builder
 		public SpecieWeedle() : base(
 			"Weedle",
+			0.3,
+			3.2,
 			40, // HPs
 			35, 30, // Attack & Defense
 			20, 20, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 3;
-			this._weight = 32;
-		}
+		{}
 		#endregion
 	}
 	#endregion

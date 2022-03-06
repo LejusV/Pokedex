@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCobalion Builder
 		public SpecieCobalion() : base(
 			"Cobalion",
+			2.1,
+			250.0,
 			91, // HPs
 			90, 129, // Attack & Defense
 			90, 72, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 21;
-			this._weight = 2500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

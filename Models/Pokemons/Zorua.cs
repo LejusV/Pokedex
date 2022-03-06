@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZorua Builder
 		public SpecieZorua() : base(
 			"Zorua",
+			0.7,
+			12.5,
 			40, // HPs
 			65, 40, // Attack & Defense
 			80, 40, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 7;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

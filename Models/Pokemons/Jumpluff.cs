@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJumpluff Builder
 		public SpecieJumpluff() : base(
 			"Jumpluff",
+			0.8,
+			3.0,
 			75, // HPs
 			55, 70, // Attack & Defense
 			55, 95, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 8;
-			this._weight = 30;
-		}
+		{}
 		#endregion
 	}
 	#endregion

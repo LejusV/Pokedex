@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAccelgor Builder
 		public SpecieAccelgor() : base(
 			"Accelgor",
+			0.8,
+			25.3,
 			80, // HPs
 			70, 40, // Attack & Defense
 			100, 60, // Special Attack & Defense
 			145		
 		)
-		{
-			this._height = 8;
-			this._weight = 253;
-		}
+		{}
 		#endregion
 	}
 	#endregion

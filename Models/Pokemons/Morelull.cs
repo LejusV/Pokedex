@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMorelull Builder
 		public SpecieMorelull() : base(
 			"Morelull",
+			0.2,
+			1.5,
 			40, // HPs
 			35, 55, // Attack & Defense
 			65, 75, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 2;
-			this._weight = 15;
-		}
+		{}
 		#endregion
 	}
 	#endregion

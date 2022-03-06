@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCloyster Builder
 		public SpecieCloyster() : base(
 			"Cloyster",
+			1.5,
+			132.5,
 			50, // HPs
 			95, 180, // Attack & Defense
 			85, 45, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 15;
-			this._weight = 1325;
-		}
+		{}
 		#endregion
 	}
 	#endregion

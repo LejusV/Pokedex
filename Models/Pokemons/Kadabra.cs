@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKadabra Builder
 		public SpecieKadabra() : base(
 			"Kadabra",
+			1.3,
+			56.5,
 			40, // HPs
 			35, 30, // Attack & Defense
 			120, 70, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 13;
-			this._weight = 565;
-		}
+		{}
 		#endregion
 	}
 	#endregion

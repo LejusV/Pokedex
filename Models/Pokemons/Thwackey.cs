@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieThwackey Builder
 		public SpecieThwackey() : base(
 			"Thwackey",
+			0.7,
+			14.0,
 			70, // HPs
 			85, 70, // Attack & Defense
 			55, 60, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 7;
-			this._weight = 140;
-		}
+		{}
 		#endregion
 	}
 	#endregion

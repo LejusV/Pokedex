@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNecrozma Builder
 		public SpecieNecrozma() : base(
 			"Necrozma",
+			2.4,
+			230.0,
 			97, // HPs
 			107, 101, // Attack & Defense
 			127, 89, // Special Attack & Defense
 			79		
 		)
-		{
-			this._height = 24;
-			this._weight = 2300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

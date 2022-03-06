@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSneasel Builder
 		public SpecieSneasel() : base(
 			"Sneasel",
+			0.9,
+			28.0,
 			55, // HPs
 			95, 55, // Attack & Defense
 			35, 75, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 9;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

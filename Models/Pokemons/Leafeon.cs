@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLeafeon Builder
 		public SpecieLeafeon() : base(
 			"Leafeon",
+			1.0,
+			25.5,
 			65, // HPs
 			110, 130, // Attack & Defense
 			60, 65, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 10;
-			this._weight = 255;
-		}
+		{}
 		#endregion
 	}
 	#endregion

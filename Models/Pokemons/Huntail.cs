@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHuntail Builder
 		public SpecieHuntail() : base(
 			"Huntail",
+			1.7,
+			27.0,
 			55, // HPs
 			104, 105, // Attack & Defense
 			94, 75, // Special Attack & Defense
 			52		
 		)
-		{
-			this._height = 17;
-			this._weight = 270;
-		}
+		{}
 		#endregion
 	}
 	#endregion

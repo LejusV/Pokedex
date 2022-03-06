@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLitwick Builder
 		public SpecieLitwick() : base(
 			"Litwick",
+			0.3,
+			3.1,
 			50, // HPs
 			30, 55, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 3;
-			this._weight = 31;
-		}
+		{}
 		#endregion
 	}
 	#endregion

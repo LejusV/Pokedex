@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWailord Builder
 		public SpecieWailord() : base(
 			"Wailord",
+			14.5,
+			398.0,
 			170, // HPs
 			90, 45, // Attack & Defense
 			90, 45, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 145;
-			this._weight = 3980;
-		}
+		{}
 		#endregion
 	}
 	#endregion

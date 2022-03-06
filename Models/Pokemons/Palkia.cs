@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePalkia Builder
 		public SpeciePalkia() : base(
 			"Palkia",
+			4.2,
+			336.0,
 			90, // HPs
 			120, 100, // Attack & Defense
 			150, 120, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 42;
-			this._weight = 3360;
-		}
+		{}
 		#endregion
 	}
 	#endregion

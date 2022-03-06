@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBinacle Builder
 		public SpecieBinacle() : base(
 			"Binacle",
+			0.5,
+			31.0,
 			42, // HPs
 			52, 67, // Attack & Defense
 			39, 56, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 5;
-			this._weight = 310;
-		}
+		{}
 		#endregion
 	}
 	#endregion

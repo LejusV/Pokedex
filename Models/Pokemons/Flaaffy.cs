@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlaaffy Builder
 		public SpecieFlaaffy() : base(
 			"Flaaffy",
+			0.8,
+			13.3,
 			70, // HPs
 			55, 55, // Attack & Defense
 			80, 60, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 8;
-			this._weight = 133;
-		}
+		{}
 		#endregion
 	}
 	#endregion

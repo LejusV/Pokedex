@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAurorus Builder
 		public SpecieAurorus() : base(
 			"Aurorus",
+			2.7,
+			225.0,
 			123, // HPs
 			77, 72, // Attack & Defense
 			99, 92, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 27;
-			this._weight = 2250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

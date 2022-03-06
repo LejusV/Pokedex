@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCofagrigus Builder
 		public SpecieCofagrigus() : base(
 			"Cofagrigus",
+			1.7,
+			76.5,
 			58, // HPs
 			50, 145, // Attack & Defense
 			95, 105, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 17;
-			this._weight = 765;
-		}
+		{}
 		#endregion
 	}
 	#endregion

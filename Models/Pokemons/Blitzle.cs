@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlitzle Builder
 		public SpecieBlitzle() : base(
 			"Blitzle",
+			0.8,
+			29.8,
 			45, // HPs
 			60, 32, // Attack & Defense
 			50, 32, // Special Attack & Defense
 			76		
 		)
-		{
-			this._height = 8;
-			this._weight = 298;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMusharna Builder
 		public SpecieMusharna() : base(
 			"Musharna",
+			1.1,
+			60.5,
 			116, // HPs
 			55, 85, // Attack & Defense
 			107, 95, // Special Attack & Defense
 			29		
 		)
-		{
-			this._height = 11;
-			this._weight = 605;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePhantump Builder
 		public SpeciePhantump() : base(
 			"Phantump",
+			0.4,
+			7.0,
 			43, // HPs
 			70, 48, // Attack & Defense
 			50, 60, // Special Attack & Defense
 			38		
 		)
-		{
-			this._height = 4;
-			this._weight = 70;
-		}
+		{}
 		#endregion
 	}
 	#endregion

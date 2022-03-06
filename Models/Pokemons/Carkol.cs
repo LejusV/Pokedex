@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCarkol Builder
 		public SpecieCarkol() : base(
 			"Carkol",
+			1.1,
+			78.0,
 			80, // HPs
 			60, 90, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 780;
-		}
+		{}
 		#endregion
 	}
 	#endregion

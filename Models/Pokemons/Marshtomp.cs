@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMarshtomp Builder
 		public SpecieMarshtomp() : base(
 			"Marshtomp",
+			0.7,
+			28.0,
 			70, // HPs
 			85, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 7;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

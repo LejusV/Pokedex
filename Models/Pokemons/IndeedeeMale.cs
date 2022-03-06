@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieIndeedee-Male Builder
 		public SpecieIndeedeeMale() : base(
 			"Indeedee-Male",
+			0.9,
+			28.0,
 			60, // HPs
 			65, 55, // Attack & Defense
 			105, 95, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 9;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeltan Builder
 		public SpecieMeltan() : base(
 			"Meltan",
+			0.2,
+			8.0,
 			46, // HPs
 			65, 65, // Attack & Defense
 			55, 35, // Special Attack & Defense
 			34		
 		)
-		{
-			this._height = 2;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

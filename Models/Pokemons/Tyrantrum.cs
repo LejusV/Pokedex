@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTyrantrum Builder
 		public SpecieTyrantrum() : base(
 			"Tyrantrum",
+			2.5,
+			270.0,
 			82, // HPs
 			121, 119, // Attack & Defense
 			69, 59, // Special Attack & Defense
 			71		
 		)
-		{
-			this._height = 25;
-			this._weight = 2700;
-		}
+		{}
 		#endregion
 	}
 	#endregion

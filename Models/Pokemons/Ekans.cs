@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEkans Builder
 		public SpecieEkans() : base(
 			"Ekans",
+			2.0,
+			6.9,
 			35, // HPs
 			60, 44, // Attack & Defense
 			40, 54, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 20;
-			this._weight = 69;
-		}
+		{}
 		#endregion
 	}
 	#endregion

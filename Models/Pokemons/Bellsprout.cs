@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBellsprout Builder
 		public SpecieBellsprout() : base(
 			"Bellsprout",
+			0.7,
+			4.0,
 			50, // HPs
 			75, 35, // Attack & Defense
 			70, 30, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 7;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

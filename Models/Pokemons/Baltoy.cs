@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBaltoy Builder
 		public SpecieBaltoy() : base(
 			"Baltoy",
+			0.5,
+			21.5,
 			40, // HPs
 			40, 55, // Attack & Defense
 			40, 70, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 5;
-			this._weight = 215;
-		}
+		{}
 		#endregion
 	}
 	#endregion

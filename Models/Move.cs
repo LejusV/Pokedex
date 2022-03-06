@@ -48,14 +48,18 @@ namespace Pokedex.Models
                 // line 1
                 output.AppendLine($"{this._name, -16}"); // Move Name (line 1)
                 // line 2
-                output.Append($"Type: {this._pokemonType.Name, -9} "); // Move PokemonType (line 2)
-                output.AppendLine($"Category: {this._category}"); // Move Category (line 2)
+                output.AppendLine("┌--------------┬--------------------┐");
+
+                output.Append($"| Type: {this._pokemonType.Name, 6} |"); // Move PokemonType (line 2)
+                output.AppendLine($" Category: {this._category, -8} |"); // Move Category (line 2)
                 // line 3
-                output.Append($"Power:   {this._power?.ToString() ?? "-", -3}    "); // Move Power (line 3)
-                output.AppendLine($"Accuracy: {this._accuracy?.ToString("#'%'") ?? "-"}"); // Move Accuracy (line 3)
+                output.Append($"| Power:   {this._power?.ToString() ?? "-", 3} | "); // Move Power (line 3)
+                output.AppendLine($"Accuracy: {this._accuracy?.ToString("#'%'") ?? "-", 4}     |"); // Move Accuracy (line 3)
                 // line 4
-                output.Append($"PP:   {this._pp, 2}/{this._maxPp, 2}     "); // Move PP (line 4)
-                output.AppendLine($"Priority: {this._priority, 2:+#;-#;0}"); // Move Priority (line 4)
+                output.Append($"| PP:    {this._pp, 2}/{this._maxPp, 2} | "); // Move PP (line 4)
+                output.AppendLine($"Priority: {this._priority, -2:+#;-#;0}       |"); // Move Priority (line 4)
+
+                output.AppendLine("└--------------┴--------------------┘");
 
                 return output.ToString(); // output
             }

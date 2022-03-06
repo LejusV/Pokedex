@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpritzee Builder
 		public SpecieSpritzee() : base(
 			"Spritzee",
+			0.2,
+			0.5,
 			78, // HPs
 			52, 60, // Attack & Defense
 			63, 65, // Special Attack & Defense
 			23		
 		)
-		{
-			this._height = 2;
-			this._weight = 5;
-		}
+		{}
 		#endregion
 	}
 	#endregion

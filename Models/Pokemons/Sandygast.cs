@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSandygast Builder
 		public SpecieSandygast() : base(
 			"Sandygast",
+			0.5,
+			70.0,
 			55, // HPs
 			55, 80, // Attack & Defense
 			70, 45, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 5;
-			this._weight = 700;
-		}
+		{}
 		#endregion
 	}
 	#endregion

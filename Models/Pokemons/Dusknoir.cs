@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDusknoir Builder
 		public SpecieDusknoir() : base(
 			"Dusknoir",
+			2.2,
+			106.6,
 			45, // HPs
 			100, 135, // Attack & Defense
 			65, 135, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 22;
-			this._weight = 1066;
-		}
+		{}
 		#endregion
 	}
 	#endregion

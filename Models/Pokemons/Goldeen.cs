@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGoldeen Builder
 		public SpecieGoldeen() : base(
 			"Goldeen",
+			0.6,
+			15.0,
 			45, // HPs
 			67, 60, // Attack & Defense
 			35, 50, // Special Attack & Defense
 			63		
 		)
-		{
-			this._height = 6;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

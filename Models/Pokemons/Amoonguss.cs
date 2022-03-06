@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAmoonguss Builder
 		public SpecieAmoonguss() : base(
 			"Amoonguss",
+			0.6,
+			10.5,
 			114, // HPs
 			85, 70, // Attack & Defense
 			85, 80, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 6;
-			this._weight = 105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

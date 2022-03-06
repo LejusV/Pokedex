@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLucario Builder
 		public SpecieLucario() : base(
 			"Lucario",
+			1.2,
+			54.0,
 			70, // HPs
 			110, 70, // Attack & Defense
 			115, 70, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 12;
-			this._weight = 540;
-		}
+		{}
 		#endregion
 	}
 	#endregion

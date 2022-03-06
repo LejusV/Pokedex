@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHatenna Builder
 		public SpecieHatenna() : base(
 			"Hatenna",
+			0.4,
+			3.4,
 			42, // HPs
 			30, 45, // Attack & Defense
 			56, 53, // Special Attack & Defense
 			39		
 		)
-		{
-			this._height = 4;
-			this._weight = 34;
-		}
+		{}
 		#endregion
 	}
 	#endregion

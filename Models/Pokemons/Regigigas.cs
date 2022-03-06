@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegigigas Builder
 		public SpecieRegigigas() : base(
 			"Regigigas",
+			3.7,
+			420.0,
 			110, // HPs
 			160, 110, // Attack & Defense
 			80, 110, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 37;
-			this._weight = 4200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

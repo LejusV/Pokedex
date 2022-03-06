@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMiltank Builder
 		public SpecieMiltank() : base(
 			"Miltank",
+			1.2,
+			75.5,
 			95, // HPs
 			80, 105, // Attack & Defense
 			40, 70, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 12;
-			this._weight = 755;
-		}
+		{}
 		#endregion
 	}
 	#endregion

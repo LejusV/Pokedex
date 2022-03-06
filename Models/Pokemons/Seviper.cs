@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeviper Builder
 		public SpecieSeviper() : base(
 			"Seviper",
+			2.7,
+			52.5,
 			73, // HPs
 			100, 60, // Attack & Defense
 			100, 60, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 27;
-			this._weight = 525;
-		}
+		{}
 		#endregion
 	}
 	#endregion

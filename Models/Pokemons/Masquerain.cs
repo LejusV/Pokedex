@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMasquerain Builder
 		public SpecieMasquerain() : base(
 			"Masquerain",
+			0.8,
+			3.6,
 			70, // HPs
 			60, 62, // Attack & Defense
 			100, 82, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 8;
-			this._weight = 36;
-		}
+		{}
 		#endregion
 	}
 	#endregion

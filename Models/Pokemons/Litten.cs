@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLitten Builder
 		public SpecieLitten() : base(
 			"Litten",
+			0.4,
+			4.3,
 			45, // HPs
 			65, 40, // Attack & Defense
 			60, 40, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 4;
-			this._weight = 43;
-		}
+		{}
 		#endregion
 	}
 	#endregion

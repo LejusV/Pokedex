@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWhirlipede Builder
 		public SpecieWhirlipede() : base(
 			"Whirlipede",
+			1.2,
+			58.5,
 			40, // HPs
 			55, 99, // Attack & Defense
 			40, 79, // Special Attack & Defense
 			47		
 		)
-		{
-			this._height = 12;
-			this._weight = 585;
-		}
+		{}
 		#endregion
 	}
 	#endregion

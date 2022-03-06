@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBastiodon Builder
 		public SpecieBastiodon() : base(
 			"Bastiodon",
+			1.3,
+			149.5,
 			60, // HPs
 			52, 168, // Attack & Defense
 			47, 138, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 13;
-			this._weight = 1495;
-		}
+		{}
 		#endregion
 	}
 	#endregion

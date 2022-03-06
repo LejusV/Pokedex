@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrovyle Builder
 		public SpecieGrovyle() : base(
 			"Grovyle",
+			0.9,
+			21.6,
 			50, // HPs
 			65, 45, // Attack & Defense
 			85, 65, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 9;
-			this._weight = 216;
-		}
+		{}
 		#endregion
 	}
 	#endregion

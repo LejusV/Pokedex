@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieImpidimp Builder
 		public SpecieImpidimp() : base(
 			"Impidimp",
+			0.4,
+			5.5,
 			45, // HPs
 			45, 30, // Attack & Defense
 			55, 40, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

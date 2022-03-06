@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDottler Builder
 		public SpecieDottler() : base(
 			"Dottler",
+			0.4,
+			19.5,
 			50, // HPs
 			35, 80, // Attack & Defense
 			50, 90, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 4;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

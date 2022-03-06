@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYamask Builder
 		public SpecieYamask() : base(
 			"Yamask",
+			0.5,
+			1.5,
 			38, // HPs
 			30, 85, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 15;
-		}
+		{}
 		#endregion
 	}
 	#endregion

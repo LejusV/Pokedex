@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShelgon Builder
 		public SpecieShelgon() : base(
 			"Shelgon",
+			1.1,
+			110.5,
 			65, // HPs
 			95, 100, // Attack & Defense
 			60, 50, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 1105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTaillow Builder
 		public SpecieTaillow() : base(
 			"Taillow",
+			0.3,
+			2.3,
 			40, // HPs
 			55, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 3;
-			this._weight = 23;
-		}
+		{}
 		#endregion
 	}
 	#endregion

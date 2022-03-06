@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolett Builder
 		public SpecieGolett() : base(
 			"Golett",
+			1.0,
+			92.0,
 			59, // HPs
 			74, 50, // Attack & Defense
 			35, 50, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 10;
-			this._weight = 920;
-		}
+		{}
 		#endregion
 	}
 	#endregion

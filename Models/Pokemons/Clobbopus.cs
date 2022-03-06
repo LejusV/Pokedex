@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClobbopus Builder
 		public SpecieClobbopus() : base(
 			"Clobbopus",
+			0.6,
+			4.0,
 			50, // HPs
 			68, 60, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 6;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

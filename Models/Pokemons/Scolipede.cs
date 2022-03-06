@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScolipede Builder
 		public SpecieScolipede() : base(
 			"Scolipede",
+			2.5,
+			200.5,
 			60, // HPs
 			100, 89, // Attack & Defense
 			55, 69, // Special Attack & Defense
 			112		
 		)
-		{
-			this._height = 25;
-			this._weight = 2005;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieToxel Builder
 		public SpecieToxel() : base(
 			"Toxel",
+			0.4,
+			11.0,
 			40, // HPs
 			38, 35, // Attack & Defense
 			54, 35, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 110;
-		}
+		{}
 		#endregion
 	}
 	#endregion

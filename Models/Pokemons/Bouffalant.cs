@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBouffalant Builder
 		public SpecieBouffalant() : base(
 			"Bouffalant",
+			1.6,
+			94.6,
 			95, // HPs
 			110, 95, // Attack & Defense
 			40, 95, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 16;
-			this._weight = 946;
-		}
+		{}
 		#endregion
 	}
 	#endregion

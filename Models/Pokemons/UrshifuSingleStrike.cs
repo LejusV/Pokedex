@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUrshifu-Single-Strike Builder
 		public SpecieUrshifuSingleStrike() : base(
 			"Urshifu-Single-Strike",
+			1.9,
+			105.0,
 			100, // HPs
 			130, 100, // Attack & Defense
 			63, 60, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 19;
-			this._weight = 1050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

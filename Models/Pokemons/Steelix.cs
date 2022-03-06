@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSteelix Builder
 		public SpecieSteelix() : base(
 			"Steelix",
+			9.2,
+			400.0,
 			75, // HPs
 			85, 200, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 92;
-			this._weight = 4000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

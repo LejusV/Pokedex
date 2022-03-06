@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShellos Builder
 		public SpecieShellos() : base(
 			"Shellos",
+			0.3,
+			6.3,
 			76, // HPs
 			48, 48, // Attack & Defense
 			57, 62, // Special Attack & Defense
 			34		
 		)
-		{
-			this._height = 3;
-			this._weight = 63;
-		}
+		{}
 		#endregion
 	}
 	#endregion

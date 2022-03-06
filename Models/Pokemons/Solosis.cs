@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSolosis Builder
 		public SpecieSolosis() : base(
 			"Solosis",
+			0.3,
+			1.0,
 			45, // HPs
 			30, 40, // Attack & Defense
 			105, 50, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 3;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

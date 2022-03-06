@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWobbuffet Builder
 		public SpecieWobbuffet() : base(
 			"Wobbuffet",
+			1.3,
+			28.5,
 			190, // HPs
 			33, 58, // Attack & Defense
 			33, 58, // Special Attack & Defense
 			33		
 		)
-		{
-			this._height = 13;
-			this._weight = 285;
-		}
+		{}
 		#endregion
 	}
 	#endregion

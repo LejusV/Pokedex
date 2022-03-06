@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTentacruel Builder
 		public SpecieTentacruel() : base(
 			"Tentacruel",
+			1.6,
+			55.0,
 			80, // HPs
 			70, 65, // Attack & Defense
 			80, 120, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 16;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

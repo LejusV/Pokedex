@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEevee Builder
 		public SpecieEevee() : base(
 			"Eevee",
+			0.3,
+			6.5,
 			55, // HPs
 			55, 50, // Attack & Defense
 			45, 65, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 3;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

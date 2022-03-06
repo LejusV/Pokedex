@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChingling Builder
 		public SpecieChingling() : base(
 			"Chingling",
+			0.2,
+			0.6,
 			45, // HPs
 			30, 50, // Attack & Defense
 			65, 50, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 2;
-			this._weight = 6;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlowking Builder
 		public SpecieSlowking() : base(
 			"Slowking",
+			2.0,
+			79.5,
 			95, // HPs
 			75, 80, // Attack & Defense
 			100, 110, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 20;
-			this._weight = 795;
-		}
+		{}
 		#endregion
 	}
 	#endregion

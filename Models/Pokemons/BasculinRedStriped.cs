@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBasculin-Red-Striped Builder
 		public SpecieBasculinRedStriped() : base(
 			"Basculin-Red-Striped",
+			1.0,
+			18.0,
 			70, // HPs
 			92, 65, // Attack & Defense
 			80, 55, // Special Attack & Defense
 			98		
 		)
-		{
-			this._height = 10;
-			this._weight = 180;
-		}
+		{}
 		#endregion
 	}
 	#endregion

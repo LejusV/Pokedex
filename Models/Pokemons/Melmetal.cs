@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMelmetal Builder
 		public SpecieMelmetal() : base(
 			"Melmetal",
+			2.5,
+			800.0,
 			135, // HPs
 			143, 143, // Attack & Defense
 			80, 65, // Special Attack & Defense
 			34		
 		)
-		{
-			this._height = 25;
-			this._weight = 8000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

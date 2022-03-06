@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePansage Builder
 		public SpeciePansage() : base(
 			"Pansage",
+			0.6,
+			10.5,
 			50, // HPs
 			53, 48, // Attack & Defense
 			53, 48, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 6;
-			this._weight = 105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

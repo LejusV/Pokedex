@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHariyama Builder
 		public SpecieHariyama() : base(
 			"Hariyama",
+			2.3,
+			253.8,
 			144, // HPs
 			120, 60, // Attack & Defense
 			40, 60, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 23;
-			this._weight = 2538;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNinjask Builder
 		public SpecieNinjask() : base(
 			"Ninjask",
+			0.8,
+			12.0,
 			61, // HPs
 			90, 45, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			160		
 		)
-		{
-			this._height = 8;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

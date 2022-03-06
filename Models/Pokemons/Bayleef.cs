@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBayleef Builder
 		public SpecieBayleef() : base(
 			"Bayleef",
+			1.2,
+			15.8,
 			60, // HPs
 			62, 80, // Attack & Defense
 			63, 80, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 12;
-			this._weight = 158;
-		}
+		{}
 		#endregion
 	}
 	#endregion

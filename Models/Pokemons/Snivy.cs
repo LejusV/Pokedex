@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnivy Builder
 		public SpecieSnivy() : base(
 			"Snivy",
+			0.6,
+			8.1,
 			45, // HPs
 			45, 55, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			63		
 		)
-		{
-			this._height = 6;
-			this._weight = 81;
-		}
+		{}
 		#endregion
 	}
 	#endregion

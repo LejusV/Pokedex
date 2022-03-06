@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGligar Builder
 		public SpecieGligar() : base(
 			"Gligar",
+			1.1,
+			64.8,
 			65, // HPs
 			75, 105, // Attack & Defense
 			35, 65, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 11;
-			this._weight = 648;
-		}
+		{}
 		#endregion
 	}
 	#endregion

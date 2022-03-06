@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlugma Builder
 		public SpecieSlugma() : base(
 			"Slugma",
+			0.7,
+			35.0,
 			40, // HPs
 			40, 40, // Attack & Defense
 			70, 40, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 7;
-			this._weight = 350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

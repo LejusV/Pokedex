@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrumpig Builder
 		public SpecieGrumpig() : base(
 			"Grumpig",
+			0.9,
+			71.5,
 			80, // HPs
 			45, 65, // Attack & Defense
 			90, 110, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 9;
-			this._weight = 715;
-		}
+		{}
 		#endregion
 	}
 	#endregion

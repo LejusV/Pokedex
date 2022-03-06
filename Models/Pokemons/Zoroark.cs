@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZoroark Builder
 		public SpecieZoroark() : base(
 			"Zoroark",
+			1.6,
+			81.1,
 			60, // HPs
 			105, 60, // Attack & Defense
 			120, 60, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 16;
-			this._weight = 811;
-		}
+		{}
 		#endregion
 	}
 	#endregion

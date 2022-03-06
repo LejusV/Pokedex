@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOmanyte Builder
 		public SpecieOmanyte() : base(
 			"Omanyte",
+			0.4,
+			7.5,
 			35, // HPs
 			40, 100, // Attack & Defense
 			90, 55, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 4;
-			this._weight = 75;
-		}
+		{}
 		#endregion
 	}
 	#endregion

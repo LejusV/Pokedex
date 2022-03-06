@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagby Builder
 		public SpecieMagby() : base(
 			"Magby",
+			0.7,
+			21.4,
 			45, // HPs
 			75, 37, // Attack & Defense
 			70, 55, // Special Attack & Defense
 			83		
 		)
-		{
-			this._height = 7;
-			this._weight = 214;
-		}
+		{}
 		#endregion
 	}
 	#endregion

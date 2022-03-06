@@ -6,24 +6,24 @@ namespace Pokedex.Models
 {
     public class Player
     {
-        private string p_name = "";
-        private Gender? p_gender = null;
-        private List<Pokemon> p_poks;
+        private string _name = "";
+        private Gender? _gender = null;
+        private List<Pokemon> _poks;
 
         int InsertByLevel(Pokemon pok)
         {
 
-            int count = p_poks.Count;
+            int count = _poks.Count;
             for (int i = 0; i < count; i++)
             {
-                if (p_poks[i].Level < pok.Level)
+                if (_poks[i].Level < pok.Level)
                 {
-                    p_poks.Insert(i, pok);
+                    _poks.Insert(i, pok);
                     return 1;
                 }
             }
 
-            p_poks.Add(pok);
+            _poks.Add(pok);
 
             return 1;
         }
@@ -36,25 +36,26 @@ namespace Pokedex.Models
 
         public Gender? Gender
         {
-            get { return p_gender; }
+            get { return _gender; }
         }
 
         public string Name
         {
-            get { return p_name; }
+            get { return _name; }
         }
 
         public List<Pokemon> Pokemons
         {
-            get { return p_poks; }
+            get { return _poks; }
+            set { _poks = value; }
         }
 
         public Player(string name, Gender gender, List<Pokemon> poks = null)
         {
-            p_gender = gender;
-            p_name = name;
-            p_poks = poks;
-            p_poks = new List<Pokemon>();
+            _gender = gender;
+            _name = name;
+            _poks = poks;
+            _poks = new List<Pokemon>();
         }
     }
 }

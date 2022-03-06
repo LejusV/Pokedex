@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSmoochum Builder
 		public SpecieSmoochum() : base(
 			"Smoochum",
+			0.4,
+			6.0,
 			45, // HPs
 			30, 15, // Attack & Defense
 			85, 65, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 4;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDeerling Builder
 		public SpecieDeerling() : base(
 			"Deerling",
+			0.6,
+			19.5,
 			60, // HPs
 			60, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 6;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

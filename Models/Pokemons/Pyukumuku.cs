@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePyukumuku Builder
 		public SpeciePyukumuku() : base(
 			"Pyukumuku",
+			0.3,
+			1.2,
 			55, // HPs
 			60, 130, // Attack & Defense
 			30, 130, // Special Attack & Defense
 			5		
 		)
-		{
-			this._height = 3;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKrokorok Builder
 		public SpecieKrokorok() : base(
 			"Krokorok",
+			1.0,
+			33.4,
 			60, // HPs
 			82, 45, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			74		
 		)
-		{
-			this._height = 10;
-			this._weight = 334;
-		}
+		{}
 		#endregion
 	}
 	#endregion

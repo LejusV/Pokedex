@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGraveler Builder
 		public SpecieGraveler() : base(
 			"Graveler",
+			1.0,
+			105.0,
 			55, // HPs
 			95, 115, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 10;
-			this._weight = 1050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

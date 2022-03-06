@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePrinplup Builder
 		public SpeciePrinplup() : base(
 			"Prinplup",
+			0.8,
+			23.0,
 			64, // HPs
 			66, 68, // Attack & Defense
 			81, 76, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 8;
-			this._weight = 230;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKricketune Builder
 		public SpecieKricketune() : base(
 			"Kricketune",
+			1.0,
+			25.5,
 			77, // HPs
 			85, 51, // Attack & Defense
 			55, 51, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 255;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBreloom Builder
 		public SpecieBreloom() : base(
 			"Breloom",
+			1.2,
+			39.2,
 			60, // HPs
 			130, 80, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 12;
-			this._weight = 392;
-		}
+		{}
 		#endregion
 	}
 	#endregion

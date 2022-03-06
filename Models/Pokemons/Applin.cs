@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieApplin Builder
 		public SpecieApplin() : base(
 			"Applin",
+			0.2,
+			0.5,
 			40, // HPs
 			40, 80, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 2;
-			this._weight = 5;
-		}
+		{}
 		#endregion
 	}
 	#endregion

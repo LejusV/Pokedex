@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClaydol Builder
 		public SpecieClaydol() : base(
 			"Claydol",
+			1.5,
+			108.0,
 			60, // HPs
 			70, 105, // Attack & Defense
 			70, 120, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 15;
-			this._weight = 1080;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTranquill Builder
 		public SpecieTranquill() : base(
 			"Tranquill",
+			0.6,
+			15.0,
 			62, // HPs
 			77, 62, // Attack & Defense
 			50, 42, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

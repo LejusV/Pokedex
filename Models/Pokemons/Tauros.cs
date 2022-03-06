@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTauros Builder
 		public SpecieTauros() : base(
 			"Tauros",
+			1.4,
+			88.4,
 			75, // HPs
 			100, 95, // Attack & Defense
 			40, 70, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 14;
-			this._weight = 884;
-		}
+		{}
 		#endregion
 	}
 	#endregion

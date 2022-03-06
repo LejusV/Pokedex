@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArbok Builder
 		public SpecieArbok() : base(
 			"Arbok",
+			3.5,
+			65.0,
 			60, // HPs
 			95, 69, // Attack & Defense
 			65, 79, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 35;
-			this._weight = 650;
-		}
+		{}
 		#endregion
 	}
 	#endregion

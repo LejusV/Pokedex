@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSawsbuck Builder
 		public SpecieSawsbuck() : base(
 			"Sawsbuck",
+			1.9,
+			92.5,
 			80, // HPs
 			100, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 19;
-			this._weight = 925;
-		}
+		{}
 		#endregion
 	}
 	#endregion

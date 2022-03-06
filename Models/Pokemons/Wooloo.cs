@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWooloo Builder
 		public SpecieWooloo() : base(
 			"Wooloo",
+			0.6,
+			6.0,
 			42, // HPs
 			40, 55, // Attack & Defense
 			40, 45, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 6;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

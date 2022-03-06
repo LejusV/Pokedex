@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrimmsnarl Builder
 		public SpecieGrimmsnarl() : base(
 			"Grimmsnarl",
+			1.5,
+			61.0,
 			95, // HPs
 			120, 65, // Attack & Defense
 			95, 75, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 15;
-			this._weight = 610;
-		}
+		{}
 		#endregion
 	}
 	#endregion

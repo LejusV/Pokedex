@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePoliwag Builder
 		public SpeciePoliwag() : base(
 			"Poliwag",
+			0.6,
+			12.4,
 			40, // HPs
 			50, 40, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 6;
-			this._weight = 124;
-		}
+		{}
 		#endregion
 	}
 	#endregion

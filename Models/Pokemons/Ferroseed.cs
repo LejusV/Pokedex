@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFerroseed Builder
 		public SpecieFerroseed() : base(
 			"Ferroseed",
+			0.6,
+			18.8,
 			44, // HPs
 			50, 91, // Attack & Defense
 			24, 86, // Special Attack & Defense
 			10		
 		)
-		{
-			this._height = 6;
-			this._weight = 188;
-		}
+		{}
 		#endregion
 	}
 	#endregion

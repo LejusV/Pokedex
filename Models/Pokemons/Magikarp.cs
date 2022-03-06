@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagikarp Builder
 		public SpecieMagikarp() : base(
 			"Magikarp",
+			0.9,
+			10.0,
 			20, // HPs
 			10, 55, // Attack & Defense
 			15, 20, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 9;
-			this._weight = 100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

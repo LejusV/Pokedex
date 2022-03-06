@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVigoroth Builder
 		public SpecieVigoroth() : base(
 			"Vigoroth",
+			1.4,
+			46.5,
 			80, // HPs
 			80, 80, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 14;
-			this._weight = 465;
-		}
+		{}
 		#endregion
 	}
 	#endregion

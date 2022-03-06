@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNidorino Builder
 		public SpecieNidorino() : base(
 			"Nidorino",
+			0.9,
+			19.5,
 			61, // HPs
 			72, 57, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 9;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

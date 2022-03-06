@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElectrode Builder
 		public SpecieElectrode() : base(
 			"Electrode",
+			1.2,
+			66.6,
 			60, // HPs
 			50, 70, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			150		
 		)
-		{
-			this._height = 12;
-			this._weight = 666;
-		}
+		{}
 		#endregion
 	}
 	#endregion

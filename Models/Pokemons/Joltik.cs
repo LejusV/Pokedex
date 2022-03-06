@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJoltik Builder
 		public SpecieJoltik() : base(
 			"Joltik",
+			0.1,
+			0.6,
 			50, // HPs
 			47, 50, // Attack & Defense
 			57, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 1;
-			this._weight = 6;
-		}
+		{}
 		#endregion
 	}
 	#endregion

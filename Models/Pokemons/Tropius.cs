@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTropius Builder
 		public SpecieTropius() : base(
 			"Tropius",
+			2.0,
+			100.0,
 			99, // HPs
 			68, 83, // Attack & Defense
 			72, 87, // Special Attack & Defense
 			51		
 		)
-		{
-			this._height = 20;
-			this._weight = 1000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

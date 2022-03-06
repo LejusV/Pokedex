@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTsareena Builder
 		public SpecieTsareena() : base(
 			"Tsareena",
+			1.2,
+			21.4,
 			72, // HPs
 			120, 98, // Attack & Defense
 			50, 98, // Special Attack & Defense
 			72		
 		)
-		{
-			this._height = 12;
-			this._weight = 214;
-		}
+		{}
 		#endregion
 	}
 	#endregion

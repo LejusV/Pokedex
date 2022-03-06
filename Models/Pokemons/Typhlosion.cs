@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTyphlosion Builder
 		public SpecieTyphlosion() : base(
 			"Typhlosion",
+			1.7,
+			79.5,
 			78, // HPs
 			84, 78, // Attack & Defense
 			109, 85, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 17;
-			this._weight = 795;
-		}
+		{}
 		#endregion
 	}
 	#endregion

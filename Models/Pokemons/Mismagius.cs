@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMismagius Builder
 		public SpecieMismagius() : base(
 			"Mismagius",
+			0.9,
+			4.4,
 			60, // HPs
 			60, 60, // Attack & Defense
 			105, 105, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 9;
-			this._weight = 44;
-		}
+		{}
 		#endregion
 	}
 	#endregion

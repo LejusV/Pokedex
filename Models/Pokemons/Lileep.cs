@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLileep Builder
 		public SpecieLileep() : base(
 			"Lileep",
+			1.0,
+			23.8,
 			66, // HPs
 			41, 77, // Attack & Defense
 			61, 87, // Special Attack & Defense
 			23		
 		)
-		{
-			this._height = 10;
-			this._weight = 238;
-		}
+		{}
 		#endregion
 	}
 	#endregion

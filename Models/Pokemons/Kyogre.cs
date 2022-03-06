@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKyogre Builder
 		public SpecieKyogre() : base(
 			"Kyogre",
+			4.5,
+			352.0,
 			100, // HPs
 			100, 90, // Attack & Defense
 			150, 140, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 45;
-			this._weight = 3520;
-		}
+		{}
 		#endregion
 	}
 	#endregion

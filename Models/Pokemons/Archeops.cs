@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArcheops Builder
 		public SpecieArcheops() : base(
 			"Archeops",
+			1.4,
+			32.0,
 			75, // HPs
 			140, 65, // Attack & Defense
 			112, 65, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 14;
-			this._weight = 320;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieThievul Builder
 		public SpecieThievul() : base(
 			"Thievul",
+			1.2,
+			19.9,
 			70, // HPs
 			58, 58, // Attack & Defense
 			87, 92, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 12;
-			this._weight = 199;
-		}
+		{}
 		#endregion
 	}
 	#endregion

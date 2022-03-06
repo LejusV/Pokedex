@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRoselia Builder
 		public SpecieRoselia() : base(
 			"Roselia",
+			0.3,
+			2.0,
 			50, // HPs
 			60, 45, // Attack & Defense
 			100, 80, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 3;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

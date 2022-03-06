@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePichu Builder
 		public SpeciePichu() : base(
 			"Pichu",
+			0.3,
+			2.0,
 			20, // HPs
 			40, 15, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 3;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

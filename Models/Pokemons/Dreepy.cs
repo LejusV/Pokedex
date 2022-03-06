@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDreepy Builder
 		public SpecieDreepy() : base(
 			"Dreepy",
+			0.5,
+			2.0,
 			28, // HPs
 			60, 30, // Attack & Defense
 			40, 30, // Special Attack & Defense
 			82		
 		)
-		{
-			this._height = 5;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

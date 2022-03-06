@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDelcatty Builder
 		public SpecieDelcatty() : base(
 			"Delcatty",
+			1.1,
+			32.6,
 			70, // HPs
 			65, 65, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 11;
-			this._weight = 326;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJellicent Builder
 		public SpecieJellicent() : base(
 			"Jellicent",
+			2.2,
+			135.0,
 			100, // HPs
 			60, 70, // Attack & Defense
 			85, 105, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 22;
-			this._weight = 1350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

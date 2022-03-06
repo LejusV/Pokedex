@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKeldeo-Ordinary Builder
 		public SpecieKeldeoOrdinary() : base(
 			"Keldeo-Ordinary",
+			1.4,
+			48.5,
 			91, // HPs
 			72, 90, // Attack & Defense
 			129, 90, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 14;
-			this._weight = 485;
-		}
+		{}
 		#endregion
 	}
 	#endregion

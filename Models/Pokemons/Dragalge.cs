@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDragalge Builder
 		public SpecieDragalge() : base(
 			"Dragalge",
+			1.8,
+			81.5,
 			65, // HPs
 			75, 90, // Attack & Defense
 			97, 123, // Special Attack & Defense
 			44		
 		)
-		{
-			this._height = 18;
-			this._weight = 815;
-		}
+		{}
 		#endregion
 	}
 	#endregion

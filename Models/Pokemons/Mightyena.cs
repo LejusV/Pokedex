@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMightyena Builder
 		public SpecieMightyena() : base(
 			"Mightyena",
+			1.0,
+			37.0,
 			70, // HPs
 			90, 70, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 10;
-			this._weight = 370;
-		}
+		{}
 		#endregion
 	}
 	#endregion

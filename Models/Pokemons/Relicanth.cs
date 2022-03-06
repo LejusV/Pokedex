@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRelicanth Builder
 		public SpecieRelicanth() : base(
 			"Relicanth",
+			1.0,
+			23.4,
 			100, // HPs
 			90, 130, // Attack & Defense
 			45, 65, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 10;
-			this._weight = 234;
-		}
+		{}
 		#endregion
 	}
 	#endregion

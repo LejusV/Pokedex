@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElgyem Builder
 		public SpecieElgyem() : base(
 			"Elgyem",
+			0.5,
+			9.0,
 			55, // HPs
 			55, 55, // Attack & Defense
 			85, 55, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

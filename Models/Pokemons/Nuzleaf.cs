@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNuzleaf Builder
 		public SpecieNuzleaf() : base(
 			"Nuzleaf",
+			1.0,
+			28.0,
 			70, // HPs
 			70, 40, // Attack & Defense
 			60, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 10;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

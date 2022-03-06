@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSirfetchd Builder
 		public SpecieSirfetchd() : base(
 			"Sirfetchd",
+			0.8,
+			117.0,
 			62, // HPs
 			135, 95, // Attack & Defense
 			68, 82, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 8;
-			this._weight = 1170;
-		}
+		{}
 		#endregion
 	}
 	#endregion

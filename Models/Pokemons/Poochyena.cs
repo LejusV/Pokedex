@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePoochyena Builder
 		public SpeciePoochyena() : base(
 			"Poochyena",
+			0.5,
+			13.6,
 			35, // HPs
 			55, 35, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 5;
-			this._weight = 136;
-		}
+		{}
 		#endregion
 	}
 	#endregion

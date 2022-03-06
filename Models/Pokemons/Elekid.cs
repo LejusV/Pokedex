@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElekid Builder
 		public SpecieElekid() : base(
 			"Elekid",
+			0.6,
+			23.5,
 			45, // HPs
 			63, 37, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 6;
-			this._weight = 235;
-		}
+		{}
 		#endregion
 	}
 	#endregion

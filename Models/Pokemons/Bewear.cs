@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBewear Builder
 		public SpecieBewear() : base(
 			"Bewear",
+			2.1,
+			135.0,
 			120, // HPs
 			125, 80, // Attack & Defense
 			55, 60, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 21;
-			this._weight = 1350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

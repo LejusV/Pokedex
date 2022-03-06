@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwinub Builder
 		public SpecieSwinub() : base(
 			"Swinub",
+			0.4,
+			6.5,
 			50, // HPs
 			50, 40, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

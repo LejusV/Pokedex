@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDecidueye Builder
 		public SpecieDecidueye() : base(
 			"Decidueye",
+			1.6,
+			36.6,
 			78, // HPs
 			107, 75, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 16;
-			this._weight = 366;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeedot Builder
 		public SpecieSeedot() : base(
 			"Seedot",
+			0.5,
+			4.0,
 			40, // HPs
 			40, 50, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNinetales Builder
 		public SpecieNinetales() : base(
 			"Ninetales",
+			1.1,
+			19.9,
 			73, // HPs
 			76, 75, // Attack & Defense
 			81, 100, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 11;
-			this._weight = 199;
-		}
+		{}
 		#endregion
 	}
 	#endregion

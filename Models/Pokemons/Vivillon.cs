@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVivillon Builder
 		public SpecieVivillon() : base(
 			"Vivillon",
+			1.2,
+			17.0,
 			80, // HPs
 			52, 50, // Attack & Defense
 			90, 50, // Special Attack & Defense
 			89		
 		)
-		{
-			this._height = 12;
-			this._weight = 170;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLombre Builder
 		public SpecieLombre() : base(
 			"Lombre",
+			1.2,
+			32.5,
 			60, // HPs
 			50, 50, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 12;
-			this._weight = 325;
-		}
+		{}
 		#endregion
 	}
 	#endregion

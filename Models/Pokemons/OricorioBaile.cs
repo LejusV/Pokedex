@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOricorio-Baile Builder
 		public SpecieOricorioBaile() : base(
 			"Oricorio-Baile",
+			0.6,
+			3.4,
 			75, // HPs
 			70, 70, // Attack & Defense
 			98, 70, // Special Attack & Defense
 			93		
 		)
-		{
-			this._height = 6;
-			this._weight = 34;
-		}
+		{}
 		#endregion
 	}
 	#endregion

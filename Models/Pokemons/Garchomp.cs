@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGarchomp Builder
 		public SpecieGarchomp() : base(
 			"Garchomp",
+			1.9,
+			95.0,
 			108, // HPs
 			130, 95, // Attack & Defense
 			80, 85, // Special Attack & Defense
 			102		
 		)
-		{
-			this._height = 19;
-			this._weight = 950;
-		}
+		{}
 		#endregion
 	}
 	#endregion

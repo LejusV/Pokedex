@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieXatu Builder
 		public SpecieXatu() : base(
 			"Xatu",
+			1.5,
+			15.0,
 			65, // HPs
 			75, 70, // Attack & Defense
 			95, 70, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 15;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

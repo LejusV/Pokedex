@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieIgglybuff Builder
 		public SpecieIgglybuff() : base(
 			"Igglybuff",
+			0.3,
+			1.0,
 			90, // HPs
 			30, 15, // Attack & Defense
 			40, 20, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 3;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArchen Builder
 		public SpecieArchen() : base(
 			"Archen",
+			0.5,
+			9.5,
 			55, // HPs
 			112, 45, // Attack & Defense
 			74, 45, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 5;
-			this._weight = 95;
-		}
+		{}
 		#endregion
 	}
 	#endregion

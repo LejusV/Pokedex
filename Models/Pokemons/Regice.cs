@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegice Builder
 		public SpecieRegice() : base(
 			"Regice",
+			1.8,
+			175.0,
 			80, // HPs
 			50, 100, // Attack & Defense
 			100, 200, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 18;
-			this._weight = 1750;
-		}
+		{}
 		#endregion
 	}
 	#endregion

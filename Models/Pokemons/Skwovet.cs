@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkwovet Builder
 		public SpecieSkwovet() : base(
 			"Skwovet",
+			0.3,
+			2.5,
 			70, // HPs
 			55, 55, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 3;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

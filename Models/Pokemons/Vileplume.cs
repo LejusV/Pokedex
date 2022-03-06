@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVileplume Builder
 		public SpecieVileplume() : base(
 			"Vileplume",
+			1.2,
+			18.6,
 			75, // HPs
 			80, 85, // Attack & Defense
 			110, 90, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 12;
-			this._weight = 186;
-		}
+		{}
 		#endregion
 	}
 	#endregion

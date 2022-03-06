@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMudsdale Builder
 		public SpecieMudsdale() : base(
 			"Mudsdale",
+			2.5,
+			920.0,
 			100, // HPs
 			125, 100, // Attack & Defense
 			55, 85, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 25;
-			this._weight = 9200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEelektross Builder
 		public SpecieEelektross() : base(
 			"Eelektross",
+			2.1,
+			80.5,
 			85, // HPs
 			115, 80, // Attack & Defense
 			105, 80, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 21;
-			this._weight = 805;
-		}
+		{}
 		#endregion
 	}
 	#endregion

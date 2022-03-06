@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRaikou Builder
 		public SpecieRaikou() : base(
 			"Raikou",
+			1.9,
+			178.0,
 			90, // HPs
 			85, 75, // Attack & Defense
 			115, 100, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 19;
-			this._weight = 1780;
-		}
+		{}
 		#endregion
 	}
 	#endregion

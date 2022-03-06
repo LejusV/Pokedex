@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFloatzel Builder
 		public SpecieFloatzel() : base(
 			"Floatzel",
+			1.1,
+			33.5,
 			85, // HPs
 			105, 55, // Attack & Defense
 			85, 50, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 11;
-			this._weight = 335;
-		}
+		{}
 		#endregion
 	}
 	#endregion

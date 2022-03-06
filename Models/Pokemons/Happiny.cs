@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHappiny Builder
 		public SpecieHappiny() : base(
 			"Happiny",
+			0.6,
+			24.4,
 			100, // HPs
 			5, 5, // Attack & Defense
 			15, 65, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 6;
-			this._weight = 244;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieReuniclus Builder
 		public SpecieReuniclus() : base(
 			"Reuniclus",
+			1.0,
+			20.1,
 			110, // HPs
 			65, 75, // Attack & Defense
 			125, 85, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 10;
-			this._weight = 201;
-		}
+		{}
 		#endregion
 	}
 	#endregion

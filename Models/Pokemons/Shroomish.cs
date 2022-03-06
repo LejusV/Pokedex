@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShroomish Builder
 		public SpecieShroomish() : base(
 			"Shroomish",
+			0.4,
+			4.5,
 			60, // HPs
 			40, 60, // Attack & Defense
 			40, 60, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 4;
-			this._weight = 45;
-		}
+		{}
 		#endregion
 	}
 	#endregion

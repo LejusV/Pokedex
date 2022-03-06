@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVanillite Builder
 		public SpecieVanillite() : base(
 			"Vanillite",
+			0.4,
+			5.7,
 			36, // HPs
 			50, 50, // Attack & Defense
 			65, 60, // Special Attack & Defense
 			44		
 		)
-		{
-			this._height = 4;
-			this._weight = 57;
-		}
+		{}
 		#endregion
 	}
 	#endregion

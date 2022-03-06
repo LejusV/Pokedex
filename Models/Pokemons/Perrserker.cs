@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePerrserker Builder
 		public SpeciePerrserker() : base(
 			"Perrserker",
+			0.8,
+			28.0,
 			70, // HPs
 			110, 100, // Attack & Defense
 			50, 60, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 8;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

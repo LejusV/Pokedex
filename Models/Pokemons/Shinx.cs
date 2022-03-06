@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShinx Builder
 		public SpecieShinx() : base(
 			"Shinx",
+			0.5,
+			9.5,
 			45, // HPs
 			65, 34, // Attack & Defense
 			40, 34, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 5;
-			this._weight = 95;
-		}
+		{}
 		#endregion
 	}
 	#endregion

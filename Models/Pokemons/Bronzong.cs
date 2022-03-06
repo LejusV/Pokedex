@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBronzong Builder
 		public SpecieBronzong() : base(
 			"Bronzong",
+			1.3,
+			187.0,
 			67, // HPs
 			89, 116, // Attack & Defense
 			79, 116, // Special Attack & Defense
 			33		
 		)
-		{
-			this._height = 13;
-			this._weight = 1870;
-		}
+		{}
 		#endregion
 	}
 	#endregion

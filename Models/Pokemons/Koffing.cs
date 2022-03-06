@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKoffing Builder
 		public SpecieKoffing() : base(
 			"Koffing",
+			0.6,
+			1.0,
 			40, // HPs
 			65, 95, // Attack & Defense
 			60, 45, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

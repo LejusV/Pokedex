@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTentacool Builder
 		public SpecieTentacool() : base(
 			"Tentacool",
+			0.9,
+			45.5,
 			40, // HPs
 			40, 35, // Attack & Defense
 			50, 100, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 9;
-			this._weight = 455;
-		}
+		{}
 		#endregion
 	}
 	#endregion

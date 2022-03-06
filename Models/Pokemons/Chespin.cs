@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChespin Builder
 		public SpecieChespin() : base(
 			"Chespin",
+			0.4,
+			9.0,
 			56, // HPs
 			61, 65, // Attack & Defense
 			48, 45, // Special Attack & Defense
 			38		
 		)
-		{
-			this._height = 4;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

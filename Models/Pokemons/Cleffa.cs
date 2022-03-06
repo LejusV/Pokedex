@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCleffa Builder
 		public SpecieCleffa() : base(
 			"Cleffa",
+			0.3,
+			3.0,
 			50, // HPs
 			25, 28, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 3;
-			this._weight = 30;
-		}
+		{}
 		#endregion
 	}
 	#endregion

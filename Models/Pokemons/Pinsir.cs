@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePinsir Builder
 		public SpeciePinsir() : base(
 			"Pinsir",
+			1.5,
+			55.0,
 			65, // HPs
 			125, 100, // Attack & Defense
 			55, 70, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 15;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

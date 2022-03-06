@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVictreebel Builder
 		public SpecieVictreebel() : base(
 			"Victreebel",
+			1.7,
+			15.5,
 			80, // HPs
 			105, 65, // Attack & Defense
 			100, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 17;
-			this._weight = 155;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTynamo Builder
 		public SpecieTynamo() : base(
 			"Tynamo",
+			0.2,
+			0.3,
 			35, // HPs
 			55, 40, // Attack & Defense
 			45, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 2;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

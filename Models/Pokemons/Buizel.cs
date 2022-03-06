@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBuizel Builder
 		public SpecieBuizel() : base(
 			"Buizel",
+			0.7,
+			29.5,
 			55, // HPs
 			65, 35, // Attack & Defense
 			60, 30, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 7;
-			this._weight = 295;
-		}
+		{}
 		#endregion
 	}
 	#endregion

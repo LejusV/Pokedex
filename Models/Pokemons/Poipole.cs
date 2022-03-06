@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePoipole Builder
 		public SpeciePoipole() : base(
 			"Poipole",
+			0.6,
+			1.8,
 			67, // HPs
 			73, 67, // Attack & Defense
 			73, 67, // Special Attack & Defense
 			73		
 		)
-		{
-			this._height = 6;
-			this._weight = 18;
-		}
+		{}
 		#endregion
 	}
 	#endregion

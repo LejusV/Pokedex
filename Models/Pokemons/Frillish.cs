@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFrillish Builder
 		public SpecieFrillish() : base(
 			"Frillish",
+			1.2,
+			33.0,
 			55, // HPs
 			40, 50, // Attack & Defense
 			65, 85, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 12;
-			this._weight = 330;
-		}
+		{}
 		#endregion
 	}
 	#endregion

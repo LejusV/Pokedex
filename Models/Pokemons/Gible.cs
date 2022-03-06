@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGible Builder
 		public SpecieGible() : base(
 			"Gible",
+			0.7,
+			20.5,
 			58, // HPs
 			70, 45, // Attack & Defense
 			40, 45, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 7;
-			this._weight = 205;
-		}
+		{}
 		#endregion
 	}
 	#endregion

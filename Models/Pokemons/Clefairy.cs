@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClefairy Builder
 		public SpecieClefairy() : base(
 			"Clefairy",
+			0.6,
+			7.5,
 			70, // HPs
 			45, 48, // Attack & Defense
 			60, 65, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 75;
-		}
+		{}
 		#endregion
 	}
 	#endregion

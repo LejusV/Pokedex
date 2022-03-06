@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePincurchin Builder
 		public SpeciePincurchin() : base(
 			"Pincurchin",
+			0.3,
+			1.0,
 			48, // HPs
 			101, 95, // Attack & Defense
 			91, 85, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 3;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

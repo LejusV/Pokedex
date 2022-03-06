@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMamoswine Builder
 		public SpecieMamoswine() : base(
 			"Mamoswine",
+			2.5,
+			291.0,
 			110, // HPs
 			130, 80, // Attack & Defense
 			70, 60, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 25;
-			this._weight = 2910;
-		}
+		{}
 		#endregion
 	}
 	#endregion

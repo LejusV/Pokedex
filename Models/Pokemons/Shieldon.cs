@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShieldon Builder
 		public SpecieShieldon() : base(
 			"Shieldon",
+			0.5,
+			57.0,
 			30, // HPs
 			42, 118, // Attack & Defense
 			42, 88, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 570;
-		}
+		{}
 		#endregion
 	}
 	#endregion

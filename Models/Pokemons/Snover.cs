@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnover Builder
 		public SpecieSnover() : base(
 			"Snover",
+			1.0,
+			50.5,
 			60, // HPs
 			62, 50, // Attack & Defense
 			62, 60, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 10;
-			this._weight = 505;
-		}
+		{}
 		#endregion
 	}
 	#endregion

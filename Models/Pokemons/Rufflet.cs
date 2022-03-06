@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRufflet Builder
 		public SpecieRufflet() : base(
 			"Rufflet",
+			0.5,
+			10.5,
 			70, // HPs
 			83, 50, // Attack & Defense
 			37, 50, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

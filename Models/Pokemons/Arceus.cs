@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArceus Builder
 		public SpecieArceus() : base(
 			"Arceus",
+			3.2,
+			320.0,
 			120, // HPs
 			120, 120, // Attack & Defense
 			120, 120, // Special Attack & Defense
 			120		
 		)
-		{
-			this._height = 32;
-			this._weight = 3200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

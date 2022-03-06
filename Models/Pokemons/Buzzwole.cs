@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBuzzwole Builder
 		public SpecieBuzzwole() : base(
 			"Buzzwole",
+			2.4,
+			333.6,
 			107, // HPs
 			139, 139, // Attack & Defense
 			53, 53, // Special Attack & Defense
 			79		
 		)
-		{
-			this._height = 24;
-			this._weight = 3336;
-		}
+		{}
 		#endregion
 	}
 	#endregion

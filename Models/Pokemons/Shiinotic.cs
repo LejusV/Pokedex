@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShiinotic Builder
 		public SpecieShiinotic() : base(
 			"Shiinotic",
+			1.0,
+			11.5,
 			60, // HPs
 			45, 80, // Attack & Defense
 			90, 100, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 10;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

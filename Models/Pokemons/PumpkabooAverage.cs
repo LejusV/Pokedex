@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePumpkaboo-Average Builder
 		public SpeciePumpkabooAverage() : base(
 			"Pumpkaboo-Average",
+			0.4,
+			5.0,
 			49, // HPs
 			66, 70, // Attack & Defense
 			44, 55, // Special Attack & Defense
 			51		
 		)
-		{
-			this._height = 4;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

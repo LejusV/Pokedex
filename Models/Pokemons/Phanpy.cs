@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePhanpy Builder
 		public SpeciePhanpy() : base(
 			"Phanpy",
+			0.5,
+			33.5,
 			90, // HPs
 			60, 60, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 5;
-			this._weight = 335;
-		}
+		{}
 		#endregion
 	}
 	#endregion

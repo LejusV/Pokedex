@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMawile Builder
 		public SpecieMawile() : base(
 			"Mawile",
+			0.6,
+			11.5,
 			50, // HPs
 			85, 85, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

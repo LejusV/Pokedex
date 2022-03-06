@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNoivern Builder
 		public SpecieNoivern() : base(
 			"Noivern",
+			1.5,
+			85.0,
 			85, // HPs
 			70, 80, // Attack & Defense
 			97, 80, // Special Attack & Defense
 			123		
 		)
-		{
-			this._height = 15;
-			this._weight = 850;
-		}
+		{}
 		#endregion
 	}
 	#endregion

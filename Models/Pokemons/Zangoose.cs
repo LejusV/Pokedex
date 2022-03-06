@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZangoose Builder
 		public SpecieZangoose() : base(
 			"Zangoose",
+			1.3,
+			40.3,
 			73, // HPs
 			115, 60, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 13;
-			this._weight = 403;
-		}
+		{}
 		#endregion
 	}
 	#endregion

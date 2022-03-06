@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBoltund Builder
 		public SpecieBoltund() : base(
 			"Boltund",
+			1.0,
+			34.0,
 			69, // HPs
 			90, 60, // Attack & Defense
 			90, 60, // Special Attack & Defense
 			121		
 		)
-		{
-			this._height = 10;
-			this._weight = 340;
-		}
+		{}
 		#endregion
 	}
 	#endregion

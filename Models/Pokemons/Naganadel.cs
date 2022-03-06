@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNaganadel Builder
 		public SpecieNaganadel() : base(
 			"Naganadel",
+			3.6,
+			150.0,
 			73, // HPs
 			73, 73, // Attack & Defense
 			127, 73, // Special Attack & Defense
 			121		
 		)
-		{
-			this._height = 36;
-			this._weight = 1500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

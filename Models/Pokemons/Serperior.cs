@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSerperior Builder
 		public SpecieSerperior() : base(
 			"Serperior",
+			3.3,
+			63.0,
 			75, // HPs
 			75, 95, // Attack & Defense
 			75, 95, // Special Attack & Defense
 			113		
 		)
-		{
-			this._height = 33;
-			this._weight = 630;
-		}
+		{}
 		#endregion
 	}
 	#endregion

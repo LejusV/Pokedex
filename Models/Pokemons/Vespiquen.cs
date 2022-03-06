@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVespiquen Builder
 		public SpecieVespiquen() : base(
 			"Vespiquen",
+			1.2,
+			38.5,
 			70, // HPs
 			80, 102, // Attack & Defense
 			80, 102, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 12;
-			this._weight = 385;
-		}
+		{}
 		#endregion
 	}
 	#endregion

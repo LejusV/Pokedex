@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSmeargle Builder
 		public SpecieSmeargle() : base(
 			"Smeargle",
+			1.2,
+			58.0,
 			55, // HPs
 			20, 35, // Attack & Defense
 			20, 45, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 12;
-			this._weight = 580;
-		}
+		{}
 		#endregion
 	}
 	#endregion

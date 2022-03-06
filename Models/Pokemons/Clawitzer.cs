@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClawitzer Builder
 		public SpecieClawitzer() : base(
 			"Clawitzer",
+			1.3,
+			35.3,
 			71, // HPs
 			73, 88, // Attack & Defense
 			120, 89, // Special Attack & Defense
 			59		
 		)
-		{
-			this._height = 13;
-			this._weight = 353;
-		}
+		{}
 		#endregion
 	}
 	#endregion

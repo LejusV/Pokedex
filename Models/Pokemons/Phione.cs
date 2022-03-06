@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePhione Builder
 		public SpeciePhione() : base(
 			"Phione",
+			0.4,
+			3.1,
 			80, // HPs
 			80, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 4;
-			this._weight = 31;
-		}
+		{}
 		#endregion
 	}
 	#endregion

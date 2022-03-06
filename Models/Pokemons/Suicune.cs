@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSuicune Builder
 		public SpecieSuicune() : base(
 			"Suicune",
+			2.0,
+			187.0,
 			100, // HPs
 			75, 115, // Attack & Defense
 			90, 115, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 20;
-			this._weight = 1870;
-		}
+		{}
 		#endregion
 	}
 	#endregion

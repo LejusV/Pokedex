@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFraxure Builder
 		public SpecieFraxure() : base(
 			"Fraxure",
+			1.0,
+			36.0,
 			66, // HPs
 			117, 70, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			67		
 		)
-		{
-			this._height = 10;
-			this._weight = 360;
-		}
+		{}
 		#endregion
 	}
 	#endregion

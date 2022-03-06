@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUxie Builder
 		public SpecieUxie() : base(
 			"Uxie",
+			0.3,
+			0.3,
 			75, // HPs
 			75, 130, // Attack & Defense
 			75, 130, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 3;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

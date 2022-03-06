@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHoppip Builder
 		public SpecieHoppip() : base(
 			"Hoppip",
+			0.4,
+			0.5,
 			35, // HPs
 			35, 40, // Attack & Defense
 			35, 55, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 5;
-		}
+		{}
 		#endregion
 	}
 	#endregion

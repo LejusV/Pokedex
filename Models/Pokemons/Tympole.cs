@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTympole Builder
 		public SpecieTympole() : base(
 			"Tympole",
+			0.5,
+			4.5,
 			50, // HPs
 			50, 40, // Attack & Defense
 			50, 40, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 5;
-			this._weight = 45;
-		}
+		{}
 		#endregion
 	}
 	#endregion

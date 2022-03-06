@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHelioptile Builder
 		public SpecieHelioptile() : base(
 			"Helioptile",
+			0.5,
+			6.0,
 			44, // HPs
 			38, 33, // Attack & Defense
 			61, 43, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 5;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTeddiursa Builder
 		public SpecieTeddiursa() : base(
 			"Teddiursa",
+			0.6,
+			8.8,
 			60, // HPs
 			80, 50, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 6;
-			this._weight = 88;
-		}
+		{}
 		#endregion
 	}
 	#endregion

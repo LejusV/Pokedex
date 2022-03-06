@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCosmog Builder
 		public SpecieCosmog() : base(
 			"Cosmog",
+			0.2,
+			0.1,
 			43, // HPs
 			29, 31, // Attack & Defense
 			29, 31, // Special Attack & Defense
 			37		
 		)
-		{
-			this._height = 2;
-			this._weight = 1;
-		}
+		{}
 		#endregion
 	}
 	#endregion

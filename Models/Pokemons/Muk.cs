@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMuk Builder
 		public SpecieMuk() : base(
 			"Muk",
+			1.2,
+			30.0,
 			105, // HPs
 			105, 75, // Attack & Defense
 			65, 100, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 12;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

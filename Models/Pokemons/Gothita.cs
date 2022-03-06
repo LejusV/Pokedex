@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGothita Builder
 		public SpecieGothita() : base(
 			"Gothita",
+			0.4,
+			5.8,
 			45, // HPs
 			30, 50, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 58;
-		}
+		{}
 		#endregion
 	}
 	#endregion

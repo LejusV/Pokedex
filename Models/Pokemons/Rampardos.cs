@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRampardos Builder
 		public SpecieRampardos() : base(
 			"Rampardos",
+			1.6,
+			102.5,
 			97, // HPs
 			165, 60, // Attack & Defense
 			65, 50, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 16;
-			this._weight = 1025;
-		}
+		{}
 		#endregion
 	}
 	#endregion

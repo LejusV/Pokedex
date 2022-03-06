@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVolcanion Builder
 		public SpecieVolcanion() : base(
 			"Volcanion",
+			1.7,
+			195.0,
 			80, // HPs
 			110, 120, // Attack & Defense
 			130, 90, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 17;
-			this._weight = 1950;
-		}
+		{}
 		#endregion
 	}
 	#endregion

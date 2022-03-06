@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFletchinder Builder
 		public SpecieFletchinder() : base(
 			"Fletchinder",
+			0.7,
+			16.0,
 			62, // HPs
 			73, 55, // Attack & Defense
 			56, 52, // Special Attack & Defense
 			84		
 		)
-		{
-			this._height = 7;
-			this._weight = 160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

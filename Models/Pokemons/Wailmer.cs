@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWailmer Builder
 		public SpecieWailmer() : base(
 			"Wailmer",
+			2.0,
+			130.0,
 			130, // HPs
 			70, 35, // Attack & Defense
 			70, 35, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 20;
-			this._weight = 1300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

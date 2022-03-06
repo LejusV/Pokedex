@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDiancie Builder
 		public SpecieDiancie() : base(
 			"Diancie",
+			0.7,
+			8.8,
 			50, // HPs
 			100, 150, // Attack & Defense
 			100, 150, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 7;
-			this._weight = 88;
-		}
+		{}
 		#endregion
 	}
 	#endregion

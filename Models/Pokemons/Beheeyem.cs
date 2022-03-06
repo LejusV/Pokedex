@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBeheeyem Builder
 		public SpecieBeheeyem() : base(
 			"Beheeyem",
+			1.0,
+			34.5,
 			75, // HPs
 			75, 75, // Attack & Defense
 			125, 95, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 10;
-			this._weight = 345;
-		}
+		{}
 		#endregion
 	}
 	#endregion

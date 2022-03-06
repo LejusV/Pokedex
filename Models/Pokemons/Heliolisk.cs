@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHeliolisk Builder
 		public SpecieHeliolisk() : base(
 			"Heliolisk",
+			1.0,
+			21.0,
 			62, // HPs
 			55, 52, // Attack & Defense
 			109, 94, // Special Attack & Defense
 			109		
 		)
-		{
-			this._height = 10;
-			this._weight = 210;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTyrunt Builder
 		public SpecieTyrunt() : base(
 			"Tyrunt",
+			0.8,
+			26.0,
 			58, // HPs
 			89, 77, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 8;
-			this._weight = 260;
-		}
+		{}
 		#endregion
 	}
 	#endregion

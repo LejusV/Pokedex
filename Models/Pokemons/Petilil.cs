@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePetilil Builder
 		public SpeciePetilil() : base(
 			"Petilil",
+			0.5,
+			6.6,
 			45, // HPs
 			35, 50, // Attack & Defense
 			70, 50, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 66;
-		}
+		{}
 		#endregion
 	}
 	#endregion

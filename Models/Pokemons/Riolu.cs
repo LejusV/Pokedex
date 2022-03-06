@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRiolu Builder
 		public SpecieRiolu() : base(
 			"Riolu",
+			0.7,
+			20.2,
 			40, // HPs
 			70, 40, // Attack & Defense
 			35, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 7;
-			this._weight = 202;
-		}
+		{}
 		#endregion
 	}
 	#endregion

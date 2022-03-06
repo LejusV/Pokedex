@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCombee Builder
 		public SpecieCombee() : base(
 			"Combee",
+			0.3,
+			5.5,
 			30, // HPs
 			30, 42, // Attack & Defense
 			30, 42, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 3;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

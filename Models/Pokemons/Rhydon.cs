@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRhydon Builder
 		public SpecieRhydon() : base(
 			"Rhydon",
+			1.9,
+			120.0,
 			105, // HPs
 			130, 120, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 19;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

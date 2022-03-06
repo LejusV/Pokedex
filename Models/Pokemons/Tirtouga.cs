@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTirtouga Builder
 		public SpecieTirtouga() : base(
 			"Tirtouga",
+			0.7,
+			16.5,
 			54, // HPs
 			78, 103, // Attack & Defense
 			53, 45, // Special Attack & Defense
 			22		
 		)
-		{
-			this._height = 7;
-			this._weight = 165;
-		}
+		{}
 		#endregion
 	}
 	#endregion

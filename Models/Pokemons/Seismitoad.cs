@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeismitoad Builder
 		public SpecieSeismitoad() : base(
 			"Seismitoad",
+			1.5,
+			62.0,
 			105, // HPs
 			95, 75, // Attack & Defense
 			85, 75, // Special Attack & Defense
 			74		
 		)
-		{
-			this._height = 15;
-			this._weight = 620;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBonsly Builder
 		public SpecieBonsly() : base(
 			"Bonsly",
+			0.5,
+			15.0,
 			50, // HPs
 			80, 95, // Attack & Defense
 			10, 45, // Special Attack & Defense
 			10		
 		)
-		{
-			this._height = 5;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

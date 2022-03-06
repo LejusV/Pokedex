@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSamurott Builder
 		public SpecieSamurott() : base(
 			"Samurott",
+			1.5,
+			94.6,
 			95, // HPs
 			100, 85, // Attack & Defense
 			108, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 15;
-			this._weight = 946;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBronzor Builder
 		public SpecieBronzor() : base(
 			"Bronzor",
+			0.5,
+			60.5,
 			57, // HPs
 			24, 86, // Attack & Defense
 			24, 86, // Special Attack & Defense
 			23		
 		)
-		{
-			this._height = 5;
-			this._weight = 605;
-		}
+		{}
 		#endregion
 	}
 	#endregion

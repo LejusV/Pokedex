@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLuxray Builder
 		public SpecieLuxray() : base(
 			"Luxray",
+			1.4,
+			42.0,
 			80, // HPs
 			120, 79, // Attack & Defense
 			95, 79, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 14;
-			this._weight = 420;
-		}
+		{}
 		#endregion
 	}
 	#endregion

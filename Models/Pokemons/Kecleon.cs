@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKecleon Builder
 		public SpecieKecleon() : base(
 			"Kecleon",
+			1.0,
+			22.0,
 			60, // HPs
 			90, 70, // Attack & Defense
 			60, 120, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 10;
-			this._weight = 220;
-		}
+		{}
 		#endregion
 	}
 	#endregion

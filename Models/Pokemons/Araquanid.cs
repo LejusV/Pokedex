@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAraquanid Builder
 		public SpecieAraquanid() : base(
 			"Araquanid",
+			1.8,
+			82.0,
 			68, // HPs
 			70, 92, // Attack & Defense
 			50, 132, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 18;
-			this._weight = 820;
-		}
+		{}
 		#endregion
 	}
 	#endregion

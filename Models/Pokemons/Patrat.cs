@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePatrat Builder
 		public SpeciePatrat() : base(
 			"Patrat",
+			0.5,
+			11.6,
 			45, // HPs
 			55, 39, // Attack & Defense
 			35, 39, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 5;
-			this._weight = 116;
-		}
+		{}
 		#endregion
 	}
 	#endregion

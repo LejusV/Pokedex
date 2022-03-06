@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKubfu Builder
 		public SpecieKubfu() : base(
 			"Kubfu",
+			0.6,
+			12.0,
 			60, // HPs
 			90, 60, // Attack & Defense
 			53, 50, // Special Attack & Defense
 			72		
 		)
-		{
-			this._height = 6;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

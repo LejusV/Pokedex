@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLillipup Builder
 		public SpecieLillipup() : base(
 			"Lillipup",
+			0.4,
+			4.1,
 			45, // HPs
 			60, 45, // Attack & Defense
 			25, 45, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 4;
-			this._weight = 41;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAromatisse Builder
 		public SpecieAromatisse() : base(
 			"Aromatisse",
+			0.8,
+			15.5,
 			101, // HPs
 			72, 72, // Attack & Defense
 			99, 89, // Special Attack & Defense
 			29		
 		)
-		{
-			this._height = 8;
-			this._weight = 155;
-		}
+		{}
 		#endregion
 	}
 	#endregion

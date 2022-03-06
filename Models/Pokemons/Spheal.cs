@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpheal Builder
 		public SpecieSpheal() : base(
 			"Spheal",
+			0.8,
+			39.5,
 			70, // HPs
 			40, 50, // Attack & Defense
 			55, 50, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 8;
-			this._weight = 395;
-		}
+		{}
 		#endregion
 	}
 	#endregion

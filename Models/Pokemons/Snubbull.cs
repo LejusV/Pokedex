@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnubbull Builder
 		public SpecieSnubbull() : base(
 			"Snubbull",
+			0.6,
+			7.8,
 			60, // HPs
 			80, 50, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 6;
-			this._weight = 78;
-		}
+		{}
 		#endregion
 	}
 	#endregion

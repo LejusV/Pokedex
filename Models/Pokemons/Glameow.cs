@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGlameow Builder
 		public SpecieGlameow() : base(
 			"Glameow",
+			0.5,
+			3.9,
 			49, // HPs
 			55, 42, // Attack & Defense
 			42, 37, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 5;
-			this._weight = 39;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChansey Builder
 		public SpecieChansey() : base(
 			"Chansey",
+			1.1,
+			34.6,
 			250, // HPs
 			5, 5, // Attack & Defense
 			35, 105, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 346;
-		}
+		{}
 		#endregion
 	}
 	#endregion

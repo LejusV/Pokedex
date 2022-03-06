@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCrawdaunt Builder
 		public SpecieCrawdaunt() : base(
 			"Crawdaunt",
+			1.1,
+			32.8,
 			63, // HPs
 			120, 85, // Attack & Defense
 			90, 55, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 11;
-			this._weight = 328;
-		}
+		{}
 		#endregion
 	}
 	#endregion

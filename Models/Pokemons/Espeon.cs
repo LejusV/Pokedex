@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEspeon Builder
 		public SpecieEspeon() : base(
 			"Espeon",
+			0.9,
+			26.5,
 			65, // HPs
 			65, 60, // Attack & Defense
 			130, 95, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 9;
-			this._weight = 265;
-		}
+		{}
 		#endregion
 	}
 	#endregion

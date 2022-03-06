@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieToxicroak Builder
 		public SpecieToxicroak() : base(
 			"Toxicroak",
+			1.3,
+			44.4,
 			83, // HPs
 			106, 65, // Attack & Defense
 			86, 65, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 13;
-			this._weight = 444;
-		}
+		{}
 		#endregion
 	}
 	#endregion

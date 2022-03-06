@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegidrago Builder
 		public SpecieRegidrago() : base(
 			"Regidrago",
+			2.1,
+			200.0,
 			200, // HPs
 			100, 50, // Attack & Defense
 			100, 50, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 21;
-			this._weight = 2000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

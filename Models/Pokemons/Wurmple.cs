@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWurmple Builder
 		public SpecieWurmple() : base(
 			"Wurmple",
+			0.3,
+			3.6,
 			45, // HPs
 			45, 35, // Attack & Defense
 			20, 30, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 3;
-			this._weight = 36;
-		}
+		{}
 		#endregion
 	}
 	#endregion

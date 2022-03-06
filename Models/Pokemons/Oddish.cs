@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOddish Builder
 		public SpecieOddish() : base(
 			"Oddish",
+			0.5,
+			5.4,
 			45, // HPs
 			50, 55, // Attack & Defense
 			75, 65, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 54;
-		}
+		{}
 		#endregion
 	}
 	#endregion

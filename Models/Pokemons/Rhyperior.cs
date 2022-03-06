@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRhyperior Builder
 		public SpecieRhyperior() : base(
 			"Rhyperior",
+			2.4,
+			282.8,
 			115, // HPs
 			140, 130, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 24;
-			this._weight = 2828;
-		}
+		{}
 		#endregion
 	}
 	#endregion

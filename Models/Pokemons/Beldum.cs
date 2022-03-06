@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBeldum Builder
 		public SpecieBeldum() : base(
 			"Beldum",
+			0.6,
+			95.2,
 			40, // HPs
 			55, 80, // Attack & Defense
 			35, 60, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 6;
-			this._weight = 952;
-		}
+		{}
 		#endregion
 	}
 	#endregion

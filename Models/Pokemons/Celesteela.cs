@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCelesteela Builder
 		public SpecieCelesteela() : base(
 			"Celesteela",
+			9.2,
+			999.9,
 			97, // HPs
 			101, 103, // Attack & Defense
 			107, 101, // Special Attack & Defense
 			61		
 		)
-		{
-			this._height = 92;
-			this._weight = 9999;
-		}
+		{}
 		#endregion
 	}
 	#endregion

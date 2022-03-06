@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWhimsicott Builder
 		public SpecieWhimsicott() : base(
 			"Whimsicott",
+			0.7,
+			6.6,
 			60, // HPs
 			67, 85, // Attack & Defense
 			77, 75, // Special Attack & Defense
 			116		
 		)
-		{
-			this._height = 7;
-			this._weight = 66;
-		}
+		{}
 		#endregion
 	}
 	#endregion

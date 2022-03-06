@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBounsweet Builder
 		public SpecieBounsweet() : base(
 			"Bounsweet",
+			0.3,
+			3.2,
 			42, // HPs
 			30, 38, // Attack & Defense
 			30, 38, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 3;
-			this._weight = 32;
-		}
+		{}
 		#endregion
 	}
 	#endregion

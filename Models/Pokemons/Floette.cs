@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFloette Builder
 		public SpecieFloette() : base(
 			"Floette",
+			0.2,
+			0.9,
 			54, // HPs
 			45, 47, // Attack & Defense
 			75, 98, // Special Attack & Defense
 			52		
 		)
-		{
-			this._height = 2;
-			this._weight = 9;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieXurkitree Builder
 		public SpecieXurkitree() : base(
 			"Xurkitree",
+			3.8,
+			100.0,
 			83, // HPs
 			89, 71, // Attack & Defense
 			173, 71, // Special Attack & Defense
 			83		
 		)
-		{
-			this._height = 38;
-			this._weight = 1000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

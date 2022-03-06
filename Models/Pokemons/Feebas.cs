@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFeebas Builder
 		public SpecieFeebas() : base(
 			"Feebas",
+			0.6,
+			7.4,
 			20, // HPs
 			15, 20, // Attack & Defense
 			10, 55, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 6;
-			this._weight = 74;
-		}
+		{}
 		#endregion
 	}
 	#endregion

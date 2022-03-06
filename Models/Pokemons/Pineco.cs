@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePineco Builder
 		public SpeciePineco() : base(
 			"Pineco",
+			0.6,
+			7.2,
 			50, // HPs
 			65, 90, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 6;
-			this._weight = 72;
-		}
+		{}
 		#endregion
 	}
 	#endregion

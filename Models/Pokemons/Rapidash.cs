@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRapidash Builder
 		public SpecieRapidash() : base(
 			"Rapidash",
+			1.7,
+			95.0,
 			65, // HPs
 			100, 70, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 17;
-			this._weight = 950;
-		}
+		{}
 		#endregion
 	}
 	#endregion

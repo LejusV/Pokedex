@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeaking Builder
 		public SpecieSeaking() : base(
 			"Seaking",
+			1.3,
+			39.0,
 			80, // HPs
 			92, 65, // Attack & Defense
 			65, 80, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 13;
-			this._weight = 390;
-		}
+		{}
 		#endregion
 	}
 	#endregion

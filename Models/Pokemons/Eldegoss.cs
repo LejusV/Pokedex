@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEldegoss Builder
 		public SpecieEldegoss() : base(
 			"Eldegoss",
+			0.5,
+			2.5,
 			60, // HPs
 			50, 90, // Attack & Defense
 			80, 120, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

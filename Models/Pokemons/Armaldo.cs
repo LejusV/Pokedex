@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArmaldo Builder
 		public SpecieArmaldo() : base(
 			"Armaldo",
+			1.5,
+			68.2,
 			75, // HPs
 			125, 100, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 15;
-			this._weight = 682;
-		}
+		{}
 		#endregion
 	}
 	#endregion

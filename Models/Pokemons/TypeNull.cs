@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieType-Null Builder
 		public SpecieTypeNull() : base(
 			"Type-Null",
+			1.9,
+			120.5,
 			95, // HPs
 			95, 95, // Attack & Defense
 			95, 95, // Special Attack & Defense
 			59		
 		)
-		{
-			this._height = 19;
-			this._weight = 1205;
-		}
+		{}
 		#endregion
 	}
 	#endregion

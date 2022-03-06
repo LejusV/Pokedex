@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrapion Builder
 		public SpecieDrapion() : base(
 			"Drapion",
+			1.3,
+			61.5,
 			70, // HPs
 			90, 110, // Attack & Defense
 			60, 75, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 13;
-			this._weight = 615;
-		}
+		{}
 		#endregion
 	}
 	#endregion

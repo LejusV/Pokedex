@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTurtwig Builder
 		public SpecieTurtwig() : base(
 			"Turtwig",
+			0.4,
+			10.2,
 			55, // HPs
 			68, 64, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			31		
 		)
-		{
-			this._height = 4;
-			this._weight = 102;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSunkern Builder
 		public SpecieSunkern() : base(
 			"Sunkern",
+			0.3,
+			1.8,
 			30, // HPs
 			30, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 3;
-			this._weight = 18;
-		}
+		{}
 		#endregion
 	}
 	#endregion

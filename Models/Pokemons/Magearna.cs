@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagearna Builder
 		public SpecieMagearna() : base(
 			"Magearna",
+			1.0,
+			80.5,
 			80, // HPs
 			95, 115, // Attack & Defense
 			130, 115, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 805;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLeavanny Builder
 		public SpecieLeavanny() : base(
 			"Leavanny",
+			1.2,
+			20.5,
 			75, // HPs
 			103, 80, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			92		
 		)
-		{
-			this._height = 12;
-			this._weight = 205;
-		}
+		{}
 		#endregion
 	}
 	#endregion

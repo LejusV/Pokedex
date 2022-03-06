@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieReshiram Builder
 		public SpecieReshiram() : base(
 			"Reshiram",
+			3.2,
+			330.0,
 			100, // HPs
 			120, 100, // Attack & Defense
 			150, 120, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 32;
-			this._weight = 3300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

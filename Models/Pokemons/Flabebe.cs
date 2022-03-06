@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlabebe Builder
 		public SpecieFlabebe() : base(
 			"Flabebe",
+			0.1,
+			0.1,
 			44, // HPs
 			38, 39, // Attack & Defense
 			61, 79, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 1;
-			this._weight = 1;
-		}
+		{}
 		#endregion
 	}
 	#endregion

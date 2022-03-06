@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDelphox Builder
 		public SpecieDelphox() : base(
 			"Delphox",
+			1.5,
+			39.0,
 			75, // HPs
 			69, 72, // Attack & Defense
 			114, 100, // Special Attack & Defense
 			104		
 		)
-		{
-			this._height = 15;
-			this._weight = 390;
-		}
+		{}
 		#endregion
 	}
 	#endregion

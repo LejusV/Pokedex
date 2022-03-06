@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSalandit Builder
 		public SpecieSalandit() : base(
 			"Salandit",
+			0.6,
+			4.8,
 			48, // HPs
 			44, 40, // Attack & Defense
 			71, 40, // Special Attack & Defense
 			77		
 		)
-		{
-			this._height = 6;
-			this._weight = 48;
-		}
+		{}
 		#endregion
 	}
 	#endregion

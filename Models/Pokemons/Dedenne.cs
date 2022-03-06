@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDedenne Builder
 		public SpecieDedenne() : base(
 			"Dedenne",
+			0.2,
+			2.2,
 			67, // HPs
 			58, 57, // Attack & Defense
 			81, 67, // Special Attack & Defense
 			101		
 		)
-		{
-			this._height = 2;
-			this._weight = 22;
-		}
+		{}
 		#endregion
 	}
 	#endregion

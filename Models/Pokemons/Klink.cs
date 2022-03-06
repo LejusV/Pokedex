@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKlink Builder
 		public SpecieKlink() : base(
 			"Klink",
+			0.3,
+			21.0,
 			40, // HPs
 			55, 70, // Attack & Defense
 			45, 60, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 3;
-			this._weight = 210;
-		}
+		{}
 		#endregion
 	}
 	#endregion

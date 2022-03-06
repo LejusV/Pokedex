@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegirock Builder
 		public SpecieRegirock() : base(
 			"Regirock",
+			1.7,
+			230.0,
 			80, // HPs
 			100, 200, // Attack & Defense
 			50, 100, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 17;
-			this._weight = 2300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChimecho Builder
 		public SpecieChimecho() : base(
 			"Chimecho",
+			0.6,
+			1.0,
 			75, // HPs
 			50, 80, // Attack & Defense
 			95, 90, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

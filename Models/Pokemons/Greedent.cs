@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGreedent Builder
 		public SpecieGreedent() : base(
 			"Greedent",
+			0.6,
+			6.0,
 			120, // HPs
 			95, 95, // Attack & Defense
 			55, 75, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 6;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

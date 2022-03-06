@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGyarados Builder
 		public SpecieGyarados() : base(
 			"Gyarados",
+			6.5,
+			235.0,
 			95, // HPs
 			125, 79, // Attack & Defense
 			60, 100, // Special Attack & Defense
 			81		
 		)
-		{
-			this._height = 65;
-			this._weight = 2350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

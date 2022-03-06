@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCosmoem Builder
 		public SpecieCosmoem() : base(
 			"Cosmoem",
+			0.1,
+			999.9,
 			43, // HPs
 			29, 131, // Attack & Defense
 			29, 131, // Special Attack & Defense
 			37		
 		)
-		{
-			this._height = 1;
-			this._weight = 9999;
-		}
+		{}
 		#endregion
 	}
 	#endregion

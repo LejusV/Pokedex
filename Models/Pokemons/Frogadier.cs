@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFrogadier Builder
 		public SpecieFrogadier() : base(
 			"Frogadier",
+			0.6,
+			10.9,
 			54, // HPs
 			63, 52, // Attack & Defense
 			83, 56, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 6;
-			this._weight = 109;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYanma Builder
 		public SpecieYanma() : base(
 			"Yanma",
+			1.2,
+			38.0,
 			65, // HPs
 			65, 45, // Attack & Defense
 			75, 45, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 12;
-			this._weight = 380;
-		}
+		{}
 		#endregion
 	}
 	#endregion

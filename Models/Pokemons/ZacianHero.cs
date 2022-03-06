@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZacian-Hero Builder
 		public SpecieZacianHero() : base(
 			"Zacian-Hero",
+			2.8,
+			110.0,
 			92, // HPs
 			130, 115, // Attack & Defense
 			80, 115, // Special Attack & Defense
 			138		
 		)
-		{
-			this._height = 28;
-			this._weight = 1100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

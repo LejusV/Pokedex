@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCharjabug Builder
 		public SpecieCharjabug() : base(
 			"Charjabug",
+			0.5,
+			10.5,
 			57, // HPs
 			82, 95, // Attack & Defense
 			55, 75, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 5;
-			this._weight = 105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

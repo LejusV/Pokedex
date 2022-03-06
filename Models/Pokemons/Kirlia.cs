@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKirlia Builder
 		public SpecieKirlia() : base(
 			"Kirlia",
+			0.8,
+			20.2,
 			38, // HPs
 			35, 35, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 8;
-			this._weight = 202;
-		}
+		{}
 		#endregion
 	}
 	#endregion

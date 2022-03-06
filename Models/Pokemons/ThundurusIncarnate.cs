@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieThundurus-Incarnate Builder
 		public SpecieThundurusIncarnate() : base(
 			"Thundurus-Incarnate",
+			1.5,
+			61.0,
 			79, // HPs
 			115, 70, // Attack & Defense
 			125, 80, // Special Attack & Defense
 			111		
 		)
-		{
-			this._height = 15;
-			this._weight = 610;
-		}
+		{}
 		#endregion
 	}
 	#endregion

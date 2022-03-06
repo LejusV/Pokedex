@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLunala Builder
 		public SpecieLunala() : base(
 			"Lunala",
+			4.0,
+			120.0,
 			137, // HPs
 			113, 89, // Attack & Defense
 			137, 107, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 40;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

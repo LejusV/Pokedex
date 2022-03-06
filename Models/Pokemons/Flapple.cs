@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlapple Builder
 		public SpecieFlapple() : base(
 			"Flapple",
+			0.3,
+			1.0,
 			70, // HPs
 			110, 80, // Attack & Defense
 			95, 60, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 3;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

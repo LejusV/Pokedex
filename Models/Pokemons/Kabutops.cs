@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKabutops Builder
 		public SpecieKabutops() : base(
 			"Kabutops",
+			1.3,
+			40.5,
 			60, // HPs
 			115, 105, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 13;
-			this._weight = 405;
-		}
+		{}
 		#endregion
 	}
 	#endregion

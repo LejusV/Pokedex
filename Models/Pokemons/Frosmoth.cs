@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFrosmoth Builder
 		public SpecieFrosmoth() : base(
 			"Frosmoth",
+			1.3,
+			42.0,
 			70, // HPs
 			65, 60, // Attack & Defense
 			125, 90, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 13;
-			this._weight = 420;
-		}
+		{}
 		#endregion
 	}
 	#endregion

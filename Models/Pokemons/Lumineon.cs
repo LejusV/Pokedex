@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLumineon Builder
 		public SpecieLumineon() : base(
 			"Lumineon",
+			1.2,
+			24.0,
 			69, // HPs
 			69, 76, // Attack & Defense
 			69, 86, // Special Attack & Defense
 			91		
 		)
-		{
-			this._height = 12;
-			this._weight = 240;
-		}
+		{}
 		#endregion
 	}
 	#endregion

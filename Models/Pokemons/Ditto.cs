@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDitto Builder
 		public SpecieDitto() : base(
 			"Ditto",
+			0.3,
+			4.0,
 			48, // HPs
 			48, 48, // Attack & Defense
 			48, 48, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 3;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

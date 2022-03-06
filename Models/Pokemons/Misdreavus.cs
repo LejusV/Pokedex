@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMisdreavus Builder
 		public SpecieMisdreavus() : base(
 			"Misdreavus",
+			0.7,
+			1.0,
 			60, // HPs
 			60, 60, // Attack & Defense
 			85, 85, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 7;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

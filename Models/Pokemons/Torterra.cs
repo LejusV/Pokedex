@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTorterra Builder
 		public SpecieTorterra() : base(
 			"Torterra",
+			2.2,
+			310.0,
 			95, // HPs
 			109, 105, // Attack & Defense
 			75, 85, // Special Attack & Defense
 			56		
 		)
-		{
-			this._height = 22;
-			this._weight = 3100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

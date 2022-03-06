@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwampert Builder
 		public SpecieSwampert() : base(
 			"Swampert",
+			1.5,
+			81.9,
 			100, // HPs
 			110, 90, // Attack & Defense
 			85, 90, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 15;
-			this._weight = 819;
-		}
+		{}
 		#endregion
 	}
 	#endregion

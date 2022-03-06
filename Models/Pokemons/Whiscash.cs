@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWhiscash Builder
 		public SpecieWhiscash() : base(
 			"Whiscash",
+			0.9,
+			23.6,
 			110, // HPs
 			78, 73, // Attack & Defense
 			76, 71, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 9;
-			this._weight = 236;
-		}
+		{}
 		#endregion
 	}
 	#endregion

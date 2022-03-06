@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRaboot Builder
 		public SpecieRaboot() : base(
 			"Raboot",
+			0.6,
+			9.0,
 			65, // HPs
 			86, 60, // Attack & Defense
 			55, 60, // Special Attack & Defense
 			94		
 		)
-		{
-			this._height = 6;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

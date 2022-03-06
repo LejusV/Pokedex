@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeowstic-Male Builder
 		public SpecieMeowsticMale() : base(
 			"Meowstic-Male",
+			0.6,
+			8.5,
 			74, // HPs
 			48, 76, // Attack & Defense
 			83, 81, // Special Attack & Defense
 			104		
 		)
-		{
-			this._height = 6;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

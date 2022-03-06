@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRoserade Builder
 		public SpecieRoserade() : base(
 			"Roserade",
+			0.9,
+			14.5,
 			60, // HPs
 			70, 65, // Attack & Defense
 			125, 105, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 9;
-			this._weight = 145;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUnfezant Builder
 		public SpecieUnfezant() : base(
 			"Unfezant",
+			1.2,
+			29.0,
 			80, // HPs
 			115, 80, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			93		
 		)
-		{
-			this._height = 12;
-			this._weight = 290;
-		}
+		{}
 		#endregion
 	}
 	#endregion

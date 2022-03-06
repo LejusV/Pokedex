@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlipbug Builder
 		public SpecieBlipbug() : base(
 			"Blipbug",
+			0.4,
+			8.0,
 			25, // HPs
 			20, 20, // Attack & Defense
 			25, 45, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

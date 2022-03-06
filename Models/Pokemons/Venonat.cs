@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVenonat Builder
 		public SpecieVenonat() : base(
 			"Venonat",
+			1.0,
+			30.0,
 			60, // HPs
 			55, 50, // Attack & Defense
 			40, 55, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 10;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

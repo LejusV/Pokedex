@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKlefki Builder
 		public SpecieKlefki() : base(
 			"Klefki",
+			0.2,
+			3.0,
 			57, // HPs
 			80, 91, // Attack & Defense
 			80, 87, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 2;
-			this._weight = 30;
-		}
+		{}
 		#endregion
 	}
 	#endregion

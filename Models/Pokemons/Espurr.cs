@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEspurr Builder
 		public SpecieEspurr() : base(
 			"Espurr",
+			0.3,
+			3.5,
 			62, // HPs
 			48, 54, // Attack & Defense
 			63, 60, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 3;
-			this._weight = 35;
-		}
+		{}
 		#endregion
 	}
 	#endregion

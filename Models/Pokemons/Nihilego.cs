@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNihilego Builder
 		public SpecieNihilego() : base(
 			"Nihilego",
+			1.2,
+			55.5,
 			109, // HPs
 			53, 47, // Attack & Defense
 			127, 131, // Special Attack & Defense
 			103		
 		)
-		{
-			this._height = 12;
-			this._weight = 555;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStarmie Builder
 		public SpecieStarmie() : base(
 			"Starmie",
+			1.1,
+			80.0,
 			60, // HPs
 			75, 85, // Attack & Defense
 			100, 85, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 11;
-			this._weight = 800;
-		}
+		{}
 		#endregion
 	}
 	#endregion

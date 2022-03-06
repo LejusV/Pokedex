@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieToxtricity-Amped Builder
 		public SpecieToxtricityAmped() : base(
 			"Toxtricity-Amped",
+			1.6,
+			40.0,
 			75, // HPs
 			98, 70, // Attack & Defense
 			114, 70, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 16;
-			this._weight = 400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

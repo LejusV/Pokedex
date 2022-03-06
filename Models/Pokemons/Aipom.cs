@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAipom Builder
 		public SpecieAipom() : base(
 			"Aipom",
+			0.8,
+			11.5,
 			55, // HPs
 			70, 55, // Attack & Defense
 			40, 55, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 8;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

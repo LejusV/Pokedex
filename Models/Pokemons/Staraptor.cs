@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStaraptor Builder
 		public SpecieStaraptor() : base(
 			"Staraptor",
+			1.2,
+			24.9,
 			85, // HPs
 			120, 70, // Attack & Defense
 			50, 60, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 12;
-			this._weight = 249;
-		}
+		{}
 		#endregion
 	}
 	#endregion

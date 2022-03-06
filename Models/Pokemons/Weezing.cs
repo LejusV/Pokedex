@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWeezing Builder
 		public SpecieWeezing() : base(
 			"Weezing",
+			1.2,
+			9.5,
 			65, // HPs
 			90, 120, // Attack & Defense
 			85, 70, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 12;
-			this._weight = 95;
-		}
+		{}
 		#endregion
 	}
 	#endregion

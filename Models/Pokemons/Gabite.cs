@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGabite Builder
 		public SpecieGabite() : base(
 			"Gabite",
+			1.4,
+			56.0,
 			68, // HPs
 			90, 65, // Attack & Defense
 			50, 55, // Special Attack & Defense
 			82		
 		)
-		{
-			this._height = 14;
-			this._weight = 560;
-		}
+		{}
 		#endregion
 	}
 	#endregion

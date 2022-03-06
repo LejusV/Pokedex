@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTrevenant Builder
 		public SpecieTrevenant() : base(
 			"Trevenant",
+			1.5,
+			71.0,
 			85, // HPs
 			110, 76, // Attack & Defense
 			65, 82, // Special Attack & Defense
 			56		
 		)
-		{
-			this._height = 15;
-			this._weight = 710;
-		}
+		{}
 		#endregion
 	}
 	#endregion

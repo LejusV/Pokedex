@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBrionne Builder
 		public SpecieBrionne() : base(
 			"Brionne",
+			0.6,
+			17.5,
 			60, // HPs
 			69, 69, // Attack & Defense
 			91, 81, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 175;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLitleo Builder
 		public SpecieLitleo() : base(
 			"Litleo",
+			0.6,
+			13.5,
 			62, // HPs
 			50, 58, // Attack & Defense
 			73, 54, // Special Attack & Defense
 			72		
 		)
-		{
-			this._height = 6;
-			this._weight = 135;
-		}
+		{}
 		#endregion
 	}
 	#endregion

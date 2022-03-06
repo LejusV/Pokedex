@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMesprit Builder
 		public SpecieMesprit() : base(
 			"Mesprit",
+			0.3,
+			0.3,
 			80, // HPs
 			105, 105, // Attack & Defense
 			105, 105, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 3;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDunsparce Builder
 		public SpecieDunsparce() : base(
 			"Dunsparce",
+			1.5,
+			14.0,
 			100, // HPs
 			70, 70, // Attack & Defense
 			65, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 15;
-			this._weight = 140;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePyroar Builder
 		public SpeciePyroar() : base(
 			"Pyroar",
+			1.5,
+			81.5,
 			86, // HPs
 			68, 72, // Attack & Defense
 			109, 66, // Special Attack & Defense
 			106		
 		)
-		{
-			this._height = 15;
-			this._weight = 815;
-		}
+		{}
 		#endregion
 	}
 	#endregion

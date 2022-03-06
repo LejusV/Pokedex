@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSentret Builder
 		public SpecieSentret() : base(
 			"Sentret",
+			0.8,
+			6.0,
 			35, // HPs
 			46, 34, // Attack & Defense
 			35, 45, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 8;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

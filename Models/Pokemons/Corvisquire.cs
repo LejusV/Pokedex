@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCorvisquire Builder
 		public SpecieCorvisquire() : base(
 			"Corvisquire",
+			0.8,
+			16.0,
 			68, // HPs
 			67, 55, // Attack & Defense
 			43, 55, // Special Attack & Defense
 			77		
 		)
-		{
-			this._height = 8;
-			this._weight = 160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

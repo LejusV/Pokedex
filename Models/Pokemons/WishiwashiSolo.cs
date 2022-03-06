@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWishiwashi-Solo Builder
 		public SpecieWishiwashiSolo() : base(
 			"Wishiwashi-Solo",
+			0.2,
+			0.3,
 			45, // HPs
 			20, 20, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 2;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

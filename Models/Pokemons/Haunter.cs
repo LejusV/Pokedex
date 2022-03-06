@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHaunter Builder
 		public SpecieHaunter() : base(
 			"Haunter",
+			1.6,
+			0.1,
 			45, // HPs
 			50, 45, // Attack & Defense
 			115, 55, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 16;
-			this._weight = 1;
-		}
+		{}
 		#endregion
 	}
 	#endregion

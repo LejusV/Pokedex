@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieServine Builder
 		public SpecieServine() : base(
 			"Servine",
+			0.8,
+			16.0,
 			60, // HPs
 			60, 75, // Attack & Defense
 			60, 75, // Special Attack & Defense
 			83		
 		)
-		{
-			this._height = 8;
-			this._weight = 160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

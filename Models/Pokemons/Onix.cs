@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOnix Builder
 		public SpecieOnix() : base(
 			"Onix",
+			8.8,
+			210.0,
 			35, // HPs
 			45, 160, // Attack & Defense
 			30, 45, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 88;
-			this._weight = 2100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

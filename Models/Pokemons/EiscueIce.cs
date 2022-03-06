@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEiscue-Ice Builder
 		public SpecieEiscueIce() : base(
 			"Eiscue-Ice",
+			1.4,
+			89.0,
 			75, // HPs
 			80, 110, // Attack & Defense
 			65, 90, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 14;
-			this._weight = 890;
-		}
+		{}
 		#endregion
 	}
 	#endregion

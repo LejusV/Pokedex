@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHo-Oh Builder
 		public SpecieHoOh() : base(
 			"Ho-Oh",
+			3.8,
+			199.0,
 			106, // HPs
 			130, 90, // Attack & Defense
 			110, 154, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 38;
-			this._weight = 1990;
-		}
+		{}
 		#endregion
 	}
 	#endregion

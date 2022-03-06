@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAbsol Builder
 		public SpecieAbsol() : base(
 			"Absol",
+			1.2,
+			47.0,
 			65, // HPs
 			130, 60, // Attack & Defense
 			75, 60, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 12;
-			this._weight = 470;
-		}
+		{}
 		#endregion
 	}
 	#endregion

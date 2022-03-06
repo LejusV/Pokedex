@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNidoking Builder
 		public SpecieNidoking() : base(
 			"Nidoking",
+			1.4,
+			62.0,
 			81, // HPs
 			102, 77, // Attack & Defense
 			85, 75, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 14;
-			this._weight = 620;
-		}
+		{}
 		#endregion
 	}
 	#endregion

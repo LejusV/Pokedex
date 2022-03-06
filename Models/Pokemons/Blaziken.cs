@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlaziken Builder
 		public SpecieBlaziken() : base(
 			"Blaziken",
+			1.9,
+			52.0,
 			80, // HPs
 			120, 70, // Attack & Defense
 			110, 70, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 19;
-			this._weight = 520;
-		}
+		{}
 		#endregion
 	}
 	#endregion

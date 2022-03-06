@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDucklett Builder
 		public SpecieDucklett() : base(
 			"Ducklett",
+			0.5,
+			5.5,
 			62, // HPs
 			44, 50, // Attack & Defense
 			44, 50, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 5;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrednaw Builder
 		public SpecieDrednaw() : base(
 			"Drednaw",
+			1.0,
+			115.5,
 			90, // HPs
 			115, 90, // Attack & Defense
 			48, 68, // Special Attack & Defense
 			74		
 		)
-		{
-			this._height = 10;
-			this._weight = 1155;
-		}
+		{}
 		#endregion
 	}
 	#endregion

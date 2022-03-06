@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHoundoom Builder
 		public SpecieHoundoom() : base(
 			"Houndoom",
+			1.4,
+			35.0,
 			75, // HPs
 			90, 50, // Attack & Defense
 			110, 80, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 14;
-			this._weight = 350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

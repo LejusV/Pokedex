@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePidgeot Builder
 		public SpeciePidgeot() : base(
 			"Pidgeot",
+			1.5,
+			39.5,
 			83, // HPs
 			80, 75, // Attack & Defense
 			70, 70, // Special Attack & Defense
 			101		
 		)
-		{
-			this._height = 15;
-			this._weight = 395;
-		}
+		{}
 		#endregion
 	}
 	#endregion

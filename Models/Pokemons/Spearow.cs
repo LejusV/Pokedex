@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpearow Builder
 		public SpecieSpearow() : base(
 			"Spearow",
+			0.3,
+			2.0,
 			40, // HPs
 			60, 30, // Attack & Defense
 			31, 31, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 3;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

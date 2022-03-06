@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEmpoleon Builder
 		public SpecieEmpoleon() : base(
 			"Empoleon",
+			1.7,
+			84.5,
 			84, // HPs
 			86, 88, // Attack & Defense
 			111, 101, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 17;
-			this._weight = 845;
-		}
+		{}
 		#endregion
 	}
 	#endregion

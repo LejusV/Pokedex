@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMachamp Builder
 		public SpecieMachamp() : base(
 			"Machamp",
+			1.6,
+			130.0,
 			90, // HPs
 			130, 80, // Attack & Defense
 			65, 85, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 16;
-			this._weight = 1300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

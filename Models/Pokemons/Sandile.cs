@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSandile Builder
 		public SpecieSandile() : base(
 			"Sandile",
+			0.7,
+			15.2,
 			50, // HPs
 			72, 35, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 7;
-			this._weight = 152;
-		}
+		{}
 		#endregion
 	}
 	#endregion

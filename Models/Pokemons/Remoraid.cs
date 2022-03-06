@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRemoraid Builder
 		public SpecieRemoraid() : base(
 			"Remoraid",
+			0.6,
+			12.0,
 			35, // HPs
 			65, 35, // Attack & Defense
 			65, 35, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

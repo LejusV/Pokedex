@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieExploud Builder
 		public SpecieExploud() : base(
 			"Exploud",
+			1.5,
+			84.0,
 			104, // HPs
 			91, 63, // Attack & Defense
 			91, 73, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 15;
-			this._weight = 840;
-		}
+		{}
 		#endregion
 	}
 	#endregion

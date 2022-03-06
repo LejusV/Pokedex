@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieManectric Builder
 		public SpecieManectric() : base(
 			"Manectric",
+			1.5,
+			40.2,
 			70, // HPs
 			75, 60, // Attack & Defense
 			105, 60, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 15;
-			this._weight = 402;
-		}
+		{}
 		#endregion
 	}
 	#endregion

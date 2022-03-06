@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDracovish Builder
 		public SpecieDracovish() : base(
 			"Dracovish",
+			2.3,
+			215.0,
 			90, // HPs
 			90, 100, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 23;
-			this._weight = 2150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

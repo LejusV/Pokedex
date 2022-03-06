@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBunnelby Builder
 		public SpecieBunnelby() : base(
 			"Bunnelby",
+			0.4,
+			5.0,
 			38, // HPs
 			36, 38, // Attack & Defense
 			32, 36, // Special Attack & Defense
 			57		
 		)
-		{
-			this._height = 4;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

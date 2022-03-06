@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMachoke Builder
 		public SpecieMachoke() : base(
 			"Machoke",
+			1.5,
+			70.5,
 			80, // HPs
 			100, 70, // Attack & Defense
 			50, 60, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 15;
-			this._weight = 705;
-		}
+		{}
 		#endregion
 	}
 	#endregion

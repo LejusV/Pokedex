@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrookey Builder
 		public SpecieGrookey() : base(
 			"Grookey",
+			0.3,
+			5.0,
 			50, // HPs
 			65, 50, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 3;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

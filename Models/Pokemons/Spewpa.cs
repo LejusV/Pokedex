@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpewpa Builder
 		public SpecieSpewpa() : base(
 			"Spewpa",
+			0.3,
+			8.4,
 			45, // HPs
 			22, 60, // Attack & Defense
 			27, 30, // Special Attack & Defense
 			29		
 		)
-		{
-			this._height = 3;
-			this._weight = 84;
-		}
+		{}
 		#endregion
 	}
 	#endregion

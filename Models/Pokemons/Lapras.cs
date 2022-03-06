@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLapras Builder
 		public SpecieLapras() : base(
 			"Lapras",
+			2.5,
+			220.0,
 			130, // HPs
 			85, 80, // Attack & Defense
 			85, 95, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 25;
-			this._weight = 2200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

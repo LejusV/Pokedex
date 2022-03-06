@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGenesect Builder
 		public SpecieGenesect() : base(
 			"Genesect",
+			1.5,
+			82.5,
 			71, // HPs
 			120, 95, // Attack & Defense
 			120, 95, // Special Attack & Defense
 			99		
 		)
-		{
-			this._height = 15;
-			this._weight = 825;
-		}
+		{}
 		#endregion
 	}
 	#endregion

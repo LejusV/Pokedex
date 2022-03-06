@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLotad Builder
 		public SpecieLotad() : base(
 			"Lotad",
+			0.5,
+			2.6,
 			40, // HPs
 			30, 30, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 26;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRotom Builder
 		public SpecieRotom() : base(
 			"Rotom",
+			0.3,
+			0.3,
 			50, // HPs
 			50, 77, // Attack & Defense
 			95, 77, // Special Attack & Defense
 			91		
 		)
-		{
-			this._height = 3;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

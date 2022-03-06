@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCryogonal Builder
 		public SpecieCryogonal() : base(
 			"Cryogonal",
+			1.1,
+			148.0,
 			80, // HPs
 			50, 50, // Attack & Defense
 			95, 135, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 11;
-			this._weight = 1480;
-		}
+		{}
 		#endregion
 	}
 	#endregion

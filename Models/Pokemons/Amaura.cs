@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAmaura Builder
 		public SpecieAmaura() : base(
 			"Amaura",
+			1.3,
+			25.2,
 			77, // HPs
 			59, 50, // Attack & Defense
 			67, 63, // Special Attack & Defense
 			46		
 		)
-		{
-			this._height = 13;
-			this._weight = 252;
-		}
+		{}
 		#endregion
 	}
 	#endregion

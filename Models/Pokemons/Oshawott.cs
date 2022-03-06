@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOshawott Builder
 		public SpecieOshawott() : base(
 			"Oshawott",
+			0.5,
+			5.9,
 			55, // HPs
 			55, 45, // Attack & Defense
 			63, 45, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 5;
-			this._weight = 59;
-		}
+		{}
 		#endregion
 	}
 	#endregion

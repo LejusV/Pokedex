@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHatterene Builder
 		public SpecieHatterene() : base(
 			"Hatterene",
+			2.1,
+			5.1,
 			57, // HPs
 			90, 95, // Attack & Defense
 			136, 103, // Special Attack & Defense
 			29		
 		)
-		{
-			this._height = 21;
-			this._weight = 51;
-		}
+		{}
 		#endregion
 	}
 	#endregion

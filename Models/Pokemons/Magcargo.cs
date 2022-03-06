@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagcargo Builder
 		public SpecieMagcargo() : base(
 			"Magcargo",
+			0.8,
+			55.0,
 			60, // HPs
 			50, 120, // Attack & Defense
 			90, 80, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 8;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

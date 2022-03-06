@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePignite Builder
 		public SpeciePignite() : base(
 			"Pignite",
+			1.0,
+			55.5,
 			90, // HPs
 			93, 55, // Attack & Defense
 			70, 55, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 10;
-			this._weight = 555;
-		}
+		{}
 		#endregion
 	}
 	#endregion

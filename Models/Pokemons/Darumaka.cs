@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDarumaka Builder
 		public SpecieDarumaka() : base(
 			"Darumaka",
+			0.6,
+			37.5,
 			70, // HPs
 			90, 45, // Attack & Defense
 			15, 45, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 375;
-		}
+		{}
 		#endregion
 	}
 	#endregion

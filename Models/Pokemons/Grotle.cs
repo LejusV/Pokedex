@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrotle Builder
 		public SpecieGrotle() : base(
 			"Grotle",
+			1.1,
+			97.0,
 			75, // HPs
 			89, 85, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 11;
-			this._weight = 970;
-		}
+		{}
 		#endregion
 	}
 	#endregion

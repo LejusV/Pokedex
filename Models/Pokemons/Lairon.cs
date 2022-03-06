@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLairon Builder
 		public SpecieLairon() : base(
 			"Lairon",
+			0.9,
+			120.0,
 			60, // HPs
 			90, 140, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 9;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTogekiss Builder
 		public SpecieTogekiss() : base(
 			"Togekiss",
+			1.5,
+			38.0,
 			85, // HPs
 			50, 95, // Attack & Defense
 			120, 115, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 15;
-			this._weight = 380;
-		}
+		{}
 		#endregion
 	}
 	#endregion

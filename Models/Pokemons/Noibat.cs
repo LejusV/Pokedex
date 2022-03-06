@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNoibat Builder
 		public SpecieNoibat() : base(
 			"Noibat",
+			0.5,
+			8.0,
 			40, // HPs
 			30, 35, // Attack & Defense
 			45, 40, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 5;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

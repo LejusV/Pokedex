@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDartrix Builder
 		public SpecieDartrix() : base(
 			"Dartrix",
+			0.7,
+			16.0,
 			78, // HPs
 			75, 75, // Attack & Defense
 			70, 70, // Special Attack & Defense
 			52		
 		)
-		{
-			this._height = 7;
-			this._weight = 160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStaryu Builder
 		public SpecieStaryu() : base(
 			"Staryu",
+			0.8,
+			34.5,
 			30, // HPs
 			45, 55, // Attack & Defense
 			70, 55, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 8;
-			this._weight = 345;
-		}
+		{}
 		#endregion
 	}
 	#endregion

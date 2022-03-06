@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMarshadow Builder
 		public SpecieMarshadow() : base(
 			"Marshadow",
+			0.7,
+			22.2,
 			90, // HPs
 			125, 80, // Attack & Defense
 			90, 90, // Special Attack & Defense
 			125		
 		)
-		{
-			this._height = 7;
-			this._weight = 222;
-		}
+		{}
 		#endregion
 	}
 	#endregion

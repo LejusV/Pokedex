@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScatterbug Builder
 		public SpecieScatterbug() : base(
 			"Scatterbug",
+			0.3,
+			2.5,
 			38, // HPs
 			35, 40, // Attack & Defense
 			27, 25, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 3;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePanpour Builder
 		public SpeciePanpour() : base(
 			"Panpour",
+			0.6,
+			13.5,
 			50, // HPs
 			53, 48, // Attack & Defense
 			53, 48, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 6;
-			this._weight = 135;
-		}
+		{}
 		#endregion
 	}
 	#endregion

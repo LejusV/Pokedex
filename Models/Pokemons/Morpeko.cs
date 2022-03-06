@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMorpeko Builder
 		public SpecieMorpeko() : base(
 			"Morpeko",
+			0.3,
+			3.0,
 			58, // HPs
 			95, 58, // Attack & Defense
 			70, 58, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 3;
-			this._weight = 30;
-		}
+		{}
 		#endregion
 	}
 	#endregion

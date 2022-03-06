@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAlcremie Builder
 		public SpecieAlcremie() : base(
 			"Alcremie",
+			0.3,
+			0.5,
 			65, // HPs
 			60, 75, // Attack & Defense
 			110, 121, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 3;
-			this._weight = 5;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArctovish Builder
 		public SpecieArctovish() : base(
 			"Arctovish",
+			2.0,
+			175.0,
 			90, // HPs
 			90, 100, // Attack & Defense
 			80, 90, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 20;
-			this._weight = 1750;
-		}
+		{}
 		#endregion
 	}
 	#endregion

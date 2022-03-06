@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBarraskewda Builder
 		public SpecieBarraskewda() : base(
 			"Barraskewda",
+			1.3,
+			30.0,
 			61, // HPs
 			123, 60, // Attack & Defense
 			60, 50, // Special Attack & Defense
 			136		
 		)
-		{
-			this._height = 13;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

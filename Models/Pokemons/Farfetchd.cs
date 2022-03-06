@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFarfetchd Builder
 		public SpecieFarfetchd() : base(
 			"Farfetchd",
+			0.8,
+			15.0,
 			52, // HPs
 			90, 55, // Attack & Defense
 			58, 62, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 8;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

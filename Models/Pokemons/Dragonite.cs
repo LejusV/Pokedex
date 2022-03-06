@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDragonite Builder
 		public SpecieDragonite() : base(
 			"Dragonite",
+			2.2,
+			210.0,
 			91, // HPs
 			134, 95, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 22;
-			this._weight = 2100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

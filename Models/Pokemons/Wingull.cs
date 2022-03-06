@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWingull Builder
 		public SpecieWingull() : base(
 			"Wingull",
+			0.6,
+			9.5,
 			40, // HPs
 			30, 30, // Attack & Defense
 			55, 30, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 6;
-			this._weight = 95;
-		}
+		{}
 		#endregion
 	}
 	#endregion

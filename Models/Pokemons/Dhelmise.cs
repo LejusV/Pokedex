@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDhelmise Builder
 		public SpecieDhelmise() : base(
 			"Dhelmise",
+			3.9,
+			210.0,
 			70, // HPs
 			131, 100, // Attack & Defense
 			86, 90, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 39;
-			this._weight = 2100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrampa Builder
 		public SpecieDrampa() : base(
 			"Drampa",
+			3.0,
+			185.0,
 			78, // HPs
 			60, 85, // Attack & Defense
 			135, 91, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 30;
-			this._weight = 1850;
-		}
+		{}
 		#endregion
 	}
 	#endregion

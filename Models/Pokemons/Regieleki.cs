@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRegieleki Builder
 		public SpecieRegieleki() : base(
 			"Regieleki",
+			1.2,
+			145.0,
 			80, // HPs
 			100, 50, // Attack & Defense
 			100, 50, // Special Attack & Defense
 			200		
 		)
-		{
-			this._height = 12;
-			this._weight = 1450;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShelmet Builder
 		public SpecieShelmet() : base(
 			"Shelmet",
+			0.4,
+			7.7,
 			50, // HPs
 			40, 85, // Attack & Defense
 			40, 65, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 4;
-			this._weight = 77;
-		}
+		{}
 		#endregion
 	}
 	#endregion

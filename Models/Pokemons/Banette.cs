@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBanette Builder
 		public SpecieBanette() : base(
 			"Banette",
+			1.1,
+			12.5,
 			64, // HPs
 			115, 65, // Attack & Defense
 			83, 63, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 11;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

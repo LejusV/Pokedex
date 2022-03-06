@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieButterfree Builder
 		public SpecieButterfree() : base(
 			"Butterfree",
+			1.1,
+			32.0,
 			60, // HPs
 			45, 50, // Attack & Defense
 			90, 80, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 11;
-			this._weight = 320;
-		}
+		{}
 		#endregion
 	}
 	#endregion

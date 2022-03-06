@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAerodactyl Builder
 		public SpecieAerodactyl() : base(
 			"Aerodactyl",
+			1.8,
+			59.0,
 			80, // HPs
 			105, 65, // Attack & Defense
 			60, 75, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 18;
-			this._weight = 590;
-		}
+		{}
 		#endregion
 	}
 	#endregion

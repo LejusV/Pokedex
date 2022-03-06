@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShedinja Builder
 		public SpecieShedinja() : base(
 			"Shedinja",
+			0.8,
+			1.2,
 			1, // HPs
 			90, 45, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 8;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

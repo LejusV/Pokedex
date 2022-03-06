@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNidoran-F Builder
 		public SpecieNidoranF() : base(
 			"Nidoran-F",
+			0.4,
+			7.0,
 			55, // HPs
 			47, 52, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			41		
 		)
-		{
-			this._height = 4;
-			this._weight = 70;
-		}
+		{}
 		#endregion
 	}
 	#endregion

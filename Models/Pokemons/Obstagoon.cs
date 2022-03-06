@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieObstagoon Builder
 		public SpecieObstagoon() : base(
 			"Obstagoon",
+			1.6,
+			46.0,
 			93, // HPs
 			90, 101, // Attack & Defense
 			60, 81, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 16;
-			this._weight = 460;
-		}
+		{}
 		#endregion
 	}
 	#endregion

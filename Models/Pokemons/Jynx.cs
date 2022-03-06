@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJynx Builder
 		public SpecieJynx() : base(
 			"Jynx",
+			1.4,
+			40.6,
 			65, // HPs
 			50, 35, // Attack & Defense
 			115, 95, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 14;
-			this._weight = 406;
-		}
+		{}
 		#endregion
 	}
 	#endregion

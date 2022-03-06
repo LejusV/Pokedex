@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieExeggutor Builder
 		public SpecieExeggutor() : base(
 			"Exeggutor",
+			2.0,
+			120.0,
 			95, // HPs
 			95, 85, // Attack & Defense
 			125, 75, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 20;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

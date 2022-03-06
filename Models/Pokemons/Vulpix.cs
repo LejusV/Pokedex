@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVulpix Builder
 		public SpecieVulpix() : base(
 			"Vulpix",
+			0.6,
+			9.9,
 			38, // HPs
 			41, 40, // Attack & Defense
 			50, 65, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 99;
-		}
+		{}
 		#endregion
 	}
 	#endregion

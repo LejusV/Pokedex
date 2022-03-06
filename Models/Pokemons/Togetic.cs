@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTogetic Builder
 		public SpecieTogetic() : base(
 			"Togetic",
+			0.6,
+			3.2,
 			55, // HPs
 			40, 85, // Attack & Defense
 			80, 105, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 6;
-			this._weight = 32;
-		}
+		{}
 		#endregion
 	}
 	#endregion

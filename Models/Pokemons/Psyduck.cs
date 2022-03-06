@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePsyduck Builder
 		public SpeciePsyduck() : base(
 			"Psyduck",
+			0.8,
+			19.6,
 			50, // HPs
 			52, 48, // Attack & Defense
 			65, 50, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 8;
-			this._weight = 196;
-		}
+		{}
 		#endregion
 	}
 	#endregion

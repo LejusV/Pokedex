@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrapploct Builder
 		public SpecieGrapploct() : base(
 			"Grapploct",
+			1.6,
+			39.0,
 			80, // HPs
 			118, 90, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 16;
-			this._weight = 390;
-		}
+		{}
 		#endregion
 	}
 	#endregion

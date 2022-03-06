@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGoodra Builder
 		public SpecieGoodra() : base(
 			"Goodra",
+			2.0,
+			150.5,
 			90, // HPs
 			100, 70, // Attack & Defense
 			110, 150, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 20;
-			this._weight = 1505;
-		}
+		{}
 		#endregion
 	}
 	#endregion

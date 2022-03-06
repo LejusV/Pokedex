@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBoldore Builder
 		public SpecieBoldore() : base(
 			"Boldore",
+			0.9,
+			102.0,
 			70, // HPs
 			105, 105, // Attack & Defense
 			50, 40, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 9;
-			this._weight = 1020;
-		}
+		{}
 		#endregion
 	}
 	#endregion

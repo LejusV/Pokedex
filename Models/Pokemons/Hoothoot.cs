@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHoothoot Builder
 		public SpecieHoothoot() : base(
 			"Hoothoot",
+			0.7,
+			21.2,
 			60, // HPs
 			30, 30, // Attack & Defense
 			36, 56, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 7;
-			this._weight = 212;
-		}
+		{}
 		#endregion
 	}
 	#endregion

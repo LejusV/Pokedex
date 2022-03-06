@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStunky Builder
 		public SpecieStunky() : base(
 			"Stunky",
+			0.4,
+			19.2,
 			63, // HPs
 			63, 47, // Attack & Defense
 			41, 41, // Special Attack & Defense
 			74		
 		)
-		{
-			this._height = 4;
-			this._weight = 192;
-		}
+		{}
 		#endregion
 	}
 	#endregion

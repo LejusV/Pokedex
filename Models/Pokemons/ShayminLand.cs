@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShaymin-Land Builder
 		public SpecieShayminLand() : base(
 			"Shaymin-Land",
+			0.2,
+			2.1,
 			100, // HPs
 			100, 100, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 2;
-			this._weight = 21;
-		}
+		{}
 		#endregion
 	}
 	#endregion

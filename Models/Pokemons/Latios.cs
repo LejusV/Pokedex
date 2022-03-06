@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLatios Builder
 		public SpecieLatios() : base(
 			"Latios",
+			2.0,
+			60.0,
 			80, // HPs
 			90, 80, // Attack & Defense
 			130, 110, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 20;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

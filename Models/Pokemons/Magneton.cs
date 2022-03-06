@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagneton Builder
 		public SpecieMagneton() : base(
 			"Magneton",
+			1.0,
+			60.0,
 			50, // HPs
 			60, 95, // Attack & Defense
 			120, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 10;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

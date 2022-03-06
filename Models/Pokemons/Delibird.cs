@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDelibird Builder
 		public SpecieDelibird() : base(
 			"Delibird",
+			0.9,
+			16.0,
 			45, // HPs
 			55, 45, // Attack & Defense
 			65, 45, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 9;
-			this._weight = 160;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlacephalon Builder
 		public SpecieBlacephalon() : base(
 			"Blacephalon",
+			1.8,
+			13.0,
 			53, // HPs
 			127, 53, // Attack & Defense
 			151, 79, // Special Attack & Defense
 			107		
 		)
-		{
-			this._height = 18;
-			this._weight = 130;
-		}
+		{}
 		#endregion
 	}
 	#endregion

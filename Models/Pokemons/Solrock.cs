@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSolrock Builder
 		public SpecieSolrock() : base(
 			"Solrock",
+			1.2,
+			154.0,
 			90, // HPs
 			95, 85, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 12;
-			this._weight = 1540;
-		}
+		{}
 		#endregion
 	}
 	#endregion

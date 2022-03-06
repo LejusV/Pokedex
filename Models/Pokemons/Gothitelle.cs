@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGothitelle Builder
 		public SpecieGothitelle() : base(
 			"Gothitelle",
+			1.5,
+			44.0,
 			70, // HPs
 			55, 95, // Attack & Defense
 			95, 110, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 15;
-			this._weight = 440;
-		}
+		{}
 		#endregion
 	}
 	#endregion

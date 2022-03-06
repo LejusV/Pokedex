@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAppletun Builder
 		public SpecieAppletun() : base(
 			"Appletun",
+			0.4,
+			13.0,
 			110, // HPs
 			85, 80, // Attack & Defense
 			100, 80, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 4;
-			this._weight = 130;
-		}
+		{}
 		#endregion
 	}
 	#endregion

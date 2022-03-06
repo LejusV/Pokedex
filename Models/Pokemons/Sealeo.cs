@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSealeo Builder
 		public SpecieSealeo() : base(
 			"Sealeo",
+			1.1,
+			87.6,
 			90, // HPs
 			60, 70, // Attack & Defense
 			75, 70, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 11;
-			this._weight = 876;
-		}
+		{}
 		#endregion
 	}
 	#endregion

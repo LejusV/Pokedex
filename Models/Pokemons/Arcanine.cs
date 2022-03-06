@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieArcanine Builder
 		public SpecieArcanine() : base(
 			"Arcanine",
+			1.9,
+			155.0,
 			90, // HPs
 			110, 80, // Attack & Defense
 			100, 80, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 19;
-			this._weight = 1550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieConkeldurr Builder
 		public SpecieConkeldurr() : base(
 			"Conkeldurr",
+			1.4,
+			87.0,
 			105, // HPs
 			140, 95, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 14;
-			this._weight = 870;
-		}
+		{}
 		#endregion
 	}
 	#endregion

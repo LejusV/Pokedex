@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGliscor Builder
 		public SpecieGliscor() : base(
 			"Gliscor",
+			2.0,
+			42.5,
 			75, // HPs
 			95, 125, // Attack & Defense
 			45, 75, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 20;
-			this._weight = 425;
-		}
+		{}
 		#endregion
 	}
 	#endregion

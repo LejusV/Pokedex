@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChinchou Builder
 		public SpecieChinchou() : base(
 			"Chinchou",
+			0.5,
+			12.0,
 			75, // HPs
 			38, 38, // Attack & Defense
 			56, 56, // Special Attack & Defense
 			67		
 		)
-		{
-			this._height = 5;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

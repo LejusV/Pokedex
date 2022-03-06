@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieInkay Builder
 		public SpecieInkay() : base(
 			"Inkay",
+			0.4,
+			3.5,
 			53, // HPs
 			54, 53, // Attack & Defense
 			37, 46, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 35;
-		}
+		{}
 		#endregion
 	}
 	#endregion

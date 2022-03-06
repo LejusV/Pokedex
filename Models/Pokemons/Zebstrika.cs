@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZebstrika Builder
 		public SpecieZebstrika() : base(
 			"Zebstrika",
+			1.6,
+			79.5,
 			75, // HPs
 			100, 63, // Attack & Defense
 			80, 63, // Special Attack & Defense
 			116		
 		)
-		{
-			this._height = 16;
-			this._weight = 795;
-		}
+		{}
 		#endregion
 	}
 	#endregion

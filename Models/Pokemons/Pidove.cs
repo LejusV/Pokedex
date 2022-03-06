@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePidove Builder
 		public SpeciePidove() : base(
 			"Pidove",
+			0.3,
+			2.1,
 			50, // HPs
 			55, 50, // Attack & Defense
 			36, 30, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 3;
-			this._weight = 21;
-		}
+		{}
 		#endregion
 	}
 	#endregion

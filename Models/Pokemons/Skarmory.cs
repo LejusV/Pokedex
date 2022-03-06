@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkarmory Builder
 		public SpecieSkarmory() : base(
 			"Skarmory",
+			1.7,
+			50.5,
 			65, // HPs
 			80, 140, // Attack & Defense
 			40, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 17;
-			this._weight = 505;
-		}
+		{}
 		#endregion
 	}
 	#endregion

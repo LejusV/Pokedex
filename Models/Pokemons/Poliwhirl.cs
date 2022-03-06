@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePoliwhirl Builder
 		public SpeciePoliwhirl() : base(
 			"Poliwhirl",
+			1.0,
+			20.0,
 			65, // HPs
 			65, 65, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 10;
-			this._weight = 200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

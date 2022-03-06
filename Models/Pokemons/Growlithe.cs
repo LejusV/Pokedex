@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrowlithe Builder
 		public SpecieGrowlithe() : base(
 			"Growlithe",
+			0.7,
+			19.0,
 			55, // HPs
 			70, 45, // Attack & Defense
 			70, 50, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 7;
-			this._weight = 190;
-		}
+		{}
 		#endregion
 	}
 	#endregion

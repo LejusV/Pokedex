@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSandslash Builder
 		public SpecieSandslash() : base(
 			"Sandslash",
+			1.0,
+			29.5,
 			75, // HPs
 			100, 110, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 295;
-		}
+		{}
 		#endregion
 	}
 	#endregion

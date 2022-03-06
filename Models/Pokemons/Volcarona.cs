@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVolcarona Builder
 		public SpecieVolcarona() : base(
 			"Volcarona",
+			1.6,
+			46.0,
 			85, // HPs
 			60, 65, // Attack & Defense
 			135, 105, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 16;
-			this._weight = 460;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGlaceon Builder
 		public SpecieGlaceon() : base(
 			"Glaceon",
+			0.8,
+			25.9,
 			65, // HPs
 			60, 110, // Attack & Defense
 			130, 95, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 8;
-			this._weight = 259;
-		}
+		{}
 		#endregion
 	}
 	#endregion

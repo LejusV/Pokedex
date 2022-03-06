@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCherubi Builder
 		public SpecieCherubi() : base(
 			"Cherubi",
+			0.4,
+			3.3,
 			45, // HPs
 			35, 45, // Attack & Defense
 			62, 53, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 4;
-			this._weight = 33;
-		}
+		{}
 		#endregion
 	}
 	#endregion

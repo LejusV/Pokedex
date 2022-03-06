@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSharpedo Builder
 		public SpecieSharpedo() : base(
 			"Sharpedo",
+			1.8,
+			88.8,
 			70, // HPs
 			120, 40, // Attack & Defense
 			95, 40, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 18;
-			this._weight = 888;
-		}
+		{}
 		#endregion
 	}
 	#endregion

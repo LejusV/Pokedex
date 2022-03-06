@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlissey Builder
 		public SpecieBlissey() : base(
 			"Blissey",
+			1.5,
+			46.8,
 			255, // HPs
 			10, 10, // Attack & Defense
 			75, 135, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 15;
-			this._weight = 468;
-		}
+		{}
 		#endregion
 	}
 	#endregion

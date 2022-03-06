@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCarbink Builder
 		public SpecieCarbink() : base(
 			"Carbink",
+			0.3,
+			5.7,
 			50, // HPs
 			50, 150, // Attack & Defense
 			50, 150, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 3;
-			this._weight = 57;
-		}
+		{}
 		#endregion
 	}
 	#endregion

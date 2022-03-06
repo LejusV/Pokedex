@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSigilyph Builder
 		public SpecieSigilyph() : base(
 			"Sigilyph",
+			1.4,
+			14.0,
 			72, // HPs
 			58, 80, // Attack & Defense
 			103, 80, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 14;
-			this._weight = 140;
-		}
+		{}
 		#endregion
 	}
 	#endregion

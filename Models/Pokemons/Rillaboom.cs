@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRillaboom Builder
 		public SpecieRillaboom() : base(
 			"Rillaboom",
+			2.1,
+			90.0,
 			100, // HPs
 			125, 90, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 21;
-			this._weight = 900;
-		}
+		{}
 		#endregion
 	}
 	#endregion

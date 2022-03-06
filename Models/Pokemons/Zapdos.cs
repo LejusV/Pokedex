@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZapdos Builder
 		public SpecieZapdos() : base(
 			"Zapdos",
+			1.6,
+			52.6,
 			90, // HPs
 			90, 85, // Attack & Defense
 			125, 90, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 16;
-			this._weight = 526;
-		}
+		{}
 		#endregion
 	}
 	#endregion

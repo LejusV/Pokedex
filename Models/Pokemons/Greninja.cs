@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGreninja Builder
 		public SpecieGreninja() : base(
 			"Greninja",
+			1.5,
+			40.0,
 			72, // HPs
 			95, 67, // Attack & Defense
 			103, 71, // Special Attack & Defense
 			122		
 		)
-		{
-			this._height = 15;
-			this._weight = 400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

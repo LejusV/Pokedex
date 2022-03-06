@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTapu-Lele Builder
 		public SpecieTapuLele() : base(
 			"Tapu-Lele",
+			1.2,
+			18.6,
 			70, // HPs
 			85, 75, // Attack & Defense
 			130, 115, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 12;
-			this._weight = 186;
-		}
+		{}
 		#endregion
 	}
 	#endregion

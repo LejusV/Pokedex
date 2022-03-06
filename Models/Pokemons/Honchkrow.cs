@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHonchkrow Builder
 		public SpecieHonchkrow() : base(
 			"Honchkrow",
+			0.9,
+			27.3,
 			100, // HPs
 			125, 52, // Attack & Defense
 			105, 52, // Special Attack & Defense
 			71		
 		)
-		{
-			this._height = 9;
-			this._weight = 273;
-		}
+		{}
 		#endregion
 	}
 	#endregion

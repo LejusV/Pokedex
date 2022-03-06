@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDonphan Builder
 		public SpecieDonphan() : base(
 			"Donphan",
+			1.1,
+			120.0,
 			90, // HPs
 			120, 120, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

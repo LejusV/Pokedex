@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePrimarina Builder
 		public SpeciePrimarina() : base(
 			"Primarina",
+			1.8,
+			44.0,
 			80, // HPs
 			74, 74, // Attack & Defense
 			126, 116, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 18;
-			this._weight = 440;
-		}
+		{}
 		#endregion
 	}
 	#endregion

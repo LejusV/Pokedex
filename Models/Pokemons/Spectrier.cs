@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpectrier Builder
 		public SpecieSpectrier() : base(
 			"Spectrier",
+			2.0,
+			44.5,
 			100, // HPs
 			65, 60, // Attack & Defense
 			145, 80, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 20;
-			this._weight = 445;
-		}
+		{}
 		#endregion
 	}
 	#endregion

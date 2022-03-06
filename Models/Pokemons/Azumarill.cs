@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAzumarill Builder
 		public SpecieAzumarill() : base(
 			"Azumarill",
+			0.8,
+			28.5,
 			100, // HPs
 			50, 80, // Attack & Defense
 			60, 80, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 8;
-			this._weight = 285;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMetapod Builder
 		public SpecieMetapod() : base(
 			"Metapod",
+			0.7,
+			9.9,
 			50, // HPs
 			20, 55, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 7;
-			this._weight = 99;
-		}
+		{}
 		#endregion
 	}
 	#endregion

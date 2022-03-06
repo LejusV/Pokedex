@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHydreigon Builder
 		public SpecieHydreigon() : base(
 			"Hydreigon",
+			1.8,
+			160.0,
 			92, // HPs
 			105, 90, // Attack & Defense
 			125, 90, // Special Attack & Defense
 			98		
 		)
-		{
-			this._height = 18;
-			this._weight = 1600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

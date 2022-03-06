@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCarracosta Builder
 		public SpecieCarracosta() : base(
 			"Carracosta",
+			1.2,
+			81.0,
 			74, // HPs
 			108, 133, // Attack & Defense
 			83, 65, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 12;
-			this._weight = 810;
-		}
+		{}
 		#endregion
 	}
 	#endregion

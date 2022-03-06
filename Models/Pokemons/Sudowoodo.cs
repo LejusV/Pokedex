@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSudowoodo Builder
 		public SpecieSudowoodo() : base(
 			"Sudowoodo",
+			1.2,
+			38.0,
 			70, // HPs
 			100, 115, // Attack & Defense
 			30, 65, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 12;
-			this._weight = 380;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDialga Builder
 		public SpecieDialga() : base(
 			"Dialga",
+			5.4,
+			683.0,
 			100, // HPs
 			120, 120, // Attack & Defense
 			150, 100, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 54;
-			this._weight = 6830;
-		}
+		{}
 		#endregion
 	}
 	#endregion

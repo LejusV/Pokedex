@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVolbeat Builder
 		public SpecieVolbeat() : base(
 			"Volbeat",
+			0.7,
+			17.7,
 			65, // HPs
 			73, 75, // Attack & Defense
 			47, 85, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 7;
-			this._weight = 177;
-		}
+		{}
 		#endregion
 	}
 	#endregion

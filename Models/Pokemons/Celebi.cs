@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCelebi Builder
 		public SpecieCelebi() : base(
 			"Celebi",
+			0.6,
+			5.0,
 			100, // HPs
 			100, 100, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 6;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMilcery Builder
 		public SpecieMilcery() : base(
 			"Milcery",
+			0.2,
+			0.3,
 			45, // HPs
 			40, 40, // Attack & Defense
 			50, 61, // Special Attack & Defense
 			34		
 		)
-		{
-			this._height = 2;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCaterpie Builder
 		public SpecieCaterpie() : base(
 			"Caterpie",
+			0.3,
+			2.9,
 			45, // HPs
 			30, 35, // Attack & Defense
 			20, 20, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 3;
-			this._weight = 29;
-		}
+		{}
 		#endregion
 	}
 	#endregion

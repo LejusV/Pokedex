@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZeraora Builder
 		public SpecieZeraora() : base(
 			"Zeraora",
+			1.5,
+			44.5,
 			88, // HPs
 			112, 75, // Attack & Defense
 			102, 80, // Special Attack & Defense
 			143		
 		)
-		{
-			this._height = 15;
-			this._weight = 445;
-		}
+		{}
 		#endregion
 	}
 	#endregion

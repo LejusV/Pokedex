@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSimipour Builder
 		public SpecieSimipour() : base(
 			"Simipour",
+			1.0,
+			29.0,
 			75, // HPs
 			98, 63, // Attack & Defense
 			98, 63, // Special Attack & Defense
 			101		
 		)
-		{
-			this._height = 10;
-			this._weight = 290;
-		}
+		{}
 		#endregion
 	}
 	#endregion

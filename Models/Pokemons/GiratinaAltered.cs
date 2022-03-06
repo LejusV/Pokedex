@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGiratina-Altered Builder
 		public SpecieGiratinaAltered() : base(
 			"Giratina-Altered",
+			4.5,
+			750.0,
 			150, // HPs
 			100, 120, // Attack & Defense
 			100, 120, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 45;
-			this._weight = 7500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

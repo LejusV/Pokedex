@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShuppet Builder
 		public SpecieShuppet() : base(
 			"Shuppet",
+			0.6,
+			2.3,
 			44, // HPs
 			75, 35, // Attack & Defense
 			63, 33, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 6;
-			this._weight = 23;
-		}
+		{}
 		#endregion
 	}
 	#endregion

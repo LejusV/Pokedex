@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTreecko Builder
 		public SpecieTreecko() : base(
 			"Treecko",
+			0.5,
+			5.0,
 			40, // HPs
 			45, 35, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 5;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUmbreon Builder
 		public SpecieUmbreon() : base(
 			"Umbreon",
+			1.0,
+			27.0,
 			95, // HPs
 			65, 110, // Attack & Defense
 			60, 130, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 270;
-		}
+		{}
 		#endregion
 	}
 	#endregion

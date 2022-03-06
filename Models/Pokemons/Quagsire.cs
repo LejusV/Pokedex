@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieQuagsire Builder
 		public SpecieQuagsire() : base(
 			"Quagsire",
+			1.4,
+			75.0,
 			95, // HPs
 			85, 85, // Attack & Defense
 			65, 65, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 14;
-			this._weight = 750;
-		}
+		{}
 		#endregion
 	}
 	#endregion

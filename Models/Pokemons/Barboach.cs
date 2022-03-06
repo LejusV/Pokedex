@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBarboach Builder
 		public SpecieBarboach() : base(
 			"Barboach",
+			0.4,
+			1.9,
 			50, // HPs
 			48, 43, // Attack & Defense
 			46, 41, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 4;
-			this._weight = 19;
-		}
+		{}
 		#endregion
 	}
 	#endregion

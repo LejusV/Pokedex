@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieIllumise Builder
 		public SpecieIllumise() : base(
 			"Illumise",
+			0.6,
+			17.7,
 			65, // HPs
 			47, 75, // Attack & Defense
 			73, 85, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 6;
-			this._weight = 177;
-		}
+		{}
 		#endregion
 	}
 	#endregion

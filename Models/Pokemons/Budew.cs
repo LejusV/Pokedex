@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBudew Builder
 		public SpecieBudew() : base(
 			"Budew",
+			0.2,
+			1.2,
 			40, // HPs
 			30, 35, // Attack & Defense
 			50, 70, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 2;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

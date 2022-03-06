@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLiepard Builder
 		public SpecieLiepard() : base(
 			"Liepard",
+			1.1,
+			37.5,
 			64, // HPs
 			88, 50, // Attack & Defense
 			88, 50, // Special Attack & Defense
 			106		
 		)
-		{
-			this._height = 11;
-			this._weight = 375;
-		}
+		{}
 		#endregion
 	}
 	#endregion

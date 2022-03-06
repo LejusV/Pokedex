@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkrelp Builder
 		public SpecieSkrelp() : base(
 			"Skrelp",
+			0.5,
+			7.3,
 			50, // HPs
 			60, 60, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 5;
-			this._weight = 73;
-		}
+		{}
 		#endregion
 	}
 	#endregion

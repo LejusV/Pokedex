@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLandorus-Incarnate Builder
 		public SpecieLandorusIncarnate() : base(
 			"Landorus-Incarnate",
+			1.5,
+			68.0,
 			89, // HPs
 			125, 90, // Attack & Defense
 			115, 80, // Special Attack & Defense
 			101		
 		)
-		{
-			this._height = 15;
-			this._weight = 680;
-		}
+		{}
 		#endregion
 	}
 	#endregion

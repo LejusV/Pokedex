@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieParas Builder
 		public SpecieParas() : base(
 			"Paras",
+			0.3,
+			5.4,
 			35, // HPs
 			70, 55, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 3;
-			this._weight = 54;
-		}
+		{}
 		#endregion
 	}
 	#endregion

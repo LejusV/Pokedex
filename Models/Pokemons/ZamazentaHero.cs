@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZamazenta-Hero Builder
 		public SpecieZamazentaHero() : base(
 			"Zamazenta-Hero",
+			2.9,
+			210.0,
 			92, // HPs
 			130, 115, // Attack & Defense
 			80, 115, // Special Attack & Defense
 			138		
 		)
-		{
-			this._height = 29;
-			this._weight = 2100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

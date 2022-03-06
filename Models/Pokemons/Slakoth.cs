@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlakoth Builder
 		public SpecieSlakoth() : base(
 			"Slakoth",
+			0.8,
+			24.0,
 			60, // HPs
 			60, 60, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 8;
-			this._weight = 240;
-		}
+		{}
 		#endregion
 	}
 	#endregion

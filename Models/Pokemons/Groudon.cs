@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGroudon Builder
 		public SpecieGroudon() : base(
 			"Groudon",
+			3.5,
+			950.0,
 			100, // HPs
 			150, 140, // Attack & Defense
 			100, 90, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 35;
-			this._weight = 9500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

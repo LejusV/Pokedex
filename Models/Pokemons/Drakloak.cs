@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrakloak Builder
 		public SpecieDrakloak() : base(
 			"Drakloak",
+			1.4,
+			11.0,
 			68, // HPs
 			80, 50, // Attack & Defense
 			60, 50, // Special Attack & Defense
 			102		
 		)
-		{
-			this._height = 14;
-			this._weight = 110;
-		}
+		{}
 		#endregion
 	}
 	#endregion

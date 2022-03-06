@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMedicham Builder
 		public SpecieMedicham() : base(
 			"Medicham",
+			1.3,
+			31.5,
 			60, // HPs
 			60, 75, // Attack & Defense
 			60, 75, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 13;
-			this._weight = 315;
-		}
+		{}
 		#endregion
 	}
 	#endregion

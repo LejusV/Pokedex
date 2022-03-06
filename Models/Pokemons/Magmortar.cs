@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagmortar Builder
 		public SpecieMagmortar() : base(
 			"Magmortar",
+			1.6,
+			68.0,
 			75, // HPs
 			95, 67, // Attack & Defense
 			125, 95, // Special Attack & Defense
 			83		
 		)
-		{
-			this._height = 16;
-			this._weight = 680;
-		}
+		{}
 		#endregion
 	}
 	#endregion

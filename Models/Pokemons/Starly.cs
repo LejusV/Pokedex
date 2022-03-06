@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStarly Builder
 		public SpecieStarly() : base(
 			"Starly",
+			0.3,
+			2.0,
 			40, // HPs
 			55, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 3;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

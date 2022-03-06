@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZekrom Builder
 		public SpecieZekrom() : base(
 			"Zekrom",
+			2.9,
+			345.0,
 			100, // HPs
 			150, 120, // Attack & Defense
 			120, 100, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 29;
-			this._weight = 3450;
-		}
+		{}
 		#endregion
 	}
 	#endregion

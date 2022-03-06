@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWooper Builder
 		public SpecieWooper() : base(
 			"Wooper",
+			0.4,
+			8.5,
 			55, // HPs
 			45, 45, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 4;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

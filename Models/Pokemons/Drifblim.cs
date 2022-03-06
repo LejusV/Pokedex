@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrifblim Builder
 		public SpecieDrifblim() : base(
 			"Drifblim",
+			1.2,
+			15.0,
 			150, // HPs
 			80, 44, // Attack & Defense
 			90, 54, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 12;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

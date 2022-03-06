@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieOranguru Builder
 		public SpecieOranguru() : base(
 			"Oranguru",
+			1.5,
+			76.0,
 			90, // HPs
 			60, 80, // Attack & Defense
 			90, 110, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 15;
-			this._weight = 760;
-		}
+		{}
 		#endregion
 	}
 	#endregion

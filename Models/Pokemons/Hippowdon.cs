@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHippowdon Builder
 		public SpecieHippowdon() : base(
 			"Hippowdon",
+			2.0,
+			300.0,
 			108, // HPs
 			112, 118, // Attack & Defense
 			68, 72, // Special Attack & Defense
 			47		
 		)
-		{
-			this._height = 20;
-			this._weight = 3000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePopplio Builder
 		public SpeciePopplio() : base(
 			"Popplio",
+			0.4,
+			7.5,
 			50, // HPs
 			54, 54, // Attack & Defense
 			66, 56, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 75;
-		}
+		{}
 		#endregion
 	}
 	#endregion

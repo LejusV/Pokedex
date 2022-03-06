@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePheromosa Builder
 		public SpeciePheromosa() : base(
 			"Pheromosa",
+			1.8,
+			25.0,
 			71, // HPs
 			137, 37, // Attack & Defense
 			137, 37, // Special Attack & Defense
 			151		
 		)
-		{
-			this._height = 18;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

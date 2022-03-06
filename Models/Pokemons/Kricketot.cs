@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKricketot Builder
 		public SpecieKricketot() : base(
 			"Kricketot",
+			0.3,
+			2.2,
 			37, // HPs
 			25, 41, // Attack & Defense
 			25, 41, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 3;
-			this._weight = 22;
-		}
+		{}
 		#endregion
 	}
 	#endregion

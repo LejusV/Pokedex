@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePansear Builder
 		public SpeciePansear() : base(
 			"Pansear",
+			0.6,
+			11.0,
 			50, // HPs
 			53, 48, // Attack & Defense
 			53, 48, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 6;
-			this._weight = 110;
-		}
+		{}
 		#endregion
 	}
 	#endregion

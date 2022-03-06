@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCroconaw Builder
 		public SpecieCroconaw() : base(
 			"Croconaw",
+			1.1,
+			25.0,
 			65, // HPs
 			80, 80, // Attack & Defense
 			59, 63, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 11;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

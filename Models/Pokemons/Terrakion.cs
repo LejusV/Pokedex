@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTerrakion Builder
 		public SpecieTerrakion() : base(
 			"Terrakion",
+			1.9,
+			260.0,
 			91, // HPs
 			129, 90, // Attack & Defense
 			72, 90, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 19;
-			this._weight = 2600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieQuilladin Builder
 		public SpecieQuilladin() : base(
 			"Quilladin",
+			0.7,
+			29.0,
 			61, // HPs
 			78, 95, // Attack & Defense
 			56, 58, // Special Attack & Defense
 			57		
 		)
-		{
-			this._height = 7;
-			this._weight = 290;
-		}
+		{}
 		#endregion
 	}
 	#endregion

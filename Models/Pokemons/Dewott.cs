@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDewott Builder
 		public SpecieDewott() : base(
 			"Dewott",
+			0.8,
+			24.5,
 			75, // HPs
 			75, 60, // Attack & Defense
 			83, 60, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 8;
-			this._weight = 245;
-		}
+		{}
 		#endregion
 	}
 	#endregion

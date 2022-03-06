@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSlaking Builder
 		public SpecieSlaking() : base(
 			"Slaking",
+			2.0,
+			130.5,
 			150, // HPs
 			160, 100, // Attack & Defense
 			95, 65, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 20;
-			this._weight = 1305;
-		}
+		{}
 		#endregion
 	}
 	#endregion

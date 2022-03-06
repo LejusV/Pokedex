@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGlastrier Builder
 		public SpecieGlastrier() : base(
 			"Glastrier",
+			2.2,
+			800.0,
 			100, // HPs
 			145, 130, // Attack & Defense
 			65, 110, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 22;
-			this._weight = 8000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCranidos Builder
 		public SpecieCranidos() : base(
 			"Cranidos",
+			0.9,
+			31.5,
 			67, // HPs
 			125, 40, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 9;
-			this._weight = 315;
-		}
+		{}
 		#endregion
 	}
 	#endregion

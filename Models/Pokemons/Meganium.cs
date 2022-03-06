@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeganium Builder
 		public SpecieMeganium() : base(
 			"Meganium",
+			1.8,
+			100.5,
 			80, // HPs
 			82, 100, // Attack & Defense
 			83, 100, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 18;
-			this._weight = 1005;
-		}
+		{}
 		#endregion
 	}
 	#endregion

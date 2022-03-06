@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCharizard Builder
 		public SpecieCharizard() : base(
 			"Charizard",
+			1.7,
+			90.5,
 			78, // HPs
 			84, 78, // Attack & Defense
 			109, 85, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 17;
-			this._weight = 905;
-		}
+		{}
 		#endregion
 	}
 	#endregion

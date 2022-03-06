@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScyther Builder
 		public SpecieScyther() : base(
 			"Scyther",
+			1.5,
+			56.0,
 			70, // HPs
 			110, 80, // Attack & Defense
 			55, 80, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 15;
-			this._weight = 560;
-		}
+		{}
 		#endregion
 	}
 	#endregion

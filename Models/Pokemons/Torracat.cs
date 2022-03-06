@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTorracat Builder
 		public SpecieTorracat() : base(
 			"Torracat",
+			0.7,
+			25.0,
 			65, // HPs
 			85, 50, // Attack & Defense
 			80, 50, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 7;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

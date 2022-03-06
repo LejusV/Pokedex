@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJirachi Builder
 		public SpecieJirachi() : base(
 			"Jirachi",
+			0.3,
+			1.1,
 			100, // HPs
 			100, 100, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 3;
-			this._weight = 11;
-		}
+		{}
 		#endregion
 	}
 	#endregion

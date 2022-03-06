@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCombusken Builder
 		public SpecieCombusken() : base(
 			"Combusken",
+			0.9,
+			19.5,
 			60, // HPs
 			85, 60, // Attack & Defense
 			85, 60, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 9;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

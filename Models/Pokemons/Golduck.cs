@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolduck Builder
 		public SpecieGolduck() : base(
 			"Golduck",
+			1.7,
+			76.6,
 			80, // HPs
 			82, 78, // Attack & Defense
 			95, 80, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 17;
-			this._weight = 766;
-		}
+		{}
 		#endregion
 	}
 	#endregion

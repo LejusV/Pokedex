@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStunfisk Builder
 		public SpecieStunfisk() : base(
 			"Stunfisk",
+			0.7,
+			11.0,
 			109, // HPs
 			66, 84, // Attack & Defense
 			81, 99, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 7;
-			this._weight = 110;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRattata Builder
 		public SpecieRattata() : base(
 			"Rattata",
+			0.3,
+			3.5,
 			30, // HPs
 			56, 35, // Attack & Defense
 			25, 35, // Special Attack & Defense
 			72		
 		)
-		{
-			this._height = 3;
-			this._weight = 35;
-		}
+		{}
 		#endregion
 	}
 	#endregion

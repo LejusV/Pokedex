@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBarbaracle Builder
 		public SpecieBarbaracle() : base(
 			"Barbaracle",
+			1.3,
+			96.0,
 			72, // HPs
 			105, 115, // Attack & Defense
 			54, 86, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 13;
-			this._weight = 960;
-		}
+		{}
 		#endregion
 	}
 	#endregion

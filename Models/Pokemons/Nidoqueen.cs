@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNidoqueen Builder
 		public SpecieNidoqueen() : base(
 			"Nidoqueen",
+			1.3,
+			60.0,
 			90, // HPs
 			92, 87, // Attack & Defense
 			75, 85, // Special Attack & Defense
 			76		
 		)
-		{
-			this._height = 13;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

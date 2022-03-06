@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePangoro Builder
 		public SpeciePangoro() : base(
 			"Pangoro",
+			2.1,
+			136.0,
 			95, // HPs
 			124, 78, // Attack & Defense
 			69, 71, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 21;
-			this._weight = 1360;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMantine Builder
 		public SpecieMantine() : base(
 			"Mantine",
+			2.1,
+			220.0,
 			85, // HPs
 			40, 70, // Attack & Defense
 			80, 140, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 21;
-			this._weight = 2200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

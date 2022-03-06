@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePikachu Builder
 		public SpeciePikachu() : base(
 			"Pikachu",
+			0.4,
+			6.0,
 			35, // HPs
 			55, 40, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 4;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

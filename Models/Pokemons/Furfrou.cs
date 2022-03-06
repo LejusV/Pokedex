@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFurfrou Builder
 		public SpecieFurfrou() : base(
 			"Furfrou",
+			1.2,
+			28.0,
 			75, // HPs
 			80, 60, // Attack & Defense
 			65, 90, // Special Attack & Defense
 			102		
 		)
-		{
-			this._height = 12;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

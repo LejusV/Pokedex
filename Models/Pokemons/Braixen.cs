@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBraixen Builder
 		public SpecieBraixen() : base(
 			"Braixen",
+			1.0,
+			14.5,
 			59, // HPs
 			59, 58, // Attack & Defense
 			90, 70, // Special Attack & Defense
 			73		
 		)
-		{
-			this._height = 10;
-			this._weight = 145;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMewtwo Builder
 		public SpecieMewtwo() : base(
 			"Mewtwo",
+			2.0,
+			122.0,
 			106, // HPs
 			110, 90, // Attack & Defense
 			154, 90, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 20;
-			this._weight = 1220;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePolitoed Builder
 		public SpeciePolitoed() : base(
 			"Politoed",
+			1.1,
+			33.9,
 			90, // HPs
 			75, 75, // Attack & Defense
 			90, 100, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 11;
-			this._weight = 339;
-		}
+		{}
 		#endregion
 	}
 	#endregion

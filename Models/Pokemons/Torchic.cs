@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTorchic Builder
 		public SpecieTorchic() : base(
 			"Torchic",
+			0.4,
+			2.5,
 			45, // HPs
 			60, 40, // Attack & Defense
 			70, 50, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

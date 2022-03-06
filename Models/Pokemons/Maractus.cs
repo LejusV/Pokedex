@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMaractus Builder
 		public SpecieMaractus() : base(
 			"Maractus",
+			1.0,
+			28.0,
 			75, // HPs
 			86, 67, // Attack & Defense
 			106, 67, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 10;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSewaddle Builder
 		public SpecieSewaddle() : base(
 			"Sewaddle",
+			0.3,
+			2.5,
 			45, // HPs
 			53, 70, // Attack & Defense
 			40, 60, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 3;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

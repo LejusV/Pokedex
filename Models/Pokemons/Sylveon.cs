@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSylveon Builder
 		public SpecieSylveon() : base(
 			"Sylveon",
+			1.0,
+			23.5,
 			95, // HPs
 			65, 65, // Attack & Defense
 			110, 130, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 10;
-			this._weight = 235;
-		}
+		{}
 		#endregion
 	}
 	#endregion

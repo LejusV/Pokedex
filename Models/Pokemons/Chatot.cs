@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChatot Builder
 		public SpecieChatot() : base(
 			"Chatot",
+			0.5,
+			1.9,
 			76, // HPs
 			65, 45, // Attack & Defense
 			92, 42, // Special Attack & Defense
 			91		
 		)
-		{
-			this._height = 5;
-			this._weight = 19;
-		}
+		{}
 		#endregion
 	}
 	#endregion

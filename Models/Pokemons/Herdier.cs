@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHerdier Builder
 		public SpecieHerdier() : base(
 			"Herdier",
+			0.9,
+			14.7,
 			65, // HPs
 			80, 65, // Attack & Defense
 			35, 65, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 9;
-			this._weight = 147;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrilbur Builder
 		public SpecieDrilbur() : base(
 			"Drilbur",
+			0.3,
+			8.5,
 			60, // HPs
 			85, 40, // Attack & Defense
 			30, 45, // Special Attack & Defense
 			68		
 		)
-		{
-			this._height = 3;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

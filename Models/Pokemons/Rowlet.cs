@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRowlet Builder
 		public SpecieRowlet() : base(
 			"Rowlet",
+			0.3,
+			1.5,
 			68, // HPs
 			55, 55, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 3;
-			this._weight = 15;
-		}
+		{}
 		#endregion
 	}
 	#endregion

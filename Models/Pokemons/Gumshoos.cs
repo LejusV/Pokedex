@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGumshoos Builder
 		public SpecieGumshoos() : base(
 			"Gumshoos",
+			0.7,
+			14.2,
 			88, // HPs
 			110, 60, // Attack & Defense
 			55, 60, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 7;
-			this._weight = 142;
-		}
+		{}
 		#endregion
 	}
 	#endregion

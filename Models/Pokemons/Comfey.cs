@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieComfey Builder
 		public SpecieComfey() : base(
 			"Comfey",
+			0.1,
+			0.3,
 			51, // HPs
 			52, 90, // Attack & Defense
 			82, 110, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 1;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

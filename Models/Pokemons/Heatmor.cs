@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHeatmor Builder
 		public SpecieHeatmor() : base(
 			"Heatmor",
+			1.4,
+			58.0,
 			85, // HPs
 			97, 66, // Attack & Defense
 			105, 66, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 14;
-			this._weight = 580;
-		}
+		{}
 		#endregion
 	}
 	#endregion

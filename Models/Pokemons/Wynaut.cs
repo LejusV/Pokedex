@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWynaut Builder
 		public SpecieWynaut() : base(
 			"Wynaut",
+			0.6,
+			14.0,
 			95, // HPs
 			23, 48, // Attack & Defense
 			23, 48, // Special Attack & Defense
 			23		
 		)
-		{
-			this._height = 6;
-			this._weight = 140;
-		}
+		{}
 		#endregion
 	}
 	#endregion

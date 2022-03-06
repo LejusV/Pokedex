@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFroakie Builder
 		public SpecieFroakie() : base(
 			"Froakie",
+			0.3,
+			7.0,
 			41, // HPs
 			56, 40, // Attack & Defense
 			62, 44, // Special Attack & Defense
 			71		
 		)
-		{
-			this._height = 3;
-			this._weight = 70;
-		}
+		{}
 		#endregion
 	}
 	#endregion

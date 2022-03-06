@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHitmonlee Builder
 		public SpecieHitmonlee() : base(
 			"Hitmonlee",
+			1.5,
+			49.8,
 			50, // HPs
 			120, 53, // Attack & Defense
 			35, 110, // Special Attack & Defense
 			87		
 		)
-		{
-			this._height = 15;
-			this._weight = 498;
-		}
+		{}
 		#endregion
 	}
 	#endregion

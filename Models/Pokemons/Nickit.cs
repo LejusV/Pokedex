@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNickit Builder
 		public SpecieNickit() : base(
 			"Nickit",
+			0.6,
+			8.9,
 			40, // HPs
 			28, 28, // Attack & Defense
 			47, 52, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 89;
-		}
+		{}
 		#endregion
 	}
 	#endregion

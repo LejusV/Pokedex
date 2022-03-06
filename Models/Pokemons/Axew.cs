@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAxew Builder
 		public SpecieAxew() : base(
 			"Axew",
+			0.6,
+			18.0,
 			46, // HPs
 			87, 60, // Attack & Defense
 			30, 40, // Special Attack & Defense
 			57		
 		)
-		{
-			this._height = 6;
-			this._weight = 180;
-		}
+		{}
 		#endregion
 	}
 	#endregion

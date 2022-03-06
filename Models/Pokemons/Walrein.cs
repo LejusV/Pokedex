@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWalrein Builder
 		public SpecieWalrein() : base(
 			"Walrein",
+			1.4,
+			150.6,
 			110, // HPs
 			80, 90, // Attack & Defense
 			95, 90, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 14;
-			this._weight = 1506;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMothim Builder
 		public SpecieMothim() : base(
 			"Mothim",
+			0.9,
+			23.3,
 			70, // HPs
 			94, 50, // Attack & Defense
 			94, 50, // Special Attack & Defense
 			66		
 		)
-		{
-			this._height = 9;
-			this._weight = 233;
-		}
+		{}
 		#endregion
 	}
 	#endregion

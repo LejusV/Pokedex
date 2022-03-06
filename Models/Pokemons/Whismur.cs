@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWhismur Builder
 		public SpecieWhismur() : base(
 			"Whismur",
+			0.6,
+			16.3,
 			64, // HPs
 			51, 23, // Attack & Defense
 			51, 23, // Special Attack & Defense
 			28		
 		)
-		{
-			this._height = 6;
-			this._weight = 163;
-		}
+		{}
 		#endregion
 	}
 	#endregion

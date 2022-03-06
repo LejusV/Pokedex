@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCinccino Builder
 		public SpecieCinccino() : base(
 			"Cinccino",
+			0.5,
+			7.5,
 			75, // HPs
 			95, 60, // Attack & Defense
 			65, 60, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 5;
-			this._weight = 75;
-		}
+		{}
 		#endregion
 	}
 	#endregion

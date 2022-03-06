@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGalvantula Builder
 		public SpecieGalvantula() : base(
 			"Galvantula",
+			0.8,
+			14.3,
 			70, // HPs
 			77, 60, // Attack & Defense
 			97, 60, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 8;
-			this._weight = 143;
-		}
+		{}
 		#endregion
 	}
 	#endregion

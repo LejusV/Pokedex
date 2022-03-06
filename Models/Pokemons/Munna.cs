@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMunna Builder
 		public SpecieMunna() : base(
 			"Munna",
+			0.6,
+			23.3,
 			76, // HPs
 			25, 45, // Attack & Defense
 			67, 55, // Special Attack & Defense
 			24		
 		)
-		{
-			this._height = 6;
-			this._weight = 233;
-		}
+		{}
 		#endregion
 	}
 	#endregion

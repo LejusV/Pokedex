@@ -49,8 +49,8 @@ namespace Pokedex.Models.Pokemons
 		#region Specie{pokeName} Builder
 		public Specie{pokeNameNoSpace}() : base(
 			"{pokeName}",
-			{poke["height"]},
-			{poke["weight"]},
+			{poke["height"]/10},
+			{poke["weight"]/10},
 			{pokeStats["hp"]}, // HPs
 			{pokeStats["attack"]}, {pokeStats["defense"]}, // Attack & Defense
 			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRaticate Builder
 		public SpecieRaticate() : base(
 			"Raticate",
+			0.7,
+			18.5,
 			55, // HPs
 			81, 60, // Attack & Defense
 			50, 70, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 7;
-			this._weight = 185;
-		}
+		{}
 		#endregion
 	}
 	#endregion

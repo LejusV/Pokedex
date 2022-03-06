@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCharmander Builder
 		public SpecieCharmander() : base(
 			"Charmander",
+			0.6,
+			8.5,
 			39, // HPs
 			52, 43, // Attack & Defense
 			60, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

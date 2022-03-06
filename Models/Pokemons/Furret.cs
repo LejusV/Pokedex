@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFurret Builder
 		public SpecieFurret() : base(
 			"Furret",
+			1.8,
+			32.5,
 			85, // HPs
 			76, 64, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 18;
-			this._weight = 325;
-		}
+		{}
 		#endregion
 	}
 	#endregion

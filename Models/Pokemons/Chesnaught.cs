@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChesnaught Builder
 		public SpecieChesnaught() : base(
 			"Chesnaught",
+			1.6,
+			90.0,
 			88, // HPs
 			107, 122, // Attack & Defense
 			74, 75, // Special Attack & Defense
 			64		
 		)
-		{
-			this._height = 16;
-			this._weight = 900;
-		}
+		{}
 		#endregion
 	}
 	#endregion

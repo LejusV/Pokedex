@@ -4,13 +4,13 @@ namespace Pokedex.Models
 {
     public class PokemonSpecie
     {
-        private readonly string _genus;
+        //private readonly string _genus;
         private readonly double _height;
         private readonly string _name;
         private readonly PokemonStats _stats;
         private readonly double _weight;
 
-        public string Genus { get => _genus; }
+        //public string Genus { get => _genus; }
 
         public double Height { get => _height; }
 

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKakuna Builder
 		public SpecieKakuna() : base(
 			"Kakuna",
+			0.6,
+			10.0,
 			45, // HPs
 			25, 50, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

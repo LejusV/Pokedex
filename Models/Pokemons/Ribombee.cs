@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRibombee Builder
 		public SpecieRibombee() : base(
 			"Ribombee",
+			0.2,
+			0.5,
 			60, // HPs
 			55, 60, // Attack & Defense
 			95, 70, // Special Attack & Defense
 			124		
 		)
-		{
-			this._height = 2;
-			this._weight = 5;
-		}
+		{}
 		#endregion
 	}
 	#endregion

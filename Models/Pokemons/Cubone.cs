@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCubone Builder
 		public SpecieCubone() : base(
 			"Cubone",
+			0.4,
+			6.5,
 			50, // HPs
 			50, 95, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 4;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

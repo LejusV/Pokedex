@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHoundour Builder
 		public SpecieHoundour() : base(
 			"Houndour",
+			0.6,
+			10.8,
 			45, // HPs
 			60, 30, // Attack & Defense
 			80, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 108;
-		}
+		{}
 		#endregion
 	}
 	#endregion

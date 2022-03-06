@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieProbopass Builder
 		public SpecieProbopass() : base(
 			"Probopass",
+			1.4,
+			340.0,
 			60, // HPs
 			55, 145, // Attack & Defense
 			75, 150, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 14;
-			this._weight = 3400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

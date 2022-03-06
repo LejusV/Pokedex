@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCottonee Builder
 		public SpecieCottonee() : base(
 			"Cottonee",
+			0.3,
+			0.6,
 			40, // HPs
 			27, 60, // Attack & Defense
 			37, 50, // Special Attack & Defense
 			66		
 		)
-		{
-			this._height = 3;
-			this._weight = 6;
-		}
+		{}
 		#endregion
 	}
 	#endregion

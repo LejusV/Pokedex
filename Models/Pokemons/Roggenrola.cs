@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRoggenrola Builder
 		public SpecieRoggenrola() : base(
 			"Roggenrola",
+			0.4,
+			18.0,
 			55, // HPs
 			75, 85, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 4;
-			this._weight = 180;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRookidee Builder
 		public SpecieRookidee() : base(
 			"Rookidee",
+			0.2,
+			1.8,
 			38, // HPs
 			47, 35, // Attack & Defense
 			33, 35, // Special Attack & Defense
 			57		
 		)
-		{
-			this._height = 2;
-			this._weight = 18;
-		}
+		{}
 		#endregion
 	}
 	#endregion

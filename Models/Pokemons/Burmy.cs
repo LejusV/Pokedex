@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBurmy Builder
 		public SpecieBurmy() : base(
 			"Burmy",
+			0.2,
+			3.4,
 			40, // HPs
 			29, 45, // Attack & Defense
 			29, 45, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 2;
-			this._weight = 34;
-		}
+		{}
 		#endregion
 	}
 	#endregion

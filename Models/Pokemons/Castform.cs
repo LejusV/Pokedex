@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCastform Builder
 		public SpecieCastform() : base(
 			"Castform",
+			0.3,
+			0.8,
 			70, // HPs
 			70, 70, // Attack & Defense
 			70, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 3;
-			this._weight = 8;
-		}
+		{}
 		#endregion
 	}
 	#endregion

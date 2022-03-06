@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDwebble Builder
 		public SpecieDwebble() : base(
 			"Dwebble",
+			0.3,
+			14.5,
 			50, // HPs
 			65, 85, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 3;
-			this._weight = 145;
-		}
+		{}
 		#endregion
 	}
 	#endregion

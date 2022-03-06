@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDuskull Builder
 		public SpecieDuskull() : base(
 			"Duskull",
+			0.8,
+			15.0,
 			20, // HPs
 			40, 90, // Attack & Defense
 			30, 90, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 8;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

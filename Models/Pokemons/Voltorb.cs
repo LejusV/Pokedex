@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVoltorb Builder
 		public SpecieVoltorb() : base(
 			"Voltorb",
+			0.5,
+			10.4,
 			40, // HPs
 			30, 50, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 5;
-			this._weight = 104;
-		}
+		{}
 		#endregion
 	}
 	#endregion

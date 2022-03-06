@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWartortle Builder
 		public SpecieWartortle() : base(
 			"Wartortle",
+			1.0,
+			22.5,
 			59, // HPs
 			63, 80, // Attack & Defense
 			65, 80, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 10;
-			this._weight = 225;
-		}
+		{}
 		#endregion
 	}
 	#endregion

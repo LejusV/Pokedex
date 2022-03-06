@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTyranitar Builder
 		public SpecieTyranitar() : base(
 			"Tyranitar",
+			2.0,
+			202.0,
 			100, // HPs
 			134, 110, // Attack & Defense
 			95, 100, // Special Attack & Defense
 			61		
 		)
-		{
-			this._height = 20;
-			this._weight = 2020;
-		}
+		{}
 		#endregion
 	}
 	#endregion

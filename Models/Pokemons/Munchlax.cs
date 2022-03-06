@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMunchlax Builder
 		public SpecieMunchlax() : base(
 			"Munchlax",
+			0.6,
+			105.0,
 			135, // HPs
 			85, 40, // Attack & Defense
 			40, 85, // Special Attack & Defense
 			5		
 		)
-		{
-			this._height = 6;
-			this._weight = 1050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

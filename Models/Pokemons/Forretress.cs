@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieForretress Builder
 		public SpecieForretress() : base(
 			"Forretress",
+			1.2,
+			125.8,
 			75, // HPs
 			90, 140, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 12;
-			this._weight = 1258;
-		}
+		{}
 		#endregion
 	}
 	#endregion

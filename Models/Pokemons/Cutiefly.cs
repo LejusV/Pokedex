@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCutiefly Builder
 		public SpecieCutiefly() : base(
 			"Cutiefly",
+			0.1,
+			0.2,
 			40, // HPs
 			45, 40, // Attack & Defense
 			55, 40, // Special Attack & Defense
 			84		
 		)
-		{
-			this._height = 1;
-			this._weight = 2;
-		}
+		{}
 		#endregion
 	}
 	#endregion

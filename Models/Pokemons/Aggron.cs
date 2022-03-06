@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAggron Builder
 		public SpecieAggron() : base(
 			"Aggron",
+			2.1,
+			360.0,
 			70, // HPs
 			110, 180, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 21;
-			this._weight = 3600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

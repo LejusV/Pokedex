@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMareep Builder
 		public SpecieMareep() : base(
 			"Mareep",
+			0.6,
+			7.8,
 			55, // HPs
 			40, 40, // Attack & Defense
 			65, 45, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 78;
-		}
+		{}
 		#endregion
 	}
 	#endregion

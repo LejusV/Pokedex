@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDiglett Builder
 		public SpecieDiglett() : base(
 			"Diglett",
+			0.2,
+			0.8,
 			10, // HPs
 			55, 25, // Attack & Defense
 			35, 45, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 2;
-			this._weight = 8;
-		}
+		{}
 		#endregion
 	}
 	#endregion

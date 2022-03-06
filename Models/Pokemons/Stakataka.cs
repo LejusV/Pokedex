@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStakataka Builder
 		public SpecieStakataka() : base(
 			"Stakataka",
+			5.5,
+			820.0,
 			61, // HPs
 			131, 211, // Attack & Defense
 			53, 101, // Special Attack & Defense
 			13		
 		)
-		{
-			this._height = 55;
-			this._weight = 8200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

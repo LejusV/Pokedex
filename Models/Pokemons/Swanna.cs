@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwanna Builder
 		public SpecieSwanna() : base(
 			"Swanna",
+			1.3,
+			24.2,
 			75, // HPs
 			87, 63, // Attack & Defense
 			87, 63, // Special Attack & Defense
 			98		
 		)
-		{
-			this._height = 13;
-			this._weight = 242;
-		}
+		{}
 		#endregion
 	}
 	#endregion

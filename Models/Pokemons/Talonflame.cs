@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTalonflame Builder
 		public SpecieTalonflame() : base(
 			"Talonflame",
+			1.2,
+			24.5,
 			78, // HPs
 			81, 71, // Attack & Defense
 			74, 69, // Special Attack & Defense
 			126		
 		)
-		{
-			this._height = 12;
-			this._weight = 245;
-		}
+		{}
 		#endregion
 	}
 	#endregion

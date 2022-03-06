@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePiloswine Builder
 		public SpeciePiloswine() : base(
 			"Piloswine",
+			1.1,
+			55.8,
 			100, // HPs
 			100, 80, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 558;
-		}
+		{}
 		#endregion
 	}
 	#endregion

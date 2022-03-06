@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBidoof Builder
 		public SpecieBidoof() : base(
 			"Bidoof",
+			0.5,
+			20.0,
 			59, // HPs
 			45, 40, // Attack & Defense
 			35, 40, // Special Attack & Defense
 			31		
 		)
-		{
-			this._height = 5;
-			this._weight = 200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

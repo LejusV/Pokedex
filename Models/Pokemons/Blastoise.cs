@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBlastoise Builder
 		public SpecieBlastoise() : base(
 			"Blastoise",
+			1.6,
+			85.5,
 			79, // HPs
 			83, 100, // Attack & Defense
 			85, 105, // Special Attack & Defense
 			78		
 		)
-		{
-			this._height = 16;
-			this._weight = 855;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePelipper Builder
 		public SpeciePelipper() : base(
 			"Pelipper",
+			1.2,
+			28.0,
 			60, // HPs
 			50, 100, // Attack & Defense
 			95, 70, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 12;
-			this._weight = 280;
-		}
+		{}
 		#endregion
 	}
 	#endregion

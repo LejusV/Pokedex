@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLedyba Builder
 		public SpecieLedyba() : base(
 			"Ledyba",
+			1.0,
+			10.8,
 			40, // HPs
 			20, 30, // Attack & Defense
 			40, 80, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 10;
-			this._weight = 108;
-		}
+		{}
 		#endregion
 	}
 	#endregion

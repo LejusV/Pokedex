@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDoublade Builder
 		public SpecieDoublade() : base(
 			"Doublade",
+			0.8,
+			4.5,
 			59, // HPs
 			110, 150, // Attack & Defense
 			45, 49, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 8;
-			this._weight = 45;
-		}
+		{}
 		#endregion
 	}
 	#endregion

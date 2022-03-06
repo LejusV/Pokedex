@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVibrava Builder
 		public SpecieVibrava() : base(
 			"Vibrava",
+			1.1,
+			15.3,
 			50, // HPs
 			70, 50, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 11;
-			this._weight = 153;
-		}
+		{}
 		#endregion
 	}
 	#endregion

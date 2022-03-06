@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCradily Builder
 		public SpecieCradily() : base(
 			"Cradily",
+			1.5,
+			60.4,
 			86, // HPs
 			81, 97, // Attack & Defense
 			81, 107, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 15;
-			this._weight = 604;
-		}
+		{}
 		#endregion
 	}
 	#endregion

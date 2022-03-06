@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRayquaza Builder
 		public SpecieRayquaza() : base(
 			"Rayquaza",
+			7.0,
+			206.5,
 			105, // HPs
 			150, 90, // Attack & Defense
 			150, 90, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 70;
-			this._weight = 2065;
-		}
+		{}
 		#endregion
 	}
 	#endregion

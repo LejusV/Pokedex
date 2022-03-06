@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnom Builder
 		public SpecieSnom() : base(
 			"Snom",
+			0.3,
+			3.8,
 			30, // HPs
 			25, 35, // Attack & Defense
 			45, 30, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 3;
-			this._weight = 38;
-		}
+		{}
 		#endregion
 	}
 	#endregion

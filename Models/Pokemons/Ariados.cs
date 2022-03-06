@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAriados Builder
 		public SpecieAriados() : base(
 			"Ariados",
+			1.1,
+			33.5,
 			70, // HPs
 			90, 70, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 11;
-			this._weight = 335;
-		}
+		{}
 		#endregion
 	}
 	#endregion

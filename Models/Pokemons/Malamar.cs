@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMalamar Builder
 		public SpecieMalamar() : base(
 			"Malamar",
+			1.5,
+			47.0,
 			86, // HPs
 			92, 88, // Attack & Defense
 			68, 75, // Special Attack & Defense
 			73		
 		)
-		{
-			this._height = 15;
-			this._weight = 470;
-		}
+		{}
 		#endregion
 	}
 	#endregion

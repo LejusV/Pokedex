@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKrookodile Builder
 		public SpecieKrookodile() : base(
 			"Krookodile",
+			1.5,
+			96.3,
 			95, // HPs
 			117, 80, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			92		
 		)
-		{
-			this._height = 15;
-			this._weight = 963;
-		}
+		{}
 		#endregion
 	}
 	#endregion

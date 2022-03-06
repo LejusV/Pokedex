@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLunatone Builder
 		public SpecieLunatone() : base(
 			"Lunatone",
+			1.0,
+			168.0,
 			90, // HPs
 			55, 65, // Attack & Defense
 			95, 85, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 10;
-			this._weight = 1680;
-		}
+		{}
 		#endregion
 	}
 	#endregion

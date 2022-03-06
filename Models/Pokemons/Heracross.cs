@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHeracross Builder
 		public SpecieHeracross() : base(
 			"Heracross",
+			1.5,
+			54.0,
 			80, // HPs
 			125, 75, // Attack & Defense
 			40, 95, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 15;
-			this._weight = 540;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNoctowl Builder
 		public SpecieNoctowl() : base(
 			"Noctowl",
+			1.6,
+			40.8,
 			100, // HPs
 			50, 50, // Attack & Defense
 			86, 96, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 16;
-			this._weight = 408;
-		}
+		{}
 		#endregion
 	}
 	#endregion

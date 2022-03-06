@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHoopa Builder
 		public SpecieHoopa() : base(
 			"Hoopa",
+			0.5,
+			9.0,
 			80, // HPs
 			110, 60, // Attack & Defense
 			150, 130, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 5;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

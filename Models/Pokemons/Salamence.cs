@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSalamence Builder
 		public SpecieSalamence() : base(
 			"Salamence",
+			1.5,
+			102.6,
 			95, // HPs
 			135, 80, // Attack & Defense
 			110, 80, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 15;
-			this._weight = 1026;
-		}
+		{}
 		#endregion
 	}
 	#endregion

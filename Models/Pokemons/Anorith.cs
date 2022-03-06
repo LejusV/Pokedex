@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAnorith Builder
 		public SpecieAnorith() : base(
 			"Anorith",
+			0.7,
+			12.5,
 			45, // HPs
 			95, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 7;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

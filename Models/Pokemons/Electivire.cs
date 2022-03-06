@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElectivire Builder
 		public SpecieElectivire() : base(
 			"Electivire",
+			1.8,
+			138.6,
 			75, // HPs
 			123, 67, // Attack & Defense
 			95, 85, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 18;
-			this._weight = 1386;
-		}
+		{}
 		#endregion
 	}
 	#endregion

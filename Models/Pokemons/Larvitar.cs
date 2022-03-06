@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLarvitar Builder
 		public SpecieLarvitar() : base(
 			"Larvitar",
+			0.6,
+			72.0,
 			50, // HPs
 			64, 50, // Attack & Defense
 			45, 50, // Special Attack & Defense
 			41		
 		)
-		{
-			this._height = 6;
-			this._weight = 720;
-		}
+		{}
 		#endregion
 	}
 	#endregion

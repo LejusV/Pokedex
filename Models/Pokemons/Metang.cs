@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMetang Builder
 		public SpecieMetang() : base(
 			"Metang",
+			1.2,
+			202.5,
 			60, // HPs
 			75, 100, // Attack & Defense
 			55, 80, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 12;
-			this._weight = 2025;
-		}
+		{}
 		#endregion
 	}
 	#endregion

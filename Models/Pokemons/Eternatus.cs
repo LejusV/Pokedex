@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEternatus Builder
 		public SpecieEternatus() : base(
 			"Eternatus",
+			20.0,
+			950.0,
 			140, // HPs
 			85, 95, // Attack & Defense
 			145, 95, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 200;
-			this._weight = 9500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

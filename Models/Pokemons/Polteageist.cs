@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePolteageist Builder
 		public SpeciePolteageist() : base(
 			"Polteageist",
+			0.2,
+			0.4,
 			60, // HPs
 			65, 65, // Attack & Defense
 			134, 114, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 2;
-			this._weight = 4;
-		}
+		{}
 		#endregion
 	}
 	#endregion

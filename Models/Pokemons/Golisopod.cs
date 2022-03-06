@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolisopod Builder
 		public SpecieGolisopod() : base(
 			"Golisopod",
+			2.0,
+			108.0,
 			75, // HPs
 			125, 140, // Attack & Defense
 			60, 90, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 20;
-			this._weight = 1080;
-		}
+		{}
 		#endregion
 	}
 	#endregion

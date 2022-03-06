@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLuxio Builder
 		public SpecieLuxio() : base(
 			"Luxio",
+			0.9,
+			30.5,
 			60, // HPs
 			85, 49, // Attack & Defense
 			60, 49, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 9;
-			this._weight = 305;
-		}
+		{}
 		#endregion
 	}
 	#endregion

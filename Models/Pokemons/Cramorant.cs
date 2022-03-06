@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCramorant Builder
 		public SpecieCramorant() : base(
 			"Cramorant",
+			0.8,
+			18.0,
 			70, // HPs
 			85, 55, // Attack & Defense
 			85, 95, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 8;
-			this._weight = 180;
-		}
+		{}
 		#endregion
 	}
 	#endregion

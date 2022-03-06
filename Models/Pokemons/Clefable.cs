@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieClefable Builder
 		public SpecieClefable() : base(
 			"Clefable",
+			1.3,
+			40.0,
 			95, // HPs
 			70, 73, // Attack & Defense
 			95, 90, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 13;
-			this._weight = 400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

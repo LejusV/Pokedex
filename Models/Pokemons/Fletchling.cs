@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFletchling Builder
 		public SpecieFletchling() : base(
 			"Fletchling",
+			0.3,
+			1.7,
 			45, // HPs
 			50, 43, // Attack & Defense
 			40, 38, // Special Attack & Defense
 			62		
 		)
-		{
-			this._height = 3;
-			this._weight = 17;
-		}
+		{}
 		#endregion
 	}
 	#endregion

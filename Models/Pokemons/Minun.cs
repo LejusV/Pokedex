@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMinun Builder
 		public SpecieMinun() : base(
 			"Minun",
+			0.4,
+			4.2,
 			60, // HPs
 			40, 50, // Attack & Defense
 			75, 85, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 4;
-			this._weight = 42;
-		}
+		{}
 		#endregion
 	}
 	#endregion

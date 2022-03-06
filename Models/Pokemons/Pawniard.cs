@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePawniard Builder
 		public SpeciePawniard() : base(
 			"Pawniard",
+			0.5,
+			10.2,
 			45, // HPs
 			85, 70, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 102;
-		}
+		{}
 		#endregion
 	}
 	#endregion

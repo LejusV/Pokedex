@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAbomasnow Builder
 		public SpecieAbomasnow() : base(
 			"Abomasnow",
+			2.2,
+			135.5,
 			90, // HPs
 			92, 75, // Attack & Defense
 			92, 85, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 22;
-			this._weight = 1355;
-		}
+		{}
 		#endregion
 	}
 	#endregion

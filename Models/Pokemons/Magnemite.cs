@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagnemite Builder
 		public SpecieMagnemite() : base(
 			"Magnemite",
+			0.3,
+			6.0,
 			25, // HPs
 			35, 70, // Attack & Defense
 			95, 55, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 3;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

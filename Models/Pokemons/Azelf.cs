@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAzelf Builder
 		public SpecieAzelf() : base(
 			"Azelf",
+			0.3,
+			0.3,
 			75, // HPs
 			125, 70, // Attack & Defense
 			125, 70, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 3;
-			this._weight = 3;
-		}
+		{}
 		#endregion
 	}
 	#endregion

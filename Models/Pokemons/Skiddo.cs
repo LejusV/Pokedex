@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkiddo Builder
 		public SpecieSkiddo() : base(
 			"Skiddo",
+			0.9,
+			31.0,
 			66, // HPs
 			65, 48, // Attack & Defense
 			62, 57, // Special Attack & Defense
 			52		
 		)
-		{
-			this._height = 9;
-			this._weight = 310;
-		}
+		{}
 		#endregion
 	}
 	#endregion

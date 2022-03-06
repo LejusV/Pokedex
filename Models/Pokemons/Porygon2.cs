@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePorygon2 Builder
 		public SpeciePorygon2() : base(
 			"Porygon2",
+			0.6,
+			32.5,
 			85, // HPs
 			80, 90, // Attack & Defense
 			105, 95, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 6;
-			this._weight = 325;
-		}
+		{}
 		#endregion
 	}
 	#endregion

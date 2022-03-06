@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDracozolt Builder
 		public SpecieDracozolt() : base(
 			"Dracozolt",
+			1.8,
+			190.0,
 			90, // HPs
 			100, 90, // Attack & Defense
 			80, 70, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 18;
-			this._weight = 1900;
-		}
+		{}
 		#endregion
 	}
 	#endregion

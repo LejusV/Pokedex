@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagnezone Builder
 		public SpecieMagnezone() : base(
 			"Magnezone",
+			1.2,
+			180.0,
 			70, // HPs
 			70, 115, // Attack & Defense
 			130, 90, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 12;
-			this._weight = 1800;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWigglytuff Builder
 		public SpecieWigglytuff() : base(
 			"Wigglytuff",
+			1.0,
+			12.0,
 			140, // HPs
 			70, 45, // Attack & Defense
 			85, 50, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 10;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

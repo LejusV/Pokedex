@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTyrogue Builder
 		public SpecieTyrogue() : base(
 			"Tyrogue",
+			0.7,
+			21.0,
 			35, // HPs
 			35, 35, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 7;
-			this._weight = 210;
-		}
+		{}
 		#endregion
 	}
 	#endregion

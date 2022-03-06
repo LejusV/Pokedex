@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZarude Builder
 		public SpecieZarude() : base(
 			"Zarude",
+			1.8,
+			70.0,
 			105, // HPs
 			120, 105, // Attack & Defense
 			70, 95, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 18;
-			this._weight = 700;
-		}
+		{}
 		#endregion
 	}
 	#endregion

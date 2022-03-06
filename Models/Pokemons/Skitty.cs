@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkitty Builder
 		public SpecieSkitty() : base(
 			"Skitty",
+			0.6,
+			11.0,
 			50, // HPs
 			45, 45, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 6;
-			this._weight = 110;
-		}
+		{}
 		#endregion
 	}
 	#endregion

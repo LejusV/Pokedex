@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDubwool Builder
 		public SpecieDubwool() : base(
 			"Dubwool",
+			1.3,
+			43.0,
 			72, // HPs
 			80, 100, // Attack & Defense
 			60, 90, // Special Attack & Defense
 			88		
 		)
-		{
-			this._height = 13;
-			this._weight = 430;
-		}
+		{}
 		#endregion
 	}
 	#endregion

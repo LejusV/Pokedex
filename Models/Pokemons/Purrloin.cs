@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePurrloin Builder
 		public SpeciePurrloin() : base(
 			"Purrloin",
+			0.4,
+			10.1,
 			41, // HPs
 			50, 37, // Attack & Defense
 			50, 37, // Special Attack & Defense
 			66		
 		)
-		{
-			this._height = 4;
-			this._weight = 101;
-		}
+		{}
 		#endregion
 	}
 	#endregion

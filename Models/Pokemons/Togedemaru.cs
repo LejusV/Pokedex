@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTogedemaru Builder
 		public SpecieTogedemaru() : base(
 			"Togedemaru",
+			0.3,
+			3.3,
 			65, // HPs
 			98, 63, // Attack & Defense
 			40, 73, // Special Attack & Defense
 			96		
 		)
-		{
-			this._height = 3;
-			this._weight = 33;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGossifleur Builder
 		public SpecieGossifleur() : base(
 			"Gossifleur",
+			0.4,
+			2.2,
 			40, // HPs
 			40, 60, // Attack & Defense
 			40, 60, // Special Attack & Defense
 			10		
 		)
-		{
-			this._height = 4;
-			this._weight = 22;
-		}
+		{}
 		#endregion
 	}
 	#endregion

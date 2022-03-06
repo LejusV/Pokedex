@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMantyke Builder
 		public SpecieMantyke() : base(
 			"Mantyke",
+			1.0,
+			65.0,
 			45, // HPs
 			20, 50, // Attack & Defense
 			60, 120, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 10;
-			this._weight = 650;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCroagunk Builder
 		public SpecieCroagunk() : base(
 			"Croagunk",
+			0.7,
+			23.0,
 			48, // HPs
 			61, 40, // Attack & Defense
 			61, 40, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 7;
-			this._weight = 230;
-		}
+		{}
 		#endregion
 	}
 	#endregion

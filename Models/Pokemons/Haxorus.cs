@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHaxorus Builder
 		public SpecieHaxorus() : base(
 			"Haxorus",
+			1.8,
+			105.5,
 			76, // HPs
 			147, 90, // Attack & Defense
 			60, 70, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 18;
-			this._weight = 1055;
-		}
+		{}
 		#endregion
 	}
 	#endregion

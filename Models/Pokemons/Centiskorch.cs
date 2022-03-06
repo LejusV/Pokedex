@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCentiskorch Builder
 		public SpecieCentiskorch() : base(
 			"Centiskorch",
+			3.0,
+			120.0,
 			100, // HPs
 			115, 65, // Attack & Defense
 			90, 90, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 30;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

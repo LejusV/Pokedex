@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePonyta Builder
 		public SpeciePonyta() : base(
 			"Ponyta",
+			1.0,
+			30.0,
 			50, // HPs
 			85, 55, // Attack & Defense
 			65, 65, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 10;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

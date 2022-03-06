@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChikorita Builder
 		public SpecieChikorita() : base(
 			"Chikorita",
+			0.9,
+			6.4,
 			45, // HPs
 			49, 65, // Attack & Defense
 			49, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 9;
-			this._weight = 64;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTurtonator Builder
 		public SpecieTurtonator() : base(
 			"Turtonator",
+			2.0,
+			212.0,
 			60, // HPs
 			78, 135, // Attack & Defense
 			91, 85, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 20;
-			this._weight = 2120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

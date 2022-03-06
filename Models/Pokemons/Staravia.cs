@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStaravia Builder
 		public SpecieStaravia() : base(
 			"Staravia",
+			0.6,
+			15.5,
 			55, // HPs
 			75, 50, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 6;
-			this._weight = 155;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBergmite Builder
 		public SpecieBergmite() : base(
 			"Bergmite",
+			1.0,
+			99.5,
 			55, // HPs
 			69, 85, // Attack & Defense
 			32, 35, // Special Attack & Defense
 			28		
 		)
-		{
-			this._height = 10;
-			this._weight = 995;
-		}
+		{}
 		#endregion
 	}
 	#endregion

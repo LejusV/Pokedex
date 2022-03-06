@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElectrike Builder
 		public SpecieElectrike() : base(
 			"Electrike",
+			0.6,
+			15.2,
 			40, // HPs
 			45, 40, // Attack & Defense
 			65, 40, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 6;
-			this._weight = 152;
-		}
+		{}
 		#endregion
 	}
 	#endregion

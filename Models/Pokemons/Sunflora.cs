@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSunflora Builder
 		public SpecieSunflora() : base(
 			"Sunflora",
+			0.8,
+			8.5,
 			75, // HPs
 			75, 55, // Attack & Defense
 			105, 85, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 8;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

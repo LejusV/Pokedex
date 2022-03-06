@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEmolga Builder
 		public SpecieEmolga() : base(
 			"Emolga",
+			0.4,
+			5.0,
 			55, // HPs
 			75, 60, // Attack & Defense
 			75, 60, // Special Attack & Defense
 			103		
 		)
-		{
-			this._height = 4;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

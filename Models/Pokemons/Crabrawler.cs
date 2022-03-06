@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCrabrawler Builder
 		public SpecieCrabrawler() : base(
 			"Crabrawler",
+			0.6,
+			7.0,
 			47, // HPs
 			82, 57, // Attack & Defense
 			42, 47, // Special Attack & Defense
 			63		
 		)
-		{
-			this._height = 6;
-			this._weight = 70;
-		}
+		{}
 		#endregion
 	}
 	#endregion

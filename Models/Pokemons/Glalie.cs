@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGlalie Builder
 		public SpecieGlalie() : base(
 			"Glalie",
+			1.5,
+			256.5,
 			80, // HPs
 			80, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 15;
-			this._weight = 2565;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMudkip Builder
 		public SpecieMudkip() : base(
 			"Mudkip",
+			0.4,
+			7.6,
 			50, // HPs
 			70, 50, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 76;
-		}
+		{}
 		#endregion
 	}
 	#endregion

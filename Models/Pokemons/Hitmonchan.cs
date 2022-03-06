@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHitmonchan Builder
 		public SpecieHitmonchan() : base(
 			"Hitmonchan",
+			1.4,
+			50.2,
 			50, // HPs
 			105, 79, // Attack & Defense
 			35, 110, // Special Attack & Defense
 			76		
 		)
-		{
-			this._height = 14;
-			this._weight = 502;
-		}
+		{}
 		#endregion
 	}
 	#endregion

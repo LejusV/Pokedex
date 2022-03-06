@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMarill Builder
 		public SpecieMarill() : base(
 			"Marill",
+			0.4,
+			8.5,
 			70, // HPs
 			20, 50, // Attack & Defense
 			20, 50, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

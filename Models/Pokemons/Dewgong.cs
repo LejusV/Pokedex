@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDewgong Builder
 		public SpecieDewgong() : base(
 			"Dewgong",
+			1.7,
+			120.0,
 			90, // HPs
 			70, 80, // Attack & Defense
 			70, 95, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 17;
-			this._weight = 1200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

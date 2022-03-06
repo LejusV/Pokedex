@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHeatran Builder
 		public SpecieHeatran() : base(
 			"Heatran",
+			1.7,
+			430.0,
 			91, // HPs
 			90, 106, // Attack & Defense
 			130, 106, // Special Attack & Defense
 			77		
 		)
-		{
-			this._height = 17;
-			this._weight = 4300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

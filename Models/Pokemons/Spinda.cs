@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpinda Builder
 		public SpecieSpinda() : base(
 			"Spinda",
+			1.1,
+			5.0,
 			60, // HPs
 			60, 60, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 11;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePalpitoad Builder
 		public SpeciePalpitoad() : base(
 			"Palpitoad",
+			0.8,
+			17.0,
 			75, // HPs
 			65, 55, // Attack & Defense
 			65, 55, // Special Attack & Defense
 			69		
 		)
-		{
-			this._height = 8;
-			this._weight = 170;
-		}
+		{}
 		#endregion
 	}
 	#endregion

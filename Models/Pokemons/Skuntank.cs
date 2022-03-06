@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkuntank Builder
 		public SpecieSkuntank() : base(
 			"Skuntank",
+			1.0,
+			38.0,
 			103, // HPs
 			93, 67, // Attack & Defense
 			71, 61, // Special Attack & Defense
 			84		
 		)
-		{
-			this._height = 10;
-			this._weight = 380;
-		}
+		{}
 		#endregion
 	}
 	#endregion

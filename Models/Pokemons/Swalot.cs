@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwalot Builder
 		public SpecieSwalot() : base(
 			"Swalot",
+			1.7,
+			80.0,
 			100, // HPs
 			73, 83, // Attack & Defense
 			73, 83, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 17;
-			this._weight = 800;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCarnivine Builder
 		public SpecieCarnivine() : base(
 			"Carnivine",
+			1.4,
+			27.0,
 			74, // HPs
 			100, 72, // Attack & Defense
 			90, 72, // Special Attack & Defense
 			46		
 		)
-		{
-			this._height = 14;
-			this._weight = 270;
-		}
+		{}
 		#endregion
 	}
 	#endregion

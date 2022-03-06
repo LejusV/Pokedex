@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieExcadrill Builder
 		public SpecieExcadrill() : base(
 			"Excadrill",
+			0.7,
+			40.4,
 			110, // HPs
 			135, 60, // Attack & Defense
 			50, 65, // Special Attack & Defense
 			88		
 		)
-		{
-			this._height = 7;
-			this._weight = 404;
-		}
+		{}
 		#endregion
 	}
 	#endregion

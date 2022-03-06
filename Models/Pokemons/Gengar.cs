@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGengar Builder
 		public SpecieGengar() : base(
 			"Gengar",
+			1.5,
+			40.5,
 			60, // HPs
 			65, 60, // Attack & Defense
 			130, 75, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 15;
-			this._weight = 405;
-		}
+		{}
 		#endregion
 	}
 	#endregion

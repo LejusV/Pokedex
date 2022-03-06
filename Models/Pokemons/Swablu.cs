@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwablu Builder
 		public SpecieSwablu() : base(
 			"Swablu",
+			0.4,
+			1.2,
 			45, // HPs
 			40, 60, // Attack & Defense
 			40, 75, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

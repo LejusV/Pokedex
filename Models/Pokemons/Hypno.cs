@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHypno Builder
 		public SpecieHypno() : base(
 			"Hypno",
+			1.6,
+			75.6,
 			85, // HPs
 			73, 70, // Attack & Defense
 			73, 115, // Special Attack & Defense
 			67		
 		)
-		{
-			this._height = 16;
-			this._weight = 756;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCrobat Builder
 		public SpecieCrobat() : base(
 			"Crobat",
+			1.8,
+			75.0,
 			85, // HPs
 			90, 80, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 18;
-			this._weight = 750;
-		}
+		{}
 		#endregion
 	}
 	#endregion

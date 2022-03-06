@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMarowak Builder
 		public SpecieMarowak() : base(
 			"Marowak",
+			1.0,
+			45.0,
 			60, // HPs
 			80, 110, // Attack & Defense
 			50, 80, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 10;
-			this._weight = 450;
-		}
+		{}
 		#endregion
 	}
 	#endregion

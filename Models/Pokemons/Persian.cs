@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePersian Builder
 		public SpeciePersian() : base(
 			"Persian",
+			1.0,
+			32.0,
 			65, // HPs
 			70, 60, // Attack & Defense
 			65, 65, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 10;
-			this._weight = 320;
-		}
+		{}
 		#endregion
 	}
 	#endregion

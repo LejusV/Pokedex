@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCorphish Builder
 		public SpecieCorphish() : base(
 			"Corphish",
+			0.6,
+			11.5,
 			43, // HPs
 			80, 65, // Attack & Defense
 			50, 35, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 6;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

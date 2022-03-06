@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePoliwrath Builder
 		public SpeciePoliwrath() : base(
 			"Poliwrath",
+			1.3,
+			54.0,
 			90, // HPs
 			95, 95, // Attack & Defense
 			70, 90, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 13;
-			this._weight = 540;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCopperajah Builder
 		public SpecieCopperajah() : base(
 			"Copperajah",
+			3.0,
+			650.0,
 			122, // HPs
 			130, 69, // Attack & Defense
 			80, 69, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 30;
-			this._weight = 6500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

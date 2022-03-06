@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAbra Builder
 		public SpecieAbra() : base(
 			"Abra",
+			0.9,
+			19.5,
 			25, // HPs
 			20, 15, // Attack & Defense
 			105, 55, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 9;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

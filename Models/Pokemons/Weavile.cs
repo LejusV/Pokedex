@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWeavile Builder
 		public SpecieWeavile() : base(
 			"Weavile",
+			1.1,
+			34.0,
 			70, // HPs
 			120, 65, // Attack & Defense
 			45, 85, // Special Attack & Defense
 			125		
 		)
-		{
-			this._height = 11;
-			this._weight = 340;
-		}
+		{}
 		#endregion
 	}
 	#endregion

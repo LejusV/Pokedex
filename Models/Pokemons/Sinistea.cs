@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSinistea Builder
 		public SpecieSinistea() : base(
 			"Sinistea",
+			0.1,
+			0.2,
 			40, // HPs
 			45, 45, // Attack & Defense
 			74, 54, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 1;
-			this._weight = 2;
-		}
+		{}
 		#endregion
 	}
 	#endregion

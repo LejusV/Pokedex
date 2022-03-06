@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGastrodon Builder
 		public SpecieGastrodon() : base(
 			"Gastrodon",
+			0.9,
+			29.9,
 			111, // HPs
 			83, 68, // Attack & Defense
 			92, 82, // Special Attack & Defense
 			39		
 		)
-		{
-			this._height = 9;
-			this._weight = 299;
-		}
+		{}
 		#endregion
 	}
 	#endregion

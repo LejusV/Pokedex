@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFeraligatr Builder
 		public SpecieFeraligatr() : base(
 			"Feraligatr",
+			2.3,
+			88.8,
 			85, // HPs
 			105, 100, // Attack & Defense
 			79, 83, // Special Attack & Defense
 			78		
 		)
-		{
-			this._height = 23;
-			this._weight = 888;
-		}
+		{}
 		#endregion
 	}
 	#endregion

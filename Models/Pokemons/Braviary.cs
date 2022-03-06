@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBraviary Builder
 		public SpecieBraviary() : base(
 			"Braviary",
+			1.5,
+			41.0,
 			100, // HPs
 			123, 75, // Attack & Defense
 			57, 75, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 15;
-			this._weight = 410;
-		}
+		{}
 		#endregion
 	}
 	#endregion

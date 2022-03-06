@@ -8,13 +8,34 @@ using System.Collections.Generic;
 using System.Globalization;
 using Pokedex.Models.Moves;
 
+    
+
 namespace Pokedex
 {
+    
     class Program
     {
         public static Random Random = new Random();
         static void Main()
         {
+            FileStream ostrm;
+            StreamWriter writer;
+            TextWriter oldOut = Console.Out;
+            try
+            {
+                ostrm = new FileStream ("./Data/Output.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                writer = new StreamWriter (ostrm);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine ("Cannot open Redirect.txt for writing");
+                Console.WriteLine (e.Message);
+                return;
+            }
+            Console.SetOut (writer);
+
+
+
             int lineIndex = 0;
             List<string> inputLines = new List<string>();
             foreach (string line in File.ReadLines("Data\\Input.txt")) inputLines.Add(line);
@@ -39,6 +60,10 @@ namespace Pokedex
                                 "\t- Squirtle\n");
 
             Console.WriteLine(inputLines[lineIndex]);
+
+            Move moveWaterShuriken = new MoveWaterShuriken();
+            Move moveTackle = new MoveTackle();
+
             switch (
                 new CultureInfo("en")
                 .TextInfo
@@ -49,22 +74,21 @@ namespace Pokedex
             {
                 case "Bulbasaur" :
                 {
-                    Player1.AddPokemon(new Bulbasaur( 100 ));
+                    Player1.AddPokemon(new Bulbasaur( 50 ));
                     break;
                 }
 
                 case "Charmander" :
                 {
-                    Player1.AddPokemon(new Charmander( 100 ));
+                    Player1.AddPokemon(new Charmander( 50 ));
                     break;
                 }
 
                 case "Squirtle" :
                 {
-                    Player1.AddPokemon(new Squirtle( 100 ));
-                    Move avalanche = new MoveAvalanche();
-                    Player1.Pokemons[0].AddMove(avalanche);
-                    Console.WriteLine(avalanche.FullStatus);
+                    Player1.AddPokemon(new Squirtle( 50 ));
+                    Player1.Pokemons[0].AddMove(moveWaterShuriken);
+                    Player1.Pokemons[0].AddMove(moveTackle);
                     break;
                 }
             }
@@ -79,18 +103,20 @@ namespace Pokedex
 
             foreach (Pokemon poke in Player1.Pokemons)
             {
-                Console.WriteLine(poke.ToString() + poke.FullStatus);
+                Console.WriteLine(poke.FullStatus);
+                Console.WriteLine(poke.Status);
             }
 
+            Console.WriteLine(moveWaterShuriken.FullStatus);
+            Console.WriteLine(moveTackle.FullStatus);
+
             //Console.WriteLine(Wiki.Instance.ToString());
-            
+            PlayerAI.Instance.Pokemons = new List<Pokemon>(){new MrRime(Player1.Pokemons[0].Level)};
+
             Battle battle = new Battle(
                 Player1,
-                AIPlayer.Instance
+                PlayerAI.Instance
             );
-
-            Move moveTackle = new MoveTackle();
-            Console.WriteLine(moveTackle.FullStatus);
 
             //Console.WriteLine("hp: " + Player1.Pokemons[0].IV.Get("hp"));
             //Console.WriteLine("attack: " + Player1.Pokemons[0].IV.Get("attack"));
@@ -99,6 +125,11 @@ namespace Pokedex
             //Console.WriteLine("sp_defense: " + Player1.Pokemons[0].IV.Get("sp_defense"));
             //Console.WriteLine("speed: " + Player1.Pokemons[0].IV.Get("speed"));
             //Console.WriteLine(Player1.Pokemons[0].StatsString);
+            
+            Console.SetOut (oldOut);
+            writer.Close();
+            ostrm.Close();
+            Console.WriteLine ("Done");
         }
     }
 }

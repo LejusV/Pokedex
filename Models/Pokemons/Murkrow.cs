@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMurkrow Builder
 		public SpecieMurkrow() : base(
 			"Murkrow",
+			0.5,
+			2.1,
 			60, // HPs
 			85, 42, // Attack & Defense
 			85, 42, // Special Attack & Defense
 			91		
 		)
-		{
-			this._height = 5;
-			this._weight = 21;
-		}
+		{}
 		#endregion
 	}
 	#endregion

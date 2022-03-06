@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKartana Builder
 		public SpecieKartana() : base(
 			"Kartana",
+			0.3,
+			0.1,
 			59, // HPs
 			181, 131, // Attack & Defense
 			59, 31, // Special Attack & Defense
 			109		
 		)
-		{
-			this._height = 3;
-			this._weight = 1;
-		}
+		{}
 		#endregion
 	}
 	#endregion

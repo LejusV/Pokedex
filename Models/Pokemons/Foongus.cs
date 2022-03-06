@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFoongus Builder
 		public SpecieFoongus() : base(
 			"Foongus",
+			0.2,
+			1.0,
 			69, // HPs
 			55, 45, // Attack & Defense
 			55, 55, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 2;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

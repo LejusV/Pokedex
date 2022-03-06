@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLanturn Builder
 		public SpecieLanturn() : base(
 			"Lanturn",
+			1.2,
+			22.5,
 			125, // HPs
 			58, 58, // Attack & Defense
 			76, 76, // Special Attack & Defense
 			67		
 		)
-		{
-			this._height = 12;
-			this._weight = 225;
-		}
+		{}
 		#endregion
 	}
 	#endregion

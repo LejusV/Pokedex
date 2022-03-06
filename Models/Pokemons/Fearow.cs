@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFearow Builder
 		public SpecieFearow() : base(
 			"Fearow",
+			1.2,
+			38.0,
 			65, // HPs
 			90, 65, // Attack & Defense
 			61, 61, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 12;
-			this._weight = 380;
-		}
+		{}
 		#endregion
 	}
 	#endregion

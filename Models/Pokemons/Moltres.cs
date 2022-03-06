@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMoltres Builder
 		public SpecieMoltres() : base(
 			"Moltres",
+			2.0,
+			60.0,
 			90, // HPs
 			100, 90, // Attack & Defense
 			125, 85, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 20;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

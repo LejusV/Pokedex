@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVullaby Builder
 		public SpecieVullaby() : base(
 			"Vullaby",
+			0.5,
+			9.0,
 			70, // HPs
 			55, 75, // Attack & Defense
 			45, 65, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

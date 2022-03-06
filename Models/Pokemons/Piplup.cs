@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePiplup Builder
 		public SpeciePiplup() : base(
 			"Piplup",
+			0.4,
+			5.2,
 			53, // HPs
 			51, 53, // Attack & Defense
 			61, 56, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 52;
-		}
+		{}
 		#endregion
 	}
 	#endregion

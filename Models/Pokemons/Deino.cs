@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDeino Builder
 		public SpecieDeino() : base(
 			"Deino",
+			0.8,
+			17.3,
 			52, // HPs
 			65, 50, // Attack & Defense
 			45, 50, // Special Attack & Defense
 			38		
 		)
-		{
-			this._height = 8;
-			this._weight = 173;
-		}
+		{}
 		#endregion
 	}
 	#endregion

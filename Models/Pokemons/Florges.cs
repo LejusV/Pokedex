@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlorges Builder
 		public SpecieFlorges() : base(
 			"Florges",
+			1.1,
+			10.0,
 			78, // HPs
 			65, 68, // Attack & Defense
 			112, 154, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 11;
-			this._weight = 100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

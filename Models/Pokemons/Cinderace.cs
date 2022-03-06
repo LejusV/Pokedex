@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCinderace Builder
 		public SpecieCinderace() : base(
 			"Cinderace",
+			1.4,
+			33.0,
 			80, // HPs
 			116, 75, // Attack & Defense
 			65, 75, // Special Attack & Defense
 			119		
 		)
-		{
-			this._height = 14;
-			this._weight = 330;
-		}
+		{}
 		#endregion
 	}
 	#endregion

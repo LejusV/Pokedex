@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBellossom Builder
 		public SpecieBellossom() : base(
 			"Bellossom",
+			0.4,
+			5.8,
 			75, // HPs
 			80, 95, // Attack & Defense
 			90, 100, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 58;
-		}
+		{}
 		#endregion
 	}
 	#endregion

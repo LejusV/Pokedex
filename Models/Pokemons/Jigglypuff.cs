@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJigglypuff Builder
 		public SpecieJigglypuff() : base(
 			"Jigglypuff",
+			0.5,
+			5.5,
 			115, // HPs
 			45, 20, // Attack & Defense
 			45, 25, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 5;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

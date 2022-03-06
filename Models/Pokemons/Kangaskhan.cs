@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKangaskhan Builder
 		public SpecieKangaskhan() : base(
 			"Kangaskhan",
+			2.2,
+			80.0,
 			105, // HPs
 			95, 80, // Attack & Defense
 			40, 80, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 22;
-			this._weight = 800;
-		}
+		{}
 		#endregion
 	}
 	#endregion

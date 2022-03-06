@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHippopotas Builder
 		public SpecieHippopotas() : base(
 			"Hippopotas",
+			0.8,
+			49.5,
 			68, // HPs
 			72, 78, // Attack & Defense
 			38, 42, // Special Attack & Defense
 			32		
 		)
-		{
-			this._height = 8;
-			this._weight = 495;
-		}
+		{}
 		#endregion
 	}
 	#endregion

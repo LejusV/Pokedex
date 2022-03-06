@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrifloon Builder
 		public SpecieDrifloon() : base(
 			"Drifloon",
+			0.4,
+			1.2,
 			90, // HPs
 			50, 34, // Attack & Defense
 			60, 44, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 4;
-			this._weight = 12;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGloom Builder
 		public SpecieGloom() : base(
 			"Gloom",
+			0.8,
+			8.6,
 			60, // HPs
 			65, 70, // Attack & Defense
 			85, 75, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 8;
-			this._weight = 86;
-		}
+		{}
 		#endregion
 	}
 	#endregion

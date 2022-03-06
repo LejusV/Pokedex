@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBulbasaur Builder
 		public SpecieBulbasaur() : base(
 			"Bulbasaur",
+			0.7,
+			6.9,
 			45, // HPs
 			49, 49, // Attack & Defense
 			65, 65, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 7;
-			this._weight = 69;
-		}
+		{}
 		#endregion
 	}
 	#endregion

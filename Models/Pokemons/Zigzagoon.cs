@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZigzagoon Builder
 		public SpecieZigzagoon() : base(
 			"Zigzagoon",
+			0.4,
+			17.5,
 			38, // HPs
 			30, 41, // Attack & Defense
 			30, 41, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 4;
-			this._weight = 175;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLampent Builder
 		public SpecieLampent() : base(
 			"Lampent",
+			0.6,
+			13.0,
 			60, // HPs
 			40, 60, // Attack & Defense
 			95, 60, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 6;
-			this._weight = 130;
-		}
+		{}
 		#endregion
 	}
 	#endregion

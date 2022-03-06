@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAltaria Builder
 		public SpecieAltaria() : base(
 			"Altaria",
+			1.1,
+			20.6,
 			75, // HPs
 			70, 90, // Attack & Defense
 			70, 105, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 11;
-			this._weight = 206;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFerrothorn Builder
 		public SpecieFerrothorn() : base(
 			"Ferrothorn",
+			1.0,
+			110.0,
 			74, // HPs
 			94, 131, // Attack & Defense
 			54, 116, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 10;
-			this._weight = 1100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

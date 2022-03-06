@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRockruff Builder
 		public SpecieRockruff() : base(
 			"Rockruff",
+			0.5,
+			9.2,
 			45, // HPs
 			65, 40, // Attack & Defense
 			30, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 5;
-			this._weight = 92;
-		}
+		{}
 		#endregion
 	}
 	#endregion

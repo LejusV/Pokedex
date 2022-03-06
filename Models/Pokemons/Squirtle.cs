@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSquirtle Builder
 		public SpecieSquirtle() : base(
 			"Squirtle",
+			0.5,
+			9.0,
 			44, // HPs
 			48, 65, // Attack & Defense
 			50, 64, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 5;
-			this._weight = 90;
-		}
+		{}
 		#endregion
 	}
 	#endregion

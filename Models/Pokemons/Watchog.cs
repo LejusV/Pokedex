@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWatchog Builder
 		public SpecieWatchog() : base(
 			"Watchog",
+			1.1,
+			27.0,
 			60, // HPs
 			85, 69, // Attack & Defense
 			60, 69, // Special Attack & Defense
 			77		
 		)
-		{
-			this._height = 11;
-			this._weight = 270;
-		}
+		{}
 		#endregion
 	}
 	#endregion

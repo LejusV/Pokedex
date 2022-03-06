@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTrapinch Builder
 		public SpecieTrapinch() : base(
 			"Trapinch",
+			0.7,
+			15.0,
 			45, // HPs
 			100, 45, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			10		
 		)
-		{
-			this._height = 7;
-			this._weight = 150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

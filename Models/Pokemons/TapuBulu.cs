@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTapu-Bulu Builder
 		public SpecieTapuBulu() : base(
 			"Tapu-Bulu",
+			1.9,
+			45.5,
 			70, // HPs
 			130, 115, // Attack & Defense
 			85, 95, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 19;
-			this._weight = 455;
-		}
+		{}
 		#endregion
 	}
 	#endregion

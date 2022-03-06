@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVenusaur Builder
 		public SpecieVenusaur() : base(
 			"Venusaur",
+			2.0,
+			100.0,
 			80, // HPs
 			82, 83, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 20;
-			this._weight = 1000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

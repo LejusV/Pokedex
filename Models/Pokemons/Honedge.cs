@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHonedge Builder
 		public SpecieHonedge() : base(
 			"Honedge",
+			0.8,
+			2.0,
 			45, // HPs
 			80, 100, // Attack & Defense
 			35, 37, // Special Attack & Defense
 			28		
 		)
-		{
-			this._height = 8;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

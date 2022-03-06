@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMudbray Builder
 		public SpecieMudbray() : base(
 			"Mudbray",
+			1.0,
+			110.0,
 			70, // HPs
 			100, 70, // Attack & Defense
 			45, 55, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 10;
-			this._weight = 1100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

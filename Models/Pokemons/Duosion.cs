@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDuosion Builder
 		public SpecieDuosion() : base(
 			"Duosion",
+			0.6,
+			8.0,
 			65, // HPs
 			40, 50, // Attack & Defense
 			125, 60, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 6;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

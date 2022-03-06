@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAzurill Builder
 		public SpecieAzurill() : base(
 			"Azurill",
+			0.2,
+			2.0,
 			50, // HPs
 			20, 40, // Attack & Defense
 			20, 40, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 2;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

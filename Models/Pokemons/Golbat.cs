@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGolbat Builder
 		public SpecieGolbat() : base(
 			"Golbat",
+			1.6,
+			55.0,
 			75, // HPs
 			80, 70, // Attack & Defense
 			65, 75, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 16;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

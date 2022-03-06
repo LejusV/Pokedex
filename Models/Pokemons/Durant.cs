@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDurant Builder
 		public SpecieDurant() : base(
 			"Durant",
+			0.3,
+			33.0,
 			58, // HPs
 			109, 112, // Attack & Defense
 			48, 48, // Special Attack & Defense
 			109		
 		)
-		{
-			this._height = 3;
-			this._weight = 330;
-		}
+		{}
 		#endregion
 	}
 	#endregion

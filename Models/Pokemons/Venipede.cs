@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVenipede Builder
 		public SpecieVenipede() : base(
 			"Venipede",
+			0.4,
+			5.3,
 			30, // HPs
 			45, 59, // Attack & Defense
 			30, 39, // Special Attack & Defense
 			57		
 		)
-		{
-			this._height = 4;
-			this._weight = 53;
-		}
+		{}
 		#endregion
 	}
 	#endregion

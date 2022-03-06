@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDruddigon Builder
 		public SpecieDruddigon() : base(
 			"Druddigon",
+			1.6,
+			139.0,
 			77, // HPs
 			120, 90, // Attack & Defense
 			60, 90, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 16;
-			this._weight = 1390;
-		}
+		{}
 		#endregion
 	}
 	#endregion

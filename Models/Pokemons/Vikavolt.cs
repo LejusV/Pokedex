@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVikavolt Builder
 		public SpecieVikavolt() : base(
 			"Vikavolt",
+			1.5,
+			45.0,
 			77, // HPs
 			70, 90, // Attack & Defense
 			145, 75, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 15;
-			this._weight = 450;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePalossand Builder
 		public SpeciePalossand() : base(
 			"Palossand",
+			1.3,
+			250.0,
 			85, // HPs
 			75, 110, // Attack & Defense
 			100, 75, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 13;
-			this._weight = 2500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

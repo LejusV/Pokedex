@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBeautifly Builder
 		public SpecieBeautifly() : base(
 			"Beautifly",
+			1.0,
+			28.4,
 			60, // HPs
 			70, 50, // Attack & Defense
 			100, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 10;
-			this._weight = 284;
-		}
+		{}
 		#endregion
 	}
 	#endregion

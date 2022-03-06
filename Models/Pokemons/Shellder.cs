@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShellder Builder
 		public SpecieShellder() : base(
 			"Shellder",
+			0.3,
+			4.0,
 			30, // HPs
 			65, 100, // Attack & Defense
 			45, 25, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 3;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

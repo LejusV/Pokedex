@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieVenomoth Builder
 		public SpecieVenomoth() : base(
 			"Venomoth",
+			1.5,
+			12.5,
 			70, // HPs
 			65, 60, // Attack & Defense
 			90, 75, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 15;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

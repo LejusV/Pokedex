@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKomala Builder
 		public SpecieKomala() : base(
 			"Komala",
+			0.4,
+			19.9,
 			65, // HPs
 			115, 65, // Attack & Defense
 			75, 95, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 4;
-			this._weight = 199;
-		}
+		{}
 		#endregion
 	}
 	#endregion

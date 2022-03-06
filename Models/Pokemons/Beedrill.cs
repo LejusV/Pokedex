@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBeedrill Builder
 		public SpecieBeedrill() : base(
 			"Beedrill",
+			1.0,
+			29.5,
 			65, // HPs
 			90, 40, // Attack & Defense
 			45, 80, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 10;
-			this._weight = 295;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCrabominable Builder
 		public SpecieCrabominable() : base(
 			"Crabominable",
+			1.7,
+			180.0,
 			97, // HPs
 			132, 77, // Attack & Defense
 			62, 67, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 17;
-			this._weight = 1800;
-		}
+		{}
 		#endregion
 	}
 	#endregion

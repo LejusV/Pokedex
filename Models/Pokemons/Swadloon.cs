@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwadloon Builder
 		public SpecieSwadloon() : base(
 			"Swadloon",
+			0.5,
+			7.3,
 			55, // HPs
 			63, 90, // Attack & Defense
 			50, 80, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 5;
-			this._weight = 73;
-		}
+		{}
 		#endregion
 	}
 	#endregion

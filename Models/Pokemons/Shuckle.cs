@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieShuckle Builder
 		public SpecieShuckle() : base(
 			"Shuckle",
+			0.6,
+			20.5,
 			20, // HPs
 			10, 230, // Attack & Defense
 			10, 230, // Special Attack & Defense
 			5		
 		)
-		{
-			this._height = 6;
-			this._weight = 205;
-		}
+		{}
 		#endregion
 	}
 	#endregion

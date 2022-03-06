@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieToucannon Builder
 		public SpecieToucannon() : base(
 			"Toucannon",
+			1.1,
+			26.0,
 			80, // HPs
 			120, 75, // Attack & Defense
 			75, 75, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 11;
-			this._weight = 260;
-		}
+		{}
 		#endregion
 	}
 	#endregion

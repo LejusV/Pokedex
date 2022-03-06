@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRunerigus Builder
 		public SpecieRunerigus() : base(
 			"Runerigus",
+			1.6,
+			66.6,
 			58, // HPs
 			95, 145, // Attack & Defense
 			50, 105, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 16;
-			this._weight = 666;
-		}
+		{}
 		#endregion
 	}
 	#endregion

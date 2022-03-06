@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBibarel Builder
 		public SpecieBibarel() : base(
 			"Bibarel",
+			1.0,
+			31.5,
 			79, // HPs
 			85, 60, // Attack & Defense
 			55, 60, // Special Attack & Defense
 			71		
 		)
-		{
-			this._height = 10;
-			this._weight = 315;
-		}
+		{}
 		#endregion
 	}
 	#endregion

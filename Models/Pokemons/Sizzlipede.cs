@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSizzlipede Builder
 		public SpecieSizzlipede() : base(
 			"Sizzlipede",
+			0.7,
+			1.0,
 			50, // HPs
 			65, 45, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 7;
-			this._weight = 10;
-		}
+		{}
 		#endregion
 	}
 	#endregion

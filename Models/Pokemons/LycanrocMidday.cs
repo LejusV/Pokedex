@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLycanroc-Midday Builder
 		public SpecieLycanrocMidday() : base(
 			"Lycanroc-Midday",
+			0.8,
+			25.0,
 			75, // HPs
 			115, 65, // Attack & Defense
 			55, 65, // Special Attack & Defense
 			112		
 		)
-		{
-			this._height = 8;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEscavalier Builder
 		public SpecieEscavalier() : base(
 			"Escavalier",
+			1.0,
+			33.0,
 			70, // HPs
 			135, 105, // Attack & Defense
 			60, 105, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 10;
-			this._weight = 330;
-		}
+		{}
 		#endregion
 	}
 	#endregion

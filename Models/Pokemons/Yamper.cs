@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYamper Builder
 		public SpecieYamper() : base(
 			"Yamper",
+			0.3,
+			13.5,
 			59, // HPs
 			45, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			26		
 		)
-		{
-			this._height = 3;
-			this._weight = 135;
-		}
+		{}
 		#endregion
 	}
 	#endregion

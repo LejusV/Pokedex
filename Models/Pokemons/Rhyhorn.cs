@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieRhyhorn Builder
 		public SpecieRhyhorn() : base(
 			"Rhyhorn",
+			1.0,
+			115.0,
 			80, // HPs
 			85, 95, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			25		
 		)
-		{
-			this._height = 10;
-			this._weight = 1150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

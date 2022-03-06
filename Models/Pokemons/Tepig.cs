@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTepig Builder
 		public SpecieTepig() : base(
 			"Tepig",
+			0.5,
+			9.9,
 			65, // HPs
 			63, 45, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 5;
-			this._weight = 99;
-		}
+		{}
 		#endregion
 	}
 	#endregion

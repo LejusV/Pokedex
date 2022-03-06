@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDarmanitan-Standard Builder
 		public SpecieDarmanitanStandard() : base(
 			"Darmanitan-Standard",
+			1.3,
+			92.9,
 			105, // HPs
 			140, 55, // Attack & Defense
 			30, 55, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 13;
-			this._weight = 929;
-		}
+		{}
 		#endregion
 	}
 	#endregion

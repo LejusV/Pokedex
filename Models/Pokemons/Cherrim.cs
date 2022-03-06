@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCherrim Builder
 		public SpecieCherrim() : base(
 			"Cherrim",
+			0.5,
+			9.3,
 			70, // HPs
 			60, 70, // Attack & Defense
 			87, 78, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 5;
-			this._weight = 93;
-		}
+		{}
 		#endregion
 	}
 	#endregion

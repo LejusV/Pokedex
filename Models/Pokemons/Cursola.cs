@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCursola Builder
 		public SpecieCursola() : base(
 			"Cursola",
+			1.0,
+			0.4,
 			60, // HPs
 			95, 50, // Attack & Defense
 			145, 130, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 10;
-			this._weight = 4;
-		}
+		{}
 		#endregion
 	}
 	#endregion

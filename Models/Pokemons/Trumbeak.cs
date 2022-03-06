@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTrumbeak Builder
 		public SpecieTrumbeak() : base(
 			"Trumbeak",
+			0.6,
+			14.8,
 			55, // HPs
 			85, 50, // Attack & Defense
 			40, 50, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 6;
-			this._weight = 148;
-		}
+		{}
 		#endregion
 	}
 	#endregion

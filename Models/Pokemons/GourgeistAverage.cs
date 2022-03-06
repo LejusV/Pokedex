@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGourgeist-Average Builder
 		public SpecieGourgeistAverage() : base(
 			"Gourgeist-Average",
+			0.9,
+			12.5,
 			65, // HPs
 			90, 122, // Attack & Defense
 			58, 75, // Special Attack & Defense
 			84		
 		)
-		{
-			this._height = 9;
-			this._weight = 125;
-		}
+		{}
 		#endregion
 	}
 	#endregion

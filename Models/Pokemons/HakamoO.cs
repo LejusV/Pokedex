@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieHakamo-O Builder
 		public SpecieHakamoO() : base(
 			"Hakamo-O",
+			1.2,
+			47.0,
 			55, // HPs
 			75, 90, // Attack & Defense
 			65, 70, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 12;
-			this._weight = 470;
-		}
+		{}
 		#endregion
 	}
 	#endregion

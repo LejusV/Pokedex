@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieInfernape Builder
 		public SpecieInfernape() : base(
 			"Infernape",
+			1.2,
+			55.0,
 			76, // HPs
 			104, 71, // Attack & Defense
 			104, 71, // Special Attack & Defense
 			108		
 		)
-		{
-			this._height = 12;
-			this._weight = 550;
-		}
+		{}
 		#endregion
 	}
 	#endregion

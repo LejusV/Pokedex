@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChimchar Builder
 		public SpecieChimchar() : base(
 			"Chimchar",
+			0.5,
+			6.2,
 			44, // HPs
 			58, 44, // Attack & Defense
 			58, 44, // Special Attack & Defense
 			61		
 		)
-		{
-			this._height = 5;
-			this._weight = 62;
-		}
+		{}
 		#endregion
 	}
 	#endregion

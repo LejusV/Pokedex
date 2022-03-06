@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMagmar Builder
 		public SpecieMagmar() : base(
 			"Magmar",
+			1.3,
+			44.5,
 			65, // HPs
 			95, 57, // Attack & Defense
 			100, 85, // Special Attack & Defense
 			93		
 		)
-		{
-			this._height = 13;
-			this._weight = 445;
-		}
+		{}
 		#endregion
 	}
 	#endregion

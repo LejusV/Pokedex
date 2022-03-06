@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGeodude Builder
 		public SpecieGeodude() : base(
 			"Geodude",
+			0.4,
+			20.0,
 			40, // HPs
 			80, 100, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 4;
-			this._weight = 200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

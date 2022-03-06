@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSilcoon Builder
 		public SpecieSilcoon() : base(
 			"Silcoon",
+			0.6,
+			10.0,
 			50, // HPs
 			35, 55, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 6;
-			this._weight = 100;
-		}
+		{}
 		#endregion
 	}
 	#endregion

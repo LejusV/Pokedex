@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDewpider Builder
 		public SpecieDewpider() : base(
 			"Dewpider",
+			0.3,
+			4.0,
 			38, // HPs
 			40, 52, // Attack & Defense
 			40, 72, // Special Attack & Defense
 			27		
 		)
-		{
-			this._height = 3;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

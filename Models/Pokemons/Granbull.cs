@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGranbull Builder
 		public SpecieGranbull() : base(
 			"Granbull",
+			1.4,
+			48.7,
 			90, // HPs
 			120, 75, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 14;
-			this._weight = 487;
-		}
+		{}
 		#endregion
 	}
 	#endregion

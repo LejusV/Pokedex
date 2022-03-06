@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieChewtle Builder
 		public SpecieChewtle() : base(
 			"Chewtle",
+			0.3,
+			8.5,
 			50, // HPs
 			64, 50, // Attack & Defense
 			38, 38, // Special Attack & Defense
 			44		
 		)
-		{
-			this._height = 3;
-			this._weight = 85;
-		}
+		{}
 		#endregion
 	}
 	#endregion

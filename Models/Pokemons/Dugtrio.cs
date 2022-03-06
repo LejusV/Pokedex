@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDugtrio Builder
 		public SpecieDugtrio() : base(
 			"Dugtrio",
+			0.7,
+			33.3,
 			35, // HPs
 			100, 50, // Attack & Defense
 			50, 70, // Special Attack & Defense
 			120		
 		)
-		{
-			this._height = 7;
-			this._weight = 333;
-		}
+		{}
 		#endregion
 	}
 	#endregion

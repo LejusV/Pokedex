@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDustox Builder
 		public SpecieDustox() : base(
 			"Dustox",
+			1.2,
+			31.6,
 			60, // HPs
 			50, 70, // Attack & Defense
 			50, 90, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 12;
-			this._weight = 316;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePlusle Builder
 		public SpeciePlusle() : base(
 			"Plusle",
+			0.4,
+			4.2,
 			60, // HPs
 			50, 40, // Attack & Defense
 			85, 75, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 4;
-			this._weight = 42;
-		}
+		{}
 		#endregion
 	}
 	#endregion

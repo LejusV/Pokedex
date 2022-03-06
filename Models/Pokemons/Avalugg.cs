@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAvalugg Builder
 		public SpecieAvalugg() : base(
 			"Avalugg",
+			2.0,
+			505.0,
 			95, // HPs
 			117, 184, // Attack & Defense
 			44, 46, // Special Attack & Defense
 			28		
 		)
-		{
-			this._height = 20;
-			this._weight = 5050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

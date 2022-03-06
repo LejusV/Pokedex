@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieElectabuzz Builder
 		public SpecieElectabuzz() : base(
 			"Electabuzz",
+			1.1,
+			30.0,
 			65, // HPs
 			83, 57, // Attack & Defense
 			95, 85, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 11;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

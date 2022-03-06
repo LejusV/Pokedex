@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCufant Builder
 		public SpecieCufant() : base(
 			"Cufant",
+			1.2,
+			100.0,
 			72, // HPs
 			80, 49, // Attack & Defense
 			40, 49, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 12;
-			this._weight = 1000;
-		}
+		{}
 		#endregion
 	}
 	#endregion

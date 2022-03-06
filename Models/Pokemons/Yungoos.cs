@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYungoos Builder
 		public SpecieYungoos() : base(
 			"Yungoos",
+			0.4,
+			6.0,
 			48, // HPs
 			70, 30, // Attack & Defense
 			30, 30, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 60;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGallade Builder
 		public SpecieGallade() : base(
 			"Gallade",
+			1.6,
+			52.0,
 			68, // HPs
 			125, 65, // Attack & Defense
 			65, 115, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 16;
-			this._weight = 520;
-		}
+		{}
 		#endregion
 	}
 	#endregion

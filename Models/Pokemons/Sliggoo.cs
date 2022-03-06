@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSliggoo Builder
 		public SpecieSliggoo() : base(
 			"Sliggoo",
+			0.8,
+			17.5,
 			68, // HPs
 			75, 53, // Attack & Defense
 			83, 113, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 8;
-			this._weight = 175;
-		}
+		{}
 		#endregion
 	}
 	#endregion

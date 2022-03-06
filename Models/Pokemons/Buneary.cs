@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBuneary Builder
 		public SpecieBuneary() : base(
 			"Buneary",
+			0.4,
+			5.5,
 			55, // HPs
 			66, 44, // Attack & Defense
 			44, 56, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 4;
-			this._weight = 55;
-		}
+		{}
 		#endregion
 	}
 	#endregion

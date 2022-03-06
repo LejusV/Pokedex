@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePachirisu Builder
 		public SpeciePachirisu() : base(
 			"Pachirisu",
+			0.4,
+			3.9,
 			60, // HPs
 			45, 70, // Attack & Defense
 			45, 90, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 4;
-			this._weight = 39;
-		}
+		{}
 		#endregion
 	}
 	#endregion

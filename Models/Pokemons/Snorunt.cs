@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSnorunt Builder
 		public SpecieSnorunt() : base(
 			"Snorunt",
+			0.7,
+			16.8,
 			50, // HPs
 			50, 50, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 7;
-			this._weight = 168;
-		}
+		{}
 		#endregion
 	}
 	#endregion

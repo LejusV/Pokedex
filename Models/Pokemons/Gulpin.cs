@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGulpin Builder
 		public SpecieGulpin() : base(
 			"Gulpin",
+			0.4,
+			10.3,
 			70, // HPs
 			43, 53, // Attack & Defense
 			43, 53, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 103;
-		}
+		{}
 		#endregion
 	}
 	#endregion

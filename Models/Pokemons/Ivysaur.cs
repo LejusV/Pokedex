@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieIvysaur Builder
 		public SpecieIvysaur() : base(
 			"Ivysaur",
+			1.0,
+			13.0,
 			60, // HPs
 			62, 63, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 10;
-			this._weight = 130;
-		}
+		{}
 		#endregion
 	}
 	#endregion

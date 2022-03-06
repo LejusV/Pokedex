@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAudino Builder
 		public SpecieAudino() : base(
 			"Audino",
+			1.1,
+			31.0,
 			103, // HPs
 			60, 86, // Attack & Defense
 			60, 86, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 11;
-			this._weight = 310;
-		}
+		{}
 		#endregion
 	}
 	#endregion

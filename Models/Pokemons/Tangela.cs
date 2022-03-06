@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTangela Builder
 		public SpecieTangela() : base(
 			"Tangela",
+			1.0,
+			35.0,
 			65, // HPs
 			55, 115, // Attack & Defense
 			100, 40, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 10;
-			this._weight = 350;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZygarde Builder
 		public SpecieZygarde() : base(
 			"Zygarde",
+			5.0,
+			305.0,
 			108, // HPs
 			100, 121, // Attack & Defense
 			81, 95, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 50;
-			this._weight = 3050;
-		}
+		{}
 		#endregion
 	}
 	#endregion

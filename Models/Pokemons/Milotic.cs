@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMilotic Builder
 		public SpecieMilotic() : base(
 			"Milotic",
+			6.2,
+			162.0,
 			95, // HPs
 			60, 79, // Attack & Defense
 			100, 125, // Special Attack & Defense
 			81		
 		)
-		{
-			this._height = 62;
-			this._weight = 1620;
-		}
+		{}
 		#endregion
 	}
 	#endregion

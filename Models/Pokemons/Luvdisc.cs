@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLuvdisc Builder
 		public SpecieLuvdisc() : base(
 			"Luvdisc",
+			0.6,
+			8.7,
 			43, // HPs
 			30, 55, // Attack & Defense
 			40, 65, // Special Attack & Defense
 			97		
 		)
-		{
-			this._height = 6;
-			this._weight = 87;
-		}
+		{}
 		#endregion
 	}
 	#endregion

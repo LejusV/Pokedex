@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStantler Builder
 		public SpecieStantler() : base(
 			"Stantler",
+			1.4,
+			71.2,
 			73, // HPs
 			95, 62, // Attack & Defense
 			85, 65, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 14;
-			this._weight = 712;
-		}
+		{}
 		#endregion
 	}
 	#endregion

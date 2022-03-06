@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGrubbin Builder
 		public SpecieGrubbin() : base(
 			"Grubbin",
+			0.4,
+			4.4,
 			47, // HPs
 			62, 45, // Attack & Defense
 			55, 45, // Special Attack & Defense
 			46		
 		)
-		{
-			this._height = 4;
-			this._weight = 44;
-		}
+		{}
 		#endregion
 	}
 	#endregion

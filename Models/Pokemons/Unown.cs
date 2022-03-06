@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUnown Builder
 		public SpecieUnown() : base(
 			"Unown",
+			0.5,
+			5.0,
 			48, // HPs
 			72, 48, // Attack & Defense
 			72, 48, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 5;
-			this._weight = 50;
-		}
+		{}
 		#endregion
 	}
 	#endregion

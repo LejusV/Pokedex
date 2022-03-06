@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMareanie Builder
 		public SpecieMareanie() : base(
 			"Mareanie",
+			0.4,
+			8.0,
 			50, // HPs
 			53, 62, // Attack & Defense
 			43, 52, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 4;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

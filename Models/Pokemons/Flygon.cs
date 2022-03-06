@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFlygon Builder
 		public SpecieFlygon() : base(
 			"Flygon",
+			2.0,
+			82.0,
 			80, // HPs
 			100, 80, // Attack & Defense
 			80, 80, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 20;
-			this._weight = 820;
-		}
+		{}
 		#endregion
 	}
 	#endregion

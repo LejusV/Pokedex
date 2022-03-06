@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDiggersby Builder
 		public SpecieDiggersby() : base(
 			"Diggersby",
+			1.0,
+			42.4,
 			85, // HPs
 			56, 77, // Attack & Defense
 			50, 77, // Special Attack & Defense
 			78		
 		)
-		{
-			this._height = 10;
-			this._weight = 424;
-		}
+		{}
 		#endregion
 	}
 	#endregion

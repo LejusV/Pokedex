@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDragonair Builder
 		public SpecieDragonair() : base(
 			"Dragonair",
+			4.0,
+			16.5,
 			61, // HPs
 			84, 65, // Attack & Defense
 			70, 70, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 40;
-			this._weight = 165;
-		}
+		{}
 		#endregion
 	}
 	#endregion

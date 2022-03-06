@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSilvally Builder
 		public SpecieSilvally() : base(
 			"Silvally",
+			2.3,
+			100.5,
 			95, // HPs
 			95, 95, // Attack & Defense
 			95, 95, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 23;
-			this._weight = 1005;
-		}
+		{}
 		#endregion
 	}
 	#endregion

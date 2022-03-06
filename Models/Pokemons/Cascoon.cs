@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCascoon Builder
 		public SpecieCascoon() : base(
 			"Cascoon",
+			0.7,
+			11.5,
 			50, // HPs
 			35, 55, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{
-			this._height = 7;
-			this._weight = 115;
-		}
+		{}
 		#endregion
 	}
 	#endregion

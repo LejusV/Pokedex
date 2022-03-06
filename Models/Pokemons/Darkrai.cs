@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDarkrai Builder
 		public SpecieDarkrai() : base(
 			"Darkrai",
+			1.5,
+			50.5,
 			70, // HPs
 			90, 90, // Attack & Defense
 			135, 90, // Special Attack & Defense
 			125		
 		)
-		{
-			this._height = 15;
-			this._weight = 505;
-		}
+		{}
 		#endregion
 	}
 	#endregion

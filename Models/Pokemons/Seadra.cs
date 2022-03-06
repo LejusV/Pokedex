@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSeadra Builder
 		public SpecieSeadra() : base(
 			"Seadra",
+			1.2,
+			25.0,
 			55, // HPs
 			65, 95, // Attack & Defense
 			95, 45, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 12;
-			this._weight = 250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

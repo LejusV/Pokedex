@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDodrio Builder
 		public SpecieDodrio() : base(
 			"Dodrio",
+			1.8,
+			85.2,
 			60, // HPs
 			110, 70, // Attack & Defense
 			60, 60, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 18;
-			this._weight = 852;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePurugly Builder
 		public SpeciePurugly() : base(
 			"Purugly",
+			1.0,
+			43.8,
 			71, // HPs
 			82, 64, // Attack & Defense
 			64, 59, // Special Attack & Defense
 			112		
 		)
-		{
-			this._height = 10;
-			this._weight = 438;
-		}
+		{}
 		#endregion
 	}
 	#endregion

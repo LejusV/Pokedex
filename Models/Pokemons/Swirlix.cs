@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSwirlix Builder
 		public SpecieSwirlix() : base(
 			"Swirlix",
+			0.4,
+			3.5,
 			62, // HPs
 			48, 66, // Attack & Defense
 			59, 57, // Special Attack & Defense
 			49		
 		)
-		{
-			this._height = 4;
-			this._weight = 35;
-		}
+		{}
 		#endregion
 	}
 	#endregion

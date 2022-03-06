@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieZubat Builder
 		public SpecieZubat() : base(
 			"Zubat",
+			0.8,
+			7.5,
 			40, // HPs
 			45, 35, // Attack & Defense
 			30, 40, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 8;
-			this._weight = 75;
-		}
+		{}
 		#endregion
 	}
 	#endregion

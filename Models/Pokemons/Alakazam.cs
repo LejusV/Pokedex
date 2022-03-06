@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAlakazam Builder
 		public SpecieAlakazam() : base(
 			"Alakazam",
+			1.5,
+			48.0,
 			55, // HPs
 			50, 45, // Attack & Defense
 			135, 95, // Special Attack & Defense
 			120		
 		)
-		{
-			this._height = 15;
-			this._weight = 480;
-		}
+		{}
 		#endregion
 	}
 	#endregion

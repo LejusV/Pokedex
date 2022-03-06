@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFroslass Builder
 		public SpecieFroslass() : base(
 			"Froslass",
+			1.3,
+			26.6,
 			70, // HPs
 			80, 70, // Attack & Defense
 			80, 70, // Special Attack & Defense
 			110		
 		)
-		{
-			this._height = 13;
-			this._weight = 266;
-		}
+		{}
 		#endregion
 	}
 	#endregion

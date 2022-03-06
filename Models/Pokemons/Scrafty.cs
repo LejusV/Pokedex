@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScrafty Builder
 		public SpecieScrafty() : base(
 			"Scrafty",
+			1.1,
+			30.0,
 			65, // HPs
 			90, 115, // Attack & Defense
 			45, 115, // Special Attack & Defense
 			58		
 		)
-		{
-			this._height = 11;
-			this._weight = 300;
-		}
+		{}
 		#endregion
 	}
 	#endregion

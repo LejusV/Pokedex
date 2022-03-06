@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYveltal Builder
 		public SpecieYveltal() : base(
 			"Yveltal",
+			5.8,
+			203.0,
 			126, // HPs
 			131, 95, // Attack & Defense
 			131, 98, // Special Attack & Defense
 			99		
 		)
-		{
-			this._height = 58;
-			this._weight = 2030;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieInteleon Builder
 		public SpecieInteleon() : base(
 			"Inteleon",
+			1.9,
+			45.2,
 			70, // HPs
 			85, 65, // Attack & Defense
 			125, 65, // Special Attack & Defense
 			120		
 		)
-		{
-			this._height = 19;
-			this._weight = 452;
-		}
+		{}
 		#endregion
 	}
 	#endregion

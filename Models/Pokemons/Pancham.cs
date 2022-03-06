@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePancham Builder
 		public SpeciePancham() : base(
 			"Pancham",
+			0.6,
+			8.0,
 			67, // HPs
 			82, 62, // Attack & Defense
 			46, 48, // Special Attack & Defense
 			43		
 		)
-		{
-			this._height = 6;
-			this._weight = 80;
-		}
+		{}
 		#endregion
 	}
 	#endregion

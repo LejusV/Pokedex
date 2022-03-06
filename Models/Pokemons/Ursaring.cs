@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieUrsaring Builder
 		public SpecieUrsaring() : base(
 			"Ursaring",
+			1.8,
+			125.8,
 			90, // HPs
 			130, 75, // Attack & Defense
 			75, 75, // Special Attack & Defense
 			55		
 		)
-		{
-			this._height = 18;
-			this._weight = 1258;
-		}
+		{}
 		#endregion
 	}
 	#endregion

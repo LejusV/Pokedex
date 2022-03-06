@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJangmo-O Builder
 		public SpecieJangmoO() : base(
 			"Jangmo-O",
+			0.6,
+			29.7,
 			45, // HPs
 			55, 65, // Attack & Defense
 			45, 45, // Special Attack & Defense
 			45		
 		)
-		{
-			this._height = 6;
-			this._weight = 297;
-		}
+		{}
 		#endregion
 	}
 	#endregion

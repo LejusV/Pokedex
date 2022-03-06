@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSobble Builder
 		public SpecieSobble() : base(
 			"Sobble",
+			0.3,
+			4.0,
 			50, // HPs
 			40, 40, // Attack & Defense
 			70, 40, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 3;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

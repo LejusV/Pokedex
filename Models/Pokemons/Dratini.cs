@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDratini Builder
 		public SpecieDratini() : base(
 			"Dratini",
+			1.8,
+			3.3,
 			41, // HPs
 			64, 45, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 18;
-			this._weight = 33;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieStonjourner Builder
 		public SpecieStonjourner() : base(
 			"Stonjourner",
+			2.5,
+			520.0,
 			100, // HPs
 			125, 135, // Attack & Defense
 			20, 20, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 25;
-			this._weight = 5200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

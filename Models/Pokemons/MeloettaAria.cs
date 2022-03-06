@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeloetta-Aria Builder
 		public SpecieMeloettaAria() : base(
 			"Meloetta-Aria",
+			0.6,
+			6.5,
 			100, // HPs
 			77, 77, // Attack & Defense
 			128, 128, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 6;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

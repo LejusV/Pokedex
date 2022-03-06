@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCyndaquil Builder
 		public SpecieCyndaquil() : base(
 			"Cyndaquil",
+			0.5,
+			7.9,
 			39, // HPs
 			52, 43, // Attack & Defense
 			60, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 5;
-			this._weight = 79;
-		}
+		{}
 		#endregion
 	}
 	#endregion

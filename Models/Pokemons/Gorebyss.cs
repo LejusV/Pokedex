@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGorebyss Builder
 		public SpecieGorebyss() : base(
 			"Gorebyss",
+			1.8,
+			22.6,
 			55, // HPs
 			84, 105, // Attack & Defense
 			114, 75, // Special Attack & Defense
 			52		
 		)
-		{
-			this._height = 18;
-			this._weight = 226;
-		}
+		{}
 		#endregion
 	}
 	#endregion

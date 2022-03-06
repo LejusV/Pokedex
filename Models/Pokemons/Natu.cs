@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieNatu Builder
 		public SpecieNatu() : base(
 			"Natu",
+			0.2,
+			2.0,
 			40, // HPs
 			50, 45, // Attack & Defense
 			70, 45, // Special Attack & Defense
 			70		
 		)
-		{
-			this._height = 2;
-			this._weight = 20;
-		}
+		{}
 		#endregion
 	}
 	#endregion

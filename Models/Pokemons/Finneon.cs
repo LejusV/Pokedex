@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFinneon Builder
 		public SpecieFinneon() : base(
 			"Finneon",
+			0.4,
+			7.0,
 			49, // HPs
 			49, 56, // Attack & Defense
 			49, 61, // Special Attack & Defense
 			66		
 		)
-		{
-			this._height = 4;
-			this._weight = 70;
-		}
+		{}
 		#endregion
 	}
 	#endregion

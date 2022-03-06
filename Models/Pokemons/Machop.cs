@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMachop Builder
 		public SpecieMachop() : base(
 			"Machop",
+			0.8,
+			19.5,
 			70, // HPs
 			80, 50, // Attack & Defense
 			35, 35, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 8;
-			this._weight = 195;
-		}
+		{}
 		#endregion
 	}
 	#endregion

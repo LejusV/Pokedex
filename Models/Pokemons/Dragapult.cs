@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDragapult Builder
 		public SpecieDragapult() : base(
 			"Dragapult",
+			3.0,
+			50.0,
 			88, // HPs
 			120, 75, // Attack & Defense
 			100, 75, // Special Attack & Defense
 			142		
 		)
-		{
-			this._height = 30;
-			this._weight = 500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieAmbipom Builder
 		public SpecieAmbipom() : base(
 			"Ambipom",
+			1.2,
+			20.3,
 			75, // HPs
 			100, 66, // Attack & Defense
 			60, 66, // Special Attack & Defense
 			115		
 		)
-		{
-			this._height = 12;
-			this._weight = 203;
-		}
+		{}
 		#endregion
 	}
 	#endregion

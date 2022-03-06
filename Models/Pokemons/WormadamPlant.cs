@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWormadam-Plant Builder
 		public SpecieWormadamPlant() : base(
 			"Wormadam-Plant",
+			0.5,
+			6.5,
 			60, // HPs
 			59, 85, // Attack & Defense
 			79, 105, // Special Attack & Defense
 			36		
 		)
-		{
-			this._height = 5;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

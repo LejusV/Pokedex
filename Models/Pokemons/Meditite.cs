@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeditite Builder
 		public SpecieMeditite() : base(
 			"Meditite",
+			0.6,
+			11.2,
 			30, // HPs
 			40, 55, // Attack & Defense
 			40, 55, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 6;
-			this._weight = 112;
-		}
+		{}
 		#endregion
 	}
 	#endregion

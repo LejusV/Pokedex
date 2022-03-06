@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieExeggcute Builder
 		public SpecieExeggcute() : base(
 			"Exeggcute",
+			0.4,
+			2.5,
 			60, // HPs
 			40, 80, // Attack & Defense
 			60, 45, // Special Attack & Defense
 			40		
 		)
-		{
-			this._height = 4;
-			this._weight = 25;
-		}
+		{}
 		#endregion
 	}
 	#endregion

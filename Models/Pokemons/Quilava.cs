@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieQuilava Builder
 		public SpecieQuilava() : base(
 			"Quilava",
+			0.9,
+			19.0,
 			58, // HPs
 			64, 58, // Attack & Defense
 			80, 65, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 9;
-			this._weight = 190;
-		}
+		{}
 		#endregion
 	}
 	#endregion

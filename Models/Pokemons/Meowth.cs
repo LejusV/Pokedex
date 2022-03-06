@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMeowth Builder
 		public SpecieMeowth() : base(
 			"Meowth",
+			0.4,
+			4.2,
 			40, // HPs
 			45, 35, // Attack & Defense
 			40, 40, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 4;
-			this._weight = 42;
-		}
+		{}
 		#endregion
 	}
 	#endregion

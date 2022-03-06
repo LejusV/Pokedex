@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieWimpod Builder
 		public SpecieWimpod() : base(
 			"Wimpod",
+			0.5,
+			12.0,
 			25, // HPs
 			35, 40, // Attack & Defense
 			20, 30, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 5;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieGardevoir Builder
 		public SpecieGardevoir() : base(
 			"Gardevoir",
+			1.6,
+			48.4,
 			68, // HPs
 			65, 65, // Attack & Defense
 			125, 115, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 16;
-			this._weight = 484;
-		}
+		{}
 		#endregion
 	}
 	#endregion

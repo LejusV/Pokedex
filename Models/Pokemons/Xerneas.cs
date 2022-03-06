@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieXerneas Builder
 		public SpecieXerneas() : base(
 			"Xerneas",
+			3.0,
+			215.0,
 			126, // HPs
 			131, 95, // Attack & Defense
 			131, 98, // Special Attack & Defense
 			99		
 		)
-		{
-			this._height = 30;
-			this._weight = 2150;
-		}
+		{}
 		#endregion
 	}
 	#endregion

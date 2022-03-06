@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLickilicky Builder
 		public SpecieLickilicky() : base(
 			"Lickilicky",
+			1.7,
+			140.0,
 			110, // HPs
 			85, 95, // Attack & Defense
 			80, 95, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 17;
-			this._weight = 1400;
-		}
+		{}
 		#endregion
 	}
 	#endregion

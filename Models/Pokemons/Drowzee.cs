@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieDrowzee Builder
 		public SpecieDrowzee() : base(
 			"Drowzee",
+			1.0,
+			32.4,
 			60, // HPs
 			48, 45, // Attack & Defense
 			43, 90, // Special Attack & Defense
 			42		
 		)
-		{
-			this._height = 10;
-			this._weight = 324;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKrabby Builder
 		public SpecieKrabby() : base(
 			"Krabby",
+			0.4,
+			6.5,
 			30, // HPs
 			105, 90, // Attack & Defense
 			25, 25, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 4;
-			this._weight = 65;
-		}
+		{}
 		#endregion
 	}
 	#endregion

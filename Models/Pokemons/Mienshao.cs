@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMienshao Builder
 		public SpecieMienshao() : base(
 			"Mienshao",
+			1.4,
+			35.5,
 			65, // HPs
 			125, 60, // Attack & Defense
 			95, 60, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 14;
-			this._weight = 355;
-		}
+		{}
 		#endregion
 	}
 	#endregion

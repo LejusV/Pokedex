@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLarvesta Builder
 		public SpecieLarvesta() : base(
 			"Larvesta",
+			1.1,
+			28.8,
 			55, // HPs
 			85, 55, // Attack & Defense
 			50, 55, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 11;
-			this._weight = 288;
-		}
+		{}
 		#endregion
 	}
 	#endregion

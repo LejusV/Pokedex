@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSurskit Builder
 		public SpecieSurskit() : base(
 			"Surskit",
+			0.5,
+			1.7,
 			40, // HPs
 			30, 32, // Attack & Defense
 			50, 52, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 5;
-			this._weight = 17;
-		}
+		{}
 		#endregion
 	}
 	#endregion

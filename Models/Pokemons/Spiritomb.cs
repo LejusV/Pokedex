@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSpiritomb Builder
 		public SpecieSpiritomb() : base(
 			"Spiritomb",
+			1.0,
+			108.0,
 			50, // HPs
 			92, 108, // Attack & Defense
 			92, 108, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 10;
-			this._weight = 1080;
-		}
+		{}
 		#endregion
 	}
 	#endregion

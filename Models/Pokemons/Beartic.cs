@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBeartic Builder
 		public SpecieBeartic() : base(
 			"Beartic",
+			2.6,
+			260.0,
 			95, // HPs
 			130, 80, // Attack & Defense
 			70, 80, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 26;
-			this._weight = 2600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

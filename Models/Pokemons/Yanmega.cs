@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieYanmega Builder
 		public SpecieYanmega() : base(
 			"Yanmega",
+			1.9,
+			51.5,
 			86, // HPs
 			76, 86, // Attack & Defense
 			116, 56, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 19;
-			this._weight = 515;
-		}
+		{}
 		#endregion
 	}
 	#endregion

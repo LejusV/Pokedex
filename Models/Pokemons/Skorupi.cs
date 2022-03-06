@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSkorupi Builder
 		public SpecieSkorupi() : base(
 			"Skorupi",
+			0.8,
+			12.0,
 			40, // HPs
 			50, 90, // Attack & Defense
 			30, 55, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 8;
-			this._weight = 120;
-		}
+		{}
 		#endregion
 	}
 	#endregion

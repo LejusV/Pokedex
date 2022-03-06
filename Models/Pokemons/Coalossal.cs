@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCoalossal Builder
 		public SpecieCoalossal() : base(
 			"Coalossal",
+			2.8,
+			310.5,
 			110, // HPs
 			80, 120, // Attack & Defense
 			80, 90, // Special Attack & Defense
 			30		
 		)
-		{
-			this._height = 28;
-			this._weight = 3105;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFalinks Builder
 		public SpecieFalinks() : base(
 			"Falinks",
+			3.0,
+			62.0,
 			65, // HPs
 			100, 100, // Attack & Defense
 			70, 60, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 30;
-			this._weight = 620;
-		}
+		{}
 		#endregion
 	}
 	#endregion

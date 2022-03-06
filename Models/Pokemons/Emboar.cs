@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieEmboar Builder
 		public SpecieEmboar() : base(
 			"Emboar",
+			1.6,
+			150.0,
 			110, // HPs
 			123, 65, // Attack & Defense
 			100, 65, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 16;
-			this._weight = 1500;
-		}
+		{}
 		#endregion
 	}
 	#endregion

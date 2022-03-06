@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSimisage Builder
 		public SpecieSimisage() : base(
 			"Simisage",
+			1.1,
+			30.5,
 			75, // HPs
 			98, 63, // Attack & Defense
 			98, 63, // Special Attack & Defense
 			101		
 		)
-		{
-			this._height = 11;
-			this._weight = 305;
-		}
+		{}
 		#endregion
 	}
 	#endregion

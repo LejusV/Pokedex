@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieJolteon Builder
 		public SpecieJolteon() : base(
 			"Jolteon",
+			0.8,
+			24.5,
 			65, // HPs
 			65, 60, // Attack & Defense
 			110, 95, // Special Attack & Defense
 			130		
 		)
-		{
-			this._height = 8;
-			this._weight = 245;
-		}
+		{}
 		#endregion
 	}
 	#endregion

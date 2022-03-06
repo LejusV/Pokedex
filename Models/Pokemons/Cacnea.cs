@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieCacnea Builder
 		public SpecieCacnea() : base(
 			"Cacnea",
+			0.4,
+			51.3,
 			50, // HPs
 			85, 40, // Attack & Defense
 			85, 40, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 4;
-			this._weight = 513;
-		}
+		{}
 		#endregion
 	}
 	#endregion

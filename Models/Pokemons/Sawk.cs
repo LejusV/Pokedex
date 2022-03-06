@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieSawk Builder
 		public SpecieSawk() : base(
 			"Sawk",
+			1.4,
+			51.0,
 			75, // HPs
 			125, 75, // Attack & Defense
 			30, 75, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 14;
-			this._weight = 510;
-		}
+		{}
 		#endregion
 	}
 	#endregion

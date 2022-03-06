@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieBruxish Builder
 		public SpecieBruxish() : base(
 			"Bruxish",
+			0.9,
+			19.0,
 			68, // HPs
 			105, 70, // Attack & Defense
 			70, 70, // Special Attack & Defense
 			92		
 		)
-		{
-			this._height = 9;
-			this._weight = 190;
-		}
+		{}
 		#endregion
 	}
 	#endregion

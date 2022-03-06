@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMienfoo Builder
 		public SpecieMienfoo() : base(
 			"Mienfoo",
+			0.9,
+			20.0,
 			45, // HPs
 			85, 50, // Attack & Defense
 			55, 50, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 9;
-			this._weight = 200;
-		}
+		{}
 		#endregion
 	}
 	#endregion

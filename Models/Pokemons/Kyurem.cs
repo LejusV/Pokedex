@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKyurem Builder
 		public SpecieKyurem() : base(
 			"Kyurem",
+			3.0,
+			325.0,
 			125, // HPs
 			130, 90, // Attack & Defense
 			130, 90, // Special Attack & Defense
 			95		
 		)
-		{
-			this._height = 30;
-			this._weight = 3250;
-		}
+		{}
 		#endregion
 	}
 	#endregion

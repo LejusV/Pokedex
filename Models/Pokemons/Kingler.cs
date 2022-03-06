@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKingler Builder
 		public SpecieKingler() : base(
 			"Kingler",
+			1.3,
+			60.0,
 			55, // HPs
 			130, 115, // Attack & Defense
 			50, 50, // Special Attack & Defense
 			75		
 		)
-		{
-			this._height = 13;
-			this._weight = 600;
-		}
+		{}
 		#endregion
 	}
 	#endregion

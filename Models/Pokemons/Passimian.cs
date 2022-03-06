@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpeciePassimian Builder
 		public SpeciePassimian() : base(
 			"Passimian",
+			2.0,
+			82.8,
 			100, // HPs
 			120, 90, // Attack & Defense
 			40, 60, // Special Attack & Defense
 			80		
 		)
-		{
-			this._height = 20;
-			this._weight = 828;
-		}
+		{}
 		#endregion
 	}
 	#endregion

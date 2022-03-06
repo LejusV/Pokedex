@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMime-Jr Builder
 		public SpecieMimeJr() : base(
 			"Mime-Jr",
+			0.6,
+			13.0,
 			20, // HPs
 			25, 45, // Attack & Defense
 			70, 90, // Special Attack & Defense
 			60		
 		)
-		{
-			this._height = 6;
-			this._weight = 130;
-		}
+		{}
 		#endregion
 	}
 	#endregion

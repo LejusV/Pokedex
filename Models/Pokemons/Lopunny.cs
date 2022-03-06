@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLopunny Builder
 		public SpecieLopunny() : base(
 			"Lopunny",
+			1.2,
+			33.3,
 			65, // HPs
 			76, 84, // Attack & Defense
 			54, 96, // Special Attack & Defense
 			105		
 		)
-		{
-			this._height = 12;
-			this._weight = 333;
-		}
+		{}
 		#endregion
 	}
 	#endregion

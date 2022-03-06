@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieScizor Builder
 		public SpecieScizor() : base(
 			"Scizor",
+			1.8,
+			118.0,
 			70, // HPs
 			130, 100, // Attack & Defense
 			55, 80, // Special Attack & Defense
 			65		
 		)
-		{
-			this._height = 18;
-			this._weight = 1180;
-		}
+		{}
 		#endregion
 	}
 	#endregion

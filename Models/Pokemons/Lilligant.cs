@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLilligant Builder
 		public SpecieLilligant() : base(
 			"Lilligant",
+			1.1,
+			16.3,
 			70, // HPs
 			60, 75, // Attack & Defense
 			110, 75, // Special Attack & Defense
 			90		
 		)
-		{
-			this._height = 11;
-			this._weight = 163;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieKommo-O Builder
 		public SpecieKommoO() : base(
 			"Kommo-O",
+			1.6,
+			78.2,
 			75, // HPs
 			110, 125, // Attack & Defense
 			100, 105, // Special Attack & Defense
 			85		
 		)
-		{
-			this._height = 16;
-			this._weight = 782;
-		}
+		{}
 		#endregion
 	}
 	#endregion

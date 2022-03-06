@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTangrowth Builder
 		public SpecieTangrowth() : base(
 			"Tangrowth",
+			2.0,
+			128.6,
 			100, // HPs
 			100, 125, // Attack & Defense
 			110, 50, // Special Attack & Defense
 			50		
 		)
-		{
-			this._height = 20;
-			this._weight = 1286;
-		}
+		{}
 		#endregion
 	}
 	#endregion

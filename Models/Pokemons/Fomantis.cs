@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieFomantis Builder
 		public SpecieFomantis() : base(
 			"Fomantis",
+			0.3,
+			1.5,
 			40, // HPs
 			55, 35, // Attack & Defense
 			50, 35, // Special Attack & Defense
 			35		
 		)
-		{
-			this._height = 3;
-			this._weight = 15;
-		}
+		{}
 		#endregion
 	}
 	#endregion

@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieMew Builder
 		public SpecieMew() : base(
 			"Mew",
+			0.4,
+			4.0,
 			100, // HPs
 			100, 100, // Attack & Defense
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{
-			this._height = 4;
-			this._weight = 40;
-		}
+		{}
 		#endregion
 	}
 	#endregion

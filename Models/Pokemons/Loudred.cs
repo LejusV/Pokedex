@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieLoudred Builder
 		public SpecieLoudred() : base(
 			"Loudred",
+			1.0,
+			40.5,
 			84, // HPs
 			71, 43, // Attack & Defense
 			71, 43, // Special Attack & Defense
 			48		
 		)
-		{
-			this._height = 10;
-			this._weight = 405;
-		}
+		{}
 		#endregion
 	}
 	#endregion

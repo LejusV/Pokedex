@@ -25,15 +25,14 @@ namespace Pokedex.Models.Pokemons
 		#region SpecieTorkoal Builder
 		public SpecieTorkoal() : base(
 			"Torkoal",
+			0.5,
+			80.4,
 			70, // HPs
 			85, 140, // Attack & Defense
 			85, 70, // Special Attack & Defense
 			20		
 		)
-		{
-			this._height = 5;
-			this._weight = 804;
-		}
+		{}
 		#endregion
 	}
 	#endregion
