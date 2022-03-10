@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vullaby Specie to store common natural stats of all Vullabys
-	#region SpecieVullaby
-	public class SpecieVullaby : PokemonSpecie
+	//Vullaby Species to store common natural stats of all Vullabys
+	#region SpeciesVullaby
+	public class SpeciesVullaby : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVullaby? _instance = null;
+		private static SpeciesVullaby? _instance = null;
 #nullable restore
-        public static SpecieVullaby Instance
+        public static SpeciesVullaby Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVullaby();
+                    _instance = new SpeciesVullaby();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVullaby Builder
-		public SpecieVullaby() : base(
+		#region SpeciesVullaby Constructor
+		public SpeciesVullaby() : base(
 			"Vullaby",
 			0.5,
 			9.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			45, 65, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Fury-Attack",
+				"Leer",
+				"Toxic",
+				"Double-Team",
+				"Mirror-Move",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Swagger",
+				"Steel-Wing",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Embargo",
+				"Punishment",
+				"Dark-Pulse",
+				"Air-Slash",
+				"Brave-Bird",
+				"Nasty-Plot",
+				"Defog",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vullaby Pokemon Class
+	//Vullaby PokemonInstance Class
 	#region Vullaby
-	public class Vullaby : Pokemon
+	public class VullabyInstance : PokemonInstance
 	{
-		#region Vullaby Builders
+		#region Vullaby Constructors
 		/// <summary>
-		/// Vullaby Builder waiting for a Nickname & a Level
+		/// Vullaby Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vullaby(string nickname, int level)
+		public VullabyInstance(string nickname, int level)
 		: base(
 				629,
-				SpecieVullaby.Instance, // Pokemon Specie
+				SpeciesVullaby.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vullaby Builder only waiting for a Level
 		/// </summary>
-		public Vullaby(int level)
+		public VullabyInstance(int level)
 		: base(
 				629,
-				SpecieVullaby.Instance, // Pokemon Specie
+				SpeciesVullaby.Instance, // PokemonInstance Species
 				"Vullaby", level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vullaby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vullaby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vullaby() : base(
 			629,
-			SpecieVullaby.Instance, // Pokemon Specie
+			SpeciesVullaby.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}
 		*/

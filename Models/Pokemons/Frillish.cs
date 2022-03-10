@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Frillish Specie to store common natural stats of all Frillishs
-	#region SpecieFrillish
-	public class SpecieFrillish : PokemonSpecie
+	//Frillish Species to store common natural stats of all Frillishs
+	#region SpeciesFrillish
+	public class SpeciesFrillish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFrillish? _instance = null;
+		private static SpeciesFrillish? _instance = null;
 #nullable restore
-        public static SpecieFrillish Instance
+        public static SpeciesFrillish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFrillish();
+                    _instance = new SpeciesFrillish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFrillish Builder
-		public SpecieFrillish() : base(
+		#region SpeciesFrillish Constructor
+		public SpeciesFrillish() : base(
 			"Frillish",
 			1.2,
 			33.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			65, 85, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Mist",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Absorb",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Recover",
+				"Confuse-Ray",
+				"Waterfall",
+				"Constrict",
+				"Dream-Eater",
+				"Bubble",
+				"Flash",
+				"Acid-Armor",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Hail",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Magic-Coat",
+				"Secret-Power",
+				"Dive",
+				"Water-Spout",
+				"Water-Sport",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Brine",
+				"Wring-Out",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Trick-Room",
+				"Ominous-Wind",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Hex",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Frillish Pokemon Class
+	//Frillish PokemonInstance Class
 	#region Frillish
-	public class Frillish : Pokemon
+	public class FrillishInstance : PokemonInstance
 	{
-		#region Frillish Builders
+		#region Frillish Constructors
 		/// <summary>
-		/// Frillish Builder waiting for a Nickname & a Level
+		/// Frillish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Frillish(string nickname, int level)
+		public FrillishInstance(string nickname, int level)
 		: base(
 				592,
-				SpecieFrillish.Instance, // Pokemon Specie
+				SpeciesFrillish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ghost.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Frillish Builder only waiting for a Level
 		/// </summary>
-		public Frillish(int level)
+		public FrillishInstance(int level)
 		: base(
 				592,
-				SpecieFrillish.Instance, // Pokemon Specie
+				SpeciesFrillish.Instance, // PokemonInstance Species
 				"Frillish", level,
 				Water.Instance, Ghost.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Frillish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Frillish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Frillish() : base(
 			592,
-			SpecieFrillish.Instance, // Pokemon Specie
+			SpeciesFrillish.Instance, // PokemonInstance Species
 			Water.Instance, Ghost.Instance			
 		) {}
 		*/

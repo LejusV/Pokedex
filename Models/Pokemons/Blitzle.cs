@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Blitzle Specie to store common natural stats of all Blitzles
-	#region SpecieBlitzle
-	public class SpecieBlitzle : PokemonSpecie
+	//Blitzle Species to store common natural stats of all Blitzles
+	#region SpeciesBlitzle
+	public class SpeciesBlitzle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBlitzle? _instance = null;
+		private static SpeciesBlitzle? _instance = null;
 #nullable restore
-        public static SpecieBlitzle Instance
+        public static SpeciesBlitzle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBlitzle();
+                    _instance = new SpeciesBlitzle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBlitzle Builder
-		public SpecieBlitzle() : base(
+		#region SpeciesBlitzle Constructor
+		public SpeciesBlitzle() : base(
 			"Blitzle",
 			0.8,
 			29.8,
@@ -32,23 +34,83 @@ namespace Pokedex.Models.Pokemons
 			50, 32, // Special Attack & Defense
 			76		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Double-Kick",
+				"Sand-Attack",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Tail-Whip",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Charge",
+				"Snatch",
+				"Secret-Power",
+				"Signal-Beam",
+				"Bounce",
+				"Shock-Wave",
+				"Feint",
+				"Me-First",
+				"Magnet-Rise",
+				"Discharge",
+				"Charge-Beam",
+				"Flame-Charge",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Blitzle Pokemon Class
+	//Blitzle PokemonInstance Class
 	#region Blitzle
-	public class Blitzle : Pokemon
+	public class BlitzleInstance : PokemonInstance
 	{
-		#region Blitzle Builders
+		#region Blitzle Constructors
 		/// <summary>
-		/// Blitzle Builder waiting for a Nickname & a Level
+		/// Blitzle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Blitzle(string nickname, int level)
+		public BlitzleInstance(string nickname, int level)
 		: base(
 				522,
-				SpecieBlitzle.Instance, // Pokemon Specie
+				SpeciesBlitzle.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +122,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Blitzle Builder only waiting for a Level
 		/// </summary>
-		public Blitzle(int level)
+		public BlitzleInstance(int level)
 		: base(
 				522,
-				SpecieBlitzle.Instance, // Pokemon Specie
+				SpeciesBlitzle.Instance, // PokemonInstance Species
 				"Blitzle", level,
 				Electric.Instance			
 		)
@@ -73,12 +135,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Blitzle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Blitzle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Blitzle() : base(
 			522,
-			SpecieBlitzle.Instance, // Pokemon Specie
+			SpeciesBlitzle.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

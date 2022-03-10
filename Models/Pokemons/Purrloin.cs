@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Purrloin Specie to store common natural stats of all Purrloins
-	#region SpeciePurrloin
-	public class SpeciePurrloin : PokemonSpecie
+	//Purrloin Species to store common natural stats of all Purrloins
+	#region SpeciesPurrloin
+	public class SpeciesPurrloin : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePurrloin? _instance = null;
+		private static SpeciesPurrloin? _instance = null;
 #nullable restore
-        public static SpeciePurrloin Instance
+        public static SpeciesPurrloin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePurrloin();
+                    _instance = new SpeciesPurrloin();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePurrloin Builder
-		public SpeciePurrloin() : base(
+		#region SpeciesPurrloin Constructor
+		public SpeciesPurrloin() : base(
 			"Purrloin",
 			0.4,
 			10.1,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			50, 37, // Special Attack & Defense
 			66		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pay-Day",
+				"Scratch",
+				"Cut",
+				"Sand-Attack",
+				"Growl",
+				"Thunder-Wave",
+				"Toxic",
+				"Double-Team",
+				"Dream-Eater",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Fake-Out",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Assist",
+				"Yawn",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Aerial-Ace",
+				"Covet",
+				"U-Turn",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Copycat",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Seed-Bomb",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Captivate",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Snarl",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Purrloin Pokemon Class
+	//Purrloin PokemonInstance Class
 	#region Purrloin
-	public class Purrloin : Pokemon
+	public class PurrloinInstance : PokemonInstance
 	{
-		#region Purrloin Builders
+		#region Purrloin Constructors
 		/// <summary>
-		/// Purrloin Builder waiting for a Nickname & a Level
+		/// Purrloin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Purrloin(string nickname, int level)
+		public PurrloinInstance(string nickname, int level)
 		: base(
 				509,
-				SpeciePurrloin.Instance, // Pokemon Specie
+				SpeciesPurrloin.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Purrloin Builder only waiting for a Level
 		/// </summary>
-		public Purrloin(int level)
+		public PurrloinInstance(int level)
 		: base(
 				509,
-				SpeciePurrloin.Instance, // Pokemon Specie
+				SpeciesPurrloin.Instance, // PokemonInstance Species
 				"Purrloin", level,
 				Dark.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Purrloin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Purrloin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Purrloin() : base(
 			509,
-			SpeciePurrloin.Instance, // Pokemon Specie
+			SpeciesPurrloin.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

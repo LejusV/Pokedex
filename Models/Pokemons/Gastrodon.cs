@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gastrodon Specie to store common natural stats of all Gastrodons
-	#region SpecieGastrodon
-	public class SpecieGastrodon : PokemonSpecie
+	//Gastrodon Species to store common natural stats of all Gastrodons
+	#region SpeciesGastrodon
+	public class SpeciesGastrodon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGastrodon? _instance = null;
+		private static SpeciesGastrodon? _instance = null;
 #nullable restore
-        public static SpecieGastrodon Instance
+        public static SpeciesGastrodon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGastrodon();
+                    _instance = new SpeciesGastrodon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGastrodon Builder
-		public SpecieGastrodon() : base(
+		#region SpeciesGastrodon Constructor
+		public SpeciesGastrodon() : base(
 			"Gastrodon",
 			0.9,
 			29.9,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			92, 82, // Special Attack & Defense
 			39		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"String-Shot",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Harden",
+				"Waterfall",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Block",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Earth-Power",
+				"Giga-Impact",
+				"Mud-Bomb",
+				"Stone-Edge",
+				"Captivate",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gastrodon Pokemon Class
+	//Gastrodon PokemonInstance Class
 	#region Gastrodon
-	public class Gastrodon : Pokemon
+	public class GastrodonInstance : PokemonInstance
 	{
-		#region Gastrodon Builders
+		#region Gastrodon Constructors
 		/// <summary>
-		/// Gastrodon Builder waiting for a Nickname & a Level
+		/// Gastrodon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gastrodon(string nickname, int level)
+		public GastrodonInstance(string nickname, int level)
 		: base(
 				423,
-				SpecieGastrodon.Instance, // Pokemon Specie
+				SpeciesGastrodon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gastrodon Builder only waiting for a Level
 		/// </summary>
-		public Gastrodon(int level)
+		public GastrodonInstance(int level)
 		: base(
 				423,
-				SpecieGastrodon.Instance, // Pokemon Specie
+				SpeciesGastrodon.Instance, // PokemonInstance Species
 				"Gastrodon", level,
 				Water.Instance, Ground.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gastrodon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gastrodon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gastrodon() : base(
 			423,
-			SpecieGastrodon.Instance, // Pokemon Specie
+			SpeciesGastrodon.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}
 		*/

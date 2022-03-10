@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tentacruel Specie to store common natural stats of all Tentacruels
-	#region SpecieTentacruel
-	public class SpecieTentacruel : PokemonSpecie
+	//Tentacruel Species to store common natural stats of all Tentacruels
+	#region SpeciesTentacruel
+	public class SpeciesTentacruel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTentacruel? _instance = null;
+		private static SpeciesTentacruel? _instance = null;
 #nullable restore
-        public static SpecieTentacruel Instance
+        public static SpeciesTentacruel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTentacruel();
+                    _instance = new SpeciesTentacruel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTentacruel Builder
-		public SpecieTentacruel() : base(
+		#region SpeciesTentacruel Constructor
+		public SpeciesTentacruel() : base(
 			"Tentacruel",
 			1.6,
 			55.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			80, 120, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Poison-Sting",
+				"Supersonic",
+				"Acid",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Barrier",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Skull-Bash",
+				"Constrict",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Magic-Coat",
+				"Knock-Off",
+				"Secret-Power",
+				"Dive",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Payback",
+				"Wring-Out",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Giga-Impact",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Acid-Spray",
+				"Round",
+				"Scald",
+				"Hex",
+				"Reflect-Type",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tentacruel Pokemon Class
+	//Tentacruel PokemonInstance Class
 	#region Tentacruel
-	public class Tentacruel : Pokemon
+	public class TentacruelInstance : PokemonInstance
 	{
-		#region Tentacruel Builders
+		#region Tentacruel Constructors
 		/// <summary>
-		/// Tentacruel Builder waiting for a Nickname & a Level
+		/// Tentacruel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tentacruel(string nickname, int level)
+		public TentacruelInstance(string nickname, int level)
 		: base(
 				73,
-				SpecieTentacruel.Instance, // Pokemon Specie
+				SpeciesTentacruel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Poison.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tentacruel Builder only waiting for a Level
 		/// </summary>
-		public Tentacruel(int level)
+		public TentacruelInstance(int level)
 		: base(
 				73,
-				SpecieTentacruel.Instance, // Pokemon Specie
+				SpeciesTentacruel.Instance, // PokemonInstance Species
 				"Tentacruel", level,
 				Water.Instance, Poison.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tentacruel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tentacruel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tentacruel() : base(
 			73,
-			SpecieTentacruel.Instance, // Pokemon Specie
+			SpeciesTentacruel.Instance, // PokemonInstance Species
 			Water.Instance, Poison.Instance			
 		) {}
 		*/

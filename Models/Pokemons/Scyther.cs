@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Scyther Specie to store common natural stats of all Scythers
-	#region SpecieScyther
-	public class SpecieScyther : PokemonSpecie
+	//Scyther Species to store common natural stats of all Scythers
+	#region SpeciesScyther
+	public class SpeciesScyther : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieScyther? _instance = null;
+		private static SpeciesScyther? _instance = null;
 #nullable restore
-        public static SpecieScyther Instance
+        public static SpeciesScyther Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieScyther();
+                    _instance = new SpeciesScyther();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieScyther Builder
-		public SpecieScyther() : base(
+		#region SpeciesScyther Constructor
+		public SpeciesScyther() : base(
 			"Scyther",
 			1.5,
 			56.0,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			55, 80, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Wing-Attack",
+				"Headbutt",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Hyper-Beam",
+				"Counter",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Focus-Energy",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Detect",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Night-Slash",
+				"Air-Slash",
+				"X-Scissor",
+				"Bug-Buzz",
+				"Vacuum-Wave",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Double-Hit",
+				"Ominous-Wind",
+				"Round",
+				"Quick-Guard",
+				"Struggle-Bug",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Scyther Pokemon Class
+	//Scyther PokemonInstance Class
 	#region Scyther
-	public class Scyther : Pokemon
+	public class ScytherInstance : PokemonInstance
 	{
-		#region Scyther Builders
+		#region Scyther Constructors
 		/// <summary>
-		/// Scyther Builder waiting for a Nickname & a Level
+		/// Scyther Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Scyther(string nickname, int level)
+		public ScytherInstance(string nickname, int level)
 		: base(
 				123,
-				SpecieScyther.Instance, // Pokemon Specie
+				SpeciesScyther.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scyther Builder only waiting for a Level
 		/// </summary>
-		public Scyther(int level)
+		public ScytherInstance(int level)
 		: base(
 				123,
-				SpecieScyther.Instance, // Pokemon Specie
+				SpeciesScyther.Instance, // PokemonInstance Species
 				"Scyther", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Scyther Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Scyther Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Scyther() : base(
 			123,
-			SpecieScyther.Instance, // Pokemon Specie
+			SpeciesScyther.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

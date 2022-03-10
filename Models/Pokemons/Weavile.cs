@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Weavile Specie to store common natural stats of all Weaviles
-	#region SpecieWeavile
-	public class SpecieWeavile : PokemonSpecie
+	//Weavile Species to store common natural stats of all Weaviles
+	#region SpeciesWeavile
+	public class SpeciesWeavile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWeavile? _instance = null;
+		private static SpeciesWeavile? _instance = null;
 #nullable restore
-        public static SpecieWeavile Instance
+        public static SpeciesWeavile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWeavile();
+                    _instance = new SpeciesWeavile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWeavile Builder
-		public SpecieWeavile() : base(
+		#region SpeciesWeavile Constructor
+		public SpeciesWeavile() : base(
 			"Weavile",
 			1.1,
 			34.0,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			45, 85, // Special Attack & Defense
 			125		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Leer",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Fling",
+				"Punishment",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"X-Scissor",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Avalanche",
+				"Shadow-Claw",
+				"Captivate",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Weavile Pokemon Class
+	//Weavile PokemonInstance Class
 	#region Weavile
-	public class Weavile : Pokemon
+	public class WeavileInstance : PokemonInstance
 	{
-		#region Weavile Builders
+		#region Weavile Constructors
 		/// <summary>
-		/// Weavile Builder waiting for a Nickname & a Level
+		/// Weavile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Weavile(string nickname, int level)
+		public WeavileInstance(string nickname, int level)
 		: base(
 				461,
-				SpecieWeavile.Instance, // Pokemon Specie
+				SpeciesWeavile.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Ice.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weavile Builder only waiting for a Level
 		/// </summary>
-		public Weavile(int level)
+		public WeavileInstance(int level)
 		: base(
 				461,
-				SpecieWeavile.Instance, // Pokemon Specie
+				SpeciesWeavile.Instance, // PokemonInstance Species
 				"Weavile", level,
 				Dark.Instance, Ice.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Weavile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Weavile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Weavile() : base(
 			461,
-			SpecieWeavile.Instance, // Pokemon Specie
+			SpeciesWeavile.Instance, // PokemonInstance Species
 			Dark.Instance, Ice.Instance			
 		) {}
 		*/

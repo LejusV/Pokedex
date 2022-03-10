@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magnezone Specie to store common natural stats of all Magnezones
-	#region SpecieMagnezone
-	public class SpecieMagnezone : PokemonSpecie
+	//Magnezone Species to store common natural stats of all Magnezones
+	#region SpeciesMagnezone
+	public class SpeciesMagnezone : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMagnezone? _instance = null;
+		private static SpeciesMagnezone? _instance = null;
 #nullable restore
-        public static SpecieMagnezone Instance
+        public static SpeciesMagnezone Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMagnezone();
+                    _instance = new SpeciesMagnezone();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMagnezone Builder
-		public SpecieMagnezone() : base(
+		#region SpeciesMagnezone Constructor
+		public SpeciesMagnezone() : base(
 			"Magnezone",
 			1.2,
 			180.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			130, 90, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Supersonic",
+				"Sonic-Boom",
+				"Hyper-Beam",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Zap-Cannon",
+				"Lock-On",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Mirror-Coat",
+				"Psych-Up",
+				"Facade",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Metal-Sound",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Gravity",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Discharge",
+				"Iron-Head",
+				"Magnet-Bomb",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Round",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Confide",
+				"Magnetic-Flux",
+				"Electric-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Magnezone Pokemon Class
+	//Magnezone PokemonInstance Class
 	#region Magnezone
-	public class Magnezone : Pokemon
+	public class MagnezoneInstance : PokemonInstance
 	{
-		#region Magnezone Builders
+		#region Magnezone Constructors
 		/// <summary>
-		/// Magnezone Builder waiting for a Nickname & a Level
+		/// Magnezone Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Magnezone(string nickname, int level)
+		public MagnezoneInstance(string nickname, int level)
 		: base(
 				462,
-				SpecieMagnezone.Instance, // Pokemon Specie
+				SpeciesMagnezone.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magnezone Builder only waiting for a Level
 		/// </summary>
-		public Magnezone(int level)
+		public MagnezoneInstance(int level)
 		: base(
 				462,
-				SpecieMagnezone.Instance, // Pokemon Specie
+				SpeciesMagnezone.Instance, // PokemonInstance Species
 				"Magnezone", level,
 				Electric.Instance, Steel.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Magnezone Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Magnezone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Magnezone() : base(
 			462,
-			SpecieMagnezone.Instance, // Pokemon Specie
+			SpeciesMagnezone.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tornadus-Incarnate Specie to store common natural stats of all Tornadus-Incarnates
-	#region SpecieTornadus-Incarnate
-	public class SpecieTornadusIncarnate : PokemonSpecie
+	//Tornadus-Incarnate Species to store common natural stats of all Tornadus-Incarnates
+	#region SpeciesTornadus-Incarnate
+	public class SpeciesTornadusIncarnate : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTornadusIncarnate? _instance = null;
+		private static SpeciesTornadusIncarnate? _instance = null;
 #nullable restore
-        public static SpecieTornadusIncarnate Instance
+        public static SpeciesTornadusIncarnate Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTornadusIncarnate();
+                    _instance = new SpeciesTornadusIncarnate();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTornadus-Incarnate Builder
-		public SpecieTornadusIncarnate() : base(
+		#region SpeciesTornadus-Incarnate Constructor
+		public SpeciesTornadusIncarnate() : base(
 			"Tornadus-Incarnate",
 			1.5,
 			63.0,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			125, 80, // Special Attack & Defense
 			111		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Fly",
+				"Thrash",
+				"Bite",
+				"Hyper-Beam",
+				"Strength",
+				"Toxic",
+				"Psychic",
+				"Agility",
+				"Double-Team",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Role-Play",
+				"Superpower",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Astonish",
+				"Air-Cutter",
+				"Extrasensory",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Hammer-Arm",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Dark-Pulse",
+				"Air-Slash",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Foul-Play",
+				"Round",
+				"Sky-Drop",
+				"Incinerate",
+				"Acrobatics",
+				"Hurricane",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tornadus-Incarnate Pokemon Class
+	//Tornadus-Incarnate PokemonInstance Class
 	#region Tornadus-Incarnate
-	public class TornadusIncarnate : Pokemon
+	public class TornadusIncarnateInstance : PokemonInstance
 	{
-		#region Tornadus-Incarnate Builders
+		#region Tornadus-Incarnate Constructors
 		/// <summary>
-		/// Tornadus-Incarnate Builder waiting for a Nickname & a Level
+		/// Tornadus-Incarnate Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public TornadusIncarnate(string nickname, int level)
+		public TornadusIncarnateInstance(string nickname, int level)
 		: base(
 				641,
-				SpecieTornadusIncarnate.Instance, // Pokemon Specie
+				SpeciesTornadusIncarnate.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tornadus-Incarnate Builder only waiting for a Level
 		/// </summary>
-		public TornadusIncarnate(int level)
+		public TornadusIncarnateInstance(int level)
 		: base(
 				641,
-				SpecieTornadusIncarnate.Instance, // Pokemon Specie
+				SpeciesTornadusIncarnate.Instance, // PokemonInstance Species
 				"Tornadus-Incarnate", level,
 				Flying.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tornadus-Incarnate Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tornadus-Incarnate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public TornadusIncarnate() : base(
 			641,
-			SpecieTornadusIncarnate.Instance, // Pokemon Specie
+			SpeciesTornadusIncarnate.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}
 		*/

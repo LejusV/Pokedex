@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vikavolt Specie to store common natural stats of all Vikavolts
-	#region SpecieVikavolt
-	public class SpecieVikavolt : PokemonSpecie
+	//Vikavolt Species to store common natural stats of all Vikavolts
+	#region SpeciesVikavolt
+	public class SpeciesVikavolt : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVikavolt? _instance = null;
+		private static SpeciesVikavolt? _instance = null;
 #nullable restore
-        public static SpecieVikavolt Instance
+        public static SpeciesVikavolt Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVikavolt();
+                    _instance = new SpeciesVikavolt();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVikavolt Builder
-		public SpecieVikavolt() : base(
+		#region SpeciesVikavolt Constructor
+		public SpeciesVikavolt() : base(
 			"Vikavolt",
 			1.5,
 			45.0,
@@ -32,23 +34,79 @@ namespace Pokedex.Models.Pokemons
 			145, 75, // Special Attack & Defense
 			43		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Guillotine",
+				"Bite",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"String-Shot",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"Light-Screen",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Charge",
+				"Roost",
+				"Poison-Jab",
+				"Air-Slash",
+				"X-Scissor",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Flash-Cannon",
+				"Bug-Bite",
+				"Charge-Beam",
+				"Round",
+				"Sky-Drop",
+				"Acrobatics",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vikavolt Pokemon Class
+	//Vikavolt PokemonInstance Class
 	#region Vikavolt
-	public class Vikavolt : Pokemon
+	public class VikavoltInstance : PokemonInstance
 	{
-		#region Vikavolt Builders
+		#region Vikavolt Constructors
 		/// <summary>
-		/// Vikavolt Builder waiting for a Nickname & a Level
+		/// Vikavolt Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vikavolt(string nickname, int level)
+		public VikavoltInstance(string nickname, int level)
 		: base(
 				738,
-				SpecieVikavolt.Instance, // Pokemon Specie
+				SpeciesVikavolt.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -60,10 +118,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vikavolt Builder only waiting for a Level
 		/// </summary>
-		public Vikavolt(int level)
+		public VikavoltInstance(int level)
 		: base(
 				738,
-				SpecieVikavolt.Instance, // Pokemon Specie
+				SpeciesVikavolt.Instance, // PokemonInstance Species
 				"Vikavolt", level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -73,12 +131,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vikavolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vikavolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vikavolt() : base(
 			738,
-			SpecieVikavolt.Instance, // Pokemon Specie
+			SpeciesVikavolt.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Froslass Specie to store common natural stats of all Froslasss
-	#region SpecieFroslass
-	public class SpecieFroslass : PokemonSpecie
+	//Froslass Species to store common natural stats of all Froslasss
+	#region SpeciesFroslass
+	public class SpeciesFroslass : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFroslass? _instance = null;
+		private static SpeciesFroslass? _instance = null;
 #nullable restore
-        public static SpecieFroslass Instance
+        public static SpeciesFroslass Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFroslass();
+                    _instance = new SpeciesFroslass();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFroslass Builder
-		public SpecieFroslass() : base(
+		#region SpeciesFroslass Constructor
+		public SpeciesFroslass() : base(
 			"Froslass",
 			1.3,
 			26.6,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			80, 70, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Headbutt",
+				"Leer",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Destiny-Bond",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Hail",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Signal-Beam",
+				"Block",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Sucker-Punch",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Shard",
+				"Captivate",
+				"Ominous-Wind",
+				"Telekinesis",
+				"Round",
+				"Frost-Breath",
+				"Draining-Kiss",
+				"Confide",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Froslass Pokemon Class
+	//Froslass PokemonInstance Class
 	#region Froslass
-	public class Froslass : Pokemon
+	public class FroslassInstance : PokemonInstance
 	{
-		#region Froslass Builders
+		#region Froslass Constructors
 		/// <summary>
-		/// Froslass Builder waiting for a Nickname & a Level
+		/// Froslass Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Froslass(string nickname, int level)
+		public FroslassInstance(string nickname, int level)
 		: base(
 				478,
-				SpecieFroslass.Instance, // Pokemon Specie
+				SpeciesFroslass.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ghost.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Froslass Builder only waiting for a Level
 		/// </summary>
-		public Froslass(int level)
+		public FroslassInstance(int level)
 		: base(
 				478,
-				SpecieFroslass.Instance, // Pokemon Specie
+				SpeciesFroslass.Instance, // PokemonInstance Species
 				"Froslass", level,
 				Ice.Instance, Ghost.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Froslass Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Froslass Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Froslass() : base(
 			478,
-			SpecieFroslass.Instance, // Pokemon Specie
+			SpeciesFroslass.Instance, // PokemonInstance Species
 			Ice.Instance, Ghost.Instance			
 		) {}
 		*/

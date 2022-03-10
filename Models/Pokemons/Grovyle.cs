@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grovyle Specie to store common natural stats of all Grovyles
-	#region SpecieGrovyle
-	public class SpecieGrovyle : PokemonSpecie
+	//Grovyle Species to store common natural stats of all Grovyles
+	#region SpeciesGrovyle
+	public class SpeciesGrovyle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrovyle? _instance = null;
+		private static SpeciesGrovyle? _instance = null;
 #nullable restore
-        public static SpecieGrovyle Instance
+        public static SpeciesGrovyle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrovyle();
+                    _instance = new SpeciesGrovyle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrovyle Builder
-		public SpecieGrovyle() : base(
+		#region SpeciesGrovyle Constructor
+		public SpeciesGrovyle() : base(
 			"Grovyle",
 			0.9,
 			21.6,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			85, 65, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Mega-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Slam",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Absorb",
+				"Mega-Drain",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Pursuit",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Leaf-Blade",
+				"Natural-Gift",
+				"Fling",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"X-Scissor",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Acrobatics",
+				"Grass-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grovyle Pokemon Class
+	//Grovyle PokemonInstance Class
 	#region Grovyle
-	public class Grovyle : Pokemon
+	public class GrovyleInstance : PokemonInstance
 	{
-		#region Grovyle Builders
+		#region Grovyle Constructors
 		/// <summary>
-		/// Grovyle Builder waiting for a Nickname & a Level
+		/// Grovyle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grovyle(string nickname, int level)
+		public GrovyleInstance(string nickname, int level)
 		: base(
 				253,
-				SpecieGrovyle.Instance, // Pokemon Specie
+				SpeciesGrovyle.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grovyle Builder only waiting for a Level
 		/// </summary>
-		public Grovyle(int level)
+		public GrovyleInstance(int level)
 		: base(
 				253,
-				SpecieGrovyle.Instance, // Pokemon Specie
+				SpeciesGrovyle.Instance, // PokemonInstance Species
 				"Grovyle", level,
 				Grass.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grovyle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grovyle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grovyle() : base(
 			253,
-			SpecieGrovyle.Instance, // Pokemon Specie
+			SpeciesGrovyle.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

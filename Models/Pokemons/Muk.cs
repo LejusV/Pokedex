@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Muk Specie to store common natural stats of all Muks
-	#region SpecieMuk
-	public class SpecieMuk : PokemonSpecie
+	//Muk Species to store common natural stats of all Muks
+	#region SpeciesMuk
+	public class SpeciesMuk : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMuk? _instance = null;
+		private static SpeciesMuk? _instance = null;
 #nullable restore
-        public static SpecieMuk Instance
+        public static SpeciesMuk Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMuk();
+                    _instance = new SpeciesMuk();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMuk Builder
-		public SpecieMuk() : base(
+		#region SpeciesMuk Constructor
+		public SpeciesMuk() : base(
 			"Muk",
 			1.2,
 			30.0,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			65, 100, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Body-Slam",
+				"Disable",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Mega-Drain",
+				"Thunderbolt",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Minimize",
+				"Bide",
+				"Self-Destruct",
+				"Sludge",
+				"Fire-Blast",
+				"Poison-Gas",
+				"Acid-Armor",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Torment",
+				"Memento",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Block",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Mud-Bomb",
+				"Gunk-Shot",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Incinerate",
+				"Belch",
+				"Confide",
+				"Venom-Drench",
+				"Infestation",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Muk Pokemon Class
+	//Muk PokemonInstance Class
 	#region Muk
-	public class Muk : Pokemon
+	public class MukInstance : PokemonInstance
 	{
-		#region Muk Builders
+		#region Muk Constructors
 		/// <summary>
-		/// Muk Builder waiting for a Nickname & a Level
+		/// Muk Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Muk(string nickname, int level)
+		public MukInstance(string nickname, int level)
 		: base(
 				89,
-				SpecieMuk.Instance, // Pokemon Specie
+				SpeciesMuk.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Muk Builder only waiting for a Level
 		/// </summary>
-		public Muk(int level)
+		public MukInstance(int level)
 		: base(
 				89,
-				SpecieMuk.Instance, // Pokemon Specie
+				SpeciesMuk.Instance, // PokemonInstance Species
 				"Muk", level,
 				Poison.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Muk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Muk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Muk() : base(
 			89,
-			SpecieMuk.Instance, // Pokemon Specie
+			SpeciesMuk.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Impidimp Specie to store common natural stats of all Impidimps
-	#region SpecieImpidimp
-	public class SpecieImpidimp : PokemonSpecie
+	//Impidimp Species to store common natural stats of all Impidimps
+	#region SpeciesImpidimp
+	public class SpeciesImpidimp : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieImpidimp? _instance = null;
+		private static SpeciesImpidimp? _instance = null;
 #nullable restore
-        public static SpecieImpidimp Instance
+        public static SpeciesImpidimp Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieImpidimp();
+                    _instance = new SpeciesImpidimp();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieImpidimp Builder
-		public SpecieImpidimp() : base(
+		#region SpeciesImpidimp Constructor
+		public SpeciesImpidimp() : base(
 			"Impidimp",
 			0.4,
 			5.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			55, 40, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Impidimp Pokemon Class
+	//Impidimp PokemonInstance Class
 	#region Impidimp
-	public class Impidimp : Pokemon
+	public class ImpidimpInstance : PokemonInstance
 	{
-		#region Impidimp Builders
+		#region Impidimp Constructors
 		/// <summary>
-		/// Impidimp Builder waiting for a Nickname & a Level
+		/// Impidimp Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Impidimp(string nickname, int level)
+		public ImpidimpInstance(string nickname, int level)
 		: base(
 				859,
-				SpecieImpidimp.Instance, // Pokemon Specie
+				SpeciesImpidimp.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Impidimp Builder only waiting for a Level
 		/// </summary>
-		public Impidimp(int level)
+		public ImpidimpInstance(int level)
 		: base(
 				859,
-				SpecieImpidimp.Instance, // Pokemon Specie
+				SpeciesImpidimp.Instance, // PokemonInstance Species
 				"Impidimp", level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Impidimp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Impidimp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Impidimp() : base(
 			859,
-			SpecieImpidimp.Instance, // Pokemon Specie
+			SpeciesImpidimp.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Naganadel Specie to store common natural stats of all Naganadels
-	#region SpecieNaganadel
-	public class SpecieNaganadel : PokemonSpecie
+	//Naganadel Species to store common natural stats of all Naganadels
+	#region SpeciesNaganadel
+	public class SpeciesNaganadel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNaganadel? _instance = null;
+		private static SpeciesNaganadel? _instance = null;
 #nullable restore
-        public static SpecieNaganadel Instance
+        public static SpeciesNaganadel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNaganadel();
+                    _instance = new SpeciesNaganadel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNaganadel Builder
-		public SpecieNaganadel() : base(
+		#region SpeciesNaganadel Constructor
+		public SpeciesNaganadel() : base(
 			"Naganadel",
 			3.6,
 			150.0,
@@ -32,23 +34,82 @@ namespace Pokedex.Models.Pokemons
 			127, 73, // Special Attack & Defense
 			121		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fly",
+				"Fury-Attack",
+				"Growl",
+				"Acid",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Peck",
+				"Thunderbolt",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Leech-Life",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Sludge-Bomb",
+				"Charm",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Facade",
+				"Helping-Hand",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"U-Turn",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Air-Slash",
+				"X-Scissor",
+				"Dragon-Pulse",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Draco-Meteor",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Sky-Drop",
+				"Acrobatics",
+				"Dragon-Tail",
+				"Snarl",
+				"Fell-Stinger",
+				"Confide",
+				"Venom-Drench",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Naganadel Pokemon Class
+	//Naganadel PokemonInstance Class
 	#region Naganadel
-	public class Naganadel : Pokemon
+	public class NaganadelInstance : PokemonInstance
 	{
-		#region Naganadel Builders
+		#region Naganadel Constructors
 		/// <summary>
-		/// Naganadel Builder waiting for a Nickname & a Level
+		/// Naganadel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Naganadel(string nickname, int level)
+		public NaganadelInstance(string nickname, int level)
 		: base(
 				804,
-				SpecieNaganadel.Instance, // Pokemon Specie
+				SpeciesNaganadel.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dragon.Instance			
 		)
@@ -60,10 +121,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Naganadel Builder only waiting for a Level
 		/// </summary>
-		public Naganadel(int level)
+		public NaganadelInstance(int level)
 		: base(
 				804,
-				SpecieNaganadel.Instance, // Pokemon Specie
+				SpeciesNaganadel.Instance, // PokemonInstance Species
 				"Naganadel", level,
 				Poison.Instance, Dragon.Instance			
 		)
@@ -73,12 +134,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Naganadel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Naganadel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Naganadel() : base(
 			804,
-			SpecieNaganadel.Instance, // Pokemon Specie
+			SpeciesNaganadel.Instance, // PokemonInstance Species
 			Poison.Instance, Dragon.Instance			
 		) {}
 		*/

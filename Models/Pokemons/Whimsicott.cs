@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Whimsicott Specie to store common natural stats of all Whimsicotts
-	#region SpecieWhimsicott
-	public class SpecieWhimsicott : PokemonSpecie
+	//Whimsicott Species to store common natural stats of all Whimsicotts
+	#region SpeciesWhimsicott
+	public class SpeciesWhimsicott : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWhimsicott? _instance = null;
+		private static SpeciesWhimsicott? _instance = null;
 #nullable restore
-        public static SpecieWhimsicott Instance
+        public static SpeciesWhimsicott Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWhimsicott();
+                    _instance = new SpeciesWhimsicott();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWhimsicott Builder
-		public SpecieWhimsicott() : base(
+		#region SpeciesWhimsicott Constructor
+		public SpeciesWhimsicott() : base(
 			"Whimsicott",
 			0.7,
 			6.6,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			77, 75, // Special Attack & Defense
 			116		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Cotton-Spore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Covet",
+				"Tailwind",
+				"U-Turn",
+				"Fling",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Trick-Room",
+				"Grass-Knot",
+				"Round",
+				"Hurricane",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Whimsicott Pokemon Class
+	//Whimsicott PokemonInstance Class
 	#region Whimsicott
-	public class Whimsicott : Pokemon
+	public class WhimsicottInstance : PokemonInstance
 	{
-		#region Whimsicott Builders
+		#region Whimsicott Constructors
 		/// <summary>
-		/// Whimsicott Builder waiting for a Nickname & a Level
+		/// Whimsicott Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Whimsicott(string nickname, int level)
+		public WhimsicottInstance(string nickname, int level)
 		: base(
 				547,
-				SpecieWhimsicott.Instance, // Pokemon Specie
+				SpeciesWhimsicott.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Whimsicott Builder only waiting for a Level
 		/// </summary>
-		public Whimsicott(int level)
+		public WhimsicottInstance(int level)
 		: base(
 				547,
-				SpecieWhimsicott.Instance, // Pokemon Specie
+				SpeciesWhimsicott.Instance, // PokemonInstance Species
 				"Whimsicott", level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Whimsicott Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Whimsicott Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Whimsicott() : base(
 			547,
-			SpecieWhimsicott.Instance, // Pokemon Specie
+			SpeciesWhimsicott.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}
 		*/

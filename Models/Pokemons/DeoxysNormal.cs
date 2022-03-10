@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Deoxys-Normal Specie to store common natural stats of all Deoxys-Normals
-	#region SpecieDeoxys-Normal
-	public class SpecieDeoxysNormal : PokemonSpecie
+	//Deoxys-Normal Species to store common natural stats of all Deoxys-Normals
+	#region SpeciesDeoxys-Normal
+	public class SpeciesDeoxysNormal : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDeoxysNormal? _instance = null;
+		private static SpeciesDeoxysNormal? _instance = null;
 #nullable restore
-        public static SpecieDeoxysNormal Instance
+        public static SpeciesDeoxysNormal Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDeoxysNormal();
+                    _instance = new SpeciesDeoxysNormal();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDeoxys-Normal Builder
-		public SpecieDeoxysNormal() : base(
+		#region SpeciesDeoxys-Normal Constructor
+		public SpeciesDeoxysNormal() : base(
 			"Deoxys-Normal",
 			1.7,
 			60.8,
@@ -32,23 +34,133 @@ namespace Pokedex.Models.Pokemons
 			150, 50, // Special Attack & Defense
 			150		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Cut",
+				"Bind",
+				"Headbutt",
+				"Body-Slam",
+				"Wrap",
+				"Double-Edge",
+				"Leer",
+				"Ice-Beam",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Teleport",
+				"Night-Shade",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Psycho-Boost",
+				"Gravity",
+				"Natural-Gift",
+				"Fling",
+				"Psycho-Shift",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Avalanche",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Low-Sweep",
+				"Round",
+				"Ally-Switch",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Deoxys-Normal Pokemon Class
+	//Deoxys-Normal PokemonInstance Class
 	#region Deoxys-Normal
-	public class DeoxysNormal : Pokemon
+	public class DeoxysNormalInstance : PokemonInstance
 	{
-		#region Deoxys-Normal Builders
+		#region Deoxys-Normal Constructors
 		/// <summary>
-		/// Deoxys-Normal Builder waiting for a Nickname & a Level
+		/// Deoxys-Normal Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public DeoxysNormal(string nickname, int level)
+		public DeoxysNormalInstance(string nickname, int level)
 		: base(
 				386,
-				SpecieDeoxysNormal.Instance, // Pokemon Specie
+				SpeciesDeoxysNormal.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +172,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Deoxys-Normal Builder only waiting for a Level
 		/// </summary>
-		public DeoxysNormal(int level)
+		public DeoxysNormalInstance(int level)
 		: base(
 				386,
-				SpecieDeoxysNormal.Instance, // Pokemon Specie
+				SpeciesDeoxysNormal.Instance, // PokemonInstance Species
 				"Deoxys-Normal", level,
 				Psychic.Instance			
 		)
@@ -73,12 +185,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Deoxys-Normal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Deoxys-Normal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public DeoxysNormal() : base(
 			386,
-			SpecieDeoxysNormal.Instance, // Pokemon Specie
+			SpeciesDeoxysNormal.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yamper Specie to store common natural stats of all Yampers
-	#region SpecieYamper
-	public class SpecieYamper : PokemonSpecie
+	//Yamper Species to store common natural stats of all Yampers
+	#region SpeciesYamper
+	public class SpeciesYamper : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieYamper? _instance = null;
+		private static SpeciesYamper? _instance = null;
 #nullable restore
-        public static SpecieYamper Instance
+        public static SpeciesYamper Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieYamper();
+                    _instance = new SpeciesYamper();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieYamper Builder
-		public SpecieYamper() : base(
+		#region SpeciesYamper Constructor
+		public SpeciesYamper() : base(
 			"Yamper",
 			0.3,
 			13.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			26		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Yamper Pokemon Class
+	//Yamper PokemonInstance Class
 	#region Yamper
-	public class Yamper : Pokemon
+	public class YamperInstance : PokemonInstance
 	{
-		#region Yamper Builders
+		#region Yamper Constructors
 		/// <summary>
-		/// Yamper Builder waiting for a Nickname & a Level
+		/// Yamper Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Yamper(string nickname, int level)
+		public YamperInstance(string nickname, int level)
 		: base(
 				835,
-				SpecieYamper.Instance, // Pokemon Specie
+				SpeciesYamper.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yamper Builder only waiting for a Level
 		/// </summary>
-		public Yamper(int level)
+		public YamperInstance(int level)
 		: base(
 				835,
-				SpecieYamper.Instance, // Pokemon Specie
+				SpeciesYamper.Instance, // PokemonInstance Species
 				"Yamper", level,
 				Electric.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Yamper Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Yamper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Yamper() : base(
 			835,
-			SpecieYamper.Instance, // Pokemon Specie
+			SpeciesYamper.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

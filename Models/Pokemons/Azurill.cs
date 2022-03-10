@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Azurill Specie to store common natural stats of all Azurills
-	#region SpecieAzurill
-	public class SpecieAzurill : PokemonSpecie
+	//Azurill Species to store common natural stats of all Azurills
+	#region SpeciesAzurill
+	public class SpeciesAzurill : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAzurill? _instance = null;
+		private static SpeciesAzurill? _instance = null;
 #nullable restore
-        public static SpecieAzurill Instance
+        public static SpeciesAzurill Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAzurill();
+                    _instance = new SpeciesAzurill();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAzurill Builder
-		public SpecieAzurill() : base(
+		#region SpeciesAzurill Constructor
+		public SpeciesAzurill() : base(
 			"Azurill",
 			0.2,
 			2.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			20, 40, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Slam",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Tail-Whip",
+				"Sing",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Waterfall",
+				"Swift",
+				"Bubble",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Helping-Hand",
+				"Knock-Off",
+				"Refresh",
+				"Secret-Power",
+				"Camouflage",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Tickle",
+				"Muddy-Water",
+				"Bounce",
+				"Covet",
+				"Water-Sport",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Copycat",
+				"Captivate",
+				"Soak",
+				"Round",
+				"Scald",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Azurill Pokemon Class
+	//Azurill PokemonInstance Class
 	#region Azurill
-	public class Azurill : Pokemon
+	public class AzurillInstance : PokemonInstance
 	{
-		#region Azurill Builders
+		#region Azurill Constructors
 		/// <summary>
-		/// Azurill Builder waiting for a Nickname & a Level
+		/// Azurill Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Azurill(string nickname, int level)
+		public AzurillInstance(string nickname, int level)
 		: base(
 				298,
-				SpecieAzurill.Instance, // Pokemon Specie
+				SpeciesAzurill.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Azurill Builder only waiting for a Level
 		/// </summary>
-		public Azurill(int level)
+		public AzurillInstance(int level)
 		: base(
 				298,
-				SpecieAzurill.Instance, // Pokemon Specie
+				SpeciesAzurill.Instance, // PokemonInstance Species
 				"Azurill", level,
 				Normal.Instance, Fairy.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Azurill Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Azurill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Azurill() : base(
 			298,
-			SpecieAzurill.Instance, // Pokemon Specie
+			SpeciesAzurill.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}
 		*/

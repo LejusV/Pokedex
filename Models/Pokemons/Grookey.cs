@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grookey Specie to store common natural stats of all Grookeys
-	#region SpecieGrookey
-	public class SpecieGrookey : PokemonSpecie
+	//Grookey Species to store common natural stats of all Grookeys
+	#region SpeciesGrookey
+	public class SpeciesGrookey : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrookey? _instance = null;
+		private static SpeciesGrookey? _instance = null;
 #nullable restore
-        public static SpecieGrookey Instance
+        public static SpeciesGrookey Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrookey();
+                    _instance = new SpeciesGrookey();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrookey Builder
-		public SpecieGrookey() : base(
+		#region SpeciesGrookey Constructor
+		public SpeciesGrookey() : base(
 			"Grookey",
 			0.3,
 			5.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grookey Pokemon Class
+	//Grookey PokemonInstance Class
 	#region Grookey
-	public class Grookey : Pokemon
+	public class GrookeyInstance : PokemonInstance
 	{
-		#region Grookey Builders
+		#region Grookey Constructors
 		/// <summary>
-		/// Grookey Builder waiting for a Nickname & a Level
+		/// Grookey Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grookey(string nickname, int level)
+		public GrookeyInstance(string nickname, int level)
 		: base(
 				810,
-				SpecieGrookey.Instance, // Pokemon Specie
+				SpeciesGrookey.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grookey Builder only waiting for a Level
 		/// </summary>
-		public Grookey(int level)
+		public GrookeyInstance(int level)
 		: base(
 				810,
-				SpecieGrookey.Instance, // Pokemon Specie
+				SpeciesGrookey.Instance, // PokemonInstance Species
 				"Grookey", level,
 				Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grookey Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grookey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grookey() : base(
 			810,
-			SpecieGrookey.Instance, // Pokemon Specie
+			SpeciesGrookey.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

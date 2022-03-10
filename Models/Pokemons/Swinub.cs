@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swinub Specie to store common natural stats of all Swinubs
-	#region SpecieSwinub
-	public class SpecieSwinub : PokemonSpecie
+	//Swinub Species to store common natural stats of all Swinubs
+	#region SpeciesSwinub
+	public class SpeciesSwinub : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwinub? _instance = null;
+		private static SpeciesSwinub? _instance = null;
 #nullable restore
-        public static SpecieSwinub Instance
+        public static SpeciesSwinub Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwinub();
+                    _instance = new SpeciesSwinub();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwinub Builder
-		public SpecieSwinub() : base(
+		#region SpeciesSwinub Constructor
+		public SpeciesSwinub() : base(
 			"Swinub",
 			0.4,
 			6.5,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Roar",
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Mud-Sport",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Icicle-Spear",
+				"Mud-Shot",
+				"Natural-Gift",
+				"Earth-Power",
+				"Avalanche",
+				"Ice-Shard",
+				"Mud-Bomb",
+				"Captivate",
+				"Stealth-Rock",
+				"Round",
+				"Bulldoze",
+				"Icicle-Crash",
+				"Freeze-Dry",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swinub Pokemon Class
+	//Swinub PokemonInstance Class
 	#region Swinub
-	public class Swinub : Pokemon
+	public class SwinubInstance : PokemonInstance
 	{
-		#region Swinub Builders
+		#region Swinub Constructors
 		/// <summary>
-		/// Swinub Builder waiting for a Nickname & a Level
+		/// Swinub Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swinub(string nickname, int level)
+		public SwinubInstance(string nickname, int level)
 		: base(
 				220,
-				SpecieSwinub.Instance, // Pokemon Specie
+				SpeciesSwinub.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swinub Builder only waiting for a Level
 		/// </summary>
-		public Swinub(int level)
+		public SwinubInstance(int level)
 		: base(
 				220,
-				SpecieSwinub.Instance, // Pokemon Specie
+				SpeciesSwinub.Instance, // PokemonInstance Species
 				"Swinub", level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swinub Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swinub Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swinub() : base(
 			220,
-			SpecieSwinub.Instance, // Pokemon Specie
+			SpeciesSwinub.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}
 		*/

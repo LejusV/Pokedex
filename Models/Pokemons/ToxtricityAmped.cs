@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toxtricity-Amped Specie to store common natural stats of all Toxtricity-Ampeds
-	#region SpecieToxtricity-Amped
-	public class SpecieToxtricityAmped : PokemonSpecie
+	//Toxtricity-Amped Species to store common natural stats of all Toxtricity-Ampeds
+	#region SpeciesToxtricity-Amped
+	public class SpeciesToxtricityAmped : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieToxtricityAmped? _instance = null;
+		private static SpeciesToxtricityAmped? _instance = null;
 #nullable restore
-        public static SpecieToxtricityAmped Instance
+        public static SpeciesToxtricityAmped Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieToxtricityAmped();
+                    _instance = new SpeciesToxtricityAmped();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieToxtricity-Amped Builder
-		public SpecieToxtricityAmped() : base(
+		#region SpeciesToxtricity-Amped Constructor
+		public SpeciesToxtricityAmped() : base(
 			"Toxtricity-Amped",
 			1.6,
 			40.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			114, 70, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Toxtricity-Amped Pokemon Class
+	//Toxtricity-Amped PokemonInstance Class
 	#region Toxtricity-Amped
-	public class ToxtricityAmped : Pokemon
+	public class ToxtricityAmpedInstance : PokemonInstance
 	{
-		#region Toxtricity-Amped Builders
+		#region Toxtricity-Amped Constructors
 		/// <summary>
-		/// Toxtricity-Amped Builder waiting for a Nickname & a Level
+		/// Toxtricity-Amped Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public ToxtricityAmped(string nickname, int level)
+		public ToxtricityAmpedInstance(string nickname, int level)
 		: base(
 				849,
-				SpecieToxtricityAmped.Instance, // Pokemon Specie
+				SpeciesToxtricityAmped.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Poison.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxtricity-Amped Builder only waiting for a Level
 		/// </summary>
-		public ToxtricityAmped(int level)
+		public ToxtricityAmpedInstance(int level)
 		: base(
 				849,
-				SpecieToxtricityAmped.Instance, // Pokemon Specie
+				SpeciesToxtricityAmped.Instance, // PokemonInstance Species
 				"Toxtricity-Amped", level,
 				Electric.Instance, Poison.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Toxtricity-Amped Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Toxtricity-Amped Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public ToxtricityAmped() : base(
 			849,
-			SpecieToxtricityAmped.Instance, // Pokemon Specie
+			SpeciesToxtricityAmped.Instance, // PokemonInstance Species
 			Electric.Instance, Poison.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Monferno Specie to store common natural stats of all Monfernos
-	#region SpecieMonferno
-	public class SpecieMonferno : PokemonSpecie
+	//Monferno Species to store common natural stats of all Monfernos
+	#region SpeciesMonferno
+	public class SpeciesMonferno : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMonferno? _instance = null;
+		private static SpeciesMonferno? _instance = null;
 #nullable restore
-        public static SpecieMonferno Instance
+        public static SpeciesMonferno Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMonferno();
+                    _instance = new SpeciesMonferno();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMonferno Builder
-		public SpecieMonferno() : base(
+		#region SpeciesMonferno Constructor
+		public SpeciesMonferno() : base(
 			"Monferno",
 			0.9,
 			22.0,
@@ -32,23 +34,115 @@ namespace Pokedex.Models.Pokemons
 			78, 52, // Special Attack & Defense
 			81		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Leer",
+				"Ember",
+				"Flamethrower",
+				"Low-Kick",
+				"Strength",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Swift",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Flame-Wheel",
+				"Snore",
+				"Protect",
+				"Mach-Punch",
+				"Mud-Slap",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Slack-Off",
+				"Overheat",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Covet",
+				"Natural-Gift",
+				"Feint",
+				"U-Turn",
+				"Close-Combat",
+				"Fling",
+				"Flare-Blitz",
+				"Poison-Jab",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Gunk-Shot",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Flame-Charge",
+				"Low-Sweep",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Retaliate",
+				"Fire-Pledge",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Monferno Pokemon Class
+	//Monferno PokemonInstance Class
 	#region Monferno
-	public class Monferno : Pokemon
+	public class MonfernoInstance : PokemonInstance
 	{
-		#region Monferno Builders
+		#region Monferno Constructors
 		/// <summary>
-		/// Monferno Builder waiting for a Nickname & a Level
+		/// Monferno Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Monferno(string nickname, int level)
+		public MonfernoInstance(string nickname, int level)
 		: base(
 				391,
-				SpecieMonferno.Instance, // Pokemon Specie
+				SpeciesMonferno.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
 		)
@@ -60,10 +154,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Monferno Builder only waiting for a Level
 		/// </summary>
-		public Monferno(int level)
+		public MonfernoInstance(int level)
 		: base(
 				391,
-				SpecieMonferno.Instance, // Pokemon Specie
+				SpeciesMonferno.Instance, // PokemonInstance Species
 				"Monferno", level,
 				Fire.Instance, Fighting.Instance			
 		)
@@ -73,12 +167,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Monferno Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Monferno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Monferno() : base(
 			391,
-			SpecieMonferno.Instance, // Pokemon Specie
+			SpeciesMonferno.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}
 		*/

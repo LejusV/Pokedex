@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Barraskewda Specie to store common natural stats of all Barraskewdas
-	#region SpecieBarraskewda
-	public class SpecieBarraskewda : PokemonSpecie
+	//Barraskewda Species to store common natural stats of all Barraskewdas
+	#region SpeciesBarraskewda
+	public class SpeciesBarraskewda : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBarraskewda? _instance = null;
+		private static SpeciesBarraskewda? _instance = null;
 #nullable restore
-        public static SpecieBarraskewda Instance
+        public static SpeciesBarraskewda Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBarraskewda();
+                    _instance = new SpeciesBarraskewda();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBarraskewda Builder
-		public SpecieBarraskewda() : base(
+		#region SpeciesBarraskewda Constructor
+		public SpeciesBarraskewda() : base(
 			"Barraskewda",
 			1.3,
 			30.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 50, // Special Attack & Defense
 			136		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Barraskewda Pokemon Class
+	//Barraskewda PokemonInstance Class
 	#region Barraskewda
-	public class Barraskewda : Pokemon
+	public class BarraskewdaInstance : PokemonInstance
 	{
-		#region Barraskewda Builders
+		#region Barraskewda Constructors
 		/// <summary>
-		/// Barraskewda Builder waiting for a Nickname & a Level
+		/// Barraskewda Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Barraskewda(string nickname, int level)
+		public BarraskewdaInstance(string nickname, int level)
 		: base(
 				847,
-				SpecieBarraskewda.Instance, // Pokemon Specie
+				SpeciesBarraskewda.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Barraskewda Builder only waiting for a Level
 		/// </summary>
-		public Barraskewda(int level)
+		public BarraskewdaInstance(int level)
 		: base(
 				847,
-				SpecieBarraskewda.Instance, // Pokemon Specie
+				SpeciesBarraskewda.Instance, // PokemonInstance Species
 				"Barraskewda", level,
 				Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Barraskewda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Barraskewda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Barraskewda() : base(
 			847,
-			SpecieBarraskewda.Instance, // Pokemon Specie
+			SpeciesBarraskewda.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Steenee Specie to store common natural stats of all Steenees
-	#region SpecieSteenee
-	public class SpecieSteenee : PokemonSpecie
+	//Steenee Species to store common natural stats of all Steenees
+	#region SpeciesSteenee
+	public class SpeciesSteenee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSteenee? _instance = null;
+		private static SpeciesSteenee? _instance = null;
 #nullable restore
-        public static SpecieSteenee Instance
+        public static SpeciesSteenee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSteenee();
+                    _instance = new SpeciesSteenee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSteenee Builder
-		public SpecieSteenee() : base(
+		#region SpeciesSteenee Constructor
+		public SpeciesSteenee() : base(
 			"Steenee",
 			0.7,
 			8.2,
@@ -32,23 +34,73 @@ namespace Pokedex.Models.Pokemons
 			40, 48, // Special Attack & Defense
 			62		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Stomp",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Rapid-Spin",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Teeter-Dance",
+				"Aromatherapy",
+				"Magical-Leaf",
+				"Payback",
+				"Fling",
+				"Energy-Ball",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Low-Sweep",
+				"Round",
+				"Play-Nice",
+				"Confide",
+				"Aromatic-Mist",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Steenee Pokemon Class
+	//Steenee PokemonInstance Class
 	#region Steenee
-	public class Steenee : Pokemon
+	public class SteeneeInstance : PokemonInstance
 	{
-		#region Steenee Builders
+		#region Steenee Constructors
 		/// <summary>
-		/// Steenee Builder waiting for a Nickname & a Level
+		/// Steenee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Steenee(string nickname, int level)
+		public SteeneeInstance(string nickname, int level)
 		: base(
 				762,
-				SpecieSteenee.Instance, // Pokemon Specie
+				SpeciesSteenee.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +112,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Steenee Builder only waiting for a Level
 		/// </summary>
-		public Steenee(int level)
+		public SteeneeInstance(int level)
 		: base(
 				762,
-				SpecieSteenee.Instance, // Pokemon Specie
+				SpeciesSteenee.Instance, // PokemonInstance Species
 				"Steenee", level,
 				Grass.Instance			
 		)
@@ -73,12 +125,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Steenee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Steenee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Steenee() : base(
 			762,
-			SpecieSteenee.Instance, // Pokemon Specie
+			SpeciesSteenee.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Avalugg Specie to store common natural stats of all Avaluggs
-	#region SpecieAvalugg
-	public class SpecieAvalugg : PokemonSpecie
+	//Avalugg Species to store common natural stats of all Avaluggs
+	#region SpeciesAvalugg
+	public class SpeciesAvalugg : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAvalugg? _instance = null;
+		private static SpeciesAvalugg? _instance = null;
 #nullable restore
-        public static SpecieAvalugg Instance
+        public static SpeciesAvalugg Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAvalugg();
+                    _instance = new SpeciesAvalugg();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAvalugg Builder
-		public SpecieAvalugg() : base(
+		#region SpeciesAvalugg Constructor
+		public SpeciesAvalugg() : base(
 			"Avalugg",
 			2.0,
 			505.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			44, 46, // Special Attack & Defense
 			28		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Roar",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Harden",
+				"Skull-Bash",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Sharpen",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Superpower",
+				"Secret-Power",
+				"Ice-Ball",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Rock-Polish",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Fang",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stone-Edge",
+				"Wide-Guard",
+				"After-You",
+				"Round",
+				"Bulldoze",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Avalugg Pokemon Class
+	//Avalugg PokemonInstance Class
 	#region Avalugg
-	public class Avalugg : Pokemon
+	public class AvaluggInstance : PokemonInstance
 	{
-		#region Avalugg Builders
+		#region Avalugg Constructors
 		/// <summary>
-		/// Avalugg Builder waiting for a Nickname & a Level
+		/// Avalugg Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Avalugg(string nickname, int level)
+		public AvaluggInstance(string nickname, int level)
 		: base(
 				713,
-				SpecieAvalugg.Instance, // Pokemon Specie
+				SpeciesAvalugg.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Avalugg Builder only waiting for a Level
 		/// </summary>
-		public Avalugg(int level)
+		public AvaluggInstance(int level)
 		: base(
 				713,
-				SpecieAvalugg.Instance, // Pokemon Specie
+				SpeciesAvalugg.Instance, // PokemonInstance Species
 				"Avalugg", level,
 				Ice.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Avalugg Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Avalugg Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Avalugg() : base(
 			713,
-			SpecieAvalugg.Instance, // Pokemon Specie
+			SpeciesAvalugg.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

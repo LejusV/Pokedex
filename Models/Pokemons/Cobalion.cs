@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cobalion Specie to store common natural stats of all Cobalions
-	#region SpecieCobalion
-	public class SpecieCobalion : PokemonSpecie
+	//Cobalion Species to store common natural stats of all Cobalions
+	#region SpeciesCobalion
+	public class SpeciesCobalion : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCobalion? _instance = null;
+		private static SpeciesCobalion? _instance = null;
 #nullable restore
-        public static SpecieCobalion Instance
+        public static SpeciesCobalion Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCobalion();
+                    _instance = new SpeciesCobalion();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCobalion Builder
-		public SpecieCobalion() : base(
+		#region SpeciesCobalion Constructor
+		public SpeciesCobalion() : base(
 			"Cobalion",
 			2.1,
 			250.0,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			90, 72, // Special Attack & Defense
 			108		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Double-Kick",
+				"Take-Down",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Thunder-Wave",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Reflect",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Psych-Up",
+				"Rock-Smash",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Bounce",
+				"Calm-Mind",
+				"Metal-Burst",
+				"Close-Combat",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Poison-Jab",
+				"X-Scissor",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Volt-Switch",
+				"Work-Up",
+				"Sacred-Sword",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cobalion Pokemon Class
+	//Cobalion PokemonInstance Class
 	#region Cobalion
-	public class Cobalion : Pokemon
+	public class CobalionInstance : PokemonInstance
 	{
-		#region Cobalion Builders
+		#region Cobalion Constructors
 		/// <summary>
-		/// Cobalion Builder waiting for a Nickname & a Level
+		/// Cobalion Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cobalion(string nickname, int level)
+		public CobalionInstance(string nickname, int level)
 		: base(
 				638,
-				SpecieCobalion.Instance, // Pokemon Specie
+				SpeciesCobalion.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fighting.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cobalion Builder only waiting for a Level
 		/// </summary>
-		public Cobalion(int level)
+		public CobalionInstance(int level)
 		: base(
 				638,
-				SpecieCobalion.Instance, // Pokemon Specie
+				SpeciesCobalion.Instance, // PokemonInstance Species
 				"Cobalion", level,
 				Steel.Instance, Fighting.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cobalion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cobalion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cobalion() : base(
 			638,
-			SpecieCobalion.Instance, // Pokemon Specie
+			SpeciesCobalion.Instance, // PokemonInstance Species
 			Steel.Instance, Fighting.Instance			
 		) {}
 		*/

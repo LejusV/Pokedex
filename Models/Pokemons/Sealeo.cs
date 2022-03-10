@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sealeo Specie to store common natural stats of all Sealeos
-	#region SpecieSealeo
-	public class SpecieSealeo : PokemonSpecie
+	//Sealeo Species to store common natural stats of all Sealeos
+	#region SpeciesSealeo
+	public class SpeciesSealeo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSealeo? _instance = null;
+		private static SpeciesSealeo? _instance = null;
 #nullable restore
-        public static SpecieSealeo Instance
+        public static SpeciesSealeo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSealeo();
+                    _instance = new SpeciesSealeo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSealeo Builder
-		public SpecieSealeo() : base(
+		#region SpeciesSealeo Constructor
+		public SpeciesSealeo() : base(
 			"Sealeo",
 			1.1,
 			87.6,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			75, 70, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Roar",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Aurora-Beam",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Ice-Ball",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Aqua-Tail",
+				"Captivate",
+				"Round",
+				"Echoed-Voice",
+				"Bulldoze",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sealeo Pokemon Class
+	//Sealeo PokemonInstance Class
 	#region Sealeo
-	public class Sealeo : Pokemon
+	public class SealeoInstance : PokemonInstance
 	{
-		#region Sealeo Builders
+		#region Sealeo Constructors
 		/// <summary>
-		/// Sealeo Builder waiting for a Nickname & a Level
+		/// Sealeo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sealeo(string nickname, int level)
+		public SealeoInstance(string nickname, int level)
 		: base(
 				364,
-				SpecieSealeo.Instance, // Pokemon Specie
+				SpeciesSealeo.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sealeo Builder only waiting for a Level
 		/// </summary>
-		public Sealeo(int level)
+		public SealeoInstance(int level)
 		: base(
 				364,
-				SpecieSealeo.Instance, // Pokemon Specie
+				SpeciesSealeo.Instance, // PokemonInstance Species
 				"Sealeo", level,
 				Ice.Instance, Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sealeo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sealeo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sealeo() : base(
 			364,
-			SpecieSealeo.Instance, // Pokemon Specie
+			SpeciesSealeo.Instance, // PokemonInstance Species
 			Ice.Instance, Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Xerneas Specie to store common natural stats of all Xerneass
-	#region SpecieXerneas
-	public class SpecieXerneas : PokemonSpecie
+	//Xerneas Species to store common natural stats of all Xerneass
+	#region SpeciesXerneas
+	public class SpeciesXerneas : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieXerneas? _instance = null;
+		private static SpeciesXerneas? _instance = null;
 #nullable restore
-        public static SpecieXerneas Instance
+        public static SpeciesXerneas Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieXerneas();
+                    _instance = new SpeciesXerneas();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieXerneas Builder
-		public SpecieXerneas() : base(
+		#region SpeciesXerneas Constructor
+		public SpeciesXerneas() : base(
 			"Xerneas",
 			3.0,
 			215.0,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			131, 98, // Special Attack & Defense
 			99		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Take-Down",
+				"Roar",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Outrage",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Megahorn",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Hail",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Endeavor",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aromatherapy",
+				"Block",
+				"Calm-Mind",
+				"Gravity",
+				"Close-Combat",
+				"Night-Slash",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Grass-Knot",
+				"Wonder-Room",
+				"Psyshock",
+				"Round",
+				"Echoed-Voice",
+				"Heal-Pulse",
+				"Horn-Leech",
+				"Misty-Terrain",
+				"Moonblast",
+				"Confide",
+				"Geomancy",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Xerneas Pokemon Class
+	//Xerneas PokemonInstance Class
 	#region Xerneas
-	public class Xerneas : Pokemon
+	public class XerneasInstance : PokemonInstance
 	{
-		#region Xerneas Builders
+		#region Xerneas Constructors
 		/// <summary>
-		/// Xerneas Builder waiting for a Nickname & a Level
+		/// Xerneas Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Xerneas(string nickname, int level)
+		public XerneasInstance(string nickname, int level)
 		: base(
 				716,
-				SpecieXerneas.Instance, // Pokemon Specie
+				SpeciesXerneas.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Xerneas Builder only waiting for a Level
 		/// </summary>
-		public Xerneas(int level)
+		public XerneasInstance(int level)
 		: base(
 				716,
-				SpecieXerneas.Instance, // Pokemon Specie
+				SpeciesXerneas.Instance, // PokemonInstance Species
 				"Xerneas", level,
 				Fairy.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Xerneas Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Xerneas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Xerneas() : base(
 			716,
-			SpecieXerneas.Instance, // Pokemon Specie
+			SpeciesXerneas.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

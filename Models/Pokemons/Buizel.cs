@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Buizel Specie to store common natural stats of all Buizels
-	#region SpecieBuizel
-	public class SpecieBuizel : PokemonSpecie
+	//Buizel Species to store common natural stats of all Buizels
+	#region SpeciesBuizel
+	public class SpeciesBuizel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBuizel? _instance = null;
+		private static SpeciesBuizel? _instance = null;
 #nullable restore
-        public static SpecieBuizel Instance
+        public static SpeciesBuizel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBuizel();
+                    _instance = new SpeciesBuizel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBuizel Builder
-		public SpecieBuizel() : base(
+		#region SpeciesBuizel Constructor
+		public SpeciesBuizel() : base(
 			"Buizel",
 			0.7,
 			29.5,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			60, 30, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Ice-Punch",
+				"Razor-Wind",
+				"Headbutt",
+				"Growl",
+				"Sonic-Boom",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Waterfall",
+				"Swift",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Water-Sport",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Me-First",
+				"Aqua-Ring",
+				"Aqua-Tail",
+				"Switcheroo",
+				"Captivate",
+				"Aqua-Jet",
+				"Double-Hit",
+				"Soak",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Tail-Slap",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Buizel Pokemon Class
+	//Buizel PokemonInstance Class
 	#region Buizel
-	public class Buizel : Pokemon
+	public class BuizelInstance : PokemonInstance
 	{
-		#region Buizel Builders
+		#region Buizel Constructors
 		/// <summary>
-		/// Buizel Builder waiting for a Nickname & a Level
+		/// Buizel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Buizel(string nickname, int level)
+		public BuizelInstance(string nickname, int level)
 		: base(
 				418,
-				SpecieBuizel.Instance, // Pokemon Specie
+				SpeciesBuizel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Buizel Builder only waiting for a Level
 		/// </summary>
-		public Buizel(int level)
+		public BuizelInstance(int level)
 		: base(
 				418,
-				SpecieBuizel.Instance, // Pokemon Specie
+				SpeciesBuizel.Instance, // PokemonInstance Species
 				"Buizel", level,
 				Water.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Buizel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Buizel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Buizel() : base(
 			418,
-			SpecieBuizel.Instance, // Pokemon Specie
+			SpeciesBuizel.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

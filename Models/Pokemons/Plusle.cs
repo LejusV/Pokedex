@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Plusle Specie to store common natural stats of all Plusles
-	#region SpeciePlusle
-	public class SpeciePlusle : PokemonSpecie
+	//Plusle Species to store common natural stats of all Plusles
+	#region SpeciesPlusle
+	public class SpeciesPlusle : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePlusle? _instance = null;
+		private static SpeciesPlusle? _instance = null;
 #nullable restore
-        public static SpeciePlusle Instance
+        public static SpeciesPlusle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePlusle();
+                    _instance = new SpeciesPlusle();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePlusle Builder
-		public SpeciePlusle() : base(
+		#region SpeciesPlusle Constructor
+		public SpeciesPlusle() : base(
 			"Plusle",
 			0.4,
 			4.2,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			85, 75, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Sing",
+				"Counter",
+				"Seismic-Toss",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Metronome",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sweet-Kiss",
+				"Mud-Slap",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Facade",
+				"Charge",
+				"Helping-Hand",
+				"Wish",
+				"Secret-Power",
+				"Fake-Tears",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Lucky-Chant",
+				"Copycat",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Nasty-Plot",
+				"Discharge",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Entrainment",
+				"Round",
+				"Echoed-Voice",
+				"Bestow",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Play-Nice",
+				"Confide",
+				"Nuzzle",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Plusle Pokemon Class
+	//Plusle PokemonInstance Class
 	#region Plusle
-	public class Plusle : Pokemon
+	public class PlusleInstance : PokemonInstance
 	{
-		#region Plusle Builders
+		#region Plusle Constructors
 		/// <summary>
-		/// Plusle Builder waiting for a Nickname & a Level
+		/// Plusle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Plusle(string nickname, int level)
+		public PlusleInstance(string nickname, int level)
 		: base(
 				311,
-				SpeciePlusle.Instance, // Pokemon Specie
+				SpeciesPlusle.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Plusle Builder only waiting for a Level
 		/// </summary>
-		public Plusle(int level)
+		public PlusleInstance(int level)
 		: base(
 				311,
-				SpeciePlusle.Instance, // Pokemon Specie
+				SpeciesPlusle.Instance, // PokemonInstance Species
 				"Plusle", level,
 				Electric.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Plusle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Plusle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Plusle() : base(
 			311,
-			SpeciePlusle.Instance, // Pokemon Specie
+			SpeciesPlusle.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

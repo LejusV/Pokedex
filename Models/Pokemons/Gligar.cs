@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gligar Specie to store common natural stats of all Gligars
-	#region SpecieGligar
-	public class SpecieGligar : PokemonSpecie
+	//Gligar Species to store common natural stats of all Gligars
+	#region SpeciesGligar
+	public class SpeciesGligar : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGligar? _instance = null;
+		private static SpeciesGligar? _instance = null;
 #nullable restore
-        public static SpecieGligar Instance
+        public static SpeciesGligar Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGligar();
+                    _instance = new SpeciesGligar();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGligar Builder
-		public SpecieGligar() : base(
+		#region SpeciesGligar Constructor
+		public SpeciesGligar() : base(
 			"Gligar",
 			1.1,
 			64.8,
@@ -32,23 +34,124 @@ namespace Pokedex.Models.Pokemons
 			35, 65, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Guillotine",
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Wing-Attack",
+				"Sand-Attack",
+				"Headbutt",
+				"Double-Edge",
+				"Poison-Sting",
+				"Counter",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Swift",
+				"Dream-Eater",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sky-Uppercut",
+				"Sand-Tomb",
+				"Aerial-Ace",
+				"Poison-Tail",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Power-Trick",
+				"Rock-Polish",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Earth-Power",
+				"Rock-Climb",
+				"Defog",
+				"Cross-Poison",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Venoshock",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gligar Pokemon Class
+	//Gligar PokemonInstance Class
 	#region Gligar
-	public class Gligar : Pokemon
+	public class GligarInstance : PokemonInstance
 	{
-		#region Gligar Builders
+		#region Gligar Constructors
 		/// <summary>
-		/// Gligar Builder waiting for a Nickname & a Level
+		/// Gligar Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gligar(string nickname, int level)
+		public GligarInstance(string nickname, int level)
 		: base(
 				207,
-				SpecieGligar.Instance, // Pokemon Specie
+				SpeciesGligar.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -60,10 +163,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gligar Builder only waiting for a Level
 		/// </summary>
-		public Gligar(int level)
+		public GligarInstance(int level)
 		: base(
 				207,
-				SpecieGligar.Instance, // Pokemon Specie
+				SpeciesGligar.Instance, // PokemonInstance Species
 				"Gligar", level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -73,12 +176,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gligar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gligar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gligar() : base(
 			207,
-			SpecieGligar.Instance, // Pokemon Specie
+			SpeciesGligar.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}
 		*/

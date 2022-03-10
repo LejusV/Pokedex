@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Alakazam Specie to store common natural stats of all Alakazams
-	#region SpecieAlakazam
-	public class SpecieAlakazam : PokemonSpecie
+	//Alakazam Species to store common natural stats of all Alakazams
+	#region SpeciesAlakazam
+	public class SpeciesAlakazam : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAlakazam? _instance = null;
+		private static SpeciesAlakazam? _instance = null;
 #nullable restore
-        public static SpecieAlakazam Instance
+        public static SpeciesAlakazam Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAlakazam();
+                    _instance = new SpeciesAlakazam();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAlakazam Builder
-		public SpecieAlakazam() : base(
+		#region SpeciesAlakazam Constructor
+		public SpeciesAlakazam() : base(
 			"Alakazam",
 			1.5,
 			48.0,
@@ -32,23 +34,131 @@ namespace Pokedex.Models.Pokemons
 			135, 95, // Special Attack & Defense
 			120		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Disable",
+				"Psybeam",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Metronome",
+				"Skull-Bash",
+				"Kinesis",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Knock-Off",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Miracle-Eye",
+				"Natural-Gift",
+				"Embargo",
+				"Fling",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Psycho-Cut",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Foul-Play",
+				"Round",
+				"Ally-Switch",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Alakazam Pokemon Class
+	//Alakazam PokemonInstance Class
 	#region Alakazam
-	public class Alakazam : Pokemon
+	public class AlakazamInstance : PokemonInstance
 	{
-		#region Alakazam Builders
+		#region Alakazam Constructors
 		/// <summary>
-		/// Alakazam Builder waiting for a Nickname & a Level
+		/// Alakazam Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Alakazam(string nickname, int level)
+		public AlakazamInstance(string nickname, int level)
 		: base(
 				65,
-				SpecieAlakazam.Instance, // Pokemon Specie
+				SpeciesAlakazam.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +170,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Alakazam Builder only waiting for a Level
 		/// </summary>
-		public Alakazam(int level)
+		public AlakazamInstance(int level)
 		: base(
 				65,
-				SpecieAlakazam.Instance, // Pokemon Specie
+				SpeciesAlakazam.Instance, // PokemonInstance Species
 				"Alakazam", level,
 				Psychic.Instance			
 		)
@@ -73,12 +183,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Alakazam Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Alakazam Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Alakazam() : base(
 			65,
-			SpecieAlakazam.Instance, // Pokemon Specie
+			SpeciesAlakazam.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dragonair Specie to store common natural stats of all Dragonairs
-	#region SpecieDragonair
-	public class SpecieDragonair : PokemonSpecie
+	//Dragonair Species to store common natural stats of all Dragonairs
+	#region SpeciesDragonair
+	public class SpeciesDragonair : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDragonair? _instance = null;
+		private static SpeciesDragonair? _instance = null;
 #nullable restore
-        public static SpecieDragonair Instance
+        public static SpeciesDragonair Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDragonair();
+                    _instance = new SpeciesDragonair();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDragonair Builder
-		public SpecieDragonair() : base(
+		#region SpeciesDragonair Constructor
+		public SpeciesDragonair() : base(
 			"Dragonair",
 			4.0,
 			16.5,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			70, 70, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Slam",
+				"Headbutt",
+				"Horn-Drill",
+				"Body-Slam",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Flamethrower",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Dragon-Rage",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Waterfall",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Detect",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dragon-Dance",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Draco-Meteor",
+				"Captivate",
+				"Round",
+				"Incinerate",
+				"Dragon-Tail",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dragonair Pokemon Class
+	//Dragonair PokemonInstance Class
 	#region Dragonair
-	public class Dragonair : Pokemon
+	public class DragonairInstance : PokemonInstance
 	{
-		#region Dragonair Builders
+		#region Dragonair Constructors
 		/// <summary>
-		/// Dragonair Builder waiting for a Nickname & a Level
+		/// Dragonair Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dragonair(string nickname, int level)
+		public DragonairInstance(string nickname, int level)
 		: base(
 				148,
-				SpecieDragonair.Instance, // Pokemon Specie
+				SpeciesDragonair.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dragonair Builder only waiting for a Level
 		/// </summary>
-		public Dragonair(int level)
+		public DragonairInstance(int level)
 		: base(
 				148,
-				SpecieDragonair.Instance, // Pokemon Specie
+				SpeciesDragonair.Instance, // PokemonInstance Species
 				"Dragonair", level,
 				Dragon.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dragonair Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dragonair Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dragonair() : base(
 			148,
-			SpecieDragonair.Instance, // Pokemon Specie
+			SpeciesDragonair.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

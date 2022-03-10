@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Delibird Specie to store common natural stats of all Delibirds
-	#region SpecieDelibird
-	public class SpecieDelibird : PokemonSpecie
+	//Delibird Species to store common natural stats of all Delibirds
+	#region SpeciesDelibird
+	public class SpeciesDelibird : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDelibird? _instance = null;
+		private static SpeciesDelibird? _instance = null;
 #nullable restore
-        public static SpecieDelibird Instance
+        public static SpeciesDelibird Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDelibird();
+                    _instance = new SpeciesDelibird();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDelibird Builder
-		public SpecieDelibird() : base(
+		#region SpeciesDelibird Constructor
+		public SpeciesDelibird() : base(
 			"Delibird",
 			0.9,
 			16.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			65, 45, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Fly",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Ice-Beam",
+				"Blizzard",
+				"Aurora-Beam",
+				"Drill-Peck",
+				"Counter",
+				"Seismic-Toss",
+				"Toxic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Swift",
+				"Sky-Attack",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Spikes",
+				"Destiny-Bond",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Present",
+				"Frustration",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Future-Sight",
+				"Fake-Out",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Recycle",
+				"Brick-Break",
+				"Secret-Power",
+				"Ice-Ball",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Bounce",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Pluck",
+				"Fling",
+				"Seed-Bomb",
+				"Avalanche",
+				"Ice-Shard",
+				"Defog",
+				"Gunk-Shot",
+				"Captivate",
+				"Round",
+				"Bestow",
+				"Frost-Breath",
+				"Freeze-Dry",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Delibird Pokemon Class
+	//Delibird PokemonInstance Class
 	#region Delibird
-	public class Delibird : Pokemon
+	public class DelibirdInstance : PokemonInstance
 	{
-		#region Delibird Builders
+		#region Delibird Constructors
 		/// <summary>
-		/// Delibird Builder waiting for a Nickname & a Level
+		/// Delibird Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Delibird(string nickname, int level)
+		public DelibirdInstance(string nickname, int level)
 		: base(
 				225,
-				SpecieDelibird.Instance, // Pokemon Specie
+				SpeciesDelibird.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Flying.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Delibird Builder only waiting for a Level
 		/// </summary>
-		public Delibird(int level)
+		public DelibirdInstance(int level)
 		: base(
 				225,
-				SpecieDelibird.Instance, // Pokemon Specie
+				SpeciesDelibird.Instance, // PokemonInstance Species
 				"Delibird", level,
 				Ice.Instance, Flying.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Delibird Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Delibird Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Delibird() : base(
 			225,
-			SpecieDelibird.Instance, // Pokemon Specie
+			SpeciesDelibird.Instance, // PokemonInstance Species
 			Ice.Instance, Flying.Instance			
 		) {}
 		*/

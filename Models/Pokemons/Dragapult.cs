@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dragapult Specie to store common natural stats of all Dragapults
-	#region SpecieDragapult
-	public class SpecieDragapult : PokemonSpecie
+	//Dragapult Species to store common natural stats of all Dragapults
+	#region SpeciesDragapult
+	public class SpeciesDragapult : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDragapult? _instance = null;
+		private static SpeciesDragapult? _instance = null;
 #nullable restore
-        public static SpecieDragapult Instance
+        public static SpeciesDragapult Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDragapult();
+                    _instance = new SpeciesDragapult();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDragapult Builder
-		public SpecieDragapult() : base(
+		#region SpeciesDragapult Constructor
+		public SpeciesDragapult() : base(
 			"Dragapult",
 			3.0,
 			50.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			100, 75, // Special Attack & Defense
 			142		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dragapult Pokemon Class
+	//Dragapult PokemonInstance Class
 	#region Dragapult
-	public class Dragapult : Pokemon
+	public class DragapultInstance : PokemonInstance
 	{
-		#region Dragapult Builders
+		#region Dragapult Constructors
 		/// <summary>
-		/// Dragapult Builder waiting for a Nickname & a Level
+		/// Dragapult Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dragapult(string nickname, int level)
+		public DragapultInstance(string nickname, int level)
 		: base(
 				887,
-				SpecieDragapult.Instance, // Pokemon Specie
+				SpeciesDragapult.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dragapult Builder only waiting for a Level
 		/// </summary>
-		public Dragapult(int level)
+		public DragapultInstance(int level)
 		: base(
 				887,
-				SpecieDragapult.Instance, // Pokemon Specie
+				SpeciesDragapult.Instance, // PokemonInstance Species
 				"Dragapult", level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dragapult Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dragapult Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dragapult() : base(
 			887,
-			SpecieDragapult.Instance, // Pokemon Specie
+			SpeciesDragapult.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}
 		*/

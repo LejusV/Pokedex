@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tapu-Bulu Specie to store common natural stats of all Tapu-Bulus
-	#region SpecieTapu-Bulu
-	public class SpecieTapuBulu : PokemonSpecie
+	//Tapu-Bulu Species to store common natural stats of all Tapu-Bulus
+	#region SpeciesTapu-Bulu
+	public class SpeciesTapuBulu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTapuBulu? _instance = null;
+		private static SpeciesTapuBulu? _instance = null;
 #nullable restore
-        public static SpecieTapuBulu Instance
+        public static SpeciesTapuBulu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTapuBulu();
+                    _instance = new SpeciesTapuBulu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTapu-Bulu Builder
-		public SpecieTapuBulu() : base(
+		#region SpeciesTapu-Bulu Constructor
+		public SpeciesTapuBulu() : base(
 			"Tapu-Bulu",
 			1.9,
 			45.5,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			85, 95, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Whirlwind",
+				"Horn-Attack",
+				"Roar",
+				"Disable",
+				"Hyper-Beam",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Toxic",
+				"Withdraw",
+				"Light-Screen",
+				"Reflect",
+				"Skull-Bash",
+				"Rock-Slide",
+				"Substitute",
+				"Protect",
+				"Scary-Face",
+				"Giga-Drain",
+				"False-Swipe",
+				"Swagger",
+				"Mean-Look",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Megahorn",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Superpower",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Payback",
+				"Fling",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Wood-Hammer",
+				"Round",
+				"Echoed-Voice",
+				"Work-Up",
+				"Horn-Leech",
+				"Snarl",
+				"Rototiller",
+				"Grassy-Terrain",
+				"Confide",
+				"Dazzling-Gleam",
+				"Leafage",
+				"Smart-Strike",
+				"Brutal-Swing",
+				"Natures-Madness"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tapu-Bulu Pokemon Class
+	//Tapu-Bulu PokemonInstance Class
 	#region Tapu-Bulu
-	public class TapuBulu : Pokemon
+	public class TapuBuluInstance : PokemonInstance
 	{
-		#region Tapu-Bulu Builders
+		#region Tapu-Bulu Constructors
 		/// <summary>
-		/// Tapu-Bulu Builder waiting for a Nickname & a Level
+		/// Tapu-Bulu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public TapuBulu(string nickname, int level)
+		public TapuBuluInstance(string nickname, int level)
 		: base(
 				787,
-				SpecieTapuBulu.Instance, // Pokemon Specie
+				SpeciesTapuBulu.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tapu-Bulu Builder only waiting for a Level
 		/// </summary>
-		public TapuBulu(int level)
+		public TapuBuluInstance(int level)
 		: base(
 				787,
-				SpecieTapuBulu.Instance, // Pokemon Specie
+				SpeciesTapuBulu.Instance, // PokemonInstance Species
 				"Tapu-Bulu", level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tapu-Bulu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tapu-Bulu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public TapuBulu() : base(
 			787,
-			SpecieTapuBulu.Instance, // Pokemon Specie
+			SpeciesTapuBulu.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}
 		*/

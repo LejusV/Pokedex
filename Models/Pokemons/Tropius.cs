@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tropius Specie to store common natural stats of all Tropiuss
-	#region SpecieTropius
-	public class SpecieTropius : PokemonSpecie
+	//Tropius Species to store common natural stats of all Tropiuss
+	#region SpeciesTropius
+	public class SpeciesTropius : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTropius? _instance = null;
+		private static SpeciesTropius? _instance = null;
 #nullable restore
-        public static SpecieTropius Instance
+        public static SpeciesTropius Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTropius();
+                    _instance = new SpeciesTropius();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTropius Builder
-		public SpecieTropius() : base(
+		#region SpeciesTropius Constructor
+		public SpeciesTropius() : base(
 			"Tropius",
 			2.0,
 			100.0,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			72, 87, // Special Attack & Defense
 			51		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Slam",
+				"Stomp",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Outrage",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Twister",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Magical-Leaf",
+				"Leaf-Blade",
+				"Dragon-Dance",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Air-Slash",
+				"Dragon-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Defog",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Ominous-Wind",
+				"Round",
+				"Bestow",
+				"Bulldoze",
+				"Leaf-Tornado",
+				"Confide",
+				"Dragon-Hammer",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tropius Pokemon Class
+	//Tropius PokemonInstance Class
 	#region Tropius
-	public class Tropius : Pokemon
+	public class TropiusInstance : PokemonInstance
 	{
-		#region Tropius Builders
+		#region Tropius Constructors
 		/// <summary>
-		/// Tropius Builder waiting for a Nickname & a Level
+		/// Tropius Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tropius(string nickname, int level)
+		public TropiusInstance(string nickname, int level)
 		: base(
 				357,
-				SpecieTropius.Instance, // Pokemon Specie
+				SpeciesTropius.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tropius Builder only waiting for a Level
 		/// </summary>
-		public Tropius(int level)
+		public TropiusInstance(int level)
 		: base(
 				357,
-				SpecieTropius.Instance, // Pokemon Specie
+				SpeciesTropius.Instance, // PokemonInstance Species
 				"Tropius", level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tropius Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tropius Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tropius() : base(
 			357,
-			SpecieTropius.Instance, // Pokemon Specie
+			SpeciesTropius.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}
 		*/

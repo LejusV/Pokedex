@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Fearow Specie to store common natural stats of all Fearows
-	#region SpecieFearow
-	public class SpecieFearow : PokemonSpecie
+	//Fearow Species to store common natural stats of all Fearows
+	#region SpeciesFearow
+	public class SpeciesFearow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFearow? _instance = null;
+		private static SpeciesFearow? _instance = null;
 #nullable restore
-        public static SpecieFearow Instance
+        public static SpeciesFearow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFearow();
+                    _instance = new SpeciesFearow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFearow Builder
-		public SpecieFearow() : base(
+		#region SpeciesFearow Constructor
+		public SpeciesFearow() : base(
 			"Fearow",
 			1.2,
 			38.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			61, 61, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Whirlwind",
+				"Fly",
+				"Fury-Attack",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Growl",
+				"Hyper-Beam",
+				"Peck",
+				"Drill-Peck",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Mirror-Move",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Assurance",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Work-Up",
+				"Drill-Run",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Fearow Pokemon Class
+	//Fearow PokemonInstance Class
 	#region Fearow
-	public class Fearow : Pokemon
+	public class FearowInstance : PokemonInstance
 	{
-		#region Fearow Builders
+		#region Fearow Constructors
 		/// <summary>
-		/// Fearow Builder waiting for a Nickname & a Level
+		/// Fearow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Fearow(string nickname, int level)
+		public FearowInstance(string nickname, int level)
 		: base(
 				22,
-				SpecieFearow.Instance, // Pokemon Specie
+				SpeciesFearow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Fearow Builder only waiting for a Level
 		/// </summary>
-		public Fearow(int level)
+		public FearowInstance(int level)
 		: base(
 				22,
-				SpecieFearow.Instance, // Pokemon Specie
+				SpeciesFearow.Instance, // PokemonInstance Species
 				"Fearow", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Fearow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Fearow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Fearow() : base(
 			22,
-			SpecieFearow.Instance, // Pokemon Specie
+			SpeciesFearow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

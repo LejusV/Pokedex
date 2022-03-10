@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tapu-Lele Specie to store common natural stats of all Tapu-Leles
-	#region SpecieTapu-Lele
-	public class SpecieTapuLele : PokemonSpecie
+	//Tapu-Lele Species to store common natural stats of all Tapu-Leles
+	#region SpeciesTapu-Lele
+	public class SpeciesTapuLele : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTapuLele? _instance = null;
+		private static SpeciesTapuLele? _instance = null;
 #nullable restore
-        public static SpecieTapuLele Instance
+        public static SpeciesTapuLele Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTapuLele();
+                    _instance = new SpeciesTapuLele();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTapu-Lele Builder
-		public SpecieTapuLele() : base(
+		#region SpeciesTapu-Lele Constructor
+		public SpeciesTapuLele() : base(
 			"Tapu-Lele",
 			1.2,
 			18.6,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			130, 115, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Psybeam",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Withdraw",
+				"Light-Screen",
+				"Reflect",
+				"Psywave",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Swagger",
+				"Mean-Look",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Skill-Swap",
+				"Astonish",
+				"Aromatherapy",
+				"Tickle",
+				"Extrasensory",
+				"Calm-Mind",
+				"Fling",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Round",
+				"Echoed-Voice",
+				"Draining-Kiss",
+				"Moonblast",
+				"Confide",
+				"Aromatic-Mist",
+				"Dazzling-Gleam",
+				"Psychic-Terrain",
+				"Natures-Madness"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tapu-Lele Pokemon Class
+	//Tapu-Lele PokemonInstance Class
 	#region Tapu-Lele
-	public class TapuLele : Pokemon
+	public class TapuLeleInstance : PokemonInstance
 	{
-		#region Tapu-Lele Builders
+		#region Tapu-Lele Constructors
 		/// <summary>
-		/// Tapu-Lele Builder waiting for a Nickname & a Level
+		/// Tapu-Lele Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public TapuLele(string nickname, int level)
+		public TapuLeleInstance(string nickname, int level)
 		: base(
 				786,
-				SpecieTapuLele.Instance, // Pokemon Specie
+				SpeciesTapuLele.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tapu-Lele Builder only waiting for a Level
 		/// </summary>
-		public TapuLele(int level)
+		public TapuLeleInstance(int level)
 		: base(
 				786,
-				SpecieTapuLele.Instance, // Pokemon Specie
+				SpeciesTapuLele.Instance, // PokemonInstance Species
 				"Tapu-Lele", level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tapu-Lele Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tapu-Lele Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public TapuLele() : base(
 			786,
-			SpecieTapuLele.Instance, // Pokemon Specie
+			SpeciesTapuLele.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}
 		*/

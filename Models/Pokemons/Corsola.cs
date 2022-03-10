@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Corsola Specie to store common natural stats of all Corsolas
-	#region SpecieCorsola
-	public class SpecieCorsola : PokemonSpecie
+	//Corsola Species to store common natural stats of all Corsolas
+	#region SpeciesCorsola
+	public class SpeciesCorsola : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCorsola? _instance = null;
+		private static SpeciesCorsola? _instance = null;
 #nullable restore
-        public static SpecieCorsola Instance
+        public static SpeciesCorsola Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCorsola();
+                    _instance = new SpeciesCorsola();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCorsola Builder
-		public SpecieCorsola() : base(
+		#region SpeciesCorsola Constructor
+		public SpeciesCorsola() : base(
 			"Corsola",
 			0.6,
 			5.0,
@@ -32,23 +34,122 @@ namespace Pokedex.Models.Pokemons
 			65, 95, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Mist",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Recover",
+				"Harden",
+				"Confuse-Ray",
+				"Defense-Curl",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Spike-Cannon",
+				"Amnesia",
+				"Bubble",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Mirror-Coat",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Magic-Coat",
+				"Endeavor",
+				"Refresh",
+				"Secret-Power",
+				"Camouflage",
+				"Rock-Tomb",
+				"Icicle-Spear",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Lucky-Chant",
+				"Sucker-Punch",
+				"Aqua-Ring",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Corsola Pokemon Class
+	//Corsola PokemonInstance Class
 	#region Corsola
-	public class Corsola : Pokemon
+	public class CorsolaInstance : PokemonInstance
 	{
-		#region Corsola Builders
+		#region Corsola Constructors
 		/// <summary>
-		/// Corsola Builder waiting for a Nickname & a Level
+		/// Corsola Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Corsola(string nickname, int level)
+		public CorsolaInstance(string nickname, int level)
 		: base(
 				222,
-				SpecieCorsola.Instance, // Pokemon Specie
+				SpeciesCorsola.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
 		)
@@ -60,10 +161,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Corsola Builder only waiting for a Level
 		/// </summary>
-		public Corsola(int level)
+		public CorsolaInstance(int level)
 		: base(
 				222,
-				SpecieCorsola.Instance, // Pokemon Specie
+				SpeciesCorsola.Instance, // PokemonInstance Species
 				"Corsola", level,
 				Water.Instance, Rock.Instance			
 		)
@@ -73,12 +174,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Corsola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Corsola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Corsola() : base(
 			222,
-			SpecieCorsola.Instance, // Pokemon Specie
+			SpeciesCorsola.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gible Specie to store common natural stats of all Gibles
-	#region SpecieGible
-	public class SpecieGible : PokemonSpecie
+	//Gible Species to store common natural stats of all Gibles
+	#region SpeciesGible
+	public class SpeciesGible : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGible? _instance = null;
+		private static SpeciesGible? _instance = null;
 #nullable restore
-        public static SpecieGible Instance
+        public static SpeciesGible Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGible();
+                    _instance = new SpeciesGible();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGible Builder
-		public SpecieGible() : base(
+		#region SpeciesGible Constructor
+		public SpeciesGible() : base(
 			"Gible",
 			0.7,
 			20.5,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			40, 45, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Roar",
+				"Flamethrower",
+				"Strength",
+				"Dragon-Rage",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Mud-Shot",
+				"Natural-Gift",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Earth-Power",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Draco-Meteor",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gible Pokemon Class
+	//Gible PokemonInstance Class
 	#region Gible
-	public class Gible : Pokemon
+	public class GibleInstance : PokemonInstance
 	{
-		#region Gible Builders
+		#region Gible Constructors
 		/// <summary>
-		/// Gible Builder waiting for a Nickname & a Level
+		/// Gible Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gible(string nickname, int level)
+		public GibleInstance(string nickname, int level)
 		: base(
 				443,
-				SpecieGible.Instance, // Pokemon Specie
+				SpeciesGible.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gible Builder only waiting for a Level
 		/// </summary>
-		public Gible(int level)
+		public GibleInstance(int level)
 		: base(
 				443,
-				SpecieGible.Instance, // Pokemon Specie
+				SpeciesGible.Instance, // PokemonInstance Species
 				"Gible", level,
 				Dragon.Instance, Ground.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gible Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gible Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gible() : base(
 			443,
-			SpecieGible.Instance, // Pokemon Specie
+			SpeciesGible.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}
 		*/

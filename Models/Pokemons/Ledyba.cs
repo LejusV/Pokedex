@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ledyba Specie to store common natural stats of all Ledybas
-	#region SpecieLedyba
-	public class SpecieLedyba : PokemonSpecie
+	//Ledyba Species to store common natural stats of all Ledybas
+	#region SpeciesLedyba
+	public class SpeciesLedyba : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLedyba? _instance = null;
+		private static SpeciesLedyba? _instance = null;
 #nullable restore
-        public static SpecieLedyba Instance
+        public static SpeciesLedyba Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLedyba();
+                    _instance = new SpeciesLedyba();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLedyba Builder
-		public SpecieLedyba() : base(
+		#region SpeciesLedyba Constructor
+		public SpeciesLedyba() : base(
 			"Ledyba",
 			1.0,
 			10.8,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			40, 80, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Comet-Punch",
+				"Mega-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Headbutt",
+				"Tackle",
+				"Double-Edge",
+				"Supersonic",
+				"Psybeam",
+				"Counter",
+				"Solar-Beam",
+				"String-Shot",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Swift",
+				"Dizzy-Punch",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mach-Punch",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Encore",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Uproar",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Fling",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Drain-Punch",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Confide",
+				"Infestation",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ledyba Pokemon Class
+	//Ledyba PokemonInstance Class
 	#region Ledyba
-	public class Ledyba : Pokemon
+	public class LedybaInstance : PokemonInstance
 	{
-		#region Ledyba Builders
+		#region Ledyba Constructors
 		/// <summary>
-		/// Ledyba Builder waiting for a Nickname & a Level
+		/// Ledyba Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ledyba(string nickname, int level)
+		public LedybaInstance(string nickname, int level)
 		: base(
 				165,
-				SpecieLedyba.Instance, // Pokemon Specie
+				SpeciesLedyba.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ledyba Builder only waiting for a Level
 		/// </summary>
-		public Ledyba(int level)
+		public LedybaInstance(int level)
 		: base(
 				165,
-				SpecieLedyba.Instance, // Pokemon Specie
+				SpeciesLedyba.Instance, // PokemonInstance Species
 				"Ledyba", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ledyba Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ledyba Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ledyba() : base(
 			165,
-			SpecieLedyba.Instance, // Pokemon Specie
+			SpeciesLedyba.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

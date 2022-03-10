@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Morpeko Specie to store common natural stats of all Morpekos
-	#region SpecieMorpeko
-	public class SpecieMorpeko : PokemonSpecie
+	//Morpeko Species to store common natural stats of all Morpekos
+	#region SpeciesMorpeko
+	public class SpeciesMorpeko : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMorpeko? _instance = null;
+		private static SpeciesMorpeko? _instance = null;
 #nullable restore
-        public static SpecieMorpeko Instance
+        public static SpeciesMorpeko Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMorpeko();
+                    _instance = new SpeciesMorpeko();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMorpeko Builder
-		public SpecieMorpeko() : base(
+		#region SpeciesMorpeko Constructor
+		public SpeciesMorpeko() : base(
 			"Morpeko",
 			0.3,
 			3.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			70, 58, // Special Attack & Defense
 			97		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Morpeko Pokemon Class
+	//Morpeko PokemonInstance Class
 	#region Morpeko
-	public class Morpeko : Pokemon
+	public class MorpekoInstance : PokemonInstance
 	{
-		#region Morpeko Builders
+		#region Morpeko Constructors
 		/// <summary>
-		/// Morpeko Builder waiting for a Nickname & a Level
+		/// Morpeko Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Morpeko(string nickname, int level)
+		public MorpekoInstance(string nickname, int level)
 		: base(
 				877,
-				SpecieMorpeko.Instance, // Pokemon Specie
+				SpeciesMorpeko.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Dark.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Morpeko Builder only waiting for a Level
 		/// </summary>
-		public Morpeko(int level)
+		public MorpekoInstance(int level)
 		: base(
 				877,
-				SpecieMorpeko.Instance, // Pokemon Specie
+				SpeciesMorpeko.Instance, // PokemonInstance Species
 				"Morpeko", level,
 				Electric.Instance, Dark.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Morpeko Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Morpeko Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Morpeko() : base(
 			877,
-			SpecieMorpeko.Instance, // Pokemon Specie
+			SpeciesMorpeko.Instance, // PokemonInstance Species
 			Electric.Instance, Dark.Instance			
 		) {}
 		*/

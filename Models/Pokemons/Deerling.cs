@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Deerling Specie to store common natural stats of all Deerlings
-	#region SpecieDeerling
-	public class SpecieDeerling : PokemonSpecie
+	//Deerling Species to store common natural stats of all Deerlings
+	#region SpeciesDeerling
+	public class SpeciesDeerling : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDeerling? _instance = null;
+		private static SpeciesDeerling? _instance = null;
 #nullable restore
-        public static SpecieDeerling Instance
+        public static SpeciesDeerling Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDeerling();
+                    _instance = new SpeciesDeerling();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDeerling Builder
-		public SpecieDeerling() : base(
+		#region SpeciesDeerling Constructor
+		public SpeciesDeerling() : base(
 			"Deerling",
 			0.6,
 			19.5,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Kick",
+				"Jump-Kick",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Giga-Drain",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Camouflage",
+				"Aromatherapy",
+				"Fake-Tears",
+				"Odor-Sleuth",
+				"Grass-Whistle",
+				"Bounce",
+				"Natural-Gift",
+				"Last-Resort",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Grass-Knot",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Deerling Pokemon Class
+	//Deerling PokemonInstance Class
 	#region Deerling
-	public class Deerling : Pokemon
+	public class DeerlingInstance : PokemonInstance
 	{
-		#region Deerling Builders
+		#region Deerling Constructors
 		/// <summary>
-		/// Deerling Builder waiting for a Nickname & a Level
+		/// Deerling Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Deerling(string nickname, int level)
+		public DeerlingInstance(string nickname, int level)
 		: base(
 				585,
-				SpecieDeerling.Instance, // Pokemon Specie
+				SpeciesDeerling.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Grass.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Deerling Builder only waiting for a Level
 		/// </summary>
-		public Deerling(int level)
+		public DeerlingInstance(int level)
 		: base(
 				585,
-				SpecieDeerling.Instance, // Pokemon Specie
+				SpeciesDeerling.Instance, // PokemonInstance Species
 				"Deerling", level,
 				Normal.Instance, Grass.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Deerling Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Deerling Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Deerling() : base(
 			585,
-			SpecieDeerling.Instance, // Pokemon Specie
+			SpeciesDeerling.Instance, // PokemonInstance Species
 			Normal.Instance, Grass.Instance			
 		) {}
 		*/

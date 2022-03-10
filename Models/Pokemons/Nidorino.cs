@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nidorino Specie to store common natural stats of all Nidorinos
-	#region SpecieNidorino
-	public class SpecieNidorino : PokemonSpecie
+	//Nidorino Species to store common natural stats of all Nidorinos
+	#region SpeciesNidorino
+	public class SpeciesNidorino : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNidorino? _instance = null;
+		private static SpeciesNidorino? _instance = null;
 #nullable restore
-        public static SpecieNidorino Instance
+        public static SpeciesNidorino Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNidorino();
+                    _instance = new SpeciesNidorino();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNidorino Builder
-		public SpecieNidorino() : base(
+		#region SpeciesNidorino Constructor
+		public SpeciesNidorino() : base(
 			"Nidorino",
 			0.9,
 			19.5,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			55, 55, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Double-Kick",
+				"Headbutt",
+				"Horn-Attack",
+				"Fury-Attack",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Poison-Sting",
+				"Leer",
+				"Water-Gun",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Peck",
+				"Counter",
+				"Strength",
+				"Thunderbolt",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Focus-Energy",
+				"Bide",
+				"Skull-Bash",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Flatter",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Shadow-Claw",
+				"Captivate",
+				"Hone-Claws",
+				"Venoshock",
+				"Round",
+				"Echoed-Voice",
+				"Drill-Run",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nidorino Pokemon Class
+	//Nidorino PokemonInstance Class
 	#region Nidorino
-	public class Nidorino : Pokemon
+	public class NidorinoInstance : PokemonInstance
 	{
-		#region Nidorino Builders
+		#region Nidorino Constructors
 		/// <summary>
-		/// Nidorino Builder waiting for a Nickname & a Level
+		/// Nidorino Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nidorino(string nickname, int level)
+		public NidorinoInstance(string nickname, int level)
 		: base(
 				33,
-				SpecieNidorino.Instance, // Pokemon Specie
+				SpeciesNidorino.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nidorino Builder only waiting for a Level
 		/// </summary>
-		public Nidorino(int level)
+		public NidorinoInstance(int level)
 		: base(
 				33,
-				SpecieNidorino.Instance, // Pokemon Specie
+				SpeciesNidorino.Instance, // PokemonInstance Species
 				"Nidorino", level,
 				Poison.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nidorino Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nidorino Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nidorino() : base(
 			33,
-			SpecieNidorino.Instance, // Pokemon Specie
+			SpeciesNidorino.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

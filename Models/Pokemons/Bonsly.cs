@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bonsly Specie to store common natural stats of all Bonslys
-	#region SpecieBonsly
-	public class SpecieBonsly : PokemonSpecie
+	//Bonsly Species to store common natural stats of all Bonslys
+	#region SpeciesBonsly
+	public class SpeciesBonsly : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBonsly? _instance = null;
+		private static SpeciesBonsly? _instance = null;
 #nullable restore
-        public static SpecieBonsly Instance
+        public static SpeciesBonsly Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBonsly();
+                    _instance = new SpeciesBonsly();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBonsly Builder
-		public SpecieBonsly() : base(
+		#region SpeciesBonsly Constructor
+		public SpeciesBonsly() : base(
 			"Bonsly",
 			0.5,
 			15.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			10, 45, // Special Attack & Defense
 			10		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Slam",
+				"Headbutt",
+				"Double-Edge",
+				"Low-Kick",
+				"Counter",
+				"Rock-Throw",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Feint-Attack",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Uproar",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Secret-Power",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Block",
+				"Covet",
+				"Calm-Mind",
+				"Natural-Gift",
+				"Copycat",
+				"Sucker-Punch",
+				"Rock-Polish",
+				"Earth-Power",
+				"Captivate",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Foul-Play",
+				"After-You",
+				"Round",
+				"Confide",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bonsly Pokemon Class
+	//Bonsly PokemonInstance Class
 	#region Bonsly
-	public class Bonsly : Pokemon
+	public class BonslyInstance : PokemonInstance
 	{
-		#region Bonsly Builders
+		#region Bonsly Constructors
 		/// <summary>
-		/// Bonsly Builder waiting for a Nickname & a Level
+		/// Bonsly Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bonsly(string nickname, int level)
+		public BonslyInstance(string nickname, int level)
 		: base(
 				438,
-				SpecieBonsly.Instance, // Pokemon Specie
+				SpeciesBonsly.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bonsly Builder only waiting for a Level
 		/// </summary>
-		public Bonsly(int level)
+		public BonslyInstance(int level)
 		: base(
 				438,
-				SpecieBonsly.Instance, // Pokemon Specie
+				SpeciesBonsly.Instance, // PokemonInstance Species
 				"Bonsly", level,
 				Rock.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bonsly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bonsly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bonsly() : base(
 			438,
-			SpecieBonsly.Instance, // Pokemon Specie
+			SpeciesBonsly.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shiinotic Specie to store common natural stats of all Shiinotics
-	#region SpecieShiinotic
-	public class SpecieShiinotic : PokemonSpecie
+	//Shiinotic Species to store common natural stats of all Shiinotics
+	#region SpeciesShiinotic
+	public class SpeciesShiinotic : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShiinotic? _instance = null;
+		private static SpeciesShiinotic? _instance = null;
 #nullable restore
-        public static SpecieShiinotic Instance
+        public static SpeciesShiinotic Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShiinotic();
+                    _instance = new SpeciesShiinotic();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShiinotic Builder
-		public SpecieShiinotic() : base(
+		#region SpeciesShiinotic Constructor
+		public SpeciesShiinotic() : base(
 			"Shiinotic",
 			1.0,
 			11.5,
@@ -32,23 +34,73 @@ namespace Pokedex.Models.Pokemons
 			90, 100, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Absorb",
+				"Mega-Drain",
+				"Solar-Beam",
+				"Sleep-Powder",
+				"Thunder-Wave",
+				"Toxic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Dream-Eater",
+				"Spore",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Moonlight",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Nature-Power",
+				"Ingrain",
+				"Astonish",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam",
+				"Strength-Sap",
+				"Spotlight"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shiinotic Pokemon Class
+	//Shiinotic PokemonInstance Class
 	#region Shiinotic
-	public class Shiinotic : Pokemon
+	public class ShiinoticInstance : PokemonInstance
 	{
-		#region Shiinotic Builders
+		#region Shiinotic Constructors
 		/// <summary>
-		/// Shiinotic Builder waiting for a Nickname & a Level
+		/// Shiinotic Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shiinotic(string nickname, int level)
+		public ShiinoticInstance(string nickname, int level)
 		: base(
 				756,
-				SpecieShiinotic.Instance, // Pokemon Specie
+				SpeciesShiinotic.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -60,10 +112,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shiinotic Builder only waiting for a Level
 		/// </summary>
-		public Shiinotic(int level)
+		public ShiinoticInstance(int level)
 		: base(
 				756,
-				SpecieShiinotic.Instance, // Pokemon Specie
+				SpeciesShiinotic.Instance, // PokemonInstance Species
 				"Shiinotic", level,
 				Grass.Instance, Fairy.Instance			
 		)
@@ -73,12 +125,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shiinotic Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shiinotic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shiinotic() : base(
 			756,
-			SpecieShiinotic.Instance, // Pokemon Specie
+			SpeciesShiinotic.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}
 		*/

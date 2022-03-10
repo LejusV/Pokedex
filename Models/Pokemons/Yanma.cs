@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yanma Specie to store common natural stats of all Yanmas
-	#region SpecieYanma
-	public class SpecieYanma : PokemonSpecie
+	//Yanma Species to store common natural stats of all Yanmas
+	#region SpeciesYanma
+	public class SpeciesYanma : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieYanma? _instance = null;
+		private static SpeciesYanma? _instance = null;
 #nullable restore
-        public static SpecieYanma Instance
+        public static SpeciesYanma Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieYanma();
+                    _instance = new SpeciesYanma();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieYanma Builder
-		public SpecieYanma() : base(
+		#region SpeciesYanma Constructor
+		public SpeciesYanma() : base(
 			"Yanma",
 			1.2,
 			38.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			75, 45, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Whirlwind",
+				"Headbutt",
+				"Tackle",
+				"Double-Edge",
+				"Supersonic",
+				"Sonic-Boom",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Quick-Attack",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Swift",
+				"Dream-Eater",
+				"Leech-Life",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Feint-Attack",
+				"Foresight",
+				"Detect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Round",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Yanma Pokemon Class
+	//Yanma PokemonInstance Class
 	#region Yanma
-	public class Yanma : Pokemon
+	public class YanmaInstance : PokemonInstance
 	{
-		#region Yanma Builders
+		#region Yanma Constructors
 		/// <summary>
-		/// Yanma Builder waiting for a Nickname & a Level
+		/// Yanma Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Yanma(string nickname, int level)
+		public YanmaInstance(string nickname, int level)
 		: base(
 				193,
-				SpecieYanma.Instance, // Pokemon Specie
+				SpeciesYanma.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yanma Builder only waiting for a Level
 		/// </summary>
-		public Yanma(int level)
+		public YanmaInstance(int level)
 		: base(
 				193,
-				SpecieYanma.Instance, // Pokemon Specie
+				SpeciesYanma.Instance, // PokemonInstance Species
 				"Yanma", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Yanma Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Yanma Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Yanma() : base(
 			193,
-			SpecieYanma.Instance, // Pokemon Specie
+			SpeciesYanma.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

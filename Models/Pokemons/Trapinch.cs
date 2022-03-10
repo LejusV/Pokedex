@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Trapinch Specie to store common natural stats of all Trapinchs
-	#region SpecieTrapinch
-	public class SpecieTrapinch : PokemonSpecie
+	//Trapinch Species to store common natural stats of all Trapinchs
+	#region SpeciesTrapinch
+	public class SpeciesTrapinch : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTrapinch? _instance = null;
+		private static SpeciesTrapinch? _instance = null;
 #nullable restore
-        public static SpecieTrapinch Instance
+        public static SpeciesTrapinch Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTrapinch();
+                    _instance = new SpeciesTrapinch();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTrapinch Builder
-		public SpecieTrapinch() : base(
+		#region SpeciesTrapinch Constructor
+		public SpeciesTrapinch() : base(
 			"Trapinch",
 			0.7,
 			15.0,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			45, 45, // Special Attack & Defense
 			10		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Sand-Attack",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Bite",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Sandstorm",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Sand-Tomb",
+				"Mud-Shot",
+				"Natural-Gift",
+				"Feint",
+				"Earth-Power",
+				"Captivate",
+				"Bug-Bite",
+				"Round",
+				"Struggle-Bug",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Trapinch Pokemon Class
+	//Trapinch PokemonInstance Class
 	#region Trapinch
-	public class Trapinch : Pokemon
+	public class TrapinchInstance : PokemonInstance
 	{
-		#region Trapinch Builders
+		#region Trapinch Constructors
 		/// <summary>
-		/// Trapinch Builder waiting for a Nickname & a Level
+		/// Trapinch Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Trapinch(string nickname, int level)
+		public TrapinchInstance(string nickname, int level)
 		: base(
 				328,
-				SpecieTrapinch.Instance, // Pokemon Specie
+				SpeciesTrapinch.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Trapinch Builder only waiting for a Level
 		/// </summary>
-		public Trapinch(int level)
+		public TrapinchInstance(int level)
 		: base(
 				328,
-				SpecieTrapinch.Instance, // Pokemon Specie
+				SpeciesTrapinch.Instance, // PokemonInstance Species
 				"Trapinch", level,
 				Ground.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Trapinch Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Trapinch Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Trapinch() : base(
 			328,
-			SpecieTrapinch.Instance, // Pokemon Specie
+			SpeciesTrapinch.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

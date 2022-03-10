@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jellicent Specie to store common natural stats of all Jellicents
-	#region SpecieJellicent
-	public class SpecieJellicent : PokemonSpecie
+	//Jellicent Species to store common natural stats of all Jellicents
+	#region SpeciesJellicent
+	public class SpeciesJellicent : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJellicent? _instance = null;
+		private static SpeciesJellicent? _instance = null;
 #nullable restore
-        public static SpecieJellicent Instance
+        public static SpeciesJellicent Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJellicent();
+                    _instance = new SpeciesJellicent();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJellicent Builder
-		public SpecieJellicent() : base(
+		#region SpeciesJellicent Constructor
+		public SpeciesJellicent() : base(
 			"Jellicent",
 			2.2,
 			135.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			85, 105, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Absorb",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Recover",
+				"Waterfall",
+				"Dream-Eater",
+				"Bubble",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Hail",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Magic-Coat",
+				"Secret-Power",
+				"Dive",
+				"Water-Spout",
+				"Water-Sport",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Brine",
+				"Wring-Out",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Trick-Room",
+				"Ominous-Wind",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Hex",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jellicent Pokemon Class
+	//Jellicent PokemonInstance Class
 	#region Jellicent
-	public class Jellicent : Pokemon
+	public class JellicentInstance : PokemonInstance
 	{
-		#region Jellicent Builders
+		#region Jellicent Constructors
 		/// <summary>
-		/// Jellicent Builder waiting for a Nickname & a Level
+		/// Jellicent Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Jellicent(string nickname, int level)
+		public JellicentInstance(string nickname, int level)
 		: base(
 				593,
-				SpecieJellicent.Instance, // Pokemon Specie
+				SpeciesJellicent.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ghost.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jellicent Builder only waiting for a Level
 		/// </summary>
-		public Jellicent(int level)
+		public JellicentInstance(int level)
 		: base(
 				593,
-				SpecieJellicent.Instance, // Pokemon Specie
+				SpeciesJellicent.Instance, // PokemonInstance Species
 				"Jellicent", level,
 				Water.Instance, Ghost.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jellicent Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jellicent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Jellicent() : base(
 			593,
-			SpecieJellicent.Instance, // Pokemon Specie
+			SpeciesJellicent.Instance, // PokemonInstance Species
 			Water.Instance, Ghost.Instance			
 		) {}
 		*/

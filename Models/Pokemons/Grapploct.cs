@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grapploct Specie to store common natural stats of all Grapplocts
-	#region SpecieGrapploct
-	public class SpecieGrapploct : PokemonSpecie
+	//Grapploct Species to store common natural stats of all Grapplocts
+	#region SpeciesGrapploct
+	public class SpeciesGrapploct : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrapploct? _instance = null;
+		private static SpeciesGrapploct? _instance = null;
 #nullable restore
-        public static SpecieGrapploct Instance
+        public static SpeciesGrapploct Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrapploct();
+                    _instance = new SpeciesGrapploct();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrapploct Builder
-		public SpecieGrapploct() : base(
+		#region SpeciesGrapploct Constructor
+		public SpeciesGrapploct() : base(
 			"Grapploct",
 			1.6,
 			39.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grapploct Pokemon Class
+	//Grapploct PokemonInstance Class
 	#region Grapploct
-	public class Grapploct : Pokemon
+	public class GrapploctInstance : PokemonInstance
 	{
-		#region Grapploct Builders
+		#region Grapploct Constructors
 		/// <summary>
-		/// Grapploct Builder waiting for a Nickname & a Level
+		/// Grapploct Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grapploct(string nickname, int level)
+		public GrapploctInstance(string nickname, int level)
 		: base(
 				853,
-				SpecieGrapploct.Instance, // Pokemon Specie
+				SpeciesGrapploct.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grapploct Builder only waiting for a Level
 		/// </summary>
-		public Grapploct(int level)
+		public GrapploctInstance(int level)
 		: base(
 				853,
-				SpecieGrapploct.Instance, // Pokemon Specie
+				SpeciesGrapploct.Instance, // PokemonInstance Species
 				"Grapploct", level,
 				Fighting.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grapploct Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grapploct Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grapploct() : base(
 			853,
-			SpecieGrapploct.Instance, // Pokemon Specie
+			SpeciesGrapploct.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

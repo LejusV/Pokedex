@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hawlucha Specie to store common natural stats of all Hawluchas
-	#region SpecieHawlucha
-	public class SpecieHawlucha : PokemonSpecie
+	//Hawlucha Species to store common natural stats of all Hawluchas
+	#region SpeciesHawlucha
+	public class SpeciesHawlucha : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHawlucha? _instance = null;
+		private static SpeciesHawlucha? _instance = null;
 #nullable restore
-        public static SpecieHawlucha Instance
+        public static SpeciesHawlucha Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHawlucha();
+                    _instance = new SpeciesHawlucha();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHawlucha Builder
-		public SpecieHawlucha() : base(
+		#region SpeciesHawlucha Constructor
+		public SpeciesHawlucha() : base(
 			"Hawlucha",
 			0.8,
 			21.5,
@@ -32,23 +34,115 @@ namespace Pokedex.Models.Pokemons
 			74, 63, // Special Attack & Defense
 			118		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Karate-Chop",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Wing-Attack",
+				"Fly",
+				"Tackle",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"High-Jump-Kick",
+				"Sky-Attack",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Detect",
+				"False-Swipe",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Encore",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Feather-Dance",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Bounce",
+				"Roost",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Me-First",
+				"Last-Resort",
+				"Poison-Jab",
+				"X-Scissor",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Iron-Head",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Entrainment",
+				"Round",
+				"Quick-Guard",
+				"Ally-Switch",
+				"Sky-Drop",
+				"Acrobatics",
+				"Retaliate",
+				"Work-Up",
+				"Dual-Chop",
+				"Flying-Press",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hawlucha Pokemon Class
+	//Hawlucha PokemonInstance Class
 	#region Hawlucha
-	public class Hawlucha : Pokemon
+	public class HawluchaInstance : PokemonInstance
 	{
-		#region Hawlucha Builders
+		#region Hawlucha Constructors
 		/// <summary>
-		/// Hawlucha Builder waiting for a Nickname & a Level
+		/// Hawlucha Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hawlucha(string nickname, int level)
+		public HawluchaInstance(string nickname, int level)
 		: base(
 				701,
-				SpecieHawlucha.Instance, // Pokemon Specie
+				SpeciesHawlucha.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Flying.Instance			
 		)
@@ -60,10 +154,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hawlucha Builder only waiting for a Level
 		/// </summary>
-		public Hawlucha(int level)
+		public HawluchaInstance(int level)
 		: base(
 				701,
-				SpecieHawlucha.Instance, // Pokemon Specie
+				SpeciesHawlucha.Instance, // PokemonInstance Species
 				"Hawlucha", level,
 				Fighting.Instance, Flying.Instance			
 		)
@@ -73,12 +167,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hawlucha Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hawlucha Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hawlucha() : base(
 			701,
-			SpecieHawlucha.Instance, // Pokemon Specie
+			SpeciesHawlucha.Instance, // PokemonInstance Species
 			Fighting.Instance, Flying.Instance			
 		) {}
 		*/

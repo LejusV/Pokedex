@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Venusaur Specie to store common natural stats of all Venusaurs
-	#region SpecieVenusaur
-	public class SpecieVenusaur : PokemonSpecie
+	//Venusaur Species to store common natural stats of all Venusaurs
+	#region SpeciesVenusaur
+	public class SpeciesVenusaur : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVenusaur? _instance = null;
+		private static SpeciesVenusaur? _instance = null;
 #nullable restore
-        public static SpecieVenusaur Instance
+        public static SpeciesVenusaur Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVenusaur();
+                    _instance = new SpeciesVenusaur();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVenusaur Builder
-		public SpecieVenusaur() : base(
+		#region SpeciesVenusaur Constructor
+		public SpeciesVenusaur() : base(
 			"Venusaur",
 			2.0,
 			100.0,
@@ -32,23 +34,111 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Vine-Whip",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Sleep-Powder",
+				"Petal-Dance",
+				"String-Shot",
+				"Earthquake",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Outrage",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Knock-Off",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Block",
+				"Frenzy-Plant",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Round",
+				"Echoed-Voice",
+				"Grass-Pledge",
+				"Bulldoze",
+				"Work-Up",
+				"Petal-Blizzard",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Venusaur Pokemon Class
+	//Venusaur PokemonInstance Class
 	#region Venusaur
-	public class Venusaur : Pokemon
+	public class VenusaurInstance : PokemonInstance
 	{
-		#region Venusaur Builders
+		#region Venusaur Constructors
 		/// <summary>
-		/// Venusaur Builder waiting for a Nickname & a Level
+		/// Venusaur Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Venusaur(string nickname, int level)
+		public VenusaurInstance(string nickname, int level)
 		: base(
 				3,
-				SpecieVenusaur.Instance, // Pokemon Specie
+				SpeciesVenusaur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +150,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Venusaur Builder only waiting for a Level
 		/// </summary>
-		public Venusaur(int level)
+		public VenusaurInstance(int level)
 		: base(
 				3,
-				SpecieVenusaur.Instance, // Pokemon Specie
+				SpeciesVenusaur.Instance, // PokemonInstance Species
 				"Venusaur", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +163,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Venusaur Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Venusaur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Venusaur() : base(
 			3,
-			SpecieVenusaur.Instance, // Pokemon Specie
+			SpeciesVenusaur.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

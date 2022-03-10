@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Amoonguss Specie to store common natural stats of all Amoongusss
-	#region SpecieAmoonguss
-	public class SpecieAmoonguss : PokemonSpecie
+	//Amoonguss Species to store common natural stats of all Amoongusss
+	#region SpeciesAmoonguss
+	public class SpeciesAmoonguss : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAmoonguss? _instance = null;
+		private static SpeciesAmoonguss? _instance = null;
 #nullable restore
-        public static SpecieAmoonguss Instance
+        public static SpeciesAmoonguss Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAmoonguss();
+                    _instance = new SpeciesAmoonguss();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAmoonguss Builder
-		public SpecieAmoonguss() : base(
+		#region SpeciesAmoonguss Constructor
+		public SpeciesAmoonguss() : base(
 			"Amoonguss",
 			0.6,
 			10.5,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			85, 80, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Hyper-Beam",
+				"Absorb",
+				"Mega-Drain",
+				"Growth",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Spore",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Secret-Power",
+				"Astonish",
+				"Payback",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Venoshock",
+				"Rage-Powder",
+				"Foul-Play",
+				"After-You",
+				"Round",
+				"Clear-Smog",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Amoonguss Pokemon Class
+	//Amoonguss PokemonInstance Class
 	#region Amoonguss
-	public class Amoonguss : Pokemon
+	public class AmoongussInstance : PokemonInstance
 	{
-		#region Amoonguss Builders
+		#region Amoonguss Constructors
 		/// <summary>
-		/// Amoonguss Builder waiting for a Nickname & a Level
+		/// Amoonguss Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Amoonguss(string nickname, int level)
+		public AmoongussInstance(string nickname, int level)
 		: base(
 				591,
-				SpecieAmoonguss.Instance, // Pokemon Specie
+				SpeciesAmoonguss.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Amoonguss Builder only waiting for a Level
 		/// </summary>
-		public Amoonguss(int level)
+		public AmoongussInstance(int level)
 		: base(
 				591,
-				SpecieAmoonguss.Instance, // Pokemon Specie
+				SpeciesAmoonguss.Instance, // PokemonInstance Species
 				"Amoonguss", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Amoonguss Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Amoonguss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Amoonguss() : base(
 			591,
-			SpecieAmoonguss.Instance, // Pokemon Specie
+			SpeciesAmoonguss.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

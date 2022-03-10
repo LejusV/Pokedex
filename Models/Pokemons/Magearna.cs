@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magearna Specie to store common natural stats of all Magearnas
-	#region SpecieMagearna
-	public class SpecieMagearna : PokemonSpecie
+	//Magearna Species to store common natural stats of all Magearnas
+	#region SpeciesMagearna
+	public class SpeciesMagearna : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMagearna? _instance = null;
+		private static SpeciesMagearna? _instance = null;
 #nullable restore
-        public static SpecieMagearna Instance
+        public static SpeciesMagearna Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMagearna();
+                    _instance = new SpeciesMagearna();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMagearna Builder
-		public SpecieMagearna() : base(
+		#region SpeciesMagearna Constructor
+		public SpeciesMagearna() : base(
 			"Magearna",
 			1.0,
 			80.5,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			130, 115, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sonic-Boom",
+				"Ice-Beam",
+				"Psybeam",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Explosion",
+				"Substitute",
+				"Mind-Reader",
+				"Protect",
+				"False-Swipe",
+				"Swagger",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Shadow-Ball",
+				"Helping-Hand",
+				"Brick-Break",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Gyro-Ball",
+				"Embargo",
+				"Trump-Card",
+				"Lucky-Chant",
+				"Heart-Swap",
+				"Aura-Sphere",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Iron-Head",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Synchronoise",
+				"Round",
+				"Echoed-Voice",
+				"Shift-Gear",
+				"Volt-Switch",
+				"Crafty-Shield",
+				"Confide",
+				"Dazzling-Gleam",
+				"Gear-Up",
+				"Fleur-Cannon"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Magearna Pokemon Class
+	//Magearna PokemonInstance Class
 	#region Magearna
-	public class Magearna : Pokemon
+	public class MagearnaInstance : PokemonInstance
 	{
-		#region Magearna Builders
+		#region Magearna Constructors
 		/// <summary>
-		/// Magearna Builder waiting for a Nickname & a Level
+		/// Magearna Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Magearna(string nickname, int level)
+		public MagearnaInstance(string nickname, int level)
 		: base(
 				801,
-				SpecieMagearna.Instance, // Pokemon Specie
+				SpeciesMagearna.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fairy.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magearna Builder only waiting for a Level
 		/// </summary>
-		public Magearna(int level)
+		public MagearnaInstance(int level)
 		: base(
 				801,
-				SpecieMagearna.Instance, // Pokemon Specie
+				SpeciesMagearna.Instance, // PokemonInstance Species
 				"Magearna", level,
 				Steel.Instance, Fairy.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Magearna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Magearna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Magearna() : base(
 			801,
-			SpecieMagearna.Instance, // Pokemon Specie
+			SpeciesMagearna.Instance, // PokemonInstance Species
 			Steel.Instance, Fairy.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Timburr Specie to store common natural stats of all Timburrs
-	#region SpecieTimburr
-	public class SpecieTimburr : PokemonSpecie
+	//Timburr Species to store common natural stats of all Timburrs
+	#region SpeciesTimburr
+	public class SpeciesTimburr : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTimburr? _instance = null;
+		private static SpeciesTimburr? _instance = null;
 #nullable restore
-        public static SpecieTimburr Instance
+        public static SpeciesTimburr Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTimburr();
+                    _instance = new SpeciesTimburr();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTimburr Builder
-		public SpecieTimburr() : base(
+		#region SpeciesTimburr Constructor
+		public SpeciesTimburr() : base(
 			"Timburr",
 			0.6,
 			12.5,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			25, 35, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Comet-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Leer",
+				"Low-Kick",
+				"Counter",
+				"Strength",
+				"Rock-Throw",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Mach-Punch",
+				"Scary-Face",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Smelling-Salts",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Block",
+				"Bulk-Up",
+				"Wake-Up-Slap",
+				"Hammer-Arm",
+				"Payback",
+				"Fling",
+				"Force-Palm",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Wide-Guard",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Chip-Away",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Timburr Pokemon Class
+	//Timburr PokemonInstance Class
 	#region Timburr
-	public class Timburr : Pokemon
+	public class TimburrInstance : PokemonInstance
 	{
-		#region Timburr Builders
+		#region Timburr Constructors
 		/// <summary>
-		/// Timburr Builder waiting for a Nickname & a Level
+		/// Timburr Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Timburr(string nickname, int level)
+		public TimburrInstance(string nickname, int level)
 		: base(
 				532,
-				SpecieTimburr.Instance, // Pokemon Specie
+				SpeciesTimburr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Timburr Builder only waiting for a Level
 		/// </summary>
-		public Timburr(int level)
+		public TimburrInstance(int level)
 		: base(
 				532,
-				SpecieTimburr.Instance, // Pokemon Specie
+				SpeciesTimburr.Instance, // PokemonInstance Species
 				"Timburr", level,
 				Fighting.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Timburr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Timburr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Timburr() : base(
 			532,
-			SpecieTimburr.Instance, // Pokemon Specie
+			SpeciesTimburr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zoroark Specie to store common natural stats of all Zoroarks
-	#region SpecieZoroark
-	public class SpecieZoroark : PokemonSpecie
+	//Zoroark Species to store common natural stats of all Zoroarks
+	#region SpeciesZoroark
+	public class SpeciesZoroark : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZoroark? _instance = null;
+		private static SpeciesZoroark? _instance = null;
 #nullable restore
-        public static SpecieZoroark Instance
+        public static SpeciesZoroark Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZoroark();
+                    _instance = new SpeciesZoroark();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZoroark Builder
-		public SpecieZoroark() : base(
+		#region SpeciesZoroark Constructor
+		public SpeciesZoroark() : base(
 			"Zoroark",
 			1.6,
 			81.1,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			120, 60, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Leer",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Knock-Off",
+				"Imprison",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aerial-Ace",
+				"Bounce",
+				"Covet",
+				"Calm-Mind",
+				"U-Turn",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Punishment",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Night-Daze",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zoroark Pokemon Class
+	//Zoroark PokemonInstance Class
 	#region Zoroark
-	public class Zoroark : Pokemon
+	public class ZoroarkInstance : PokemonInstance
 	{
-		#region Zoroark Builders
+		#region Zoroark Constructors
 		/// <summary>
-		/// Zoroark Builder waiting for a Nickname & a Level
+		/// Zoroark Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zoroark(string nickname, int level)
+		public ZoroarkInstance(string nickname, int level)
 		: base(
 				571,
-				SpecieZoroark.Instance, // Pokemon Specie
+				SpeciesZoroark.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zoroark Builder only waiting for a Level
 		/// </summary>
-		public Zoroark(int level)
+		public ZoroarkInstance(int level)
 		: base(
 				571,
-				SpecieZoroark.Instance, // Pokemon Specie
+				SpeciesZoroark.Instance, // PokemonInstance Species
 				"Zoroark", level,
 				Dark.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zoroark Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zoroark Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zoroark() : base(
 			571,
-			SpecieZoroark.Instance, // Pokemon Specie
+			SpeciesZoroark.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

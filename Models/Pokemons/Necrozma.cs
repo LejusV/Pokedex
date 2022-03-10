@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Necrozma Specie to store common natural stats of all Necrozmas
-	#region SpecieNecrozma
-	public class SpecieNecrozma : PokemonSpecie
+	//Necrozma Species to store common natural stats of all Necrozmas
+	#region SpeciesNecrozma
+	public class SpeciesNecrozma : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNecrozma? _instance = null;
+		private static SpeciesNecrozma? _instance = null;
 #nullable restore
-        public static SpecieNecrozma Instance
+        public static SpeciesNecrozma Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNecrozma();
+                    _instance = new SpeciesNecrozma();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNecrozma Builder
-		public SpecieNecrozma() : base(
+		#region SpeciesNecrozma Constructor
+		public SpeciesNecrozma() : base(
 			"Necrozma",
 			2.4,
 			230.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			127, 89, // Special Attack & Defense
 			79		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunder-Wave",
+				"Earthquake",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Metal-Claw",
+				"Morning-Sun",
+				"Moonlight",
+				"Hidden-Power",
+				"Facade",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Rock-Blast",
+				"Gravity",
+				"Gyro-Ball",
+				"Embargo",
+				"Fling",
+				"Wring-Out",
+				"Rock-Polish",
+				"Dark-Pulse",
+				"Night-Slash",
+				"X-Scissor",
+				"Power-Gem",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Psycho-Cut",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Charge-Beam",
+				"Psyshock",
+				"Autotomize",
+				"Round",
+				"Stored-Power",
+				"Bulldoze",
+				"Confide",
+				"Smart-Strike",
+				"Brutal-Swing",
+				"Prismatic-Laser",
+				"Photon-Geyser"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Necrozma Pokemon Class
+	//Necrozma PokemonInstance Class
 	#region Necrozma
-	public class Necrozma : Pokemon
+	public class NecrozmaInstance : PokemonInstance
 	{
-		#region Necrozma Builders
+		#region Necrozma Constructors
 		/// <summary>
-		/// Necrozma Builder waiting for a Nickname & a Level
+		/// Necrozma Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Necrozma(string nickname, int level)
+		public NecrozmaInstance(string nickname, int level)
 		: base(
 				800,
-				SpecieNecrozma.Instance, // Pokemon Specie
+				SpeciesNecrozma.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Necrozma Builder only waiting for a Level
 		/// </summary>
-		public Necrozma(int level)
+		public NecrozmaInstance(int level)
 		: base(
 				800,
-				SpecieNecrozma.Instance, // Pokemon Specie
+				SpeciesNecrozma.Instance, // PokemonInstance Species
 				"Necrozma", level,
 				Psychic.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Necrozma Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Necrozma Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Necrozma() : base(
 			800,
-			SpecieNecrozma.Instance, // Pokemon Specie
+			SpeciesNecrozma.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

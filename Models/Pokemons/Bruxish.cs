@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bruxish Specie to store common natural stats of all Bruxishs
-	#region SpecieBruxish
-	public class SpecieBruxish : PokemonSpecie
+	//Bruxish Species to store common natural stats of all Bruxishs
+	#region SpeciesBruxish
+	public class SpeciesBruxish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBruxish? _instance = null;
+		private static SpeciesBruxish? _instance = null;
 #nullable restore
-        public static SpecieBruxish Instance
+        public static SpeciesBruxish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBruxish();
+                    _instance = new SpeciesBruxish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBruxish Builder
-		public SpecieBruxish() : base(
+		#region SpeciesBruxish Constructor
+		public SpeciesBruxish() : base(
 			"Bruxish",
 			0.9,
 			19.0,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			70, 70, // Special Attack & Defense
 			92		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Bite",
+				"Disable",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Rage",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Waterfall",
+				"Dream-Eater",
+				"Psywave",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Poison-Fang",
+				"Astonish",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Ice-Fang",
+				"Trick-Room",
+				"Aqua-Jet",
+				"Venoshock",
+				"Synchronoise",
+				"Round",
+				"Scald",
+				"Frost-Breath",
+				"Confide",
+				"Psychic-Fangs"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bruxish Pokemon Class
+	//Bruxish PokemonInstance Class
 	#region Bruxish
-	public class Bruxish : Pokemon
+	public class BruxishInstance : PokemonInstance
 	{
-		#region Bruxish Builders
+		#region Bruxish Constructors
 		/// <summary>
-		/// Bruxish Builder waiting for a Nickname & a Level
+		/// Bruxish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bruxish(string nickname, int level)
+		public BruxishInstance(string nickname, int level)
 		: base(
 				779,
-				SpecieBruxish.Instance, // Pokemon Specie
+				SpeciesBruxish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Psychic.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bruxish Builder only waiting for a Level
 		/// </summary>
-		public Bruxish(int level)
+		public BruxishInstance(int level)
 		: base(
 				779,
-				SpecieBruxish.Instance, // Pokemon Specie
+				SpeciesBruxish.Instance, // PokemonInstance Species
 				"Bruxish", level,
 				Water.Instance, Psychic.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bruxish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bruxish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bruxish() : base(
 			779,
-			SpecieBruxish.Instance, // Pokemon Specie
+			SpeciesBruxish.Instance, // PokemonInstance Species
 			Water.Instance, Psychic.Instance			
 		) {}
 		*/

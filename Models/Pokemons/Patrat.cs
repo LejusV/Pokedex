@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Patrat Specie to store common natural stats of all Patrats
-	#region SpeciePatrat
-	public class SpeciePatrat : PokemonSpecie
+	//Patrat Species to store common natural stats of all Patrats
+	#region SpeciesPatrat
+	public class SpeciesPatrat : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePatrat? _instance = null;
+		private static SpeciesPatrat? _instance = null;
 #nullable restore
-        public static SpeciePatrat Instance
+        public static SpeciesPatrat Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePatrat();
+                    _instance = new SpeciesPatrat();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePatrat Builder
-		public SpeciePatrat() : base(
+		#region SpeciesPatrat Constructor
+		public SpeciesPatrat() : base(
 			"Patrat",
 			0.5,
 			11.6,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			35, 39, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Slam",
+				"Sand-Attack",
+				"Tackle",
+				"Leer",
+				"Bite",
+				"Low-Kick",
+				"Thunderbolt",
+				"Dig",
+				"Toxic",
+				"Hypnosis",
+				"Screech",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Rest",
+				"Hyper-Fang",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Foresight",
+				"Detect",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Facade",
+				"Helping-Hand",
+				"Revenge",
+				"Endeavor",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Covet",
+				"Shock-Wave",
+				"Assurance",
+				"Fling",
+				"Last-Resort",
+				"Aqua-Tail",
+				"Seed-Bomb",
+				"Nasty-Plot",
+				"Zen-Headbutt",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"After-You",
+				"Round",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Patrat Pokemon Class
+	//Patrat PokemonInstance Class
 	#region Patrat
-	public class Patrat : Pokemon
+	public class PatratInstance : PokemonInstance
 	{
-		#region Patrat Builders
+		#region Patrat Constructors
 		/// <summary>
-		/// Patrat Builder waiting for a Nickname & a Level
+		/// Patrat Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Patrat(string nickname, int level)
+		public PatratInstance(string nickname, int level)
 		: base(
 				504,
-				SpeciePatrat.Instance, // Pokemon Specie
+				SpeciesPatrat.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Patrat Builder only waiting for a Level
 		/// </summary>
-		public Patrat(int level)
+		public PatratInstance(int level)
 		: base(
 				504,
-				SpeciePatrat.Instance, // Pokemon Specie
+				SpeciesPatrat.Instance, // PokemonInstance Species
 				"Patrat", level,
 				Normal.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Patrat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Patrat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Patrat() : base(
 			504,
-			SpeciePatrat.Instance, // Pokemon Specie
+			SpeciesPatrat.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

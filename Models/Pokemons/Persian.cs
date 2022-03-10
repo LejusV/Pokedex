@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Persian Specie to store common natural stats of all Persians
-	#region SpeciePersian
-	public class SpeciePersian : PokemonSpecie
+	//Persian Species to store common natural stats of all Persians
+	#region SpeciesPersian
+	public class SpeciesPersian : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePersian? _instance = null;
+		private static SpeciesPersian? _instance = null;
 #nullable restore
-        public static SpeciePersian Instance
+        public static SpeciesPersian Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePersian();
+                    _instance = new SpeciesPersian();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePersian Builder
-		public SpeciePersian() : base(
+		#region SpeciesPersian Constructor
+		public SpeciesPersian() : base(
 			"Persian",
 			1.0,
 			32.0,
@@ -32,23 +34,126 @@ namespace Pokedex.Models.Pokemons
 			65, 65, // Special Attack & Defense
 			115		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pay-Day",
+				"Scratch",
+				"Cut",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Growl",
+				"Roar",
+				"Water-Gun",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Defense-Curl",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Fake-Out",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aerial-Ace",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Feint",
+				"U-Turn",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Last-Resort",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Seed-Bomb",
+				"Power-Gem",
+				"Switcheroo",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Captivate",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Persian Pokemon Class
+	//Persian PokemonInstance Class
 	#region Persian
-	public class Persian : Pokemon
+	public class PersianInstance : PokemonInstance
 	{
-		#region Persian Builders
+		#region Persian Constructors
 		/// <summary>
-		/// Persian Builder waiting for a Nickname & a Level
+		/// Persian Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Persian(string nickname, int level)
+		public PersianInstance(string nickname, int level)
 		: base(
 				53,
-				SpeciePersian.Instance, // Pokemon Specie
+				SpeciesPersian.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +165,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Persian Builder only waiting for a Level
 		/// </summary>
-		public Persian(int level)
+		public PersianInstance(int level)
 		: base(
 				53,
-				SpeciePersian.Instance, // Pokemon Specie
+				SpeciesPersian.Instance, // PokemonInstance Species
 				"Persian", level,
 				Normal.Instance			
 		)
@@ -73,12 +178,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Persian Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Persian Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Persian() : base(
 			53,
-			SpeciePersian.Instance, // Pokemon Specie
+			SpeciesPersian.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wormadam-Plant Specie to store common natural stats of all Wormadam-Plants
-	#region SpecieWormadam-Plant
-	public class SpecieWormadamPlant : PokemonSpecie
+	//Wormadam-Plant Species to store common natural stats of all Wormadam-Plants
+	#region SpeciesWormadam-Plant
+	public class SpeciesWormadamPlant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWormadamPlant? _instance = null;
+		private static SpeciesWormadamPlant? _instance = null;
 #nullable restore
-        public static SpecieWormadamPlant Instance
+        public static SpeciesWormadamPlant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWormadamPlant();
+                    _instance = new SpeciesWormadamPlant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWormadam-Plant Builder
-		public SpecieWormadamPlant() : base(
+		#region SpeciesWormadam-Plant Constructor
+		public SpeciesWormadamPlant() : base(
 			"Wormadam-Plant",
 			0.5,
 			6.5,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			79, 105, // Special Attack & Defense
 			36		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Psybeam",
+				"Hyper-Beam",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Endeavor",
+				"Skill-Swap",
+				"Secret-Power",
+				"Signal-Beam",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Sucker-Punch",
+				"Seed-Bomb",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Venoshock",
+				"Quiver-Dance",
+				"Round",
+				"Struggle-Bug",
+				"Electroweb",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wormadam-Plant Pokemon Class
+	//Wormadam-Plant PokemonInstance Class
 	#region Wormadam-Plant
-	public class WormadamPlant : Pokemon
+	public class WormadamPlantInstance : PokemonInstance
 	{
-		#region Wormadam-Plant Builders
+		#region Wormadam-Plant Constructors
 		/// <summary>
-		/// Wormadam-Plant Builder waiting for a Nickname & a Level
+		/// Wormadam-Plant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public WormadamPlant(string nickname, int level)
+		public WormadamPlantInstance(string nickname, int level)
 		: base(
 				413,
-				SpecieWormadamPlant.Instance, // Pokemon Specie
+				SpeciesWormadamPlant.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wormadam-Plant Builder only waiting for a Level
 		/// </summary>
-		public WormadamPlant(int level)
+		public WormadamPlantInstance(int level)
 		: base(
 				413,
-				SpecieWormadamPlant.Instance, // Pokemon Specie
+				SpeciesWormadamPlant.Instance, // PokemonInstance Species
 				"Wormadam-Plant", level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wormadam-Plant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wormadam-Plant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public WormadamPlant() : base(
 			413,
-			SpecieWormadamPlant.Instance, // Pokemon Specie
+			SpeciesWormadamPlant.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}
 		*/

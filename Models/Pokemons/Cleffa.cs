@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cleffa Specie to store common natural stats of all Cleffas
-	#region SpecieCleffa
-	public class SpecieCleffa : PokemonSpecie
+	//Cleffa Species to store common natural stats of all Cleffas
+	#region SpeciesCleffa
+	public class SpeciesCleffa : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCleffa? _instance = null;
+		private static SpeciesCleffa? _instance = null;
 #nullable restore
-        public static SpecieCleffa Instance
+        public static SpeciesCleffa Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCleffa();
+                    _instance = new SpeciesCleffa();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCleffa Builder
-		public SpecieCleffa() : base(
+		#region SpeciesCleffa Constructor
+		public SpeciesCleffa() : base(
 			"Cleffa",
 			0.3,
 			3.0,
@@ -32,23 +34,129 @@ namespace Pokedex.Models.Pokemons
 			45, 55, // Special Attack & Defense
 			15		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Mega-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Sing",
+				"Flamethrower",
+				"Counter",
+				"Seismic-Toss",
+				"Solar-Beam",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Metronome",
+				"Fire-Blast",
+				"Amnesia",
+				"Soft-Boiled",
+				"Dream-Eater",
+				"Flash",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sweet-Kiss",
+				"Belly-Drum",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Present",
+				"Frustration",
+				"Safeguard",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Wish",
+				"Magic-Coat",
+				"Recycle",
+				"Endeavor",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aromatherapy",
+				"Fake-Tears",
+				"Tickle",
+				"Signal-Beam",
+				"Covet",
+				"Magical-Leaf",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Gravity",
+				"Natural-Gift",
+				"Fling",
+				"Copycat",
+				"Last-Resort",
+				"Zen-Headbutt",
+				"Captivate",
+				"Grass-Knot",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Stored-Power",
+				"Heal-Pulse",
+				"Incinerate",
+				"Work-Up",
+				"Misty-Terrain",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cleffa Pokemon Class
+	//Cleffa PokemonInstance Class
 	#region Cleffa
-	public class Cleffa : Pokemon
+	public class CleffaInstance : PokemonInstance
 	{
-		#region Cleffa Builders
+		#region Cleffa Constructors
 		/// <summary>
-		/// Cleffa Builder waiting for a Nickname & a Level
+		/// Cleffa Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cleffa(string nickname, int level)
+		public CleffaInstance(string nickname, int level)
 		: base(
 				173,
-				SpecieCleffa.Instance, // Pokemon Specie
+				SpeciesCleffa.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +168,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cleffa Builder only waiting for a Level
 		/// </summary>
-		public Cleffa(int level)
+		public CleffaInstance(int level)
 		: base(
 				173,
-				SpecieCleffa.Instance, // Pokemon Specie
+				SpeciesCleffa.Instance, // PokemonInstance Species
 				"Cleffa", level,
 				Fairy.Instance			
 		)
@@ -73,12 +181,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cleffa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cleffa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cleffa() : base(
 			173,
-			SpecieCleffa.Instance, // Pokemon Specie
+			SpeciesCleffa.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

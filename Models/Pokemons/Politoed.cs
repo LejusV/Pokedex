@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Politoed Specie to store common natural stats of all Politoeds
-	#region SpeciePolitoed
-	public class SpeciePolitoed : PokemonSpecie
+	//Politoed Species to store common natural stats of all Politoeds
+	#region SpeciesPolitoed
+	public class SpeciesPolitoed : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePolitoed? _instance = null;
+		private static SpeciesPolitoed? _instance = null;
 #nullable restore
-        public static SpeciePolitoed Instance
+        public static SpeciesPolitoed Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePolitoed();
+                    _instance = new SpeciesPolitoed();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePolitoed Builder
-		public SpeciePolitoed() : base(
+		#region SpeciesPolitoed Constructor
+		public SpeciesPolitoed() : base(
 			"Politoed",
 			1.1,
 			33.9,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			90, 100, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Mega-Punch",
+				"Ice-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Metronome",
+				"Waterfall",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Perish-Song",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Dive",
+				"Hyper-Voice",
+				"Bounce",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Captivate",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Politoed Pokemon Class
+	//Politoed PokemonInstance Class
 	#region Politoed
-	public class Politoed : Pokemon
+	public class PolitoedInstance : PokemonInstance
 	{
-		#region Politoed Builders
+		#region Politoed Constructors
 		/// <summary>
-		/// Politoed Builder waiting for a Nickname & a Level
+		/// Politoed Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Politoed(string nickname, int level)
+		public PolitoedInstance(string nickname, int level)
 		: base(
 				186,
-				SpeciePolitoed.Instance, // Pokemon Specie
+				SpeciesPolitoed.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Politoed Builder only waiting for a Level
 		/// </summary>
-		public Politoed(int level)
+		public PolitoedInstance(int level)
 		: base(
 				186,
-				SpeciePolitoed.Instance, // Pokemon Specie
+				SpeciesPolitoed.Instance, // PokemonInstance Species
 				"Politoed", level,
 				Water.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Politoed Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Politoed Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Politoed() : base(
 			186,
-			SpeciePolitoed.Instance, // Pokemon Specie
+			SpeciesPolitoed.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

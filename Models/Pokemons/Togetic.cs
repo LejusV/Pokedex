@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Togetic Specie to store common natural stats of all Togetics
-	#region SpecieTogetic
-	public class SpecieTogetic : PokemonSpecie
+	//Togetic Species to store common natural stats of all Togetics
+	#region SpeciesTogetic
+	public class SpeciesTogetic : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTogetic? _instance = null;
+		private static SpeciesTogetic? _instance = null;
 #nullable restore
-        public static SpecieTogetic Instance
+        public static SpeciesTogetic Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTogetic();
+                    _instance = new SpeciesTogetic();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTogetic Builder
-		public SpecieTogetic() : base(
+		#region SpeciesTogetic Constructor
+		public SpeciesTogetic() : base(
 			"Togetic",
 			0.6,
 			3.2,
@@ -32,23 +34,136 @@ namespace Pokedex.Models.Pokemons
 			80, 105, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fly",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Solar-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Metronome",
+				"Fire-Blast",
+				"Swift",
+				"Soft-Boiled",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sweet-Kiss",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Encore",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Facade",
+				"Focus-Punch",
+				"Follow-Me",
+				"Trick",
+				"Wish",
+				"Magic-Coat",
+				"Brick-Break",
+				"Yawn",
+				"Endeavor",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Covet",
+				"Magical-Leaf",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"Fling",
+				"Last-Resort",
+				"Drain-Punch",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Defog",
+				"Captivate",
+				"Grass-Knot",
+				"Ominous-Wind",
+				"Psyshock",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Retaliate",
+				"Bestow",
+				"Work-Up",
+				"Fairy-Wind",
+				"Confide",
+				"Dazzling-Gleam",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Togetic Pokemon Class
+	//Togetic PokemonInstance Class
 	#region Togetic
-	public class Togetic : Pokemon
+	public class TogeticInstance : PokemonInstance
 	{
-		#region Togetic Builders
+		#region Togetic Constructors
 		/// <summary>
-		/// Togetic Builder waiting for a Nickname & a Level
+		/// Togetic Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Togetic(string nickname, int level)
+		public TogeticInstance(string nickname, int level)
 		: base(
 				176,
-				SpecieTogetic.Instance, // Pokemon Specie
+				SpeciesTogetic.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance, Flying.Instance			
 		)
@@ -60,10 +175,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Togetic Builder only waiting for a Level
 		/// </summary>
-		public Togetic(int level)
+		public TogeticInstance(int level)
 		: base(
 				176,
-				SpecieTogetic.Instance, // Pokemon Specie
+				SpeciesTogetic.Instance, // PokemonInstance Species
 				"Togetic", level,
 				Fairy.Instance, Flying.Instance			
 		)
@@ -73,12 +188,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Togetic Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Togetic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Togetic() : base(
 			176,
-			SpecieTogetic.Instance, // Pokemon Specie
+			SpeciesTogetic.Instance, // PokemonInstance Species
 			Fairy.Instance, Flying.Instance			
 		) {}
 		*/

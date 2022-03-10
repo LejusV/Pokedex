@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hattrem Specie to store common natural stats of all Hattrems
-	#region SpecieHattrem
-	public class SpecieHattrem : PokemonSpecie
+	//Hattrem Species to store common natural stats of all Hattrems
+	#region SpeciesHattrem
+	public class SpeciesHattrem : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHattrem? _instance = null;
+		private static SpeciesHattrem? _instance = null;
 #nullable restore
-        public static SpecieHattrem Instance
+        public static SpeciesHattrem Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHattrem();
+                    _instance = new SpeciesHattrem();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHattrem Builder
-		public SpecieHattrem() : base(
+		#region SpeciesHattrem Constructor
+		public SpeciesHattrem() : base(
 			"Hattrem",
 			0.6,
 			4.8,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			86, 73, // Special Attack & Defense
 			49		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hattrem Pokemon Class
+	//Hattrem PokemonInstance Class
 	#region Hattrem
-	public class Hattrem : Pokemon
+	public class HattremInstance : PokemonInstance
 	{
-		#region Hattrem Builders
+		#region Hattrem Constructors
 		/// <summary>
-		/// Hattrem Builder waiting for a Nickname & a Level
+		/// Hattrem Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hattrem(string nickname, int level)
+		public HattremInstance(string nickname, int level)
 		: base(
 				857,
-				SpecieHattrem.Instance, // Pokemon Specie
+				SpeciesHattrem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hattrem Builder only waiting for a Level
 		/// </summary>
-		public Hattrem(int level)
+		public HattremInstance(int level)
 		: base(
 				857,
-				SpecieHattrem.Instance, // Pokemon Specie
+				SpeciesHattrem.Instance, // PokemonInstance Species
 				"Hattrem", level,
 				Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hattrem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hattrem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hattrem() : base(
 			857,
-			SpecieHattrem.Instance, // Pokemon Specie
+			SpeciesHattrem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

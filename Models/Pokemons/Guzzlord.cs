@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Guzzlord Specie to store common natural stats of all Guzzlords
-	#region SpecieGuzzlord
-	public class SpecieGuzzlord : PokemonSpecie
+	//Guzzlord Species to store common natural stats of all Guzzlords
+	#region SpeciesGuzzlord
+	public class SpeciesGuzzlord : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGuzzlord? _instance = null;
+		private static SpeciesGuzzlord? _instance = null;
 #nullable restore
-        public static SpecieGuzzlord Instance
+        public static SpeciesGuzzlord Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGuzzlord();
+                    _instance = new SpeciesGuzzlord();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGuzzlord Builder
-		public SpecieGuzzlord() : base(
+		#region SpeciesGuzzlord Constructor
+		public SpeciesGuzzlord() : base(
 			"Guzzlord",
 			5.5,
 			888.0,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			97, 53, // Special Attack & Defense
 			43		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Thrash",
+				"Bite",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Dragon-Rage",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Sludge-Bomb",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Crunch",
+				"Stockpile",
+				"Swallow",
+				"Facade",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Dragon-Claw",
+				"Hammer-Arm",
+				"Gyro-Ball",
+				"Payback",
+				"Fling",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Dragon-Rush",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Draco-Meteor",
+				"Stone-Edge",
+				"Wide-Guard",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Heavy-Slam",
+				"Round",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Steamroller",
+				"Snarl",
+				"Belch",
+				"Brutal-Swing",
+				"Stomping-Tantrum"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Guzzlord Pokemon Class
+	//Guzzlord PokemonInstance Class
 	#region Guzzlord
-	public class Guzzlord : Pokemon
+	public class GuzzlordInstance : PokemonInstance
 	{
-		#region Guzzlord Builders
+		#region Guzzlord Constructors
 		/// <summary>
-		/// Guzzlord Builder waiting for a Nickname & a Level
+		/// Guzzlord Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Guzzlord(string nickname, int level)
+		public GuzzlordInstance(string nickname, int level)
 		: base(
 				799,
-				SpecieGuzzlord.Instance, // Pokemon Specie
+				SpeciesGuzzlord.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Guzzlord Builder only waiting for a Level
 		/// </summary>
-		public Guzzlord(int level)
+		public GuzzlordInstance(int level)
 		: base(
 				799,
-				SpecieGuzzlord.Instance, // Pokemon Specie
+				SpeciesGuzzlord.Instance, // PokemonInstance Species
 				"Guzzlord", level,
 				Dark.Instance, Dragon.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Guzzlord Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Guzzlord Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Guzzlord() : base(
 			799,
-			SpecieGuzzlord.Instance, // Pokemon Specie
+			SpeciesGuzzlord.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}
 		*/

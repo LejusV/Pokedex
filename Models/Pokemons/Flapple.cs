@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Flapple Specie to store common natural stats of all Flapples
-	#region SpecieFlapple
-	public class SpecieFlapple : PokemonSpecie
+	//Flapple Species to store common natural stats of all Flapples
+	#region SpeciesFlapple
+	public class SpeciesFlapple : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFlapple? _instance = null;
+		private static SpeciesFlapple? _instance = null;
 #nullable restore
-        public static SpecieFlapple Instance
+        public static SpeciesFlapple Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFlapple();
+                    _instance = new SpeciesFlapple();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFlapple Builder
-		public SpecieFlapple() : base(
+		#region SpeciesFlapple Constructor
+		public SpeciesFlapple() : base(
 			"Flapple",
 			0.3,
 			1.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			95, 60, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Flapple Pokemon Class
+	//Flapple PokemonInstance Class
 	#region Flapple
-	public class Flapple : Pokemon
+	public class FlappleInstance : PokemonInstance
 	{
-		#region Flapple Builders
+		#region Flapple Constructors
 		/// <summary>
-		/// Flapple Builder waiting for a Nickname & a Level
+		/// Flapple Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Flapple(string nickname, int level)
+		public FlappleInstance(string nickname, int level)
 		: base(
 				841,
-				SpecieFlapple.Instance, // Pokemon Specie
+				SpeciesFlapple.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Flapple Builder only waiting for a Level
 		/// </summary>
-		public Flapple(int level)
+		public FlappleInstance(int level)
 		: base(
 				841,
-				SpecieFlapple.Instance, // Pokemon Specie
+				SpeciesFlapple.Instance, // PokemonInstance Species
 				"Flapple", level,
 				Grass.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Flapple Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Flapple Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Flapple() : base(
 			841,
-			SpecieFlapple.Instance, // Pokemon Specie
+			SpeciesFlapple.Instance, // PokemonInstance Species
 			Grass.Instance, Dragon.Instance			
 		) {}
 		*/

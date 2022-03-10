@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rattata Specie to store common natural stats of all Rattatas
-	#region SpecieRattata
-	public class SpecieRattata : PokemonSpecie
+	//Rattata Species to store common natural stats of all Rattatas
+	#region SpeciesRattata
+	public class SpeciesRattata : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRattata? _instance = null;
+		private static SpeciesRattata? _instance = null;
 #nullable restore
-        public static SpecieRattata Instance
+        public static SpeciesRattata Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRattata();
+                    _instance = new SpeciesRattata();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRattata Builder
-		public SpecieRattata() : base(
+		#region SpeciesRattata Constructor
+		public SpeciesRattata() : base(
 			"Rattata",
 			0.3,
 			3.5,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			25, 35, // Special Attack & Defense
 			72		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Water-Gun",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Counter",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Defense-Curl",
+				"Focus-Energy",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Fury-Swipes",
+				"Rest",
+				"Hyper-Fang",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Flame-Wheel",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Taunt",
+				"Revenge",
+				"Endeavor",
+				"Secret-Power",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Pluck",
+				"U-Turn",
+				"Assurance",
+				"Me-First",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Zen-Headbutt",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Retaliate",
+				"Final-Gambit",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rattata Pokemon Class
+	//Rattata PokemonInstance Class
 	#region Rattata
-	public class Rattata : Pokemon
+	public class RattataInstance : PokemonInstance
 	{
-		#region Rattata Builders
+		#region Rattata Constructors
 		/// <summary>
-		/// Rattata Builder waiting for a Nickname & a Level
+		/// Rattata Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rattata(string nickname, int level)
+		public RattataInstance(string nickname, int level)
 		: base(
 				19,
-				SpecieRattata.Instance, // Pokemon Specie
+				SpeciesRattata.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rattata Builder only waiting for a Level
 		/// </summary>
-		public Rattata(int level)
+		public RattataInstance(int level)
 		: base(
 				19,
-				SpecieRattata.Instance, // Pokemon Specie
+				SpeciesRattata.Instance, // PokemonInstance Species
 				"Rattata", level,
 				Normal.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rattata Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rattata Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rattata() : base(
 			19,
-			SpecieRattata.Instance, // Pokemon Specie
+			SpeciesRattata.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Heatmor Specie to store common natural stats of all Heatmors
-	#region SpecieHeatmor
-	public class SpecieHeatmor : PokemonSpecie
+	//Heatmor Species to store common natural stats of all Heatmors
+	#region SpeciesHeatmor
+	public class SpeciesHeatmor : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHeatmor? _instance = null;
+		private static SpeciesHeatmor? _instance = null;
 #nullable restore
-        public static SpecieHeatmor Instance
+        public static SpeciesHeatmor Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHeatmor();
+                    _instance = new SpeciesHeatmor();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHeatmor Builder
-		public SpecieHeatmor() : base(
+		#region SpeciesHeatmor Constructor
+		public SpeciesHeatmor() : base(
 			"Heatmor",
 			1.4,
 			58.0,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			105, 66, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Cut",
+				"Bind",
+				"Tackle",
+				"Body-Slam",
+				"Wrap",
+				"Flamethrower",
+				"Low-Kick",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Fire-Blast",
+				"Amnesia",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Feint-Attack",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Superpower",
+				"Recycle",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Overheat",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Tickle",
+				"Aerial-Ace",
+				"Fling",
+				"Gastro-Acid",
+				"Sucker-Punch",
+				"Flare-Blitz",
+				"Night-Slash",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Flame-Burst",
+				"Round",
+				"Incinerate",
+				"Inferno",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch",
+				"Fire-Lash"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Heatmor Pokemon Class
+	//Heatmor PokemonInstance Class
 	#region Heatmor
-	public class Heatmor : Pokemon
+	public class HeatmorInstance : PokemonInstance
 	{
-		#region Heatmor Builders
+		#region Heatmor Constructors
 		/// <summary>
-		/// Heatmor Builder waiting for a Nickname & a Level
+		/// Heatmor Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Heatmor(string nickname, int level)
+		public HeatmorInstance(string nickname, int level)
 		: base(
 				631,
-				SpecieHeatmor.Instance, // Pokemon Specie
+				SpeciesHeatmor.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Heatmor Builder only waiting for a Level
 		/// </summary>
-		public Heatmor(int level)
+		public HeatmorInstance(int level)
 		: base(
 				631,
-				SpecieHeatmor.Instance, // Pokemon Specie
+				SpeciesHeatmor.Instance, // PokemonInstance Species
 				"Heatmor", level,
 				Fire.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Heatmor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Heatmor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Heatmor() : base(
 			631,
-			SpecieHeatmor.Instance, // Pokemon Specie
+			SpeciesHeatmor.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

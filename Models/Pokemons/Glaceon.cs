@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Glaceon Specie to store common natural stats of all Glaceons
-	#region SpecieGlaceon
-	public class SpecieGlaceon : PokemonSpecie
+	//Glaceon Species to store common natural stats of all Glaceons
+	#region SpeciesGlaceon
+	public class SpeciesGlaceon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGlaceon? _instance = null;
+		private static SpeciesGlaceon? _instance = null;
 #nullable restore
-        public static SpecieGlaceon Instance
+        public static SpeciesGlaceon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGlaceon();
+                    _instance = new SpeciesGlaceon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGlaceon Builder
-		public SpecieGlaceon() : base(
+		#region SpeciesGlaceon Constructor
+		public SpeciesGlaceon() : base(
 			"Glaceon",
 			0.8,
 			25.9,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			130, 95, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Tail-Whip",
+				"Bite",
+				"Roar",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Barrier",
+				"Swift",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Mirror-Coat",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Signal-Beam",
+				"Covet",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Last-Resort",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Shard",
+				"Ice-Fang",
+				"Captivate",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Frost-Breath",
+				"Work-Up",
+				"Confide",
+				"Baby-Doll-Eyes",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Glaceon Pokemon Class
+	//Glaceon PokemonInstance Class
 	#region Glaceon
-	public class Glaceon : Pokemon
+	public class GlaceonInstance : PokemonInstance
 	{
-		#region Glaceon Builders
+		#region Glaceon Constructors
 		/// <summary>
-		/// Glaceon Builder waiting for a Nickname & a Level
+		/// Glaceon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Glaceon(string nickname, int level)
+		public GlaceonInstance(string nickname, int level)
 		: base(
 				471,
-				SpecieGlaceon.Instance, // Pokemon Specie
+				SpeciesGlaceon.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glaceon Builder only waiting for a Level
 		/// </summary>
-		public Glaceon(int level)
+		public GlaceonInstance(int level)
 		: base(
 				471,
-				SpecieGlaceon.Instance, // Pokemon Specie
+				SpeciesGlaceon.Instance, // PokemonInstance Species
 				"Glaceon", level,
 				Ice.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Glaceon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Glaceon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Glaceon() : base(
 			471,
-			SpecieGlaceon.Instance, // Pokemon Specie
+			SpeciesGlaceon.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

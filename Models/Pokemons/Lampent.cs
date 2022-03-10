@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lampent Specie to store common natural stats of all Lampents
-	#region SpecieLampent
-	public class SpecieLampent : PokemonSpecie
+	//Lampent Species to store common natural stats of all Lampents
+	#region SpeciesLampent
+	public class SpeciesLampent : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLampent? _instance = null;
+		private static SpeciesLampent? _instance = null;
 #nullable restore
-        public static SpecieLampent Instance
+        public static SpeciesLampent Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLampent();
+                    _instance = new SpeciesLampent();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLampent Builder
-		public SpecieLampent() : base(
+		#region SpeciesLampent Constructor
+		public SpeciesLampent() : base(
 			"Lampent",
 			0.6,
 			13.0,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			95, 60, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ember",
+				"Flamethrower",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Minimize",
+				"Confuse-Ray",
+				"Smog",
+				"Fire-Blast",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Memento",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Imprison",
+				"Secret-Power",
+				"Astonish",
+				"Overheat",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Payback",
+				"Embargo",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Trick-Room",
+				"Telekinesis",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Hex",
+				"Incinerate",
+				"Inferno",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lampent Pokemon Class
+	//Lampent PokemonInstance Class
 	#region Lampent
-	public class Lampent : Pokemon
+	public class LampentInstance : PokemonInstance
 	{
-		#region Lampent Builders
+		#region Lampent Constructors
 		/// <summary>
-		/// Lampent Builder waiting for a Nickname & a Level
+		/// Lampent Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lampent(string nickname, int level)
+		public LampentInstance(string nickname, int level)
 		: base(
 				608,
-				SpecieLampent.Instance, // Pokemon Specie
+				SpeciesLampent.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lampent Builder only waiting for a Level
 		/// </summary>
-		public Lampent(int level)
+		public LampentInstance(int level)
 		: base(
 				608,
-				SpecieLampent.Instance, // Pokemon Specie
+				SpeciesLampent.Instance, // PokemonInstance Species
 				"Lampent", level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lampent Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lampent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lampent() : base(
 			608,
-			SpecieLampent.Instance, // Pokemon Specie
+			SpeciesLampent.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}
 		*/

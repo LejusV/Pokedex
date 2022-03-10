@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Skrelp Specie to store common natural stats of all Skrelps
-	#region SpecieSkrelp
-	public class SpecieSkrelp : PokemonSpecie
+	//Skrelp Species to store common natural stats of all Skrelps
+	#region SpeciesSkrelp
+	public class SpeciesSkrelp : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSkrelp? _instance = null;
+		private static SpeciesSkrelp? _instance = null;
 #nullable restore
-        public static SpecieSkrelp Instance
+        public static SpeciesSkrelp Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSkrelp();
+                    _instance = new SpeciesSkrelp();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSkrelp Builder
-		public SpecieSkrelp() : base(
+		#region SpeciesSkrelp Constructor
+		public SpeciesSkrelp() : base(
 			"Skrelp",
 			0.5,
 			7.3,
@@ -32,23 +34,85 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Tail-Whip",
+				"Acid",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Thunderbolt",
+				"Toxic",
+				"Double-Team",
+				"Smokescreen",
+				"Haze",
+				"Waterfall",
+				"Bubble",
+				"Acid-Armor",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Shadow-Ball",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Camouflage",
+				"Bounce",
+				"Poison-Tail",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Toxic-Spikes",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Gunk-Shot",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Play-Rough",
+				"Confide",
+				"Venom-Drench"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Skrelp Pokemon Class
+	//Skrelp PokemonInstance Class
 	#region Skrelp
-	public class Skrelp : Pokemon
+	public class SkrelpInstance : PokemonInstance
 	{
-		#region Skrelp Builders
+		#region Skrelp Constructors
 		/// <summary>
-		/// Skrelp Builder waiting for a Nickname & a Level
+		/// Skrelp Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Skrelp(string nickname, int level)
+		public SkrelpInstance(string nickname, int level)
 		: base(
 				690,
-				SpecieSkrelp.Instance, // Pokemon Specie
+				SpeciesSkrelp.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
 		)
@@ -60,10 +124,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skrelp Builder only waiting for a Level
 		/// </summary>
-		public Skrelp(int level)
+		public SkrelpInstance(int level)
 		: base(
 				690,
-				SpecieSkrelp.Instance, // Pokemon Specie
+				SpeciesSkrelp.Instance, // PokemonInstance Species
 				"Skrelp", level,
 				Poison.Instance, Water.Instance			
 		)
@@ -73,12 +137,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Skrelp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Skrelp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Skrelp() : base(
 			690,
-			SpecieSkrelp.Instance, // Pokemon Specie
+			SpeciesSkrelp.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}
 		*/

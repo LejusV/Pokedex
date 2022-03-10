@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mareep Specie to store common natural stats of all Mareeps
-	#region SpecieMareep
-	public class SpecieMareep : PokemonSpecie
+	//Mareep Species to store common natural stats of all Mareeps
+	#region SpeciesMareep
+	public class SpeciesMareep : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMareep? _instance = null;
+		private static SpeciesMareep? _instance = null;
 #nullable restore
-        public static SpecieMareep Instance
+        public static SpeciesMareep Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMareep();
+                    _instance = new SpeciesMareep();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMareep Builder
-		public SpecieMareep() : base(
+		#region SpeciesMareep Constructor
+		public SpeciesMareep() : base(
 			"Mareep",
 			0.6,
 			7.8,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			65, 45, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Confuse-Ray",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Cotton-Spore",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Flatter",
+				"Facade",
+				"Charge",
+				"Secret-Power",
+				"Odor-Sleuth",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Power-Gem",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Electro-Ball",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Electroweb",
+				"Wild-Charge",
+				"Cotton-Guard",
+				"Confide",
+				"Eerie-Impulse",
+				"Electric-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mareep Pokemon Class
+	//Mareep PokemonInstance Class
 	#region Mareep
-	public class Mareep : Pokemon
+	public class MareepInstance : PokemonInstance
 	{
-		#region Mareep Builders
+		#region Mareep Constructors
 		/// <summary>
-		/// Mareep Builder waiting for a Nickname & a Level
+		/// Mareep Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mareep(string nickname, int level)
+		public MareepInstance(string nickname, int level)
 		: base(
 				179,
-				SpecieMareep.Instance, // Pokemon Specie
+				SpeciesMareep.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mareep Builder only waiting for a Level
 		/// </summary>
-		public Mareep(int level)
+		public MareepInstance(int level)
 		: base(
 				179,
-				SpecieMareep.Instance, // Pokemon Specie
+				SpeciesMareep.Instance, // PokemonInstance Species
 				"Mareep", level,
 				Electric.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mareep Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mareep Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mareep() : base(
 			179,
-			SpecieMareep.Instance, // Pokemon Specie
+			SpeciesMareep.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Voltorb Specie to store common natural stats of all Voltorbs
-	#region SpecieVoltorb
-	public class SpecieVoltorb : PokemonSpecie
+	//Voltorb Species to store common natural stats of all Voltorbs
+	#region SpeciesVoltorb
+	public class SpeciesVoltorb : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVoltorb? _instance = null;
+		private static SpeciesVoltorb? _instance = null;
 #nullable restore
-        public static SpecieVoltorb Instance
+        public static SpeciesVoltorb Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVoltorb();
+                    _instance = new SpeciesVoltorb();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVoltorb Builder
-		public SpecieVoltorb() : base(
+		#region SpeciesVoltorb Constructor
+		public SpeciesVoltorb() : base(
 			"Voltorb",
 			0.5,
 			10.4,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			55, 55, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Sonic-Boom",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Swift",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Torment",
+				"Facade",
+				"Charge",
+				"Taunt",
+				"Magic-Coat",
+				"Secret-Power",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Magnet-Rise",
+				"Discharge",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Foul-Play",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide",
+				"Eerie-Impulse"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Voltorb Pokemon Class
+	//Voltorb PokemonInstance Class
 	#region Voltorb
-	public class Voltorb : Pokemon
+	public class VoltorbInstance : PokemonInstance
 	{
-		#region Voltorb Builders
+		#region Voltorb Constructors
 		/// <summary>
-		/// Voltorb Builder waiting for a Nickname & a Level
+		/// Voltorb Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Voltorb(string nickname, int level)
+		public VoltorbInstance(string nickname, int level)
 		: base(
 				100,
-				SpecieVoltorb.Instance, // Pokemon Specie
+				SpeciesVoltorb.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Voltorb Builder only waiting for a Level
 		/// </summary>
-		public Voltorb(int level)
+		public VoltorbInstance(int level)
 		: base(
 				100,
-				SpecieVoltorb.Instance, // Pokemon Specie
+				SpeciesVoltorb.Instance, // PokemonInstance Species
 				"Voltorb", level,
 				Electric.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Voltorb Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Voltorb Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Voltorb() : base(
 			100,
-			SpecieVoltorb.Instance, // Pokemon Specie
+			SpeciesVoltorb.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Machamp Specie to store common natural stats of all Machamps
-	#region SpecieMachamp
-	public class SpecieMachamp : PokemonSpecie
+	//Machamp Species to store common natural stats of all Machamps
+	#region SpeciesMachamp
+	public class SpeciesMachamp : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMachamp? _instance = null;
+		private static SpeciesMachamp? _instance = null;
 #nullable restore
-        public static SpecieMachamp Instance
+        public static SpeciesMachamp Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMachamp();
+                    _instance = new SpeciesMachamp();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMachamp Builder
-		public SpecieMachamp() : base(
+		#region SpeciesMachamp Constructor
+		public SpeciesMachamp() : base(
 			"Machamp",
 			1.6,
 			130.0,
@@ -32,23 +34,122 @@ namespace Pokedex.Models.Pokemons
 			65, 85, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Karate-Chop",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Focus-Energy",
+				"Bide",
+				"Metronome",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Vital-Throw",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Wide-Guard",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Machamp Pokemon Class
+	//Machamp PokemonInstance Class
 	#region Machamp
-	public class Machamp : Pokemon
+	public class MachampInstance : PokemonInstance
 	{
-		#region Machamp Builders
+		#region Machamp Constructors
 		/// <summary>
-		/// Machamp Builder waiting for a Nickname & a Level
+		/// Machamp Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Machamp(string nickname, int level)
+		public MachampInstance(string nickname, int level)
 		: base(
 				68,
-				SpecieMachamp.Instance, // Pokemon Specie
+				SpeciesMachamp.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +161,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Machamp Builder only waiting for a Level
 		/// </summary>
-		public Machamp(int level)
+		public MachampInstance(int level)
 		: base(
 				68,
-				SpecieMachamp.Instance, // Pokemon Specie
+				SpeciesMachamp.Instance, // PokemonInstance Species
 				"Machamp", level,
 				Fighting.Instance			
 		)
@@ -73,12 +174,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Machamp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Machamp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Machamp() : base(
 			68,
-			SpecieMachamp.Instance, // Pokemon Specie
+			SpeciesMachamp.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

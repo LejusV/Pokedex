@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Aron Specie to store common natural stats of all Arons
-	#region SpecieAron
-	public class SpecieAron : PokemonSpecie
+	//Aron Species to store common natural stats of all Arons
+	#region SpeciesAron
+	public class SpeciesAron : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAron? _instance = null;
+		private static SpeciesAron? _instance = null;
 #nullable restore
-        public static SpecieAron Instance
+        public static SpeciesAron Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAron();
+                    _instance = new SpeciesAron();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAron Builder
-		public SpecieAron() : base(
+		#region SpeciesAron Constructor
+		public SpeciesAron() : base(
 			"Aron",
 			0.4,
 			60.0,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Stomp",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Smelling-Salts",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Metal-Burst",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Dragon-Rush",
+				"Earth-Power",
+				"Shadow-Claw",
+				"Iron-Head",
+				"Captivate",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Hone-Claws",
+				"Autotomize",
+				"Heavy-Slam",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Aron Pokemon Class
+	//Aron PokemonInstance Class
 	#region Aron
-	public class Aron : Pokemon
+	public class AronInstance : PokemonInstance
 	{
-		#region Aron Builders
+		#region Aron Constructors
 		/// <summary>
-		/// Aron Builder waiting for a Nickname & a Level
+		/// Aron Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Aron(string nickname, int level)
+		public AronInstance(string nickname, int level)
 		: base(
 				304,
-				SpecieAron.Instance, // Pokemon Specie
+				SpeciesAron.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Rock.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aron Builder only waiting for a Level
 		/// </summary>
-		public Aron(int level)
+		public AronInstance(int level)
 		: base(
 				304,
-				SpecieAron.Instance, // Pokemon Specie
+				SpeciesAron.Instance, // PokemonInstance Species
 				"Aron", level,
 				Steel.Instance, Rock.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Aron Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Aron Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Aron() : base(
 			304,
-			SpecieAron.Instance, // Pokemon Specie
+			SpeciesAron.Instance, // PokemonInstance Species
 			Steel.Instance, Rock.Instance			
 		) {}
 		*/

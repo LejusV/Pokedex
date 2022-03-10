@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Arrokuda Specie to store common natural stats of all Arrokudas
-	#region SpecieArrokuda
-	public class SpecieArrokuda : PokemonSpecie
+	//Arrokuda Species to store common natural stats of all Arrokudas
+	#region SpeciesArrokuda
+	public class SpeciesArrokuda : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArrokuda? _instance = null;
+		private static SpeciesArrokuda? _instance = null;
 #nullable restore
-        public static SpecieArrokuda Instance
+        public static SpeciesArrokuda Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArrokuda();
+                    _instance = new SpeciesArrokuda();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArrokuda Builder
-		public SpecieArrokuda() : base(
+		#region SpeciesArrokuda Constructor
+		public SpeciesArrokuda() : base(
 			"Arrokuda",
 			0.5,
 			1.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 30, // Special Attack & Defense
 			66		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Arrokuda Pokemon Class
+	//Arrokuda PokemonInstance Class
 	#region Arrokuda
-	public class Arrokuda : Pokemon
+	public class ArrokudaInstance : PokemonInstance
 	{
-		#region Arrokuda Builders
+		#region Arrokuda Constructors
 		/// <summary>
-		/// Arrokuda Builder waiting for a Nickname & a Level
+		/// Arrokuda Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Arrokuda(string nickname, int level)
+		public ArrokudaInstance(string nickname, int level)
 		: base(
 				846,
-				SpecieArrokuda.Instance, // Pokemon Specie
+				SpeciesArrokuda.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arrokuda Builder only waiting for a Level
 		/// </summary>
-		public Arrokuda(int level)
+		public ArrokudaInstance(int level)
 		: base(
 				846,
-				SpecieArrokuda.Instance, // Pokemon Specie
+				SpeciesArrokuda.Instance, // PokemonInstance Species
 				"Arrokuda", level,
 				Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Arrokuda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Arrokuda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Arrokuda() : base(
 			846,
-			SpecieArrokuda.Instance, // Pokemon Specie
+			SpeciesArrokuda.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Minun Specie to store common natural stats of all Minuns
-	#region SpecieMinun
-	public class SpecieMinun : PokemonSpecie
+	//Minun Species to store common natural stats of all Minuns
+	#region SpeciesMinun
+	public class SpeciesMinun : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMinun? _instance = null;
+		private static SpeciesMinun? _instance = null;
 #nullable restore
-        public static SpecieMinun Instance
+        public static SpeciesMinun Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMinun();
+                    _instance = new SpeciesMinun();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMinun Builder
-		public SpecieMinun() : base(
+		#region SpeciesMinun Constructor
+		public SpeciesMinun() : base(
 			"Minun",
 			0.4,
 			4.2,
@@ -32,23 +34,111 @@ namespace Pokedex.Models.Pokemons
 			75, 85, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Sing",
+				"Counter",
+				"Seismic-Toss",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Metronome",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sweet-Kiss",
+				"Mud-Slap",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Facade",
+				"Charge",
+				"Helping-Hand",
+				"Wish",
+				"Secret-Power",
+				"Fake-Tears",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Trump-Card",
+				"Lucky-Chant",
+				"Copycat",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Switcheroo",
+				"Nasty-Plot",
+				"Discharge",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Entrainment",
+				"Round",
+				"Echoed-Voice",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Play-Nice",
+				"Confide",
+				"Nuzzle",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Minun Pokemon Class
+	//Minun PokemonInstance Class
 	#region Minun
-	public class Minun : Pokemon
+	public class MinunInstance : PokemonInstance
 	{
-		#region Minun Builders
+		#region Minun Constructors
 		/// <summary>
-		/// Minun Builder waiting for a Nickname & a Level
+		/// Minun Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Minun(string nickname, int level)
+		public MinunInstance(string nickname, int level)
 		: base(
 				312,
-				SpecieMinun.Instance, // Pokemon Specie
+				SpeciesMinun.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +150,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Minun Builder only waiting for a Level
 		/// </summary>
-		public Minun(int level)
+		public MinunInstance(int level)
 		: base(
 				312,
-				SpecieMinun.Instance, // Pokemon Specie
+				SpeciesMinun.Instance, // PokemonInstance Species
 				"Minun", level,
 				Electric.Instance			
 		)
@@ -73,12 +163,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Minun Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Minun Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Minun() : base(
 			312,
-			SpecieMinun.Instance, // Pokemon Specie
+			SpeciesMinun.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

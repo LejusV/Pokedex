@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Seviper Specie to store common natural stats of all Sevipers
-	#region SpecieSeviper
-	public class SpecieSeviper : PokemonSpecie
+	//Seviper Species to store common natural stats of all Sevipers
+	#region SpeciesSeviper
+	public class SpeciesSeviper : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSeviper? _instance = null;
+		private static SpeciesSeviper? _instance = null;
 #nullable restore
-        public static SpecieSeviper Instance
+        public static SpeciesSeviper Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSeviper();
+                    _instance = new SpeciesSeviper();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSeviper Builder
-		public SpecieSeviper() : base(
+		#region SpeciesSeviper Constructor
+		public SpeciesSeviper() : base(
 			"Seviper",
 			2.7,
 			52.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			100, 60, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Bind",
+				"Headbutt",
+				"Body-Slam",
+				"Wrap",
+				"Double-Edge",
+				"Bite",
+				"Flamethrower",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Haze",
+				"Lick",
+				"Swift",
+				"Glare",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Poison-Fang",
+				"Poison-Tail",
+				"Natural-Gift",
+				"Feint",
+				"Payback",
+				"Assurance",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Punishment",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Switcheroo",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Coil",
+				"Round",
+				"Retaliate",
+				"Final-Gambit",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Belch",
+				"Confide",
+				"Venom-Drench",
+				"Infestation",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Seviper Pokemon Class
+	//Seviper PokemonInstance Class
 	#region Seviper
-	public class Seviper : Pokemon
+	public class SeviperInstance : PokemonInstance
 	{
-		#region Seviper Builders
+		#region Seviper Constructors
 		/// <summary>
-		/// Seviper Builder waiting for a Nickname & a Level
+		/// Seviper Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Seviper(string nickname, int level)
+		public SeviperInstance(string nickname, int level)
 		: base(
 				336,
-				SpecieSeviper.Instance, // Pokemon Specie
+				SpeciesSeviper.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Seviper Builder only waiting for a Level
 		/// </summary>
-		public Seviper(int level)
+		public SeviperInstance(int level)
 		: base(
 				336,
-				SpecieSeviper.Instance, // Pokemon Specie
+				SpeciesSeviper.Instance, // PokemonInstance Species
 				"Seviper", level,
 				Poison.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Seviper Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Seviper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Seviper() : base(
 			336,
-			SpecieSeviper.Instance, // Pokemon Specie
+			SpeciesSeviper.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

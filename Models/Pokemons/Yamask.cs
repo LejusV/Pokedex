@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yamask Specie to store common natural stats of all Yamasks
-	#region SpecieYamask
-	public class SpecieYamask : PokemonSpecie
+	//Yamask Species to store common natural stats of all Yamasks
+	#region SpeciesYamask
+	public class SpeciesYamask : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieYamask? _instance = null;
+		private static SpeciesYamask? _instance = null;
 #nullable restore
-        public static SpecieYamask Instance
+        public static SpeciesYamask Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieYamask();
+                    _instance = new SpeciesYamask();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieYamask Builder
-		public SpecieYamask() : base(
+		#region SpeciesYamask Constructor
+		public SpeciesYamask() : base(
 			"Yamask",
 			0.5,
 			1.5,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Disable",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Haze",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Destiny-Bond",
+				"Endure",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Will-O-Wisp",
+				"Memento",
+				"Facade",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Knock-Off",
+				"Skill-Swap",
+				"Imprison",
+				"Grudge",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Fake-Tears",
+				"Iron-Defense",
+				"Block",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Payback",
+				"Embargo",
+				"Heal-Block",
+				"Toxic-Spikes",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Nasty-Plot",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Ominous-Wind",
+				"Guard-Split",
+				"Power-Split",
+				"Wonder-Room",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Ally-Switch",
+				"Hex",
+				"Crafty-Shield",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Yamask Pokemon Class
+	//Yamask PokemonInstance Class
 	#region Yamask
-	public class Yamask : Pokemon
+	public class YamaskInstance : PokemonInstance
 	{
-		#region Yamask Builders
+		#region Yamask Constructors
 		/// <summary>
-		/// Yamask Builder waiting for a Nickname & a Level
+		/// Yamask Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Yamask(string nickname, int level)
+		public YamaskInstance(string nickname, int level)
 		: base(
 				562,
-				SpecieYamask.Instance, // Pokemon Specie
+				SpeciesYamask.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yamask Builder only waiting for a Level
 		/// </summary>
-		public Yamask(int level)
+		public YamaskInstance(int level)
 		: base(
 				562,
-				SpecieYamask.Instance, // Pokemon Specie
+				SpeciesYamask.Instance, // PokemonInstance Species
 				"Yamask", level,
 				Ghost.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Yamask Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Yamask Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Yamask() : base(
 			562,
-			SpecieYamask.Instance, // Pokemon Specie
+			SpeciesYamask.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

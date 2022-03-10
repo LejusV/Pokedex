@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Scizor Specie to store common natural stats of all Scizors
-	#region SpecieScizor
-	public class SpecieScizor : PokemonSpecie
+	//Scizor Species to store common natural stats of all Scizors
+	#region SpeciesScizor
+	public class SpeciesScizor : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieScizor? _instance = null;
+		private static SpeciesScizor? _instance = null;
 #nullable restore
-        public static SpecieScizor Instance
+        public static SpeciesScizor Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieScizor();
+                    _instance = new SpeciesScizor();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieScizor Builder
-		public SpecieScizor() : base(
+		#region SpeciesScizor Constructor
+		public SpeciesScizor() : base(
 			"Scizor",
 			1.8,
 			118.0,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			55, 80, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Double-Edge",
+				"Leer",
+				"Hyper-Beam",
+				"Counter",
+				"Strength",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Focus-Energy",
+				"Swift",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pursuit",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Fling",
+				"Night-Slash",
+				"X-Scissor",
+				"Giga-Impact",
+				"Bullet-Punch",
+				"Flash-Cannon",
+				"Defog",
+				"Iron-Head",
+				"Captivate",
+				"Bug-Bite",
+				"Double-Hit",
+				"Ominous-Wind",
+				"Venoshock",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Scizor Pokemon Class
+	//Scizor PokemonInstance Class
 	#region Scizor
-	public class Scizor : Pokemon
+	public class ScizorInstance : PokemonInstance
 	{
-		#region Scizor Builders
+		#region Scizor Constructors
 		/// <summary>
-		/// Scizor Builder waiting for a Nickname & a Level
+		/// Scizor Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Scizor(string nickname, int level)
+		public ScizorInstance(string nickname, int level)
 		: base(
 				212,
-				SpecieScizor.Instance, // Pokemon Specie
+				SpeciesScizor.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scizor Builder only waiting for a Level
 		/// </summary>
-		public Scizor(int level)
+		public ScizorInstance(int level)
 		: base(
 				212,
-				SpecieScizor.Instance, // Pokemon Specie
+				SpeciesScizor.Instance, // PokemonInstance Species
 				"Scizor", level,
 				Bug.Instance, Steel.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Scizor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Scizor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Scizor() : base(
 			212,
-			SpecieScizor.Instance, // Pokemon Specie
+			SpeciesScizor.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}
 		*/

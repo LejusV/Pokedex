@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Type-Null Specie to store common natural stats of all Type-Nulls
-	#region SpecieType-Null
-	public class SpecieTypeNull : PokemonSpecie
+	//Type-Null Species to store common natural stats of all Type-Nulls
+	#region SpeciesType-Null
+	public class SpeciesTypeNull : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTypeNull? _instance = null;
+		private static SpeciesTypeNull? _instance = null;
 #nullable restore
-        public static SpecieTypeNull Instance
+        public static SpeciesTypeNull Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTypeNull();
+                    _instance = new SpeciesTypeNull();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieType-Null Builder
-		public SpecieTypeNull() : base(
+		#region SpeciesType-Null Constructor
+		public SpeciesTypeNull() : base(
 			"Type-Null",
 			1.9,
 			120.5,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			95, 95, // Special Attack & Defense
 			59		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Thunder-Wave",
+				"Toxic",
+				"Rage",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Tri-Attack",
+				"Substitute",
+				"Protect",
+				"Scary-Face",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Hail",
+				"Facade",
+				"Imprison",
+				"Crush-Claw",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"U-Turn",
+				"Payback",
+				"Heal-Block",
+				"Punishment",
+				"Air-Slash",
+				"X-Scissor",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Iron-Head",
+				"Double-Hit",
+				"Flame-Charge",
+				"Round",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Type-Null Pokemon Class
+	//Type-Null PokemonInstance Class
 	#region Type-Null
-	public class TypeNull : Pokemon
+	public class TypeNullInstance : PokemonInstance
 	{
-		#region Type-Null Builders
+		#region Type-Null Constructors
 		/// <summary>
-		/// Type-Null Builder waiting for a Nickname & a Level
+		/// Type-Null Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public TypeNull(string nickname, int level)
+		public TypeNullInstance(string nickname, int level)
 		: base(
 				772,
-				SpecieTypeNull.Instance, // Pokemon Specie
+				SpeciesTypeNull.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Type-Null Builder only waiting for a Level
 		/// </summary>
-		public TypeNull(int level)
+		public TypeNullInstance(int level)
 		: base(
 				772,
-				SpecieTypeNull.Instance, // Pokemon Specie
+				SpeciesTypeNull.Instance, // PokemonInstance Species
 				"Type-Null", level,
 				Normal.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Type-Null Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Type-Null Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public TypeNull() : base(
 			772,
-			SpecieTypeNull.Instance, // Pokemon Specie
+			SpeciesTypeNull.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

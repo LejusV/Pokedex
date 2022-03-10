@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dubwool Specie to store common natural stats of all Dubwools
-	#region SpecieDubwool
-	public class SpecieDubwool : PokemonSpecie
+	//Dubwool Species to store common natural stats of all Dubwools
+	#region SpeciesDubwool
+	public class SpeciesDubwool : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDubwool? _instance = null;
+		private static SpeciesDubwool? _instance = null;
 #nullable restore
-        public static SpecieDubwool Instance
+        public static SpeciesDubwool Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDubwool();
+                    _instance = new SpeciesDubwool();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDubwool Builder
-		public SpecieDubwool() : base(
+		#region SpeciesDubwool Constructor
+		public SpeciesDubwool() : base(
 			"Dubwool",
 			1.3,
 			43.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 90, // Special Attack & Defense
 			88		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dubwool Pokemon Class
+	//Dubwool PokemonInstance Class
 	#region Dubwool
-	public class Dubwool : Pokemon
+	public class DubwoolInstance : PokemonInstance
 	{
-		#region Dubwool Builders
+		#region Dubwool Constructors
 		/// <summary>
-		/// Dubwool Builder waiting for a Nickname & a Level
+		/// Dubwool Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dubwool(string nickname, int level)
+		public DubwoolInstance(string nickname, int level)
 		: base(
 				832,
-				SpecieDubwool.Instance, // Pokemon Specie
+				SpeciesDubwool.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dubwool Builder only waiting for a Level
 		/// </summary>
-		public Dubwool(int level)
+		public DubwoolInstance(int level)
 		: base(
 				832,
-				SpecieDubwool.Instance, // Pokemon Specie
+				SpeciesDubwool.Instance, // PokemonInstance Species
 				"Dubwool", level,
 				Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dubwool Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dubwool Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dubwool() : base(
 			832,
-			SpecieDubwool.Instance, // Pokemon Specie
+			SpeciesDubwool.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

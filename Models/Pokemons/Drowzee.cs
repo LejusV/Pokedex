@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drowzee Specie to store common natural stats of all Drowzees
-	#region SpecieDrowzee
-	public class SpecieDrowzee : PokemonSpecie
+	//Drowzee Species to store common natural stats of all Drowzees
+	#region SpeciesDrowzee
+	public class SpeciesDrowzee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrowzee? _instance = null;
+		private static SpeciesDrowzee? _instance = null;
 #nullable restore
-        public static SpecieDrowzee Instance
+        public static SpeciesDrowzee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrowzee();
+                    _instance = new SpeciesDrowzee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrowzee Builder
-		public SpecieDrowzee() : base(
+		#region SpeciesDrowzee Constructor
+		public SpeciesDrowzee() : base(
 			"Drowzee",
 			1.0,
 			32.4,
@@ -32,23 +34,132 @@ namespace Pokedex.Models.Pokemons
 			43, 90, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Disable",
+				"Psybeam",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Meditate",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Metronome",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Poison-Gas",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Assist",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Fling",
+				"Guard-Swap",
+				"Drain-Punch",
+				"Nasty-Plot",
+				"Psycho-Cut",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Power-Split",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Synchronoise",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch",
+				"Psychic-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drowzee Pokemon Class
+	//Drowzee PokemonInstance Class
 	#region Drowzee
-	public class Drowzee : Pokemon
+	public class DrowzeeInstance : PokemonInstance
 	{
-		#region Drowzee Builders
+		#region Drowzee Constructors
 		/// <summary>
-		/// Drowzee Builder waiting for a Nickname & a Level
+		/// Drowzee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drowzee(string nickname, int level)
+		public DrowzeeInstance(string nickname, int level)
 		: base(
 				96,
-				SpecieDrowzee.Instance, // Pokemon Specie
+				SpeciesDrowzee.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +171,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drowzee Builder only waiting for a Level
 		/// </summary>
-		public Drowzee(int level)
+		public DrowzeeInstance(int level)
 		: base(
 				96,
-				SpecieDrowzee.Instance, // Pokemon Specie
+				SpeciesDrowzee.Instance, // PokemonInstance Species
 				"Drowzee", level,
 				Psychic.Instance			
 		)
@@ -73,12 +184,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drowzee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drowzee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drowzee() : base(
 			96,
-			SpecieDrowzee.Instance, // Pokemon Specie
+			SpeciesDrowzee.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

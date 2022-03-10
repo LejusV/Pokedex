@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Noctowl Specie to store common natural stats of all Noctowls
-	#region SpecieNoctowl
-	public class SpecieNoctowl : PokemonSpecie
+	//Noctowl Species to store common natural stats of all Noctowls
+	#region SpeciesNoctowl
+	public class SpeciesNoctowl : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNoctowl? _instance = null;
+		private static SpeciesNoctowl? _instance = null;
 #nullable restore
-        public static SpecieNoctowl Instance
+        public static SpeciesNoctowl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNoctowl();
+                    _instance = new SpeciesNoctowl();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNoctowl Builder
-		public SpecieNoctowl() : base(
+		#region SpeciesNoctowl Constructor
+		public SpeciesNoctowl() : base(
 			"Noctowl",
 			1.6,
 			40.8,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			86, 96, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fly",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Hyper-Beam",
+				"Peck",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Extrasensory",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"Psycho-Shift",
+				"Air-Slash",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Synchronoise",
+				"Round",
+				"Echoed-Voice",
+				"Work-Up",
+				"Moonblast",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Noctowl Pokemon Class
+	//Noctowl PokemonInstance Class
 	#region Noctowl
-	public class Noctowl : Pokemon
+	public class NoctowlInstance : PokemonInstance
 	{
-		#region Noctowl Builders
+		#region Noctowl Constructors
 		/// <summary>
-		/// Noctowl Builder waiting for a Nickname & a Level
+		/// Noctowl Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Noctowl(string nickname, int level)
+		public NoctowlInstance(string nickname, int level)
 		: base(
 				164,
-				SpecieNoctowl.Instance, // Pokemon Specie
+				SpeciesNoctowl.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Noctowl Builder only waiting for a Level
 		/// </summary>
-		public Noctowl(int level)
+		public NoctowlInstance(int level)
 		: base(
 				164,
-				SpecieNoctowl.Instance, // Pokemon Specie
+				SpeciesNoctowl.Instance, // PokemonInstance Species
 				"Noctowl", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Noctowl Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Noctowl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Noctowl() : base(
 			164,
-			SpecieNoctowl.Instance, // Pokemon Specie
+			SpeciesNoctowl.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

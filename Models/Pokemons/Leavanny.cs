@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Leavanny Specie to store common natural stats of all Leavannys
-	#region SpecieLeavanny
-	public class SpecieLeavanny : PokemonSpecie
+	//Leavanny Species to store common natural stats of all Leavannys
+	#region SpeciesLeavanny
+	public class SpeciesLeavanny : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLeavanny? _instance = null;
+		private static SpeciesLeavanny? _instance = null;
 #nullable restore
-        public static SpecieLeavanny Instance
+        public static SpeciesLeavanny Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLeavanny();
+                    _instance = new SpeciesLeavanny();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLeavanny Builder
-		public SpecieLeavanny() : base(
+		#region SpeciesLeavanny Constructor
+		public SpeciesLeavanny() : base(
 			"Leavanny",
 			1.2,
 			20.5,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			92		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Tackle",
+				"Hyper-Beam",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"False-Swipe",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Magic-Coat",
+				"Knock-Off",
+				"Secret-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Leaf-Blade",
+				"Payback",
+				"Worry-Seed",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"X-Scissor",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Leaf-Storm",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Entrainment",
+				"Round",
+				"Retaliate",
+				"Struggle-Bug",
+				"Electroweb",
+				"Fell-Stinger",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Leavanny Pokemon Class
+	//Leavanny PokemonInstance Class
 	#region Leavanny
-	public class Leavanny : Pokemon
+	public class LeavannyInstance : PokemonInstance
 	{
-		#region Leavanny Builders
+		#region Leavanny Constructors
 		/// <summary>
-		/// Leavanny Builder waiting for a Nickname & a Level
+		/// Leavanny Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Leavanny(string nickname, int level)
+		public LeavannyInstance(string nickname, int level)
 		: base(
 				542,
-				SpecieLeavanny.Instance, // Pokemon Specie
+				SpeciesLeavanny.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Leavanny Builder only waiting for a Level
 		/// </summary>
-		public Leavanny(int level)
+		public LeavannyInstance(int level)
 		: base(
 				542,
-				SpecieLeavanny.Instance, // Pokemon Specie
+				SpeciesLeavanny.Instance, // PokemonInstance Species
 				"Leavanny", level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Leavanny Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Leavanny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Leavanny() : base(
 			542,
-			SpecieLeavanny.Instance, // Pokemon Specie
+			SpeciesLeavanny.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}
 		*/

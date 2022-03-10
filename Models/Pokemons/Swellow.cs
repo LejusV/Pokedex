@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swellow Specie to store common natural stats of all Swellows
-	#region SpecieSwellow
-	public class SpecieSwellow : PokemonSpecie
+	//Swellow Species to store common natural stats of all Swellows
+	#region SpeciesSwellow
+	public class SpeciesSwellow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwellow? _instance = null;
+		private static SpeciesSwellow? _instance = null;
 #nullable restore
-        public static SpecieSwellow Instance
+        public static SpeciesSwellow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwellow();
+                    _instance = new SpeciesSwellow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwellow Builder
-		public SpecieSwellow() : base(
+		#region SpeciesSwellow Constructor
+		public SpeciesSwellow() : base(
 			"Swellow",
 			0.7,
 			19.8,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			75, 50, // Special Attack & Defense
 			125		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Fly",
+				"Double-Edge",
+				"Growl",
+				"Hyper-Beam",
+				"Peck",
+				"Counter",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Facade",
+				"Endeavor",
+				"Secret-Power",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Brave-Bird",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Quick-Guard",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swellow Pokemon Class
+	//Swellow PokemonInstance Class
 	#region Swellow
-	public class Swellow : Pokemon
+	public class SwellowInstance : PokemonInstance
 	{
-		#region Swellow Builders
+		#region Swellow Constructors
 		/// <summary>
-		/// Swellow Builder waiting for a Nickname & a Level
+		/// Swellow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swellow(string nickname, int level)
+		public SwellowInstance(string nickname, int level)
 		: base(
 				277,
-				SpecieSwellow.Instance, // Pokemon Specie
+				SpeciesSwellow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swellow Builder only waiting for a Level
 		/// </summary>
-		public Swellow(int level)
+		public SwellowInstance(int level)
 		: base(
 				277,
-				SpecieSwellow.Instance, // Pokemon Specie
+				SpeciesSwellow.Instance, // PokemonInstance Species
 				"Swellow", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swellow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swellow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swellow() : base(
 			277,
-			SpecieSwellow.Instance, // Pokemon Specie
+			SpeciesSwellow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

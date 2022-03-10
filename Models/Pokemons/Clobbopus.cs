@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Clobbopus Specie to store common natural stats of all Clobbopuss
-	#region SpecieClobbopus
-	public class SpecieClobbopus : PokemonSpecie
+	//Clobbopus Species to store common natural stats of all Clobbopuss
+	#region SpeciesClobbopus
+	public class SpeciesClobbopus : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieClobbopus? _instance = null;
+		private static SpeciesClobbopus? _instance = null;
 #nullable restore
-        public static SpecieClobbopus Instance
+        public static SpeciesClobbopus Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieClobbopus();
+                    _instance = new SpeciesClobbopus();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieClobbopus Builder
-		public SpecieClobbopus() : base(
+		#region SpeciesClobbopus Constructor
+		public SpeciesClobbopus() : base(
 			"Clobbopus",
 			0.6,
 			4.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			32		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Clobbopus Pokemon Class
+	//Clobbopus PokemonInstance Class
 	#region Clobbopus
-	public class Clobbopus : Pokemon
+	public class ClobbopusInstance : PokemonInstance
 	{
-		#region Clobbopus Builders
+		#region Clobbopus Constructors
 		/// <summary>
-		/// Clobbopus Builder waiting for a Nickname & a Level
+		/// Clobbopus Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Clobbopus(string nickname, int level)
+		public ClobbopusInstance(string nickname, int level)
 		: base(
 				852,
-				SpecieClobbopus.Instance, // Pokemon Specie
+				SpeciesClobbopus.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Clobbopus Builder only waiting for a Level
 		/// </summary>
-		public Clobbopus(int level)
+		public ClobbopusInstance(int level)
 		: base(
 				852,
-				SpecieClobbopus.Instance, // Pokemon Specie
+				SpeciesClobbopus.Instance, // PokemonInstance Species
 				"Clobbopus", level,
 				Fighting.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Clobbopus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Clobbopus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Clobbopus() : base(
 			852,
-			SpecieClobbopus.Instance, // Pokemon Specie
+			SpeciesClobbopus.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

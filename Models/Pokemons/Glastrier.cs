@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Glastrier Specie to store common natural stats of all Glastriers
-	#region SpecieGlastrier
-	public class SpecieGlastrier : PokemonSpecie
+	//Glastrier Species to store common natural stats of all Glastriers
+	#region SpeciesGlastrier
+	public class SpeciesGlastrier : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGlastrier? _instance = null;
+		private static SpeciesGlastrier? _instance = null;
 #nullable restore
-        public static SpecieGlastrier Instance
+        public static SpeciesGlastrier Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGlastrier();
+                    _instance = new SpeciesGlastrier();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGlastrier Builder
-		public SpecieGlastrier() : base(
+		#region SpeciesGlastrier Constructor
+		public SpeciesGlastrier() : base(
 			"Glastrier",
 			2.2,
 			800.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			65, 110, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Glastrier Pokemon Class
+	//Glastrier PokemonInstance Class
 	#region Glastrier
-	public class Glastrier : Pokemon
+	public class GlastrierInstance : PokemonInstance
 	{
-		#region Glastrier Builders
+		#region Glastrier Constructors
 		/// <summary>
-		/// Glastrier Builder waiting for a Nickname & a Level
+		/// Glastrier Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Glastrier(string nickname, int level)
+		public GlastrierInstance(string nickname, int level)
 		: base(
 				896,
-				SpecieGlastrier.Instance, // Pokemon Specie
+				SpeciesGlastrier.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glastrier Builder only waiting for a Level
 		/// </summary>
-		public Glastrier(int level)
+		public GlastrierInstance(int level)
 		: base(
 				896,
-				SpecieGlastrier.Instance, // Pokemon Specie
+				SpeciesGlastrier.Instance, // PokemonInstance Species
 				"Glastrier", level,
 				Ice.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Glastrier Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Glastrier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Glastrier() : base(
 			896,
-			SpecieGlastrier.Instance, // Pokemon Specie
+			SpeciesGlastrier.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

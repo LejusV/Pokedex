@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Incineroar Specie to store common natural stats of all Incineroars
-	#region SpecieIncineroar
-	public class SpecieIncineroar : PokemonSpecie
+	//Incineroar Species to store common natural stats of all Incineroars
+	#region SpeciesIncineroar
+	public class SpeciesIncineroar : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieIncineroar? _instance = null;
+		private static SpeciesIncineroar? _instance = null;
 #nullable restore
-        public static SpecieIncineroar Instance
+        public static SpeciesIncineroar Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieIncineroar();
+                    _instance = new SpeciesIncineroar();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieIncineroar Builder
-		public SpecieIncineroar() : base(
+		#region SpeciesIncineroar Constructor
+		public SpeciesIncineroar() : base(
 			"Incineroar",
 			1.8,
 			83.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			80, 90, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Double-Kick",
+				"Thrash",
+				"Leer",
+				"Bite",
+				"Growl",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Fire-Blast",
+				"Leech-Life",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Sunny-Day",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Blast-Burn",
+				"Overheat",
+				"Bulk-Up",
+				"U-Turn",
+				"Embargo",
+				"Fling",
+				"Flare-Blitz",
+				"Dark-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Fire-Fang",
+				"Flame-Charge",
+				"Low-Sweep",
+				"Round",
+				"Quash",
+				"Acrobatics",
+				"Fire-Pledge",
+				"Bulldoze",
+				"Work-Up",
+				"Snarl",
+				"Confide",
+				"Darkest-Lariat",
+				"Throat-Chop",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Incineroar Pokemon Class
+	//Incineroar PokemonInstance Class
 	#region Incineroar
-	public class Incineroar : Pokemon
+	public class IncineroarInstance : PokemonInstance
 	{
-		#region Incineroar Builders
+		#region Incineroar Constructors
 		/// <summary>
-		/// Incineroar Builder waiting for a Nickname & a Level
+		/// Incineroar Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Incineroar(string nickname, int level)
+		public IncineroarInstance(string nickname, int level)
 		: base(
 				727,
-				SpecieIncineroar.Instance, // Pokemon Specie
+				SpeciesIncineroar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Dark.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Incineroar Builder only waiting for a Level
 		/// </summary>
-		public Incineroar(int level)
+		public IncineroarInstance(int level)
 		: base(
 				727,
-				SpecieIncineroar.Instance, // Pokemon Specie
+				SpeciesIncineroar.Instance, // PokemonInstance Species
 				"Incineroar", level,
 				Fire.Instance, Dark.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Incineroar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Incineroar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Incineroar() : base(
 			727,
-			SpecieIncineroar.Instance, // Pokemon Specie
+			SpeciesIncineroar.Instance, // PokemonInstance Species
 			Fire.Instance, Dark.Instance			
 		) {}
 		*/

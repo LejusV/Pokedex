@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sunkern Specie to store common natural stats of all Sunkerns
-	#region SpecieSunkern
-	public class SpecieSunkern : PokemonSpecie
+	//Sunkern Species to store common natural stats of all Sunkerns
+	#region SpeciesSunkern
+	public class SpeciesSunkern : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSunkern? _instance = null;
+		private static SpeciesSunkern? _instance = null;
 #nullable restore
-        public static SpecieSunkern Instance
+        public static SpeciesSunkern Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSunkern();
+                    _instance = new SpeciesSunkern();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSunkern Builder
-		public SpecieSunkern() : base(
+		#region SpeciesSunkern Constructor
+		public SpeciesSunkern() : base(
 			"Sunkern",
 			0.3,
 			1.8,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Double-Edge",
+				"Absorb",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Encore",
+				"Sweet-Scent",
+				"Morning-Sun",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Uproar",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Ingrain",
+				"Endeavor",
+				"Secret-Power",
+				"Grass-Whistle",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Earth-Power",
+				"Captivate",
+				"Grass-Knot",
+				"After-You",
+				"Round",
+				"Grassy-Terrain",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sunkern Pokemon Class
+	//Sunkern PokemonInstance Class
 	#region Sunkern
-	public class Sunkern : Pokemon
+	public class SunkernInstance : PokemonInstance
 	{
-		#region Sunkern Builders
+		#region Sunkern Constructors
 		/// <summary>
-		/// Sunkern Builder waiting for a Nickname & a Level
+		/// Sunkern Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sunkern(string nickname, int level)
+		public SunkernInstance(string nickname, int level)
 		: base(
 				191,
-				SpecieSunkern.Instance, // Pokemon Specie
+				SpeciesSunkern.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sunkern Builder only waiting for a Level
 		/// </summary>
-		public Sunkern(int level)
+		public SunkernInstance(int level)
 		: base(
 				191,
-				SpecieSunkern.Instance, // Pokemon Specie
+				SpeciesSunkern.Instance, // PokemonInstance Species
 				"Sunkern", level,
 				Grass.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sunkern Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sunkern Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sunkern() : base(
 			191,
-			SpecieSunkern.Instance, // Pokemon Specie
+			SpeciesSunkern.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

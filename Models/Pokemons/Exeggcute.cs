@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Exeggcute Specie to store common natural stats of all Exeggcutes
-	#region SpecieExeggcute
-	public class SpecieExeggcute : PokemonSpecie
+	//Exeggcute Species to store common natural stats of all Exeggcutes
+	#region SpeciesExeggcute
+	public class SpeciesExeggcute : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieExeggcute? _instance = null;
+		private static SpeciesExeggcute? _instance = null;
 #nullable restore
-        public static SpecieExeggcute Instance
+        public static SpeciesExeggcute Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieExeggcute();
+                    _instance = new SpeciesExeggcute();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieExeggcute Builder
-		public SpecieExeggcute() : base(
+		#region SpeciesExeggcute Constructor
+		public SpeciesExeggcute() : base(
 			"Exeggcute",
 			0.4,
 			2.5,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			60, 45, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Take-Down",
+				"Double-Edge",
+				"Strength",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Egg-Bomb",
+				"Dream-Eater",
+				"Barrage",
+				"Flash",
+				"Psywave",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Synthesis",
+				"Moonlight",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Uproar",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Skill-Swap",
+				"Secret-Power",
+				"Extrasensory",
+				"Bullet-Seed",
+				"Block",
+				"Gravity",
+				"Natural-Gift",
+				"Lucky-Chant",
+				"Power-Swap",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Trick-Room",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Telekinesis",
+				"Round",
+				"Bestow",
+				"Grassy-Terrain",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Exeggcute Pokemon Class
+	//Exeggcute PokemonInstance Class
 	#region Exeggcute
-	public class Exeggcute : Pokemon
+	public class ExeggcuteInstance : PokemonInstance
 	{
-		#region Exeggcute Builders
+		#region Exeggcute Constructors
 		/// <summary>
-		/// Exeggcute Builder waiting for a Nickname & a Level
+		/// Exeggcute Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Exeggcute(string nickname, int level)
+		public ExeggcuteInstance(string nickname, int level)
 		: base(
 				102,
-				SpecieExeggcute.Instance, // Pokemon Specie
+				SpeciesExeggcute.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Psychic.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Exeggcute Builder only waiting for a Level
 		/// </summary>
-		public Exeggcute(int level)
+		public ExeggcuteInstance(int level)
 		: base(
 				102,
-				SpecieExeggcute.Instance, // Pokemon Specie
+				SpeciesExeggcute.Instance, // PokemonInstance Species
 				"Exeggcute", level,
 				Grass.Instance, Psychic.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Exeggcute Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Exeggcute Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Exeggcute() : base(
 			102,
-			SpecieExeggcute.Instance, // Pokemon Specie
+			SpeciesExeggcute.Instance, // PokemonInstance Species
 			Grass.Instance, Psychic.Instance			
 		) {}
 		*/

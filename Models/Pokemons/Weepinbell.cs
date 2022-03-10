@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Weepinbell Specie to store common natural stats of all Weepinbells
-	#region SpecieWeepinbell
-	public class SpecieWeepinbell : PokemonSpecie
+	//Weepinbell Species to store common natural stats of all Weepinbells
+	#region SpeciesWeepinbell
+	public class SpeciesWeepinbell : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWeepinbell? _instance = null;
+		private static SpeciesWeepinbell? _instance = null;
 #nullable restore
-        public static SpecieWeepinbell Instance
+        public static SpeciesWeepinbell Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWeepinbell();
+                    _instance = new SpeciesWeepinbell();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWeepinbell Builder
-		public SpecieWeepinbell() : base(
+		#region SpeciesWeepinbell Constructor
+		public SpeciesWeepinbell() : base(
 			"Weepinbell",
 			1.0,
 			6.4,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			85, 45, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Slam",
+				"Vine-Whip",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Acid",
+				"Mega-Drain",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Knock-Off",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Venoshock",
+				"Round",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Weepinbell Pokemon Class
+	//Weepinbell PokemonInstance Class
 	#region Weepinbell
-	public class Weepinbell : Pokemon
+	public class WeepinbellInstance : PokemonInstance
 	{
-		#region Weepinbell Builders
+		#region Weepinbell Constructors
 		/// <summary>
-		/// Weepinbell Builder waiting for a Nickname & a Level
+		/// Weepinbell Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Weepinbell(string nickname, int level)
+		public WeepinbellInstance(string nickname, int level)
 		: base(
 				70,
-				SpecieWeepinbell.Instance, // Pokemon Specie
+				SpeciesWeepinbell.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weepinbell Builder only waiting for a Level
 		/// </summary>
-		public Weepinbell(int level)
+		public WeepinbellInstance(int level)
 		: base(
 				70,
-				SpecieWeepinbell.Instance, // Pokemon Specie
+				SpeciesWeepinbell.Instance, // PokemonInstance Species
 				"Weepinbell", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Weepinbell Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Weepinbell Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Weepinbell() : base(
 			70,
-			SpecieWeepinbell.Instance, // Pokemon Specie
+			SpeciesWeepinbell.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

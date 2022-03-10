@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Munna Specie to store common natural stats of all Munnas
-	#region SpecieMunna
-	public class SpecieMunna : PokemonSpecie
+	//Munna Species to store common natural stats of all Munnas
+	#region SpeciesMunna
+	public class SpeciesMunna : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMunna? _instance = null;
+		private static SpeciesMunna? _instance = null;
 #nullable restore
-        public static SpecieMunna Instance
+        public static SpeciesMunna Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMunna();
+                    _instance = new SpeciesMunna();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMunna Builder
-		public SpecieMunna() : base(
+		#region SpeciesMunna Constructor
+		public SpeciesMunna() : base(
 			"Munna",
 			0.6,
 			23.3,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			67, 55, // Special Attack & Defense
 			24		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sonic-Boom",
+				"Psybeam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Defense-Curl",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Baton-Pass",
+				"Moonlight",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Yawn",
+				"Skill-Swap",
+				"Imprison",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Gyro-Ball",
+				"Healing-Wish",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Synchronoise",
+				"After-You",
+				"Round",
+				"Stored-Power",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Munna Pokemon Class
+	//Munna PokemonInstance Class
 	#region Munna
-	public class Munna : Pokemon
+	public class MunnaInstance : PokemonInstance
 	{
-		#region Munna Builders
+		#region Munna Constructors
 		/// <summary>
-		/// Munna Builder waiting for a Nickname & a Level
+		/// Munna Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Munna(string nickname, int level)
+		public MunnaInstance(string nickname, int level)
 		: base(
 				517,
-				SpecieMunna.Instance, // Pokemon Specie
+				SpeciesMunna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Munna Builder only waiting for a Level
 		/// </summary>
-		public Munna(int level)
+		public MunnaInstance(int level)
 		: base(
 				517,
-				SpecieMunna.Instance, // Pokemon Specie
+				SpeciesMunna.Instance, // PokemonInstance Species
 				"Munna", level,
 				Psychic.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Munna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Munna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Munna() : base(
 			517,
-			SpecieMunna.Instance, // Pokemon Specie
+			SpeciesMunna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

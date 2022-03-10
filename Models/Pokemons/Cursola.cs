@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cursola Specie to store common natural stats of all Cursolas
-	#region SpecieCursola
-	public class SpecieCursola : PokemonSpecie
+	//Cursola Species to store common natural stats of all Cursolas
+	#region SpeciesCursola
+	public class SpeciesCursola : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCursola? _instance = null;
+		private static SpeciesCursola? _instance = null;
 #nullable restore
-        public static SpecieCursola Instance
+        public static SpeciesCursola Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCursola();
+                    _instance = new SpeciesCursola();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCursola Builder
-		public SpecieCursola() : base(
+		#region SpeciesCursola Constructor
+		public SpeciesCursola() : base(
 			"Cursola",
 			1.0,
 			0.4,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			145, 130, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cursola Pokemon Class
+	//Cursola PokemonInstance Class
 	#region Cursola
-	public class Cursola : Pokemon
+	public class CursolaInstance : PokemonInstance
 	{
-		#region Cursola Builders
+		#region Cursola Constructors
 		/// <summary>
-		/// Cursola Builder waiting for a Nickname & a Level
+		/// Cursola Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cursola(string nickname, int level)
+		public CursolaInstance(string nickname, int level)
 		: base(
 				864,
-				SpecieCursola.Instance, // Pokemon Specie
+				SpeciesCursola.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cursola Builder only waiting for a Level
 		/// </summary>
-		public Cursola(int level)
+		public CursolaInstance(int level)
 		: base(
 				864,
-				SpecieCursola.Instance, // Pokemon Specie
+				SpeciesCursola.Instance, // PokemonInstance Species
 				"Cursola", level,
 				Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cursola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cursola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cursola() : base(
 			864,
-			SpecieCursola.Instance, // Pokemon Specie
+			SpeciesCursola.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Salandit Specie to store common natural stats of all Salandits
-	#region SpecieSalandit
-	public class SpecieSalandit : PokemonSpecie
+	//Salandit Species to store common natural stats of all Salandits
+	#region SpeciesSalandit
+	public class SpeciesSalandit : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSalandit? _instance = null;
+		private static SpeciesSalandit? _instance = null;
 #nullable restore
-        public static SpecieSalandit Instance
+        public static SpeciesSalandit Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSalandit();
+                    _instance = new SpeciesSalandit();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSalandit Builder
-		public SpecieSalandit() : base(
+		#region SpeciesSalandit Constructor
+		public SpeciesSalandit() : base(
 			"Salandit",
 			0.6,
 			4.8,
@@ -32,23 +34,81 @@ namespace Pokedex.Models.Pokemons
 			71, 40, // Special Attack & Defense
 			77		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Scratch",
+				"Sand-Attack",
+				"Ember",
+				"Flamethrower",
+				"Dragon-Rage",
+				"Toxic",
+				"Double-Team",
+				"Smog",
+				"Fire-Blast",
+				"Poison-Gas",
+				"Leech-Life",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Sludge-Bomb",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Fake-Out",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Overheat",
+				"Dragon-Claw",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Dragon-Pulse",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Venoshock",
+				"Flame-Burst",
+				"Sludge-Wave",
+				"Flame-Charge",
+				"Round",
+				"Belch",
+				"Confide",
+				"Venom-Drench"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Salandit Pokemon Class
+	//Salandit PokemonInstance Class
 	#region Salandit
-	public class Salandit : Pokemon
+	public class SalanditInstance : PokemonInstance
 	{
-		#region Salandit Builders
+		#region Salandit Constructors
 		/// <summary>
-		/// Salandit Builder waiting for a Nickname & a Level
+		/// Salandit Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Salandit(string nickname, int level)
+		public SalanditInstance(string nickname, int level)
 		: base(
 				757,
-				SpecieSalandit.Instance, // Pokemon Specie
+				SpeciesSalandit.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fire.Instance			
 		)
@@ -60,10 +120,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Salandit Builder only waiting for a Level
 		/// </summary>
-		public Salandit(int level)
+		public SalanditInstance(int level)
 		: base(
 				757,
-				SpecieSalandit.Instance, // Pokemon Specie
+				SpeciesSalandit.Instance, // PokemonInstance Species
 				"Salandit", level,
 				Poison.Instance, Fire.Instance			
 		)
@@ -73,12 +133,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Salandit Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Salandit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Salandit() : base(
 			757,
-			SpecieSalandit.Instance, // Pokemon Specie
+			SpeciesSalandit.Instance, // PokemonInstance Species
 			Poison.Instance, Fire.Instance			
 		) {}
 		*/

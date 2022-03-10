@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hippowdon Specie to store common natural stats of all Hippowdons
-	#region SpecieHippowdon
-	public class SpecieHippowdon : PokemonSpecie
+	//Hippowdon Species to store common natural stats of all Hippowdons
+	#region SpeciesHippowdon
+	public class SpeciesHippowdon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHippowdon? _instance = null;
+		private static SpeciesHippowdon? _instance = null;
 #nullable restore
-        public static SpecieHippowdon Instance
+        public static SpeciesHippowdon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHippowdon();
+                    _instance = new SpeciesHippowdon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHippowdon Builder
-		public SpecieHippowdon() : base(
+		#region SpeciesHippowdon Constructor
+		public SpeciesHippowdon() : base(
 			"Hippowdon",
 			2.0,
 			300.0,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			68, 72, // Special Attack & Defense
 			47		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Yawn",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Earth-Power",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hippowdon Pokemon Class
+	//Hippowdon PokemonInstance Class
 	#region Hippowdon
-	public class Hippowdon : Pokemon
+	public class HippowdonInstance : PokemonInstance
 	{
-		#region Hippowdon Builders
+		#region Hippowdon Constructors
 		/// <summary>
-		/// Hippowdon Builder waiting for a Nickname & a Level
+		/// Hippowdon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hippowdon(string nickname, int level)
+		public HippowdonInstance(string nickname, int level)
 		: base(
 				450,
-				SpecieHippowdon.Instance, // Pokemon Specie
+				SpeciesHippowdon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hippowdon Builder only waiting for a Level
 		/// </summary>
-		public Hippowdon(int level)
+		public HippowdonInstance(int level)
 		: base(
 				450,
-				SpecieHippowdon.Instance, // Pokemon Specie
+				SpeciesHippowdon.Instance, // PokemonInstance Species
 				"Hippowdon", level,
 				Ground.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hippowdon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hippowdon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hippowdon() : base(
 			450,
-			SpecieHippowdon.Instance, // Pokemon Specie
+			SpeciesHippowdon.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

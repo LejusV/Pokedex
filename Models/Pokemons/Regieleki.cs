@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Regieleki Specie to store common natural stats of all Regielekis
-	#region SpecieRegieleki
-	public class SpecieRegieleki : PokemonSpecie
+	//Regieleki Species to store common natural stats of all Regielekis
+	#region SpeciesRegieleki
+	public class SpeciesRegieleki : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRegieleki? _instance = null;
+		private static SpeciesRegieleki? _instance = null;
 #nullable restore
-        public static SpecieRegieleki Instance
+        public static SpeciesRegieleki Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRegieleki();
+                    _instance = new SpeciesRegieleki();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRegieleki Builder
-		public SpecieRegieleki() : base(
+		#region SpeciesRegieleki Constructor
+		public SpeciesRegieleki() : base(
 			"Regieleki",
 			1.2,
 			145.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			100, 50, // Special Attack & Defense
 			200		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Regieleki Pokemon Class
+	//Regieleki PokemonInstance Class
 	#region Regieleki
-	public class Regieleki : Pokemon
+	public class RegielekiInstance : PokemonInstance
 	{
-		#region Regieleki Builders
+		#region Regieleki Constructors
 		/// <summary>
-		/// Regieleki Builder waiting for a Nickname & a Level
+		/// Regieleki Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Regieleki(string nickname, int level)
+		public RegielekiInstance(string nickname, int level)
 		: base(
 				894,
-				SpecieRegieleki.Instance, // Pokemon Specie
+				SpeciesRegieleki.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Regieleki Builder only waiting for a Level
 		/// </summary>
-		public Regieleki(int level)
+		public RegielekiInstance(int level)
 		: base(
 				894,
-				SpecieRegieleki.Instance, // Pokemon Specie
+				SpeciesRegieleki.Instance, // PokemonInstance Species
 				"Regieleki", level,
 				Electric.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Regieleki Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Regieleki Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Regieleki() : base(
 			894,
-			SpecieRegieleki.Instance, // Pokemon Specie
+			SpeciesRegieleki.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

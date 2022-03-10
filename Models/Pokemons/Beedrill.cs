@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Beedrill Specie to store common natural stats of all Beedrills
-	#region SpecieBeedrill
-	public class SpecieBeedrill : PokemonSpecie
+	//Beedrill Species to store common natural stats of all Beedrills
+	#region SpeciesBeedrill
+	public class SpeciesBeedrill : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBeedrill? _instance = null;
+		private static SpeciesBeedrill? _instance = null;
 #nullable restore
-        public static SpecieBeedrill Instance
+        public static SpeciesBeedrill Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBeedrill();
+                    _instance = new SpeciesBeedrill();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBeedrill Builder
-		public SpecieBeedrill() : base(
+		#region SpeciesBeedrill Constructor
+		public SpeciesBeedrill() : base(
 			"Beedrill",
 			1.0,
 			29.5,
@@ -32,23 +34,109 @@ namespace Pokedex.Models.Pokemons
 			45, 80, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Fury-Attack",
+				"Take-Down",
+				"Double-Edge",
+				"Twineedle",
+				"Pin-Missile",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Focus-Energy",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Assurance",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"X-Scissor",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Venoshock",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Electroweb",
+				"Drill-Run",
+				"Fell-Stinger",
+				"Confide",
+				"Infestation",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Beedrill Pokemon Class
+	//Beedrill PokemonInstance Class
 	#region Beedrill
-	public class Beedrill : Pokemon
+	public class BeedrillInstance : PokemonInstance
 	{
-		#region Beedrill Builders
+		#region Beedrill Constructors
 		/// <summary>
-		/// Beedrill Builder waiting for a Nickname & a Level
+		/// Beedrill Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Beedrill(string nickname, int level)
+		public BeedrillInstance(string nickname, int level)
 		: base(
 				15,
-				SpecieBeedrill.Instance, // Pokemon Specie
+				SpeciesBeedrill.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -60,10 +148,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Beedrill Builder only waiting for a Level
 		/// </summary>
-		public Beedrill(int level)
+		public BeedrillInstance(int level)
 		: base(
 				15,
-				SpecieBeedrill.Instance, // Pokemon Specie
+				SpeciesBeedrill.Instance, // PokemonInstance Species
 				"Beedrill", level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -73,12 +161,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Beedrill Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Beedrill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Beedrill() : base(
 			15,
-			SpecieBeedrill.Instance, // Pokemon Specie
+			SpeciesBeedrill.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}
 		*/

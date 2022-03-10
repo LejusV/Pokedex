@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kyurem Specie to store common natural stats of all Kyurems
-	#region SpecieKyurem
-	public class SpecieKyurem : PokemonSpecie
+	//Kyurem Species to store common natural stats of all Kyurems
+	#region SpeciesKyurem
+	public class SpeciesKyurem : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKyurem? _instance = null;
+		private static SpeciesKyurem? _instance = null;
 #nullable restore
-        public static SpecieKyurem Instance
+        public static SpeciesKyurem Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKyurem();
+                    _instance = new SpeciesKyurem();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKyurem Builder
-		public SpecieKyurem() : base(
+		#region SpeciesKyurem Constructor
+		public SpeciesKyurem() : base(
 			"Kyurem",
 			3.0,
 			325.0,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			130, 90, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Fly",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Dragon-Rage",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Icy-Wind",
+				"Outrage",
+				"Swagger",
+				"Steel-Wing",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Endeavor",
+				"Imprison",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Dragon-Claw",
+				"Roost",
+				"Payback",
+				"Fling",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Draco-Meteor",
+				"Iron-Head",
+				"Stone-Edge",
+				"Hone-Claws",
+				"Round",
+				"Echoed-Voice",
+				"Dragon-Tail",
+				"Glaciate",
+				"Noble-Roar",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kyurem Pokemon Class
+	//Kyurem PokemonInstance Class
 	#region Kyurem
-	public class Kyurem : Pokemon
+	public class KyuremInstance : PokemonInstance
 	{
-		#region Kyurem Builders
+		#region Kyurem Constructors
 		/// <summary>
-		/// Kyurem Builder waiting for a Nickname & a Level
+		/// Kyurem Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kyurem(string nickname, int level)
+		public KyuremInstance(string nickname, int level)
 		: base(
 				646,
-				SpecieKyurem.Instance, // Pokemon Specie
+				SpeciesKyurem.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ice.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kyurem Builder only waiting for a Level
 		/// </summary>
-		public Kyurem(int level)
+		public KyuremInstance(int level)
 		: base(
 				646,
-				SpecieKyurem.Instance, // Pokemon Specie
+				SpeciesKyurem.Instance, // PokemonInstance Species
 				"Kyurem", level,
 				Dragon.Instance, Ice.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kyurem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kyurem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kyurem() : base(
 			646,
-			SpecieKyurem.Instance, // Pokemon Specie
+			SpeciesKyurem.Instance, // PokemonInstance Species
 			Dragon.Instance, Ice.Instance			
 		) {}
 		*/

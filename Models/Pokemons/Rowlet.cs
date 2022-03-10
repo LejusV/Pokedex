@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rowlet Specie to store common natural stats of all Rowlets
-	#region SpecieRowlet
-	public class SpecieRowlet : PokemonSpecie
+	//Rowlet Species to store common natural stats of all Rowlets
+	#region SpeciesRowlet
+	public class SpeciesRowlet : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRowlet? _instance = null;
+		private static SpeciesRowlet? _instance = null;
 #nullable restore
-        public static SpecieRowlet Instance
+        public static SpeciesRowlet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRowlet();
+                    _instance = new SpeciesRowlet();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRowlet Builder
-		public SpecieRowlet() : base(
+		#region SpeciesRowlet Constructor
+		public SpeciesRowlet() : base(
 			"Rowlet",
 			0.3,
 			1.5,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Fury-Attack",
+				"Tackle",
+				"Growl",
+				"Peck",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Haze",
+				"Rest",
+				"Substitute",
+				"Curse",
+				"Protect",
+				"Foresight",
+				"False-Swipe",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Feather-Dance",
+				"Astonish",
+				"Leaf-Blade",
+				"Roost",
+				"Pluck",
+				"Sucker-Punch",
+				"Energy-Ball",
+				"Brave-Bird",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Defog",
+				"Grass-Knot",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Grass-Pledge",
+				"Work-Up",
+				"Confide",
+				"Leafage"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rowlet Pokemon Class
+	//Rowlet PokemonInstance Class
 	#region Rowlet
-	public class Rowlet : Pokemon
+	public class RowletInstance : PokemonInstance
 	{
-		#region Rowlet Builders
+		#region Rowlet Constructors
 		/// <summary>
-		/// Rowlet Builder waiting for a Nickname & a Level
+		/// Rowlet Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rowlet(string nickname, int level)
+		public RowletInstance(string nickname, int level)
 		: base(
 				722,
-				SpecieRowlet.Instance, // Pokemon Specie
+				SpeciesRowlet.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rowlet Builder only waiting for a Level
 		/// </summary>
-		public Rowlet(int level)
+		public RowletInstance(int level)
 		: base(
 				722,
-				SpecieRowlet.Instance, // Pokemon Specie
+				SpeciesRowlet.Instance, // PokemonInstance Species
 				"Rowlet", level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rowlet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rowlet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rowlet() : base(
 			722,
-			SpecieRowlet.Instance, // Pokemon Specie
+			SpeciesRowlet.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}
 		*/

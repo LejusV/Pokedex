@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toxicroak Specie to store common natural stats of all Toxicroaks
-	#region SpecieToxicroak
-	public class SpecieToxicroak : PokemonSpecie
+	//Toxicroak Species to store common natural stats of all Toxicroaks
+	#region SpeciesToxicroak
+	public class SpeciesToxicroak : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieToxicroak? _instance = null;
+		private static SpeciesToxicroak? _instance = null;
 #nullable restore
-        public static SpecieToxicroak Instance
+        public static SpeciesToxicroak Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieToxicroak();
+                    _instance = new SpeciesToxicroak();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieToxicroak Builder
-		public SpecieToxicroak() : base(
+		#region SpeciesToxicroak Constructor
+		public SpeciesToxicroak() : base(
 			"Toxicroak",
 			1.3,
 			44.4,
@@ -32,23 +34,118 @@ namespace Pokedex.Models.Pokemons
 			86, 65, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Poison-Sting",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Bounce",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"X-Scissor",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Mud-Bomb",
+				"Rock-Climb",
+				"Gunk-Shot",
+				"Stone-Edge",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Toxicroak Pokemon Class
+	//Toxicroak PokemonInstance Class
 	#region Toxicroak
-	public class Toxicroak : Pokemon
+	public class ToxicroakInstance : PokemonInstance
 	{
-		#region Toxicroak Builders
+		#region Toxicroak Constructors
 		/// <summary>
-		/// Toxicroak Builder waiting for a Nickname & a Level
+		/// Toxicroak Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Toxicroak(string nickname, int level)
+		public ToxicroakInstance(string nickname, int level)
 		: base(
 				454,
-				SpecieToxicroak.Instance, // Pokemon Specie
+				SpeciesToxicroak.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fighting.Instance			
 		)
@@ -60,10 +157,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxicroak Builder only waiting for a Level
 		/// </summary>
-		public Toxicroak(int level)
+		public ToxicroakInstance(int level)
 		: base(
 				454,
-				SpecieToxicroak.Instance, // Pokemon Specie
+				SpeciesToxicroak.Instance, // PokemonInstance Species
 				"Toxicroak", level,
 				Poison.Instance, Fighting.Instance			
 		)
@@ -73,12 +170,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Toxicroak Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Toxicroak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Toxicroak() : base(
 			454,
-			SpecieToxicroak.Instance, // Pokemon Specie
+			SpeciesToxicroak.Instance, // PokemonInstance Species
 			Poison.Instance, Fighting.Instance			
 		) {}
 		*/

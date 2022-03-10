@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Articuno Specie to store common natural stats of all Articunos
-	#region SpecieArticuno
-	public class SpecieArticuno : PokemonSpecie
+	//Articuno Species to store common natural stats of all Articunos
+	#region SpeciesArticuno
+	public class SpeciesArticuno : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArticuno? _instance = null;
+		private static SpeciesArticuno? _instance = null;
 #nullable restore
-        public static SpecieArticuno Instance
+        public static SpeciesArticuno Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArticuno();
+                    _instance = new SpeciesArticuno();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArticuno Builder
-		public SpecieArticuno() : base(
+		#region SpeciesArticuno Constructor
+		public SpeciesArticuno() : base(
 			"Articuno",
 			1.7,
 			55.4,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			95, 125, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Mist",
+				"Water-Gun",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Peck",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Curse",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Aerial-Ace",
+				"Water-Pulse",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Shard",
+				"Defog",
+				"Ominous-Wind",
+				"Round",
+				"Sky-Drop",
+				"Frost-Breath",
+				"Hurricane",
+				"Freeze-Dry",
+				"Confide",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Articuno Pokemon Class
+	//Articuno PokemonInstance Class
 	#region Articuno
-	public class Articuno : Pokemon
+	public class ArticunoInstance : PokemonInstance
 	{
-		#region Articuno Builders
+		#region Articuno Constructors
 		/// <summary>
-		/// Articuno Builder waiting for a Nickname & a Level
+		/// Articuno Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Articuno(string nickname, int level)
+		public ArticunoInstance(string nickname, int level)
 		: base(
 				144,
-				SpecieArticuno.Instance, // Pokemon Specie
+				SpeciesArticuno.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Flying.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Articuno Builder only waiting for a Level
 		/// </summary>
-		public Articuno(int level)
+		public ArticunoInstance(int level)
 		: base(
 				144,
-				SpecieArticuno.Instance, // Pokemon Specie
+				SpeciesArticuno.Instance, // PokemonInstance Species
 				"Articuno", level,
 				Ice.Instance, Flying.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Articuno Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Articuno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Articuno() : base(
 			144,
-			SpecieArticuno.Instance, // Pokemon Specie
+			SpeciesArticuno.Instance, // PokemonInstance Species
 			Ice.Instance, Flying.Instance			
 		) {}
 		*/

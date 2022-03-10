@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lileep Specie to store common natural stats of all Lileeps
-	#region SpecieLileep
-	public class SpecieLileep : PokemonSpecie
+	//Lileep Species to store common natural stats of all Lileeps
+	#region SpeciesLileep
+	public class SpeciesLileep : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLileep? _instance = null;
+		private static SpeciesLileep? _instance = null;
 #nullable restore
-        public static SpecieLileep Instance
+        public static SpeciesLileep Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLileep();
+                    _instance = new SpeciesLileep();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLileep Builder
-		public SpecieLileep() : base(
+		#region SpeciesLileep Constructor
+		public SpeciesLileep() : base(
 			"Lileep",
 			1.0,
 			23.8,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			61, 87, // Special Attack & Defense
 			23		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Bind",
+				"Body-Slam",
+				"Double-Edge",
+				"Acid",
+				"Mega-Drain",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Confuse-Ray",
+				"Barrier",
+				"Constrict",
+				"Amnesia",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Mirror-Coat",
+				"Psych-Up",
+				"Ancient-Power",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Ingrain",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Tickle",
+				"Bullet-Seed",
+				"Brine",
+				"Natural-Gift",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Rock-Polish",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Earth-Power",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Smack-Down",
+				"Round",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lileep Pokemon Class
+	//Lileep PokemonInstance Class
 	#region Lileep
-	public class Lileep : Pokemon
+	public class LileepInstance : PokemonInstance
 	{
-		#region Lileep Builders
+		#region Lileep Constructors
 		/// <summary>
-		/// Lileep Builder waiting for a Nickname & a Level
+		/// Lileep Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lileep(string nickname, int level)
+		public LileepInstance(string nickname, int level)
 		: base(
 				345,
-				SpecieLileep.Instance, // Pokemon Specie
+				SpeciesLileep.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Grass.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lileep Builder only waiting for a Level
 		/// </summary>
-		public Lileep(int level)
+		public LileepInstance(int level)
 		: base(
 				345,
-				SpecieLileep.Instance, // Pokemon Specie
+				SpeciesLileep.Instance, // PokemonInstance Species
 				"Lileep", level,
 				Rock.Instance, Grass.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lileep Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lileep Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lileep() : base(
 			345,
-			SpecieLileep.Instance, // Pokemon Specie
+			SpeciesLileep.Instance, // PokemonInstance Species
 			Rock.Instance, Grass.Instance			
 		) {}
 		*/

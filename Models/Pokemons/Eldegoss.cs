@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eldegoss Specie to store common natural stats of all Eldegosss
-	#region SpecieEldegoss
-	public class SpecieEldegoss : PokemonSpecie
+	//Eldegoss Species to store common natural stats of all Eldegosss
+	#region SpeciesEldegoss
+	public class SpeciesEldegoss : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEldegoss? _instance = null;
+		private static SpeciesEldegoss? _instance = null;
 #nullable restore
-        public static SpecieEldegoss Instance
+        public static SpeciesEldegoss Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEldegoss();
+                    _instance = new SpeciesEldegoss();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEldegoss Builder
-		public SpecieEldegoss() : base(
+		#region SpeciesEldegoss Constructor
+		public SpeciesEldegoss() : base(
 			"Eldegoss",
 			0.5,
 			2.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 120, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Eldegoss Pokemon Class
+	//Eldegoss PokemonInstance Class
 	#region Eldegoss
-	public class Eldegoss : Pokemon
+	public class EldegossInstance : PokemonInstance
 	{
-		#region Eldegoss Builders
+		#region Eldegoss Constructors
 		/// <summary>
-		/// Eldegoss Builder waiting for a Nickname & a Level
+		/// Eldegoss Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Eldegoss(string nickname, int level)
+		public EldegossInstance(string nickname, int level)
 		: base(
 				830,
-				SpecieEldegoss.Instance, // Pokemon Specie
+				SpeciesEldegoss.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eldegoss Builder only waiting for a Level
 		/// </summary>
-		public Eldegoss(int level)
+		public EldegossInstance(int level)
 		: base(
 				830,
-				SpecieEldegoss.Instance, // Pokemon Specie
+				SpeciesEldegoss.Instance, // PokemonInstance Species
 				"Eldegoss", level,
 				Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Eldegoss Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Eldegoss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Eldegoss() : base(
 			830,
-			SpecieEldegoss.Instance, // Pokemon Specie
+			SpeciesEldegoss.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

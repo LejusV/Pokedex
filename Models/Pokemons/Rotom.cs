@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rotom Specie to store common natural stats of all Rotoms
-	#region SpecieRotom
-	public class SpecieRotom : PokemonSpecie
+	//Rotom Species to store common natural stats of all Rotoms
+	#region SpeciesRotom
+	public class SpeciesRotom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRotom? _instance = null;
+		private static SpeciesRotom? _instance = null;
 #nullable restore
-        public static SpecieRotom Instance
+        public static SpeciesRotom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRotom();
+                    _instance = new SpeciesRotom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRotom Builder
-		public SpecieRotom() : base(
+		#region SpeciesRotom Constructor
+		public SpeciesRotom() : base(
 			"Rotom",
 			0.3,
 			0.3,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			95, 77, // Special Attack & Defense
 			91		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Will-O-Wisp",
+				"Facade",
+				"Charge",
+				"Trick",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Discharge",
+				"Charge-Beam",
+				"Ominous-Wind",
+				"Telekinesis",
+				"Electro-Ball",
+				"Foul-Play",
+				"Round",
+				"Hex",
+				"Volt-Switch",
+				"Electroweb",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rotom Pokemon Class
+	//Rotom PokemonInstance Class
 	#region Rotom
-	public class Rotom : Pokemon
+	public class RotomInstance : PokemonInstance
 	{
-		#region Rotom Builders
+		#region Rotom Constructors
 		/// <summary>
-		/// Rotom Builder waiting for a Nickname & a Level
+		/// Rotom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rotom(string nickname, int level)
+		public RotomInstance(string nickname, int level)
 		: base(
 				479,
-				SpecieRotom.Instance, // Pokemon Specie
+				SpeciesRotom.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Ghost.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rotom Builder only waiting for a Level
 		/// </summary>
-		public Rotom(int level)
+		public RotomInstance(int level)
 		: base(
 				479,
-				SpecieRotom.Instance, // Pokemon Specie
+				SpeciesRotom.Instance, // PokemonInstance Species
 				"Rotom", level,
 				Electric.Instance, Ghost.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rotom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rotom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rotom() : base(
 			479,
-			SpecieRotom.Instance, // Pokemon Specie
+			SpeciesRotom.Instance, // PokemonInstance Species
 			Electric.Instance, Ghost.Instance			
 		) {}
 		*/

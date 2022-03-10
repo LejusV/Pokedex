@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dreepy Specie to store common natural stats of all Dreepys
-	#region SpecieDreepy
-	public class SpecieDreepy : PokemonSpecie
+	//Dreepy Species to store common natural stats of all Dreepys
+	#region SpeciesDreepy
+	public class SpeciesDreepy : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDreepy? _instance = null;
+		private static SpeciesDreepy? _instance = null;
 #nullable restore
-        public static SpecieDreepy Instance
+        public static SpeciesDreepy Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDreepy();
+                    _instance = new SpeciesDreepy();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDreepy Builder
-		public SpecieDreepy() : base(
+		#region SpeciesDreepy Constructor
+		public SpeciesDreepy() : base(
 			"Dreepy",
 			0.5,
 			2.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 30, // Special Attack & Defense
 			82		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dreepy Pokemon Class
+	//Dreepy PokemonInstance Class
 	#region Dreepy
-	public class Dreepy : Pokemon
+	public class DreepyInstance : PokemonInstance
 	{
-		#region Dreepy Builders
+		#region Dreepy Constructors
 		/// <summary>
-		/// Dreepy Builder waiting for a Nickname & a Level
+		/// Dreepy Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dreepy(string nickname, int level)
+		public DreepyInstance(string nickname, int level)
 		: base(
 				885,
-				SpecieDreepy.Instance, // Pokemon Specie
+				SpeciesDreepy.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dreepy Builder only waiting for a Level
 		/// </summary>
-		public Dreepy(int level)
+		public DreepyInstance(int level)
 		: base(
 				885,
-				SpecieDreepy.Instance, // Pokemon Specie
+				SpeciesDreepy.Instance, // PokemonInstance Species
 				"Dreepy", level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dreepy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dreepy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dreepy() : base(
 			885,
-			SpecieDreepy.Instance, // Pokemon Specie
+			SpeciesDreepy.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}
 		*/

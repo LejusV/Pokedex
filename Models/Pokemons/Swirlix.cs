@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swirlix Specie to store common natural stats of all Swirlixs
-	#region SpecieSwirlix
-	public class SpecieSwirlix : PokemonSpecie
+	//Swirlix Species to store common natural stats of all Swirlixs
+	#region SpeciesSwirlix
+	public class SpeciesSwirlix : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwirlix? _instance = null;
+		private static SpeciesSwirlix? _instance = null;
 #nullable restore
-        public static SpecieSwirlix Instance
+        public static SpeciesSwirlix Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwirlix();
+                    _instance = new SpeciesSwirlix();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwirlix Builder
-		public SpecieSwirlix() : base(
+		#region SpeciesSwirlix Constructor
+		public SpeciesSwirlix() : base(
 			"Swirlix",
 			0.4,
 			3.5,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			59, 57, // Special Attack & Defense
 			49		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Flamethrower",
+				"Surf",
+				"Thunderbolt",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Cotton-Spore",
+				"Protect",
+				"Belly-Drum",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Magic-Coat",
+				"Yawn",
+				"Endeavor",
+				"Secret-Power",
+				"Aromatherapy",
+				"Fake-Tears",
+				"Covet",
+				"Calm-Mind",
+				"Gastro-Acid",
+				"Copycat",
+				"Energy-Ball",
+				"After-You",
+				"Round",
+				"Cotton-Guard",
+				"Sticky-Web",
+				"Draining-Kiss",
+				"Play-Rough",
+				"Fairy-Wind",
+				"Play-Nice",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swirlix Pokemon Class
+	//Swirlix PokemonInstance Class
 	#region Swirlix
-	public class Swirlix : Pokemon
+	public class SwirlixInstance : PokemonInstance
 	{
-		#region Swirlix Builders
+		#region Swirlix Constructors
 		/// <summary>
-		/// Swirlix Builder waiting for a Nickname & a Level
+		/// Swirlix Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swirlix(string nickname, int level)
+		public SwirlixInstance(string nickname, int level)
 		: base(
 				684,
-				SpecieSwirlix.Instance, // Pokemon Specie
+				SpeciesSwirlix.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swirlix Builder only waiting for a Level
 		/// </summary>
-		public Swirlix(int level)
+		public SwirlixInstance(int level)
 		: base(
 				684,
-				SpecieSwirlix.Instance, // Pokemon Specie
+				SpeciesSwirlix.Instance, // PokemonInstance Species
 				"Swirlix", level,
 				Fairy.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swirlix Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swirlix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swirlix() : base(
 			684,
-			SpecieSwirlix.Instance, // Pokemon Specie
+			SpeciesSwirlix.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

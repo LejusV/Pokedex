@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eevee Specie to store common natural stats of all Eevees
-	#region SpecieEevee
-	public class SpecieEevee : PokemonSpecie
+	//Eevee Species to store common natural stats of all Eevees
+	#region SpeciesEevee
+	public class SpeciesEevee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEevee? _instance = null;
+		private static SpeciesEevee? _instance = null;
 #nullable restore
-        public static SpecieEevee Instance
+        public static SpeciesEevee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEevee();
+                    _instance = new SpeciesEevee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEevee Builder
-		public SpecieEevee() : base(
+		#region SpeciesEevee Constructor
+		public SpeciesEevee() : base(
 			"Eevee",
 			0.3,
 			6.5,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			45, 65, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Growl",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Focus-Energy",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Yawn",
+				"Refresh",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Tickle",
+				"Covet",
+				"Natural-Gift",
+				"Trump-Card",
+				"Last-Resort",
+				"Captivate",
+				"Synchronoise",
+				"Round",
+				"Echoed-Voice",
+				"Stored-Power",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Eevee Pokemon Class
+	//Eevee PokemonInstance Class
 	#region Eevee
-	public class Eevee : Pokemon
+	public class EeveeInstance : PokemonInstance
 	{
-		#region Eevee Builders
+		#region Eevee Constructors
 		/// <summary>
-		/// Eevee Builder waiting for a Nickname & a Level
+		/// Eevee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Eevee(string nickname, int level)
+		public EeveeInstance(string nickname, int level)
 		: base(
 				133,
-				SpecieEevee.Instance, // Pokemon Specie
+				SpeciesEevee.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eevee Builder only waiting for a Level
 		/// </summary>
-		public Eevee(int level)
+		public EeveeInstance(int level)
 		: base(
 				133,
-				SpecieEevee.Instance, // Pokemon Specie
+				SpeciesEevee.Instance, // PokemonInstance Species
 				"Eevee", level,
 				Normal.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Eevee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Eevee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Eevee() : base(
 			133,
-			SpecieEevee.Instance, // Pokemon Specie
+			SpeciesEevee.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

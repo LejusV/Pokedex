@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Raichu Specie to store common natural stats of all Raichus
-	#region SpecieRaichu
-	public class SpecieRaichu : PokemonSpecie
+	//Raichu Species to store common natural stats of all Raichus
+	#region SpeciesRaichu
+	public class SpeciesRaichu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRaichu? _instance = null;
+		private static SpeciesRaichu? _instance = null;
 #nullable restore
-        public static SpecieRaichu Instance
+        public static SpeciesRaichu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRaichu();
+                    _instance = new SpeciesRaichu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRaichu Builder
-		public SpecieRaichu() : base(
+		#region SpeciesRaichu Constructor
+		public SpeciesRaichu() : base(
 			"Raichu",
 			0.8,
 			30.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			90, 80, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Pay-Day",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Growl",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Signal-Beam",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Magnet-Rise",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Raichu Pokemon Class
+	//Raichu PokemonInstance Class
 	#region Raichu
-	public class Raichu : Pokemon
+	public class RaichuInstance : PokemonInstance
 	{
-		#region Raichu Builders
+		#region Raichu Constructors
 		/// <summary>
-		/// Raichu Builder waiting for a Nickname & a Level
+		/// Raichu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Raichu(string nickname, int level)
+		public RaichuInstance(string nickname, int level)
 		: base(
 				26,
-				SpecieRaichu.Instance, // Pokemon Specie
+				SpeciesRaichu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Raichu Builder only waiting for a Level
 		/// </summary>
-		public Raichu(int level)
+		public RaichuInstance(int level)
 		: base(
 				26,
-				SpecieRaichu.Instance, // Pokemon Specie
+				SpeciesRaichu.Instance, // PokemonInstance Species
 				"Raichu", level,
 				Electric.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Raichu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Raichu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Raichu() : base(
 			26,
-			SpecieRaichu.Instance, // Pokemon Specie
+			SpeciesRaichu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

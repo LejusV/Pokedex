@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ledian Specie to store common natural stats of all Ledians
-	#region SpecieLedian
-	public class SpecieLedian : PokemonSpecie
+	//Ledian Species to store common natural stats of all Ledians
+	#region SpeciesLedian
+	public class SpeciesLedian : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLedian? _instance = null;
+		private static SpeciesLedian? _instance = null;
 #nullable restore
-        public static SpecieLedian Instance
+        public static SpeciesLedian Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLedian();
+                    _instance = new SpeciesLedian();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLedian Builder
-		public SpecieLedian() : base(
+		#region SpeciesLedian Constructor
+		public SpeciesLedian() : base(
 			"Ledian",
 			1.4,
 			35.6,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			55, 110, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Comet-Punch",
+				"Mega-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Headbutt",
+				"Tackle",
+				"Double-Edge",
+				"Supersonic",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"String-Shot",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mach-Punch",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Fling",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Confide",
+				"Infestation",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ledian Pokemon Class
+	//Ledian PokemonInstance Class
 	#region Ledian
-	public class Ledian : Pokemon
+	public class LedianInstance : PokemonInstance
 	{
-		#region Ledian Builders
+		#region Ledian Constructors
 		/// <summary>
-		/// Ledian Builder waiting for a Nickname & a Level
+		/// Ledian Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ledian(string nickname, int level)
+		public LedianInstance(string nickname, int level)
 		: base(
 				166,
-				SpecieLedian.Instance, // Pokemon Specie
+				SpeciesLedian.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ledian Builder only waiting for a Level
 		/// </summary>
-		public Ledian(int level)
+		public LedianInstance(int level)
 		: base(
 				166,
-				SpecieLedian.Instance, // Pokemon Specie
+				SpeciesLedian.Instance, // PokemonInstance Species
 				"Ledian", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ledian Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ledian Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ledian() : base(
 			166,
-			SpecieLedian.Instance, // Pokemon Specie
+			SpeciesLedian.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

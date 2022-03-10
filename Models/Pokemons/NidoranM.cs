@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nidoran-M Specie to store common natural stats of all Nidoran-Ms
-	#region SpecieNidoran-M
-	public class SpecieNidoranM : PokemonSpecie
+	//Nidoran-M Species to store common natural stats of all Nidoran-Ms
+	#region SpeciesNidoran-M
+	public class SpeciesNidoranM : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNidoranM? _instance = null;
+		private static SpeciesNidoranM? _instance = null;
 #nullable restore
-        public static SpecieNidoranM Instance
+        public static SpeciesNidoranM Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNidoranM();
+                    _instance = new SpeciesNidoranM();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNidoran-M Builder
-		public SpecieNidoranM() : base(
+		#region SpeciesNidoran-M Constructor
+		public SpeciesNidoranM() : base(
 			"Nidoran-M",
 			0.5,
 			9.0,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Double-Kick",
+				"Headbutt",
+				"Horn-Attack",
+				"Fury-Attack",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Poison-Sting",
+				"Leer",
+				"Supersonic",
+				"Disable",
+				"Ice-Beam",
+				"Blizzard",
+				"Peck",
+				"Counter",
+				"Strength",
+				"Thunderbolt",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Focus-Energy",
+				"Bide",
+				"Skull-Bash",
+				"Amnesia",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Beat-Up",
+				"Flatter",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Poison-Tail",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Shadow-Claw",
+				"Captivate",
+				"Head-Smash",
+				"Hone-Claws",
+				"Venoshock",
+				"Round",
+				"Echoed-Voice",
+				"Chip-Away",
+				"Drill-Run",
+				"Confide",
+				"Venom-Drench",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nidoran-M Pokemon Class
+	//Nidoran-M PokemonInstance Class
 	#region Nidoran-M
-	public class NidoranM : Pokemon
+	public class NidoranMInstance : PokemonInstance
 	{
-		#region Nidoran-M Builders
+		#region Nidoran-M Constructors
 		/// <summary>
-		/// Nidoran-M Builder waiting for a Nickname & a Level
+		/// Nidoran-M Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public NidoranM(string nickname, int level)
+		public NidoranMInstance(string nickname, int level)
 		: base(
 				32,
-				SpecieNidoranM.Instance, // Pokemon Specie
+				SpeciesNidoranM.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nidoran-M Builder only waiting for a Level
 		/// </summary>
-		public NidoranM(int level)
+		public NidoranMInstance(int level)
 		: base(
 				32,
-				SpecieNidoranM.Instance, // Pokemon Specie
+				SpeciesNidoranM.Instance, // PokemonInstance Species
 				"Nidoran-M", level,
 				Poison.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nidoran-M Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nidoran-M Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public NidoranM() : base(
 			32,
-			SpecieNidoranM.Instance, // Pokemon Specie
+			SpeciesNidoranM.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

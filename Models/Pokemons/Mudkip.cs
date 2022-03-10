@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mudkip Specie to store common natural stats of all Mudkips
-	#region SpecieMudkip
-	public class SpecieMudkip : PokemonSpecie
+	//Mudkip Species to store common natural stats of all Mudkips
+	#region SpeciesMudkip
+	public class SpeciesMudkip : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMudkip? _instance = null;
+		private static SpeciesMudkip? _instance = null;
 #nullable restore
-        public static SpecieMudkip Instance
+        public static SpeciesMudkip Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMudkip();
+                    _instance = new SpeciesMudkip();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMudkip Builder
-		public SpecieMudkip() : base(
+		#region SpeciesMudkip Constructor
+		public SpeciesMudkip() : base(
 			"Mudkip",
 			0.4,
 			7.6,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Growl",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Low-Kick",
+				"Counter",
+				"Strength",
+				"Rock-Throw",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Barrier",
+				"Bide",
+				"Sludge",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Superpower",
+				"Yawn",
+				"Endeavor",
+				"Refresh",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Ice-Ball",
+				"Rock-Tomb",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Avalanche",
+				"Mud-Bomb",
+				"Captivate",
+				"Wide-Guard",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Water-Pledge",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mudkip Pokemon Class
+	//Mudkip PokemonInstance Class
 	#region Mudkip
-	public class Mudkip : Pokemon
+	public class MudkipInstance : PokemonInstance
 	{
-		#region Mudkip Builders
+		#region Mudkip Constructors
 		/// <summary>
-		/// Mudkip Builder waiting for a Nickname & a Level
+		/// Mudkip Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mudkip(string nickname, int level)
+		public MudkipInstance(string nickname, int level)
 		: base(
 				258,
-				SpecieMudkip.Instance, // Pokemon Specie
+				SpeciesMudkip.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mudkip Builder only waiting for a Level
 		/// </summary>
-		public Mudkip(int level)
+		public MudkipInstance(int level)
 		: base(
 				258,
-				SpecieMudkip.Instance, // Pokemon Specie
+				SpeciesMudkip.Instance, // PokemonInstance Species
 				"Mudkip", level,
 				Water.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mudkip Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mudkip Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mudkip() : base(
 			258,
-			SpecieMudkip.Instance, // Pokemon Specie
+			SpeciesMudkip.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sobble Specie to store common natural stats of all Sobbles
-	#region SpecieSobble
-	public class SpecieSobble : PokemonSpecie
+	//Sobble Species to store common natural stats of all Sobbles
+	#region SpeciesSobble
+	public class SpeciesSobble : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSobble? _instance = null;
+		private static SpeciesSobble? _instance = null;
 #nullable restore
-        public static SpecieSobble Instance
+        public static SpeciesSobble Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSobble();
+                    _instance = new SpeciesSobble();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSobble Builder
-		public SpecieSobble() : base(
+		#region SpeciesSobble Constructor
+		public SpeciesSobble() : base(
 			"Sobble",
 			0.3,
 			4.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			70, 40, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sobble Pokemon Class
+	//Sobble PokemonInstance Class
 	#region Sobble
-	public class Sobble : Pokemon
+	public class SobbleInstance : PokemonInstance
 	{
-		#region Sobble Builders
+		#region Sobble Constructors
 		/// <summary>
-		/// Sobble Builder waiting for a Nickname & a Level
+		/// Sobble Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sobble(string nickname, int level)
+		public SobbleInstance(string nickname, int level)
 		: base(
 				816,
-				SpecieSobble.Instance, // Pokemon Specie
+				SpeciesSobble.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sobble Builder only waiting for a Level
 		/// </summary>
-		public Sobble(int level)
+		public SobbleInstance(int level)
 		: base(
 				816,
-				SpecieSobble.Instance, // Pokemon Specie
+				SpeciesSobble.Instance, // PokemonInstance Species
 				"Sobble", level,
 				Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sobble Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sobble Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sobble() : base(
 			816,
-			SpecieSobble.Instance, // Pokemon Specie
+			SpeciesSobble.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

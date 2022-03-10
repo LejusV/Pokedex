@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Togedemaru Specie to store common natural stats of all Togedemarus
-	#region SpecieTogedemaru
-	public class SpecieTogedemaru : PokemonSpecie
+	//Togedemaru Species to store common natural stats of all Togedemarus
+	#region SpeciesTogedemaru
+	public class SpeciesTogedemaru : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTogedemaru? _instance = null;
+		private static SpeciesTogedemaru? _instance = null;
 #nullable restore
-        public static SpecieTogedemaru Instance
+        public static SpeciesTogedemaru Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTogedemaru();
+                    _instance = new SpeciesTogedemaru();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTogedemaru Builder
-		public SpecieTogedemaru() : base(
+		#region SpeciesTogedemaru Constructor
+		public SpeciesTogedemaru() : base(
 			"Togedemaru",
 			0.3,
 			3.3,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			40, 73, // Special Attack & Defense
 			96		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Twineedle",
+				"Pin-Missile",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Flail",
+				"Reversal",
+				"Protect",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Present",
+				"Frustration",
+				"Encore",
+				"Hidden-Power",
+				"Fake-Out",
+				"Facade",
+				"Charge",
+				"Wish",
+				"Tickle",
+				"Gyro-Ball",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Magnet-Rise",
+				"Poison-Jab",
+				"Giga-Impact",
+				"Discharge",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Volt-Switch",
+				"Work-Up",
+				"Wild-Charge",
+				"Fell-Stinger",
+				"Disarming-Voice",
+				"Confide",
+				"Spiky-Shield",
+				"Electric-Terrain",
+				"Nuzzle",
+				"Zing-Zap"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Togedemaru Pokemon Class
+	//Togedemaru PokemonInstance Class
 	#region Togedemaru
-	public class Togedemaru : Pokemon
+	public class TogedemaruInstance : PokemonInstance
 	{
-		#region Togedemaru Builders
+		#region Togedemaru Constructors
 		/// <summary>
-		/// Togedemaru Builder waiting for a Nickname & a Level
+		/// Togedemaru Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Togedemaru(string nickname, int level)
+		public TogedemaruInstance(string nickname, int level)
 		: base(
 				777,
-				SpecieTogedemaru.Instance, // Pokemon Specie
+				SpeciesTogedemaru.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Togedemaru Builder only waiting for a Level
 		/// </summary>
-		public Togedemaru(int level)
+		public TogedemaruInstance(int level)
 		: base(
 				777,
-				SpecieTogedemaru.Instance, // Pokemon Specie
+				SpeciesTogedemaru.Instance, // PokemonInstance Species
 				"Togedemaru", level,
 				Electric.Instance, Steel.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Togedemaru Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Togedemaru Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Togedemaru() : base(
 			777,
-			SpecieTogedemaru.Instance, // Pokemon Specie
+			SpeciesTogedemaru.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Snorunt Specie to store common natural stats of all Snorunts
-	#region SpecieSnorunt
-	public class SpecieSnorunt : PokemonSpecie
+	//Snorunt Species to store common natural stats of all Snorunts
+	#region SpeciesSnorunt
+	public class SpeciesSnorunt : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSnorunt? _instance = null;
+		private static SpeciesSnorunt? _instance = null;
 #nullable restore
-        public static SpecieSnorunt Instance
+        public static SpeciesSnorunt Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSnorunt();
+                    _instance = new SpeciesSnorunt();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSnorunt Builder
-		public SpecieSnorunt() : base(
+		#region SpeciesSnorunt Constructor
+		public SpeciesSnorunt() : base(
 			"Snorunt",
 			0.7,
 			16.8,
@@ -32,23 +34,85 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Disable",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Powder-Snow",
+				"Protect",
+				"Spikes",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Shadow-Ball",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Weather-Ball",
+				"Fake-Tears",
+				"Block",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Switcheroo",
+				"Avalanche",
+				"Ice-Shard",
+				"Ice-Fang",
+				"Captivate",
+				"Round",
+				"Hex",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Snorunt Pokemon Class
+	//Snorunt PokemonInstance Class
 	#region Snorunt
-	public class Snorunt : Pokemon
+	public class SnoruntInstance : PokemonInstance
 	{
-		#region Snorunt Builders
+		#region Snorunt Constructors
 		/// <summary>
-		/// Snorunt Builder waiting for a Nickname & a Level
+		/// Snorunt Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Snorunt(string nickname, int level)
+		public SnoruntInstance(string nickname, int level)
 		: base(
 				361,
-				SpecieSnorunt.Instance, // Pokemon Specie
+				SpeciesSnorunt.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +124,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Snorunt Builder only waiting for a Level
 		/// </summary>
-		public Snorunt(int level)
+		public SnoruntInstance(int level)
 		: base(
 				361,
-				SpecieSnorunt.Instance, // Pokemon Specie
+				SpeciesSnorunt.Instance, // PokemonInstance Species
 				"Snorunt", level,
 				Ice.Instance			
 		)
@@ -73,12 +137,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Snorunt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Snorunt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Snorunt() : base(
 			361,
-			SpecieSnorunt.Instance, // Pokemon Specie
+			SpeciesSnorunt.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

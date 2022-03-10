@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ambipom Specie to store common natural stats of all Ambipoms
-	#region SpecieAmbipom
-	public class SpecieAmbipom : PokemonSpecie
+	//Ambipom Species to store common natural stats of all Ambipoms
+	#region SpeciesAmbipom
+	public class SpeciesAmbipom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAmbipom? _instance = null;
+		private static SpeciesAmbipom? _instance = null;
 #nullable restore
-        public static SpecieAmbipom Instance
+        public static SpeciesAmbipom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAmbipom();
+                    _instance = new SpeciesAmbipom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAmbipom Builder
-		public SpecieAmbipom() : base(
+		#region SpeciesAmbipom Constructor
+		public SpeciesAmbipom() : base(
 			"Ambipom",
 			1.2,
 			20.3,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			60, 66, // Special Attack & Defense
 			115		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tail-Whip",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Screech",
+				"Double-Team",
+				"Swift",
+				"Dream-Eater",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Role-Play",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Tickle",
+				"Aerial-Ace",
+				"Bounce",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Last-Resort",
+				"Seed-Bomb",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Captivate",
+				"Grass-Knot",
+				"Double-Hit",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Acrobatics",
+				"Retaliate",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ambipom Pokemon Class
+	//Ambipom PokemonInstance Class
 	#region Ambipom
-	public class Ambipom : Pokemon
+	public class AmbipomInstance : PokemonInstance
 	{
-		#region Ambipom Builders
+		#region Ambipom Constructors
 		/// <summary>
-		/// Ambipom Builder waiting for a Nickname & a Level
+		/// Ambipom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ambipom(string nickname, int level)
+		public AmbipomInstance(string nickname, int level)
 		: base(
 				424,
-				SpecieAmbipom.Instance, // Pokemon Specie
+				SpeciesAmbipom.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ambipom Builder only waiting for a Level
 		/// </summary>
-		public Ambipom(int level)
+		public AmbipomInstance(int level)
 		: base(
 				424,
-				SpecieAmbipom.Instance, // Pokemon Specie
+				SpeciesAmbipom.Instance, // PokemonInstance Species
 				"Ambipom", level,
 				Normal.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ambipom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ambipom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ambipom() : base(
 			424,
-			SpecieAmbipom.Instance, // Pokemon Specie
+			SpeciesAmbipom.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

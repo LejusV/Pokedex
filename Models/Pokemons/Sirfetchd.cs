@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sirfetchd Specie to store common natural stats of all Sirfetchds
-	#region SpecieSirfetchd
-	public class SpecieSirfetchd : PokemonSpecie
+	//Sirfetchd Species to store common natural stats of all Sirfetchds
+	#region SpeciesSirfetchd
+	public class SpeciesSirfetchd : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSirfetchd? _instance = null;
+		private static SpeciesSirfetchd? _instance = null;
 #nullable restore
-        public static SpecieSirfetchd Instance
+        public static SpeciesSirfetchd Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSirfetchd();
+                    _instance = new SpeciesSirfetchd();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSirfetchd Builder
-		public SpecieSirfetchd() : base(
+		#region SpeciesSirfetchd Constructor
+		public SpeciesSirfetchd() : base(
 			"Sirfetchd",
 			0.8,
 			117.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			68, 82, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sirfetchd Pokemon Class
+	//Sirfetchd PokemonInstance Class
 	#region Sirfetchd
-	public class Sirfetchd : Pokemon
+	public class SirfetchdInstance : PokemonInstance
 	{
-		#region Sirfetchd Builders
+		#region Sirfetchd Constructors
 		/// <summary>
-		/// Sirfetchd Builder waiting for a Nickname & a Level
+		/// Sirfetchd Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sirfetchd(string nickname, int level)
+		public SirfetchdInstance(string nickname, int level)
 		: base(
 				865,
-				SpecieSirfetchd.Instance, // Pokemon Specie
+				SpeciesSirfetchd.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sirfetchd Builder only waiting for a Level
 		/// </summary>
-		public Sirfetchd(int level)
+		public SirfetchdInstance(int level)
 		: base(
 				865,
-				SpecieSirfetchd.Instance, // Pokemon Specie
+				SpeciesSirfetchd.Instance, // PokemonInstance Species
 				"Sirfetchd", level,
 				Fighting.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sirfetchd Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sirfetchd Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sirfetchd() : base(
 			865,
-			SpecieSirfetchd.Instance, // Pokemon Specie
+			SpeciesSirfetchd.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

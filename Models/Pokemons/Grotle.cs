@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grotle Specie to store common natural stats of all Grotles
-	#region SpecieGrotle
-	public class SpecieGrotle : PokemonSpecie
+	//Grotle Species to store common natural stats of all Grotles
+	#region SpeciesGrotle
+	public class SpeciesGrotle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrotle? _instance = null;
+		private static SpeciesGrotle? _instance = null;
 #nullable restore
-        public static SpecieGrotle Instance
+        public static SpeciesGrotle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrotle();
+                    _instance = new SpeciesGrotle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrotle Builder
-		public SpecieGrotle() : base(
+		#region SpeciesGrotle Constructor
+		public SpeciesGrotle() : base(
 			"Grotle",
 			1.1,
 			97.0,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			36		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Bite",
+				"Strength",
+				"Absorb",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Withdraw",
+				"Light-Screen",
+				"Reflect",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Superpower",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Earth-Power",
+				"Rock-Climb",
+				"Leaf-Storm",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Round",
+				"Grass-Pledge",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grotle Pokemon Class
+	//Grotle PokemonInstance Class
 	#region Grotle
-	public class Grotle : Pokemon
+	public class GrotleInstance : PokemonInstance
 	{
-		#region Grotle Builders
+		#region Grotle Constructors
 		/// <summary>
-		/// Grotle Builder waiting for a Nickname & a Level
+		/// Grotle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grotle(string nickname, int level)
+		public GrotleInstance(string nickname, int level)
 		: base(
 				388,
-				SpecieGrotle.Instance, // Pokemon Specie
+				SpeciesGrotle.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grotle Builder only waiting for a Level
 		/// </summary>
-		public Grotle(int level)
+		public GrotleInstance(int level)
 		: base(
 				388,
-				SpecieGrotle.Instance, // Pokemon Specie
+				SpeciesGrotle.Instance, // PokemonInstance Species
 				"Grotle", level,
 				Grass.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grotle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grotle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grotle() : base(
 			388,
-			SpecieGrotle.Instance, // Pokemon Specie
+			SpeciesGrotle.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

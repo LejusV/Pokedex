@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zarude Specie to store common natural stats of all Zarudes
-	#region SpecieZarude
-	public class SpecieZarude : PokemonSpecie
+	//Zarude Species to store common natural stats of all Zarudes
+	#region SpeciesZarude
+	public class SpeciesZarude : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZarude? _instance = null;
+		private static SpeciesZarude? _instance = null;
 #nullable restore
-        public static SpecieZarude Instance
+        public static SpeciesZarude Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZarude();
+                    _instance = new SpeciesZarude();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZarude Builder
-		public SpecieZarude() : base(
+		#region SpeciesZarude Constructor
+		public SpeciesZarude() : base(
 			"Zarude",
 			1.8,
 			70.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			70, 95, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zarude Pokemon Class
+	//Zarude PokemonInstance Class
 	#region Zarude
-	public class Zarude : Pokemon
+	public class ZarudeInstance : PokemonInstance
 	{
-		#region Zarude Builders
+		#region Zarude Constructors
 		/// <summary>
-		/// Zarude Builder waiting for a Nickname & a Level
+		/// Zarude Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zarude(string nickname, int level)
+		public ZarudeInstance(string nickname, int level)
 		: base(
 				893,
-				SpecieZarude.Instance, // Pokemon Specie
+				SpeciesZarude.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zarude Builder only waiting for a Level
 		/// </summary>
-		public Zarude(int level)
+		public ZarudeInstance(int level)
 		: base(
 				893,
-				SpecieZarude.Instance, // Pokemon Specie
+				SpeciesZarude.Instance, // PokemonInstance Species
 				"Zarude", level,
 				Dark.Instance, Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zarude Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zarude Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zarude() : base(
 			893,
-			SpecieZarude.Instance, // Pokemon Specie
+			SpeciesZarude.Instance, // PokemonInstance Species
 			Dark.Instance, Grass.Instance			
 		) {}
 		*/

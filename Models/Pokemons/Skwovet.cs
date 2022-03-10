@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Skwovet Specie to store common natural stats of all Skwovets
-	#region SpecieSkwovet
-	public class SpecieSkwovet : PokemonSpecie
+	//Skwovet Species to store common natural stats of all Skwovets
+	#region SpeciesSkwovet
+	public class SpeciesSkwovet : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSkwovet? _instance = null;
+		private static SpeciesSkwovet? _instance = null;
 #nullable restore
-        public static SpecieSkwovet Instance
+        public static SpeciesSkwovet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSkwovet();
+                    _instance = new SpeciesSkwovet();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSkwovet Builder
-		public SpecieSkwovet() : base(
+		#region SpeciesSkwovet Constructor
+		public SpeciesSkwovet() : base(
 			"Skwovet",
 			0.3,
 			2.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			35, 35, // Special Attack & Defense
 			25		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Skwovet Pokemon Class
+	//Skwovet PokemonInstance Class
 	#region Skwovet
-	public class Skwovet : Pokemon
+	public class SkwovetInstance : PokemonInstance
 	{
-		#region Skwovet Builders
+		#region Skwovet Constructors
 		/// <summary>
-		/// Skwovet Builder waiting for a Nickname & a Level
+		/// Skwovet Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Skwovet(string nickname, int level)
+		public SkwovetInstance(string nickname, int level)
 		: base(
 				819,
-				SpecieSkwovet.Instance, // Pokemon Specie
+				SpeciesSkwovet.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skwovet Builder only waiting for a Level
 		/// </summary>
-		public Skwovet(int level)
+		public SkwovetInstance(int level)
 		: base(
 				819,
-				SpecieSkwovet.Instance, // Pokemon Specie
+				SpeciesSkwovet.Instance, // PokemonInstance Species
 				"Skwovet", level,
 				Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Skwovet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Skwovet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Skwovet() : base(
 			819,
-			SpecieSkwovet.Instance, // Pokemon Specie
+			SpeciesSkwovet.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

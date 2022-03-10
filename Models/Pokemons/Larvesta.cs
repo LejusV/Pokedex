@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Larvesta Specie to store common natural stats of all Larvestas
-	#region SpecieLarvesta
-	public class SpecieLarvesta : PokemonSpecie
+	//Larvesta Species to store common natural stats of all Larvestas
+	#region SpeciesLarvesta
+	public class SpeciesLarvesta : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLarvesta? _instance = null;
+		private static SpeciesLarvesta? _instance = null;
 #nullable restore
-        public static SpecieLarvesta Instance
+        public static SpeciesLarvesta Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLarvesta();
+                    _instance = new SpeciesLarvesta();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLarvesta Builder
-		public SpecieLarvesta() : base(
+		#region SpeciesLarvesta Constructor
+		public SpeciesLarvesta() : base(
 			"Larvesta",
 			1.1,
 			28.8,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			50, 55, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Ember",
+				"Flamethrower",
+				"Absorb",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Fire-Blast",
+				"Amnesia",
+				"Leech-Life",
+				"Rest",
+				"Substitute",
+				"Flame-Wheel",
+				"Snore",
+				"Protect",
+				"Foresight",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Morning-Sun",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Secret-Power",
+				"Overheat",
+				"Signal-Beam",
+				"Calm-Mind",
+				"U-Turn",
+				"Magnet-Rise",
+				"Flare-Blitz",
+				"Bug-Buzz",
+				"Zen-Headbutt",
+				"Bug-Bite",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Larvesta Pokemon Class
+	//Larvesta PokemonInstance Class
 	#region Larvesta
-	public class Larvesta : Pokemon
+	public class LarvestaInstance : PokemonInstance
 	{
-		#region Larvesta Builders
+		#region Larvesta Constructors
 		/// <summary>
-		/// Larvesta Builder waiting for a Nickname & a Level
+		/// Larvesta Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Larvesta(string nickname, int level)
+		public LarvestaInstance(string nickname, int level)
 		: base(
 				636,
-				SpecieLarvesta.Instance, // Pokemon Specie
+				SpeciesLarvesta.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fire.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Larvesta Builder only waiting for a Level
 		/// </summary>
-		public Larvesta(int level)
+		public LarvestaInstance(int level)
 		: base(
 				636,
-				SpecieLarvesta.Instance, // Pokemon Specie
+				SpeciesLarvesta.Instance, // PokemonInstance Species
 				"Larvesta", level,
 				Bug.Instance, Fire.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Larvesta Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Larvesta Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Larvesta() : base(
 			636,
-			SpecieLarvesta.Instance, // Pokemon Specie
+			SpeciesLarvesta.Instance, // PokemonInstance Species
 			Bug.Instance, Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Skiddo Specie to store common natural stats of all Skiddos
-	#region SpecieSkiddo
-	public class SpecieSkiddo : PokemonSpecie
+	//Skiddo Species to store common natural stats of all Skiddos
+	#region SpeciesSkiddo
+	public class SpeciesSkiddo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSkiddo? _instance = null;
+		private static SpeciesSkiddo? _instance = null;
 #nullable restore
-        public static SpecieSkiddo Instance
+        public static SpeciesSkiddo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSkiddo();
+                    _instance = new SpeciesSkiddo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSkiddo Builder
-		public SpecieSkiddo() : base(
+		#region SpeciesSkiddo Constructor
+		public SpeciesSkiddo() : base(
 			"Skiddo",
 			0.9,
 			31.0,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			62, 57, // Special Attack & Defense
 			52		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vine-Whip",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Roar",
+				"Surf",
+				"Strength",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Defense-Curl",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Rollout",
+				"Swagger",
+				"Milk-Drink",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Brick-Break",
+				"Secret-Power",
+				"Bulk-Up",
+				"Leaf-Blade",
+				"Payback",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Grass-Knot",
+				"Round",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Horn-Leech",
+				"Grassy-Terrain",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Skiddo Pokemon Class
+	//Skiddo PokemonInstance Class
 	#region Skiddo
-	public class Skiddo : Pokemon
+	public class SkiddoInstance : PokemonInstance
 	{
-		#region Skiddo Builders
+		#region Skiddo Constructors
 		/// <summary>
-		/// Skiddo Builder waiting for a Nickname & a Level
+		/// Skiddo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Skiddo(string nickname, int level)
+		public SkiddoInstance(string nickname, int level)
 		: base(
 				672,
-				SpecieSkiddo.Instance, // Pokemon Specie
+				SpeciesSkiddo.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skiddo Builder only waiting for a Level
 		/// </summary>
-		public Skiddo(int level)
+		public SkiddoInstance(int level)
 		: base(
 				672,
-				SpecieSkiddo.Instance, // Pokemon Specie
+				SpeciesSkiddo.Instance, // PokemonInstance Species
 				"Skiddo", level,
 				Grass.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Skiddo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Skiddo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Skiddo() : base(
 			672,
-			SpecieSkiddo.Instance, // Pokemon Specie
+			SpeciesSkiddo.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

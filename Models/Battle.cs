@@ -8,8 +8,8 @@ namespace Pokedex.Models
         # region Attributes
         public string Status(Player player1, Player player2)
         {
-            Pokemon player1Pok = player1.Pokemons[0];
-            Pokemon player2Pok = player2.Pokemons[0];
+            PokemonInstance player1Pok = player1.Pokemons[0];
+            PokemonInstance player2Pok = player2.Pokemons[0];
             
             StringBuilder output = new ();
 

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Florges Specie to store common natural stats of all Florgess
-	#region SpecieFlorges
-	public class SpecieFlorges : PokemonSpecie
+	//Florges Species to store common natural stats of all Florgess
+	#region SpeciesFlorges
+	public class SpeciesFlorges : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFlorges? _instance = null;
+		private static SpeciesFlorges? _instance = null;
 #nullable restore
-        public static SpecieFlorges Instance
+        public static SpeciesFlorges Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFlorges();
+                    _instance = new SpeciesFlorges();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFlorges Builder
-		public SpecieFlorges() : base(
+		#region SpeciesFlorges Constructor
+		public SpeciesFlorges() : base(
 			"Florges",
 			1.1,
 			10.0,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			112, 154, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Petal-Dance",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Wish",
+				"Magic-Coat",
+				"Endeavor",
+				"Secret-Power",
+				"Aromatherapy",
+				"Covet",
+				"Magical-Leaf",
+				"Calm-Mind",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Petal-Blizzard",
+				"Disarming-Voice",
+				"Flower-Shield",
+				"Grassy-Terrain",
+				"Misty-Terrain",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Florges Pokemon Class
+	//Florges PokemonInstance Class
 	#region Florges
-	public class Florges : Pokemon
+	public class FlorgesInstance : PokemonInstance
 	{
-		#region Florges Builders
+		#region Florges Constructors
 		/// <summary>
-		/// Florges Builder waiting for a Nickname & a Level
+		/// Florges Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Florges(string nickname, int level)
+		public FlorgesInstance(string nickname, int level)
 		: base(
 				671,
-				SpecieFlorges.Instance, // Pokemon Specie
+				SpeciesFlorges.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Florges Builder only waiting for a Level
 		/// </summary>
-		public Florges(int level)
+		public FlorgesInstance(int level)
 		: base(
 				671,
-				SpecieFlorges.Instance, // Pokemon Specie
+				SpeciesFlorges.Instance, // PokemonInstance Species
 				"Florges", level,
 				Fairy.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Florges Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Florges Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Florges() : base(
 			671,
-			SpecieFlorges.Instance, // Pokemon Specie
+			SpeciesFlorges.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

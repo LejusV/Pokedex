@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zweilous Specie to store common natural stats of all Zweilouss
-	#region SpecieZweilous
-	public class SpecieZweilous : PokemonSpecie
+	//Zweilous Species to store common natural stats of all Zweilouss
+	#region SpeciesZweilous
+	public class SpeciesZweilous : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZweilous? _instance = null;
+		private static SpeciesZweilous? _instance = null;
 #nullable restore
-        public static SpecieZweilous Instance
+        public static SpeciesZweilous Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZweilous();
+                    _instance = new SpeciesZweilous();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZweilous Builder
-		public SpecieZweilous() : base(
+		#region SpeciesZweilous Constructor
+		public SpeciesZweilous() : base(
 			"Zweilous",
 			1.4,
 			50.0,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			65, 70, // Special Attack & Defense
 			58		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Slam",
+				"Headbutt",
+				"Body-Slam",
+				"Bite",
+				"Roar",
+				"Strength",
+				"Dragon-Rage",
+				"Thunder-Wave",
+				"Toxic",
+				"Double-Team",
+				"Focus-Energy",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Psych-Up",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Shock-Wave",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Earth-Power",
+				"Zen-Headbutt",
+				"Draco-Meteor",
+				"Double-Hit",
+				"Round",
+				"Incinerate",
+				"Dragon-Tail",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zweilous Pokemon Class
+	//Zweilous PokemonInstance Class
 	#region Zweilous
-	public class Zweilous : Pokemon
+	public class ZweilousInstance : PokemonInstance
 	{
-		#region Zweilous Builders
+		#region Zweilous Constructors
 		/// <summary>
-		/// Zweilous Builder waiting for a Nickname & a Level
+		/// Zweilous Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zweilous(string nickname, int level)
+		public ZweilousInstance(string nickname, int level)
 		: base(
 				634,
-				SpecieZweilous.Instance, // Pokemon Specie
+				SpeciesZweilous.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zweilous Builder only waiting for a Level
 		/// </summary>
-		public Zweilous(int level)
+		public ZweilousInstance(int level)
 		: base(
 				634,
-				SpecieZweilous.Instance, // Pokemon Specie
+				SpeciesZweilous.Instance, // PokemonInstance Species
 				"Zweilous", level,
 				Dark.Instance, Dragon.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zweilous Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zweilous Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zweilous() : base(
 			634,
-			SpecieZweilous.Instance, // Pokemon Specie
+			SpeciesZweilous.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swoobat Specie to store common natural stats of all Swoobats
-	#region SpecieSwoobat
-	public class SpecieSwoobat : PokemonSpecie
+	//Swoobat Species to store common natural stats of all Swoobats
+	#region SpeciesSwoobat
+	public class SpeciesSwoobat : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwoobat? _instance = null;
+		private static SpeciesSwoobat? _instance = null;
 #nullable restore
-        public static SpecieSwoobat Instance
+        public static SpeciesSwoobat Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwoobat();
+                    _instance = new SpeciesSwoobat();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwoobat Builder
-		public SpecieSwoobat() : base(
+		#region SpeciesSwoobat Constructor
+		public SpeciesSwoobat() : base(
 			"Swoobat",
 			0.9,
 			10.5,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			77, 55, // Special Attack & Defense
 			114		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Fly",
+				"Hyper-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Amnesia",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Flash",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Knock-Off",
+				"Endeavor",
+				"Skill-Swap",
+				"Imprison",
+				"Secret-Power",
+				"Air-Cutter",
+				"Odor-Sleuth",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Roost",
+				"Gyro-Ball",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Assurance",
+				"Embargo",
+				"Air-Slash",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Acrobatics",
+				"Heart-Stamp",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swoobat Pokemon Class
+	//Swoobat PokemonInstance Class
 	#region Swoobat
-	public class Swoobat : Pokemon
+	public class SwoobatInstance : PokemonInstance
 	{
-		#region Swoobat Builders
+		#region Swoobat Constructors
 		/// <summary>
-		/// Swoobat Builder waiting for a Nickname & a Level
+		/// Swoobat Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swoobat(string nickname, int level)
+		public SwoobatInstance(string nickname, int level)
 		: base(
 				528,
-				SpecieSwoobat.Instance, // Pokemon Specie
+				SpeciesSwoobat.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swoobat Builder only waiting for a Level
 		/// </summary>
-		public Swoobat(int level)
+		public SwoobatInstance(int level)
 		: base(
 				528,
-				SpecieSwoobat.Instance, // Pokemon Specie
+				SpeciesSwoobat.Instance, // PokemonInstance Species
 				"Swoobat", level,
 				Psychic.Instance, Flying.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swoobat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swoobat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swoobat() : base(
 			528,
-			SpecieSwoobat.Instance, // Pokemon Specie
+			SpeciesSwoobat.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}
 		*/

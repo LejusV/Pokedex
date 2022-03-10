@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vanillite Specie to store common natural stats of all Vanillites
-	#region SpecieVanillite
-	public class SpecieVanillite : PokemonSpecie
+	//Vanillite Species to store common natural stats of all Vanillites
+	#region SpeciesVanillite
+	public class SpeciesVanillite : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVanillite? _instance = null;
+		private static SpeciesVanillite? _instance = null;
 #nullable restore
-        public static SpecieVanillite Instance
+        public static SpeciesVanillite Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVanillite();
+                    _instance = new SpeciesVanillite();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVanillite Builder
-		public SpecieVanillite() : base(
+		#region SpeciesVanillite Constructor
+		public SpeciesVanillite() : base(
 			"Vanillite",
 			0.4,
 			5.7,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			65, 60, // Special Attack & Defense
 			44		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Acid-Armor",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Magic-Coat",
+				"Imprison",
+				"Secret-Power",
+				"Astonish",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Icicle-Spear",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Avalanche",
+				"Ice-Shard",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Autotomize",
+				"Round",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vanillite Pokemon Class
+	//Vanillite PokemonInstance Class
 	#region Vanillite
-	public class Vanillite : Pokemon
+	public class VanilliteInstance : PokemonInstance
 	{
-		#region Vanillite Builders
+		#region Vanillite Constructors
 		/// <summary>
-		/// Vanillite Builder waiting for a Nickname & a Level
+		/// Vanillite Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vanillite(string nickname, int level)
+		public VanilliteInstance(string nickname, int level)
 		: base(
 				582,
-				SpecieVanillite.Instance, // Pokemon Specie
+				SpeciesVanillite.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vanillite Builder only waiting for a Level
 		/// </summary>
-		public Vanillite(int level)
+		public VanilliteInstance(int level)
 		: base(
 				582,
-				SpecieVanillite.Instance, // Pokemon Specie
+				SpeciesVanillite.Instance, // PokemonInstance Species
 				"Vanillite", level,
 				Ice.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vanillite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vanillite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vanillite() : base(
 			582,
-			SpecieVanillite.Instance, // Pokemon Specie
+			SpeciesVanillite.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

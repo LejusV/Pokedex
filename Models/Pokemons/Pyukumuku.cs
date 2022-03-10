@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pyukumuku Specie to store common natural stats of all Pyukumukus
-	#region SpeciePyukumuku
-	public class SpeciePyukumuku : PokemonSpecie
+	//Pyukumuku Species to store common natural stats of all Pyukumukus
+	#region SpeciesPyukumuku
+	public class SpeciesPyukumuku : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePyukumuku? _instance = null;
+		private static SpeciesPyukumuku? _instance = null;
 #nullable restore
-        public static SpeciePyukumuku Instance
+        public static SpeciesPyukumuku Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePyukumuku();
+                    _instance = new SpeciesPyukumuku();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePyukumuku Builder
-		public SpeciePyukumuku() : base(
+		#region SpeciesPyukumuku Constructor
+		public SpeciesPyukumuku() : base(
 			"Pyukumuku",
 			0.3,
 			1.2,
@@ -32,23 +34,70 @@ namespace Pokedex.Models.Pokemons
 			30, 130, // Special Attack & Defense
 			5		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Counter",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Harden",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Rest",
+				"Substitute",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Safeguard",
+				"Pain-Split",
+				"Baton-Pass",
+				"Rain-Dance",
+				"Psych-Up",
+				"Hail",
+				"Memento",
+				"Taunt",
+				"Helping-Hand",
+				"Mud-Sport",
+				"Tickle",
+				"Water-Sport",
+				"Gastro-Acid",
+				"Soak",
+				"Quash",
+				"Bestow",
+				"Confide",
+				"Venom-Drench",
+				"Purify"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pyukumuku Pokemon Class
+	//Pyukumuku PokemonInstance Class
 	#region Pyukumuku
-	public class Pyukumuku : Pokemon
+	public class PyukumukuInstance : PokemonInstance
 	{
-		#region Pyukumuku Builders
+		#region Pyukumuku Constructors
 		/// <summary>
-		/// Pyukumuku Builder waiting for a Nickname & a Level
+		/// Pyukumuku Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pyukumuku(string nickname, int level)
+		public PyukumukuInstance(string nickname, int level)
 		: base(
 				771,
-				SpeciePyukumuku.Instance, // Pokemon Specie
+				SpeciesPyukumuku.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +109,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pyukumuku Builder only waiting for a Level
 		/// </summary>
-		public Pyukumuku(int level)
+		public PyukumukuInstance(int level)
 		: base(
 				771,
-				SpeciePyukumuku.Instance, // Pokemon Specie
+				SpeciesPyukumuku.Instance, // PokemonInstance Species
 				"Pyukumuku", level,
 				Water.Instance			
 		)
@@ -73,12 +122,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pyukumuku Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pyukumuku Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pyukumuku() : base(
 			771,
-			SpeciePyukumuku.Instance, // Pokemon Specie
+			SpeciesPyukumuku.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

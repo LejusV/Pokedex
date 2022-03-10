@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Carracosta Specie to store common natural stats of all Carracostas
-	#region SpecieCarracosta
-	public class SpecieCarracosta : PokemonSpecie
+	//Carracosta Species to store common natural stats of all Carracostas
+	#region SpeciesCarracosta
+	public class SpeciesCarracosta : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCarracosta? _instance = null;
+		private static SpeciesCarracosta? _instance = null;
 #nullable restore
-        public static SpecieCarracosta Instance
+        public static SpeciesCarracosta Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCarracosta();
+                    _instance = new SpeciesCarracosta();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCarracosta Builder
-		public SpecieCarracosta() : base(
+		#region SpeciesCarracosta Constructor
+		public SpeciesCarracosta() : base(
 			"Carracosta",
 			1.2,
 			81.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			83, 65, // Special Attack & Defense
 			32		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bite",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Withdraw",
+				"Bide",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Icy-Wind",
+				"Sandstorm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Knock-Off",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Water-Pulse",
+				"Brine",
+				"Rock-Polish",
+				"Aqua-Tail",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Aqua-Jet",
+				"Wide-Guard",
+				"Smack-Down",
+				"Round",
+				"Scald",
+				"Shell-Smash",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Carracosta Pokemon Class
+	//Carracosta PokemonInstance Class
 	#region Carracosta
-	public class Carracosta : Pokemon
+	public class CarracostaInstance : PokemonInstance
 	{
-		#region Carracosta Builders
+		#region Carracosta Constructors
 		/// <summary>
-		/// Carracosta Builder waiting for a Nickname & a Level
+		/// Carracosta Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Carracosta(string nickname, int level)
+		public CarracostaInstance(string nickname, int level)
 		: base(
 				565,
-				SpecieCarracosta.Instance, // Pokemon Specie
+				SpeciesCarracosta.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carracosta Builder only waiting for a Level
 		/// </summary>
-		public Carracosta(int level)
+		public CarracostaInstance(int level)
 		: base(
 				565,
-				SpecieCarracosta.Instance, // Pokemon Specie
+				SpeciesCarracosta.Instance, // PokemonInstance Species
 				"Carracosta", level,
 				Water.Instance, Rock.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Carracosta Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Carracosta Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Carracosta() : base(
 			565,
-			SpecieCarracosta.Instance, // Pokemon Specie
+			SpeciesCarracosta.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}
 		*/

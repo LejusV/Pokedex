@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vanillish Specie to store common natural stats of all Vanillishs
-	#region SpecieVanillish
-	public class SpecieVanillish : PokemonSpecie
+	//Vanillish Species to store common natural stats of all Vanillishs
+	#region SpeciesVanillish
+	public class SpeciesVanillish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVanillish? _instance = null;
+		private static SpeciesVanillish? _instance = null;
 #nullable restore
-        public static SpecieVanillish Instance
+        public static SpeciesVanillish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVanillish();
+                    _instance = new SpeciesVanillish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVanillish Builder
-		public SpecieVanillish() : base(
+		#region SpeciesVanillish Constructor
+		public SpeciesVanillish() : base(
 			"Vanillish",
 			1.1,
 			41.0,
@@ -32,23 +34,75 @@ namespace Pokedex.Models.Pokemons
 			80, 75, // Special Attack & Defense
 			59		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Acid-Armor",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Magic-Coat",
+				"Secret-Power",
+				"Astonish",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Icicle-Spear",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Magnet-Rise",
+				"Avalanche",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Round",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vanillish Pokemon Class
+	//Vanillish PokemonInstance Class
 	#region Vanillish
-	public class Vanillish : Pokemon
+	public class VanillishInstance : PokemonInstance
 	{
-		#region Vanillish Builders
+		#region Vanillish Constructors
 		/// <summary>
-		/// Vanillish Builder waiting for a Nickname & a Level
+		/// Vanillish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vanillish(string nickname, int level)
+		public VanillishInstance(string nickname, int level)
 		: base(
 				583,
-				SpecieVanillish.Instance, // Pokemon Specie
+				SpeciesVanillish.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +114,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vanillish Builder only waiting for a Level
 		/// </summary>
-		public Vanillish(int level)
+		public VanillishInstance(int level)
 		: base(
 				583,
-				SpecieVanillish.Instance, // Pokemon Specie
+				SpeciesVanillish.Instance, // PokemonInstance Species
 				"Vanillish", level,
 				Ice.Instance			
 		)
@@ -73,12 +127,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vanillish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vanillish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vanillish() : base(
 			583,
-			SpecieVanillish.Instance, // Pokemon Specie
+			SpeciesVanillish.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

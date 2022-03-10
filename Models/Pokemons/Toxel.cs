@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toxel Specie to store common natural stats of all Toxels
-	#region SpecieToxel
-	public class SpecieToxel : PokemonSpecie
+	//Toxel Species to store common natural stats of all Toxels
+	#region SpeciesToxel
+	public class SpeciesToxel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieToxel? _instance = null;
+		private static SpeciesToxel? _instance = null;
 #nullable restore
-        public static SpecieToxel Instance
+        public static SpeciesToxel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieToxel();
+                    _instance = new SpeciesToxel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieToxel Builder
-		public SpecieToxel() : base(
+		#region SpeciesToxel Constructor
+		public SpeciesToxel() : base(
 			"Toxel",
 			0.4,
 			11.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			54, 35, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Toxel Pokemon Class
+	//Toxel PokemonInstance Class
 	#region Toxel
-	public class Toxel : Pokemon
+	public class ToxelInstance : PokemonInstance
 	{
-		#region Toxel Builders
+		#region Toxel Constructors
 		/// <summary>
-		/// Toxel Builder waiting for a Nickname & a Level
+		/// Toxel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Toxel(string nickname, int level)
+		public ToxelInstance(string nickname, int level)
 		: base(
 				848,
-				SpecieToxel.Instance, // Pokemon Specie
+				SpeciesToxel.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Poison.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxel Builder only waiting for a Level
 		/// </summary>
-		public Toxel(int level)
+		public ToxelInstance(int level)
 		: base(
 				848,
-				SpecieToxel.Instance, // Pokemon Specie
+				SpeciesToxel.Instance, // PokemonInstance Species
 				"Toxel", level,
 				Electric.Instance, Poison.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Toxel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Toxel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Toxel() : base(
 			848,
-			SpecieToxel.Instance, // Pokemon Specie
+			SpeciesToxel.Instance, // PokemonInstance Species
 			Electric.Instance, Poison.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Diancie Specie to store common natural stats of all Diancies
-	#region SpecieDiancie
-	public class SpecieDiancie : PokemonSpecie
+	//Diancie Species to store common natural stats of all Diancies
+	#region SpeciesDiancie
+	public class SpeciesDiancie : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDiancie? _instance = null;
+		private static SpeciesDiancie? _instance = null;
 #nullable restore
-        public static SpecieDiancie Instance
+        public static SpeciesDiancie Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDiancie();
+                    _instance = new SpeciesDiancie();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDiancie Builder
-		public SpecieDiancie() : base(
+		#region SpeciesDiancie Constructor
+		public SpeciesDiancie() : base(
 			"Diancie",
 			0.7,
 			8.8,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			100, 150, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Hyper-Beam",
+				"Rock-Throw",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Reflect",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Sharpen",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Hail",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Endeavor",
+				"Skill-Swap",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Covet",
+				"Calm-Mind",
+				"Gravity",
+				"Gyro-Ball",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Giga-Impact",
+				"Trick-Room",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Guard-Split",
+				"Wonder-Room",
+				"Psyshock",
+				"Smack-Down",
+				"After-You",
+				"Round",
+				"Moonblast",
+				"Confide",
+				"Diamond-Storm",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Diancie Pokemon Class
+	//Diancie PokemonInstance Class
 	#region Diancie
-	public class Diancie : Pokemon
+	public class DiancieInstance : PokemonInstance
 	{
-		#region Diancie Builders
+		#region Diancie Constructors
 		/// <summary>
-		/// Diancie Builder waiting for a Nickname & a Level
+		/// Diancie Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Diancie(string nickname, int level)
+		public DiancieInstance(string nickname, int level)
 		: base(
 				719,
-				SpecieDiancie.Instance, // Pokemon Specie
+				SpeciesDiancie.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fairy.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Diancie Builder only waiting for a Level
 		/// </summary>
-		public Diancie(int level)
+		public DiancieInstance(int level)
 		: base(
 				719,
-				SpecieDiancie.Instance, // Pokemon Specie
+				SpeciesDiancie.Instance, // PokemonInstance Species
 				"Diancie", level,
 				Rock.Instance, Fairy.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Diancie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Diancie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Diancie() : base(
 			719,
-			SpecieDiancie.Instance, // Pokemon Specie
+			SpeciesDiancie.Instance, // PokemonInstance Species
 			Rock.Instance, Fairy.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Indeedee-Male Specie to store common natural stats of all Indeedee-Males
-	#region SpecieIndeedee-Male
-	public class SpecieIndeedeeMale : PokemonSpecie
+	//Indeedee-Male Species to store common natural stats of all Indeedee-Males
+	#region SpeciesIndeedee-Male
+	public class SpeciesIndeedeeMale : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieIndeedeeMale? _instance = null;
+		private static SpeciesIndeedeeMale? _instance = null;
 #nullable restore
-        public static SpecieIndeedeeMale Instance
+        public static SpeciesIndeedeeMale Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieIndeedeeMale();
+                    _instance = new SpeciesIndeedeeMale();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieIndeedee-Male Builder
-		public SpecieIndeedeeMale() : base(
+		#region SpeciesIndeedee-Male Constructor
+		public SpeciesIndeedeeMale() : base(
 			"Indeedee-Male",
 			0.9,
 			28.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			105, 95, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Indeedee-Male Pokemon Class
+	//Indeedee-Male PokemonInstance Class
 	#region Indeedee-Male
-	public class IndeedeeMale : Pokemon
+	public class IndeedeeMaleInstance : PokemonInstance
 	{
-		#region Indeedee-Male Builders
+		#region Indeedee-Male Constructors
 		/// <summary>
-		/// Indeedee-Male Builder waiting for a Nickname & a Level
+		/// Indeedee-Male Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public IndeedeeMale(string nickname, int level)
+		public IndeedeeMaleInstance(string nickname, int level)
 		: base(
 				876,
-				SpecieIndeedeeMale.Instance, // Pokemon Specie
+				SpeciesIndeedeeMale.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Indeedee-Male Builder only waiting for a Level
 		/// </summary>
-		public IndeedeeMale(int level)
+		public IndeedeeMaleInstance(int level)
 		: base(
 				876,
-				SpecieIndeedeeMale.Instance, // Pokemon Specie
+				SpeciesIndeedeeMale.Instance, // PokemonInstance Species
 				"Indeedee-Male", level,
 				Psychic.Instance, Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Indeedee-Male Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Indeedee-Male Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public IndeedeeMale() : base(
 			876,
-			SpecieIndeedeeMale.Instance, // Pokemon Specie
+			SpeciesIndeedeeMale.Instance, // PokemonInstance Species
 			Psychic.Instance, Normal.Instance			
 		) {}
 		*/

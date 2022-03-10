@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bibarel Specie to store common natural stats of all Bibarels
-	#region SpecieBibarel
-	public class SpecieBibarel : PokemonSpecie
+	//Bibarel Species to store common natural stats of all Bibarels
+	#region SpeciesBibarel
+	public class SpeciesBibarel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBibarel? _instance = null;
+		private static SpeciesBibarel? _instance = null;
 #nullable restore
-        public static SpecieBibarel Instance
+        public static SpeciesBibarel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBibarel();
+                    _instance = new SpeciesBibarel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBibarel Builder
-		public SpecieBibarel() : base(
+		#region SpeciesBibarel Constructor
+		public SpeciesBibarel() : base(
 			"Bibarel",
 			1.0,
 			31.5,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			71		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Growl",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Defense-Curl",
+				"Waterfall",
+				"Swift",
+				"Amnesia",
+				"Rest",
+				"Hyper-Fang",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Superpower",
+				"Yawn",
+				"Secret-Power",
+				"Dive",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Pluck",
+				"Fling",
+				"Last-Resort",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Aqua-Jet",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Rototiller",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bibarel Pokemon Class
+	//Bibarel PokemonInstance Class
 	#region Bibarel
-	public class Bibarel : Pokemon
+	public class BibarelInstance : PokemonInstance
 	{
-		#region Bibarel Builders
+		#region Bibarel Constructors
 		/// <summary>
-		/// Bibarel Builder waiting for a Nickname & a Level
+		/// Bibarel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bibarel(string nickname, int level)
+		public BibarelInstance(string nickname, int level)
 		: base(
 				400,
-				SpecieBibarel.Instance, // Pokemon Specie
+				SpeciesBibarel.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Water.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bibarel Builder only waiting for a Level
 		/// </summary>
-		public Bibarel(int level)
+		public BibarelInstance(int level)
 		: base(
 				400,
-				SpecieBibarel.Instance, // Pokemon Specie
+				SpeciesBibarel.Instance, // PokemonInstance Species
 				"Bibarel", level,
 				Normal.Instance, Water.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bibarel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bibarel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bibarel() : base(
 			400,
-			SpecieBibarel.Instance, // Pokemon Specie
+			SpeciesBibarel.Instance, // PokemonInstance Species
 			Normal.Instance, Water.Instance			
 		) {}
 		*/

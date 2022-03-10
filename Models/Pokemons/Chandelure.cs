@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Chandelure Specie to store common natural stats of all Chandelures
-	#region SpecieChandelure
-	public class SpecieChandelure : PokemonSpecie
+	//Chandelure Species to store common natural stats of all Chandelures
+	#region SpeciesChandelure
+	public class SpeciesChandelure : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieChandelure? _instance = null;
+		private static SpeciesChandelure? _instance = null;
 #nullable restore
-        public static SpecieChandelure Instance
+        public static SpeciesChandelure Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieChandelure();
+                    _instance = new SpeciesChandelure();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieChandelure Builder
-		public SpecieChandelure() : base(
+		#region SpeciesChandelure Constructor
+		public SpeciesChandelure() : base(
 			"Chandelure",
 			1.0,
 			34.3,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			145, 90, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Flamethrower",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Smog",
+				"Fire-Blast",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Secret-Power",
+				"Overheat",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Payback",
+				"Embargo",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Trick-Room",
+				"Telekinesis",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Hex",
+				"Incinerate",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Chandelure Pokemon Class
+	//Chandelure PokemonInstance Class
 	#region Chandelure
-	public class Chandelure : Pokemon
+	public class ChandelureInstance : PokemonInstance
 	{
-		#region Chandelure Builders
+		#region Chandelure Constructors
 		/// <summary>
-		/// Chandelure Builder waiting for a Nickname & a Level
+		/// Chandelure Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Chandelure(string nickname, int level)
+		public ChandelureInstance(string nickname, int level)
 		: base(
 				609,
-				SpecieChandelure.Instance, // Pokemon Specie
+				SpeciesChandelure.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Chandelure Builder only waiting for a Level
 		/// </summary>
-		public Chandelure(int level)
+		public ChandelureInstance(int level)
 		: base(
 				609,
-				SpecieChandelure.Instance, // Pokemon Specie
+				SpeciesChandelure.Instance, // PokemonInstance Species
 				"Chandelure", level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Chandelure Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Chandelure Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Chandelure() : base(
 			609,
-			SpecieChandelure.Instance, // Pokemon Specie
+			SpeciesChandelure.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kubfu Specie to store common natural stats of all Kubfus
-	#region SpecieKubfu
-	public class SpecieKubfu : PokemonSpecie
+	//Kubfu Species to store common natural stats of all Kubfus
+	#region SpeciesKubfu
+	public class SpeciesKubfu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKubfu? _instance = null;
+		private static SpeciesKubfu? _instance = null;
 #nullable restore
-        public static SpecieKubfu Instance
+        public static SpeciesKubfu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKubfu();
+                    _instance = new SpeciesKubfu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKubfu Builder
-		public SpecieKubfu() : base(
+		#region SpeciesKubfu Constructor
+		public SpeciesKubfu() : base(
 			"Kubfu",
 			0.6,
 			12.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			53, 50, // Special Attack & Defense
 			72		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kubfu Pokemon Class
+	//Kubfu PokemonInstance Class
 	#region Kubfu
-	public class Kubfu : Pokemon
+	public class KubfuInstance : PokemonInstance
 	{
-		#region Kubfu Builders
+		#region Kubfu Constructors
 		/// <summary>
-		/// Kubfu Builder waiting for a Nickname & a Level
+		/// Kubfu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kubfu(string nickname, int level)
+		public KubfuInstance(string nickname, int level)
 		: base(
 				891,
-				SpecieKubfu.Instance, // Pokemon Specie
+				SpeciesKubfu.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kubfu Builder only waiting for a Level
 		/// </summary>
-		public Kubfu(int level)
+		public KubfuInstance(int level)
 		: base(
 				891,
-				SpecieKubfu.Instance, // Pokemon Specie
+				SpeciesKubfu.Instance, // PokemonInstance Species
 				"Kubfu", level,
 				Fighting.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kubfu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kubfu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kubfu() : base(
 			891,
-			SpecieKubfu.Instance, // Pokemon Specie
+			SpeciesKubfu.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

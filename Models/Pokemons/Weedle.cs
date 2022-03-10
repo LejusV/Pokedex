@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Weedle Specie to store common natural stats of all Weedles
-	#region SpecieWeedle
-	public class SpecieWeedle : PokemonSpecie
+	//Weedle Species to store common natural stats of all Weedles
+	#region SpeciesWeedle
+	public class SpeciesWeedle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWeedle? _instance = null;
+		private static SpeciesWeedle? _instance = null;
 #nullable restore
-        public static SpecieWeedle Instance
+        public static SpeciesWeedle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWeedle();
+                    _instance = new SpeciesWeedle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWeedle Builder
-		public SpecieWeedle() : base(
+		#region SpeciesWeedle Constructor
+		public SpeciesWeedle() : base(
 			"Weedle",
 			0.3,
 			3.2,
@@ -32,23 +34,38 @@ namespace Pokedex.Models.Pokemons
 			20, 20, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Poison-Sting",
+				"String-Shot",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Weedle Pokemon Class
+	//Weedle PokemonInstance Class
 	#region Weedle
-	public class Weedle : Pokemon
+	public class WeedleInstance : PokemonInstance
 	{
-		#region Weedle Builders
+		#region Weedle Constructors
 		/// <summary>
-		/// Weedle Builder waiting for a Nickname & a Level
+		/// Weedle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Weedle(string nickname, int level)
+		public WeedleInstance(string nickname, int level)
 		: base(
 				13,
-				SpecieWeedle.Instance, // Pokemon Specie
+				SpeciesWeedle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -60,10 +77,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Weedle Builder only waiting for a Level
 		/// </summary>
-		public Weedle(int level)
+		public WeedleInstance(int level)
 		: base(
 				13,
-				SpecieWeedle.Instance, // Pokemon Specie
+				SpeciesWeedle.Instance, // PokemonInstance Species
 				"Weedle", level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -73,12 +90,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Weedle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Weedle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Weedle() : base(
 			13,
-			SpecieWeedle.Instance, // Pokemon Specie
+			SpeciesWeedle.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}
 		*/

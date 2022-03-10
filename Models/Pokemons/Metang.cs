@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Metang Specie to store common natural stats of all Metangs
-	#region SpecieMetang
-	public class SpecieMetang : PokemonSpecie
+	//Metang Species to store common natural stats of all Metangs
+	#region SpeciesMetang
+	public class SpeciesMetang : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMetang? _instance = null;
+		private static SpeciesMetang? _instance = null;
 #nullable restore
-        public static SpecieMetang Instance
+        public static SpeciesMetang Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMetang();
+                    _instance = new SpeciesMetang();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMetang Builder
-		public SpecieMetang() : base(
+		#region SpeciesMetang Constructor
+		public SpeciesMetang() : base(
 			"Metang",
 			1.2,
 			202.5,
@@ -32,23 +34,111 @@ namespace Pokedex.Models.Pokemons
 			55, 80, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Cut",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Agility",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Self-Destruct",
+				"Swift",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Pursuit",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Trick",
+				"Brick-Break",
+				"Secret-Power",
+				"Meteor-Mash",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Gravity",
+				"Miracle-Eye",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Bullet-Punch",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Psyshock",
+				"Telekinesis",
+				"Round",
+				"Bulldoze",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Metang Pokemon Class
+	//Metang PokemonInstance Class
 	#region Metang
-	public class Metang : Pokemon
+	public class MetangInstance : PokemonInstance
 	{
-		#region Metang Builders
+		#region Metang Constructors
 		/// <summary>
-		/// Metang Builder waiting for a Nickname & a Level
+		/// Metang Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Metang(string nickname, int level)
+		public MetangInstance(string nickname, int level)
 		: base(
 				375,
-				SpecieMetang.Instance, // Pokemon Specie
+				SpeciesMetang.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
 		)
@@ -60,10 +150,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Metang Builder only waiting for a Level
 		/// </summary>
-		public Metang(int level)
+		public MetangInstance(int level)
 		: base(
 				375,
-				SpecieMetang.Instance, // Pokemon Specie
+				SpeciesMetang.Instance, // PokemonInstance Species
 				"Metang", level,
 				Steel.Instance, Psychic.Instance			
 		)
@@ -73,12 +163,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Metang Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Metang Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Metang() : base(
 			375,
-			SpecieMetang.Instance, // Pokemon Specie
+			SpeciesMetang.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}
 		*/

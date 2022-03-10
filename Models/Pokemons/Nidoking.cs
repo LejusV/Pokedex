@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nidoking Specie to store common natural stats of all Nidokings
-	#region SpecieNidoking
-	public class SpecieNidoking : PokemonSpecie
+	//Nidoking Species to store common natural stats of all Nidokings
+	#region SpeciesNidoking
+	public class SpeciesNidoking : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNidoking? _instance = null;
+		private static SpeciesNidoking? _instance = null;
 #nullable restore
-        public static SpecieNidoking Instance
+        public static SpeciesNidoking Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNidoking();
+                    _instance = new SpeciesNidoking();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNidoking Builder
-		public SpecieNidoking() : base(
+		#region SpeciesNidoking Constructor
+		public SpeciesNidoking() : base(
 			"Nidoking",
 			1.4,
 			62.0,
@@ -32,23 +34,151 @@ namespace Pokedex.Models.Pokemons
 			85, 75, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Pay-Day",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Cut",
+				"Double-Kick",
+				"Mega-Kick",
+				"Headbutt",
+				"Horn-Attack",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Poison-Sting",
+				"Roar",
+				"Flamethrower",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Peck",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Focus-Energy",
+				"Bide",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Megahorn",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Fling",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Venoshock",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Chip-Away",
+				"Incinerate",
+				"Quash",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Drill-Run",
+				"Confide",
+				"Power-Up-Punch",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nidoking Pokemon Class
+	//Nidoking PokemonInstance Class
 	#region Nidoking
-	public class Nidoking : Pokemon
+	public class NidokingInstance : PokemonInstance
 	{
-		#region Nidoking Builders
+		#region Nidoking Constructors
 		/// <summary>
-		/// Nidoking Builder waiting for a Nickname & a Level
+		/// Nidoking Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nidoking(string nickname, int level)
+		public NidokingInstance(string nickname, int level)
 		: base(
 				34,
-				SpecieNidoking.Instance, // Pokemon Specie
+				SpeciesNidoking.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Ground.Instance			
 		)
@@ -60,10 +190,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nidoking Builder only waiting for a Level
 		/// </summary>
-		public Nidoking(int level)
+		public NidokingInstance(int level)
 		: base(
 				34,
-				SpecieNidoking.Instance, // Pokemon Specie
+				SpeciesNidoking.Instance, // PokemonInstance Species
 				"Nidoking", level,
 				Poison.Instance, Ground.Instance			
 		)
@@ -73,12 +203,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nidoking Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nidoking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nidoking() : base(
 			34,
-			SpecieNidoking.Instance, // Pokemon Specie
+			SpeciesNidoking.Instance, // PokemonInstance Species
 			Poison.Instance, Ground.Instance			
 		) {}
 		*/

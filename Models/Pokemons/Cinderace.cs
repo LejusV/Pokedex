@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cinderace Specie to store common natural stats of all Cinderaces
-	#region SpecieCinderace
-	public class SpecieCinderace : PokemonSpecie
+	//Cinderace Species to store common natural stats of all Cinderaces
+	#region SpeciesCinderace
+	public class SpeciesCinderace : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCinderace? _instance = null;
+		private static SpeciesCinderace? _instance = null;
 #nullable restore
-        public static SpecieCinderace Instance
+        public static SpeciesCinderace Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCinderace();
+                    _instance = new SpeciesCinderace();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCinderace Builder
-		public SpecieCinderace() : base(
+		#region SpeciesCinderace Constructor
+		public SpeciesCinderace() : base(
 			"Cinderace",
 			1.4,
 			33.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			65, 75, // Special Attack & Defense
 			119		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cinderace Pokemon Class
+	//Cinderace PokemonInstance Class
 	#region Cinderace
-	public class Cinderace : Pokemon
+	public class CinderaceInstance : PokemonInstance
 	{
-		#region Cinderace Builders
+		#region Cinderace Constructors
 		/// <summary>
-		/// Cinderace Builder waiting for a Nickname & a Level
+		/// Cinderace Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cinderace(string nickname, int level)
+		public CinderaceInstance(string nickname, int level)
 		: base(
 				815,
-				SpecieCinderace.Instance, // Pokemon Specie
+				SpeciesCinderace.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cinderace Builder only waiting for a Level
 		/// </summary>
-		public Cinderace(int level)
+		public CinderaceInstance(int level)
 		: base(
 				815,
-				SpecieCinderace.Instance, // Pokemon Specie
+				SpeciesCinderace.Instance, // PokemonInstance Species
 				"Cinderace", level,
 				Fire.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cinderace Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cinderace Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cinderace() : base(
 			815,
-			SpecieCinderace.Instance, // Pokemon Specie
+			SpeciesCinderace.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

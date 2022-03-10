@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Torkoal Specie to store common natural stats of all Torkoals
-	#region SpecieTorkoal
-	public class SpecieTorkoal : PokemonSpecie
+	//Torkoal Species to store common natural stats of all Torkoals
+	#region SpeciesTorkoal
+	public class SpeciesTorkoal : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTorkoal? _instance = null;
+		private static SpeciesTorkoal? _instance = null;
 #nullable restore
-        public static SpecieTorkoal Instance
+        public static SpeciesTorkoal Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTorkoal();
+                    _instance = new SpeciesTorkoal();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTorkoal Builder
-		public SpecieTorkoal() : base(
+		#region SpeciesTorkoal Constructor
+		public SpeciesTorkoal() : base(
 			"Torkoal",
 			0.5,
 			80.4,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			85, 70, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Earthquake",
+				"Fissure",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Smokescreen",
+				"Withdraw",
+				"Self-Destruct",
+				"Smog",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Amnesia",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Flame-Wheel",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Nature-Power",
+				"Superpower",
+				"Yawn",
+				"Eruption",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Earth-Power",
+				"Giga-Impact",
+				"Lava-Plume",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Flame-Burst",
+				"Flame-Charge",
+				"After-You",
+				"Round",
+				"Clear-Smog",
+				"Shell-Smash",
+				"Incinerate",
+				"Inferno",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Torkoal Pokemon Class
+	//Torkoal PokemonInstance Class
 	#region Torkoal
-	public class Torkoal : Pokemon
+	public class TorkoalInstance : PokemonInstance
 	{
-		#region Torkoal Builders
+		#region Torkoal Constructors
 		/// <summary>
-		/// Torkoal Builder waiting for a Nickname & a Level
+		/// Torkoal Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Torkoal(string nickname, int level)
+		public TorkoalInstance(string nickname, int level)
 		: base(
 				324,
-				SpecieTorkoal.Instance, // Pokemon Specie
+				SpeciesTorkoal.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Torkoal Builder only waiting for a Level
 		/// </summary>
-		public Torkoal(int level)
+		public TorkoalInstance(int level)
 		: base(
 				324,
-				SpecieTorkoal.Instance, // Pokemon Specie
+				SpeciesTorkoal.Instance, // PokemonInstance Species
 				"Torkoal", level,
 				Fire.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Torkoal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Torkoal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Torkoal() : base(
 			324,
-			SpecieTorkoal.Instance, // Pokemon Specie
+			SpeciesTorkoal.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

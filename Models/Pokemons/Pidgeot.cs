@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pidgeot Specie to store common natural stats of all Pidgeots
-	#region SpeciePidgeot
-	public class SpeciePidgeot : PokemonSpecie
+	//Pidgeot Species to store common natural stats of all Pidgeots
+	#region SpeciesPidgeot
+	public class SpeciesPidgeot : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePidgeot? _instance = null;
+		private static SpeciesPidgeot? _instance = null;
 #nullable restore
-        public static SpeciePidgeot Instance
+        public static SpeciesPidgeot Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePidgeot();
+                    _instance = new SpeciesPidgeot();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePidgeot Builder
-		public SpeciePidgeot() : base(
+		#region SpeciesPidgeot Constructor
+		public SpeciesPidgeot() : base(
 			"Pidgeot",
 			1.5,
 			39.5,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			70, 70, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Gust",
+				"Wing-Attack",
+				"Whirlwind",
+				"Fly",
+				"Sand-Attack",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Mirror-Move",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Secret-Power",
+				"Feather-Dance",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Work-Up",
+				"Hurricane",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pidgeot Pokemon Class
+	//Pidgeot PokemonInstance Class
 	#region Pidgeot
-	public class Pidgeot : Pokemon
+	public class PidgeotInstance : PokemonInstance
 	{
-		#region Pidgeot Builders
+		#region Pidgeot Constructors
 		/// <summary>
-		/// Pidgeot Builder waiting for a Nickname & a Level
+		/// Pidgeot Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pidgeot(string nickname, int level)
+		public PidgeotInstance(string nickname, int level)
 		: base(
 				18,
-				SpeciePidgeot.Instance, // Pokemon Specie
+				SpeciesPidgeot.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pidgeot Builder only waiting for a Level
 		/// </summary>
-		public Pidgeot(int level)
+		public PidgeotInstance(int level)
 		: base(
 				18,
-				SpeciePidgeot.Instance, // Pokemon Specie
+				SpeciesPidgeot.Instance, // PokemonInstance Species
 				"Pidgeot", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pidgeot Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pidgeot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pidgeot() : base(
 			18,
-			SpeciePidgeot.Instance, // Pokemon Specie
+			SpeciesPidgeot.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

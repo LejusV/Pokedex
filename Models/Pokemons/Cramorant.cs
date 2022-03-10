@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cramorant Specie to store common natural stats of all Cramorants
-	#region SpecieCramorant
-	public class SpecieCramorant : PokemonSpecie
+	//Cramorant Species to store common natural stats of all Cramorants
+	#region SpeciesCramorant
+	public class SpeciesCramorant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCramorant? _instance = null;
+		private static SpeciesCramorant? _instance = null;
 #nullable restore
-        public static SpecieCramorant Instance
+        public static SpeciesCramorant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCramorant();
+                    _instance = new SpeciesCramorant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCramorant Builder
-		public SpecieCramorant() : base(
+		#region SpeciesCramorant Constructor
+		public SpeciesCramorant() : base(
 			"Cramorant",
 			0.8,
 			18.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			85, 95, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cramorant Pokemon Class
+	//Cramorant PokemonInstance Class
 	#region Cramorant
-	public class Cramorant : Pokemon
+	public class CramorantInstance : PokemonInstance
 	{
-		#region Cramorant Builders
+		#region Cramorant Constructors
 		/// <summary>
-		/// Cramorant Builder waiting for a Nickname & a Level
+		/// Cramorant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cramorant(string nickname, int level)
+		public CramorantInstance(string nickname, int level)
 		: base(
 				845,
-				SpecieCramorant.Instance, // Pokemon Specie
+				SpeciesCramorant.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cramorant Builder only waiting for a Level
 		/// </summary>
-		public Cramorant(int level)
+		public CramorantInstance(int level)
 		: base(
 				845,
-				SpecieCramorant.Instance, // Pokemon Specie
+				SpeciesCramorant.Instance, // PokemonInstance Species
 				"Cramorant", level,
 				Flying.Instance, Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cramorant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cramorant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cramorant() : base(
 			845,
-			SpecieCramorant.Instance, // Pokemon Specie
+			SpeciesCramorant.Instance, // PokemonInstance Species
 			Flying.Instance, Water.Instance			
 		) {}
 		*/

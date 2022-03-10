@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Anorith Specie to store common natural stats of all Anoriths
-	#region SpecieAnorith
-	public class SpecieAnorith : PokemonSpecie
+	//Anorith Species to store common natural stats of all Anoriths
+	#region SpeciesAnorith
+	public class SpeciesAnorith : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAnorith? _instance = null;
+		private static SpeciesAnorith? _instance = null;
 #nullable restore
-        public static SpecieAnorith Instance
+        public static SpeciesAnorith Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAnorith();
+                    _instance = new SpeciesAnorith();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAnorith Builder
-		public SpecieAnorith() : base(
+		#region SpeciesAnorith Constructor
+		public SpeciesAnorith() : base(
 			"Anorith",
 			0.7,
 			12.5,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Water-Gun",
+				"String-Shot",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Mud-Sport",
+				"Crush-Claw",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Rock-Polish",
+				"X-Scissor",
+				"Earth-Power",
+				"Cross-Poison",
+				"Captivate",
+				"Stealth-Rock",
+				"Bug-Bite",
+				"Aqua-Jet",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Struggle-Bug",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Anorith Pokemon Class
+	//Anorith PokemonInstance Class
 	#region Anorith
-	public class Anorith : Pokemon
+	public class AnorithInstance : PokemonInstance
 	{
-		#region Anorith Builders
+		#region Anorith Constructors
 		/// <summary>
-		/// Anorith Builder waiting for a Nickname & a Level
+		/// Anorith Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Anorith(string nickname, int level)
+		public AnorithInstance(string nickname, int level)
 		: base(
 				347,
-				SpecieAnorith.Instance, // Pokemon Specie
+				SpeciesAnorith.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Bug.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Anorith Builder only waiting for a Level
 		/// </summary>
-		public Anorith(int level)
+		public AnorithInstance(int level)
 		: base(
 				347,
-				SpecieAnorith.Instance, // Pokemon Specie
+				SpeciesAnorith.Instance, // PokemonInstance Species
 				"Anorith", level,
 				Rock.Instance, Bug.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Anorith Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Anorith Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Anorith() : base(
 			347,
-			SpecieAnorith.Instance, // Pokemon Specie
+			SpeciesAnorith.Instance, // PokemonInstance Species
 			Rock.Instance, Bug.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Perrserker Specie to store common natural stats of all Perrserkers
-	#region SpeciePerrserker
-	public class SpeciePerrserker : PokemonSpecie
+	//Perrserker Species to store common natural stats of all Perrserkers
+	#region SpeciesPerrserker
+	public class SpeciesPerrserker : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePerrserker? _instance = null;
+		private static SpeciesPerrserker? _instance = null;
 #nullable restore
-        public static SpeciePerrserker Instance
+        public static SpeciesPerrserker Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePerrserker();
+                    _instance = new SpeciesPerrserker();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePerrserker Builder
-		public SpeciePerrserker() : base(
+		#region SpeciesPerrserker Constructor
+		public SpeciesPerrserker() : base(
 			"Perrserker",
 			0.8,
 			28.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 60, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Perrserker Pokemon Class
+	//Perrserker PokemonInstance Class
 	#region Perrserker
-	public class Perrserker : Pokemon
+	public class PerrserkerInstance : PokemonInstance
 	{
-		#region Perrserker Builders
+		#region Perrserker Constructors
 		/// <summary>
-		/// Perrserker Builder waiting for a Nickname & a Level
+		/// Perrserker Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Perrserker(string nickname, int level)
+		public PerrserkerInstance(string nickname, int level)
 		: base(
 				863,
-				SpeciePerrserker.Instance, // Pokemon Specie
+				SpeciesPerrserker.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Perrserker Builder only waiting for a Level
 		/// </summary>
-		public Perrserker(int level)
+		public PerrserkerInstance(int level)
 		: base(
 				863,
-				SpeciePerrserker.Instance, // Pokemon Specie
+				SpeciesPerrserker.Instance, // PokemonInstance Species
 				"Perrserker", level,
 				Steel.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Perrserker Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Perrserker Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Perrserker() : base(
 			863,
-			SpeciePerrserker.Instance, // Pokemon Specie
+			SpeciesPerrserker.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

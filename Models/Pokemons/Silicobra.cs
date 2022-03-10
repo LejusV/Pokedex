@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Silicobra Specie to store common natural stats of all Silicobras
-	#region SpecieSilicobra
-	public class SpecieSilicobra : PokemonSpecie
+	//Silicobra Species to store common natural stats of all Silicobras
+	#region SpeciesSilicobra
+	public class SpeciesSilicobra : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSilicobra? _instance = null;
+		private static SpeciesSilicobra? _instance = null;
 #nullable restore
-        public static SpecieSilicobra Instance
+        public static SpeciesSilicobra Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSilicobra();
+                    _instance = new SpeciesSilicobra();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSilicobra Builder
-		public SpecieSilicobra() : base(
+		#region SpeciesSilicobra Constructor
+		public SpeciesSilicobra() : base(
 			"Silicobra",
 			2.2,
 			7.6,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			35, 50, // Special Attack & Defense
 			46		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Silicobra Pokemon Class
+	//Silicobra PokemonInstance Class
 	#region Silicobra
-	public class Silicobra : Pokemon
+	public class SilicobraInstance : PokemonInstance
 	{
-		#region Silicobra Builders
+		#region Silicobra Constructors
 		/// <summary>
-		/// Silicobra Builder waiting for a Nickname & a Level
+		/// Silicobra Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Silicobra(string nickname, int level)
+		public SilicobraInstance(string nickname, int level)
 		: base(
 				843,
-				SpecieSilicobra.Instance, // Pokemon Specie
+				SpeciesSilicobra.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Silicobra Builder only waiting for a Level
 		/// </summary>
-		public Silicobra(int level)
+		public SilicobraInstance(int level)
 		: base(
 				843,
-				SpecieSilicobra.Instance, // Pokemon Specie
+				SpeciesSilicobra.Instance, // PokemonInstance Species
 				"Silicobra", level,
 				Ground.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Silicobra Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Silicobra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Silicobra() : base(
 			843,
-			SpecieSilicobra.Instance, // Pokemon Specie
+			SpeciesSilicobra.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

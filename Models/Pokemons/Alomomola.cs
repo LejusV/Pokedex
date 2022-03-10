@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Alomomola Specie to store common natural stats of all Alomomolas
-	#region SpecieAlomomola
-	public class SpecieAlomomola : PokemonSpecie
+	//Alomomola Species to store common natural stats of all Alomomolas
+	#region SpeciesAlomomola
+	public class SpeciesAlomomola : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAlomomola? _instance = null;
+		private static SpeciesAlomomola? _instance = null;
 #nullable restore
-        public static SpecieAlomomola Instance
+        public static SpeciesAlomomola Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAlomomola();
+                    _instance = new SpeciesAlomomola();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAlomomola Builder
-		public SpecieAlomomola() : base(
+		#region SpeciesAlomomola Constructor
+		public SpeciesAlomomola() : base(
 			"Alomomola",
 			1.2,
 			31.6,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			40, 45, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Mist",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Waterfall",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Magic-Coat",
+				"Knock-Off",
+				"Refresh",
+				"Secret-Power",
+				"Dive",
+				"Tickle",
+				"Bounce",
+				"Water-Sport",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Healing-Wish",
+				"Brine",
+				"Aqua-Ring",
+				"Aqua-Jet",
+				"Wide-Guard",
+				"Soak",
+				"Round",
+				"Scald",
+				"Heal-Pulse",
+				"Play-Nice",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Alomomola Pokemon Class
+	//Alomomola PokemonInstance Class
 	#region Alomomola
-	public class Alomomola : Pokemon
+	public class AlomomolaInstance : PokemonInstance
 	{
-		#region Alomomola Builders
+		#region Alomomola Constructors
 		/// <summary>
-		/// Alomomola Builder waiting for a Nickname & a Level
+		/// Alomomola Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Alomomola(string nickname, int level)
+		public AlomomolaInstance(string nickname, int level)
 		: base(
 				594,
-				SpecieAlomomola.Instance, // Pokemon Specie
+				SpeciesAlomomola.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Alomomola Builder only waiting for a Level
 		/// </summary>
-		public Alomomola(int level)
+		public AlomomolaInstance(int level)
 		: base(
 				594,
-				SpecieAlomomola.Instance, // Pokemon Specie
+				SpeciesAlomomola.Instance, // PokemonInstance Species
 				"Alomomola", level,
 				Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Alomomola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Alomomola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Alomomola() : base(
 			594,
-			SpecieAlomomola.Instance, // Pokemon Specie
+			SpeciesAlomomola.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golduck Specie to store common natural stats of all Golducks
-	#region SpecieGolduck
-	public class SpecieGolduck : PokemonSpecie
+	//Golduck Species to store common natural stats of all Golducks
+	#region SpeciesGolduck
+	public class SpeciesGolduck : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGolduck? _instance = null;
+		private static SpeciesGolduck? _instance = null;
 #nullable restore
-        public static SpecieGolduck Instance
+        public static SpeciesGolduck Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGolduck();
+                    _instance = new SpeciesGolduck();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGolduck Builder
-		public SpecieGolduck() : base(
+		#region SpeciesGolduck Constructor
+		public SpeciesGolduck() : base(
 			"Golduck",
 			1.7,
 			76.6,
@@ -32,23 +34,129 @@ namespace Pokedex.Models.Pokemons
 			95, 80, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Pay-Day",
+				"Ice-Punch",
+				"Scratch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Disable",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Bide",
+				"Waterfall",
+				"Swift",
+				"Skull-Bash",
+				"Amnesia",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Role-Play",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Water-Sport",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Fling",
+				"Me-First",
+				"Worry-Seed",
+				"Aqua-Tail",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Captivate",
+				"Aqua-Jet",
+				"Hone-Claws",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Soak",
+				"Low-Sweep",
+				"Round",
+				"Scald",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Golduck Pokemon Class
+	//Golduck PokemonInstance Class
 	#region Golduck
-	public class Golduck : Pokemon
+	public class GolduckInstance : PokemonInstance
 	{
-		#region Golduck Builders
+		#region Golduck Constructors
 		/// <summary>
-		/// Golduck Builder waiting for a Nickname & a Level
+		/// Golduck Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Golduck(string nickname, int level)
+		public GolduckInstance(string nickname, int level)
 		: base(
 				55,
-				SpecieGolduck.Instance, // Pokemon Specie
+				SpeciesGolduck.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +168,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golduck Builder only waiting for a Level
 		/// </summary>
-		public Golduck(int level)
+		public GolduckInstance(int level)
 		: base(
 				55,
-				SpecieGolduck.Instance, // Pokemon Specie
+				SpeciesGolduck.Instance, // PokemonInstance Species
 				"Golduck", level,
 				Water.Instance			
 		)
@@ -73,12 +181,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Golduck Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Golduck Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Golduck() : base(
 			55,
-			SpecieGolduck.Instance, // Pokemon Specie
+			SpeciesGolduck.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

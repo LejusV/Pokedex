@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Snom Specie to store common natural stats of all Snoms
-	#region SpecieSnom
-	public class SpecieSnom : PokemonSpecie
+	//Snom Species to store common natural stats of all Snoms
+	#region SpeciesSnom
+	public class SpeciesSnom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSnom? _instance = null;
+		private static SpeciesSnom? _instance = null;
 #nullable restore
-        public static SpecieSnom Instance
+        public static SpeciesSnom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSnom();
+                    _instance = new SpeciesSnom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSnom Builder
-		public SpecieSnom() : base(
+		#region SpeciesSnom Constructor
+		public SpeciesSnom() : base(
 			"Snom",
 			0.3,
 			3.8,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			45, 30, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Snom Pokemon Class
+	//Snom PokemonInstance Class
 	#region Snom
-	public class Snom : Pokemon
+	public class SnomInstance : PokemonInstance
 	{
-		#region Snom Builders
+		#region Snom Constructors
 		/// <summary>
-		/// Snom Builder waiting for a Nickname & a Level
+		/// Snom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Snom(string nickname, int level)
+		public SnomInstance(string nickname, int level)
 		: base(
 				872,
-				SpecieSnom.Instance, // Pokemon Specie
+				SpeciesSnom.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Bug.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Snom Builder only waiting for a Level
 		/// </summary>
-		public Snom(int level)
+		public SnomInstance(int level)
 		: base(
 				872,
-				SpecieSnom.Instance, // Pokemon Specie
+				SpeciesSnom.Instance, // PokemonInstance Species
 				"Snom", level,
 				Ice.Instance, Bug.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Snom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Snom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Snom() : base(
 			872,
-			SpecieSnom.Instance, // Pokemon Specie
+			SpeciesSnom.Instance, // PokemonInstance Species
 			Ice.Instance, Bug.Instance			
 		) {}
 		*/

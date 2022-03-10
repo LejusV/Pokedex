@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lunatone Specie to store common natural stats of all Lunatones
-	#region SpecieLunatone
-	public class SpecieLunatone : PokemonSpecie
+	//Lunatone Species to store common natural stats of all Lunatones
+	#region SpeciesLunatone
+	public class SpeciesLunatone : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLunatone? _instance = null;
+		private static SpeciesLunatone? _instance = null;
 #nullable restore
-        public static SpecieLunatone Instance
+        public static SpeciesLunatone Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLunatone();
+                    _instance = new SpeciesLunatone();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLunatone Builder
-		public SpecieLunatone() : base(
+		#region SpeciesLunatone Constructor
+		public SpeciesLunatone() : base(
 			"Lunatone",
 			1.0,
 			168.0,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			95, 85, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Rock-Throw",
+				"Earthquake",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Self-Destruct",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Facade",
+				"Helping-Hand",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Gravity",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Embargo",
+				"Heal-Block",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Smack-Down",
+				"Round",
+				"Acrobatics",
+				"Bulldoze",
+				"Moonblast",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lunatone Pokemon Class
+	//Lunatone PokemonInstance Class
 	#region Lunatone
-	public class Lunatone : Pokemon
+	public class LunatoneInstance : PokemonInstance
 	{
-		#region Lunatone Builders
+		#region Lunatone Constructors
 		/// <summary>
-		/// Lunatone Builder waiting for a Nickname & a Level
+		/// Lunatone Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lunatone(string nickname, int level)
+		public LunatoneInstance(string nickname, int level)
 		: base(
 				337,
-				SpecieLunatone.Instance, // Pokemon Specie
+				SpeciesLunatone.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Psychic.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lunatone Builder only waiting for a Level
 		/// </summary>
-		public Lunatone(int level)
+		public LunatoneInstance(int level)
 		: base(
 				337,
-				SpecieLunatone.Instance, // Pokemon Specie
+				SpeciesLunatone.Instance, // PokemonInstance Species
 				"Lunatone", level,
 				Rock.Instance, Psychic.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lunatone Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lunatone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lunatone() : base(
 			337,
-			SpecieLunatone.Instance, // Pokemon Specie
+			SpeciesLunatone.Instance, // PokemonInstance Species
 			Rock.Instance, Psychic.Instance			
 		) {}
 		*/

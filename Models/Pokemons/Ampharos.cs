@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ampharos Specie to store common natural stats of all Amphaross
-	#region SpecieAmpharos
-	public class SpecieAmpharos : PokemonSpecie
+	//Ampharos Species to store common natural stats of all Amphaross
+	#region SpeciesAmpharos
+	public class SpeciesAmpharos : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAmpharos? _instance = null;
+		private static SpeciesAmpharos? _instance = null;
 #nullable restore
-        public static SpecieAmpharos Instance
+        public static SpeciesAmpharos Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAmpharos();
+                    _instance = new SpeciesAmpharos();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAmpharos Builder
-		public SpecieAmpharos() : base(
+		#region SpeciesAmpharos Constructor
+		public SpeciesAmpharos() : base(
 			"Ampharos",
 			1.4,
 			61.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			115, 90, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Defense-Curl",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Cotton-Spore",
+				"Protect",
+				"Zap-Cannon",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Charge",
+				"Brick-Break",
+				"Secret-Power",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Magnet-Rise",
+				"Dragon-Pulse",
+				"Power-Gem",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Electro-Ball",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Volt-Switch",
+				"Bulldoze",
+				"Electroweb",
+				"Wild-Charge",
+				"Cotton-Guard",
+				"Ion-Deluge",
+				"Confide",
+				"Magnetic-Flux",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ampharos Pokemon Class
+	//Ampharos PokemonInstance Class
 	#region Ampharos
-	public class Ampharos : Pokemon
+	public class AmpharosInstance : PokemonInstance
 	{
-		#region Ampharos Builders
+		#region Ampharos Constructors
 		/// <summary>
-		/// Ampharos Builder waiting for a Nickname & a Level
+		/// Ampharos Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ampharos(string nickname, int level)
+		public AmpharosInstance(string nickname, int level)
 		: base(
 				181,
-				SpecieAmpharos.Instance, // Pokemon Specie
+				SpeciesAmpharos.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ampharos Builder only waiting for a Level
 		/// </summary>
-		public Ampharos(int level)
+		public AmpharosInstance(int level)
 		: base(
 				181,
-				SpecieAmpharos.Instance, // Pokemon Specie
+				SpeciesAmpharos.Instance, // PokemonInstance Species
 				"Ampharos", level,
 				Electric.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ampharos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ampharos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ampharos() : base(
 			181,
-			SpecieAmpharos.Instance, // Pokemon Specie
+			SpeciesAmpharos.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

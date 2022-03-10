@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Scorbunny Specie to store common natural stats of all Scorbunnys
-	#region SpecieScorbunny
-	public class SpecieScorbunny : PokemonSpecie
+	//Scorbunny Species to store common natural stats of all Scorbunnys
+	#region SpeciesScorbunny
+	public class SpeciesScorbunny : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieScorbunny? _instance = null;
+		private static SpeciesScorbunny? _instance = null;
 #nullable restore
-        public static SpecieScorbunny Instance
+        public static SpeciesScorbunny Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieScorbunny();
+                    _instance = new SpeciesScorbunny();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieScorbunny Builder
-		public SpecieScorbunny() : base(
+		#region SpeciesScorbunny Constructor
+		public SpeciesScorbunny() : base(
 			"Scorbunny",
 			0.3,
 			4.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			69		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Scorbunny Pokemon Class
+	//Scorbunny PokemonInstance Class
 	#region Scorbunny
-	public class Scorbunny : Pokemon
+	public class ScorbunnyInstance : PokemonInstance
 	{
-		#region Scorbunny Builders
+		#region Scorbunny Constructors
 		/// <summary>
-		/// Scorbunny Builder waiting for a Nickname & a Level
+		/// Scorbunny Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Scorbunny(string nickname, int level)
+		public ScorbunnyInstance(string nickname, int level)
 		: base(
 				813,
-				SpecieScorbunny.Instance, // Pokemon Specie
+				SpeciesScorbunny.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scorbunny Builder only waiting for a Level
 		/// </summary>
-		public Scorbunny(int level)
+		public ScorbunnyInstance(int level)
 		: base(
 				813,
-				SpecieScorbunny.Instance, // Pokemon Specie
+				SpeciesScorbunny.Instance, // PokemonInstance Species
 				"Scorbunny", level,
 				Fire.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Scorbunny Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Scorbunny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Scorbunny() : base(
 			813,
-			SpecieScorbunny.Instance, // Pokemon Specie
+			SpeciesScorbunny.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

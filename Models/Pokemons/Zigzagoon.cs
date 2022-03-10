@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zigzagoon Specie to store common natural stats of all Zigzagoons
-	#region SpecieZigzagoon
-	public class SpecieZigzagoon : PokemonSpecie
+	//Zigzagoon Species to store common natural stats of all Zigzagoons
+	#region SpeciesZigzagoon
+	public class SpeciesZigzagoon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZigzagoon? _instance = null;
+		private static SpeciesZigzagoon? _instance = null;
 #nullable restore
-        public static SpecieZigzagoon Instance
+        public static SpeciesZigzagoon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZigzagoon();
+                    _instance = new SpeciesZigzagoon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZigzagoon Builder
-		public SpecieZigzagoon() : base(
+		#region SpeciesZigzagoon Constructor
+		public SpeciesZigzagoon() : base(
 			"Zigzagoon",
 			0.4,
 			17.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			30, 41, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Pin-Missile",
+				"Growl",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Swift",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Belly-Drum",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Extreme-Speed",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Secret-Power",
+				"Mud-Sport",
+				"Hyper-Voice",
+				"Odor-Sleuth",
+				"Tickle",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Fling",
+				"Last-Resort",
+				"Seed-Bomb",
+				"Rock-Climb",
+				"Gunk-Shot",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Hone-Claws",
+				"Simple-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Bestow",
+				"Work-Up",
+				"Confide",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zigzagoon Pokemon Class
+	//Zigzagoon PokemonInstance Class
 	#region Zigzagoon
-	public class Zigzagoon : Pokemon
+	public class ZigzagoonInstance : PokemonInstance
 	{
-		#region Zigzagoon Builders
+		#region Zigzagoon Constructors
 		/// <summary>
-		/// Zigzagoon Builder waiting for a Nickname & a Level
+		/// Zigzagoon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zigzagoon(string nickname, int level)
+		public ZigzagoonInstance(string nickname, int level)
 		: base(
 				263,
-				SpecieZigzagoon.Instance, // Pokemon Specie
+				SpeciesZigzagoon.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zigzagoon Builder only waiting for a Level
 		/// </summary>
-		public Zigzagoon(int level)
+		public ZigzagoonInstance(int level)
 		: base(
 				263,
-				SpecieZigzagoon.Instance, // Pokemon Specie
+				SpeciesZigzagoon.Instance, // PokemonInstance Species
 				"Zigzagoon", level,
 				Normal.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zigzagoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zigzagoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zigzagoon() : base(
 			263,
-			SpecieZigzagoon.Instance, // Pokemon Specie
+			SpeciesZigzagoon.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

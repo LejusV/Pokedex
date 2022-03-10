@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Milcery Specie to store common natural stats of all Milcerys
-	#region SpecieMilcery
-	public class SpecieMilcery : PokemonSpecie
+	//Milcery Species to store common natural stats of all Milcerys
+	#region SpeciesMilcery
+	public class SpeciesMilcery : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMilcery? _instance = null;
+		private static SpeciesMilcery? _instance = null;
 #nullable restore
-        public static SpecieMilcery Instance
+        public static SpeciesMilcery Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMilcery();
+                    _instance = new SpeciesMilcery();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMilcery Builder
-		public SpecieMilcery() : base(
+		#region SpeciesMilcery Constructor
+		public SpeciesMilcery() : base(
 			"Milcery",
 			0.2,
 			0.3,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 61, // Special Attack & Defense
 			34		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Milcery Pokemon Class
+	//Milcery PokemonInstance Class
 	#region Milcery
-	public class Milcery : Pokemon
+	public class MilceryInstance : PokemonInstance
 	{
-		#region Milcery Builders
+		#region Milcery Constructors
 		/// <summary>
-		/// Milcery Builder waiting for a Nickname & a Level
+		/// Milcery Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Milcery(string nickname, int level)
+		public MilceryInstance(string nickname, int level)
 		: base(
 				868,
-				SpecieMilcery.Instance, // Pokemon Specie
+				SpeciesMilcery.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Milcery Builder only waiting for a Level
 		/// </summary>
-		public Milcery(int level)
+		public MilceryInstance(int level)
 		: base(
 				868,
-				SpecieMilcery.Instance, // Pokemon Specie
+				SpeciesMilcery.Instance, // PokemonInstance Species
 				"Milcery", level,
 				Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Milcery Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Milcery Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Milcery() : base(
 			868,
-			SpecieMilcery.Instance, // Pokemon Specie
+			SpeciesMilcery.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

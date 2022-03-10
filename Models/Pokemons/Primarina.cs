@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Primarina Specie to store common natural stats of all Primarinas
-	#region SpeciePrimarina
-	public class SpeciePrimarina : PokemonSpecie
+	//Primarina Species to store common natural stats of all Primarinas
+	#region SpeciesPrimarina
+	public class SpeciesPrimarina : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePrimarina? _instance = null;
+		private static SpeciesPrimarina? _instance = null;
 #nullable restore
-        public static SpeciePrimarina Instance
+        public static SpeciesPrimarina Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePrimarina();
+                    _instance = new SpeciesPrimarina();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePrimarina Builder
-		public SpeciePrimarina() : base(
+		#region SpeciesPrimarina Constructor
+		public SpeciesPrimarina() : base(
 			"Primarina",
 			1.8,
 			44.0,
@@ -32,23 +34,85 @@ namespace Pokedex.Models.Pokemons
 			126, 116, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Growl",
+				"Sing",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Waterfall",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Hail",
+				"Facade",
+				"Hyper-Voice",
+				"Hydro-Cannon",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Captivate",
+				"Aqua-Jet",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Acrobatics",
+				"Water-Pledge",
+				"Work-Up",
+				"Disarming-Voice",
+				"Misty-Terrain",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam",
+				"Baby-Doll-Eyes",
+				"Sparkling-Aria"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Primarina Pokemon Class
+	//Primarina PokemonInstance Class
 	#region Primarina
-	public class Primarina : Pokemon
+	public class PrimarinaInstance : PokemonInstance
 	{
-		#region Primarina Builders
+		#region Primarina Constructors
 		/// <summary>
-		/// Primarina Builder waiting for a Nickname & a Level
+		/// Primarina Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Primarina(string nickname, int level)
+		public PrimarinaInstance(string nickname, int level)
 		: base(
 				730,
-				SpeciePrimarina.Instance, // Pokemon Specie
+				SpeciesPrimarina.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fairy.Instance			
 		)
@@ -60,10 +124,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Primarina Builder only waiting for a Level
 		/// </summary>
-		public Primarina(int level)
+		public PrimarinaInstance(int level)
 		: base(
 				730,
-				SpeciePrimarina.Instance, // Pokemon Specie
+				SpeciesPrimarina.Instance, // PokemonInstance Species
 				"Primarina", level,
 				Water.Instance, Fairy.Instance			
 		)
@@ -73,12 +137,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Primarina Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Primarina Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Primarina() : base(
 			730,
-			SpeciePrimarina.Instance, // Pokemon Specie
+			SpeciesPrimarina.Instance, // PokemonInstance Species
 			Water.Instance, Fairy.Instance			
 		) {}
 		*/

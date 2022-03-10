@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yveltal Specie to store common natural stats of all Yveltals
-	#region SpecieYveltal
-	public class SpecieYveltal : PokemonSpecie
+	//Yveltal Species to store common natural stats of all Yveltals
+	#region SpeciesYveltal
+	public class SpeciesYveltal : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieYveltal? _instance = null;
+		private static SpeciesYveltal? _instance = null;
 #nullable restore
-        public static SpecieYveltal Instance
+        public static SpeciesYveltal Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieYveltal();
+                    _instance = new SpeciesYveltal();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieYveltal Builder
-		public SpecieYveltal() : base(
+		#region SpeciesYveltal Constructor
+		public SpeciesYveltal() : base(
 			"Yveltal",
 			5.8,
 			203.0,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			131, 98, // Special Attack & Defense
 			99		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Cut",
+				"Fly",
+				"Disable",
+				"Hyper-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Steel-Wing",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aerial-Ace",
+				"Block",
+				"Dragon-Claw",
+				"Roost",
+				"Tailwind",
+				"U-Turn",
+				"Embargo",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Air-Slash",
+				"Dragon-Rush",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Sky-Drop",
+				"Acrobatics",
+				"Hurricane",
+				"Snarl",
+				"Phantom-Force",
+				"Confide",
+				"Oblivion-Wing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Yveltal Pokemon Class
+	//Yveltal PokemonInstance Class
 	#region Yveltal
-	public class Yveltal : Pokemon
+	public class YveltalInstance : PokemonInstance
 	{
-		#region Yveltal Builders
+		#region Yveltal Constructors
 		/// <summary>
-		/// Yveltal Builder waiting for a Nickname & a Level
+		/// Yveltal Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Yveltal(string nickname, int level)
+		public YveltalInstance(string nickname, int level)
 		: base(
 				717,
-				SpecieYveltal.Instance, // Pokemon Specie
+				SpeciesYveltal.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yveltal Builder only waiting for a Level
 		/// </summary>
-		public Yveltal(int level)
+		public YveltalInstance(int level)
 		: base(
 				717,
-				SpecieYveltal.Instance, // Pokemon Specie
+				SpeciesYveltal.Instance, // PokemonInstance Species
 				"Yveltal", level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Yveltal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Yveltal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Yveltal() : base(
 			717,
-			SpecieYveltal.Instance, // Pokemon Specie
+			SpeciesYveltal.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}
 		*/

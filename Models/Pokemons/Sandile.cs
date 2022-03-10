@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sandile Specie to store common natural stats of all Sandiles
-	#region SpecieSandile
-	public class SpecieSandile : PokemonSpecie
+	//Sandile Species to store common natural stats of all Sandiles
+	#region SpeciesSandile
+	public class SpeciesSandile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSandile? _instance = null;
+		private static SpeciesSandile? _instance = null;
 #nullable restore
-        public static SpecieSandile Instance
+        public static SpeciesSandile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSandile();
+                    _instance = new SpeciesSandile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSandile Builder
-		public SpecieSandile() : base(
+		#region SpeciesSandile Constructor
+		public SpeciesSandile() : base(
 			"Sandile",
 			0.7,
 			15.2,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			35, 35, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Counter",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Double-Team",
+				"Focus-Energy",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Crunch",
+				"Beat-Up",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Me-First",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Thunder-Fang",
+				"Fire-Fang",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Snarl",
+				"Confide",
+				"Power-Trip"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sandile Pokemon Class
+	//Sandile PokemonInstance Class
 	#region Sandile
-	public class Sandile : Pokemon
+	public class SandileInstance : PokemonInstance
 	{
-		#region Sandile Builders
+		#region Sandile Constructors
 		/// <summary>
-		/// Sandile Builder waiting for a Nickname & a Level
+		/// Sandile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sandile(string nickname, int level)
+		public SandileInstance(string nickname, int level)
 		: base(
 				551,
-				SpecieSandile.Instance, // Pokemon Specie
+				SpeciesSandile.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dark.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sandile Builder only waiting for a Level
 		/// </summary>
-		public Sandile(int level)
+		public SandileInstance(int level)
 		: base(
 				551,
-				SpecieSandile.Instance, // Pokemon Specie
+				SpeciesSandile.Instance, // PokemonInstance Species
 				"Sandile", level,
 				Ground.Instance, Dark.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sandile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sandile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sandile() : base(
 			551,
-			SpecieSandile.Instance, // Pokemon Specie
+			SpeciesSandile.Instance, // PokemonInstance Species
 			Ground.Instance, Dark.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hippopotas Specie to store common natural stats of all Hippopotass
-	#region SpecieHippopotas
-	public class SpecieHippopotas : PokemonSpecie
+	//Hippopotas Species to store common natural stats of all Hippopotass
+	#region SpeciesHippopotas
+	public class SpeciesHippopotas : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHippopotas? _instance = null;
+		private static SpeciesHippopotas? _instance = null;
 #nullable restore
-        public static SpecieHippopotas Instance
+        public static SpeciesHippopotas Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHippopotas();
+                    _instance = new SpeciesHippopotas();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHippopotas Builder
-		public SpecieHippopotas() : base(
+		#region SpeciesHippopotas Constructor
+		public SpeciesHippopotas() : base(
 			"Hippopotas",
 			0.8,
 			49.5,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			38, 42, // Special Attack & Defense
 			32		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Whirlwind",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Roar",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Superpower",
+				"Revenge",
+				"Yawn",
+				"Secret-Power",
+				"Slack-Off",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Earth-Power",
+				"Captivate",
+				"Stealth-Rock",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hippopotas Pokemon Class
+	//Hippopotas PokemonInstance Class
 	#region Hippopotas
-	public class Hippopotas : Pokemon
+	public class HippopotasInstance : PokemonInstance
 	{
-		#region Hippopotas Builders
+		#region Hippopotas Constructors
 		/// <summary>
-		/// Hippopotas Builder waiting for a Nickname & a Level
+		/// Hippopotas Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hippopotas(string nickname, int level)
+		public HippopotasInstance(string nickname, int level)
 		: base(
 				449,
-				SpecieHippopotas.Instance, // Pokemon Specie
+				SpeciesHippopotas.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hippopotas Builder only waiting for a Level
 		/// </summary>
-		public Hippopotas(int level)
+		public HippopotasInstance(int level)
 		: base(
 				449,
-				SpecieHippopotas.Instance, // Pokemon Specie
+				SpeciesHippopotas.Instance, // PokemonInstance Species
 				"Hippopotas", level,
 				Ground.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hippopotas Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hippopotas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hippopotas() : base(
 			449,
-			SpecieHippopotas.Instance, // Pokemon Specie
+			SpeciesHippopotas.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

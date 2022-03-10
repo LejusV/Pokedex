@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gyarados Specie to store common natural stats of all Gyaradoss
-	#region SpecieGyarados
-	public class SpecieGyarados : PokemonSpecie
+	//Gyarados Species to store common natural stats of all Gyaradoss
+	#region SpeciesGyarados
+	public class SpeciesGyarados : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGyarados? _instance = null;
+		private static SpeciesGyarados? _instance = null;
 #nullable restore
-        public static SpecieGyarados Instance
+        public static SpeciesGyarados Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGyarados();
+                    _instance = new SpeciesGyarados();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGyarados Builder
-		public SpecieGyarados() : base(
+		#region SpeciesGyarados Constructor
+		public SpeciesGyarados() : base(
 			"Gyarados",
 			6.5,
 			235.0,
@@ -32,23 +34,121 @@ namespace Pokedex.Models.Pokemons
 			60, 100, // Special Attack & Defense
 			81		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Flamethrower",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Strength",
+				"Dragon-Rage",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Waterfall",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Crunch",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Secret-Power",
+				"Dive",
+				"Bounce",
+				"Dragon-Dance",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Payback",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Fang",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Round",
+				"Scald",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Hurricane",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gyarados Pokemon Class
+	//Gyarados PokemonInstance Class
 	#region Gyarados
-	public class Gyarados : Pokemon
+	public class GyaradosInstance : PokemonInstance
 	{
-		#region Gyarados Builders
+		#region Gyarados Constructors
 		/// <summary>
-		/// Gyarados Builder waiting for a Nickname & a Level
+		/// Gyarados Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gyarados(string nickname, int level)
+		public GyaradosInstance(string nickname, int level)
 		: base(
 				130,
-				SpecieGyarados.Instance, // Pokemon Specie
+				SpeciesGyarados.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
 		)
@@ -60,10 +160,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gyarados Builder only waiting for a Level
 		/// </summary>
-		public Gyarados(int level)
+		public GyaradosInstance(int level)
 		: base(
 				130,
-				SpecieGyarados.Instance, // Pokemon Specie
+				SpeciesGyarados.Instance, // PokemonInstance Species
 				"Gyarados", level,
 				Water.Instance, Flying.Instance			
 		)
@@ -73,12 +173,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gyarados Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gyarados Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gyarados() : base(
 			130,
-			SpecieGyarados.Instance, // Pokemon Specie
+			SpeciesGyarados.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pawniard Specie to store common natural stats of all Pawniards
-	#region SpeciePawniard
-	public class SpeciePawniard : PokemonSpecie
+	//Pawniard Species to store common natural stats of all Pawniards
+	#region SpeciesPawniard
+	public class SpeciesPawniard : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePawniard? _instance = null;
+		private static SpeciesPawniard? _instance = null;
 #nullable restore
-        public static SpeciePawniard Instance
+        public static SpeciesPawniard Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePawniard();
+                    _instance = new SpeciesPawniard();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePawniard Builder
-		public SpeciePawniard() : base(
+		#region SpeciesPawniard Constructor
+		public SpeciesPawniard() : base(
 			"Pawniard",
 			0.5,
 			10.2,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Guillotine",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Leer",
+				"Low-Kick",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Role-Play",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Fling",
+				"Sucker-Punch",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"X-Scissor",
+				"Shadow-Claw",
+				"Psycho-Cut",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Dual-Chop",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pawniard Pokemon Class
+	//Pawniard PokemonInstance Class
 	#region Pawniard
-	public class Pawniard : Pokemon
+	public class PawniardInstance : PokemonInstance
 	{
-		#region Pawniard Builders
+		#region Pawniard Constructors
 		/// <summary>
-		/// Pawniard Builder waiting for a Nickname & a Level
+		/// Pawniard Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pawniard(string nickname, int level)
+		public PawniardInstance(string nickname, int level)
 		: base(
 				624,
-				SpeciePawniard.Instance, // Pokemon Specie
+				SpeciesPawniard.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Steel.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pawniard Builder only waiting for a Level
 		/// </summary>
-		public Pawniard(int level)
+		public PawniardInstance(int level)
 		: base(
 				624,
-				SpeciePawniard.Instance, // Pokemon Specie
+				SpeciesPawniard.Instance, // PokemonInstance Species
 				"Pawniard", level,
 				Dark.Instance, Steel.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pawniard Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pawniard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pawniard() : base(
 			624,
-			SpeciePawniard.Instance, // Pokemon Specie
+			SpeciesPawniard.Instance, // PokemonInstance Species
 			Dark.Instance, Steel.Instance			
 		) {}
 		*/

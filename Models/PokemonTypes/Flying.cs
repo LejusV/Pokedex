@@ -1,6 +1,6 @@
-﻿namespace Pokedex.Models.PokemonTypes
+﻿namespace Pokedex.Models.PokeTypes
 {
-    public class Flying : PokemonType
+    public class Flying : PokeType
     {
 #nullable enable
         private static Flying? _instance = null;

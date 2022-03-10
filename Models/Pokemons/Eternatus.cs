@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eternatus Specie to store common natural stats of all Eternatuss
-	#region SpecieEternatus
-	public class SpecieEternatus : PokemonSpecie
+	//Eternatus Species to store common natural stats of all Eternatuss
+	#region SpeciesEternatus
+	public class SpeciesEternatus : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEternatus? _instance = null;
+		private static SpeciesEternatus? _instance = null;
 #nullable restore
-        public static SpecieEternatus Instance
+        public static SpeciesEternatus Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEternatus();
+                    _instance = new SpeciesEternatus();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEternatus Builder
-		public SpecieEternatus() : base(
+		#region SpeciesEternatus Constructor
+		public SpeciesEternatus() : base(
 			"Eternatus",
 			20.0,
 			950.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			145, 95, // Special Attack & Defense
 			130		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Eternatus Pokemon Class
+	//Eternatus PokemonInstance Class
 	#region Eternatus
-	public class Eternatus : Pokemon
+	public class EternatusInstance : PokemonInstance
 	{
-		#region Eternatus Builders
+		#region Eternatus Constructors
 		/// <summary>
-		/// Eternatus Builder waiting for a Nickname & a Level
+		/// Eternatus Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Eternatus(string nickname, int level)
+		public EternatusInstance(string nickname, int level)
 		: base(
 				890,
-				SpecieEternatus.Instance, // Pokemon Specie
+				SpeciesEternatus.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eternatus Builder only waiting for a Level
 		/// </summary>
-		public Eternatus(int level)
+		public EternatusInstance(int level)
 		: base(
 				890,
-				SpecieEternatus.Instance, // Pokemon Specie
+				SpeciesEternatus.Instance, // PokemonInstance Species
 				"Eternatus", level,
 				Poison.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Eternatus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Eternatus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Eternatus() : base(
 			890,
-			SpecieEternatus.Instance, // Pokemon Specie
+			SpeciesEternatus.Instance, // PokemonInstance Species
 			Poison.Instance, Dragon.Instance			
 		) {}
 		*/

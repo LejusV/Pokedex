@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tyrantrum Specie to store common natural stats of all Tyrantrums
-	#region SpecieTyrantrum
-	public class SpecieTyrantrum : PokemonSpecie
+	//Tyrantrum Species to store common natural stats of all Tyrantrums
+	#region SpeciesTyrantrum
+	public class SpeciesTyrantrum : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTyrantrum? _instance = null;
+		private static SpeciesTyrantrum? _instance = null;
 #nullable restore
-        public static SpecieTyrantrum Instance
+        public static SpeciesTyrantrum Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTyrantrum();
+                    _instance = new SpeciesTyrantrum();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTyrantrum Builder
-		public SpecieTyrantrum() : base(
+		#region SpeciesTyrantrum Constructor
+		public SpeciesTyrantrum() : base(
 			"Tyrantrum",
 			2.5,
 			270.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			69, 59, // Special Attack & Defense
 			71		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Horn-Drill",
+				"Tackle",
+				"Thrash",
+				"Tail-Whip",
+				"Bite",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Outrage",
+				"Sandstorm",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Dragon-Claw",
+				"Rock-Polish",
+				"Dark-Pulse",
+				"Dragon-Pulse",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Draco-Meteor",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Hone-Claws",
+				"Round",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tyrantrum Pokemon Class
+	//Tyrantrum PokemonInstance Class
 	#region Tyrantrum
-	public class Tyrantrum : Pokemon
+	public class TyrantrumInstance : PokemonInstance
 	{
-		#region Tyrantrum Builders
+		#region Tyrantrum Constructors
 		/// <summary>
-		/// Tyrantrum Builder waiting for a Nickname & a Level
+		/// Tyrantrum Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tyrantrum(string nickname, int level)
+		public TyrantrumInstance(string nickname, int level)
 		: base(
 				697,
-				SpecieTyrantrum.Instance, // Pokemon Specie
+				SpeciesTyrantrum.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Dragon.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tyrantrum Builder only waiting for a Level
 		/// </summary>
-		public Tyrantrum(int level)
+		public TyrantrumInstance(int level)
 		: base(
 				697,
-				SpecieTyrantrum.Instance, // Pokemon Specie
+				SpeciesTyrantrum.Instance, // PokemonInstance Species
 				"Tyrantrum", level,
 				Rock.Instance, Dragon.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tyrantrum Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tyrantrum Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tyrantrum() : base(
 			697,
-			SpecieTyrantrum.Instance, // Pokemon Specie
+			SpeciesTyrantrum.Instance, // PokemonInstance Species
 			Rock.Instance, Dragon.Instance			
 		) {}
 		*/

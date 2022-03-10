@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Solosis Specie to store common natural stats of all Solosiss
-	#region SpecieSolosis
-	public class SpecieSolosis : PokemonSpecie
+	//Solosis Species to store common natural stats of all Solosiss
+	#region SpeciesSolosis
+	public class SpeciesSolosis : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSolosis? _instance = null;
+		private static SpeciesSolosis? _instance = null;
 #nullable restore
-        public static SpecieSolosis Instance
+        public static SpeciesSolosis Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSolosis();
+                    _instance = new SpeciesSolosis();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSolosis Builder
-		public SpecieSolosis() : base(
+		#region SpeciesSolosis Constructor
+		public SpeciesSolosis() : base(
 			"Solosis",
 			0.3,
 			1.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			105, 50, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Recover",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Acid-Armor",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Endeavor",
+				"Skill-Swap",
+				"Imprison",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Gyro-Ball",
+				"Embargo",
+				"Heal-Block",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Solosis Pokemon Class
+	//Solosis PokemonInstance Class
 	#region Solosis
-	public class Solosis : Pokemon
+	public class SolosisInstance : PokemonInstance
 	{
-		#region Solosis Builders
+		#region Solosis Constructors
 		/// <summary>
-		/// Solosis Builder waiting for a Nickname & a Level
+		/// Solosis Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Solosis(string nickname, int level)
+		public SolosisInstance(string nickname, int level)
 		: base(
 				577,
-				SpecieSolosis.Instance, // Pokemon Specie
+				SpeciesSolosis.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Solosis Builder only waiting for a Level
 		/// </summary>
-		public Solosis(int level)
+		public SolosisInstance(int level)
 		: base(
 				577,
-				SpecieSolosis.Instance, // Pokemon Specie
+				SpeciesSolosis.Instance, // PokemonInstance Species
 				"Solosis", level,
 				Psychic.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Solosis Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Solosis Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Solosis() : base(
 			577,
-			SpecieSolosis.Instance, // Pokemon Specie
+			SpeciesSolosis.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

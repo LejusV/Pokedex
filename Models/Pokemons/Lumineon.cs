@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lumineon Specie to store common natural stats of all Lumineons
-	#region SpecieLumineon
-	public class SpecieLumineon : PokemonSpecie
+	//Lumineon Species to store common natural stats of all Lumineons
+	#region SpeciesLumineon
+	public class SpeciesLumineon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLumineon? _instance = null;
+		private static SpeciesLumineon? _instance = null;
 #nullable restore
-        public static SpecieLumineon Instance
+        public static SpeciesLumineon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLumineon();
+                    _instance = new SpeciesLumineon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLumineon Builder
-		public SpecieLumineon() : base(
+		#region SpeciesLumineon Constructor
+		public SpeciesLumineon() : base(
 			"Lumineon",
 			1.2,
 			24.0,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			69, 86, // Special Attack & Defense
 			91		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Gust",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Psych-Up",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Bounce",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Aqua-Ring",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Soak",
+				"Round",
+				"Scald",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lumineon Pokemon Class
+	//Lumineon PokemonInstance Class
 	#region Lumineon
-	public class Lumineon : Pokemon
+	public class LumineonInstance : PokemonInstance
 	{
-		#region Lumineon Builders
+		#region Lumineon Constructors
 		/// <summary>
-		/// Lumineon Builder waiting for a Nickname & a Level
+		/// Lumineon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lumineon(string nickname, int level)
+		public LumineonInstance(string nickname, int level)
 		: base(
 				457,
-				SpecieLumineon.Instance, // Pokemon Specie
+				SpeciesLumineon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lumineon Builder only waiting for a Level
 		/// </summary>
-		public Lumineon(int level)
+		public LumineonInstance(int level)
 		: base(
 				457,
-				SpecieLumineon.Instance, // Pokemon Specie
+				SpeciesLumineon.Instance, // PokemonInstance Species
 				"Lumineon", level,
 				Water.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lumineon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lumineon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lumineon() : base(
 			457,
-			SpecieLumineon.Instance, // Pokemon Specie
+			SpeciesLumineon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Victini Specie to store common natural stats of all Victinis
-	#region SpecieVictini
-	public class SpecieVictini : PokemonSpecie
+	//Victini Species to store common natural stats of all Victinis
+	#region SpeciesVictini
+	public class SpeciesVictini : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVictini? _instance = null;
+		private static SpeciesVictini? _instance = null;
 #nullable restore
-        public static SpecieVictini Instance
+        public static SpeciesVictini Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVictini();
+                    _instance = new SpeciesVictini();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVictini Builder
-		public SpecieVictini() : base(
+		#region SpeciesVictini Constructor
+		public SpeciesVictini() : base(
 			"Victini",
 			0.4,
 			4.0,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Double-Edge",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Quick-Attack",
+				"Double-Team",
+				"Light-Screen",
+				"Focus-Energy",
+				"Fire-Blast",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Brick-Break",
+				"Skill-Swap",
+				"Secret-Power",
+				"Overheat",
+				"Signal-Beam",
+				"Bounce",
+				"Shock-Wave",
+				"U-Turn",
+				"Embargo",
+				"Fling",
+				"Last-Resort",
+				"Flare-Blitz",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Stored-Power",
+				"Incinerate",
+				"Final-Gambit",
+				"Inferno",
+				"Work-Up",
+				"Wild-Charge",
+				"Searing-Shot",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Victini Pokemon Class
+	//Victini PokemonInstance Class
 	#region Victini
-	public class Victini : Pokemon
+	public class VictiniInstance : PokemonInstance
 	{
-		#region Victini Builders
+		#region Victini Constructors
 		/// <summary>
-		/// Victini Builder waiting for a Nickname & a Level
+		/// Victini Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Victini(string nickname, int level)
+		public VictiniInstance(string nickname, int level)
 		: base(
 				494,
-				SpecieVictini.Instance, // Pokemon Specie
+				SpeciesVictini.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fire.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Victini Builder only waiting for a Level
 		/// </summary>
-		public Victini(int level)
+		public VictiniInstance(int level)
 		: base(
 				494,
-				SpecieVictini.Instance, // Pokemon Specie
+				SpeciesVictini.Instance, // PokemonInstance Species
 				"Victini", level,
 				Psychic.Instance, Fire.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Victini Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Victini Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Victini() : base(
 			494,
-			SpecieVictini.Instance, // Pokemon Specie
+			SpeciesVictini.Instance, // PokemonInstance Species
 			Psychic.Instance, Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Simipour Specie to store common natural stats of all Simipours
-	#region SpecieSimipour
-	public class SpecieSimipour : PokemonSpecie
+	//Simipour Species to store common natural stats of all Simipours
+	#region SpeciesSimipour
+	public class SpeciesSimipour : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSimipour? _instance = null;
+		private static SpeciesSimipour? _instance = null;
 #nullable restore
-        public static SpecieSimipour Instance
+        public static SpeciesSimipour Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSimipour();
+                    _instance = new SpeciesSimipour();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSimipour Builder
-		public SpecieSimipour() : base(
+		#region SpeciesSimipour Constructor
+		public SpeciesSimipour() : base(
 			"Simipour",
 			1.0,
 			29.0,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			98, 63, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Cut",
+				"Leer",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Waterfall",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Uproar",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Covet",
+				"Water-Pulse",
+				"Payback",
+				"Fling",
+				"Gastro-Acid",
+				"Aqua-Tail",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Round",
+				"Scald",
+				"Acrobatics",
+				"Water-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Simipour Pokemon Class
+	//Simipour PokemonInstance Class
 	#region Simipour
-	public class Simipour : Pokemon
+	public class SimipourInstance : PokemonInstance
 	{
-		#region Simipour Builders
+		#region Simipour Constructors
 		/// <summary>
-		/// Simipour Builder waiting for a Nickname & a Level
+		/// Simipour Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Simipour(string nickname, int level)
+		public SimipourInstance(string nickname, int level)
 		: base(
 				516,
-				SpecieSimipour.Instance, // Pokemon Specie
+				SpeciesSimipour.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Simipour Builder only waiting for a Level
 		/// </summary>
-		public Simipour(int level)
+		public SimipourInstance(int level)
 		: base(
 				516,
-				SpecieSimipour.Instance, // Pokemon Specie
+				SpeciesSimipour.Instance, // PokemonInstance Species
 				"Simipour", level,
 				Water.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Simipour Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Simipour Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Simipour() : base(
 			516,
-			SpecieSimipour.Instance, // Pokemon Specie
+			SpeciesSimipour.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

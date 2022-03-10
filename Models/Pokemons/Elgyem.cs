@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Elgyem Specie to store common natural stats of all Elgyems
-	#region SpecieElgyem
-	public class SpecieElgyem : PokemonSpecie
+	//Elgyem Species to store common natural stats of all Elgyems
+	#region SpeciesElgyem
+	public class SpeciesElgyem : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieElgyem? _instance = null;
+		private static SpeciesElgyem? _instance = null;
 #nullable restore
-        public static SpecieElgyem Instance
+        public static SpeciesElgyem Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieElgyem();
+                    _instance = new SpeciesElgyem();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieElgyem Builder
-		public SpecieElgyem() : base(
+		#region SpeciesElgyem Constructor
+		public SpeciesElgyem() : base(
 			"Elgyem",
 			0.5,
 			9.0,
@@ -32,23 +34,109 @@ namespace Pokedex.Models.Pokemons
 			85, 55, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Growl",
+				"Disable",
+				"Psybeam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Teleport",
+				"Double-Team",
+				"Recover",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Imprison",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Miracle-Eye",
+				"Embargo",
+				"Heal-Block",
+				"Power-Swap",
+				"Guard-Swap",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Nasty-Plot",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Charge-Beam",
+				"Guard-Split",
+				"Power-Split",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Synchronoise",
+				"Simple-Beam",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Ally-Switch",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Elgyem Pokemon Class
+	//Elgyem PokemonInstance Class
 	#region Elgyem
-	public class Elgyem : Pokemon
+	public class ElgyemInstance : PokemonInstance
 	{
-		#region Elgyem Builders
+		#region Elgyem Constructors
 		/// <summary>
-		/// Elgyem Builder waiting for a Nickname & a Level
+		/// Elgyem Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Elgyem(string nickname, int level)
+		public ElgyemInstance(string nickname, int level)
 		: base(
 				605,
-				SpecieElgyem.Instance, // Pokemon Specie
+				SpeciesElgyem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +148,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Elgyem Builder only waiting for a Level
 		/// </summary>
-		public Elgyem(int level)
+		public ElgyemInstance(int level)
 		: base(
 				605,
-				SpecieElgyem.Instance, // Pokemon Specie
+				SpeciesElgyem.Instance, // PokemonInstance Species
 				"Elgyem", level,
 				Psychic.Instance			
 		)
@@ -73,12 +161,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Elgyem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Elgyem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Elgyem() : base(
 			605,
-			SpecieElgyem.Instance, // Pokemon Specie
+			SpeciesElgyem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

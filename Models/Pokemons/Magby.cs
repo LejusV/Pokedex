@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magby Specie to store common natural stats of all Magbys
-	#region SpecieMagby
-	public class SpecieMagby : PokemonSpecie
+	//Magby Species to store common natural stats of all Magbys
+	#region SpeciesMagby
+	public class SpeciesMagby : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMagby? _instance = null;
+		private static SpeciesMagby? _instance = null;
 #nullable restore
-        public static SpecieMagby Instance
+        public static SpeciesMagby Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMagby();
+                    _instance = new SpeciesMagby();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMagby Builder
-		public SpecieMagby() : base(
+		#region SpeciesMagby Constructor
+		public SpeciesMagby() : base(
 			"Magby",
 			0.7,
 			21.4,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			70, 55, // Special Attack & Defense
 			83		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Karate-Chop",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Ember",
+				"Flamethrower",
+				"Counter",
+				"Seismic-Toss",
+				"Fire-Spin",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Smokescreen",
+				"Confuse-Ray",
+				"Barrier",
+				"Focus-Energy",
+				"Smog",
+				"Fire-Blast",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mach-Punch",
+				"Feint-Attack",
+				"Belly-Drum",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Overheat",
+				"Covet",
+				"Natural-Gift",
+				"Fling",
+				"Power-Swap",
+				"Flare-Blitz",
+				"Lava-Plume",
+				"Captivate",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Clear-Smog",
+				"Incinerate",
+				"Dual-Chop",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Magby Pokemon Class
+	//Magby PokemonInstance Class
 	#region Magby
-	public class Magby : Pokemon
+	public class MagbyInstance : PokemonInstance
 	{
-		#region Magby Builders
+		#region Magby Constructors
 		/// <summary>
-		/// Magby Builder waiting for a Nickname & a Level
+		/// Magby Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Magby(string nickname, int level)
+		public MagbyInstance(string nickname, int level)
 		: base(
 				240,
-				SpecieMagby.Instance, // Pokemon Specie
+				SpeciesMagby.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magby Builder only waiting for a Level
 		/// </summary>
-		public Magby(int level)
+		public MagbyInstance(int level)
 		: base(
 				240,
-				SpecieMagby.Instance, // Pokemon Specie
+				SpeciesMagby.Instance, // PokemonInstance Species
 				"Magby", level,
 				Fire.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Magby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Magby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Magby() : base(
 			240,
-			SpecieMagby.Instance, // Pokemon Specie
+			SpeciesMagby.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

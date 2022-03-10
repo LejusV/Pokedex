@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Polteageist Specie to store common natural stats of all Polteageists
-	#region SpeciePolteageist
-	public class SpeciePolteageist : PokemonSpecie
+	//Polteageist Species to store common natural stats of all Polteageists
+	#region SpeciesPolteageist
+	public class SpeciesPolteageist : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePolteageist? _instance = null;
+		private static SpeciesPolteageist? _instance = null;
 #nullable restore
-        public static SpeciePolteageist Instance
+        public static SpeciesPolteageist Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePolteageist();
+                    _instance = new SpeciesPolteageist();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePolteageist Builder
-		public SpeciePolteageist() : base(
+		#region SpeciesPolteageist Constructor
+		public SpeciesPolteageist() : base(
 			"Polteageist",
 			0.2,
 			0.4,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			134, 114, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Polteageist Pokemon Class
+	//Polteageist PokemonInstance Class
 	#region Polteageist
-	public class Polteageist : Pokemon
+	public class PolteageistInstance : PokemonInstance
 	{
-		#region Polteageist Builders
+		#region Polteageist Constructors
 		/// <summary>
-		/// Polteageist Builder waiting for a Nickname & a Level
+		/// Polteageist Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Polteageist(string nickname, int level)
+		public PolteageistInstance(string nickname, int level)
 		: base(
 				855,
-				SpeciePolteageist.Instance, // Pokemon Specie
+				SpeciesPolteageist.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Polteageist Builder only waiting for a Level
 		/// </summary>
-		public Polteageist(int level)
+		public PolteageistInstance(int level)
 		: base(
 				855,
-				SpeciePolteageist.Instance, // Pokemon Specie
+				SpeciesPolteageist.Instance, // PokemonInstance Species
 				"Polteageist", level,
 				Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Polteageist Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Polteageist Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Polteageist() : base(
 			855,
-			SpeciePolteageist.Instance, // Pokemon Specie
+			SpeciesPolteageist.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

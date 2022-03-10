@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mudsdale Specie to store common natural stats of all Mudsdales
-	#region SpecieMudsdale
-	public class SpecieMudsdale : PokemonSpecie
+	//Mudsdale Species to store common natural stats of all Mudsdales
+	#region SpeciesMudsdale
+	public class SpeciesMudsdale : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMudsdale? _instance = null;
+		private static SpeciesMudsdale? _instance = null;
 #nullable restore
-        public static SpecieMudsdale Instance
+        public static SpeciesMudsdale Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMudsdale();
+                    _instance = new SpeciesMudsdale();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMudsdale Builder
-		public SpecieMudsdale() : base(
+		#region SpeciesMudsdale Constructor
+		public SpeciesMudsdale() : base(
 			"Mudsdale",
 			2.5,
 			920.0,
@@ -32,23 +34,70 @@ namespace Pokedex.Models.Pokemons
 			55, 85, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Double-Kick",
+				"Mega-Kick",
+				"Roar",
+				"Counter",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Facade",
+				"Superpower",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Payback",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Heavy-Slam",
+				"Low-Sweep",
+				"Round",
+				"Bulldoze",
+				"Rototiller",
+				"Confide",
+				"High-Horsepower"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mudsdale Pokemon Class
+	//Mudsdale PokemonInstance Class
 	#region Mudsdale
-	public class Mudsdale : Pokemon
+	public class MudsdaleInstance : PokemonInstance
 	{
-		#region Mudsdale Builders
+		#region Mudsdale Constructors
 		/// <summary>
-		/// Mudsdale Builder waiting for a Nickname & a Level
+		/// Mudsdale Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mudsdale(string nickname, int level)
+		public MudsdaleInstance(string nickname, int level)
 		: base(
 				750,
-				SpecieMudsdale.Instance, // Pokemon Specie
+				SpeciesMudsdale.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +109,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mudsdale Builder only waiting for a Level
 		/// </summary>
-		public Mudsdale(int level)
+		public MudsdaleInstance(int level)
 		: base(
 				750,
-				SpecieMudsdale.Instance, // Pokemon Specie
+				SpeciesMudsdale.Instance, // PokemonInstance Species
 				"Mudsdale", level,
 				Ground.Instance			
 		)
@@ -73,12 +122,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mudsdale Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mudsdale Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mudsdale() : base(
 			750,
-			SpecieMudsdale.Instance, // Pokemon Specie
+			SpeciesMudsdale.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

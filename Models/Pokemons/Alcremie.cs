@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Alcremie Specie to store common natural stats of all Alcremies
-	#region SpecieAlcremie
-	public class SpecieAlcremie : PokemonSpecie
+	//Alcremie Species to store common natural stats of all Alcremies
+	#region SpeciesAlcremie
+	public class SpeciesAlcremie : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAlcremie? _instance = null;
+		private static SpeciesAlcremie? _instance = null;
 #nullable restore
-        public static SpecieAlcremie Instance
+        public static SpeciesAlcremie Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAlcremie();
+                    _instance = new SpeciesAlcremie();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAlcremie Builder
-		public SpecieAlcremie() : base(
+		#region SpeciesAlcremie Constructor
+		public SpeciesAlcremie() : base(
 			"Alcremie",
 			0.3,
 			0.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			110, 121, // Special Attack & Defense
 			64		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Alcremie Pokemon Class
+	//Alcremie PokemonInstance Class
 	#region Alcremie
-	public class Alcremie : Pokemon
+	public class AlcremieInstance : PokemonInstance
 	{
-		#region Alcremie Builders
+		#region Alcremie Constructors
 		/// <summary>
-		/// Alcremie Builder waiting for a Nickname & a Level
+		/// Alcremie Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Alcremie(string nickname, int level)
+		public AlcremieInstance(string nickname, int level)
 		: base(
 				869,
-				SpecieAlcremie.Instance, // Pokemon Specie
+				SpeciesAlcremie.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Alcremie Builder only waiting for a Level
 		/// </summary>
-		public Alcremie(int level)
+		public AlcremieInstance(int level)
 		: base(
 				869,
-				SpecieAlcremie.Instance, // Pokemon Specie
+				SpeciesAlcremie.Instance, // PokemonInstance Species
 				"Alcremie", level,
 				Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Alcremie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Alcremie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Alcremie() : base(
 			869,
-			SpecieAlcremie.Instance, // Pokemon Specie
+			SpeciesAlcremie.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

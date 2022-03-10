@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sinistea Specie to store common natural stats of all Sinisteas
-	#region SpecieSinistea
-	public class SpecieSinistea : PokemonSpecie
+	//Sinistea Species to store common natural stats of all Sinisteas
+	#region SpeciesSinistea
+	public class SpeciesSinistea : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSinistea? _instance = null;
+		private static SpeciesSinistea? _instance = null;
 #nullable restore
-        public static SpecieSinistea Instance
+        public static SpeciesSinistea Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSinistea();
+                    _instance = new SpeciesSinistea();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSinistea Builder
-		public SpecieSinistea() : base(
+		#region SpeciesSinistea Constructor
+		public SpeciesSinistea() : base(
 			"Sinistea",
 			0.1,
 			0.2,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			74, 54, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sinistea Pokemon Class
+	//Sinistea PokemonInstance Class
 	#region Sinistea
-	public class Sinistea : Pokemon
+	public class SinisteaInstance : PokemonInstance
 	{
-		#region Sinistea Builders
+		#region Sinistea Constructors
 		/// <summary>
-		/// Sinistea Builder waiting for a Nickname & a Level
+		/// Sinistea Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sinistea(string nickname, int level)
+		public SinisteaInstance(string nickname, int level)
 		: base(
 				854,
-				SpecieSinistea.Instance, // Pokemon Specie
+				SpeciesSinistea.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sinistea Builder only waiting for a Level
 		/// </summary>
-		public Sinistea(int level)
+		public SinisteaInstance(int level)
 		: base(
 				854,
-				SpecieSinistea.Instance, // Pokemon Specie
+				SpeciesSinistea.Instance, // PokemonInstance Species
 				"Sinistea", level,
 				Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sinistea Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sinistea Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sinistea() : base(
 			854,
-			SpecieSinistea.Instance, // Pokemon Specie
+			SpeciesSinistea.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

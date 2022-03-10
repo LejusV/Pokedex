@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nosepass Specie to store common natural stats of all Nosepasss
-	#region SpecieNosepass
-	public class SpecieNosepass : PokemonSpecie
+	//Nosepass Species to store common natural stats of all Nosepasss
+	#region SpeciesNosepass
+	public class SpeciesNosepass : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNosepass? _instance = null;
+		private static SpeciesNosepass? _instance = null;
 #nullable restore
-        public static SpecieNosepass Instance
+        public static SpeciesNosepass Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNosepass();
+                    _instance = new SpeciesNosepass();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNosepass Builder
-		public SpecieNosepass() : base(
+		#region SpeciesNosepass Constructor
+		public SpeciesNosepass() : base(
 			"Nosepass",
 			1.0,
 			97.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			45, 90, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Rock-Throw",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Lock-On",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Magnitude",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Magic-Coat",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Shock-Wave",
+				"Gravity",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Discharge",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Wide-Guard",
+				"Smack-Down",
+				"Round",
+				"Volt-Switch",
+				"Bulldoze",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nosepass Pokemon Class
+	//Nosepass PokemonInstance Class
 	#region Nosepass
-	public class Nosepass : Pokemon
+	public class NosepassInstance : PokemonInstance
 	{
-		#region Nosepass Builders
+		#region Nosepass Constructors
 		/// <summary>
-		/// Nosepass Builder waiting for a Nickname & a Level
+		/// Nosepass Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nosepass(string nickname, int level)
+		public NosepassInstance(string nickname, int level)
 		: base(
 				299,
-				SpecieNosepass.Instance, // Pokemon Specie
+				SpeciesNosepass.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nosepass Builder only waiting for a Level
 		/// </summary>
-		public Nosepass(int level)
+		public NosepassInstance(int level)
 		: base(
 				299,
-				SpecieNosepass.Instance, // Pokemon Specie
+				SpeciesNosepass.Instance, // PokemonInstance Species
 				"Nosepass", level,
 				Rock.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nosepass Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nosepass Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nosepass() : base(
 			299,
-			SpecieNosepass.Instance, // Pokemon Specie
+			SpeciesNosepass.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

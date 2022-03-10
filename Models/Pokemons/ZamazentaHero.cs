@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zamazenta-Hero Specie to store common natural stats of all Zamazenta-Heros
-	#region SpecieZamazenta-Hero
-	public class SpecieZamazentaHero : PokemonSpecie
+	//Zamazenta-Hero Species to store common natural stats of all Zamazenta-Heros
+	#region SpeciesZamazenta-Hero
+	public class SpeciesZamazentaHero : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZamazentaHero? _instance = null;
+		private static SpeciesZamazentaHero? _instance = null;
 #nullable restore
-        public static SpecieZamazentaHero Instance
+        public static SpeciesZamazentaHero Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZamazentaHero();
+                    _instance = new SpeciesZamazentaHero();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZamazenta-Hero Builder
-		public SpecieZamazentaHero() : base(
+		#region SpeciesZamazenta-Hero Constructor
+		public SpeciesZamazentaHero() : base(
 			"Zamazenta-Hero",
 			2.9,
 			210.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 115, // Special Attack & Defense
 			138		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zamazenta-Hero Pokemon Class
+	//Zamazenta-Hero PokemonInstance Class
 	#region Zamazenta-Hero
-	public class ZamazentaHero : Pokemon
+	public class ZamazentaHeroInstance : PokemonInstance
 	{
-		#region Zamazenta-Hero Builders
+		#region Zamazenta-Hero Constructors
 		/// <summary>
-		/// Zamazenta-Hero Builder waiting for a Nickname & a Level
+		/// Zamazenta-Hero Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public ZamazentaHero(string nickname, int level)
+		public ZamazentaHeroInstance(string nickname, int level)
 		: base(
 				889,
-				SpecieZamazentaHero.Instance, // Pokemon Specie
+				SpeciesZamazentaHero.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zamazenta-Hero Builder only waiting for a Level
 		/// </summary>
-		public ZamazentaHero(int level)
+		public ZamazentaHeroInstance(int level)
 		: base(
 				889,
-				SpecieZamazentaHero.Instance, // Pokemon Specie
+				SpeciesZamazentaHero.Instance, // PokemonInstance Species
 				"Zamazenta-Hero", level,
 				Fighting.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zamazenta-Hero Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zamazenta-Hero Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public ZamazentaHero() : base(
 			889,
-			SpecieZamazentaHero.Instance, // Pokemon Specie
+			SpeciesZamazentaHero.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Reshiram Specie to store common natural stats of all Reshirams
-	#region SpecieReshiram
-	public class SpecieReshiram : PokemonSpecie
+	//Reshiram Species to store common natural stats of all Reshirams
+	#region SpeciesReshiram
+	public class SpeciesReshiram : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieReshiram? _instance = null;
+		private static SpeciesReshiram? _instance = null;
 #nullable restore
-        public static SpecieReshiram Instance
+        public static SpeciesReshiram Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieReshiram();
+                    _instance = new SpeciesReshiram();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieReshiram Builder
-		public SpecieReshiram() : base(
+		#region SpeciesReshiram Constructor
+		public SpeciesReshiram() : base(
 			"Reshiram",
 			3.2,
 			330.0,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			150, 120, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Fly",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Dragon-Rage",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Outrage",
+				"Swagger",
+				"Steel-Wing",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Imprison",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Overheat",
+				"Rock-Tomb",
+				"Extrasensory",
+				"Dragon-Claw",
+				"Roost",
+				"Tailwind",
+				"Payback",
+				"Fling",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Fire-Fang",
+				"Zen-Headbutt",
+				"Draco-Meteor",
+				"Stone-Edge",
+				"Hone-Claws",
+				"Flame-Charge",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Dragon-Tail",
+				"Blue-Flare",
+				"Fusion-Flare",
+				"Noble-Roar",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Reshiram Pokemon Class
+	//Reshiram PokemonInstance Class
 	#region Reshiram
-	public class Reshiram : Pokemon
+	public class ReshiramInstance : PokemonInstance
 	{
-		#region Reshiram Builders
+		#region Reshiram Constructors
 		/// <summary>
-		/// Reshiram Builder waiting for a Nickname & a Level
+		/// Reshiram Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Reshiram(string nickname, int level)
+		public ReshiramInstance(string nickname, int level)
 		: base(
 				643,
-				SpecieReshiram.Instance, // Pokemon Specie
+				SpeciesReshiram.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Fire.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Reshiram Builder only waiting for a Level
 		/// </summary>
-		public Reshiram(int level)
+		public ReshiramInstance(int level)
 		: base(
 				643,
-				SpecieReshiram.Instance, // Pokemon Specie
+				SpeciesReshiram.Instance, // PokemonInstance Species
 				"Reshiram", level,
 				Dragon.Instance, Fire.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Reshiram Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Reshiram Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Reshiram() : base(
 			643,
-			SpecieReshiram.Instance, // Pokemon Specie
+			SpeciesReshiram.Instance, // PokemonInstance Species
 			Dragon.Instance, Fire.Instance			
 		) {}
 		*/

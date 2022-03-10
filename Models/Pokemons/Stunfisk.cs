@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Stunfisk Specie to store common natural stats of all Stunfisks
-	#region SpecieStunfisk
-	public class SpecieStunfisk : PokemonSpecie
+	//Stunfisk Species to store common natural stats of all Stunfisks
+	#region SpeciesStunfisk
+	public class SpeciesStunfisk : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieStunfisk? _instance = null;
+		private static SpeciesStunfisk? _instance = null;
 #nullable restore
-        public static SpecieStunfisk Instance
+        public static SpeciesStunfisk Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieStunfisk();
+                    _instance = new SpeciesStunfisk();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieStunfisk Builder
-		public SpecieStunfisk() : base(
+		#region SpeciesStunfisk Constructor
+		public SpeciesStunfisk() : base(
 			"Stunfisk",
 			0.7,
 			11.0,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			81, 99, // Special Attack & Defense
 			32		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Water-Gun",
+				"Surf",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Spite",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Facade",
+				"Revenge",
+				"Yawn",
+				"Endeavor",
+				"Secret-Power",
+				"Camouflage",
+				"Mud-Sport",
+				"Astonish",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Payback",
+				"Me-First",
+				"Magnet-Rise",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Mud-Bomb",
+				"Discharge",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Sludge-Wave",
+				"Foul-Play",
+				"Round",
+				"Scald",
+				"Reflect-Type",
+				"Bulldoze",
+				"Electroweb",
+				"Confide",
+				"Eerie-Impulse",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Stunfisk Pokemon Class
+	//Stunfisk PokemonInstance Class
 	#region Stunfisk
-	public class Stunfisk : Pokemon
+	public class StunfiskInstance : PokemonInstance
 	{
-		#region Stunfisk Builders
+		#region Stunfisk Constructors
 		/// <summary>
-		/// Stunfisk Builder waiting for a Nickname & a Level
+		/// Stunfisk Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Stunfisk(string nickname, int level)
+		public StunfiskInstance(string nickname, int level)
 		: base(
 				618,
-				SpecieStunfisk.Instance, // Pokemon Specie
+				SpeciesStunfisk.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Electric.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stunfisk Builder only waiting for a Level
 		/// </summary>
-		public Stunfisk(int level)
+		public StunfiskInstance(int level)
 		: base(
 				618,
-				SpecieStunfisk.Instance, // Pokemon Specie
+				SpeciesStunfisk.Instance, // PokemonInstance Species
 				"Stunfisk", level,
 				Ground.Instance, Electric.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Stunfisk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Stunfisk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Stunfisk() : base(
 			618,
-			SpecieStunfisk.Instance, // Pokemon Specie
+			SpeciesStunfisk.Instance, // PokemonInstance Species
 			Ground.Instance, Electric.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Meditite Specie to store common natural stats of all Meditites
-	#region SpecieMeditite
-	public class SpecieMeditite : PokemonSpecie
+	//Meditite Species to store common natural stats of all Meditites
+	#region SpeciesMeditite
+	public class SpeciesMeditite : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMeditite? _instance = null;
+		private static SpeciesMeditite? _instance = null;
 #nullable restore
-        public static SpecieMeditite Instance
+        public static SpeciesMeditite Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMeditite();
+                    _instance = new SpeciesMeditite();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMeditite Builder
-		public SpecieMeditite() : base(
+		#region SpeciesMeditite Constructor
+		public SpeciesMeditite() : base(
 			"Meditite",
 			0.6,
 			11.2,
@@ -32,23 +34,127 @@ namespace Pokedex.Models.Pokemons
 			40, 55, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Meditate",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Metronome",
+				"Swift",
+				"High-Jump-Kick",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Gravity",
+				"Natural-Gift",
+				"Feint",
+				"Acupressure",
+				"Fling",
+				"Power-Trick",
+				"Power-Swap",
+				"Guard-Swap",
+				"Force-Palm",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Bullet-Punch",
+				"Psycho-Cut",
+				"Zen-Headbutt",
+				"Captivate",
+				"Grass-Knot",
+				"Psyshock",
+				"Telekinesis",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Meditite Pokemon Class
+	//Meditite PokemonInstance Class
 	#region Meditite
-	public class Meditite : Pokemon
+	public class MedititeInstance : PokemonInstance
 	{
-		#region Meditite Builders
+		#region Meditite Constructors
 		/// <summary>
-		/// Meditite Builder waiting for a Nickname & a Level
+		/// Meditite Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Meditite(string nickname, int level)
+		public MedititeInstance(string nickname, int level)
 		: base(
 				307,
-				SpecieMeditite.Instance, // Pokemon Specie
+				SpeciesMeditite.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Psychic.Instance			
 		)
@@ -60,10 +166,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Meditite Builder only waiting for a Level
 		/// </summary>
-		public Meditite(int level)
+		public MedititeInstance(int level)
 		: base(
 				307,
-				SpecieMeditite.Instance, // Pokemon Specie
+				SpeciesMeditite.Instance, // PokemonInstance Species
 				"Meditite", level,
 				Fighting.Instance, Psychic.Instance			
 		)
@@ -73,12 +179,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Meditite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Meditite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Meditite() : base(
 			307,
-			SpecieMeditite.Instance, // Pokemon Specie
+			SpeciesMeditite.Instance, // PokemonInstance Species
 			Fighting.Instance, Psychic.Instance			
 		) {}
 		*/

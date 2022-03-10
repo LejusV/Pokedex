@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Palossand Specie to store common natural stats of all Palossands
-	#region SpeciePalossand
-	public class SpeciePalossand : PokemonSpecie
+	//Palossand Species to store common natural stats of all Palossands
+	#region SpeciesPalossand
+	public class SpeciesPalossand : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePalossand? _instance = null;
+		private static SpeciesPalossand? _instance = null;
 #nullable restore
-        public static SpeciePalossand Instance
+        public static SpeciesPalossand Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePalossand();
+                    _instance = new SpeciesPalossand();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePalossand Builder
-		public SpeciePalossand() : base(
+		#region SpeciesPalossand Constructor
+		public SpeciesPalossand() : base(
 			"Palossand",
 			1.3,
 			250.0,
@@ -32,23 +34,75 @@ namespace Pokedex.Models.Pokemons
 			100, 75, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Absorb",
+				"Mega-Drain",
+				"Earthquake",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Harden",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Sandstorm",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Shadow-Ball",
+				"Facade",
+				"Astonish",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Iron-Defense",
+				"Embargo",
+				"Fling",
+				"Rock-Polish",
+				"Energy-Ball",
+				"Earth-Power",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Round",
+				"Quash",
+				"Bulldoze",
+				"Confide",
+				"Infestation",
+				"Shore-Up"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Palossand Pokemon Class
+	//Palossand PokemonInstance Class
 	#region Palossand
-	public class Palossand : Pokemon
+	public class PalossandInstance : PokemonInstance
 	{
-		#region Palossand Builders
+		#region Palossand Constructors
 		/// <summary>
-		/// Palossand Builder waiting for a Nickname & a Level
+		/// Palossand Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Palossand(string nickname, int level)
+		public PalossandInstance(string nickname, int level)
 		: base(
 				770,
-				SpeciePalossand.Instance, // Pokemon Specie
+				SpeciesPalossand.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Ground.Instance			
 		)
@@ -60,10 +114,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Palossand Builder only waiting for a Level
 		/// </summary>
-		public Palossand(int level)
+		public PalossandInstance(int level)
 		: base(
 				770,
-				SpeciePalossand.Instance, // Pokemon Specie
+				SpeciesPalossand.Instance, // PokemonInstance Species
 				"Palossand", level,
 				Ghost.Instance, Ground.Instance			
 		)
@@ -73,12 +127,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Palossand Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Palossand Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Palossand() : base(
 			770,
-			SpeciePalossand.Instance, // Pokemon Specie
+			SpeciesPalossand.Instance, // PokemonInstance Species
 			Ghost.Instance, Ground.Instance			
 		) {}
 		*/

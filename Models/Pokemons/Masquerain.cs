@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Masquerain Specie to store common natural stats of all Masquerains
-	#region SpecieMasquerain
-	public class SpecieMasquerain : PokemonSpecie
+	//Masquerain Species to store common natural stats of all Masquerains
+	#region SpeciesMasquerain
+	public class SpeciesMasquerain : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMasquerain? _instance = null;
+		private static SpeciesMasquerain? _instance = null;
 #nullable restore
-        public static SpecieMasquerain Instance
+        public static SpeciesMasquerain Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMasquerain();
+                    _instance = new SpeciesMasquerain();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMasquerain Builder
-		public SpecieMasquerain() : base(
+		#region SpeciesMasquerain Constructor
+		public SpeciesMasquerain() : base(
 			"Masquerain",
 			0.8,
 			3.6,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			100, 82, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Whirlwind",
+				"Double-Edge",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Stun-Spore",
+				"String-Shot",
+				"Toxic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Swift",
+				"Bubble",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Water-Sport",
+				"Water-Pulse",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Quiver-Dance",
+				"Round",
+				"Scald",
+				"Struggle-Bug",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Masquerain Pokemon Class
+	//Masquerain PokemonInstance Class
 	#region Masquerain
-	public class Masquerain : Pokemon
+	public class MasquerainInstance : PokemonInstance
 	{
-		#region Masquerain Builders
+		#region Masquerain Constructors
 		/// <summary>
-		/// Masquerain Builder waiting for a Nickname & a Level
+		/// Masquerain Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Masquerain(string nickname, int level)
+		public MasquerainInstance(string nickname, int level)
 		: base(
 				284,
-				SpecieMasquerain.Instance, // Pokemon Specie
+				SpeciesMasquerain.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Masquerain Builder only waiting for a Level
 		/// </summary>
-		public Masquerain(int level)
+		public MasquerainInstance(int level)
 		: base(
 				284,
-				SpecieMasquerain.Instance, // Pokemon Specie
+				SpeciesMasquerain.Instance, // PokemonInstance Species
 				"Masquerain", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Masquerain Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Masquerain Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Masquerain() : base(
 			284,
-			SpecieMasquerain.Instance, // Pokemon Specie
+			SpeciesMasquerain.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

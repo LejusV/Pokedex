@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kakuna Specie to store common natural stats of all Kakunas
-	#region SpecieKakuna
-	public class SpecieKakuna : PokemonSpecie
+	//Kakuna Species to store common natural stats of all Kakunas
+	#region SpeciesKakuna
+	public class SpeciesKakuna : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKakuna? _instance = null;
+		private static SpeciesKakuna? _instance = null;
 #nullable restore
-        public static SpecieKakuna Instance
+        public static SpeciesKakuna Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKakuna();
+                    _instance = new SpeciesKakuna();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKakuna Builder
-		public SpecieKakuna() : base(
+		#region SpeciesKakuna Constructor
+		public SpeciesKakuna() : base(
 			"Kakuna",
 			0.6,
 			10.0,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"String-Shot",
+				"Harden",
+				"Iron-Defense",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kakuna Pokemon Class
+	//Kakuna PokemonInstance Class
 	#region Kakuna
-	public class Kakuna : Pokemon
+	public class KakunaInstance : PokemonInstance
 	{
-		#region Kakuna Builders
+		#region Kakuna Constructors
 		/// <summary>
-		/// Kakuna Builder waiting for a Nickname & a Level
+		/// Kakuna Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kakuna(string nickname, int level)
+		public KakunaInstance(string nickname, int level)
 		: base(
 				14,
-				SpecieKakuna.Instance, // Pokemon Specie
+				SpeciesKakuna.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kakuna Builder only waiting for a Level
 		/// </summary>
-		public Kakuna(int level)
+		public KakunaInstance(int level)
 		: base(
 				14,
-				SpecieKakuna.Instance, // Pokemon Specie
+				SpeciesKakuna.Instance, // PokemonInstance Species
 				"Kakuna", level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kakuna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kakuna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kakuna() : base(
 			14,
-			SpecieKakuna.Instance, // Pokemon Specie
+			SpeciesKakuna.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}
 		*/

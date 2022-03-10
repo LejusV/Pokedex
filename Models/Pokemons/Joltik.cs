@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Joltik Specie to store common natural stats of all Joltiks
-	#region SpecieJoltik
-	public class SpecieJoltik : PokemonSpecie
+	//Joltik Species to store common natural stats of all Joltiks
+	#region SpeciesJoltik
+	public class SpeciesJoltik : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJoltik? _instance = null;
+		private static SpeciesJoltik? _instance = null;
 #nullable restore
-        public static SpecieJoltik Instance
+        public static SpeciesJoltik Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJoltik();
+                    _instance = new SpeciesJoltik();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJoltik Builder
-		public SpecieJoltik() : base(
+		#region SpeciesJoltik Constructor
+		public SpeciesJoltik() : base(
 			"Joltik",
 			0.1,
 			0.6,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			57, 50, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Poison-Sting",
+				"Pin-Missile",
+				"Disable",
+				"Absorb",
+				"String-Shot",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Agility",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Leech-Life",
+				"Flash",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Spider-Web",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Giga-Drain",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Secret-Power",
+				"Camouflage",
+				"Signal-Beam",
+				"Bounce",
+				"Shock-Wave",
+				"Gastro-Acid",
+				"Sucker-Punch",
+				"Magnet-Rise",
+				"Poison-Jab",
+				"X-Scissor",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Rock-Climb",
+				"Discharge",
+				"Cross-Poison",
+				"Bug-Bite",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Round",
+				"Volt-Switch",
+				"Struggle-Bug",
+				"Electroweb",
+				"Wild-Charge",
+				"Confide",
+				"Infestation",
+				"Lunge"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Joltik Pokemon Class
+	//Joltik PokemonInstance Class
 	#region Joltik
-	public class Joltik : Pokemon
+	public class JoltikInstance : PokemonInstance
 	{
-		#region Joltik Builders
+		#region Joltik Constructors
 		/// <summary>
-		/// Joltik Builder waiting for a Nickname & a Level
+		/// Joltik Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Joltik(string nickname, int level)
+		public JoltikInstance(string nickname, int level)
 		: base(
 				595,
-				SpecieJoltik.Instance, // Pokemon Specie
+				SpeciesJoltik.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Joltik Builder only waiting for a Level
 		/// </summary>
-		public Joltik(int level)
+		public JoltikInstance(int level)
 		: base(
 				595,
-				SpecieJoltik.Instance, // Pokemon Specie
+				SpeciesJoltik.Instance, // PokemonInstance Species
 				"Joltik", level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Joltik Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Joltik Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Joltik() : base(
 			595,
-			SpecieJoltik.Instance, // Pokemon Specie
+			SpeciesJoltik.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}
 		*/

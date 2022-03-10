@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Fennekin Specie to store common natural stats of all Fennekins
-	#region SpecieFennekin
-	public class SpecieFennekin : PokemonSpecie
+	//Fennekin Species to store common natural stats of all Fennekins
+	#region SpeciesFennekin
+	public class SpeciesFennekin : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFennekin? _instance = null;
+		private static SpeciesFennekin? _instance = null;
 #nullable restore
-        public static SpecieFennekin Instance
+        public static SpeciesFennekin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFennekin();
+                    _instance = new SpeciesFennekin();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFennekin Builder
-		public SpecieFennekin() : base(
+		#region SpeciesFennekin Constructor
+		public SpeciesFennekin() : base(
 			"Fennekin",
 			0.4,
 			9.4,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			62, 60, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Tail-Whip",
+				"Ember",
+				"Flamethrower",
+				"Psybeam",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Light-Screen",
+				"Fire-Blast",
+				"Dream-Eater",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Wish",
+				"Magic-Coat",
+				"Secret-Power",
+				"Overheat",
+				"Howl",
+				"Covet",
+				"Embargo",
+				"Lucky-Chant",
+				"Grass-Knot",
+				"Psyshock",
+				"Magic-Room",
+				"Flame-Charge",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Fire-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch",
+				"Psychic-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Fennekin Pokemon Class
+	//Fennekin PokemonInstance Class
 	#region Fennekin
-	public class Fennekin : Pokemon
+	public class FennekinInstance : PokemonInstance
 	{
-		#region Fennekin Builders
+		#region Fennekin Constructors
 		/// <summary>
-		/// Fennekin Builder waiting for a Nickname & a Level
+		/// Fennekin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Fennekin(string nickname, int level)
+		public FennekinInstance(string nickname, int level)
 		: base(
 				653,
-				SpecieFennekin.Instance, // Pokemon Specie
+				SpeciesFennekin.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Fennekin Builder only waiting for a Level
 		/// </summary>
-		public Fennekin(int level)
+		public FennekinInstance(int level)
 		: base(
 				653,
-				SpecieFennekin.Instance, // Pokemon Specie
+				SpeciesFennekin.Instance, // PokemonInstance Species
 				"Fennekin", level,
 				Fire.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Fennekin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Fennekin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Fennekin() : base(
 			653,
-			SpecieFennekin.Instance, // Pokemon Specie
+			SpeciesFennekin.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

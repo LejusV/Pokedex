@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tentacool Specie to store common natural stats of all Tentacools
-	#region SpecieTentacool
-	public class SpecieTentacool : PokemonSpecie
+	//Tentacool Species to store common natural stats of all Tentacools
+	#region SpeciesTentacool
+	public class SpeciesTentacool : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTentacool? _instance = null;
+		private static SpeciesTentacool? _instance = null;
 #nullable restore
-        public static SpecieTentacool Instance
+        public static SpeciesTentacool Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTentacool();
+                    _instance = new SpeciesTentacool();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTentacool Builder
-		public SpecieTentacool() : base(
+		#region SpeciesTentacool Constructor
+		public SpeciesTentacool() : base(
 			"Tentacool",
 			0.9,
 			45.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			50, 100, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Poison-Sting",
+				"Supersonic",
+				"Acid",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Mega-Drain",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Confuse-Ray",
+				"Barrier",
+				"Haze",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Skull-Bash",
+				"Constrict",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Magic-Coat",
+				"Knock-Off",
+				"Secret-Power",
+				"Dive",
+				"Tickle",
+				"Muddy-Water",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Acupressure",
+				"Payback",
+				"Wring-Out",
+				"Toxic-Spikes",
+				"Aqua-Ring",
+				"Poison-Jab",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Acid-Spray",
+				"Round",
+				"Scald",
+				"Hex",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tentacool Pokemon Class
+	//Tentacool PokemonInstance Class
 	#region Tentacool
-	public class Tentacool : Pokemon
+	public class TentacoolInstance : PokemonInstance
 	{
-		#region Tentacool Builders
+		#region Tentacool Constructors
 		/// <summary>
-		/// Tentacool Builder waiting for a Nickname & a Level
+		/// Tentacool Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tentacool(string nickname, int level)
+		public TentacoolInstance(string nickname, int level)
 		: base(
 				72,
-				SpecieTentacool.Instance, // Pokemon Specie
+				SpeciesTentacool.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Poison.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tentacool Builder only waiting for a Level
 		/// </summary>
-		public Tentacool(int level)
+		public TentacoolInstance(int level)
 		: base(
 				72,
-				SpecieTentacool.Instance, // Pokemon Specie
+				SpeciesTentacool.Instance, // PokemonInstance Species
 				"Tentacool", level,
 				Water.Instance, Poison.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tentacool Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tentacool Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tentacool() : base(
 			72,
-			SpecieTentacool.Instance, // Pokemon Specie
+			SpeciesTentacool.Instance, // PokemonInstance Species
 			Water.Instance, Poison.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Beartic Specie to store common natural stats of all Beartics
-	#region SpecieBeartic
-	public class SpecieBeartic : PokemonSpecie
+	//Beartic Species to store common natural stats of all Beartics
+	#region SpeciesBeartic
+	public class SpeciesBeartic : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBeartic? _instance = null;
+		private static SpeciesBeartic? _instance = null;
 #nullable restore
-        public static SpecieBeartic Instance
+        public static SpeciesBeartic Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBeartic();
+                    _instance = new SpeciesBeartic();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBeartic Builder
-		public SpecieBeartic() : base(
+		#region SpeciesBeartic Constructor
+		public SpeciesBeartic() : base(
 			"Beartic",
 			2.6,
 			260.0,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Thrash",
+				"Growl",
+				"Roar",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Sheer-Cold",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Covet",
+				"Water-Pulse",
+				"Brine",
+				"Fling",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Aqua-Jet",
+				"Hone-Claws",
+				"Round",
+				"Echoed-Voice",
+				"Bulldoze",
+				"Frost-Breath",
+				"Icicle-Crash",
+				"Play-Nice",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Beartic Pokemon Class
+	//Beartic PokemonInstance Class
 	#region Beartic
-	public class Beartic : Pokemon
+	public class BearticInstance : PokemonInstance
 	{
-		#region Beartic Builders
+		#region Beartic Constructors
 		/// <summary>
-		/// Beartic Builder waiting for a Nickname & a Level
+		/// Beartic Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Beartic(string nickname, int level)
+		public BearticInstance(string nickname, int level)
 		: base(
 				614,
-				SpecieBeartic.Instance, // Pokemon Specie
+				SpeciesBeartic.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Beartic Builder only waiting for a Level
 		/// </summary>
-		public Beartic(int level)
+		public BearticInstance(int level)
 		: base(
 				614,
-				SpecieBeartic.Instance, // Pokemon Specie
+				SpeciesBeartic.Instance, // PokemonInstance Species
 				"Beartic", level,
 				Ice.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Beartic Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Beartic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Beartic() : base(
 			614,
-			SpecieBeartic.Instance, // Pokemon Specie
+			SpeciesBeartic.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

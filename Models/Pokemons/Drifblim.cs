@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drifblim Specie to store common natural stats of all Drifblims
-	#region SpecieDrifblim
-	public class SpecieDrifblim : PokemonSpecie
+	//Drifblim Species to store common natural stats of all Drifblims
+	#region SpeciesDrifblim
+	public class SpeciesDrifblim : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrifblim? _instance = null;
+		private static SpeciesDrifblim? _instance = null;
 #nullable restore
-        public static SpecieDrifblim Instance
+        public static SpeciesDrifblim Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrifblim();
+                    _instance = new SpeciesDrifblim();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrifblim Builder
-		public SpecieDrifblim() : base(
+		#region SpeciesDrifblim Constructor
+		public SpeciesDrifblim() : base(
 			"Drifblim",
 			1.2,
 			15.0,
@@ -32,23 +34,108 @@ namespace Pokedex.Models.Pokemons
 			90, 54, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Gust",
+				"Fly",
+				"Bind",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Minimize",
+				"Focus-Energy",
+				"Swift",
+				"Constrict",
+				"Amnesia",
+				"Dream-Eater",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Baton-Pass",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Will-O-Wisp",
+				"Facade",
+				"Trick",
+				"Magic-Coat",
+				"Recycle",
+				"Knock-Off",
+				"Skill-Swap",
+				"Secret-Power",
+				"Astonish",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Tailwind",
+				"Payback",
+				"Embargo",
+				"Sucker-Punch",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Charge-Beam",
+				"Ominous-Wind",
+				"Telekinesis",
+				"Round",
+				"Hex",
+				"Acrobatics",
+				"Phantom-Force",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drifblim Pokemon Class
+	//Drifblim PokemonInstance Class
 	#region Drifblim
-	public class Drifblim : Pokemon
+	public class DrifblimInstance : PokemonInstance
 	{
-		#region Drifblim Builders
+		#region Drifblim Constructors
 		/// <summary>
-		/// Drifblim Builder waiting for a Nickname & a Level
+		/// Drifblim Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drifblim(string nickname, int level)
+		public DrifblimInstance(string nickname, int level)
 		: base(
 				426,
-				SpecieDrifblim.Instance, // Pokemon Specie
+				SpeciesDrifblim.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Flying.Instance			
 		)
@@ -60,10 +147,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drifblim Builder only waiting for a Level
 		/// </summary>
-		public Drifblim(int level)
+		public DrifblimInstance(int level)
 		: base(
 				426,
-				SpecieDrifblim.Instance, // Pokemon Specie
+				SpeciesDrifblim.Instance, // PokemonInstance Species
 				"Drifblim", level,
 				Ghost.Instance, Flying.Instance			
 		)
@@ -73,12 +160,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drifblim Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drifblim Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drifblim() : base(
 			426,
-			SpecieDrifblim.Instance, // Pokemon Specie
+			SpeciesDrifblim.Instance, // PokemonInstance Species
 			Ghost.Instance, Flying.Instance			
 		) {}
 		*/

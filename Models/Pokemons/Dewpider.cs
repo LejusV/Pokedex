@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dewpider Specie to store common natural stats of all Dewpiders
-	#region SpecieDewpider
-	public class SpecieDewpider : PokemonSpecie
+	//Dewpider Species to store common natural stats of all Dewpiders
+	#region SpeciesDewpider
+	public class SpeciesDewpider : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDewpider? _instance = null;
+		private static SpeciesDewpider? _instance = null;
 #nullable restore
-        public static SpecieDewpider Instance
+        public static SpeciesDewpider Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDewpider();
+                    _instance = new SpeciesDewpider();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDewpider Builder
-		public SpecieDewpider() : base(
+		#region SpeciesDewpider Constructor
+		public SpeciesDewpider() : base(
 			"Dewpider",
 			0.3,
 			4.0,
@@ -32,23 +34,76 @@ namespace Pokedex.Models.Pokemons
 			40, 72, // Special Attack & Defense
 			27		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bite",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Leech-Life",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Spider-Web",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Mirror-Coat",
+				"Stockpile",
+				"Spit-Up",
+				"Facade",
+				"Water-Sport",
+				"Aqua-Ring",
+				"Poison-Jab",
+				"X-Scissor",
+				"Bug-Bite",
+				"Power-Split",
+				"Entrainment",
+				"Round",
+				"Scald",
+				"Frost-Breath",
+				"Sticky-Web",
+				"Confide",
+				"Infestation",
+				"Lunge",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dewpider Pokemon Class
+	//Dewpider PokemonInstance Class
 	#region Dewpider
-	public class Dewpider : Pokemon
+	public class DewpiderInstance : PokemonInstance
 	{
-		#region Dewpider Builders
+		#region Dewpider Constructors
 		/// <summary>
-		/// Dewpider Builder waiting for a Nickname & a Level
+		/// Dewpider Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dewpider(string nickname, int level)
+		public DewpiderInstance(string nickname, int level)
 		: base(
 				751,
-				SpecieDewpider.Instance, // Pokemon Specie
+				SpeciesDewpider.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Bug.Instance			
 		)
@@ -60,10 +115,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dewpider Builder only waiting for a Level
 		/// </summary>
-		public Dewpider(int level)
+		public DewpiderInstance(int level)
 		: base(
 				751,
-				SpecieDewpider.Instance, // Pokemon Specie
+				SpeciesDewpider.Instance, // PokemonInstance Species
 				"Dewpider", level,
 				Water.Instance, Bug.Instance			
 		)
@@ -73,12 +128,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dewpider Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dewpider Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dewpider() : base(
 			751,
-			SpecieDewpider.Instance, // Pokemon Specie
+			SpeciesDewpider.Instance, // PokemonInstance Species
 			Water.Instance, Bug.Instance			
 		) {}
 		*/

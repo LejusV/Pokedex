@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Poipole Specie to store common natural stats of all Poipoles
-	#region SpeciePoipole
-	public class SpeciePoipole : PokemonSpecie
+	//Poipole Species to store common natural stats of all Poipoles
+	#region SpeciesPoipole
+	public class SpeciesPoipole : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePoipole? _instance = null;
+		private static SpeciesPoipole? _instance = null;
 #nullable restore
-        public static SpeciePoipole Instance
+        public static SpeciesPoipole Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePoipole();
+                    _instance = new SpeciesPoipole();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePoipole Builder
-		public SpeciePoipole() : base(
+		#region SpeciesPoipole Constructor
+		public SpeciesPoipole() : base(
 			"Poipole",
 			0.6,
 			1.8,
@@ -32,23 +34,60 @@ namespace Pokedex.Models.Pokemons
 			73, 67, // Special Attack & Defense
 			73		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fury-Attack",
+				"Growl",
+				"Acid",
+				"Peck",
+				"Toxic",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Charm",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Facade",
+				"Helping-Hand",
+				"Poison-Jab",
+				"Dragon-Pulse",
+				"Nasty-Plot",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Fell-Stinger",
+				"Confide",
+				"Venom-Drench"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Poipole Pokemon Class
+	//Poipole PokemonInstance Class
 	#region Poipole
-	public class Poipole : Pokemon
+	public class PoipoleInstance : PokemonInstance
 	{
-		#region Poipole Builders
+		#region Poipole Constructors
 		/// <summary>
-		/// Poipole Builder waiting for a Nickname & a Level
+		/// Poipole Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Poipole(string nickname, int level)
+		public PoipoleInstance(string nickname, int level)
 		: base(
 				803,
-				SpeciePoipole.Instance, // Pokemon Specie
+				SpeciesPoipole.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +99,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Poipole Builder only waiting for a Level
 		/// </summary>
-		public Poipole(int level)
+		public PoipoleInstance(int level)
 		: base(
 				803,
-				SpeciePoipole.Instance, // Pokemon Specie
+				SpeciesPoipole.Instance, // PokemonInstance Species
 				"Poipole", level,
 				Poison.Instance			
 		)
@@ -73,12 +112,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Poipole Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Poipole Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Poipole() : base(
 			803,
-			SpeciePoipole.Instance, // Pokemon Specie
+			SpeciesPoipole.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

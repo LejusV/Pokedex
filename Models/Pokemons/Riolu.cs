@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Riolu Specie to store common natural stats of all Riolus
-	#region SpecieRiolu
-	public class SpecieRiolu : PokemonSpecie
+	//Riolu Species to store common natural stats of all Riolus
+	#region SpeciesRiolu
+	public class SpeciesRiolu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRiolu? _instance = null;
+		private static SpeciesRiolu? _instance = null;
 #nullable restore
-        public static SpecieRiolu Instance
+        public static SpeciesRiolu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRiolu();
+                    _instance = new SpeciesRiolu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRiolu Builder
-		public SpecieRiolu() : base(
+		#region SpeciesRiolu Constructor
+		public SpeciesRiolu() : base(
 			"Riolu",
 			0.7,
 			20.2,
@@ -32,23 +34,115 @@ namespace Pokedex.Models.Pokemons
 			35, 40, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Headbutt",
+				"Bite",
+				"Roar",
+				"Low-Kick",
+				"Counter",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Swift",
+				"High-Jump-Kick",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Follow-Me",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Secret-Power",
+				"Blaze-Kick",
+				"Meteor-Mash",
+				"Rock-Tomb",
+				"Sky-Uppercut",
+				"Iron-Defense",
+				"Bulk-Up",
+				"Natural-Gift",
+				"Feint",
+				"Payback",
+				"Fling",
+				"Copycat",
+				"Magnet-Rise",
+				"Force-Palm",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Nasty-Plot",
+				"Bullet-Punch",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Captivate",
+				"Low-Sweep",
+				"Round",
+				"Circle-Throw",
+				"Retaliate",
+				"Final-Gambit",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Riolu Pokemon Class
+	//Riolu PokemonInstance Class
 	#region Riolu
-	public class Riolu : Pokemon
+	public class RioluInstance : PokemonInstance
 	{
-		#region Riolu Builders
+		#region Riolu Constructors
 		/// <summary>
-		/// Riolu Builder waiting for a Nickname & a Level
+		/// Riolu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Riolu(string nickname, int level)
+		public RioluInstance(string nickname, int level)
 		: base(
 				447,
-				SpecieRiolu.Instance, // Pokemon Specie
+				SpeciesRiolu.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +154,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Riolu Builder only waiting for a Level
 		/// </summary>
-		public Riolu(int level)
+		public RioluInstance(int level)
 		: base(
 				447,
-				SpecieRiolu.Instance, // Pokemon Specie
+				SpeciesRiolu.Instance, // PokemonInstance Species
 				"Riolu", level,
 				Fighting.Instance			
 		)
@@ -73,12 +167,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Riolu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Riolu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Riolu() : base(
 			447,
-			SpecieRiolu.Instance, // Pokemon Specie
+			SpeciesRiolu.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

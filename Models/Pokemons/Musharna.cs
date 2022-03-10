@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Musharna Specie to store common natural stats of all Musharnas
-	#region SpecieMusharna
-	public class SpecieMusharna : PokemonSpecie
+	//Musharna Species to store common natural stats of all Musharnas
+	#region SpeciesMusharna
+	public class SpeciesMusharna : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMusharna? _instance = null;
+		private static SpeciesMusharna? _instance = null;
 #nullable restore
-        public static SpecieMusharna Instance
+        public static SpeciesMusharna Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMusharna();
+                    _instance = new SpeciesMusharna();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMusharna Builder
-		public SpecieMusharna() : base(
+		#region SpeciesMusharna Constructor
+		public SpeciesMusharna() : base(
 			"Musharna",
 			1.1,
 			60.5,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			107, 95, // Special Attack & Defense
 			29		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Psybeam",
+				"Hyper-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Torment",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Gyro-Ball",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Confide",
+				"Dazzling-Gleam",
+				"Psychic-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Musharna Pokemon Class
+	//Musharna PokemonInstance Class
 	#region Musharna
-	public class Musharna : Pokemon
+	public class MusharnaInstance : PokemonInstance
 	{
-		#region Musharna Builders
+		#region Musharna Constructors
 		/// <summary>
-		/// Musharna Builder waiting for a Nickname & a Level
+		/// Musharna Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Musharna(string nickname, int level)
+		public MusharnaInstance(string nickname, int level)
 		: base(
 				518,
-				SpecieMusharna.Instance, // Pokemon Specie
+				SpeciesMusharna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Musharna Builder only waiting for a Level
 		/// </summary>
-		public Musharna(int level)
+		public MusharnaInstance(int level)
 		: base(
 				518,
-				SpecieMusharna.Instance, // Pokemon Specie
+				SpeciesMusharna.Instance, // PokemonInstance Species
 				"Musharna", level,
 				Psychic.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Musharna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Musharna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Musharna() : base(
 			518,
-			SpecieMusharna.Instance, // Pokemon Specie
+			SpeciesMusharna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

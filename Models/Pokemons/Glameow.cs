@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Glameow Specie to store common natural stats of all Glameows
-	#region SpecieGlameow
-	public class SpecieGlameow : PokemonSpecie
+	//Glameow Species to store common natural stats of all Glameows
+	#region SpeciesGlameow
+	public class SpeciesGlameow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGlameow? _instance = null;
+		private static SpeciesGlameow? _instance = null;
 #nullable restore
-        public static SpecieGlameow Instance
+        public static SpeciesGlameow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGlameow();
+                    _instance = new SpeciesGlameow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGlameow Builder
-		public SpecieGlameow() : base(
+		#region SpeciesGlameow Constructor
+		public SpeciesGlameow() : base(
 			"Glameow",
 			0.5,
 			3.9,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			42, 37, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tail-Whip",
+				"Bite",
+				"Growl",
+				"Thunderbolt",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Hypnosis",
+				"Quick-Attack",
+				"Double-Team",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Super-Fang",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Fake-Out",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Assist",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Aerial-Ace",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"U-Turn",
+				"Payback",
+				"Assurance",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Shadow-Claw",
+				"Captivate",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Glameow Pokemon Class
+	//Glameow PokemonInstance Class
 	#region Glameow
-	public class Glameow : Pokemon
+	public class GlameowInstance : PokemonInstance
 	{
-		#region Glameow Builders
+		#region Glameow Constructors
 		/// <summary>
-		/// Glameow Builder waiting for a Nickname & a Level
+		/// Glameow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Glameow(string nickname, int level)
+		public GlameowInstance(string nickname, int level)
 		: base(
 				431,
-				SpecieGlameow.Instance, // Pokemon Specie
+				SpeciesGlameow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glameow Builder only waiting for a Level
 		/// </summary>
-		public Glameow(int level)
+		public GlameowInstance(int level)
 		: base(
 				431,
-				SpecieGlameow.Instance, // Pokemon Specie
+				SpeciesGlameow.Instance, // PokemonInstance Species
 				"Glameow", level,
 				Normal.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Glameow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Glameow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Glameow() : base(
 			431,
-			SpecieGlameow.Instance, // Pokemon Specie
+			SpeciesGlameow.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

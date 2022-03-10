@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Frosmoth Specie to store common natural stats of all Frosmoths
-	#region SpecieFrosmoth
-	public class SpecieFrosmoth : PokemonSpecie
+	//Frosmoth Species to store common natural stats of all Frosmoths
+	#region SpeciesFrosmoth
+	public class SpeciesFrosmoth : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFrosmoth? _instance = null;
+		private static SpeciesFrosmoth? _instance = null;
 #nullable restore
-        public static SpecieFrosmoth Instance
+        public static SpeciesFrosmoth Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFrosmoth();
+                    _instance = new SpeciesFrosmoth();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFrosmoth Builder
-		public SpecieFrosmoth() : base(
+		#region SpeciesFrosmoth Constructor
+		public SpeciesFrosmoth() : base(
 			"Frosmoth",
 			1.3,
 			42.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			125, 90, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Frosmoth Pokemon Class
+	//Frosmoth PokemonInstance Class
 	#region Frosmoth
-	public class Frosmoth : Pokemon
+	public class FrosmothInstance : PokemonInstance
 	{
-		#region Frosmoth Builders
+		#region Frosmoth Constructors
 		/// <summary>
-		/// Frosmoth Builder waiting for a Nickname & a Level
+		/// Frosmoth Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Frosmoth(string nickname, int level)
+		public FrosmothInstance(string nickname, int level)
 		: base(
 				873,
-				SpecieFrosmoth.Instance, // Pokemon Specie
+				SpeciesFrosmoth.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Bug.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Frosmoth Builder only waiting for a Level
 		/// </summary>
-		public Frosmoth(int level)
+		public FrosmothInstance(int level)
 		: base(
 				873,
-				SpecieFrosmoth.Instance, // Pokemon Specie
+				SpeciesFrosmoth.Instance, // PokemonInstance Species
 				"Frosmoth", level,
 				Ice.Instance, Bug.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Frosmoth Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Frosmoth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Frosmoth() : base(
 			873,
-			SpecieFrosmoth.Instance, // Pokemon Specie
+			SpeciesFrosmoth.Instance, // PokemonInstance Species
 			Ice.Instance, Bug.Instance			
 		) {}
 		*/

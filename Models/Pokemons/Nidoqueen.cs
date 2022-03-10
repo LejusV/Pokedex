@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nidoqueen Specie to store common natural stats of all Nidoqueens
-	#region SpecieNidoqueen
-	public class SpecieNidoqueen : PokemonSpecie
+	//Nidoqueen Species to store common natural stats of all Nidoqueens
+	#region SpeciesNidoqueen
+	public class SpeciesNidoqueen : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNidoqueen? _instance = null;
+		private static SpeciesNidoqueen? _instance = null;
 #nullable restore
-        public static SpecieNidoqueen Instance
+        public static SpeciesNidoqueen Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNidoqueen();
+                    _instance = new SpeciesNidoqueen();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNidoqueen Builder
-		public SpecieNidoqueen() : base(
+		#region SpeciesNidoqueen Constructor
+		public SpeciesNidoqueen() : base(
 			"Nidoqueen",
 			1.3,
 			60.0,
@@ -32,23 +34,147 @@ namespace Pokedex.Models.Pokemons
 			75, 85, // Special Attack & Defense
 			76		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Pay-Day",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Double-Kick",
+				"Mega-Kick",
+				"Headbutt",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Poison-Sting",
+				"Roar",
+				"Flamethrower",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Fling",
+				"Poison-Jab",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Venoshock",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Chip-Away",
+				"Incinerate",
+				"Quash",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Drill-Run",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nidoqueen Pokemon Class
+	//Nidoqueen PokemonInstance Class
 	#region Nidoqueen
-	public class Nidoqueen : Pokemon
+	public class NidoqueenInstance : PokemonInstance
 	{
-		#region Nidoqueen Builders
+		#region Nidoqueen Constructors
 		/// <summary>
-		/// Nidoqueen Builder waiting for a Nickname & a Level
+		/// Nidoqueen Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nidoqueen(string nickname, int level)
+		public NidoqueenInstance(string nickname, int level)
 		: base(
 				31,
-				SpecieNidoqueen.Instance, // Pokemon Specie
+				SpeciesNidoqueen.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Ground.Instance			
 		)
@@ -60,10 +186,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nidoqueen Builder only waiting for a Level
 		/// </summary>
-		public Nidoqueen(int level)
+		public NidoqueenInstance(int level)
 		: base(
 				31,
-				SpecieNidoqueen.Instance, // Pokemon Specie
+				SpeciesNidoqueen.Instance, // PokemonInstance Species
 				"Nidoqueen", level,
 				Poison.Instance, Ground.Instance			
 		)
@@ -73,12 +199,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nidoqueen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nidoqueen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nidoqueen() : base(
 			31,
-			SpecieNidoqueen.Instance, // Pokemon Specie
+			SpeciesNidoqueen.Instance, // PokemonInstance Species
 			Poison.Instance, Ground.Instance			
 		) {}
 		*/

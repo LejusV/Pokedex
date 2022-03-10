@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pelipper Specie to store common natural stats of all Pelippers
-	#region SpeciePelipper
-	public class SpeciePelipper : PokemonSpecie
+	//Pelipper Species to store common natural stats of all Pelippers
+	#region SpeciesPelipper
+	public class SpeciesPelipper : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePelipper? _instance = null;
+		private static SpeciesPelipper? _instance = null;
 #nullable restore
-        public static SpeciePelipper Instance
+        public static SpeciesPelipper Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePelipper();
+                    _instance = new SpeciesPelipper();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePelipper Builder
-		public SpeciePelipper() : base(
+		#region SpeciesPelipper Constructor
+		public SpeciesPelipper() : base(
 			"Pelipper",
 			1.2,
 			28.0,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			95, 70, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Fly",
+				"Double-Edge",
+				"Growl",
+				"Supersonic",
+				"Mist",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Whirlpool",
+				"Uproar",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Hail",
+				"Facade",
+				"Knock-Off",
+				"Secret-Power",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Water-Sport",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Roost",
+				"Brine",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Seed-Bomb",
+				"Giga-Impact",
+				"Defog",
+				"Gunk-Shot",
+				"Captivate",
+				"Ominous-Wind",
+				"Soak",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Sky-Drop",
+				"Hurricane",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pelipper Pokemon Class
+	//Pelipper PokemonInstance Class
 	#region Pelipper
-	public class Pelipper : Pokemon
+	public class PelipperInstance : PokemonInstance
 	{
-		#region Pelipper Builders
+		#region Pelipper Constructors
 		/// <summary>
-		/// Pelipper Builder waiting for a Nickname & a Level
+		/// Pelipper Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pelipper(string nickname, int level)
+		public PelipperInstance(string nickname, int level)
 		: base(
 				279,
-				SpeciePelipper.Instance, // Pokemon Specie
+				SpeciesPelipper.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pelipper Builder only waiting for a Level
 		/// </summary>
-		public Pelipper(int level)
+		public PelipperInstance(int level)
 		: base(
 				279,
-				SpeciePelipper.Instance, // Pokemon Specie
+				SpeciesPelipper.Instance, // PokemonInstance Species
 				"Pelipper", level,
 				Water.Instance, Flying.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pelipper Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pelipper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pelipper() : base(
 			279,
-			SpeciePelipper.Instance, // Pokemon Specie
+			SpeciesPelipper.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}
 		*/

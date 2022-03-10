@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shroomish Specie to store common natural stats of all Shroomishs
-	#region SpecieShroomish
-	public class SpecieShroomish : PokemonSpecie
+	//Shroomish Species to store common natural stats of all Shroomishs
+	#region SpeciesShroomish
+	public class SpeciesShroomish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShroomish? _instance = null;
+		private static SpeciesShroomish? _instance = null;
 #nullable restore
-        public static SpecieShroomish Instance
+        public static SpeciesShroomish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShroomish();
+                    _instance = new SpeciesShroomish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShroomish Builder
-		public SpecieShroomish() : base(
+		#region SpeciesShroomish Constructor
+		public SpeciesShroomish() : base(
 			"Shroomish",
 			0.4,
 			4.5,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			40, 60, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Absorb",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Spore",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Charm",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Snatch",
+				"Secret-Power",
+				"Fake-Tears",
+				"Bullet-Seed",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Round",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shroomish Pokemon Class
+	//Shroomish PokemonInstance Class
 	#region Shroomish
-	public class Shroomish : Pokemon
+	public class ShroomishInstance : PokemonInstance
 	{
-		#region Shroomish Builders
+		#region Shroomish Constructors
 		/// <summary>
-		/// Shroomish Builder waiting for a Nickname & a Level
+		/// Shroomish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shroomish(string nickname, int level)
+		public ShroomishInstance(string nickname, int level)
 		: base(
 				285,
-				SpecieShroomish.Instance, // Pokemon Specie
+				SpeciesShroomish.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shroomish Builder only waiting for a Level
 		/// </summary>
-		public Shroomish(int level)
+		public ShroomishInstance(int level)
 		: base(
 				285,
-				SpecieShroomish.Instance, // Pokemon Specie
+				SpeciesShroomish.Instance, // PokemonInstance Species
 				"Shroomish", level,
 				Grass.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shroomish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shroomish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shroomish() : base(
 			285,
-			SpecieShroomish.Instance, // Pokemon Specie
+			SpeciesShroomish.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

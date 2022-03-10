@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Xurkitree Specie to store common natural stats of all Xurkitrees
-	#region SpecieXurkitree
-	public class SpecieXurkitree : PokemonSpecie
+	//Xurkitree Species to store common natural stats of all Xurkitrees
+	#region SpeciesXurkitree
+	public class SpeciesXurkitree : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieXurkitree? _instance = null;
+		private static SpeciesXurkitree? _instance = null;
 #nullable restore
-        public static SpecieXurkitree Instance
+        public static SpeciesXurkitree Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieXurkitree();
+                    _instance = new SpeciesXurkitree();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieXurkitree Builder
-		public SpecieXurkitree() : base(
+		#region SpeciesXurkitree Constructor
+		public SpeciesXurkitree() : base(
 			"Xurkitree",
 			3.8,
 			100.0,
@@ -32,23 +34,83 @@ namespace Pokedex.Models.Pokemons
 			173, 71, // Special Attack & Defense
 			83		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Punch",
+				"Wrap",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Hypnosis",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Zap-Cannon",
+				"Swagger",
+				"Spark",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Charge",
+				"Ingrain",
+				"Tail-Glow",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Fling",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Discharge",
+				"Power-Whip",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Ion-Deluge",
+				"Confide",
+				"Eerie-Impulse",
+				"Electric-Terrain",
+				"Dazzling-Gleam",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Xurkitree Pokemon Class
+	//Xurkitree PokemonInstance Class
 	#region Xurkitree
-	public class Xurkitree : Pokemon
+	public class XurkitreeInstance : PokemonInstance
 	{
-		#region Xurkitree Builders
+		#region Xurkitree Constructors
 		/// <summary>
-		/// Xurkitree Builder waiting for a Nickname & a Level
+		/// Xurkitree Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Xurkitree(string nickname, int level)
+		public XurkitreeInstance(string nickname, int level)
 		: base(
 				796,
-				SpecieXurkitree.Instance, // Pokemon Specie
+				SpeciesXurkitree.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +122,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Xurkitree Builder only waiting for a Level
 		/// </summary>
-		public Xurkitree(int level)
+		public XurkitreeInstance(int level)
 		: base(
 				796,
-				SpecieXurkitree.Instance, // Pokemon Specie
+				SpeciesXurkitree.Instance, // PokemonInstance Species
 				"Xurkitree", level,
 				Electric.Instance			
 		)
@@ -73,12 +135,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Xurkitree Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Xurkitree Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Xurkitree() : base(
 			796,
-			SpecieXurkitree.Instance, // Pokemon Specie
+			SpeciesXurkitree.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

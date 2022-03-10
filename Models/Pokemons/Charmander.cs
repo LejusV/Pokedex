@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Charmander Specie to store common natural stats of all Charmanders
-	#region SpecieCharmander
-	public class SpecieCharmander : PokemonSpecie
+	//Charmander Species to store common natural stats of all Charmanders
+	#region SpeciesCharmander
+	public class SpeciesCharmander : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCharmander? _instance = null;
+		private static SpeciesCharmander? _instance = null;
 #nullable restore
-        public static SpecieCharmander Instance
+        public static SpeciesCharmander Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCharmander();
+                    _instance = new SpeciesCharmander();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCharmander Builder
-		public SpecieCharmander() : base(
+		#region SpeciesCharmander Constructor
+		public SpeciesCharmander() : base(
 			"Charmander",
 			0.6,
 			8.5,
@@ -32,23 +34,127 @@ namespace Pokedex.Models.Pokemons
 			60, 50, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Growl",
+				"Ember",
+				"Flamethrower",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Dragon-Rage",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Smokescreen",
+				"Defense-Curl",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Scary-Face",
+				"Belly-Drum",
+				"Mud-Slap",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Beat-Up",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Secret-Power",
+				"Air-Cutter",
+				"Overheat",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Dragon-Dance",
+				"Natural-Gift",
+				"Fling",
+				"Flare-Blitz",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Shadow-Claw",
+				"Fire-Fang",
+				"Captivate",
+				"Hone-Claws",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Inferno",
+				"Fire-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Charmander Pokemon Class
+	//Charmander PokemonInstance Class
 	#region Charmander
-	public class Charmander : Pokemon
+	public class CharmanderInstance : PokemonInstance
 	{
-		#region Charmander Builders
+		#region Charmander Constructors
 		/// <summary>
-		/// Charmander Builder waiting for a Nickname & a Level
+		/// Charmander Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Charmander(string nickname, int level)
+		public CharmanderInstance(string nickname, int level)
 		: base(
 				4,
-				SpecieCharmander.Instance, // Pokemon Specie
+				SpeciesCharmander.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +166,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Charmander Builder only waiting for a Level
 		/// </summary>
-		public Charmander(int level)
+		public CharmanderInstance(int level)
 		: base(
 				4,
-				SpecieCharmander.Instance, // Pokemon Specie
+				SpeciesCharmander.Instance, // PokemonInstance Species
 				"Charmander", level,
 				Fire.Instance			
 		)
@@ -73,12 +179,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Charmander Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Charmander Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Charmander() : base(
 			4,
-			SpecieCharmander.Instance, // Pokemon Specie
+			SpeciesCharmander.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

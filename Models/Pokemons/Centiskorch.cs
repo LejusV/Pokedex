@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Centiskorch Specie to store common natural stats of all Centiskorchs
-	#region SpecieCentiskorch
-	public class SpecieCentiskorch : PokemonSpecie
+	//Centiskorch Species to store common natural stats of all Centiskorchs
+	#region SpeciesCentiskorch
+	public class SpeciesCentiskorch : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCentiskorch? _instance = null;
+		private static SpeciesCentiskorch? _instance = null;
 #nullable restore
-        public static SpecieCentiskorch Instance
+        public static SpeciesCentiskorch Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCentiskorch();
+                    _instance = new SpeciesCentiskorch();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCentiskorch Builder
-		public SpecieCentiskorch() : base(
+		#region SpeciesCentiskorch Constructor
+		public SpeciesCentiskorch() : base(
 			"Centiskorch",
 			3.0,
 			120.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			90, 90, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Centiskorch Pokemon Class
+	//Centiskorch PokemonInstance Class
 	#region Centiskorch
-	public class Centiskorch : Pokemon
+	public class CentiskorchInstance : PokemonInstance
 	{
-		#region Centiskorch Builders
+		#region Centiskorch Constructors
 		/// <summary>
-		/// Centiskorch Builder waiting for a Nickname & a Level
+		/// Centiskorch Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Centiskorch(string nickname, int level)
+		public CentiskorchInstance(string nickname, int level)
 		: base(
 				851,
-				SpecieCentiskorch.Instance, // Pokemon Specie
+				SpeciesCentiskorch.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Bug.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Centiskorch Builder only waiting for a Level
 		/// </summary>
-		public Centiskorch(int level)
+		public CentiskorchInstance(int level)
 		: base(
 				851,
-				SpecieCentiskorch.Instance, // Pokemon Specie
+				SpeciesCentiskorch.Instance, // PokemonInstance Species
 				"Centiskorch", level,
 				Fire.Instance, Bug.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Centiskorch Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Centiskorch Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Centiskorch() : base(
 			851,
-			SpecieCentiskorch.Instance, // Pokemon Specie
+			SpeciesCentiskorch.Instance, // PokemonInstance Species
 			Fire.Instance, Bug.Instance			
 		) {}
 		*/

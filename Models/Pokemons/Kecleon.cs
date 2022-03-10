@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kecleon Specie to store common natural stats of all Kecleons
-	#region SpecieKecleon
-	public class SpecieKecleon : PokemonSpecie
+	//Kecleon Species to store common natural stats of all Kecleons
+	#region SpeciesKecleon
+	public class SpeciesKecleon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKecleon? _instance = null;
+		private static SpeciesKecleon? _instance = null;
 #nullable restore
-        public static SpecieKecleon Instance
+        public static SpeciesKecleon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKecleon();
+                    _instance = new SpeciesKecleon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKecleon Builder
-		public SpecieKecleon() : base(
+		#region SpeciesKecleon Constructor
+		public SpeciesKecleon() : base(
 			"Kecleon",
 			1.0,
 			22.0,
@@ -32,23 +34,144 @@ namespace Pokedex.Models.Pokemons
 			60, 120, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Bind",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Tail-Whip",
+				"Disable",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Psybeam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Recover",
+				"Defense-Curl",
+				"Metronome",
+				"Lick",
+				"Fire-Blast",
+				"Swift",
+				"Dizzy-Punch",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Facade",
+				"Focus-Punch",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Camouflage",
+				"Astonish",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Feint",
+				"Fling",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Aqua-Tail",
+				"Drain-Punch",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Shadow-Sneak",
+				"Trick-Room",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Hone-Claws",
+				"Wonder-Room",
+				"Synchronoise",
+				"Foul-Play",
+				"After-You",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kecleon Pokemon Class
+	//Kecleon PokemonInstance Class
 	#region Kecleon
-	public class Kecleon : Pokemon
+	public class KecleonInstance : PokemonInstance
 	{
-		#region Kecleon Builders
+		#region Kecleon Constructors
 		/// <summary>
-		/// Kecleon Builder waiting for a Nickname & a Level
+		/// Kecleon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kecleon(string nickname, int level)
+		public KecleonInstance(string nickname, int level)
 		: base(
 				352,
-				SpecieKecleon.Instance, // Pokemon Specie
+				SpeciesKecleon.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +183,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kecleon Builder only waiting for a Level
 		/// </summary>
-		public Kecleon(int level)
+		public KecleonInstance(int level)
 		: base(
 				352,
-				SpecieKecleon.Instance, // Pokemon Specie
+				SpeciesKecleon.Instance, // PokemonInstance Species
 				"Kecleon", level,
 				Normal.Instance			
 		)
@@ -73,12 +196,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kecleon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kecleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kecleon() : base(
 			352,
-			SpecieKecleon.Instance, // Pokemon Specie
+			SpeciesKecleon.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dottler Specie to store common natural stats of all Dottlers
-	#region SpecieDottler
-	public class SpecieDottler : PokemonSpecie
+	//Dottler Species to store common natural stats of all Dottlers
+	#region SpeciesDottler
+	public class SpeciesDottler : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDottler? _instance = null;
+		private static SpeciesDottler? _instance = null;
 #nullable restore
-        public static SpecieDottler Instance
+        public static SpeciesDottler Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDottler();
+                    _instance = new SpeciesDottler();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDottler Builder
-		public SpecieDottler() : base(
+		#region SpeciesDottler Constructor
+		public SpeciesDottler() : base(
 			"Dottler",
 			0.4,
 			19.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 90, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dottler Pokemon Class
+	//Dottler PokemonInstance Class
 	#region Dottler
-	public class Dottler : Pokemon
+	public class DottlerInstance : PokemonInstance
 	{
-		#region Dottler Builders
+		#region Dottler Constructors
 		/// <summary>
-		/// Dottler Builder waiting for a Nickname & a Level
+		/// Dottler Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dottler(string nickname, int level)
+		public DottlerInstance(string nickname, int level)
 		: base(
 				825,
-				SpecieDottler.Instance, // Pokemon Specie
+				SpeciesDottler.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dottler Builder only waiting for a Level
 		/// </summary>
-		public Dottler(int level)
+		public DottlerInstance(int level)
 		: base(
 				825,
-				SpecieDottler.Instance, // Pokemon Specie
+				SpeciesDottler.Instance, // PokemonInstance Species
 				"Dottler", level,
 				Bug.Instance, Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dottler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dottler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dottler() : base(
 			825,
-			SpecieDottler.Instance, // Pokemon Specie
+			SpeciesDottler.Instance, // PokemonInstance Species
 			Bug.Instance, Psychic.Instance			
 		) {}
 		*/

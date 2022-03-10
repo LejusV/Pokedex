@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gigalith Specie to store common natural stats of all Gigaliths
-	#region SpecieGigalith
-	public class SpecieGigalith : PokemonSpecie
+	//Gigalith Species to store common natural stats of all Gigaliths
+	#region SpeciesGigalith
+	public class SpeciesGigalith : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGigalith? _instance = null;
+		private static SpeciesGigalith? _instance = null;
 #nullable restore
-        public static SpecieGigalith Instance
+        public static SpeciesGigalith Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGigalith();
+                    _instance = new SpeciesGigalith();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGigalith Builder
-		public SpecieGigalith() : base(
+		#region SpeciesGigalith Constructor
+		public SpeciesGigalith() : base(
 			"Gigalith",
 			1.7,
 			260.0,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			60, 80, // Special Attack & Defense
 			25		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Superpower",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Gravity",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Giga-Impact",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gigalith Pokemon Class
+	//Gigalith PokemonInstance Class
 	#region Gigalith
-	public class Gigalith : Pokemon
+	public class GigalithInstance : PokemonInstance
 	{
-		#region Gigalith Builders
+		#region Gigalith Constructors
 		/// <summary>
-		/// Gigalith Builder waiting for a Nickname & a Level
+		/// Gigalith Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gigalith(string nickname, int level)
+		public GigalithInstance(string nickname, int level)
 		: base(
 				526,
-				SpecieGigalith.Instance, // Pokemon Specie
+				SpeciesGigalith.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gigalith Builder only waiting for a Level
 		/// </summary>
-		public Gigalith(int level)
+		public GigalithInstance(int level)
 		: base(
 				526,
-				SpecieGigalith.Instance, // Pokemon Specie
+				SpeciesGigalith.Instance, // PokemonInstance Species
 				"Gigalith", level,
 				Rock.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gigalith Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gigalith Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gigalith() : base(
 			526,
-			SpecieGigalith.Instance, // Pokemon Specie
+			SpeciesGigalith.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

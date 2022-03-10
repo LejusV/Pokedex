@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gabite Specie to store common natural stats of all Gabites
-	#region SpecieGabite
-	public class SpecieGabite : PokemonSpecie
+	//Gabite Species to store common natural stats of all Gabites
+	#region SpeciesGabite
+	public class SpeciesGabite : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGabite? _instance = null;
+		private static SpeciesGabite? _instance = null;
 #nullable restore
-        public static SpecieGabite Instance
+        public static SpeciesGabite Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGabite();
+                    _instance = new SpeciesGabite();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGabite Builder
-		public SpecieGabite() : base(
+		#region SpeciesGabite Constructor
+		public SpeciesGabite() : base(
 			"Gabite",
 			1.4,
 			56.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			50, 55, // Special Attack & Defense
 			82		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Roar",
+				"Flamethrower",
+				"Strength",
+				"Dragon-Rage",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Natural-Gift",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Earth-Power",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Draco-Meteor",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Dual-Chop",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gabite Pokemon Class
+	//Gabite PokemonInstance Class
 	#region Gabite
-	public class Gabite : Pokemon
+	public class GabiteInstance : PokemonInstance
 	{
-		#region Gabite Builders
+		#region Gabite Constructors
 		/// <summary>
-		/// Gabite Builder waiting for a Nickname & a Level
+		/// Gabite Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gabite(string nickname, int level)
+		public GabiteInstance(string nickname, int level)
 		: base(
 				444,
-				SpecieGabite.Instance, // Pokemon Specie
+				SpeciesGabite.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gabite Builder only waiting for a Level
 		/// </summary>
-		public Gabite(int level)
+		public GabiteInstance(int level)
 		: base(
 				444,
-				SpecieGabite.Instance, // Pokemon Specie
+				SpeciesGabite.Instance, // PokemonInstance Species
 				"Gabite", level,
 				Dragon.Instance, Ground.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gabite Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gabite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gabite() : base(
 			444,
-			SpecieGabite.Instance, // Pokemon Specie
+			SpeciesGabite.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}
 		*/

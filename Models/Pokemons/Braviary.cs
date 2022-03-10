@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Braviary Specie to store common natural stats of all Braviarys
-	#region SpecieBraviary
-	public class SpecieBraviary : PokemonSpecie
+	//Braviary Species to store common natural stats of all Braviarys
+	#region SpeciesBraviary
+	public class SpeciesBraviary : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBraviary? _instance = null;
+		private static SpeciesBraviary? _instance = null;
 #nullable restore
-        public static SpecieBraviary Instance
+        public static SpeciesBraviary Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBraviary();
+                    _instance = new SpeciesBraviary();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBraviary Builder
-		public SpecieBraviary() : base(
+		#region SpeciesBraviary Constructor
+		public SpeciesBraviary() : base(
 			"Braviary",
 			1.5,
 			41.0,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			57, 75, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Wing-Attack",
+				"Whirlwind",
+				"Fly",
+				"Fury-Attack",
+				"Thrash",
+				"Leer",
+				"Hyper-Beam",
+				"Peck",
+				"Strength",
+				"Toxic",
+				"Double-Team",
+				"Sky-Attack",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Facade",
+				"Superpower",
+				"Secret-Power",
+				"Crush-Claw",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Brave-Bird",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Defog",
+				"Hone-Claws",
+				"Round",
+				"Sky-Drop",
+				"Retaliate",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Braviary Pokemon Class
+	//Braviary PokemonInstance Class
 	#region Braviary
-	public class Braviary : Pokemon
+	public class BraviaryInstance : PokemonInstance
 	{
-		#region Braviary Builders
+		#region Braviary Constructors
 		/// <summary>
-		/// Braviary Builder waiting for a Nickname & a Level
+		/// Braviary Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Braviary(string nickname, int level)
+		public BraviaryInstance(string nickname, int level)
 		: base(
 				628,
-				SpecieBraviary.Instance, // Pokemon Specie
+				SpeciesBraviary.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Braviary Builder only waiting for a Level
 		/// </summary>
-		public Braviary(int level)
+		public BraviaryInstance(int level)
 		: base(
 				628,
-				SpecieBraviary.Instance, // Pokemon Specie
+				SpeciesBraviary.Instance, // PokemonInstance Species
 				"Braviary", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Braviary Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Braviary Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Braviary() : base(
 			628,
-			SpecieBraviary.Instance, // Pokemon Specie
+			SpeciesBraviary.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

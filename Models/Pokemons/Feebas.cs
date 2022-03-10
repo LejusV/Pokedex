@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Feebas Specie to store common natural stats of all Feebass
-	#region SpecieFeebas
-	public class SpecieFeebas : PokemonSpecie
+	//Feebas Species to store common natural stats of all Feebass
+	#region SpeciesFeebas
+	public class SpeciesFeebas : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFeebas? _instance = null;
+		private static SpeciesFeebas? _instance = null;
 #nullable restore
-        public static SpecieFeebas Instance
+        public static SpeciesFeebas Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFeebas();
+                    _instance = new SpeciesFeebas();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFeebas Builder
-		public SpecieFeebas() : base(
+		#region SpeciesFeebas Constructor
+		public SpeciesFeebas() : base(
 			"Feebas",
 			0.6,
 			7.4,
@@ -32,23 +34,82 @@ namespace Pokedex.Models.Pokemons
 			10, 55, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Double-Edge",
+				"Mist",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Hypnosis",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Haze",
+				"Waterfall",
+				"Swift",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Tickle",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Dragon-Pulse",
+				"Captivate",
+				"Round",
+				"Scald",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Feebas Pokemon Class
+	//Feebas PokemonInstance Class
 	#region Feebas
-	public class Feebas : Pokemon
+	public class FeebasInstance : PokemonInstance
 	{
-		#region Feebas Builders
+		#region Feebas Constructors
 		/// <summary>
-		/// Feebas Builder waiting for a Nickname & a Level
+		/// Feebas Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Feebas(string nickname, int level)
+		public FeebasInstance(string nickname, int level)
 		: base(
 				349,
-				SpecieFeebas.Instance, // Pokemon Specie
+				SpeciesFeebas.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +121,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Feebas Builder only waiting for a Level
 		/// </summary>
-		public Feebas(int level)
+		public FeebasInstance(int level)
 		: base(
 				349,
-				SpecieFeebas.Instance, // Pokemon Specie
+				SpeciesFeebas.Instance, // PokemonInstance Species
 				"Feebas", level,
 				Water.Instance			
 		)
@@ -73,12 +134,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Feebas Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Feebas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Feebas() : base(
 			349,
-			SpecieFeebas.Instance, // Pokemon Specie
+			SpeciesFeebas.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

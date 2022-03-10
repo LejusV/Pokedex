@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jirachi Specie to store common natural stats of all Jirachis
-	#region SpecieJirachi
-	public class SpecieJirachi : PokemonSpecie
+	//Jirachi Species to store common natural stats of all Jirachis
+	#region SpeciesJirachi
+	public class SpeciesJirachi : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJirachi? _instance = null;
+		private static SpeciesJirachi? _instance = null;
 #nullable restore
-        public static SpecieJirachi Instance
+        public static SpeciesJirachi Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJirachi();
+                    _instance = new SpeciesJirachi();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJirachi Builder
-		public SpecieJirachi() : base(
+		#region SpeciesJirachi Constructor
+		public SpeciesJirachi() : base(
 			"Jirachi",
 			0.3,
 			1.1,
@@ -32,23 +34,120 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Metronome",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Wish",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Refresh",
+				"Secret-Power",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Doom-Desire",
+				"Gravity",
+				"Healing-Wish",
+				"Natural-Gift",
+				"U-Turn",
+				"Fling",
+				"Lucky-Chant",
+				"Last-Resort",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Round",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jirachi Pokemon Class
+	//Jirachi PokemonInstance Class
 	#region Jirachi
-	public class Jirachi : Pokemon
+	public class JirachiInstance : PokemonInstance
 	{
-		#region Jirachi Builders
+		#region Jirachi Constructors
 		/// <summary>
-		/// Jirachi Builder waiting for a Nickname & a Level
+		/// Jirachi Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Jirachi(string nickname, int level)
+		public JirachiInstance(string nickname, int level)
 		: base(
 				385,
-				SpecieJirachi.Instance, // Pokemon Specie
+				SpeciesJirachi.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
 		)
@@ -60,10 +159,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jirachi Builder only waiting for a Level
 		/// </summary>
-		public Jirachi(int level)
+		public JirachiInstance(int level)
 		: base(
 				385,
-				SpecieJirachi.Instance, // Pokemon Specie
+				SpeciesJirachi.Instance, // PokemonInstance Species
 				"Jirachi", level,
 				Steel.Instance, Psychic.Instance			
 		)
@@ -73,12 +172,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jirachi Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jirachi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Jirachi() : base(
 			385,
-			SpecieJirachi.Instance, // Pokemon Specie
+			SpeciesJirachi.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}
 		*/

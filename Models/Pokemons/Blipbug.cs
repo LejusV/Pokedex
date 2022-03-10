@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Blipbug Specie to store common natural stats of all Blipbugs
-	#region SpecieBlipbug
-	public class SpecieBlipbug : PokemonSpecie
+	//Blipbug Species to store common natural stats of all Blipbugs
+	#region SpeciesBlipbug
+	public class SpeciesBlipbug : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBlipbug? _instance = null;
+		private static SpeciesBlipbug? _instance = null;
 #nullable restore
-        public static SpecieBlipbug Instance
+        public static SpeciesBlipbug Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBlipbug();
+                    _instance = new SpeciesBlipbug();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBlipbug Builder
-		public SpecieBlipbug() : base(
+		#region SpeciesBlipbug Constructor
+		public SpeciesBlipbug() : base(
 			"Blipbug",
 			0.4,
 			8.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			25, 45, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Blipbug Pokemon Class
+	//Blipbug PokemonInstance Class
 	#region Blipbug
-	public class Blipbug : Pokemon
+	public class BlipbugInstance : PokemonInstance
 	{
-		#region Blipbug Builders
+		#region Blipbug Constructors
 		/// <summary>
-		/// Blipbug Builder waiting for a Nickname & a Level
+		/// Blipbug Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Blipbug(string nickname, int level)
+		public BlipbugInstance(string nickname, int level)
 		: base(
 				824,
-				SpecieBlipbug.Instance, // Pokemon Specie
+				SpeciesBlipbug.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Blipbug Builder only waiting for a Level
 		/// </summary>
-		public Blipbug(int level)
+		public BlipbugInstance(int level)
 		: base(
 				824,
-				SpecieBlipbug.Instance, // Pokemon Specie
+				SpeciesBlipbug.Instance, // PokemonInstance Species
 				"Blipbug", level,
 				Bug.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Blipbug Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Blipbug Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Blipbug() : base(
 			824,
-			SpecieBlipbug.Instance, // Pokemon Specie
+			SpeciesBlipbug.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

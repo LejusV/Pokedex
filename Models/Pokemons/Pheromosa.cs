@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pheromosa Specie to store common natural stats of all Pheromosas
-	#region SpeciePheromosa
-	public class SpeciePheromosa : PokemonSpecie
+	//Pheromosa Species to store common natural stats of all Pheromosas
+	#region SpeciesPheromosa
+	public class SpeciesPheromosa : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePheromosa? _instance = null;
+		private static SpeciesPheromosa? _instance = null;
 #nullable restore
-        public static SpeciePheromosa Instance
+        public static SpeciesPheromosa Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePheromosa();
+                    _instance = new SpeciesPheromosa();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePheromosa Builder
-		public SpeciePheromosa() : base(
+		#region SpeciesPheromosa Constructor
+		public SpeciesPheromosa() : base(
 			"Pheromosa",
 			1.8,
 			25.0,
@@ -32,23 +34,81 @@ namespace Pokedex.Models.Pokemons
 			137, 37, // Special Attack & Defense
 			151		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Double-Kick",
+				"Jump-Kick",
+				"Leer",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"Swift",
+				"High-Jump-Kick",
+				"Rest",
+				"Substitute",
+				"Triple-Kick",
+				"Protect",
+				"False-Swipe",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Silver-Wind",
+				"Bounce",
+				"Roost",
+				"Feint",
+				"U-Turn",
+				"Fling",
+				"Me-First",
+				"Poison-Jab",
+				"Bug-Buzz",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Quiver-Dance",
+				"Low-Sweep",
+				"Round",
+				"Echoed-Voice",
+				"Quick-Guard",
+				"Confide",
+				"Lunge",
+				"Speed-Swap"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pheromosa Pokemon Class
+	//Pheromosa PokemonInstance Class
 	#region Pheromosa
-	public class Pheromosa : Pokemon
+	public class PheromosaInstance : PokemonInstance
 	{
-		#region Pheromosa Builders
+		#region Pheromosa Constructors
 		/// <summary>
-		/// Pheromosa Builder waiting for a Nickname & a Level
+		/// Pheromosa Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pheromosa(string nickname, int level)
+		public PheromosaInstance(string nickname, int level)
 		: base(
 				795,
-				SpeciePheromosa.Instance, // Pokemon Specie
+				SpeciesPheromosa.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fighting.Instance			
 		)
@@ -60,10 +120,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pheromosa Builder only waiting for a Level
 		/// </summary>
-		public Pheromosa(int level)
+		public PheromosaInstance(int level)
 		: base(
 				795,
-				SpeciePheromosa.Instance, // Pokemon Specie
+				SpeciesPheromosa.Instance, // PokemonInstance Species
 				"Pheromosa", level,
 				Bug.Instance, Fighting.Instance			
 		)
@@ -73,12 +133,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pheromosa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pheromosa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pheromosa() : base(
 			795,
-			SpeciePheromosa.Instance, // Pokemon Specie
+			SpeciesPheromosa.Instance, // PokemonInstance Species
 			Bug.Instance, Fighting.Instance			
 		) {}
 		*/

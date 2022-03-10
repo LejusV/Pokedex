@@ -33,7 +33,7 @@ using Pokedex.Models.Types;
 
 namespace Pokedex.Models.Types
 {{
-    publlic class Electric : PokemonType
+    publlic class Electric : PokeType
     {{
 #nullable enable
         private static Electric? _instance = null;

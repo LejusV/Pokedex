@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Heliolisk Specie to store common natural stats of all Heliolisks
-	#region SpecieHeliolisk
-	public class SpecieHeliolisk : PokemonSpecie
+	//Heliolisk Species to store common natural stats of all Heliolisks
+	#region SpeciesHeliolisk
+	public class SpeciesHeliolisk : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHeliolisk? _instance = null;
+		private static SpeciesHeliolisk? _instance = null;
 #nullable restore
-        public static SpecieHeliolisk Instance
+        public static SpeciesHeliolisk Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHeliolisk();
+                    _instance = new SpeciesHeliolisk();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHeliolisk Builder
-		public SpecieHeliolisk() : base(
+		#region SpeciesHeliolisk Constructor
+		public SpeciesHeliolisk() : base(
 			"Heliolisk",
 			1.0,
 			21.0,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			109, 94, // Special Attack & Defense
 			109		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Razor-Wind",
+				"Cut",
+				"Surf",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Facade",
+				"Charge",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Shock-Wave",
+				"U-Turn",
+				"Magnet-Rise",
+				"Dark-Pulse",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Low-Sweep",
+				"Round",
+				"Volt-Switch",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Electroweb",
+				"Wild-Charge",
+				"Parabolic-Charge",
+				"Electrify",
+				"Confide",
+				"Eerie-Impulse",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Heliolisk Pokemon Class
+	//Heliolisk PokemonInstance Class
 	#region Heliolisk
-	public class Heliolisk : Pokemon
+	public class HelioliskInstance : PokemonInstance
 	{
-		#region Heliolisk Builders
+		#region Heliolisk Constructors
 		/// <summary>
-		/// Heliolisk Builder waiting for a Nickname & a Level
+		/// Heliolisk Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Heliolisk(string nickname, int level)
+		public HelioliskInstance(string nickname, int level)
 		: base(
 				695,
-				SpecieHeliolisk.Instance, // Pokemon Specie
+				SpeciesHeliolisk.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Normal.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Heliolisk Builder only waiting for a Level
 		/// </summary>
-		public Heliolisk(int level)
+		public HelioliskInstance(int level)
 		: base(
 				695,
-				SpecieHeliolisk.Instance, // Pokemon Specie
+				SpeciesHeliolisk.Instance, // PokemonInstance Species
 				"Heliolisk", level,
 				Electric.Instance, Normal.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Heliolisk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Heliolisk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Heliolisk() : base(
 			695,
-			SpecieHeliolisk.Instance, // Pokemon Specie
+			SpeciesHeliolisk.Instance, // PokemonInstance Species
 			Electric.Instance, Normal.Instance			
 		) {}
 		*/

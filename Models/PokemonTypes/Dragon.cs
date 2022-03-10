@@ -1,6 +1,6 @@
-namespace Pokedex.Models.PokemonTypes
+namespace Pokedex.Models.PokeTypes
 {
-    public class Dragon : PokemonType
+    public class Dragon : PokeType
     {
 #nullable enable
         private static Dragon? _instance = null;

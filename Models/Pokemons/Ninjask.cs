@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ninjask Specie to store common natural stats of all Ninjasks
-	#region SpecieNinjask
-	public class SpecieNinjask : PokemonSpecie
+	//Ninjask Species to store common natural stats of all Ninjasks
+	#region SpeciesNinjask
+	public class SpeciesNinjask : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNinjask? _instance = null;
+		private static SpeciesNinjask? _instance = null;
 #nullable restore
-        public static SpecieNinjask Instance
+        public static SpeciesNinjask Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNinjask();
+                    _instance = new SpeciesNinjask();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNinjask Builder
-		public SpecieNinjask() : base(
+		#region SpeciesNinjask Constructor
+		public SpeciesNinjask() : base(
 			"Ninjask",
 			0.8,
 			12.0,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			160		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Sand-Attack",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Absorb",
+				"Solar-Beam",
+				"String-Shot",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Swift",
+				"Leech-Life",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Mind-Reader",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"U-Turn",
+				"X-Scissor",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Hone-Claws",
+				"Round",
+				"Struggle-Bug",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ninjask Pokemon Class
+	//Ninjask PokemonInstance Class
 	#region Ninjask
-	public class Ninjask : Pokemon
+	public class NinjaskInstance : PokemonInstance
 	{
-		#region Ninjask Builders
+		#region Ninjask Constructors
 		/// <summary>
-		/// Ninjask Builder waiting for a Nickname & a Level
+		/// Ninjask Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ninjask(string nickname, int level)
+		public NinjaskInstance(string nickname, int level)
 		: base(
 				291,
-				SpecieNinjask.Instance, // Pokemon Specie
+				SpeciesNinjask.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ninjask Builder only waiting for a Level
 		/// </summary>
-		public Ninjask(int level)
+		public NinjaskInstance(int level)
 		: base(
 				291,
-				SpecieNinjask.Instance, // Pokemon Specie
+				SpeciesNinjask.Instance, // PokemonInstance Species
 				"Ninjask", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ninjask Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ninjask Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ninjask() : base(
 			291,
-			SpecieNinjask.Instance, // Pokemon Specie
+			SpeciesNinjask.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

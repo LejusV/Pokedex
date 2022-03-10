@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Victreebel Specie to store common natural stats of all Victreebels
-	#region SpecieVictreebel
-	public class SpecieVictreebel : PokemonSpecie
+	//Victreebel Species to store common natural stats of all Victreebels
+	#region SpeciesVictreebel
+	public class SpeciesVictreebel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVictreebel? _instance = null;
+		private static SpeciesVictreebel? _instance = null;
 #nullable restore
-        public static SpecieVictreebel Instance
+        public static SpeciesVictreebel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVictreebel();
+                    _instance = new SpeciesVictreebel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVictreebel Builder
-		public SpecieVictreebel() : base(
+		#region SpeciesVictreebel Constructor
+		public SpeciesVictreebel() : base(
 			"Victreebel",
 			1.7,
 			15.5,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			100, 70, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Vine-Whip",
+				"Body-Slam",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Acid",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Nature-Power",
+				"Knock-Off",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Leaf-Blade",
+				"Natural-Gift",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Venoshock",
+				"Round",
+				"Leaf-Tornado",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Victreebel Pokemon Class
+	//Victreebel PokemonInstance Class
 	#region Victreebel
-	public class Victreebel : Pokemon
+	public class VictreebelInstance : PokemonInstance
 	{
-		#region Victreebel Builders
+		#region Victreebel Constructors
 		/// <summary>
-		/// Victreebel Builder waiting for a Nickname & a Level
+		/// Victreebel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Victreebel(string nickname, int level)
+		public VictreebelInstance(string nickname, int level)
 		: base(
 				71,
-				SpecieVictreebel.Instance, // Pokemon Specie
+				SpeciesVictreebel.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Victreebel Builder only waiting for a Level
 		/// </summary>
-		public Victreebel(int level)
+		public VictreebelInstance(int level)
 		: base(
 				71,
-				SpecieVictreebel.Instance, // Pokemon Specie
+				SpeciesVictreebel.Instance, // PokemonInstance Species
 				"Victreebel", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Victreebel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Victreebel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Victreebel() : base(
 			71,
-			SpecieVictreebel.Instance, // Pokemon Specie
+			SpeciesVictreebel.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

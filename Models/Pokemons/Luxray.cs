@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Luxray Specie to store common natural stats of all Luxrays
-	#region SpecieLuxray
-	public class SpecieLuxray : PokemonSpecie
+	//Luxray Species to store common natural stats of all Luxrays
+	#region SpeciesLuxray
+	public class SpeciesLuxray : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLuxray? _instance = null;
+		private static SpeciesLuxray? _instance = null;
 #nullable restore
-        public static SpecieLuxray Instance
+        public static SpeciesLuxray Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLuxray();
+                    _instance = new SpeciesLuxray();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLuxray Builder
-		public SpecieLuxray() : base(
+		#region SpeciesLuxray Constructor
+		public SpeciesLuxray() : base(
 			"Luxray",
 			1.4,
 			42.0,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			95, 79, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Facade",
+				"Charge",
+				"Helping-Hand",
+				"Superpower",
+				"Secret-Power",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Snarl",
+				"Confide",
+				"Electric-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Luxray Pokemon Class
+	//Luxray PokemonInstance Class
 	#region Luxray
-	public class Luxray : Pokemon
+	public class LuxrayInstance : PokemonInstance
 	{
-		#region Luxray Builders
+		#region Luxray Constructors
 		/// <summary>
-		/// Luxray Builder waiting for a Nickname & a Level
+		/// Luxray Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Luxray(string nickname, int level)
+		public LuxrayInstance(string nickname, int level)
 		: base(
 				405,
-				SpecieLuxray.Instance, // Pokemon Specie
+				SpeciesLuxray.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Luxray Builder only waiting for a Level
 		/// </summary>
-		public Luxray(int level)
+		public LuxrayInstance(int level)
 		: base(
 				405,
-				SpecieLuxray.Instance, // Pokemon Specie
+				SpeciesLuxray.Instance, // PokemonInstance Species
 				"Luxray", level,
 				Electric.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Luxray Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Luxray Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Luxray() : base(
 			405,
-			SpecieLuxray.Instance, // Pokemon Specie
+			SpeciesLuxray.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

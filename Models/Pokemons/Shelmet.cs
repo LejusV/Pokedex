@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shelmet Specie to store common natural stats of all Shelmets
-	#region SpecieShelmet
-	public class SpecieShelmet : PokemonSpecie
+	//Shelmet Species to store common natural stats of all Shelmets
+	#region SpeciesShelmet
+	public class SpeciesShelmet : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShelmet? _instance = null;
+		private static SpeciesShelmet? _instance = null;
 #nullable restore
-        public static SpecieShelmet Instance
+        public static SpeciesShelmet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShelmet();
+                    _instance = new SpeciesShelmet();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShelmet Builder
-		public SpecieShelmet() : base(
+		#region SpeciesShelmet Constructor
+		public SpeciesShelmet() : base(
 			"Shelmet",
 			0.4,
 			7.7,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			40, 65, // Special Attack & Defense
 			25		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Body-Slam",
+				"Double-Edge",
+				"Acid",
+				"Absorb",
+				"Mega-Drain",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Bide",
+				"Leech-Life",
+				"Acid-Armor",
+				"Rest",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Spikes",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Encore",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Yawn",
+				"Secret-Power",
+				"Signal-Beam",
+				"Feint",
+				"Gastro-Acid",
+				"Guard-Swap",
+				"Toxic-Spikes",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Bug-Bite",
+				"Guard-Split",
+				"Venoshock",
+				"Round",
+				"Final-Gambit",
+				"Struggle-Bug",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shelmet Pokemon Class
+	//Shelmet PokemonInstance Class
 	#region Shelmet
-	public class Shelmet : Pokemon
+	public class ShelmetInstance : PokemonInstance
 	{
-		#region Shelmet Builders
+		#region Shelmet Constructors
 		/// <summary>
-		/// Shelmet Builder waiting for a Nickname & a Level
+		/// Shelmet Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shelmet(string nickname, int level)
+		public ShelmetInstance(string nickname, int level)
 		: base(
 				616,
-				SpecieShelmet.Instance, // Pokemon Specie
+				SpeciesShelmet.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shelmet Builder only waiting for a Level
 		/// </summary>
-		public Shelmet(int level)
+		public ShelmetInstance(int level)
 		: base(
 				616,
-				SpecieShelmet.Instance, // Pokemon Specie
+				SpeciesShelmet.Instance, // PokemonInstance Species
 				"Shelmet", level,
 				Bug.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shelmet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shelmet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shelmet() : base(
 			616,
-			SpecieShelmet.Instance, // Pokemon Specie
+			SpeciesShelmet.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

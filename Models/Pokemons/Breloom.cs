@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Breloom Specie to store common natural stats of all Brelooms
-	#region SpecieBreloom
-	public class SpecieBreloom : PokemonSpecie
+	//Breloom Species to store common natural stats of all Brelooms
+	#region SpeciesBreloom
+	public class SpeciesBreloom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBreloom? _instance = null;
+		private static SpeciesBreloom? _instance = null;
 #nullable restore
-        public static SpecieBreloom Instance
+        public static SpeciesBreloom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBreloom();
+                    _instance = new SpeciesBreloom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBreloom Builder
-		public SpecieBreloom() : base(
+		#region SpeciesBreloom Constructor
+		public SpeciesBreloom() : base(
 			"Breloom",
 			1.2,
 			39.2,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Absorb",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Stun-Spore",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Protect",
+				"Mach-Punch",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sky-Uppercut",
+				"Bullet-Seed",
+				"Bulk-Up",
+				"Natural-Gift",
+				"Feint",
+				"Fling",
+				"Worry-Seed",
+				"Force-Palm",
+				"Seed-Bomb",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Low-Sweep",
+				"Round",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Breloom Pokemon Class
+	//Breloom PokemonInstance Class
 	#region Breloom
-	public class Breloom : Pokemon
+	public class BreloomInstance : PokemonInstance
 	{
-		#region Breloom Builders
+		#region Breloom Constructors
 		/// <summary>
-		/// Breloom Builder waiting for a Nickname & a Level
+		/// Breloom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Breloom(string nickname, int level)
+		public BreloomInstance(string nickname, int level)
 		: base(
 				286,
-				SpecieBreloom.Instance, // Pokemon Specie
+				SpeciesBreloom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fighting.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Breloom Builder only waiting for a Level
 		/// </summary>
-		public Breloom(int level)
+		public BreloomInstance(int level)
 		: base(
 				286,
-				SpecieBreloom.Instance, // Pokemon Specie
+				SpeciesBreloom.Instance, // PokemonInstance Species
 				"Breloom", level,
 				Grass.Instance, Fighting.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Breloom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Breloom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Breloom() : base(
 			286,
-			SpecieBreloom.Instance, // Pokemon Specie
+			SpeciesBreloom.Instance, // PokemonInstance Species
 			Grass.Instance, Fighting.Instance			
 		) {}
 		*/

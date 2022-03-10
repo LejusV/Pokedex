@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Remoraid Specie to store common natural stats of all Remoraids
-	#region SpecieRemoraid
-	public class SpecieRemoraid : PokemonSpecie
+	//Remoraid Species to store common natural stats of all Remoraids
+	#region SpeciesRemoraid
+	public class SpeciesRemoraid : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRemoraid? _instance = null;
+		private static SpeciesRemoraid? _instance = null;
 #nullable restore
-        public static SpecieRemoraid Instance
+        public static SpeciesRemoraid Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRemoraid();
+                    _instance = new SpeciesRemoraid();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRemoraid Builder
-		public SpecieRemoraid() : base(
+		#region SpeciesRemoraid Constructor
+		public SpeciesRemoraid() : base(
 			"Remoraid",
 			0.6,
 			12.0,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			65, 35, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Edge",
+				"Supersonic",
+				"Flamethrower",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Psybeam",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"String-Shot",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Defense-Curl",
+				"Haze",
+				"Focus-Energy",
+				"Fire-Blast",
+				"Waterfall",
+				"Swift",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Octazooka",
+				"Icy-Wind",
+				"Lock-On",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Whirlpool",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Water-Spout",
+				"Signal-Beam",
+				"Bullet-Seed",
+				"Bounce",
+				"Mud-Shot",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Seed-Bomb",
+				"Gunk-Shot",
+				"Captivate",
+				"Charge-Beam",
+				"Smack-Down",
+				"Soak",
+				"Acid-Spray",
+				"Entrainment",
+				"Round",
+				"Scald",
+				"Incinerate",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Remoraid Pokemon Class
+	//Remoraid PokemonInstance Class
 	#region Remoraid
-	public class Remoraid : Pokemon
+	public class RemoraidInstance : PokemonInstance
 	{
-		#region Remoraid Builders
+		#region Remoraid Constructors
 		/// <summary>
-		/// Remoraid Builder waiting for a Nickname & a Level
+		/// Remoraid Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Remoraid(string nickname, int level)
+		public RemoraidInstance(string nickname, int level)
 		: base(
 				223,
-				SpecieRemoraid.Instance, // Pokemon Specie
+				SpeciesRemoraid.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Remoraid Builder only waiting for a Level
 		/// </summary>
-		public Remoraid(int level)
+		public RemoraidInstance(int level)
 		: base(
 				223,
-				SpecieRemoraid.Instance, // Pokemon Specie
+				SpeciesRemoraid.Instance, // PokemonInstance Species
 				"Remoraid", level,
 				Water.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Remoraid Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Remoraid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Remoraid() : base(
 			223,
-			SpecieRemoraid.Instance, // Pokemon Specie
+			SpeciesRemoraid.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

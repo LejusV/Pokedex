@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gloom Specie to store common natural stats of all Glooms
-	#region SpecieGloom
-	public class SpecieGloom : PokemonSpecie
+	//Gloom Species to store common natural stats of all Glooms
+	#region SpeciesGloom
+	public class SpeciesGloom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGloom? _instance = null;
+		private static SpeciesGloom? _instance = null;
 #nullable restore
-        public static SpecieGloom Instance
+        public static SpeciesGloom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGloom();
+                    _instance = new SpeciesGloom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGloom Builder
-		public SpecieGloom() : base(
+		#region SpeciesGloom Constructor
+		public SpeciesGloom() : base(
 			"Gloom",
 			0.8,
 			8.6,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			85, 75, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Take-Down",
+				"Double-Edge",
+				"Acid",
+				"Absorb",
+				"Mega-Drain",
+				"Growth",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Petal-Dance",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Moonlight",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Fling",
+				"Gastro-Acid",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"After-You",
+				"Round",
+				"Petal-Blizzard",
+				"Grassy-Terrain",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gloom Pokemon Class
+	//Gloom PokemonInstance Class
 	#region Gloom
-	public class Gloom : Pokemon
+	public class GloomInstance : PokemonInstance
 	{
-		#region Gloom Builders
+		#region Gloom Constructors
 		/// <summary>
-		/// Gloom Builder waiting for a Nickname & a Level
+		/// Gloom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gloom(string nickname, int level)
+		public GloomInstance(string nickname, int level)
 		: base(
 				44,
-				SpecieGloom.Instance, // Pokemon Specie
+				SpeciesGloom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gloom Builder only waiting for a Level
 		/// </summary>
-		public Gloom(int level)
+		public GloomInstance(int level)
 		: base(
 				44,
-				SpecieGloom.Instance, // Pokemon Specie
+				SpeciesGloom.Instance, // PokemonInstance Species
 				"Gloom", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gloom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gloom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gloom() : base(
 			44,
-			SpecieGloom.Instance, // Pokemon Specie
+			SpeciesGloom.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

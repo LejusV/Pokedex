@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Simisear Specie to store common natural stats of all Simisears
-	#region SpecieSimisear
-	public class SpecieSimisear : PokemonSpecie
+	//Simisear Species to store common natural stats of all Simisears
+	#region SpeciesSimisear
+	public class SpeciesSimisear : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSimisear? _instance = null;
+		private static SpeciesSimisear? _instance = null;
 #nullable restore
-        public static SpecieSimisear Instance
+        public static SpeciesSimisear Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSimisear();
+                    _instance = new SpeciesSimisear();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSimisear Builder
-		public SpecieSimisear() : base(
+		#region SpeciesSimisear Constructor
+		public SpeciesSimisear() : base(
 			"Simisear",
 			1.0,
 			28.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			98, 63, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Cut",
+				"Leer",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Fire-Blast",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Covet",
+				"Payback",
+				"Fling",
+				"Gastro-Acid",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Low-Sweep",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Fire-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Simisear Pokemon Class
+	//Simisear PokemonInstance Class
 	#region Simisear
-	public class Simisear : Pokemon
+	public class SimisearInstance : PokemonInstance
 	{
-		#region Simisear Builders
+		#region Simisear Constructors
 		/// <summary>
-		/// Simisear Builder waiting for a Nickname & a Level
+		/// Simisear Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Simisear(string nickname, int level)
+		public SimisearInstance(string nickname, int level)
 		: base(
 				514,
-				SpecieSimisear.Instance, // Pokemon Specie
+				SpeciesSimisear.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Simisear Builder only waiting for a Level
 		/// </summary>
-		public Simisear(int level)
+		public SimisearInstance(int level)
 		: base(
 				514,
-				SpecieSimisear.Instance, // Pokemon Specie
+				SpeciesSimisear.Instance, // PokemonInstance Species
 				"Simisear", level,
 				Fire.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Simisear Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Simisear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Simisear() : base(
 			514,
-			SpecieSimisear.Instance, // Pokemon Specie
+			SpeciesSimisear.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

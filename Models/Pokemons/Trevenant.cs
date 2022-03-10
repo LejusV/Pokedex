@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Trevenant Specie to store common natural stats of all Trevenants
-	#region SpecieTrevenant
-	public class SpecieTrevenant : PokemonSpecie
+	//Trevenant Species to store common natural stats of all Trevenants
+	#region SpeciesTrevenant
+	public class SpeciesTrevenant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTrevenant? _instance = null;
+		private static SpeciesTrevenant? _instance = null;
 #nullable restore
-        public static SpecieTrevenant Instance
+        public static SpeciesTrevenant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTrevenant();
+                    _instance = new SpeciesTrevenant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTrevenant Builder
-		public SpecieTrevenant() : base(
+		#region SpeciesTrevenant Constructor
+		public SpeciesTrevenant() : base(
 			"Trevenant",
 			1.5,
 			71.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			65, 82, // Special Attack & Defense
 			56		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Tackle",
+				"Hyper-Beam",
+				"Strength",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Reflect",
+				"Dream-Eater",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Destiny-Bond",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Will-O-Wisp",
+				"Facade",
+				"Nature-Power",
+				"Trick",
+				"Role-Play",
+				"Ingrain",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Astonish",
+				"Block",
+				"Calm-Mind",
+				"Worry-Seed",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Seed-Bomb",
+				"X-Scissor",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Trick-Room",
+				"Grass-Knot",
+				"Wood-Hammer",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Bulldoze",
+				"Horn-Leech",
+				"Phantom-Force",
+				"Forests-Curse",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Trevenant Pokemon Class
+	//Trevenant PokemonInstance Class
 	#region Trevenant
-	public class Trevenant : Pokemon
+	public class TrevenantInstance : PokemonInstance
 	{
-		#region Trevenant Builders
+		#region Trevenant Constructors
 		/// <summary>
-		/// Trevenant Builder waiting for a Nickname & a Level
+		/// Trevenant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Trevenant(string nickname, int level)
+		public TrevenantInstance(string nickname, int level)
 		: base(
 				709,
-				SpecieTrevenant.Instance, // Pokemon Specie
+				SpeciesTrevenant.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Trevenant Builder only waiting for a Level
 		/// </summary>
-		public Trevenant(int level)
+		public TrevenantInstance(int level)
 		: base(
 				709,
-				SpecieTrevenant.Instance, // Pokemon Specie
+				SpeciesTrevenant.Instance, // PokemonInstance Species
 				"Trevenant", level,
 				Ghost.Instance, Grass.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Trevenant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Trevenant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Trevenant() : base(
 			709,
-			SpecieTrevenant.Instance, // Pokemon Specie
+			SpeciesTrevenant.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}
 		*/

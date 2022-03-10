@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Goodra Specie to store common natural stats of all Goodras
-	#region SpecieGoodra
-	public class SpecieGoodra : PokemonSpecie
+	//Goodra Species to store common natural stats of all Goodras
+	#region SpeciesGoodra
+	public class SpeciesGoodra : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGoodra? _instance = null;
+		private static SpeciesGoodra? _instance = null;
 #nullable restore
-        public static SpecieGoodra Instance
+        public static SpeciesGoodra Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGoodra();
+                    _instance = new SpeciesGoodra();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGoodra Builder
-		public SpecieGoodra() : base(
+		#region SpeciesGoodra Constructor
+		public SpeciesGoodra() : base(
 			"Goodra",
 			2.0,
 			150.5,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			110, 150, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Tackle",
+				"Body-Slam",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Absorb",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Fire-Blast",
+				"Bubble",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Secret-Power",
+				"Muddy-Water",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Feint",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Draco-Meteor",
+				"Power-Whip",
+				"Sludge-Wave",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide",
+				"Infestation",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Goodra Pokemon Class
+	//Goodra PokemonInstance Class
 	#region Goodra
-	public class Goodra : Pokemon
+	public class GoodraInstance : PokemonInstance
 	{
-		#region Goodra Builders
+		#region Goodra Constructors
 		/// <summary>
-		/// Goodra Builder waiting for a Nickname & a Level
+		/// Goodra Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Goodra(string nickname, int level)
+		public GoodraInstance(string nickname, int level)
 		: base(
 				706,
-				SpecieGoodra.Instance, // Pokemon Specie
+				SpeciesGoodra.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Goodra Builder only waiting for a Level
 		/// </summary>
-		public Goodra(int level)
+		public GoodraInstance(int level)
 		: base(
 				706,
-				SpecieGoodra.Instance, // Pokemon Specie
+				SpeciesGoodra.Instance, // PokemonInstance Species
 				"Goodra", level,
 				Dragon.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Goodra Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Goodra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Goodra() : base(
 			706,
-			SpecieGoodra.Instance, // Pokemon Specie
+			SpeciesGoodra.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

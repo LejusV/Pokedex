@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Manectric Specie to store common natural stats of all Manectrics
-	#region SpecieManectric
-	public class SpecieManectric : PokemonSpecie
+	//Manectric Species to store common natural stats of all Manectrics
+	#region SpeciesManectric
+	public class SpeciesManectric : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieManectric? _instance = null;
+		private static SpeciesManectric? _instance = null;
 #nullable restore
-        public static SpecieManectric Instance
+        public static SpeciesManectric Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieManectric();
+                    _instance = new SpeciesManectric();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieManectric Builder
-		public SpecieManectric() : base(
+		#region SpeciesManectric Constructor
+		public SpeciesManectric() : base(
 			"Manectric",
 			1.5,
 			40.2,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			105, 60, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Facade",
+				"Charge",
+				"Secret-Power",
+				"Overheat",
+				"Odor-Sleuth",
+				"Signal-Beam",
+				"Howl",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Fire-Fang",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Snarl",
+				"Confide",
+				"Electric-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Manectric Pokemon Class
+	//Manectric PokemonInstance Class
 	#region Manectric
-	public class Manectric : Pokemon
+	public class ManectricInstance : PokemonInstance
 	{
-		#region Manectric Builders
+		#region Manectric Constructors
 		/// <summary>
-		/// Manectric Builder waiting for a Nickname & a Level
+		/// Manectric Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Manectric(string nickname, int level)
+		public ManectricInstance(string nickname, int level)
 		: base(
 				310,
-				SpecieManectric.Instance, // Pokemon Specie
+				SpeciesManectric.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Manectric Builder only waiting for a Level
 		/// </summary>
-		public Manectric(int level)
+		public ManectricInstance(int level)
 		: base(
 				310,
-				SpecieManectric.Instance, // Pokemon Specie
+				SpeciesManectric.Instance, // PokemonInstance Species
 				"Manectric", level,
 				Electric.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Manectric Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Manectric Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Manectric() : base(
 			310,
-			SpecieManectric.Instance, // Pokemon Specie
+			SpeciesManectric.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

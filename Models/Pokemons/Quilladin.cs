@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Quilladin Specie to store common natural stats of all Quilladins
-	#region SpecieQuilladin
-	public class SpecieQuilladin : PokemonSpecie
+	//Quilladin Species to store common natural stats of all Quilladins
+	#region SpeciesQuilladin
+	public class SpeciesQuilladin : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieQuilladin? _instance = null;
+		private static SpeciesQuilladin? _instance = null;
 #nullable restore
-        public static SpecieQuilladin Instance
+        public static SpeciesQuilladin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieQuilladin();
+                    _instance = new SpeciesQuilladin();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieQuilladin Builder
-		public SpecieQuilladin() : base(
+		#region SpeciesQuilladin Constructor
+		public SpeciesQuilladin() : base(
 			"Quilladin",
 			0.7,
 			29.0,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			56, 58, // Special Attack & Defense
 			57		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Vine-Whip",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Pin-Missile",
+				"Bite",
+				"Growl",
+				"Roar",
+				"Low-Kick",
+				"Strength",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Reflect",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Needle-Arm",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Bulk-Up",
+				"Mud-Shot",
+				"Gyro-Ball",
+				"Payback",
+				"Fling",
+				"Worry-Seed",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Iron-Head",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Wood-Hammer",
+				"Hone-Claws",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Retaliate",
+				"Grass-Pledge",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Quilladin Pokemon Class
+	//Quilladin PokemonInstance Class
 	#region Quilladin
-	public class Quilladin : Pokemon
+	public class QuilladinInstance : PokemonInstance
 	{
-		#region Quilladin Builders
+		#region Quilladin Constructors
 		/// <summary>
-		/// Quilladin Builder waiting for a Nickname & a Level
+		/// Quilladin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Quilladin(string nickname, int level)
+		public QuilladinInstance(string nickname, int level)
 		: base(
 				651,
-				SpecieQuilladin.Instance, // Pokemon Specie
+				SpeciesQuilladin.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Quilladin Builder only waiting for a Level
 		/// </summary>
-		public Quilladin(int level)
+		public QuilladinInstance(int level)
 		: base(
 				651,
-				SpecieQuilladin.Instance, // Pokemon Specie
+				SpeciesQuilladin.Instance, // PokemonInstance Species
 				"Quilladin", level,
 				Grass.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Quilladin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Quilladin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Quilladin() : base(
 			651,
-			SpecieQuilladin.Instance, // Pokemon Specie
+			SpeciesQuilladin.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

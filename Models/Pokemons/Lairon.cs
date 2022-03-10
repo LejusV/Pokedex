@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lairon Specie to store common natural stats of all Lairons
-	#region SpecieLairon
-	public class SpecieLairon : PokemonSpecie
+	//Lairon Species to store common natural stats of all Lairons
+	#region SpeciesLairon
+	public class SpeciesLairon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLairon? _instance = null;
+		private static SpeciesLairon? _instance = null;
 #nullable restore
-        public static SpecieLairon Instance
+        public static SpeciesLairon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLairon();
+                    _instance = new SpeciesLairon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLairon Builder
-		public SpecieLairon() : base(
+		#region SpeciesLairon Constructor
+		public SpeciesLairon() : base(
 			"Lairon",
 			0.9,
 			120.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Metal-Burst",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Earth-Power",
+				"Shadow-Claw",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Autotomize",
+				"Heavy-Slam",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lairon Pokemon Class
+	//Lairon PokemonInstance Class
 	#region Lairon
-	public class Lairon : Pokemon
+	public class LaironInstance : PokemonInstance
 	{
-		#region Lairon Builders
+		#region Lairon Constructors
 		/// <summary>
-		/// Lairon Builder waiting for a Nickname & a Level
+		/// Lairon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lairon(string nickname, int level)
+		public LaironInstance(string nickname, int level)
 		: base(
 				305,
-				SpecieLairon.Instance, // Pokemon Specie
+				SpeciesLairon.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Rock.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lairon Builder only waiting for a Level
 		/// </summary>
-		public Lairon(int level)
+		public LaironInstance(int level)
 		: base(
 				305,
-				SpecieLairon.Instance, // Pokemon Specie
+				SpeciesLairon.Instance, // PokemonInstance Species
 				"Lairon", level,
 				Steel.Instance, Rock.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lairon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lairon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lairon() : base(
 			305,
-			SpecieLairon.Instance, // Pokemon Specie
+			SpeciesLairon.Instance, // PokemonInstance Species
 			Steel.Instance, Rock.Instance			
 		) {}
 		*/

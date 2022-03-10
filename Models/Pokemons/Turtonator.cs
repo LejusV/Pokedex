@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Turtonator Specie to store common natural stats of all Turtonators
-	#region SpecieTurtonator
-	public class SpecieTurtonator : PokemonSpecie
+	//Turtonator Species to store common natural stats of all Turtonators
+	#region SpeciesTurtonator
+	public class SpeciesTurtonator : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTurtonator? _instance = null;
+		private static SpeciesTurtonator? _instance = null;
 #nullable restore
-        public static SpecieTurtonator Instance
+        public static SpeciesTurtonator Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTurtonator();
+                    _instance = new SpeciesTurtonator();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTurtonator Builder
-		public SpecieTurtonator() : base(
+		#region SpeciesTurtonator Constructor
+		public SpeciesTurtonator() : base(
 			"Turtonator",
 			2.0,
 			212.0,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			91, 85, // Special Attack & Defense
 			36		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Body-Slam",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Smog",
+				"Fire-Blast",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Flail",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Revenge",
+				"Overheat",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Payback",
+				"Fling",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Flash-Cannon",
+				"Draco-Meteor",
+				"Stone-Edge",
+				"Charge-Beam",
+				"Head-Smash",
+				"Wide-Guard",
+				"Venoshock",
+				"Smack-Down",
+				"Flame-Charge",
+				"Round",
+				"Shell-Smash",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Work-Up",
+				"Confide",
+				"Brutal-Swing",
+				"Shell-Trap"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Turtonator Pokemon Class
+	//Turtonator PokemonInstance Class
 	#region Turtonator
-	public class Turtonator : Pokemon
+	public class TurtonatorInstance : PokemonInstance
 	{
-		#region Turtonator Builders
+		#region Turtonator Constructors
 		/// <summary>
-		/// Turtonator Builder waiting for a Nickname & a Level
+		/// Turtonator Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Turtonator(string nickname, int level)
+		public TurtonatorInstance(string nickname, int level)
 		: base(
 				776,
-				SpecieTurtonator.Instance, // Pokemon Specie
+				SpeciesTurtonator.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Dragon.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Turtonator Builder only waiting for a Level
 		/// </summary>
-		public Turtonator(int level)
+		public TurtonatorInstance(int level)
 		: base(
 				776,
-				SpecieTurtonator.Instance, // Pokemon Specie
+				SpeciesTurtonator.Instance, // PokemonInstance Species
 				"Turtonator", level,
 				Fire.Instance, Dragon.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Turtonator Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Turtonator Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Turtonator() : base(
 			776,
-			SpecieTurtonator.Instance, // Pokemon Specie
+			SpeciesTurtonator.Instance, // PokemonInstance Species
 			Fire.Instance, Dragon.Instance			
 		) {}
 		*/

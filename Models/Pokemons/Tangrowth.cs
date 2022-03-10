@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tangrowth Specie to store common natural stats of all Tangrowths
-	#region SpecieTangrowth
-	public class SpecieTangrowth : PokemonSpecie
+	//Tangrowth Species to store common natural stats of all Tangrowths
+	#region SpeciesTangrowth
+	public class SpeciesTangrowth : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTangrowth? _instance = null;
+		private static SpeciesTangrowth? _instance = null;
 #nullable restore
-        public static SpecieTangrowth Instance
+        public static SpeciesTangrowth Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTangrowth();
+                    _instance = new SpeciesTangrowth();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTangrowth Builder
-		public SpecieTangrowth() : base(
+		#region SpeciesTangrowth Constructor
+		public SpeciesTangrowth() : base(
 			"Tangrowth",
 			2.0,
 			128.6,
@@ -32,23 +34,108 @@ namespace Pokedex.Models.Pokemons
 			110, 50, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Slam",
+				"Vine-Whip",
+				"Headbutt",
+				"Hyper-Beam",
+				"Strength",
+				"Absorb",
+				"Mega-Drain",
+				"Growth",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Reflect",
+				"Constrict",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Tickle",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Block",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Wring-Out",
+				"Worry-Seed",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Power-Whip",
+				"Captivate",
+				"Grass-Knot",
+				"Round",
+				"Bulldoze",
+				"Grassy-Terrain",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tangrowth Pokemon Class
+	//Tangrowth PokemonInstance Class
 	#region Tangrowth
-	public class Tangrowth : Pokemon
+	public class TangrowthInstance : PokemonInstance
 	{
-		#region Tangrowth Builders
+		#region Tangrowth Constructors
 		/// <summary>
-		/// Tangrowth Builder waiting for a Nickname & a Level
+		/// Tangrowth Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tangrowth(string nickname, int level)
+		public TangrowthInstance(string nickname, int level)
 		: base(
 				465,
-				SpecieTangrowth.Instance, // Pokemon Specie
+				SpeciesTangrowth.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +147,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tangrowth Builder only waiting for a Level
 		/// </summary>
-		public Tangrowth(int level)
+		public TangrowthInstance(int level)
 		: base(
 				465,
-				SpecieTangrowth.Instance, // Pokemon Specie
+				SpeciesTangrowth.Instance, // PokemonInstance Species
 				"Tangrowth", level,
 				Grass.Instance			
 		)
@@ -73,12 +160,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tangrowth Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tangrowth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tangrowth() : base(
 			465,
-			SpecieTangrowth.Instance, // Pokemon Specie
+			SpeciesTangrowth.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

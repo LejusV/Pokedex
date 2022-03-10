@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Inteleon Specie to store common natural stats of all Inteleons
-	#region SpecieInteleon
-	public class SpecieInteleon : PokemonSpecie
+	//Inteleon Species to store common natural stats of all Inteleons
+	#region SpeciesInteleon
+	public class SpeciesInteleon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieInteleon? _instance = null;
+		private static SpeciesInteleon? _instance = null;
 #nullable restore
-        public static SpecieInteleon Instance
+        public static SpeciesInteleon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieInteleon();
+                    _instance = new SpeciesInteleon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieInteleon Builder
-		public SpecieInteleon() : base(
+		#region SpeciesInteleon Constructor
+		public SpeciesInteleon() : base(
 			"Inteleon",
 			1.9,
 			45.2,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			125, 65, // Special Attack & Defense
 			120		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Inteleon Pokemon Class
+	//Inteleon PokemonInstance Class
 	#region Inteleon
-	public class Inteleon : Pokemon
+	public class InteleonInstance : PokemonInstance
 	{
-		#region Inteleon Builders
+		#region Inteleon Constructors
 		/// <summary>
-		/// Inteleon Builder waiting for a Nickname & a Level
+		/// Inteleon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Inteleon(string nickname, int level)
+		public InteleonInstance(string nickname, int level)
 		: base(
 				818,
-				SpecieInteleon.Instance, // Pokemon Specie
+				SpeciesInteleon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Inteleon Builder only waiting for a Level
 		/// </summary>
-		public Inteleon(int level)
+		public InteleonInstance(int level)
 		: base(
 				818,
-				SpecieInteleon.Instance, // Pokemon Specie
+				SpeciesInteleon.Instance, // PokemonInstance Species
 				"Inteleon", level,
 				Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Inteleon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Inteleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Inteleon() : base(
 			818,
-			SpecieInteleon.Instance, // Pokemon Specie
+			SpeciesInteleon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

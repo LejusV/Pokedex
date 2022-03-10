@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Graveler Specie to store common natural stats of all Gravelers
-	#region SpecieGraveler
-	public class SpecieGraveler : PokemonSpecie
+	//Graveler Species to store common natural stats of all Gravelers
+	#region SpeciesGraveler
+	public class SpeciesGraveler : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGraveler? _instance = null;
+		private static SpeciesGraveler? _instance = null;
 #nullable restore
-        public static SpecieGraveler Instance
+        public static SpeciesGraveler Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGraveler();
+                    _instance = new SpeciesGraveler();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGraveler Builder
-		public SpecieGraveler() : base(
+		#region SpeciesGraveler Constructor
+		public SpeciesGraveler() : base(
 			"Graveler",
 			1.0,
 			105.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			45, 45, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Flamethrower",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Rock-Throw",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Bide",
+				"Metronome",
+				"Self-Destruct",
+				"Fire-Blast",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Fling",
+				"Sucker-Punch",
+				"Rock-Polish",
+				"Earth-Power",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Graveler Pokemon Class
+	//Graveler PokemonInstance Class
 	#region Graveler
-	public class Graveler : Pokemon
+	public class GravelerInstance : PokemonInstance
 	{
-		#region Graveler Builders
+		#region Graveler Constructors
 		/// <summary>
-		/// Graveler Builder waiting for a Nickname & a Level
+		/// Graveler Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Graveler(string nickname, int level)
+		public GravelerInstance(string nickname, int level)
 		: base(
 				75,
-				SpecieGraveler.Instance, // Pokemon Specie
+				SpeciesGraveler.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Graveler Builder only waiting for a Level
 		/// </summary>
-		public Graveler(int level)
+		public GravelerInstance(int level)
 		: base(
 				75,
-				SpecieGraveler.Instance, // Pokemon Specie
+				SpeciesGraveler.Instance, // PokemonInstance Species
 				"Graveler", level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Graveler Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Graveler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Graveler() : base(
 			75,
-			SpecieGraveler.Instance, // Pokemon Specie
+			SpeciesGraveler.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Glalie Specie to store common natural stats of all Glalies
-	#region SpecieGlalie
-	public class SpecieGlalie : PokemonSpecie
+	//Glalie Species to store common natural stats of all Glalies
+	#region SpeciesGlalie
+	public class SpeciesGlalie : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGlalie? _instance = null;
+		private static SpeciesGlalie? _instance = null;
 #nullable restore
-        public static SpecieGlalie Instance
+        public static SpeciesGlalie Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGlalie();
+                    _instance = new SpeciesGlalie();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGlalie Builder
-		public SpecieGlalie() : base(
+		#region SpeciesGlalie Constructor
+		public SpeciesGlalie() : base(
 			"Glalie",
 			1.5,
 			256.5,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Self-Destruct",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Shadow-Ball",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Secret-Power",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Block",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Payback",
+				"Dark-Pulse",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Shard",
+				"Ice-Fang",
+				"Iron-Head",
+				"Captivate",
+				"Round",
+				"Bulldoze",
+				"Frost-Breath",
+				"Freeze-Dry",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Glalie Pokemon Class
+	//Glalie PokemonInstance Class
 	#region Glalie
-	public class Glalie : Pokemon
+	public class GlalieInstance : PokemonInstance
 	{
-		#region Glalie Builders
+		#region Glalie Constructors
 		/// <summary>
-		/// Glalie Builder waiting for a Nickname & a Level
+		/// Glalie Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Glalie(string nickname, int level)
+		public GlalieInstance(string nickname, int level)
 		: base(
 				362,
-				SpecieGlalie.Instance, // Pokemon Specie
+				SpeciesGlalie.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Glalie Builder only waiting for a Level
 		/// </summary>
-		public Glalie(int level)
+		public GlalieInstance(int level)
 		: base(
 				362,
-				SpecieGlalie.Instance, // Pokemon Specie
+				SpeciesGlalie.Instance, // PokemonInstance Species
 				"Glalie", level,
 				Ice.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Glalie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Glalie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Glalie() : base(
 			362,
-			SpecieGlalie.Instance, // Pokemon Specie
+			SpeciesGlalie.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

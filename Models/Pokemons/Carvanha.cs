@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Carvanha Specie to store common natural stats of all Carvanhas
-	#region SpecieCarvanha
-	public class SpecieCarvanha : PokemonSpecie
+	//Carvanha Species to store common natural stats of all Carvanhas
+	#region SpeciesCarvanha
+	public class SpeciesCarvanha : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCarvanha? _instance = null;
+		private static SpeciesCarvanha? _instance = null;
 #nullable restore
-        public static SpecieCarvanha Instance
+        public static SpeciesCarvanha Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCarvanha();
+                    _instance = new SpeciesCarvanha();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCarvanha Builder
-		public SpecieCarvanha() : base(
+		#region SpeciesCarvanha Constructor
+		public SpeciesCarvanha() : base(
 			"Carvanha",
 			0.8,
 			20.8,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			65, 20, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Focus-Energy",
+				"Waterfall",
+				"Swift",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Destiny-Bond",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Ancient-Power",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Secret-Power",
+				"Dive",
+				"Poison-Fang",
+				"Bounce",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Dark-Pulse",
+				"Ice-Fang",
+				"Zen-Headbutt",
+				"Captivate",
+				"Aqua-Jet",
+				"Round",
+				"Scald",
+				"Retaliate",
+				"Snarl",
+				"Confide",
+				"Psychic-Fangs"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Carvanha Pokemon Class
+	//Carvanha PokemonInstance Class
 	#region Carvanha
-	public class Carvanha : Pokemon
+	public class CarvanhaInstance : PokemonInstance
 	{
-		#region Carvanha Builders
+		#region Carvanha Constructors
 		/// <summary>
-		/// Carvanha Builder waiting for a Nickname & a Level
+		/// Carvanha Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Carvanha(string nickname, int level)
+		public CarvanhaInstance(string nickname, int level)
 		: base(
 				318,
-				SpecieCarvanha.Instance, // Pokemon Specie
+				SpeciesCarvanha.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dark.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carvanha Builder only waiting for a Level
 		/// </summary>
-		public Carvanha(int level)
+		public CarvanhaInstance(int level)
 		: base(
 				318,
-				SpecieCarvanha.Instance, // Pokemon Specie
+				SpeciesCarvanha.Instance, // PokemonInstance Species
 				"Carvanha", level,
 				Water.Instance, Dark.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Carvanha Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Carvanha Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Carvanha() : base(
 			318,
-			SpecieCarvanha.Instance, // Pokemon Specie
+			SpeciesCarvanha.Instance, // PokemonInstance Species
 			Water.Instance, Dark.Instance			
 		) {}
 		*/

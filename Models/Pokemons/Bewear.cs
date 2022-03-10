@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bewear Specie to store common natural stats of all Bewears
-	#region SpecieBewear
-	public class SpecieBewear : PokemonSpecie
+	//Bewear Species to store common natural stats of all Bewears
+	#region SpeciesBewear
+	public class SpeciesBewear : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBewear? _instance = null;
+		private static SpeciesBewear? _instance = null;
 #nullable restore
-        public static SpecieBewear Instance
+        public static SpeciesBewear Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBewear();
+                    _instance = new SpeciesBewear();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBewear Builder
-		public SpecieBewear() : base(
+		#region SpeciesBewear Constructor
+		public SpeciesBewear() : base(
 			"Bewear",
 			2.1,
 			135.0,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Bind",
+				"Tackle",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Flail",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Hammer-Arm",
+				"Payback",
+				"Fling",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Low-Sweep",
+				"Round",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Baby-Doll-Eyes",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bewear Pokemon Class
+	//Bewear PokemonInstance Class
 	#region Bewear
-	public class Bewear : Pokemon
+	public class BewearInstance : PokemonInstance
 	{
-		#region Bewear Builders
+		#region Bewear Constructors
 		/// <summary>
-		/// Bewear Builder waiting for a Nickname & a Level
+		/// Bewear Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bewear(string nickname, int level)
+		public BewearInstance(string nickname, int level)
 		: base(
 				760,
-				SpecieBewear.Instance, // Pokemon Specie
+				SpeciesBewear.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fighting.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bewear Builder only waiting for a Level
 		/// </summary>
-		public Bewear(int level)
+		public BewearInstance(int level)
 		: base(
 				760,
-				SpecieBewear.Instance, // Pokemon Specie
+				SpeciesBewear.Instance, // PokemonInstance Species
 				"Bewear", level,
 				Normal.Instance, Fighting.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bewear Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bewear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bewear() : base(
 			760,
-			SpecieBewear.Instance, // Pokemon Specie
+			SpeciesBewear.Instance, // PokemonInstance Species
 			Normal.Instance, Fighting.Instance			
 		) {}
 		*/

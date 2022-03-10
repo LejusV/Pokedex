@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Skitty Specie to store common natural stats of all Skittys
-	#region SpecieSkitty
-	public class SpecieSkitty : PokemonSpecie
+	//Skitty Species to store common natural stats of all Skittys
+	#region SpeciesSkitty
+	public class SpeciesSkitty : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSkitty? _instance = null;
+		private static SpeciesSkitty? _instance = null;
 #nullable restore
-        public static SpecieSkitty Instance
+        public static SpeciesSkitty Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSkitty();
+                    _instance = new SpeciesSkitty();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSkitty Builder
-		public SpecieSkitty() : base(
+		#region SpeciesSkitty Constructor
+		public SpeciesSkitty() : base(
 			"Skitty",
 			0.6,
 			11.0,
@@ -32,23 +34,116 @@ namespace Pokedex.Models.Pokemons
 			35, 35, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Tail-Whip",
+				"Growl",
+				"Sing",
+				"Ice-Beam",
+				"Blizzard",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Foresight",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Fake-Out",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Assist",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Tickle",
+				"Cosmic-Power",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Payback",
+				"Copycat",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Mud-Bomb",
+				"Zen-Headbutt",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Simple-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Disarming-Voice",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Skitty Pokemon Class
+	//Skitty PokemonInstance Class
 	#region Skitty
-	public class Skitty : Pokemon
+	public class SkittyInstance : PokemonInstance
 	{
-		#region Skitty Builders
+		#region Skitty Constructors
 		/// <summary>
-		/// Skitty Builder waiting for a Nickname & a Level
+		/// Skitty Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Skitty(string nickname, int level)
+		public SkittyInstance(string nickname, int level)
 		: base(
 				300,
-				SpecieSkitty.Instance, // Pokemon Specie
+				SpeciesSkitty.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +155,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skitty Builder only waiting for a Level
 		/// </summary>
-		public Skitty(int level)
+		public SkittyInstance(int level)
 		: base(
 				300,
-				SpecieSkitty.Instance, // Pokemon Specie
+				SpeciesSkitty.Instance, // PokemonInstance Species
 				"Skitty", level,
 				Normal.Instance			
 		)
@@ -73,12 +168,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Skitty Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Skitty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Skitty() : base(
 			300,
-			SpecieSkitty.Instance, // Pokemon Specie
+			SpeciesSkitty.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

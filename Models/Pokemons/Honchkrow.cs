@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Honchkrow Specie to store common natural stats of all Honchkrows
-	#region SpecieHonchkrow
-	public class SpecieHonchkrow : PokemonSpecie
+	//Honchkrow Species to store common natural stats of all Honchkrows
+	#region SpeciesHonchkrow
+	public class SpeciesHonchkrow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHonchkrow? _instance = null;
+		private static SpeciesHonchkrow? _instance = null;
 #nullable restore
-        public static SpecieHonchkrow Instance
+        public static SpeciesHonchkrow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHonchkrow();
+                    _instance = new SpeciesHonchkrow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHonchkrow Builder
-		public SpecieHonchkrow() : base(
+		#region SpeciesHonchkrow Constructor
+		public SpeciesHonchkrow() : base(
 			"Honchkrow",
 			0.9,
 			27.3,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			105, 52, // Special Attack & Defense
 			71		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Fly",
+				"Hyper-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Haze",
+				"Swift",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"Payback",
+				"Embargo",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Quash",
+				"Retaliate",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Honchkrow Pokemon Class
+	//Honchkrow PokemonInstance Class
 	#region Honchkrow
-	public class Honchkrow : Pokemon
+	public class HonchkrowInstance : PokemonInstance
 	{
-		#region Honchkrow Builders
+		#region Honchkrow Constructors
 		/// <summary>
-		/// Honchkrow Builder waiting for a Nickname & a Level
+		/// Honchkrow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Honchkrow(string nickname, int level)
+		public HonchkrowInstance(string nickname, int level)
 		: base(
 				430,
-				SpecieHonchkrow.Instance, // Pokemon Specie
+				SpeciesHonchkrow.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Honchkrow Builder only waiting for a Level
 		/// </summary>
-		public Honchkrow(int level)
+		public HonchkrowInstance(int level)
 		: base(
 				430,
-				SpecieHonchkrow.Instance, // Pokemon Specie
+				SpeciesHonchkrow.Instance, // PokemonInstance Species
 				"Honchkrow", level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Honchkrow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Honchkrow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Honchkrow() : base(
 			430,
-			SpecieHonchkrow.Instance, // Pokemon Specie
+			SpeciesHonchkrow.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mamoswine Specie to store common natural stats of all Mamoswines
-	#region SpecieMamoswine
-	public class SpecieMamoswine : PokemonSpecie
+	//Mamoswine Species to store common natural stats of all Mamoswines
+	#region SpeciesMamoswine
+	public class SpeciesMamoswine : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMamoswine? _instance = null;
+		private static SpeciesMamoswine? _instance = null;
 #nullable restore
-        public static SpecieMamoswine Instance
+        public static SpeciesMamoswine Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMamoswine();
+                    _instance = new SpeciesMamoswine();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMamoswine Builder
-		public SpecieMamoswine() : base(
+		#region SpeciesMamoswine Constructor
+		public SpeciesMamoswine() : base(
 			"Mamoswine",
 			2.5,
 			291.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			70, 60, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Fury-Attack",
+				"Take-Down",
+				"Thrash",
+				"Roar",
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Peck",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Superpower",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Mud-Sport",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Block",
+				"Natural-Gift",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Fang",
+				"Mud-Bomb",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Double-Hit",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mamoswine Pokemon Class
+	//Mamoswine PokemonInstance Class
 	#region Mamoswine
-	public class Mamoswine : Pokemon
+	public class MamoswineInstance : PokemonInstance
 	{
-		#region Mamoswine Builders
+		#region Mamoswine Constructors
 		/// <summary>
-		/// Mamoswine Builder waiting for a Nickname & a Level
+		/// Mamoswine Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mamoswine(string nickname, int level)
+		public MamoswineInstance(string nickname, int level)
 		: base(
 				473,
-				SpecieMamoswine.Instance, // Pokemon Specie
+				SpeciesMamoswine.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mamoswine Builder only waiting for a Level
 		/// </summary>
-		public Mamoswine(int level)
+		public MamoswineInstance(int level)
 		: base(
 				473,
-				SpecieMamoswine.Instance, // Pokemon Specie
+				SpeciesMamoswine.Instance, // PokemonInstance Species
 				"Mamoswine", level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mamoswine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mamoswine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mamoswine() : base(
 			473,
-			SpecieMamoswine.Instance, // Pokemon Specie
+			SpeciesMamoswine.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}
 		*/

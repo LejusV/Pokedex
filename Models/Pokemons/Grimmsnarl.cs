@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grimmsnarl Specie to store common natural stats of all Grimmsnarls
-	#region SpecieGrimmsnarl
-	public class SpecieGrimmsnarl : PokemonSpecie
+	//Grimmsnarl Species to store common natural stats of all Grimmsnarls
+	#region SpeciesGrimmsnarl
+	public class SpeciesGrimmsnarl : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrimmsnarl? _instance = null;
+		private static SpeciesGrimmsnarl? _instance = null;
 #nullable restore
-        public static SpecieGrimmsnarl Instance
+        public static SpeciesGrimmsnarl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrimmsnarl();
+                    _instance = new SpeciesGrimmsnarl();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrimmsnarl Builder
-		public SpecieGrimmsnarl() : base(
+		#region SpeciesGrimmsnarl Constructor
+		public SpeciesGrimmsnarl() : base(
 			"Grimmsnarl",
 			1.5,
 			61.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			95, 75, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grimmsnarl Pokemon Class
+	//Grimmsnarl PokemonInstance Class
 	#region Grimmsnarl
-	public class Grimmsnarl : Pokemon
+	public class GrimmsnarlInstance : PokemonInstance
 	{
-		#region Grimmsnarl Builders
+		#region Grimmsnarl Constructors
 		/// <summary>
-		/// Grimmsnarl Builder waiting for a Nickname & a Level
+		/// Grimmsnarl Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grimmsnarl(string nickname, int level)
+		public GrimmsnarlInstance(string nickname, int level)
 		: base(
 				861,
-				SpecieGrimmsnarl.Instance, // Pokemon Specie
+				SpeciesGrimmsnarl.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grimmsnarl Builder only waiting for a Level
 		/// </summary>
-		public Grimmsnarl(int level)
+		public GrimmsnarlInstance(int level)
 		: base(
 				861,
-				SpecieGrimmsnarl.Instance, // Pokemon Specie
+				SpeciesGrimmsnarl.Instance, // PokemonInstance Species
 				"Grimmsnarl", level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grimmsnarl Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grimmsnarl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grimmsnarl() : base(
 			861,
-			SpecieGrimmsnarl.Instance, // Pokemon Specie
+			SpeciesGrimmsnarl.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}
 		*/

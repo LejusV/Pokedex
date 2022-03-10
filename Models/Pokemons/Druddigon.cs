@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Druddigon Specie to store common natural stats of all Druddigons
-	#region SpecieDruddigon
-	public class SpecieDruddigon : PokemonSpecie
+	//Druddigon Species to store common natural stats of all Druddigons
+	#region SpeciesDruddigon
+	public class SpeciesDruddigon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDruddigon? _instance = null;
+		private static SpeciesDruddigon? _instance = null;
 #nullable restore
-        public static SpecieDruddigon Instance
+        public static SpeciesDruddigon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDruddigon();
+                    _instance = new SpeciesDruddigon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDruddigon Builder
-		public SpecieDruddigon() : base(
+		#region SpeciesDruddigon Constructor
+		public SpeciesDruddigon() : base(
 			"Druddigon",
 			1.6,
 			139.0,
@@ -32,23 +34,118 @@ namespace Pokedex.Models.Pokemons
 			60, 90, // Special Attack & Defense
 			48		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Flamethrower",
+				"Surf",
+				"Hyper-Beam",
+				"Strength",
+				"Dragon-Rage",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Glare",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Revenge",
+				"Snatch",
+				"Secret-Power",
+				"Crush-Claw",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Poison-Tail",
+				"Shock-Wave",
+				"Payback",
+				"Fling",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Thunder-Fang",
+				"Fire-Fang",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Draco-Meteor",
+				"Gunk-Shot",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Charge-Beam",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Chip-Away",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Druddigon Pokemon Class
+	//Druddigon PokemonInstance Class
 	#region Druddigon
-	public class Druddigon : Pokemon
+	public class DruddigonInstance : PokemonInstance
 	{
-		#region Druddigon Builders
+		#region Druddigon Constructors
 		/// <summary>
-		/// Druddigon Builder waiting for a Nickname & a Level
+		/// Druddigon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Druddigon(string nickname, int level)
+		public DruddigonInstance(string nickname, int level)
 		: base(
 				621,
-				SpecieDruddigon.Instance, // Pokemon Specie
+				SpeciesDruddigon.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +157,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Druddigon Builder only waiting for a Level
 		/// </summary>
-		public Druddigon(int level)
+		public DruddigonInstance(int level)
 		: base(
 				621,
-				SpecieDruddigon.Instance, // Pokemon Specie
+				SpeciesDruddigon.Instance, // PokemonInstance Species
 				"Druddigon", level,
 				Dragon.Instance			
 		)
@@ -73,12 +170,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Druddigon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Druddigon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Druddigon() : base(
 			621,
-			SpecieDruddigon.Instance, // Pokemon Specie
+			SpeciesDruddigon.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

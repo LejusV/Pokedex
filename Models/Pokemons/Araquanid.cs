@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Araquanid Specie to store common natural stats of all Araquanids
-	#region SpecieAraquanid
-	public class SpecieAraquanid : PokemonSpecie
+	//Araquanid Species to store common natural stats of all Araquanids
+	#region SpeciesAraquanid
+	public class SpeciesAraquanid : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAraquanid? _instance = null;
+		private static SpeciesAraquanid? _instance = null;
 #nullable restore
-        public static SpecieAraquanid Instance
+        public static SpeciesAraquanid Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAraquanid();
+                    _instance = new SpeciesAraquanid();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAraquanid Builder
-		public SpecieAraquanid() : base(
+		#region SpeciesAraquanid Constructor
+		public SpeciesAraquanid() : base(
 			"Araquanid",
 			1.8,
 			82.0,
@@ -32,23 +34,74 @@ namespace Pokedex.Models.Pokemons
 			50, 132, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bite",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Reflect",
+				"Waterfall",
+				"Leech-Life",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Spider-Web",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Mirror-Coat",
+				"Facade",
+				"Aqua-Ring",
+				"Poison-Jab",
+				"X-Scissor",
+				"Bug-Bite",
+				"Wide-Guard",
+				"Soak",
+				"Entrainment",
+				"Round",
+				"Scald",
+				"Frost-Breath",
+				"Confide",
+				"Infestation",
+				"Lunge",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Araquanid Pokemon Class
+	//Araquanid PokemonInstance Class
 	#region Araquanid
-	public class Araquanid : Pokemon
+	public class AraquanidInstance : PokemonInstance
 	{
-		#region Araquanid Builders
+		#region Araquanid Constructors
 		/// <summary>
-		/// Araquanid Builder waiting for a Nickname & a Level
+		/// Araquanid Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Araquanid(string nickname, int level)
+		public AraquanidInstance(string nickname, int level)
 		: base(
 				752,
-				SpecieAraquanid.Instance, // Pokemon Specie
+				SpeciesAraquanid.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Bug.Instance			
 		)
@@ -60,10 +113,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Araquanid Builder only waiting for a Level
 		/// </summary>
-		public Araquanid(int level)
+		public AraquanidInstance(int level)
 		: base(
 				752,
-				SpecieAraquanid.Instance, // Pokemon Specie
+				SpeciesAraquanid.Instance, // PokemonInstance Species
 				"Araquanid", level,
 				Water.Instance, Bug.Instance			
 		)
@@ -73,12 +126,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Araquanid Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Araquanid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Araquanid() : base(
 			752,
-			SpecieAraquanid.Instance, // Pokemon Specie
+			SpeciesAraquanid.Instance, // PokemonInstance Species
 			Water.Instance, Bug.Instance			
 		) {}
 		*/

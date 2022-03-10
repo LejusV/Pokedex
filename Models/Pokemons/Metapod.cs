@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Metapod Specie to store common natural stats of all Metapods
-	#region SpecieMetapod
-	public class SpecieMetapod : PokemonSpecie
+	//Metapod Species to store common natural stats of all Metapods
+	#region SpeciesMetapod
+	public class SpeciesMetapod : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMetapod? _instance = null;
+		private static SpeciesMetapod? _instance = null;
 #nullable restore
-        public static SpecieMetapod Instance
+        public static SpeciesMetapod Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMetapod();
+                    _instance = new SpeciesMetapod();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMetapod Builder
-		public SpecieMetapod() : base(
+		#region SpeciesMetapod Constructor
+		public SpeciesMetapod() : base(
 			"Metapod",
 			0.7,
 			9.9,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"String-Shot",
+				"Harden",
+				"Iron-Defense",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Metapod Pokemon Class
+	//Metapod PokemonInstance Class
 	#region Metapod
-	public class Metapod : Pokemon
+	public class MetapodInstance : PokemonInstance
 	{
-		#region Metapod Builders
+		#region Metapod Constructors
 		/// <summary>
-		/// Metapod Builder waiting for a Nickname & a Level
+		/// Metapod Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Metapod(string nickname, int level)
+		public MetapodInstance(string nickname, int level)
 		: base(
 				11,
-				SpecieMetapod.Instance, // Pokemon Specie
+				SpeciesMetapod.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Metapod Builder only waiting for a Level
 		/// </summary>
-		public Metapod(int level)
+		public MetapodInstance(int level)
 		: base(
 				11,
-				SpecieMetapod.Instance, // Pokemon Specie
+				SpeciesMetapod.Instance, // PokemonInstance Species
 				"Metapod", level,
 				Bug.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Metapod Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Metapod Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Metapod() : base(
 			11,
-			SpecieMetapod.Instance, // Pokemon Specie
+			SpeciesMetapod.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

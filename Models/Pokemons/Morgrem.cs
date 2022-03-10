@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Morgrem Specie to store common natural stats of all Morgrems
-	#region SpecieMorgrem
-	public class SpecieMorgrem : PokemonSpecie
+	//Morgrem Species to store common natural stats of all Morgrems
+	#region SpeciesMorgrem
+	public class SpeciesMorgrem : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMorgrem? _instance = null;
+		private static SpeciesMorgrem? _instance = null;
 #nullable restore
-        public static SpecieMorgrem Instance
+        public static SpeciesMorgrem Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMorgrem();
+                    _instance = new SpeciesMorgrem();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMorgrem Builder
-		public SpecieMorgrem() : base(
+		#region SpeciesMorgrem Constructor
+		public SpeciesMorgrem() : base(
 			"Morgrem",
 			0.8,
 			12.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			75, 55, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Morgrem Pokemon Class
+	//Morgrem PokemonInstance Class
 	#region Morgrem
-	public class Morgrem : Pokemon
+	public class MorgremInstance : PokemonInstance
 	{
-		#region Morgrem Builders
+		#region Morgrem Constructors
 		/// <summary>
-		/// Morgrem Builder waiting for a Nickname & a Level
+		/// Morgrem Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Morgrem(string nickname, int level)
+		public MorgremInstance(string nickname, int level)
 		: base(
 				860,
-				SpecieMorgrem.Instance, // Pokemon Specie
+				SpeciesMorgrem.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Morgrem Builder only waiting for a Level
 		/// </summary>
-		public Morgrem(int level)
+		public MorgremInstance(int level)
 		: base(
 				860,
-				SpecieMorgrem.Instance, // Pokemon Specie
+				SpeciesMorgrem.Instance, // PokemonInstance Species
 				"Morgrem", level,
 				Dark.Instance, Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Morgrem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Morgrem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Morgrem() : base(
 			860,
-			SpecieMorgrem.Instance, // Pokemon Specie
+			SpeciesMorgrem.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}
 		*/

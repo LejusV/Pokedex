@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Orbeetle Specie to store common natural stats of all Orbeetles
-	#region SpecieOrbeetle
-	public class SpecieOrbeetle : PokemonSpecie
+	//Orbeetle Species to store common natural stats of all Orbeetles
+	#region SpeciesOrbeetle
+	public class SpeciesOrbeetle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieOrbeetle? _instance = null;
+		private static SpeciesOrbeetle? _instance = null;
 #nullable restore
-        public static SpecieOrbeetle Instance
+        public static SpeciesOrbeetle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieOrbeetle();
+                    _instance = new SpeciesOrbeetle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieOrbeetle Builder
-		public SpecieOrbeetle() : base(
+		#region SpeciesOrbeetle Constructor
+		public SpeciesOrbeetle() : base(
 			"Orbeetle",
 			0.4,
 			40.8,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 120, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Orbeetle Pokemon Class
+	//Orbeetle PokemonInstance Class
 	#region Orbeetle
-	public class Orbeetle : Pokemon
+	public class OrbeetleInstance : PokemonInstance
 	{
-		#region Orbeetle Builders
+		#region Orbeetle Constructors
 		/// <summary>
-		/// Orbeetle Builder waiting for a Nickname & a Level
+		/// Orbeetle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Orbeetle(string nickname, int level)
+		public OrbeetleInstance(string nickname, int level)
 		: base(
 				826,
-				SpecieOrbeetle.Instance, // Pokemon Specie
+				SpeciesOrbeetle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Orbeetle Builder only waiting for a Level
 		/// </summary>
-		public Orbeetle(int level)
+		public OrbeetleInstance(int level)
 		: base(
 				826,
-				SpecieOrbeetle.Instance, // Pokemon Specie
+				SpeciesOrbeetle.Instance, // PokemonInstance Species
 				"Orbeetle", level,
 				Bug.Instance, Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Orbeetle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Orbeetle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Orbeetle() : base(
 			826,
-			SpecieOrbeetle.Instance, // Pokemon Specie
+			SpeciesOrbeetle.Instance, // PokemonInstance Species
 			Bug.Instance, Psychic.Instance			
 		) {}
 		*/

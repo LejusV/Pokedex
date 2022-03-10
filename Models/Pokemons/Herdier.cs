@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Herdier Specie to store common natural stats of all Herdiers
-	#region SpecieHerdier
-	public class SpecieHerdier : PokemonSpecie
+	//Herdier Species to store common natural stats of all Herdiers
+	#region SpeciesHerdier
+	public class SpeciesHerdier : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHerdier? _instance = null;
+		private static SpeciesHerdier? _instance = null;
 #nullable restore
-        public static SpecieHerdier Instance
+        public static SpeciesHerdier Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHerdier();
+                    _instance = new SpeciesHerdier();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHerdier Builder
-		public SpecieHerdier() : base(
+		#region SpeciesHerdier Constructor
+		public SpeciesHerdier() : base(
 			"Herdier",
 			0.9,
 			14.7,
@@ -32,23 +34,83 @@ namespace Pokedex.Models.Pokemons
 			35, 65, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Take-Down",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Surf",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Covet",
+				"Shock-Wave",
+				"Payback",
+				"Last-Resort",
+				"Giga-Impact",
+				"After-You",
+				"Round",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Snarl",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Herdier Pokemon Class
+	//Herdier PokemonInstance Class
 	#region Herdier
-	public class Herdier : Pokemon
+	public class HerdierInstance : PokemonInstance
 	{
-		#region Herdier Builders
+		#region Herdier Constructors
 		/// <summary>
-		/// Herdier Builder waiting for a Nickname & a Level
+		/// Herdier Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Herdier(string nickname, int level)
+		public HerdierInstance(string nickname, int level)
 		: base(
 				507,
-				SpecieHerdier.Instance, // Pokemon Specie
+				SpeciesHerdier.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +122,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Herdier Builder only waiting for a Level
 		/// </summary>
-		public Herdier(int level)
+		public HerdierInstance(int level)
 		: base(
 				507,
-				SpecieHerdier.Instance, // Pokemon Specie
+				SpeciesHerdier.Instance, // PokemonInstance Species
 				"Herdier", level,
 				Normal.Instance			
 		)
@@ -73,12 +135,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Herdier Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Herdier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Herdier() : base(
 			507,
-			SpecieHerdier.Instance, // Pokemon Specie
+			SpeciesHerdier.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

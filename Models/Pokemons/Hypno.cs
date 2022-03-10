@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hypno Specie to store common natural stats of all Hypnos
-	#region SpecieHypno
-	public class SpecieHypno : PokemonSpecie
+	//Hypno Species to store common natural stats of all Hypnos
+	#region SpeciesHypno
+	public class SpeciesHypno : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHypno? _instance = null;
+		private static SpeciesHypno? _instance = null;
 #nullable restore
-        public static SpecieHypno Instance
+        public static SpeciesHypno Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHypno();
+                    _instance = new SpeciesHypno();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHypno Builder
-		public SpecieHypno() : base(
+		#region SpeciesHypno Constructor
+		public SpeciesHypno() : base(
 			"Hypno",
 			1.6,
 			75.6,
@@ -32,23 +34,129 @@ namespace Pokedex.Models.Pokemons
 			73, 115, // Special Attack & Defense
 			67		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Disable",
+				"Psybeam",
+				"Hyper-Beam",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Meditate",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Metronome",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Poison-Gas",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Signal-Beam",
+				"Calm-Mind",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Fling",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Switcheroo",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Synchronoise",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hypno Pokemon Class
+	//Hypno PokemonInstance Class
 	#region Hypno
-	public class Hypno : Pokemon
+	public class HypnoInstance : PokemonInstance
 	{
-		#region Hypno Builders
+		#region Hypno Constructors
 		/// <summary>
-		/// Hypno Builder waiting for a Nickname & a Level
+		/// Hypno Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hypno(string nickname, int level)
+		public HypnoInstance(string nickname, int level)
 		: base(
 				97,
-				SpecieHypno.Instance, // Pokemon Specie
+				SpeciesHypno.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +168,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hypno Builder only waiting for a Level
 		/// </summary>
-		public Hypno(int level)
+		public HypnoInstance(int level)
 		: base(
 				97,
-				SpecieHypno.Instance, // Pokemon Specie
+				SpeciesHypno.Instance, // PokemonInstance Species
 				"Hypno", level,
 				Psychic.Instance			
 		)
@@ -73,12 +181,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hypno Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hypno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hypno() : base(
 			97,
-			SpecieHypno.Instance, // Pokemon Specie
+			SpeciesHypno.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Greedent Specie to store common natural stats of all Greedents
-	#region SpecieGreedent
-	public class SpecieGreedent : PokemonSpecie
+	//Greedent Species to store common natural stats of all Greedents
+	#region SpeciesGreedent
+	public class SpeciesGreedent : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGreedent? _instance = null;
+		private static SpeciesGreedent? _instance = null;
 #nullable restore
-        public static SpecieGreedent Instance
+        public static SpeciesGreedent Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGreedent();
+                    _instance = new SpeciesGreedent();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGreedent Builder
-		public SpecieGreedent() : base(
+		#region SpeciesGreedent Constructor
+		public SpeciesGreedent() : base(
 			"Greedent",
 			0.6,
 			6.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			55, 75, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Greedent Pokemon Class
+	//Greedent PokemonInstance Class
 	#region Greedent
-	public class Greedent : Pokemon
+	public class GreedentInstance : PokemonInstance
 	{
-		#region Greedent Builders
+		#region Greedent Constructors
 		/// <summary>
-		/// Greedent Builder waiting for a Nickname & a Level
+		/// Greedent Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Greedent(string nickname, int level)
+		public GreedentInstance(string nickname, int level)
 		: base(
 				820,
-				SpecieGreedent.Instance, // Pokemon Specie
+				SpeciesGreedent.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Greedent Builder only waiting for a Level
 		/// </summary>
-		public Greedent(int level)
+		public GreedentInstance(int level)
 		: base(
 				820,
-				SpecieGreedent.Instance, // Pokemon Specie
+				SpeciesGreedent.Instance, // PokemonInstance Species
 				"Greedent", level,
 				Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Greedent Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Greedent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Greedent() : base(
 			820,
-			SpecieGreedent.Instance, // Pokemon Specie
+			SpeciesGreedent.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

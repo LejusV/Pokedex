@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jigglypuff Specie to store common natural stats of all Jigglypuffs
-	#region SpecieJigglypuff
-	public class SpecieJigglypuff : PokemonSpecie
+	//Jigglypuff Species to store common natural stats of all Jigglypuffs
+	#region SpeciesJigglypuff
+	public class SpeciesJigglypuff : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJigglypuff? _instance = null;
+		private static SpeciesJigglypuff? _instance = null;
 #nullable restore
-        public static SpecieJigglypuff Instance
+        public static SpeciesJigglypuff Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJigglypuff();
+                    _instance = new SpeciesJigglypuff();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJigglypuff Builder
-		public SpecieJigglypuff() : base(
+		#region SpeciesJigglypuff Constructor
+		public SpeciesJigglypuff() : base(
 			"Jigglypuff",
 			0.5,
 			5.5,
@@ -32,23 +34,144 @@ namespace Pokedex.Models.Pokemons
 			45, 25, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Sing",
+				"Disable",
+				"Flamethrower",
+				"Water-Gun",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Bounce",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Gravity",
+				"Wake-Up-Slap",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Fling",
+				"Last-Resort",
+				"Drain-Punch",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Disarming-Voice",
+				"Play-Nice",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jigglypuff Pokemon Class
+	//Jigglypuff PokemonInstance Class
 	#region Jigglypuff
-	public class Jigglypuff : Pokemon
+	public class JigglypuffInstance : PokemonInstance
 	{
-		#region Jigglypuff Builders
+		#region Jigglypuff Constructors
 		/// <summary>
-		/// Jigglypuff Builder waiting for a Nickname & a Level
+		/// Jigglypuff Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Jigglypuff(string nickname, int level)
+		public JigglypuffInstance(string nickname, int level)
 		: base(
 				39,
-				SpecieJigglypuff.Instance, // Pokemon Specie
+				SpeciesJigglypuff.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
 		)
@@ -60,10 +183,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jigglypuff Builder only waiting for a Level
 		/// </summary>
-		public Jigglypuff(int level)
+		public JigglypuffInstance(int level)
 		: base(
 				39,
-				SpecieJigglypuff.Instance, // Pokemon Specie
+				SpeciesJigglypuff.Instance, // PokemonInstance Species
 				"Jigglypuff", level,
 				Normal.Instance, Fairy.Instance			
 		)
@@ -73,12 +196,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jigglypuff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jigglypuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Jigglypuff() : base(
 			39,
-			SpecieJigglypuff.Instance, // Pokemon Specie
+			SpeciesJigglypuff.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}
 		*/

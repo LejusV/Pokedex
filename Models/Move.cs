@@ -11,9 +11,9 @@ namespace Pokedex.Models
         private readonly MoveCategory _category;
         private readonly int _maxPp;
         private readonly string _name;
-        private readonly PokemonType _pokemonType;
+        private readonly PokeType _PokeType;
         private readonly int? _power;
-        private readonly int _pp;
+        private int _pp;
         private readonly int _priority;
         # endregion
 
@@ -27,7 +27,7 @@ namespace Pokedex.Models
 
         public string Name { get => this._name; }
 
-        public PokemonType PokemonType { get => this._pokemonType; }
+        public PokeType PokeType { get => this._PokeType; }
 
         public int? Power { get => this._power; }
 
@@ -50,7 +50,7 @@ namespace Pokedex.Models
                 // line 2
                 output.AppendLine("┌--------------┬--------------------┐");
 
-                output.Append($"| Type: {this._pokemonType.Name, 6} |"); // Move PokemonType (line 2)
+                output.Append($"| Type: {this._PokeType.Name, 6} |"); // Move PokeType (line 2)
                 output.AppendLine($" Category: {this._category, -8} |"); // Move Category (line 2)
                 // line 3
                 output.Append($"| Power:   {this._power?.ToString() ?? "-", 3} | "); // Move Power (line 3)
@@ -67,24 +67,105 @@ namespace Pokedex.Models
         # endregion
 
         # region Constructors
-        public Move(string name, PokemonType type, MoveCategory category, int maxPp, int? power, int? accuracy, int priority)
+        public Move(string name, PokeType type, MoveCategory category, int maxPp, int? power, int? accuracy, int priority)
         {
             _accuracy = accuracy;
             _category = category;
             if (name != "")
                 _name = name;
 			else throw new ArgumentException("Name cannot be empty");
-            _pokemonType = type;
+            _PokeType = type;
             _power = power; 
             _pp = _maxPp = maxPp; // initialise maxPp & set current pp to max pp
             _priority = priority;
         }
         # endregion
 
-        /*
+
         # region Methods
-        public abstract void Use();
+        //public abstract void Use();
+
+        # region ModifyStat
+        /// <summary>
+        /// Modify the Stat indexed by its string key in the Stats List, using a modifier from -6 to +6
+        /// </summary>
+        /// <param name="pokeInstance">The PokemonInstance whose Stat is to modify</param>
+        /// <param name="statKey">The string indexing the Stat to modify</param>
+        /// <param name="modifier">The Modifier defining how the Stat should be modified</param>
+        protected void ModifyStat(PokemonInstance pokeInstance, string statKey, int modifier)
+        {
+            if (!PokemonStats.Keys.Contains(statKey))
+
+            // a Modifier is an Int32 that can go from -6 to +6
+            pokeInstance.StatModifiers.Add(statKey, modifier);
+            int pokeModifier = pokeInstance.StatModifiers.Get(statKey);
+
+            // Check if it is still in the interval (-6; 6)
+            // If not, set it back to the nearest limit value (6 or -6)
+            if (pokeModifier > 6)
+                pokeInstance.StatModifiers.Set(statKey, 6);
+                pokeModifier = 6;
+            if (pokeModifier < -6)
+                pokeInstance.StatModifiers.Set(statKey, -6);
+                pokeModifier = -6;
+
+            int baseStat = pokeInstance.CalculatedStats.Get(statKey);
+            // If Modifier is positive,
+            if (pokeModifier > 0)
+                // it modifies the corresponding stat using the formula f(stat) = stat * (modifier + 2) / 2
+                pokeInstance.CurrentStats.Set(
+                    statKey,
+                    baseStat * ( (modifier + 2 ) / 2 )
+                    );
+            else
+            {
+                // If Modifier is negative,
+                if (pokeModifier < 0)
+                    // it modifies the corresponding stat using the formula f(stat) = stat * 2 / ( |modifier| + 2)      | x | : absolute value of x
+                    pokeInstance.CurrentStats.Set(
+                        statKey,
+                        pokeInstance.CalculatedStats.Get(statKey) * ( 2 / (Math.Abs(pokeInstance.StatModifiers.Get(statKey)) + 2 ) )
+                        );
+            }
+        }
+        # endregion
+
+        # region ModifyStat
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pokeInstance">The PokemonInstance whose HP is to modify</param>
+        /// <param name="modifier">How much should be added</param>
+        protected void ModifyHP(PokemonInstance pokeInstance, int modifier)
+        {
+            pokeInstance.CurrentStats.Add("HP", modifier);
+        }
+        # endregion
+
+        # region Heal
+        /// <summary>
+        /// Heal the PokemonInstance the amount of the value
+        /// </summary>
+        /// <param name="pokeInstance"></param>
+        /// <param name="value"></param>
+        protected void Heal(PokemonInstance pokeInstance, int value)
+        {
+            ModifyHP(pokeInstance, value);
+        }
+        # endregion
+
+        # region Hurt
+        /// <summary>
+        /// Hurt the PokemonInstance the amount of the value
+        /// </summary>
+        /// <param name="pokeInstance"></param>
+        /// <param name="value"></param>
+        protected void Hurt(PokemonInstance pokeInstance, int value)
+        {
+            ModifyHP(pokeInstance, -value);
+        }
+        # endregion
+
         #endregion
-        */
     }
 }

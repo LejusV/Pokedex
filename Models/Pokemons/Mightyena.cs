@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mightyena Specie to store common natural stats of all Mightyenas
-	#region SpecieMightyena
-	public class SpecieMightyena : PokemonSpecie
+	//Mightyena Species to store common natural stats of all Mightyenas
+	#region SpeciesMightyena
+	public class SpeciesMightyena : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMightyena? _instance = null;
+		private static SpeciesMightyena? _instance = null;
 #nullable restore
-        public static SpecieMightyena Instance
+        public static SpeciesMightyena Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMightyena();
+                    _instance = new SpeciesMightyena();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMightyena Builder
-		public SpecieMightyena() : base(
+		#region SpeciesMightyena Constructor
+		public SpeciesMightyena() : base(
 			"Mightyena",
 			1.0,
 			37.0,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Bite",
+				"Roar",
+				"Hyper-Beam",
+				"Counter",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Yawn",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Odor-Sleuth",
+				"Howl",
+				"Covet",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Captivate",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Snarl",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mightyena Pokemon Class
+	//Mightyena PokemonInstance Class
 	#region Mightyena
-	public class Mightyena : Pokemon
+	public class MightyenaInstance : PokemonInstance
 	{
-		#region Mightyena Builders
+		#region Mightyena Constructors
 		/// <summary>
-		/// Mightyena Builder waiting for a Nickname & a Level
+		/// Mightyena Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mightyena(string nickname, int level)
+		public MightyenaInstance(string nickname, int level)
 		: base(
 				262,
-				SpecieMightyena.Instance, // Pokemon Specie
+				SpeciesMightyena.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mightyena Builder only waiting for a Level
 		/// </summary>
-		public Mightyena(int level)
+		public MightyenaInstance(int level)
 		: base(
 				262,
-				SpecieMightyena.Instance, // Pokemon Specie
+				SpeciesMightyena.Instance, // PokemonInstance Species
 				"Mightyena", level,
 				Dark.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mightyena Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mightyena Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mightyena() : base(
 			262,
-			SpecieMightyena.Instance, // Pokemon Specie
+			SpeciesMightyena.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

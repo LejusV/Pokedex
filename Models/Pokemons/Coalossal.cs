@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Coalossal Specie to store common natural stats of all Coalossals
-	#region SpecieCoalossal
-	public class SpecieCoalossal : PokemonSpecie
+	//Coalossal Species to store common natural stats of all Coalossals
+	#region SpeciesCoalossal
+	public class SpeciesCoalossal : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCoalossal? _instance = null;
+		private static SpeciesCoalossal? _instance = null;
 #nullable restore
-        public static SpecieCoalossal Instance
+        public static SpeciesCoalossal Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCoalossal();
+                    _instance = new SpeciesCoalossal();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCoalossal Builder
-		public SpecieCoalossal() : base(
+		#region SpeciesCoalossal Constructor
+		public SpeciesCoalossal() : base(
 			"Coalossal",
 			2.8,
 			310.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 90, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Coalossal Pokemon Class
+	//Coalossal PokemonInstance Class
 	#region Coalossal
-	public class Coalossal : Pokemon
+	public class CoalossalInstance : PokemonInstance
 	{
-		#region Coalossal Builders
+		#region Coalossal Constructors
 		/// <summary>
-		/// Coalossal Builder waiting for a Nickname & a Level
+		/// Coalossal Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Coalossal(string nickname, int level)
+		public CoalossalInstance(string nickname, int level)
 		: base(
 				839,
-				SpecieCoalossal.Instance, // Pokemon Specie
+				SpeciesCoalossal.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fire.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Coalossal Builder only waiting for a Level
 		/// </summary>
-		public Coalossal(int level)
+		public CoalossalInstance(int level)
 		: base(
 				839,
-				SpecieCoalossal.Instance, // Pokemon Specie
+				SpeciesCoalossal.Instance, // PokemonInstance Species
 				"Coalossal", level,
 				Rock.Instance, Fire.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Coalossal Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Coalossal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Coalossal() : base(
 			839,
-			SpecieCoalossal.Instance, // Pokemon Specie
+			SpeciesCoalossal.Instance, // PokemonInstance Species
 			Rock.Instance, Fire.Instance			
 		) {}
 		*/

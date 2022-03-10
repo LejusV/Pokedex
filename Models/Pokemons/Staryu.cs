@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Staryu Specie to store common natural stats of all Staryus
-	#region SpecieStaryu
-	public class SpecieStaryu : PokemonSpecie
+	//Staryu Species to store common natural stats of all Staryus
+	#region SpeciesStaryu
+	public class SpeciesStaryu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieStaryu? _instance = null;
+		private static SpeciesStaryu? _instance = null;
 #nullable restore
-        public static SpecieStaryu Instance
+        public static SpeciesStaryu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieStaryu();
+                    _instance = new SpeciesStaryu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieStaryu Builder
-		public SpecieStaryu() : base(
+		#region SpeciesStaryu Constructor
+		public SpeciesStaryu() : base(
 			"Staryu",
 			0.8,
 			34.5,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			70, 55, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Supersonic",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Harden",
+				"Minimize",
+				"Confuse-Ray",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Swift",
+				"Skull-Bash",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Psych-Up",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Dive",
+				"Camouflage",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Water-Pulse",
+				"Gravity",
+				"Gyro-Ball",
+				"Brine",
+				"Natural-Gift",
+				"Power-Gem",
+				"Flash-Cannon",
+				"Round",
+				"Scald",
+				"Reflect-Type",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Staryu Pokemon Class
+	//Staryu PokemonInstance Class
 	#region Staryu
-	public class Staryu : Pokemon
+	public class StaryuInstance : PokemonInstance
 	{
-		#region Staryu Builders
+		#region Staryu Constructors
 		/// <summary>
-		/// Staryu Builder waiting for a Nickname & a Level
+		/// Staryu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Staryu(string nickname, int level)
+		public StaryuInstance(string nickname, int level)
 		: base(
 				120,
-				SpecieStaryu.Instance, // Pokemon Specie
+				SpeciesStaryu.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Staryu Builder only waiting for a Level
 		/// </summary>
-		public Staryu(int level)
+		public StaryuInstance(int level)
 		: base(
 				120,
-				SpecieStaryu.Instance, // Pokemon Specie
+				SpeciesStaryu.Instance, // PokemonInstance Species
 				"Staryu", level,
 				Water.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Staryu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Staryu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Staryu() : base(
 			120,
-			SpecieStaryu.Instance, // Pokemon Specie
+			SpeciesStaryu.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

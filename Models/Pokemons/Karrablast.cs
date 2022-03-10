@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Karrablast Specie to store common natural stats of all Karrablasts
-	#region SpecieKarrablast
-	public class SpecieKarrablast : PokemonSpecie
+	//Karrablast Species to store common natural stats of all Karrablasts
+	#region SpeciesKarrablast
+	public class SpeciesKarrablast : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKarrablast? _instance = null;
+		private static SpeciesKarrablast? _instance = null;
 #nullable restore
-        public static SpecieKarrablast Instance
+        public static SpeciesKarrablast Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKarrablast();
+                    _instance = new SpeciesKarrablast();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKarrablast Builder
-		public SpecieKarrablast() : base(
+		#region SpeciesKarrablast Constructor
+		public SpeciesKarrablast() : base(
 			"Karrablast",
 			0.5,
 			5.9,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			40, 45, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Horn-Attack",
+				"Fury-Attack",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Peck",
+				"Counter",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Megahorn",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Knock-Off",
+				"Secret-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Poison-Jab",
+				"X-Scissor",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Bug-Bite",
+				"Round",
+				"Struggle-Bug",
+				"Drill-Run",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Karrablast Pokemon Class
+	//Karrablast PokemonInstance Class
 	#region Karrablast
-	public class Karrablast : Pokemon
+	public class KarrablastInstance : PokemonInstance
 	{
-		#region Karrablast Builders
+		#region Karrablast Constructors
 		/// <summary>
-		/// Karrablast Builder waiting for a Nickname & a Level
+		/// Karrablast Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Karrablast(string nickname, int level)
+		public KarrablastInstance(string nickname, int level)
 		: base(
 				588,
-				SpecieKarrablast.Instance, // Pokemon Specie
+				SpeciesKarrablast.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Karrablast Builder only waiting for a Level
 		/// </summary>
-		public Karrablast(int level)
+		public KarrablastInstance(int level)
 		: base(
 				588,
-				SpecieKarrablast.Instance, // Pokemon Specie
+				SpeciesKarrablast.Instance, // PokemonInstance Species
 				"Karrablast", level,
 				Bug.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Karrablast Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Karrablast Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Karrablast() : base(
 			588,
-			SpecieKarrablast.Instance, // Pokemon Specie
+			SpeciesKarrablast.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Volcanion Specie to store common natural stats of all Volcanions
-	#region SpecieVolcanion
-	public class SpecieVolcanion : PokemonSpecie
+	//Volcanion Species to store common natural stats of all Volcanions
+	#region SpeciesVolcanion
+	public class SpeciesVolcanion : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVolcanion? _instance = null;
+		private static SpeciesVolcanion? _instance = null;
 #nullable restore
-        public static SpecieVolcanion Instance
+        public static SpeciesVolcanion Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVolcanion();
+                    _instance = new SpeciesVolcanion();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVolcanion Builder
-		public SpecieVolcanion() : base(
+		#region SpeciesVolcanion Constructor
+		public SpeciesVolcanion() : base(
 			"Volcanion",
 			1.7,
 			195.0,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			130, 90, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Stomp",
+				"Body-Slam",
+				"Take-Down",
+				"Roar",
+				"Flamethrower",
+				"Mist",
+				"Hydro-Pump",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Haze",
+				"Fire-Blast",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Weather-Ball",
+				"Overheat",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Fling",
+				"Flare-Blitz",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Flash-Cannon",
+				"Stone-Edge",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Flame-Charge",
+				"Round",
+				"Scald",
+				"Incinerate",
+				"Bulldoze",
+				"Confide",
+				"Steam-Eruption"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Volcanion Pokemon Class
+	//Volcanion PokemonInstance Class
 	#region Volcanion
-	public class Volcanion : Pokemon
+	public class VolcanionInstance : PokemonInstance
 	{
-		#region Volcanion Builders
+		#region Volcanion Constructors
 		/// <summary>
-		/// Volcanion Builder waiting for a Nickname & a Level
+		/// Volcanion Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Volcanion(string nickname, int level)
+		public VolcanionInstance(string nickname, int level)
 		: base(
 				721,
-				SpecieVolcanion.Instance, // Pokemon Specie
+				SpeciesVolcanion.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Volcanion Builder only waiting for a Level
 		/// </summary>
-		public Volcanion(int level)
+		public VolcanionInstance(int level)
 		: base(
 				721,
-				SpecieVolcanion.Instance, // Pokemon Specie
+				SpeciesVolcanion.Instance, // PokemonInstance Species
 				"Volcanion", level,
 				Fire.Instance, Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Volcanion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Volcanion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Volcanion() : base(
 			721,
-			SpecieVolcanion.Instance, // Pokemon Specie
+			SpeciesVolcanion.Instance, // PokemonInstance Species
 			Fire.Instance, Water.Instance			
 		) {}
 		*/

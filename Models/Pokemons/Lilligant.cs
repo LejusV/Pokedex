@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lilligant Specie to store common natural stats of all Lilligants
-	#region SpecieLilligant
-	public class SpecieLilligant : PokemonSpecie
+	//Lilligant Species to store common natural stats of all Lilligants
+	#region SpeciesLilligant
+	public class SpeciesLilligant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLilligant? _instance = null;
+		private static SpeciesLilligant? _instance = null;
 #nullable restore
-        public static SpecieLilligant Instance
+        public static SpeciesLilligant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLilligant();
+                    _instance = new SpeciesLilligant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLilligant Builder
-		public SpecieLilligant() : base(
+		#region SpeciesLilligant Constructor
+		public SpeciesLilligant() : base(
 			"Lilligant",
 			1.1,
 			16.3,
@@ -32,23 +34,79 @@ namespace Pokedex.Models.Pokemons
 			110, 75, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Petal-Dance",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Role-Play",
+				"Secret-Power",
+				"Teeter-Dance",
+				"Covet",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Quiver-Dance",
+				"After-You",
+				"Round",
+				"Petal-Blizzard",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lilligant Pokemon Class
+	//Lilligant PokemonInstance Class
 	#region Lilligant
-	public class Lilligant : Pokemon
+	public class LilligantInstance : PokemonInstance
 	{
-		#region Lilligant Builders
+		#region Lilligant Constructors
 		/// <summary>
-		/// Lilligant Builder waiting for a Nickname & a Level
+		/// Lilligant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lilligant(string nickname, int level)
+		public LilligantInstance(string nickname, int level)
 		: base(
 				549,
-				SpecieLilligant.Instance, // Pokemon Specie
+				SpeciesLilligant.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +118,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lilligant Builder only waiting for a Level
 		/// </summary>
-		public Lilligant(int level)
+		public LilligantInstance(int level)
 		: base(
 				549,
-				SpecieLilligant.Instance, // Pokemon Specie
+				SpeciesLilligant.Instance, // PokemonInstance Species
 				"Lilligant", level,
 				Grass.Instance			
 		)
@@ -73,12 +131,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lilligant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lilligant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lilligant() : base(
 			549,
-			SpecieLilligant.Instance, // Pokemon Specie
+			SpeciesLilligant.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

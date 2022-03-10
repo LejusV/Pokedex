@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zapdos Specie to store common natural stats of all Zapdoss
-	#region SpecieZapdos
-	public class SpecieZapdos : PokemonSpecie
+	//Zapdos Species to store common natural stats of all Zapdoss
+	#region SpeciesZapdos
+	public class SpeciesZapdos : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZapdos? _instance = null;
+		private static SpeciesZapdos? _instance = null;
 #nullable restore
-        public static SpecieZapdos Instance
+        public static SpeciesZapdos Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZapdos();
+                    _instance = new SpeciesZapdos();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZapdos Builder
-		public SpecieZapdos() : base(
+		#region SpeciesZapdos Constructor
+		public SpeciesZapdos() : base(
 			"Zapdos",
 			1.6,
 			52.6,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			125, 90, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Whirlwind",
+				"Fly",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Hyper-Beam",
+				"Peck",
+				"Drill-Peck",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Swift",
+				"Sky-Attack",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Facade",
+				"Charge",
+				"Secret-Power",
+				"Air-Cutter",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Shock-Wave",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Giga-Impact",
+				"Defog",
+				"Discharge",
+				"Charge-Beam",
+				"Ominous-Wind",
+				"Round",
+				"Sky-Drop",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide",
+				"Magnetic-Flux"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zapdos Pokemon Class
+	//Zapdos PokemonInstance Class
 	#region Zapdos
-	public class Zapdos : Pokemon
+	public class ZapdosInstance : PokemonInstance
 	{
-		#region Zapdos Builders
+		#region Zapdos Constructors
 		/// <summary>
-		/// Zapdos Builder waiting for a Nickname & a Level
+		/// Zapdos Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zapdos(string nickname, int level)
+		public ZapdosInstance(string nickname, int level)
 		: base(
 				145,
-				SpecieZapdos.Instance, // Pokemon Specie
+				SpeciesZapdos.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Flying.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zapdos Builder only waiting for a Level
 		/// </summary>
-		public Zapdos(int level)
+		public ZapdosInstance(int level)
 		: base(
 				145,
-				SpecieZapdos.Instance, // Pokemon Specie
+				SpeciesZapdos.Instance, // PokemonInstance Species
 				"Zapdos", level,
 				Electric.Instance, Flying.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zapdos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zapdos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zapdos() : base(
 			145,
-			SpecieZapdos.Instance, // Pokemon Specie
+			SpeciesZapdos.Instance, // PokemonInstance Species
 			Electric.Instance, Flying.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Squirtle Specie to store common natural stats of all Squirtles
-	#region SpecieSquirtle
-	public class SpecieSquirtle : PokemonSpecie
+	//Squirtle Species to store common natural stats of all Squirtles
+	#region SpeciesSquirtle
+	public class SpeciesSquirtle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSquirtle? _instance = null;
+		private static SpeciesSquirtle? _instance = null;
 #nullable restore
-        public static SpecieSquirtle Instance
+        public static SpeciesSquirtle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSquirtle();
+                    _instance = new SpeciesSquirtle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSquirtle Builder
-		public SpecieSquirtle() : base(
+		#region SpeciesSquirtle Constructor
+		public SpeciesSquirtle() : base(
 			"Squirtle",
 			0.5,
 			9.0,
@@ -32,23 +34,125 @@ namespace Pokedex.Models.Pokemons
 			50, 64, // Special Attack & Defense
 			43		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Mist",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Withdraw",
+				"Defense-Curl",
+				"Haze",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Skull-Bash",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Rapid-Spin",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Rock-Smash",
+				"Whirlpool",
+				"Fake-Out",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Yawn",
+				"Refresh",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Water-Spout",
+				"Muddy-Water",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Brine",
+				"Natural-Gift",
+				"Fling",
+				"Aqua-Ring",
+				"Aura-Sphere",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Zen-Headbutt",
+				"Captivate",
+				"Aqua-Jet",
+				"Round",
+				"Scald",
+				"Water-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Squirtle Pokemon Class
+	//Squirtle PokemonInstance Class
 	#region Squirtle
-	public class Squirtle : Pokemon
+	public class SquirtleInstance : PokemonInstance
 	{
-		#region Squirtle Builders
+		#region Squirtle Constructors
 		/// <summary>
-		/// Squirtle Builder waiting for a Nickname & a Level
+		/// Squirtle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Squirtle(string nickname, int level)
+		public SquirtleInstance(string nickname, int level)
 		: base(
 				7,
-				SpecieSquirtle.Instance, // Pokemon Specie
+				SpeciesSquirtle.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +164,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Squirtle Builder only waiting for a Level
 		/// </summary>
-		public Squirtle(int level)
+		public SquirtleInstance(int level)
 		: base(
 				7,
-				SpecieSquirtle.Instance, // Pokemon Specie
+				SpeciesSquirtle.Instance, // PokemonInstance Species
 				"Squirtle", level,
 				Water.Instance			
 		)
@@ -73,12 +177,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Squirtle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Squirtle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Squirtle() : base(
 			7,
-			SpecieSquirtle.Instance, // Pokemon Specie
+			SpeciesSquirtle.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

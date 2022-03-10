@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spritzee Specie to store common natural stats of all Spritzees
-	#region SpecieSpritzee
-	public class SpecieSpritzee : PokemonSpecie
+	//Spritzee Species to store common natural stats of all Spritzees
+	#region SpeciesSpritzee
+	public class SpeciesSpritzee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSpritzee? _instance = null;
+		private static SpeciesSpritzee? _instance = null;
 #nullable restore
-        public static SpecieSpritzee Instance
+        public static SpeciesSpritzee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSpritzee();
+                    _instance = new SpeciesSpritzee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSpritzee Builder
-		public SpecieSpritzee() : base(
+		#region SpeciesSpritzee Constructor
+		public SpeciesSpritzee() : base(
 			"Spritzee",
 			0.2,
 			0.5,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			63, 65, // Special Attack & Defense
 			23		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Disable",
+				"Thunderbolt",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sweet-Kiss",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Torment",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Magic-Coat",
+				"Endeavor",
+				"Skill-Swap",
+				"Refresh",
+				"Secret-Power",
+				"Aromatherapy",
+				"Odor-Sleuth",
+				"Covet",
+				"Calm-Mind",
+				"Gyro-Ball",
+				"Energy-Ball",
+				"Nasty-Plot",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Captivate",
+				"Charge-Beam",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Disarming-Voice",
+				"Draining-Kiss",
+				"Misty-Terrain",
+				"Fairy-Wind",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Spritzee Pokemon Class
+	//Spritzee PokemonInstance Class
 	#region Spritzee
-	public class Spritzee : Pokemon
+	public class SpritzeeInstance : PokemonInstance
 	{
-		#region Spritzee Builders
+		#region Spritzee Constructors
 		/// <summary>
-		/// Spritzee Builder waiting for a Nickname & a Level
+		/// Spritzee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Spritzee(string nickname, int level)
+		public SpritzeeInstance(string nickname, int level)
 		: base(
 				682,
-				SpecieSpritzee.Instance, // Pokemon Specie
+				SpeciesSpritzee.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spritzee Builder only waiting for a Level
 		/// </summary>
-		public Spritzee(int level)
+		public SpritzeeInstance(int level)
 		: base(
 				682,
-				SpecieSpritzee.Instance, // Pokemon Specie
+				SpeciesSpritzee.Instance, // PokemonInstance Species
 				"Spritzee", level,
 				Fairy.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Spritzee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Spritzee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Spritzee() : base(
 			682,
-			SpecieSpritzee.Instance, // Pokemon Specie
+			SpeciesSpritzee.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

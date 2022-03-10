@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Carkol Specie to store common natural stats of all Carkols
-	#region SpecieCarkol
-	public class SpecieCarkol : PokemonSpecie
+	//Carkol Species to store common natural stats of all Carkols
+	#region SpeciesCarkol
+	public class SpeciesCarkol : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCarkol? _instance = null;
+		private static SpeciesCarkol? _instance = null;
 #nullable restore
-        public static SpecieCarkol Instance
+        public static SpeciesCarkol Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCarkol();
+                    _instance = new SpeciesCarkol();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCarkol Builder
-		public SpecieCarkol() : base(
+		#region SpeciesCarkol Constructor
+		public SpeciesCarkol() : base(
 			"Carkol",
 			1.1,
 			78.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 70, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Carkol Pokemon Class
+	//Carkol PokemonInstance Class
 	#region Carkol
-	public class Carkol : Pokemon
+	public class CarkolInstance : PokemonInstance
 	{
-		#region Carkol Builders
+		#region Carkol Constructors
 		/// <summary>
-		/// Carkol Builder waiting for a Nickname & a Level
+		/// Carkol Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Carkol(string nickname, int level)
+		public CarkolInstance(string nickname, int level)
 		: base(
 				838,
-				SpecieCarkol.Instance, // Pokemon Specie
+				SpeciesCarkol.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fire.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Carkol Builder only waiting for a Level
 		/// </summary>
-		public Carkol(int level)
+		public CarkolInstance(int level)
 		: base(
 				838,
-				SpecieCarkol.Instance, // Pokemon Specie
+				SpeciesCarkol.Instance, // PokemonInstance Species
 				"Carkol", level,
 				Rock.Instance, Fire.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Carkol Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Carkol Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Carkol() : base(
 			838,
-			SpecieCarkol.Instance, // Pokemon Specie
+			SpeciesCarkol.Instance, // PokemonInstance Species
 			Rock.Instance, Fire.Instance			
 		) {}
 		*/

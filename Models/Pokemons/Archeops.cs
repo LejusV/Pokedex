@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Archeops Specie to store common natural stats of all Archeopss
-	#region SpecieArcheops
-	public class SpecieArcheops : PokemonSpecie
+	//Archeops Species to store common natural stats of all Archeopss
+	#region SpeciesArcheops
+	public class SpeciesArcheops : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArcheops? _instance = null;
+		private static SpeciesArcheops? _instance = null;
 #nullable restore
-        public static SpecieArcheops Instance
+        public static SpeciesArcheops Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArcheops();
+                    _instance = new SpeciesArcheops();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArcheops Builder
-		public SpecieArcheops() : base(
+		#region SpeciesArcheops Constructor
+		public SpeciesArcheops() : base(
 			"Archeops",
 			1.4,
 			32.0,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			112, 65, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Wing-Attack",
+				"Fly",
+				"Thrash",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Rock-Throw",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Sky-Attack",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Sandstorm",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bounce",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Rock-Polish",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Quick-Guard",
+				"Acrobatics",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Archeops Pokemon Class
+	//Archeops PokemonInstance Class
 	#region Archeops
-	public class Archeops : Pokemon
+	public class ArcheopsInstance : PokemonInstance
 	{
-		#region Archeops Builders
+		#region Archeops Constructors
 		/// <summary>
-		/// Archeops Builder waiting for a Nickname & a Level
+		/// Archeops Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Archeops(string nickname, int level)
+		public ArcheopsInstance(string nickname, int level)
 		: base(
 				567,
-				SpecieArcheops.Instance, // Pokemon Specie
+				SpeciesArcheops.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Archeops Builder only waiting for a Level
 		/// </summary>
-		public Archeops(int level)
+		public ArcheopsInstance(int level)
 		: base(
 				567,
-				SpecieArcheops.Instance, // Pokemon Specie
+				SpeciesArcheops.Instance, // PokemonInstance Species
 				"Archeops", level,
 				Rock.Instance, Flying.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Archeops Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Archeops Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Archeops() : base(
 			567,
-			SpecieArcheops.Instance, // Pokemon Specie
+			SpeciesArcheops.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}
 		*/

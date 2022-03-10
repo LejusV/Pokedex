@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dracovish Specie to store common natural stats of all Dracovishs
-	#region SpecieDracovish
-	public class SpecieDracovish : PokemonSpecie
+	//Dracovish Species to store common natural stats of all Dracovishs
+	#region SpeciesDracovish
+	public class SpeciesDracovish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDracovish? _instance = null;
+		private static SpeciesDracovish? _instance = null;
 #nullable restore
-        public static SpecieDracovish Instance
+        public static SpeciesDracovish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDracovish();
+                    _instance = new SpeciesDracovish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDracovish Builder
-		public SpecieDracovish() : base(
+		#region SpeciesDracovish Constructor
+		public SpeciesDracovish() : base(
 			"Dracovish",
 			2.3,
 			215.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dracovish Pokemon Class
+	//Dracovish PokemonInstance Class
 	#region Dracovish
-	public class Dracovish : Pokemon
+	public class DracovishInstance : PokemonInstance
 	{
-		#region Dracovish Builders
+		#region Dracovish Constructors
 		/// <summary>
-		/// Dracovish Builder waiting for a Nickname & a Level
+		/// Dracovish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dracovish(string nickname, int level)
+		public DracovishInstance(string nickname, int level)
 		: base(
 				882,
-				SpecieDracovish.Instance, // Pokemon Specie
+				SpeciesDracovish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dracovish Builder only waiting for a Level
 		/// </summary>
-		public Dracovish(int level)
+		public DracovishInstance(int level)
 		: base(
 				882,
-				SpecieDracovish.Instance, // Pokemon Specie
+				SpeciesDracovish.Instance, // PokemonInstance Species
 				"Dracovish", level,
 				Water.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dracovish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dracovish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dracovish() : base(
 			882,
-			SpecieDracovish.Instance, // Pokemon Specie
+			SpeciesDracovish.Instance, // PokemonInstance Species
 			Water.Instance, Dragon.Instance			
 		) {}
 		*/

@@ -15,6 +15,8 @@ for poke in data.values():
 	pokeName: str = poke["name"].title()
 	pokeNameNoSpace: str = ''.join([c for c in pokeName if c not in (' ', '-')])
 	pokeStats = poke["stats"]
+	move: str
+	newline: str = ',\n\t\t\t\t'
 
 	# Create the PokemonMove class, by opening a file
 	with open(f"Models\\Pokemons\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as f:
@@ -22,32 +24,34 @@ for poke in data.values():
 		# Load the template code
 		outfile = f"""
 
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {{
-	//{pokeName} Specie to store common natural stats of all {pokeName}s
-	#region Specie{pokeName}
-	public class Specie{pokeNameNoSpace} : PokemonSpecie
+	//{pokeName} Species to store common natural stats of all {pokeName}s
+	#region Species{pokeName}
+	public class Species{pokeNameNoSpace} : PokemonSpecies
 	{{
 #nullable enable
-		private static Specie{pokeNameNoSpace}? _instance = null;
+		private static Species{pokeNameNoSpace}? _instance = null;
 #nullable restore
-        public static Specie{pokeNameNoSpace} Instance
+        public static Species{pokeNameNoSpace} Instance
         {{
             get
             {{
                 if (_instance == null)
                 {{
-                    _instance = new Specie{pokeNameNoSpace}();
+                    _instance = new Species{pokeNameNoSpace}();
                 }}
                 return _instance;
             }}
         }}
 
-		#region Specie{pokeName} Builder
-		public Specie{pokeNameNoSpace}() : base(
+		#region Species{pokeName} Constructor
+		public Species{pokeNameNoSpace}() : base(
 			"{pokeName}",
 			{poke["height"]/10},
 			{poke["weight"]/10},
@@ -56,23 +60,35 @@ namespace Pokedex.Models.Pokemons
 			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense
 			{pokeStats["speed"]}		
 		)
-		{{}}
+		{{
+			InitMovesList();
+		}}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{{
+			_moveList = new List<string>()
+			{{
+				{f'{newline}'.join([f'"{move.title()}"' for move in poke["moves"]])}
+			}};
+		}}
 		#endregion
 	}}
 	#endregion
 
-	//{pokeName} Pokemon Class
+	//{pokeName} PokemonInstance Class
 	#region {pokeName}
-	public class {pokeNameNoSpace} : Pokemon
+	public class {pokeNameNoSpace}Instance : PokemonInstance
 	{{
-		#region {pokeName} Builders
+		#region {pokeName} Constructors
 		/// <summary>
-		/// {pokeName} Builder waiting for a Nickname & a Level
+		/// {pokeName} Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public {pokeNameNoSpace}(string nickname, int level)
+		public {pokeNameNoSpace}Instance(string nickname, int level)
 		: base(
 				{poke["id"]},
-				Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
+				Species{pokeNameNoSpace}.Instance, // Pokemon Species
 				nickname, level,
 				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		)
@@ -84,10 +100,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// {pokeName} Builder only waiting for a Level
 		/// </summary>
-		public {pokeNameNoSpace}(int level)
+		public {pokeNameNoSpace}Instance(int level)
 		: base(
 				{poke["id"]},
-				Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
+				Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
 				"{pokeName}", level,
 				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		)
@@ -97,12 +113,12 @@ namespace Pokedex.Models.Pokemons
 		}}
 
 		/// <summary>
-		/// {pokeName} Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// {pokeName} Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public {pokeNameNoSpace}() : base(
 			{poke["id"]},
-			Specie{pokeNameNoSpace}.Instance, // Pokemon Specie
+			Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
 			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		) {{}}
 		*/

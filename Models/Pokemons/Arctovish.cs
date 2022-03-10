@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Arctovish Specie to store common natural stats of all Arctovishs
-	#region SpecieArctovish
-	public class SpecieArctovish : PokemonSpecie
+	//Arctovish Species to store common natural stats of all Arctovishs
+	#region SpeciesArctovish
+	public class SpeciesArctovish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArctovish? _instance = null;
+		private static SpeciesArctovish? _instance = null;
 #nullable restore
-        public static SpecieArctovish Instance
+        public static SpeciesArctovish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArctovish();
+                    _instance = new SpeciesArctovish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArctovish Builder
-		public SpecieArctovish() : base(
+		#region SpeciesArctovish Constructor
+		public SpeciesArctovish() : base(
 			"Arctovish",
 			2.0,
 			175.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 90, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Arctovish Pokemon Class
+	//Arctovish PokemonInstance Class
 	#region Arctovish
-	public class Arctovish : Pokemon
+	public class ArctovishInstance : PokemonInstance
 	{
-		#region Arctovish Builders
+		#region Arctovish Constructors
 		/// <summary>
-		/// Arctovish Builder waiting for a Nickname & a Level
+		/// Arctovish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Arctovish(string nickname, int level)
+		public ArctovishInstance(string nickname, int level)
 		: base(
 				883,
-				SpecieArctovish.Instance, // Pokemon Specie
+				SpeciesArctovish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arctovish Builder only waiting for a Level
 		/// </summary>
-		public Arctovish(int level)
+		public ArctovishInstance(int level)
 		: base(
 				883,
-				SpecieArctovish.Instance, // Pokemon Specie
+				SpeciesArctovish.Instance, // PokemonInstance Species
 				"Arctovish", level,
 				Water.Instance, Ice.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Arctovish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Arctovish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Arctovish() : base(
 			883,
-			SpecieArctovish.Instance, // Pokemon Specie
+			SpeciesArctovish.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}
 		*/

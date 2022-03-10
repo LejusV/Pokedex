@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golem Specie to store common natural stats of all Golems
-	#region SpecieGolem
-	public class SpecieGolem : PokemonSpecie
+	//Golem Species to store common natural stats of all Golems
+	#region SpeciesGolem
+	public class SpeciesGolem : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGolem? _instance = null;
+		private static SpeciesGolem? _instance = null;
 #nullable restore
-        public static SpecieGolem Instance
+        public static SpeciesGolem Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGolem();
+                    _instance = new SpeciesGolem();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGolem Builder
-		public SpecieGolem() : base(
+		#region SpeciesGolem Constructor
+		public SpeciesGolem() : base(
 			"Golem",
 			1.4,
 			300.0,
@@ -32,23 +34,119 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Rock-Throw",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Bide",
+				"Metronome",
+				"Self-Destruct",
+				"Fire-Blast",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Fling",
+				"Sucker-Punch",
+				"Rock-Polish",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Heavy-Slam",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Steamroller",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Golem Pokemon Class
+	//Golem PokemonInstance Class
 	#region Golem
-	public class Golem : Pokemon
+	public class GolemInstance : PokemonInstance
 	{
-		#region Golem Builders
+		#region Golem Constructors
 		/// <summary>
-		/// Golem Builder waiting for a Nickname & a Level
+		/// Golem Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Golem(string nickname, int level)
+		public GolemInstance(string nickname, int level)
 		: base(
 				76,
-				SpecieGolem.Instance, // Pokemon Specie
+				SpeciesGolem.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -60,10 +158,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golem Builder only waiting for a Level
 		/// </summary>
-		public Golem(int level)
+		public GolemInstance(int level)
 		: base(
 				76,
-				SpecieGolem.Instance, // Pokemon Specie
+				SpeciesGolem.Instance, // PokemonInstance Species
 				"Golem", level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -73,12 +171,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Golem Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Golem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Golem() : base(
 			76,
-			SpecieGolem.Instance, // Pokemon Specie
+			SpeciesGolem.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}
 		*/

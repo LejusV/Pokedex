@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mandibuzz Specie to store common natural stats of all Mandibuzzs
-	#region SpecieMandibuzz
-	public class SpecieMandibuzz : PokemonSpecie
+	//Mandibuzz Species to store common natural stats of all Mandibuzzs
+	#region SpeciesMandibuzz
+	public class SpeciesMandibuzz : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMandibuzz? _instance = null;
+		private static SpeciesMandibuzz? _instance = null;
 #nullable restore
-        public static SpecieMandibuzz Instance
+        public static SpeciesMandibuzz Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMandibuzz();
+                    _instance = new SpeciesMandibuzz();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMandibuzz Builder
-		public SpecieMandibuzz() : base(
+		#region SpeciesMandibuzz Constructor
+		public SpeciesMandibuzz() : base(
 			"Mandibuzz",
 			1.2,
 			39.5,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			55, 95, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Fury-Attack",
+				"Leer",
+				"Hyper-Beam",
+				"Toxic",
+				"Double-Team",
+				"Mirror-Move",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Bone-Rush",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Embargo",
+				"Punishment",
+				"Dark-Pulse",
+				"Air-Slash",
+				"Brave-Bird",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Defog",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mandibuzz Pokemon Class
+	//Mandibuzz PokemonInstance Class
 	#region Mandibuzz
-	public class Mandibuzz : Pokemon
+	public class MandibuzzInstance : PokemonInstance
 	{
-		#region Mandibuzz Builders
+		#region Mandibuzz Constructors
 		/// <summary>
-		/// Mandibuzz Builder waiting for a Nickname & a Level
+		/// Mandibuzz Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mandibuzz(string nickname, int level)
+		public MandibuzzInstance(string nickname, int level)
 		: base(
 				630,
-				SpecieMandibuzz.Instance, // Pokemon Specie
+				SpeciesMandibuzz.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mandibuzz Builder only waiting for a Level
 		/// </summary>
-		public Mandibuzz(int level)
+		public MandibuzzInstance(int level)
 		: base(
 				630,
-				SpecieMandibuzz.Instance, // Pokemon Specie
+				SpeciesMandibuzz.Instance, // PokemonInstance Species
 				"Mandibuzz", level,
 				Dark.Instance, Flying.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mandibuzz Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mandibuzz Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mandibuzz() : base(
 			630,
-			SpecieMandibuzz.Instance, // Pokemon Specie
+			SpeciesMandibuzz.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}
 		*/

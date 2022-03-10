@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cloyster Specie to store common natural stats of all Cloysters
-	#region SpecieCloyster
-	public class SpecieCloyster : PokemonSpecie
+	//Cloyster Species to store common natural stats of all Cloysters
+	#region SpeciesCloyster
+	public class SpeciesCloyster : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCloyster? _instance = null;
+		private static SpeciesCloyster? _instance = null;
 #nullable restore
-        public static SpecieCloyster Instance
+        public static SpeciesCloyster Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCloyster();
+                    _instance = new SpeciesCloyster();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCloyster Builder
-		public SpecieCloyster() : base(
+		#region SpeciesCloyster Constructor
+		public SpeciesCloyster() : base(
 			"Cloyster",
 			1.5,
 			132.5,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			85, 45, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Take-Down",
+				"Double-Edge",
+				"Supersonic",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"Toxic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Withdraw",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Clamp",
+				"Swift",
+				"Spike-Cannon",
+				"Explosion",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Spikes",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Payback",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Giga-Impact",
+				"Avalanche",
+				"Captivate",
+				"Round",
+				"Shell-Smash",
+				"Frost-Breath",
+				"Icicle-Crash",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cloyster Pokemon Class
+	//Cloyster PokemonInstance Class
 	#region Cloyster
-	public class Cloyster : Pokemon
+	public class CloysterInstance : PokemonInstance
 	{
-		#region Cloyster Builders
+		#region Cloyster Constructors
 		/// <summary>
-		/// Cloyster Builder waiting for a Nickname & a Level
+		/// Cloyster Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cloyster(string nickname, int level)
+		public CloysterInstance(string nickname, int level)
 		: base(
 				91,
-				SpecieCloyster.Instance, // Pokemon Specie
+				SpeciesCloyster.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cloyster Builder only waiting for a Level
 		/// </summary>
-		public Cloyster(int level)
+		public CloysterInstance(int level)
 		: base(
 				91,
-				SpecieCloyster.Instance, // Pokemon Specie
+				SpeciesCloyster.Instance, // PokemonInstance Species
 				"Cloyster", level,
 				Water.Instance, Ice.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cloyster Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cloyster Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cloyster() : base(
 			91,
-			SpecieCloyster.Instance, // Pokemon Specie
+			SpeciesCloyster.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}
 		*/

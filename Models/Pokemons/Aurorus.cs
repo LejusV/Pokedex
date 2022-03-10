@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Aurorus Specie to store common natural stats of all Auroruss
-	#region SpecieAurorus
-	public class SpecieAurorus : PokemonSpecie
+	//Aurorus Species to store common natural stats of all Auroruss
+	#region SpeciesAurorus
+	public class SpeciesAurorus : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAurorus? _instance = null;
+		private static SpeciesAurorus? _instance = null;
 #nullable restore
-        public static SpecieAurorus Instance
+        public static SpeciesAurorus Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAurorus();
+                    _instance = new SpeciesAurorus();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAurorus Builder
-		public SpecieAurorus() : base(
+		#region SpeciesAurorus Constructor
+		public SpeciesAurorus() : base(
 			"Aurorus",
 			2.7,
 			225.0,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			99, 92, // Special Attack & Defense
 			58		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Take-Down",
+				"Growl",
+				"Roar",
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Rock-Throw",
+				"Earthquake",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Outrage",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Charge-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Bulldoze",
+				"Frost-Breath",
+				"Dragon-Tail",
+				"Freeze-Dry",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Aurorus Pokemon Class
+	//Aurorus PokemonInstance Class
 	#region Aurorus
-	public class Aurorus : Pokemon
+	public class AurorusInstance : PokemonInstance
 	{
-		#region Aurorus Builders
+		#region Aurorus Constructors
 		/// <summary>
-		/// Aurorus Builder waiting for a Nickname & a Level
+		/// Aurorus Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Aurorus(string nickname, int level)
+		public AurorusInstance(string nickname, int level)
 		: base(
 				699,
-				SpecieAurorus.Instance, // Pokemon Specie
+				SpeciesAurorus.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ice.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Aurorus Builder only waiting for a Level
 		/// </summary>
-		public Aurorus(int level)
+		public AurorusInstance(int level)
 		: base(
 				699,
-				SpecieAurorus.Instance, // Pokemon Specie
+				SpeciesAurorus.Instance, // PokemonInstance Species
 				"Aurorus", level,
 				Rock.Instance, Ice.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Aurorus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Aurorus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Aurorus() : base(
 			699,
-			SpecieAurorus.Instance, // Pokemon Specie
+			SpeciesAurorus.Instance, // PokemonInstance Species
 			Rock.Instance, Ice.Instance			
 		) {}
 		*/

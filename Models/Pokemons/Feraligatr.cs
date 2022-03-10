@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Feraligatr Specie to store common natural stats of all Feraligatrs
-	#region SpecieFeraligatr
-	public class SpecieFeraligatr : PokemonSpecie
+	//Feraligatr Species to store common natural stats of all Feraligatrs
+	#region SpeciesFeraligatr
+	public class SpeciesFeraligatr : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFeraligatr? _instance = null;
+		private static SpeciesFeraligatr? _instance = null;
 #nullable restore
-        public static SpecieFeraligatr Instance
+        public static SpeciesFeraligatr Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFeraligatr();
+                    _instance = new SpeciesFeraligatr();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFeraligatr Builder
-		public SpecieFeraligatr() : base(
+		#region SpeciesFeraligatr Constructor
+		public SpeciesFeraligatr() : base(
 			"Feraligatr",
 			2.3,
 			88.8,
@@ -32,23 +34,130 @@ namespace Pokedex.Models.Pokemons
 			79, 83, // Special Attack & Defense
 			78		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Hydro-Cannon",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Block",
+				"Dragon-Claw",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Fling",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Avalanche",
+				"Shadow-Claw",
+				"Ice-Fang",
+				"Rock-Climb",
+				"Captivate",
+				"Hone-Claws",
+				"Round",
+				"Chip-Away",
+				"Scald",
+				"Water-Pledge",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Feraligatr Pokemon Class
+	//Feraligatr PokemonInstance Class
 	#region Feraligatr
-	public class Feraligatr : Pokemon
+	public class FeraligatrInstance : PokemonInstance
 	{
-		#region Feraligatr Builders
+		#region Feraligatr Constructors
 		/// <summary>
-		/// Feraligatr Builder waiting for a Nickname & a Level
+		/// Feraligatr Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Feraligatr(string nickname, int level)
+		public FeraligatrInstance(string nickname, int level)
 		: base(
 				160,
-				SpecieFeraligatr.Instance, // Pokemon Specie
+				SpeciesFeraligatr.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +169,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Feraligatr Builder only waiting for a Level
 		/// </summary>
-		public Feraligatr(int level)
+		public FeraligatrInstance(int level)
 		: base(
 				160,
-				SpecieFeraligatr.Instance, // Pokemon Specie
+				SpeciesFeraligatr.Instance, // PokemonInstance Species
 				"Feraligatr", level,
 				Water.Instance			
 		)
@@ -73,12 +182,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Feraligatr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Feraligatr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Feraligatr() : base(
 			160,
-			SpecieFeraligatr.Instance, // Pokemon Specie
+			SpeciesFeraligatr.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

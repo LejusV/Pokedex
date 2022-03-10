@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Duraludon Specie to store common natural stats of all Duraludons
-	#region SpecieDuraludon
-	public class SpecieDuraludon : PokemonSpecie
+	//Duraludon Species to store common natural stats of all Duraludons
+	#region SpeciesDuraludon
+	public class SpeciesDuraludon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDuraludon? _instance = null;
+		private static SpeciesDuraludon? _instance = null;
 #nullable restore
-        public static SpecieDuraludon Instance
+        public static SpeciesDuraludon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDuraludon();
+                    _instance = new SpeciesDuraludon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDuraludon Builder
-		public SpecieDuraludon() : base(
+		#region SpeciesDuraludon Constructor
+		public SpeciesDuraludon() : base(
 			"Duraludon",
 			1.8,
 			40.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			120, 50, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Duraludon Pokemon Class
+	//Duraludon PokemonInstance Class
 	#region Duraludon
-	public class Duraludon : Pokemon
+	public class DuraludonInstance : PokemonInstance
 	{
-		#region Duraludon Builders
+		#region Duraludon Constructors
 		/// <summary>
-		/// Duraludon Builder waiting for a Nickname & a Level
+		/// Duraludon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Duraludon(string nickname, int level)
+		public DuraludonInstance(string nickname, int level)
 		: base(
 				884,
-				SpecieDuraludon.Instance, // Pokemon Specie
+				SpeciesDuraludon.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Duraludon Builder only waiting for a Level
 		/// </summary>
-		public Duraludon(int level)
+		public DuraludonInstance(int level)
 		: base(
 				884,
-				SpecieDuraludon.Instance, // Pokemon Specie
+				SpeciesDuraludon.Instance, // PokemonInstance Species
 				"Duraludon", level,
 				Steel.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Duraludon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Duraludon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Duraludon() : base(
 			884,
-			SpecieDuraludon.Instance, // Pokemon Specie
+			SpeciesDuraludon.Instance, // PokemonInstance Species
 			Steel.Instance, Dragon.Instance			
 		) {}
 		*/

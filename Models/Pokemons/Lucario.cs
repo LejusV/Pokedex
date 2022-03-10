@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lucario Specie to store common natural stats of all Lucarios
-	#region SpecieLucario
-	public class SpecieLucario : PokemonSpecie
+	//Lucario Species to store common natural stats of all Lucarios
+	#region SpeciesLucario
+	public class SpeciesLucario : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLucario? _instance = null;
+		private static SpeciesLucario? _instance = null;
 #nullable restore
-        public static SpecieLucario Instance
+        public static SpeciesLucario Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLucario();
+                    _instance = new SpeciesLucario();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLucario Builder
-		public SpecieLucario() : base(
+		#region SpeciesLucario Constructor
+		public SpeciesLucario() : base(
 			"Lucario",
 			1.2,
 			54.0,
@@ -32,23 +34,120 @@ namespace Pokedex.Models.Pokemons
 			115, 70, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Headbutt",
+				"Roar",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Counter",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Quick-Attack",
+				"Double-Team",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Bone-Rush",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Extreme-Speed",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Iron-Defense",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Feint",
+				"Close-Combat",
+				"Payback",
+				"Fling",
+				"Me-First",
+				"Magnet-Rise",
+				"Force-Palm",
+				"Aura-Sphere",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Dragon-Pulse",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Heal-Pulse",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch",
+				"Laser-Focus"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lucario Pokemon Class
+	//Lucario PokemonInstance Class
 	#region Lucario
-	public class Lucario : Pokemon
+	public class LucarioInstance : PokemonInstance
 	{
-		#region Lucario Builders
+		#region Lucario Constructors
 		/// <summary>
-		/// Lucario Builder waiting for a Nickname & a Level
+		/// Lucario Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lucario(string nickname, int level)
+		public LucarioInstance(string nickname, int level)
 		: base(
 				448,
-				SpecieLucario.Instance, // Pokemon Specie
+				SpeciesLucario.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Steel.Instance			
 		)
@@ -60,10 +159,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lucario Builder only waiting for a Level
 		/// </summary>
-		public Lucario(int level)
+		public LucarioInstance(int level)
 		: base(
 				448,
-				SpecieLucario.Instance, // Pokemon Specie
+				SpeciesLucario.Instance, // PokemonInstance Species
 				"Lucario", level,
 				Fighting.Instance, Steel.Instance			
 		)
@@ -73,12 +172,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lucario Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lucario Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lucario() : base(
 			448,
-			SpecieLucario.Instance, // Pokemon Specie
+			SpeciesLucario.Instance, // PokemonInstance Species
 			Fighting.Instance, Steel.Instance			
 		) {}
 		*/

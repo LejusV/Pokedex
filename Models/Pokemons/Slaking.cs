@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Slaking Specie to store common natural stats of all Slakings
-	#region SpecieSlaking
-	public class SpecieSlaking : PokemonSpecie
+	//Slaking Species to store common natural stats of all Slakings
+	#region SpeciesSlaking
+	public class SpeciesSlaking : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSlaking? _instance = null;
+		private static SpeciesSlaking? _instance = null;
 #nullable restore
-        public static SpecieSlaking Instance
+        public static SpeciesSlaking Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSlaking();
+                    _instance = new SpeciesSlaking();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSlaking Builder
-		public SpecieSlaking() : base(
+		#region SpeciesSlaking Constructor
+		public SpeciesSlaking() : base(
 			"Slaking",
 			2.0,
 			130.5,
@@ -32,23 +34,123 @@ namespace Pokedex.Models.Pokemons
 			95, 65, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Roar",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Fire-Blast",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Encore",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Brick-Break",
+				"Yawn",
+				"Secret-Power",
+				"Slack-Off",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Block",
+				"Bulk-Up",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Punishment",
+				"Sucker-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Gunk-Shot",
+				"Captivate",
+				"Hone-Claws",
+				"Smack-Down",
+				"Low-Sweep",
+				"After-You",
+				"Round",
+				"Chip-Away",
+				"Incinerate",
+				"Quash",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Slaking Pokemon Class
+	//Slaking PokemonInstance Class
 	#region Slaking
-	public class Slaking : Pokemon
+	public class SlakingInstance : PokemonInstance
 	{
-		#region Slaking Builders
+		#region Slaking Constructors
 		/// <summary>
-		/// Slaking Builder waiting for a Nickname & a Level
+		/// Slaking Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Slaking(string nickname, int level)
+		public SlakingInstance(string nickname, int level)
 		: base(
 				289,
-				SpecieSlaking.Instance, // Pokemon Specie
+				SpeciesSlaking.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +162,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Slaking Builder only waiting for a Level
 		/// </summary>
-		public Slaking(int level)
+		public SlakingInstance(int level)
 		: base(
 				289,
-				SpecieSlaking.Instance, // Pokemon Specie
+				SpeciesSlaking.Instance, // PokemonInstance Species
 				"Slaking", level,
 				Normal.Instance			
 		)
@@ -73,12 +175,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Slaking Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Slaking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Slaking() : base(
 			289,
-			SpecieSlaking.Instance, // Pokemon Specie
+			SpeciesSlaking.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

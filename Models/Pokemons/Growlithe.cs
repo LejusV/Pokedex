@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Growlithe Specie to store common natural stats of all Growlithes
-	#region SpecieGrowlithe
-	public class SpecieGrowlithe : PokemonSpecie
+	//Growlithe Species to store common natural stats of all Growlithes
+	#region SpeciesGrowlithe
+	public class SpeciesGrowlithe : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrowlithe? _instance = null;
+		private static SpeciesGrowlithe? _instance = null;
 #nullable restore
-        public static SpecieGrowlithe Instance
+        public static SpeciesGrowlithe Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrowlithe();
+                    _instance = new SpeciesGrowlithe();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrowlithe Builder
-		public SpecieGrowlithe() : base(
+		#region SpeciesGrowlithe Constructor
+		public SpeciesGrowlithe() : base(
 			"Growlithe",
 			0.7,
 			19.0,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			70, 50, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Strength",
+				"Dragon-Rage",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Flame-Wheel",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Morning-Sun",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Overheat",
+				"Odor-Sleuth",
+				"Aerial-Ace",
+				"Howl",
+				"Covet",
+				"Natural-Gift",
+				"Close-Combat",
+				"Flare-Blitz",
+				"Fire-Fang",
+				"Captivate",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Wild-Charge",
+				"Snarl",
+				"Confide",
+				"Burn-Up"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Growlithe Pokemon Class
+	//Growlithe PokemonInstance Class
 	#region Growlithe
-	public class Growlithe : Pokemon
+	public class GrowlitheInstance : PokemonInstance
 	{
-		#region Growlithe Builders
+		#region Growlithe Constructors
 		/// <summary>
-		/// Growlithe Builder waiting for a Nickname & a Level
+		/// Growlithe Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Growlithe(string nickname, int level)
+		public GrowlitheInstance(string nickname, int level)
 		: base(
 				58,
-				SpecieGrowlithe.Instance, // Pokemon Specie
+				SpeciesGrowlithe.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Growlithe Builder only waiting for a Level
 		/// </summary>
-		public Growlithe(int level)
+		public GrowlitheInstance(int level)
 		: base(
 				58,
-				SpecieGrowlithe.Instance, // Pokemon Specie
+				SpeciesGrowlithe.Instance, // PokemonInstance Species
 				"Growlithe", level,
 				Fire.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Growlithe Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Growlithe Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Growlithe() : base(
 			58,
-			SpecieGrowlithe.Instance, // Pokemon Specie
+			SpeciesGrowlithe.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

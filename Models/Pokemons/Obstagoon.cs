@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Obstagoon Specie to store common natural stats of all Obstagoons
-	#region SpecieObstagoon
-	public class SpecieObstagoon : PokemonSpecie
+	//Obstagoon Species to store common natural stats of all Obstagoons
+	#region SpeciesObstagoon
+	public class SpeciesObstagoon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieObstagoon? _instance = null;
+		private static SpeciesObstagoon? _instance = null;
 #nullable restore
-        public static SpecieObstagoon Instance
+        public static SpeciesObstagoon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieObstagoon();
+                    _instance = new SpeciesObstagoon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieObstagoon Builder
-		public SpecieObstagoon() : base(
+		#region SpeciesObstagoon Constructor
+		public SpeciesObstagoon() : base(
 			"Obstagoon",
 			1.6,
 			46.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 81, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Obstagoon Pokemon Class
+	//Obstagoon PokemonInstance Class
 	#region Obstagoon
-	public class Obstagoon : Pokemon
+	public class ObstagoonInstance : PokemonInstance
 	{
-		#region Obstagoon Builders
+		#region Obstagoon Constructors
 		/// <summary>
-		/// Obstagoon Builder waiting for a Nickname & a Level
+		/// Obstagoon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Obstagoon(string nickname, int level)
+		public ObstagoonInstance(string nickname, int level)
 		: base(
 				862,
-				SpecieObstagoon.Instance, // Pokemon Specie
+				SpeciesObstagoon.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Obstagoon Builder only waiting for a Level
 		/// </summary>
-		public Obstagoon(int level)
+		public ObstagoonInstance(int level)
 		: base(
 				862,
-				SpecieObstagoon.Instance, // Pokemon Specie
+				SpeciesObstagoon.Instance, // PokemonInstance Species
 				"Obstagoon", level,
 				Dark.Instance, Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Obstagoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Obstagoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Obstagoon() : base(
 			862,
-			SpecieObstagoon.Instance, // Pokemon Specie
+			SpeciesObstagoon.Instance, // PokemonInstance Species
 			Dark.Instance, Normal.Instance			
 		) {}
 		*/

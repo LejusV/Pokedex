@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mudbray Specie to store common natural stats of all Mudbrays
-	#region SpecieMudbray
-	public class SpecieMudbray : PokemonSpecie
+	//Mudbray Species to store common natural stats of all Mudbrays
+	#region SpeciesMudbray
+	public class SpeciesMudbray : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMudbray? _instance = null;
+		private static SpeciesMudbray? _instance = null;
 #nullable restore
-        public static SpecieMudbray Instance
+        public static SpeciesMudbray Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMudbray();
+                    _instance = new SpeciesMudbray();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMudbray Builder
-		public SpecieMudbray() : base(
+		#region SpeciesMudbray Constructor
+		public SpeciesMudbray() : base(
 			"Mudbray",
 			1.0,
 			110.0,
@@ -32,23 +34,73 @@ namespace Pokedex.Models.Pokemons
 			45, 55, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Double-Kick",
+				"Mega-Kick",
+				"Body-Slam",
+				"Double-Edge",
+				"Roar",
+				"Counter",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Hidden-Power",
+				"Facade",
+				"Superpower",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Close-Combat",
+				"Payback",
+				"Mud-Bomb",
+				"Heavy-Slam",
+				"Low-Sweep",
+				"Round",
+				"Bulldoze",
+				"Rototiller",
+				"Confide",
+				"High-Horsepower"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mudbray Pokemon Class
+	//Mudbray PokemonInstance Class
 	#region Mudbray
-	public class Mudbray : Pokemon
+	public class MudbrayInstance : PokemonInstance
 	{
-		#region Mudbray Builders
+		#region Mudbray Constructors
 		/// <summary>
-		/// Mudbray Builder waiting for a Nickname & a Level
+		/// Mudbray Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mudbray(string nickname, int level)
+		public MudbrayInstance(string nickname, int level)
 		: base(
 				749,
-				SpecieMudbray.Instance, // Pokemon Specie
+				SpeciesMudbray.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +112,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mudbray Builder only waiting for a Level
 		/// </summary>
-		public Mudbray(int level)
+		public MudbrayInstance(int level)
 		: base(
 				749,
-				SpecieMudbray.Instance, // Pokemon Specie
+				SpeciesMudbray.Instance, // PokemonInstance Species
 				"Mudbray", level,
 				Ground.Instance			
 		)
@@ -73,12 +125,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mudbray Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mudbray Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mudbray() : base(
 			749,
-			SpecieMudbray.Instance, // Pokemon Specie
+			SpeciesMudbray.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

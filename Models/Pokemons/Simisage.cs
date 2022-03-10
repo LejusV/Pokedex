@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Simisage Specie to store common natural stats of all Simisages
-	#region SpecieSimisage
-	public class SpecieSimisage : PokemonSpecie
+	//Simisage Species to store common natural stats of all Simisages
+	#region SpeciesSimisage
+	public class SpeciesSimisage : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSimisage? _instance = null;
+		private static SpeciesSimisage? _instance = null;
 #nullable restore
-        public static SpecieSimisage Instance
+        public static SpeciesSimisage Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSimisage();
+                    _instance = new SpeciesSimisage();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSimisage Builder
-		public SpecieSimisage() : base(
+		#region SpeciesSimisage Constructor
+		public SpeciesSimisage() : base(
 			"Simisage",
 			1.1,
 			30.5,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			98, 63, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Leer",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Recycle",
+				"Brick-Break",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Covet",
+				"Payback",
+				"Fling",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Round",
+				"Acrobatics",
+				"Grass-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Simisage Pokemon Class
+	//Simisage PokemonInstance Class
 	#region Simisage
-	public class Simisage : Pokemon
+	public class SimisageInstance : PokemonInstance
 	{
-		#region Simisage Builders
+		#region Simisage Constructors
 		/// <summary>
-		/// Simisage Builder waiting for a Nickname & a Level
+		/// Simisage Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Simisage(string nickname, int level)
+		public SimisageInstance(string nickname, int level)
 		: base(
 				512,
-				SpecieSimisage.Instance, // Pokemon Specie
+				SpeciesSimisage.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Simisage Builder only waiting for a Level
 		/// </summary>
-		public Simisage(int level)
+		public SimisageInstance(int level)
 		: base(
 				512,
-				SpecieSimisage.Instance, // Pokemon Specie
+				SpeciesSimisage.Instance, // PokemonInstance Species
 				"Simisage", level,
 				Grass.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Simisage Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Simisage Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Simisage() : base(
 			512,
-			SpecieSimisage.Instance, // Pokemon Specie
+			SpeciesSimisage.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

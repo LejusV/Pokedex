@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swampert Specie to store common natural stats of all Swamperts
-	#region SpecieSwampert
-	public class SpecieSwampert : PokemonSpecie
+	//Swampert Species to store common natural stats of all Swamperts
+	#region SpeciesSwampert
+	public class SpeciesSwampert : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwampert? _instance = null;
+		private static SpeciesSwampert? _instance = null;
 #nullable restore
-        public static SpecieSwampert Instance
+        public static SpeciesSwampert Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwampert();
+                    _instance = new SpeciesSwampert();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwampert Builder
-		public SpecieSwampert() : base(
+		#region SpeciesSwampert Constructor
+		public SpeciesSwampert() : base(
 			"Swampert",
 			1.5,
 			81.9,
@@ -32,23 +34,121 @@ namespace Pokedex.Models.Pokemons
 			85, 90, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Roar",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Bide",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Icy-Wind",
+				"Outrage",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Hydro-Cannon",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Mud-Shot",
+				"Water-Pulse",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Aqua-Tail",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Mud-Bomb",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Sludge-Wave",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Water-Pledge",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swampert Pokemon Class
+	//Swampert PokemonInstance Class
 	#region Swampert
-	public class Swampert : Pokemon
+	public class SwampertInstance : PokemonInstance
 	{
-		#region Swampert Builders
+		#region Swampert Constructors
 		/// <summary>
-		/// Swampert Builder waiting for a Nickname & a Level
+		/// Swampert Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swampert(string nickname, int level)
+		public SwampertInstance(string nickname, int level)
 		: base(
 				260,
-				SpecieSwampert.Instance, // Pokemon Specie
+				SpeciesSwampert.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
 		)
@@ -60,10 +160,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swampert Builder only waiting for a Level
 		/// </summary>
-		public Swampert(int level)
+		public SwampertInstance(int level)
 		: base(
 				260,
-				SpecieSwampert.Instance, // Pokemon Specie
+				SpeciesSwampert.Instance, // PokemonInstance Species
 				"Swampert", level,
 				Water.Instance, Ground.Instance			
 		)
@@ -73,12 +173,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swampert Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swampert Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swampert() : base(
 			260,
-			SpecieSwampert.Instance, // Pokemon Specie
+			SpeciesSwampert.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}
 		*/

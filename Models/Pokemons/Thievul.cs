@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Thievul Specie to store common natural stats of all Thievuls
-	#region SpecieThievul
-	public class SpecieThievul : PokemonSpecie
+	//Thievul Species to store common natural stats of all Thievuls
+	#region SpeciesThievul
+	public class SpeciesThievul : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieThievul? _instance = null;
+		private static SpeciesThievul? _instance = null;
 #nullable restore
-        public static SpecieThievul Instance
+        public static SpeciesThievul Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieThievul();
+                    _instance = new SpeciesThievul();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieThievul Builder
-		public SpecieThievul() : base(
+		#region SpeciesThievul Constructor
+		public SpeciesThievul() : base(
 			"Thievul",
 			1.2,
 			19.9,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			87, 92, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Thievul Pokemon Class
+	//Thievul PokemonInstance Class
 	#region Thievul
-	public class Thievul : Pokemon
+	public class ThievulInstance : PokemonInstance
 	{
-		#region Thievul Builders
+		#region Thievul Constructors
 		/// <summary>
-		/// Thievul Builder waiting for a Nickname & a Level
+		/// Thievul Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Thievul(string nickname, int level)
+		public ThievulInstance(string nickname, int level)
 		: base(
 				828,
-				SpecieThievul.Instance, // Pokemon Specie
+				SpeciesThievul.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Thievul Builder only waiting for a Level
 		/// </summary>
-		public Thievul(int level)
+		public ThievulInstance(int level)
 		: base(
 				828,
-				SpecieThievul.Instance, // Pokemon Specie
+				SpeciesThievul.Instance, // PokemonInstance Species
 				"Thievul", level,
 				Dark.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Thievul Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Thievul Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Thievul() : base(
 			828,
-			SpecieThievul.Instance, // Pokemon Specie
+			SpeciesThievul.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

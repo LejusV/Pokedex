@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gurdurr Specie to store common natural stats of all Gurdurrs
-	#region SpecieGurdurr
-	public class SpecieGurdurr : PokemonSpecie
+	//Gurdurr Species to store common natural stats of all Gurdurrs
+	#region SpeciesGurdurr
+	public class SpeciesGurdurr : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGurdurr? _instance = null;
+		private static SpeciesGurdurr? _instance = null;
 #nullable restore
-        public static SpecieGurdurr Instance
+        public static SpeciesGurdurr Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGurdurr();
+                    _instance = new SpeciesGurdurr();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGurdurr Builder
-		public SpecieGurdurr() : base(
+		#region SpeciesGurdurr Constructor
+		public SpeciesGurdurr() : base(
 			"Gurdurr",
 			1.2,
 			40.0,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Leer",
+				"Low-Kick",
+				"Strength",
+				"Rock-Throw",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Block",
+				"Bulk-Up",
+				"Wake-Up-Slap",
+				"Hammer-Arm",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Chip-Away",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gurdurr Pokemon Class
+	//Gurdurr PokemonInstance Class
 	#region Gurdurr
-	public class Gurdurr : Pokemon
+	public class GurdurrInstance : PokemonInstance
 	{
-		#region Gurdurr Builders
+		#region Gurdurr Constructors
 		/// <summary>
-		/// Gurdurr Builder waiting for a Nickname & a Level
+		/// Gurdurr Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gurdurr(string nickname, int level)
+		public GurdurrInstance(string nickname, int level)
 		: base(
 				533,
-				SpecieGurdurr.Instance, // Pokemon Specie
+				SpeciesGurdurr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gurdurr Builder only waiting for a Level
 		/// </summary>
-		public Gurdurr(int level)
+		public GurdurrInstance(int level)
 		: base(
 				533,
-				SpecieGurdurr.Instance, // Pokemon Specie
+				SpeciesGurdurr.Instance, // PokemonInstance Species
 				"Gurdurr", level,
 				Fighting.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gurdurr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gurdurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gurdurr() : base(
 			533,
-			SpecieGurdurr.Instance, // Pokemon Specie
+			SpeciesGurdurr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

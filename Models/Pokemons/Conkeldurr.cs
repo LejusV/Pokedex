@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Conkeldurr Specie to store common natural stats of all Conkeldurrs
-	#region SpecieConkeldurr
-	public class SpecieConkeldurr : PokemonSpecie
+	//Conkeldurr Species to store common natural stats of all Conkeldurrs
+	#region SpeciesConkeldurr
+	public class SpeciesConkeldurr : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieConkeldurr? _instance = null;
+		private static SpeciesConkeldurr? _instance = null;
 #nullable restore
-        public static SpecieConkeldurr Instance
+        public static SpeciesConkeldurr Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieConkeldurr();
+                    _instance = new SpeciesConkeldurr();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieConkeldurr Builder
-		public SpecieConkeldurr() : base(
+		#region SpeciesConkeldurr Constructor
+		public SpeciesConkeldurr() : base(
 			"Conkeldurr",
 			1.4,
 			87.0,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Leer",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Rock-Throw",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Block",
+				"Bulk-Up",
+				"Wake-Up-Slap",
+				"Hammer-Arm",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Chip-Away",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Conkeldurr Pokemon Class
+	//Conkeldurr PokemonInstance Class
 	#region Conkeldurr
-	public class Conkeldurr : Pokemon
+	public class ConkeldurrInstance : PokemonInstance
 	{
-		#region Conkeldurr Builders
+		#region Conkeldurr Constructors
 		/// <summary>
-		/// Conkeldurr Builder waiting for a Nickname & a Level
+		/// Conkeldurr Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Conkeldurr(string nickname, int level)
+		public ConkeldurrInstance(string nickname, int level)
 		: base(
 				534,
-				SpecieConkeldurr.Instance, // Pokemon Specie
+				SpeciesConkeldurr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Conkeldurr Builder only waiting for a Level
 		/// </summary>
-		public Conkeldurr(int level)
+		public ConkeldurrInstance(int level)
 		: base(
 				534,
-				SpecieConkeldurr.Instance, // Pokemon Specie
+				SpeciesConkeldurr.Instance, // PokemonInstance Species
 				"Conkeldurr", level,
 				Fighting.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Conkeldurr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Conkeldurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Conkeldurr() : base(
 			534,
-			SpecieConkeldurr.Instance, // Pokemon Specie
+			SpeciesConkeldurr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

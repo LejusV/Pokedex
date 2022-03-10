@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Fletchinder Specie to store common natural stats of all Fletchinders
-	#region SpecieFletchinder
-	public class SpecieFletchinder : PokemonSpecie
+	//Fletchinder Species to store common natural stats of all Fletchinders
+	#region SpeciesFletchinder
+	public class SpeciesFletchinder : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFletchinder? _instance = null;
+		private static SpeciesFletchinder? _instance = null;
 #nullable restore
-        public static SpecieFletchinder Instance
+        public static SpeciesFletchinder Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFletchinder();
+                    _instance = new SpeciesFletchinder();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFletchinder Builder
-		public SpecieFletchinder() : base(
+		#region SpeciesFletchinder Constructor
+		public SpeciesFletchinder() : base(
 			"Fletchinder",
 			0.7,
 			16.0,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			56, 52, // Special Attack & Defense
 			84		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Fly",
+				"Tackle",
+				"Growl",
+				"Ember",
+				"Flamethrower",
+				"Peck",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Fire-Blast",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Snatch",
+				"Secret-Power",
+				"Overheat",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Me-First",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Fletchinder Pokemon Class
+	//Fletchinder PokemonInstance Class
 	#region Fletchinder
-	public class Fletchinder : Pokemon
+	public class FletchinderInstance : PokemonInstance
 	{
-		#region Fletchinder Builders
+		#region Fletchinder Constructors
 		/// <summary>
-		/// Fletchinder Builder waiting for a Nickname & a Level
+		/// Fletchinder Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Fletchinder(string nickname, int level)
+		public FletchinderInstance(string nickname, int level)
 		: base(
 				662,
-				SpecieFletchinder.Instance, // Pokemon Specie
+				SpeciesFletchinder.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Fletchinder Builder only waiting for a Level
 		/// </summary>
-		public Fletchinder(int level)
+		public FletchinderInstance(int level)
 		: base(
 				662,
-				SpecieFletchinder.Instance, // Pokemon Specie
+				SpeciesFletchinder.Instance, // PokemonInstance Species
 				"Fletchinder", level,
 				Fire.Instance, Flying.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Fletchinder Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Fletchinder Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Fletchinder() : base(
 			662,
-			SpecieFletchinder.Instance, // Pokemon Specie
+			SpeciesFletchinder.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}
 		*/

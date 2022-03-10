@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Noibat Specie to store common natural stats of all Noibats
-	#region SpecieNoibat
-	public class SpecieNoibat : PokemonSpecie
+	//Noibat Species to store common natural stats of all Noibats
+	#region SpeciesNoibat
+	public class SpeciesNoibat : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNoibat? _instance = null;
+		private static SpeciesNoibat? _instance = null;
 #nullable restore
-        public static SpecieNoibat Instance
+        public static SpeciesNoibat Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNoibat();
+                    _instance = new SpeciesNoibat();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNoibat Builder
-		public SpecieNoibat() : base(
+		#region SpeciesNoibat Constructor
+		public SpeciesNoibat() : base(
 			"Noibat",
 			0.5,
 			8.0,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			45, 40, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Cut",
+				"Gust",
+				"Wing-Attack",
+				"Whirlwind",
+				"Fly",
+				"Tackle",
+				"Bite",
+				"Supersonic",
+				"Absorb",
+				"Solar-Beam",
+				"Toxic",
+				"Psychic",
+				"Agility",
+				"Screech",
+				"Double-Team",
+				"Dream-Eater",
+				"Leech-Life",
+				"Sky-Attack",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Outrage",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Water-Pulse",
+				"Roost",
+				"Tailwind",
+				"U-Turn",
+				"Dark-Pulse",
+				"Air-Slash",
+				"X-Scissor",
+				"Dragon-Pulse",
+				"Switcheroo",
+				"Shadow-Claw",
+				"Draco-Meteor",
+				"Round",
+				"Echoed-Voice",
+				"Acrobatics",
+				"Wild-Charge",
+				"Hurricane",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Noibat Pokemon Class
+	//Noibat PokemonInstance Class
 	#region Noibat
-	public class Noibat : Pokemon
+	public class NoibatInstance : PokemonInstance
 	{
-		#region Noibat Builders
+		#region Noibat Constructors
 		/// <summary>
-		/// Noibat Builder waiting for a Nickname & a Level
+		/// Noibat Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Noibat(string nickname, int level)
+		public NoibatInstance(string nickname, int level)
 		: base(
 				714,
-				SpecieNoibat.Instance, // Pokemon Specie
+				SpeciesNoibat.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Dragon.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Noibat Builder only waiting for a Level
 		/// </summary>
-		public Noibat(int level)
+		public NoibatInstance(int level)
 		: base(
 				714,
-				SpecieNoibat.Instance, // Pokemon Specie
+				SpeciesNoibat.Instance, // PokemonInstance Species
 				"Noibat", level,
 				Flying.Instance, Dragon.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Noibat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Noibat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Noibat() : base(
 			714,
-			SpecieNoibat.Instance, // Pokemon Specie
+			SpeciesNoibat.Instance, // PokemonInstance Species
 			Flying.Instance, Dragon.Instance			
 		) {}
 		*/

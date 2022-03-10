@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Goldeen Specie to store common natural stats of all Goldeens
-	#region SpecieGoldeen
-	public class SpecieGoldeen : PokemonSpecie
+	//Goldeen Species to store common natural stats of all Goldeens
+	#region SpeciesGoldeen
+	public class SpeciesGoldeen : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGoldeen? _instance = null;
+		private static SpeciesGoldeen? _instance = null;
 #nullable restore
-        public static SpecieGoldeen Instance
+        public static SpeciesGoldeen Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGoldeen();
+                    _instance = new SpeciesGoldeen();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGoldeen Builder
-		public SpecieGoldeen() : base(
+		#region SpeciesGoldeen Constructor
+		public SpeciesGoldeen() : base(
 			"Goldeen",
 			0.6,
 			15.0,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			35, 50, // Special Attack & Defense
 			63		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Horn-Attack",
+				"Fury-Attack",
+				"Horn-Drill",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Supersonic",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Psybeam",
+				"Bubble-Beam",
+				"Peck",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Haze",
+				"Bide",
+				"Waterfall",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Megahorn",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Knock-Off",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Signal-Beam",
+				"Bounce",
+				"Mud-Shot",
+				"Water-Sport",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Aqua-Ring",
+				"Poison-Jab",
+				"Aqua-Tail",
+				"Captivate",
+				"Soak",
+				"Round",
+				"Scald",
+				"Drill-Run",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Goldeen Pokemon Class
+	//Goldeen PokemonInstance Class
 	#region Goldeen
-	public class Goldeen : Pokemon
+	public class GoldeenInstance : PokemonInstance
 	{
-		#region Goldeen Builders
+		#region Goldeen Constructors
 		/// <summary>
-		/// Goldeen Builder waiting for a Nickname & a Level
+		/// Goldeen Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Goldeen(string nickname, int level)
+		public GoldeenInstance(string nickname, int level)
 		: base(
 				118,
-				SpecieGoldeen.Instance, // Pokemon Specie
+				SpeciesGoldeen.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Goldeen Builder only waiting for a Level
 		/// </summary>
-		public Goldeen(int level)
+		public GoldeenInstance(int level)
 		: base(
 				118,
-				SpecieGoldeen.Instance, // Pokemon Specie
+				SpeciesGoldeen.Instance, // PokemonInstance Species
 				"Goldeen", level,
 				Water.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Goldeen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Goldeen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Goldeen() : base(
 			118,
-			SpecieGoldeen.Instance, // Pokemon Specie
+			SpeciesGoldeen.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Marshadow Specie to store common natural stats of all Marshadows
-	#region SpecieMarshadow
-	public class SpecieMarshadow : PokemonSpecie
+	//Marshadow Species to store common natural stats of all Marshadows
+	#region SpeciesMarshadow
+	public class SpeciesMarshadow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMarshadow? _instance = null;
+		private static SpeciesMarshadow? _instance = null;
 #nullable restore
-        public static SpecieMarshadow Instance
+        public static SpeciesMarshadow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMarshadow();
+                    _instance = new SpeciesMarshadow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMarshadow Builder
-		public SpecieMarshadow() : base(
+		#region SpeciesMarshadow Constructor
+		public SpeciesMarshadow() : base(
 			"Marshadow",
 			0.7,
 			22.2,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			90, 90, // Special Attack & Defense
 			125		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Jump-Kick",
+				"Rolling-Kick",
+				"Counter",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"False-Swipe",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Will-O-Wisp",
+				"Facade",
+				"Role-Play",
+				"Brick-Break",
+				"Endeavor",
+				"Rock-Tomb",
+				"Shadow-Punch",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Feint",
+				"Close-Combat",
+				"Payback",
+				"Assurance",
+				"Fling",
+				"Copycat",
+				"Sucker-Punch",
+				"Force-Palm",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Shadow-Sneak",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Echoed-Voice",
+				"Acrobatics",
+				"Work-Up",
+				"Confide",
+				"Laser-Focus",
+				"Spectral-Thief"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Marshadow Pokemon Class
+	//Marshadow PokemonInstance Class
 	#region Marshadow
-	public class Marshadow : Pokemon
+	public class MarshadowInstance : PokemonInstance
 	{
-		#region Marshadow Builders
+		#region Marshadow Constructors
 		/// <summary>
-		/// Marshadow Builder waiting for a Nickname & a Level
+		/// Marshadow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Marshadow(string nickname, int level)
+		public MarshadowInstance(string nickname, int level)
 		: base(
 				802,
-				SpecieMarshadow.Instance, // Pokemon Specie
+				SpeciesMarshadow.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Ghost.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Marshadow Builder only waiting for a Level
 		/// </summary>
-		public Marshadow(int level)
+		public MarshadowInstance(int level)
 		: base(
 				802,
-				SpecieMarshadow.Instance, // Pokemon Specie
+				SpeciesMarshadow.Instance, // PokemonInstance Species
 				"Marshadow", level,
 				Fighting.Instance, Ghost.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Marshadow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Marshadow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Marshadow() : base(
 			802,
-			SpecieMarshadow.Instance, // Pokemon Specie
+			SpeciesMarshadow.Instance, // PokemonInstance Species
 			Fighting.Instance, Ghost.Instance			
 		) {}
 		*/

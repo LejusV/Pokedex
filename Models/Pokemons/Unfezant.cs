@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Unfezant Specie to store common natural stats of all Unfezants
-	#region SpecieUnfezant
-	public class SpecieUnfezant : PokemonSpecie
+	//Unfezant Species to store common natural stats of all Unfezants
+	#region SpeciesUnfezant
+	public class SpeciesUnfezant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieUnfezant? _instance = null;
+		private static SpeciesUnfezant? _instance = null;
 #nullable restore
-        public static SpecieUnfezant Instance
+        public static SpeciesUnfezant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieUnfezant();
+                    _instance = new SpeciesUnfezant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieUnfezant Builder
-		public SpecieUnfezant() : base(
+		#region SpeciesUnfezant Constructor
+		public SpeciesUnfezant() : base(
 			"Unfezant",
 			1.2,
 			29.0,
@@ -32,23 +34,77 @@ namespace Pokedex.Models.Pokemons
 			65, 55, // Special Attack & Defense
 			93		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Gust",
+				"Fly",
+				"Leer",
+				"Growl",
+				"Hyper-Beam",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Detect",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Taunt",
+				"Secret-Power",
+				"Feather-Dance",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Giga-Impact",
+				"Round",
+				"Echoed-Voice",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Unfezant Pokemon Class
+	//Unfezant PokemonInstance Class
 	#region Unfezant
-	public class Unfezant : Pokemon
+	public class UnfezantInstance : PokemonInstance
 	{
-		#region Unfezant Builders
+		#region Unfezant Constructors
 		/// <summary>
-		/// Unfezant Builder waiting for a Nickname & a Level
+		/// Unfezant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Unfezant(string nickname, int level)
+		public UnfezantInstance(string nickname, int level)
 		: base(
 				521,
-				SpecieUnfezant.Instance, // Pokemon Specie
+				SpeciesUnfezant.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +116,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Unfezant Builder only waiting for a Level
 		/// </summary>
-		public Unfezant(int level)
+		public UnfezantInstance(int level)
 		: base(
 				521,
-				SpecieUnfezant.Instance, // Pokemon Specie
+				SpeciesUnfezant.Instance, // PokemonInstance Species
 				"Unfezant", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +129,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Unfezant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Unfezant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Unfezant() : base(
 			521,
-			SpecieUnfezant.Instance, // Pokemon Specie
+			SpeciesUnfezant.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

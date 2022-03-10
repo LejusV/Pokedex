@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pumpkaboo-Average Specie to store common natural stats of all Pumpkaboo-Averages
-	#region SpeciePumpkaboo-Average
-	public class SpeciePumpkabooAverage : PokemonSpecie
+	//Pumpkaboo-Average Species to store common natural stats of all Pumpkaboo-Averages
+	#region SpeciesPumpkaboo-Average
+	public class SpeciesPumpkabooAverage : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePumpkabooAverage? _instance = null;
+		private static SpeciesPumpkabooAverage? _instance = null;
 #nullable restore
-        public static SpeciePumpkabooAverage Instance
+        public static SpeciesPumpkabooAverage Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePumpkabooAverage();
+                    _instance = new SpeciesPumpkabooAverage();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePumpkaboo-Average Builder
-		public SpeciePumpkabooAverage() : base(
+		#region SpeciesPumpkaboo-Average Constructor
+		public SpeciesPumpkabooAverage() : base(
 			"Pumpkaboo-Average",
 			0.4,
 			5.0,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			44, 55, // Special Attack & Defense
 			51		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Disable",
+				"Flamethrower",
+				"Leech-Seed",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Fire-Blast",
+				"Dream-Eater",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Destiny-Bond",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Will-O-Wisp",
+				"Facade",
+				"Nature-Power",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Astonish",
+				"Bullet-Seed",
+				"Gyro-Ball",
+				"Worry-Seed",
+				"Dark-Pulse",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Shadow-Sneak",
+				"Trick-Room",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Flame-Charge",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Bestow",
+				"Trick-Or-Treat",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pumpkaboo-Average Pokemon Class
+	//Pumpkaboo-Average PokemonInstance Class
 	#region Pumpkaboo-Average
-	public class PumpkabooAverage : Pokemon
+	public class PumpkabooAverageInstance : PokemonInstance
 	{
-		#region Pumpkaboo-Average Builders
+		#region Pumpkaboo-Average Constructors
 		/// <summary>
-		/// Pumpkaboo-Average Builder waiting for a Nickname & a Level
+		/// Pumpkaboo-Average Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public PumpkabooAverage(string nickname, int level)
+		public PumpkabooAverageInstance(string nickname, int level)
 		: base(
 				710,
-				SpeciePumpkabooAverage.Instance, // Pokemon Specie
+				SpeciesPumpkabooAverage.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pumpkaboo-Average Builder only waiting for a Level
 		/// </summary>
-		public PumpkabooAverage(int level)
+		public PumpkabooAverageInstance(int level)
 		: base(
 				710,
-				SpeciePumpkabooAverage.Instance, // Pokemon Specie
+				SpeciesPumpkabooAverage.Instance, // PokemonInstance Species
 				"Pumpkaboo-Average", level,
 				Ghost.Instance, Grass.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pumpkaboo-Average Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pumpkaboo-Average Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public PumpkabooAverage() : base(
 			710,
-			SpeciePumpkabooAverage.Instance, // Pokemon Specie
+			SpeciesPumpkabooAverage.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}
 		*/

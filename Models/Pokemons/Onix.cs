@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Onix Specie to store common natural stats of all Onixs
-	#region SpecieOnix
-	public class SpecieOnix : PokemonSpecie
+	//Onix Species to store common natural stats of all Onixs
+	#region SpeciesOnix
+	public class SpeciesOnix : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieOnix? _instance = null;
+		private static SpeciesOnix? _instance = null;
 #nullable restore
-        public static SpecieOnix Instance
+        public static SpeciesOnix Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieOnix();
+                    _instance = new SpeciesOnix();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieOnix Builder
-		public SpecieOnix() : base(
+		#region SpeciesOnix Constructor
+		public SpeciesOnix() : base(
 			"Onix",
 			8.8,
 			210.0,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			30, 45, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Slam",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Roar",
+				"Strength",
+				"Rock-Throw",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Bide",
+				"Self-Destruct",
+				"Skull-Bash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Twister",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Secret-Power",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Block",
+				"Rock-Blast",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Payback",
+				"Rock-Polish",
+				"Dragon-Pulse",
+				"Earth-Power",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Wide-Guard",
+				"Smack-Down",
+				"Heavy-Slam",
+				"Round",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Rototiller",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Onix Pokemon Class
+	//Onix PokemonInstance Class
 	#region Onix
-	public class Onix : Pokemon
+	public class OnixInstance : PokemonInstance
 	{
-		#region Onix Builders
+		#region Onix Constructors
 		/// <summary>
-		/// Onix Builder waiting for a Nickname & a Level
+		/// Onix Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Onix(string nickname, int level)
+		public OnixInstance(string nickname, int level)
 		: base(
 				95,
-				SpecieOnix.Instance, // Pokemon Specie
+				SpeciesOnix.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Onix Builder only waiting for a Level
 		/// </summary>
-		public Onix(int level)
+		public OnixInstance(int level)
 		: base(
 				95,
-				SpecieOnix.Instance, // Pokemon Specie
+				SpeciesOnix.Instance, // PokemonInstance Species
 				"Onix", level,
 				Rock.Instance, Ground.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Onix Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Onix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Onix() : base(
 			95,
-			SpecieOnix.Instance, // Pokemon Specie
+			SpeciesOnix.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}
 		*/

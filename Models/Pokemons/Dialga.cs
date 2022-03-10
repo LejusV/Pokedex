@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dialga Specie to store common natural stats of all Dialgas
-	#region SpecieDialga
-	public class SpecieDialga : PokemonSpecie
+	//Dialga Species to store common natural stats of all Dialgas
+	#region SpeciesDialga
+	public class SpeciesDialga : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDialga? _instance = null;
+		private static SpeciesDialga? _instance = null;
 #nullable restore
-        public static SpecieDialga Instance
+        public static SpeciesDialga Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDialga();
+                    _instance = new SpeciesDialga();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDialga Builder
-		public SpecieDialga() : base(
+		#region SpeciesDialga Constructor
+		public SpeciesDialga() : base(
 			"Dialga",
 			5.4,
 			683.0,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			150, 100, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Headbutt",
+				"Roar",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Overheat",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Shock-Wave",
+				"Gravity",
+				"Natural-Gift",
+				"Metal-Burst",
+				"Heal-Block",
+				"Magnet-Rise",
+				"Aura-Sphere",
+				"Dragon-Pulse",
+				"Power-Gem",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Draco-Meteor",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Roar-Of-Time",
+				"Hone-Claws",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dialga Pokemon Class
+	//Dialga PokemonInstance Class
 	#region Dialga
-	public class Dialga : Pokemon
+	public class DialgaInstance : PokemonInstance
 	{
-		#region Dialga Builders
+		#region Dialga Constructors
 		/// <summary>
-		/// Dialga Builder waiting for a Nickname & a Level
+		/// Dialga Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dialga(string nickname, int level)
+		public DialgaInstance(string nickname, int level)
 		: base(
 				483,
-				SpecieDialga.Instance, // Pokemon Specie
+				SpeciesDialga.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Dragon.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dialga Builder only waiting for a Level
 		/// </summary>
-		public Dialga(int level)
+		public DialgaInstance(int level)
 		: base(
 				483,
-				SpecieDialga.Instance, // Pokemon Specie
+				SpeciesDialga.Instance, // PokemonInstance Species
 				"Dialga", level,
 				Steel.Instance, Dragon.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dialga Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dialga Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dialga() : base(
 			483,
-			SpecieDialga.Instance, // Pokemon Specie
+			SpeciesDialga.Instance, // PokemonInstance Species
 			Steel.Instance, Dragon.Instance			
 		) {}
 		*/

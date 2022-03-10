@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Combee Specie to store common natural stats of all Combees
-	#region SpecieCombee
-	public class SpecieCombee : PokemonSpecie
+	//Combee Species to store common natural stats of all Combees
+	#region SpeciesCombee
+	public class SpeciesCombee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCombee? _instance = null;
+		private static SpeciesCombee? _instance = null;
 #nullable restore
-        public static SpecieCombee Instance
+        public static SpeciesCombee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCombee();
+                    _instance = new SpeciesCombee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCombee Builder
-		public SpecieCombee() : base(
+		#region SpeciesCombee Constructor
+		public SpeciesCombee() : base(
 			"Combee",
 			0.3,
 			5.5,
@@ -32,23 +34,46 @@ namespace Pokedex.Models.Pokemons
 			30, 42, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"String-Shot",
+				"Swift",
+				"Snore",
+				"Mud-Slap",
+				"Sweet-Scent",
+				"Endeavor",
+				"Air-Cutter",
+				"Tailwind",
+				"Bug-Buzz",
+				"Bug-Bite",
+				"Ominous-Wind"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Combee Pokemon Class
+	//Combee PokemonInstance Class
 	#region Combee
-	public class Combee : Pokemon
+	public class CombeeInstance : PokemonInstance
 	{
-		#region Combee Builders
+		#region Combee Constructors
 		/// <summary>
-		/// Combee Builder waiting for a Nickname & a Level
+		/// Combee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Combee(string nickname, int level)
+		public CombeeInstance(string nickname, int level)
 		: base(
 				415,
-				SpecieCombee.Instance, // Pokemon Specie
+				SpeciesCombee.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +85,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Combee Builder only waiting for a Level
 		/// </summary>
-		public Combee(int level)
+		public CombeeInstance(int level)
 		: base(
 				415,
-				SpecieCombee.Instance, // Pokemon Specie
+				SpeciesCombee.Instance, // PokemonInstance Species
 				"Combee", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +98,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Combee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Combee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Combee() : base(
 			415,
-			SpecieCombee.Instance, // Pokemon Specie
+			SpeciesCombee.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

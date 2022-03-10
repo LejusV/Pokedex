@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drilbur Specie to store common natural stats of all Drilburs
-	#region SpecieDrilbur
-	public class SpecieDrilbur : PokemonSpecie
+	//Drilbur Species to store common natural stats of all Drilburs
+	#region SpeciesDrilbur
+	public class SpeciesDrilbur : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrilbur? _instance = null;
+		private static SpeciesDrilbur? _instance = null;
 #nullable restore
-        public static SpecieDrilbur Instance
+        public static SpeciesDrilbur Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrilbur();
+                    _instance = new SpeciesDrilbur();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrilbur Builder
-		public SpecieDrilbur() : base(
+		#region SpeciesDrilbur Constructor
+		public SpeciesDrilbur() : base(
 			"Drilbur",
 			0.3,
 			8.5,
@@ -32,23 +34,85 @@ namespace Pokedex.Models.Pokemons
 			30, 45, // Special Attack & Defense
 			68		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Submission",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Skull-Bash",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Secret-Power",
+				"Mud-Sport",
+				"Crush-Claw",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Fling",
+				"Poison-Jab",
+				"X-Scissor",
+				"Earth-Power",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Round",
+				"Bulldoze",
+				"Drill-Run",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drilbur Pokemon Class
+	//Drilbur PokemonInstance Class
 	#region Drilbur
-	public class Drilbur : Pokemon
+	public class DrilburInstance : PokemonInstance
 	{
-		#region Drilbur Builders
+		#region Drilbur Constructors
 		/// <summary>
-		/// Drilbur Builder waiting for a Nickname & a Level
+		/// Drilbur Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drilbur(string nickname, int level)
+		public DrilburInstance(string nickname, int level)
 		: base(
 				529,
-				SpecieDrilbur.Instance, // Pokemon Specie
+				SpeciesDrilbur.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +124,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drilbur Builder only waiting for a Level
 		/// </summary>
-		public Drilbur(int level)
+		public DrilburInstance(int level)
 		: base(
 				529,
-				SpecieDrilbur.Instance, // Pokemon Specie
+				SpeciesDrilbur.Instance, // PokemonInstance Species
 				"Drilbur", level,
 				Ground.Instance			
 		)
@@ -73,12 +137,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drilbur Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drilbur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drilbur() : base(
 			529,
-			SpecieDrilbur.Instance, // Pokemon Specie
+			SpeciesDrilbur.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dedenne Specie to store common natural stats of all Dedennes
-	#region SpecieDedenne
-	public class SpecieDedenne : PokemonSpecie
+	//Dedenne Species to store common natural stats of all Dedennes
+	#region SpeciesDedenne
+	public class SpeciesDedenne : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDedenne? _instance = null;
+		private static SpeciesDedenne? _instance = null;
 #nullable restore
-        public static SpecieDedenne Instance
+        public static SpeciesDedenne Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDedenne();
+                    _instance = new SpeciesDedenne();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDedenne Builder
-		public SpecieDedenne() : base(
+		#region SpeciesDedenne Constructor
+		public SpeciesDedenne() : base(
 			"Dedenne",
 			0.2,
 			2.2,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			81, 67, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Punch",
+				"Cut",
+				"Tackle",
+				"Tail-Whip",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Flash",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Facade",
+				"Charge",
+				"Helping-Hand",
+				"Recycle",
+				"Secret-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"U-Turn",
+				"Fling",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Discharge",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Entrainment",
+				"Round",
+				"Retaliate",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Parabolic-Charge",
+				"Play-Rough",
+				"Confide",
+				"Eerie-Impulse",
+				"Nuzzle",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dedenne Pokemon Class
+	//Dedenne PokemonInstance Class
 	#region Dedenne
-	public class Dedenne : Pokemon
+	public class DedenneInstance : PokemonInstance
 	{
-		#region Dedenne Builders
+		#region Dedenne Constructors
 		/// <summary>
-		/// Dedenne Builder waiting for a Nickname & a Level
+		/// Dedenne Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dedenne(string nickname, int level)
+		public DedenneInstance(string nickname, int level)
 		: base(
 				702,
-				SpecieDedenne.Instance, // Pokemon Specie
+				SpeciesDedenne.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Fairy.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dedenne Builder only waiting for a Level
 		/// </summary>
-		public Dedenne(int level)
+		public DedenneInstance(int level)
 		: base(
 				702,
-				SpecieDedenne.Instance, // Pokemon Specie
+				SpeciesDedenne.Instance, // PokemonInstance Species
 				"Dedenne", level,
 				Electric.Instance, Fairy.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dedenne Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dedenne Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dedenne() : base(
 			702,
-			SpecieDedenne.Instance, // Pokemon Specie
+			SpeciesDedenne.Instance, // PokemonInstance Species
 			Electric.Instance, Fairy.Instance			
 		) {}
 		*/

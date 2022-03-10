@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Thwackey Specie to store common natural stats of all Thwackeys
-	#region SpecieThwackey
-	public class SpecieThwackey : PokemonSpecie
+	//Thwackey Species to store common natural stats of all Thwackeys
+	#region SpeciesThwackey
+	public class SpeciesThwackey : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieThwackey? _instance = null;
+		private static SpeciesThwackey? _instance = null;
 #nullable restore
-        public static SpecieThwackey Instance
+        public static SpeciesThwackey Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieThwackey();
+                    _instance = new SpeciesThwackey();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieThwackey Builder
-		public SpecieThwackey() : base(
+		#region SpeciesThwackey Constructor
+		public SpeciesThwackey() : base(
 			"Thwackey",
 			0.7,
 			14.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Thwackey Pokemon Class
+	//Thwackey PokemonInstance Class
 	#region Thwackey
-	public class Thwackey : Pokemon
+	public class ThwackeyInstance : PokemonInstance
 	{
-		#region Thwackey Builders
+		#region Thwackey Constructors
 		/// <summary>
-		/// Thwackey Builder waiting for a Nickname & a Level
+		/// Thwackey Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Thwackey(string nickname, int level)
+		public ThwackeyInstance(string nickname, int level)
 		: base(
 				811,
-				SpecieThwackey.Instance, // Pokemon Specie
+				SpeciesThwackey.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Thwackey Builder only waiting for a Level
 		/// </summary>
-		public Thwackey(int level)
+		public ThwackeyInstance(int level)
 		: base(
 				811,
-				SpecieThwackey.Instance, // Pokemon Specie
+				SpeciesThwackey.Instance, // PokemonInstance Species
 				"Thwackey", level,
 				Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Thwackey Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Thwackey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Thwackey() : base(
 			811,
-			SpecieThwackey.Instance, // Pokemon Specie
+			SpeciesThwackey.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

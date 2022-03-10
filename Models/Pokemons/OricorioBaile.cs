@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Oricorio-Baile Specie to store common natural stats of all Oricorio-Bailes
-	#region SpecieOricorio-Baile
-	public class SpecieOricorioBaile : PokemonSpecie
+	//Oricorio-Baile Species to store common natural stats of all Oricorio-Bailes
+	#region SpeciesOricorio-Baile
+	public class SpeciesOricorioBaile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieOricorioBaile? _instance = null;
+		private static SpeciesOricorioBaile? _instance = null;
 #nullable restore
-        public static SpecieOricorioBaile Instance
+        public static SpeciesOricorioBaile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieOricorioBaile();
+                    _instance = new SpeciesOricorioBaile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieOricorio-Baile Builder
-		public SpecieOricorioBaile() : base(
+		#region SpeciesOricorio-Baile Constructor
+		public SpeciesOricorioBaile() : base(
 			"Oricorio-Baile",
 			0.6,
 			3.4,
@@ -32,23 +34,79 @@ namespace Pokedex.Models.Pokemons
 			98, 70, // Special Attack & Defense
 			93		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Swords-Dance",
+				"Fly",
+				"Growl",
+				"Peck",
+				"Toxic",
+				"Agility",
+				"Double-Team",
+				"Mirror-Move",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sandstorm",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Hidden-Power",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Feather-Dance",
+				"Teeter-Dance",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Embargo",
+				"Air-Slash",
+				"Captivate",
+				"Round",
+				"Quash",
+				"Acrobatics",
+				"Work-Up",
+				"Hurricane",
+				"Confide",
+				"Revelation-Dance"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Oricorio-Baile Pokemon Class
+	//Oricorio-Baile PokemonInstance Class
 	#region Oricorio-Baile
-	public class OricorioBaile : Pokemon
+	public class OricorioBaileInstance : PokemonInstance
 	{
-		#region Oricorio-Baile Builders
+		#region Oricorio-Baile Constructors
 		/// <summary>
-		/// Oricorio-Baile Builder waiting for a Nickname & a Level
+		/// Oricorio-Baile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public OricorioBaile(string nickname, int level)
+		public OricorioBaileInstance(string nickname, int level)
 		: base(
 				741,
-				SpecieOricorioBaile.Instance, // Pokemon Specie
+				SpeciesOricorioBaile.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
 		)
@@ -60,10 +118,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Oricorio-Baile Builder only waiting for a Level
 		/// </summary>
-		public OricorioBaile(int level)
+		public OricorioBaileInstance(int level)
 		: base(
 				741,
-				SpecieOricorioBaile.Instance, // Pokemon Specie
+				SpeciesOricorioBaile.Instance, // PokemonInstance Species
 				"Oricorio-Baile", level,
 				Fire.Instance, Flying.Instance			
 		)
@@ -73,12 +131,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Oricorio-Baile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Oricorio-Baile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public OricorioBaile() : base(
 			741,
-			SpecieOricorioBaile.Instance, // Pokemon Specie
+			SpeciesOricorioBaile.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}
 		*/

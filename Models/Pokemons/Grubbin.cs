@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Grubbin Specie to store common natural stats of all Grubbins
-	#region SpecieGrubbin
-	public class SpecieGrubbin : PokemonSpecie
+	//Grubbin Species to store common natural stats of all Grubbins
+	#region SpeciesGrubbin
+	public class SpeciesGrubbin : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGrubbin? _instance = null;
+		private static SpeciesGrubbin? _instance = null;
 #nullable restore
-        public static SpecieGrubbin Instance
+        public static SpeciesGrubbin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGrubbin();
+                    _instance = new SpeciesGrubbin();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGrubbin Builder
-		public SpecieGrubbin() : base(
+		#region SpeciesGrubbin Constructor
+		public SpeciesGrubbin() : base(
 			"Grubbin",
 			0.4,
 			4.4,
@@ -32,23 +34,70 @@ namespace Pokedex.Models.Pokemons
 			55, 45, // Special Attack & Defense
 			46		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Bite",
+				"String-Shot",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Facade",
+				"Mud-Shot",
+				"Poison-Jab",
+				"X-Scissor",
+				"Bug-Bite",
+				"Charge-Beam",
+				"Round",
+				"Acrobatics",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Grubbin Pokemon Class
+	//Grubbin PokemonInstance Class
 	#region Grubbin
-	public class Grubbin : Pokemon
+	public class GrubbinInstance : PokemonInstance
 	{
-		#region Grubbin Builders
+		#region Grubbin Constructors
 		/// <summary>
-		/// Grubbin Builder waiting for a Nickname & a Level
+		/// Grubbin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Grubbin(string nickname, int level)
+		public GrubbinInstance(string nickname, int level)
 		: base(
 				736,
-				SpecieGrubbin.Instance, // Pokemon Specie
+				SpeciesGrubbin.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +109,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Grubbin Builder only waiting for a Level
 		/// </summary>
-		public Grubbin(int level)
+		public GrubbinInstance(int level)
 		: base(
 				736,
-				SpecieGrubbin.Instance, // Pokemon Specie
+				SpeciesGrubbin.Instance, // PokemonInstance Species
 				"Grubbin", level,
 				Bug.Instance			
 		)
@@ -73,12 +122,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Grubbin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Grubbin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Grubbin() : base(
 			736,
-			SpecieGrubbin.Instance, // Pokemon Specie
+			SpeciesGrubbin.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

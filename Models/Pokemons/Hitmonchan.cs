@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hitmonchan Specie to store common natural stats of all Hitmonchans
-	#region SpecieHitmonchan
-	public class SpecieHitmonchan : PokemonSpecie
+	//Hitmonchan Species to store common natural stats of all Hitmonchans
+	#region SpeciesHitmonchan
+	public class SpeciesHitmonchan : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHitmonchan? _instance = null;
+		private static SpeciesHitmonchan? _instance = null;
 #nullable restore
-        public static SpecieHitmonchan Instance
+        public static SpeciesHitmonchan Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHitmonchan();
+                    _instance = new SpeciesHitmonchan();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHitmonchan Builder
-		public SpecieHitmonchan() : base(
+		#region SpeciesHitmonchan Constructor
+		public SpeciesHitmonchan() : base(
 			"Hitmonchan",
 			1.4,
 			50.2,
@@ -32,23 +34,111 @@ namespace Pokedex.Models.Pokemons
 			35, 110, // Special Attack & Defense
 			76		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Comet-Punch",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Bide",
+				"Metronome",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mach-Punch",
+				"Mud-Slap",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Revenge",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sky-Uppercut",
+				"Bulk-Up",
+				"Covet",
+				"Natural-Gift",
+				"Feint",
+				"Close-Combat",
+				"Fling",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Bullet-Punch",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hitmonchan Pokemon Class
+	//Hitmonchan PokemonInstance Class
 	#region Hitmonchan
-	public class Hitmonchan : Pokemon
+	public class HitmonchanInstance : PokemonInstance
 	{
-		#region Hitmonchan Builders
+		#region Hitmonchan Constructors
 		/// <summary>
-		/// Hitmonchan Builder waiting for a Nickname & a Level
+		/// Hitmonchan Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hitmonchan(string nickname, int level)
+		public HitmonchanInstance(string nickname, int level)
 		: base(
 				107,
-				SpecieHitmonchan.Instance, // Pokemon Specie
+				SpeciesHitmonchan.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +150,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hitmonchan Builder only waiting for a Level
 		/// </summary>
-		public Hitmonchan(int level)
+		public HitmonchanInstance(int level)
 		: base(
 				107,
-				SpecieHitmonchan.Instance, // Pokemon Specie
+				SpeciesHitmonchan.Instance, // PokemonInstance Species
 				"Hitmonchan", level,
 				Fighting.Instance			
 		)
@@ -73,12 +163,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hitmonchan Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hitmonchan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hitmonchan() : base(
 			107,
-			SpecieHitmonchan.Instance, // Pokemon Specie
+			SpeciesHitmonchan.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

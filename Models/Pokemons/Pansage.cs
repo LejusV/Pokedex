@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pansage Specie to store common natural stats of all Pansages
-	#region SpeciePansage
-	public class SpeciePansage : PokemonSpecie
+	//Pansage Species to store common natural stats of all Pansages
+	#region SpeciesPansage
+	public class SpeciesPansage : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePansage? _instance = null;
+		private static SpeciesPansage? _instance = null;
 #nullable restore
-        public static SpeciePansage Instance
+        public static SpeciesPansage Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePansage();
+                    _instance = new SpeciesPansage();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePansage Builder
-		public SpeciePansage() : base(
+		#region SpeciesPansage Constructor
+		public SpeciesPansage() : base(
 			"Pansage",
 			0.6,
 			10.5,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			53, 48, // Special Attack & Defense
 			64		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Vine-Whip",
+				"Leer",
+				"Bite",
+				"Low-Kick",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Recycle",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Grass-Whistle",
+				"Tickle",
+				"Bullet-Seed",
+				"Covet",
+				"Magical-Leaf",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Leaf-Storm",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Round",
+				"Acrobatics",
+				"Grass-Pledge",
+				"Work-Up",
+				"Disarming-Voice",
+				"Play-Nice",
+				"Confide",
+				"Spiky-Shield"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pansage Pokemon Class
+	//Pansage PokemonInstance Class
 	#region Pansage
-	public class Pansage : Pokemon
+	public class PansageInstance : PokemonInstance
 	{
-		#region Pansage Builders
+		#region Pansage Constructors
 		/// <summary>
-		/// Pansage Builder waiting for a Nickname & a Level
+		/// Pansage Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pansage(string nickname, int level)
+		public PansageInstance(string nickname, int level)
 		: base(
 				511,
-				SpeciePansage.Instance, // Pokemon Specie
+				SpeciesPansage.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pansage Builder only waiting for a Level
 		/// </summary>
-		public Pansage(int level)
+		public PansageInstance(int level)
 		: base(
 				511,
-				SpeciePansage.Instance, // Pokemon Specie
+				SpeciesPansage.Instance, // PokemonInstance Species
 				"Pansage", level,
 				Grass.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pansage Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pansage Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pansage() : base(
 			511,
-			SpeciePansage.Instance, // Pokemon Specie
+			SpeciesPansage.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

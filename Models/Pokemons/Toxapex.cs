@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Toxapex Specie to store common natural stats of all Toxapexs
-	#region SpecieToxapex
-	public class SpecieToxapex : PokemonSpecie
+	//Toxapex Species to store common natural stats of all Toxapexs
+	#region SpeciesToxapex
+	public class SpeciesToxapex : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieToxapex? _instance = null;
+		private static SpeciesToxapex? _instance = null;
 #nullable restore
-        public static SpecieToxapex Instance
+        public static SpeciesToxapex Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieToxapex();
+                    _instance = new SpeciesToxapex();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieToxapex Builder
-		public SpecieToxapex() : base(
+		#region SpeciesToxapex Constructor
+		public SpeciesToxapex() : base(
 			"Toxapex",
 			0.7,
 			14.5,
@@ -32,23 +34,75 @@ namespace Pokedex.Models.Pokemons
 			53, 142, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Poison-Sting",
+				"Pin-Missile",
+				"Bite",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Peck",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Light-Screen",
+				"Spike-Cannon",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Hail",
+				"Facade",
+				"Payback",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Wide-Guard",
+				"Venoshock",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Frost-Breath",
+				"Confide",
+				"Venom-Drench",
+				"Infestation",
+				"Baneful-Bunker",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Toxapex Pokemon Class
+	//Toxapex PokemonInstance Class
 	#region Toxapex
-	public class Toxapex : Pokemon
+	public class ToxapexInstance : PokemonInstance
 	{
-		#region Toxapex Builders
+		#region Toxapex Constructors
 		/// <summary>
-		/// Toxapex Builder waiting for a Nickname & a Level
+		/// Toxapex Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Toxapex(string nickname, int level)
+		public ToxapexInstance(string nickname, int level)
 		: base(
 				748,
-				SpecieToxapex.Instance, // Pokemon Specie
+				SpeciesToxapex.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
 		)
@@ -60,10 +114,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Toxapex Builder only waiting for a Level
 		/// </summary>
-		public Toxapex(int level)
+		public ToxapexInstance(int level)
 		: base(
 				748,
-				SpecieToxapex.Instance, // Pokemon Specie
+				SpeciesToxapex.Instance, // PokemonInstance Species
 				"Toxapex", level,
 				Poison.Instance, Water.Instance			
 		)
@@ -73,12 +127,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Toxapex Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Toxapex Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Toxapex() : base(
 			748,
-			SpecieToxapex.Instance, // Pokemon Specie
+			SpeciesToxapex.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}
 		*/

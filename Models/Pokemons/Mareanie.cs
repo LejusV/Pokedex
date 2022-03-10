@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mareanie Specie to store common natural stats of all Mareanies
-	#region SpecieMareanie
-	public class SpecieMareanie : PokemonSpecie
+	//Mareanie Species to store common natural stats of all Mareanies
+	#region SpeciesMareanie
+	public class SpeciesMareanie : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMareanie? _instance = null;
+		private static SpeciesMareanie? _instance = null;
 #nullable restore
-        public static SpecieMareanie Instance
+        public static SpeciesMareanie Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMareanie();
+                    _instance = new SpeciesMareanie();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMareanie Builder
-		public SpecieMareanie() : base(
+		#region SpeciesMareanie Constructor
+		public SpeciesMareanie() : base(
 			"Mareanie",
 			0.4,
 			8.0,
@@ -32,23 +34,76 @@ namespace Pokedex.Models.Pokemons
 			43, 52, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Poison-Sting",
+				"Pin-Missile",
+				"Bite",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Peck",
+				"Toxic",
+				"Double-Team",
+				"Recover",
+				"Haze",
+				"Spike-Cannon",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Hail",
+				"Facade",
+				"Payback",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Wide-Guard",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Frost-Breath",
+				"Confide",
+				"Venom-Drench",
+				"Infestation",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mareanie Pokemon Class
+	//Mareanie PokemonInstance Class
 	#region Mareanie
-	public class Mareanie : Pokemon
+	public class MareanieInstance : PokemonInstance
 	{
-		#region Mareanie Builders
+		#region Mareanie Constructors
 		/// <summary>
-		/// Mareanie Builder waiting for a Nickname & a Level
+		/// Mareanie Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mareanie(string nickname, int level)
+		public MareanieInstance(string nickname, int level)
 		: base(
 				747,
-				SpecieMareanie.Instance, // Pokemon Specie
+				SpeciesMareanie.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
 		)
@@ -60,10 +115,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mareanie Builder only waiting for a Level
 		/// </summary>
-		public Mareanie(int level)
+		public MareanieInstance(int level)
 		: base(
 				747,
-				SpecieMareanie.Instance, // Pokemon Specie
+				SpeciesMareanie.Instance, // PokemonInstance Species
 				"Mareanie", level,
 				Poison.Instance, Water.Instance			
 		)
@@ -73,12 +128,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mareanie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mareanie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mareanie() : base(
 			747,
-			SpecieMareanie.Instance, // Pokemon Specie
+			SpeciesMareanie.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}
 		*/

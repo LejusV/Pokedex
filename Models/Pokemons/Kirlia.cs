@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kirlia Specie to store common natural stats of all Kirlias
-	#region SpecieKirlia
-	public class SpecieKirlia : PokemonSpecie
+	//Kirlia Species to store common natural stats of all Kirlias
+	#region SpeciesKirlia
+	public class SpeciesKirlia : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKirlia? _instance = null;
+		private static SpeciesKirlia? _instance = null;
 #nullable restore
-        public static SpecieKirlia Instance
+        public static SpeciesKirlia Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKirlia();
+                    _instance = new SpeciesKirlia();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKirlia Builder
-		public SpecieKirlia() : base(
+		#region SpeciesKirlia Constructor
+		public SpeciesKirlia() : base(
 			"Kirlia",
 			0.8,
 			20.2,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			65, 55, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Imprison",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Signal-Beam",
+				"Magical-Leaf",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Lucky-Chant",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Round",
+				"Echoed-Voice",
+				"Stored-Power",
+				"Ally-Switch",
+				"Heal-Pulse",
+				"Disarming-Voice",
+				"Draining-Kiss",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kirlia Pokemon Class
+	//Kirlia PokemonInstance Class
 	#region Kirlia
-	public class Kirlia : Pokemon
+	public class KirliaInstance : PokemonInstance
 	{
-		#region Kirlia Builders
+		#region Kirlia Constructors
 		/// <summary>
-		/// Kirlia Builder waiting for a Nickname & a Level
+		/// Kirlia Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kirlia(string nickname, int level)
+		public KirliaInstance(string nickname, int level)
 		: base(
 				281,
-				SpecieKirlia.Instance, // Pokemon Specie
+				SpeciesKirlia.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kirlia Builder only waiting for a Level
 		/// </summary>
-		public Kirlia(int level)
+		public KirliaInstance(int level)
 		: base(
 				281,
-				SpecieKirlia.Instance, // Pokemon Specie
+				SpeciesKirlia.Instance, // PokemonInstance Species
 				"Kirlia", level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kirlia Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kirlia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kirlia() : base(
 			281,
-			SpecieKirlia.Instance, // Pokemon Specie
+			SpeciesKirlia.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}
 		*/

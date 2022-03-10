@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Keldeo-Ordinary Specie to store common natural stats of all Keldeo-Ordinarys
-	#region SpecieKeldeo-Ordinary
-	public class SpecieKeldeoOrdinary : PokemonSpecie
+	//Keldeo-Ordinary Species to store common natural stats of all Keldeo-Ordinarys
+	#region SpeciesKeldeo-Ordinary
+	public class SpeciesKeldeoOrdinary : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKeldeoOrdinary? _instance = null;
+		private static SpeciesKeldeoOrdinary? _instance = null;
 #nullable restore
-        public static SpecieKeldeoOrdinary Instance
+        public static SpeciesKeldeoOrdinary Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKeldeoOrdinary();
+                    _instance = new SpeciesKeldeoOrdinary();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKeldeo-Ordinary Builder
-		public SpecieKeldeoOrdinary() : base(
+		#region SpeciesKeldeo-Ordinary Constructor
+		public SpeciesKeldeoOrdinary() : base(
 			"Keldeo-Ordinary",
 			1.4,
 			48.5,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			129, 90, // Special Attack & Defense
 			108		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Double-Kick",
+				"Take-Down",
+				"Leer",
+				"Roar",
+				"Hydro-Pump",
+				"Surf",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Strength",
+				"Toxic",
+				"Double-Team",
+				"Reflect",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"False-Swipe",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Bounce",
+				"Covet",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Close-Combat",
+				"Last-Resort",
+				"Poison-Jab",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Aqua-Jet",
+				"Round",
+				"Quick-Guard",
+				"Scald",
+				"Retaliate",
+				"Work-Up",
+				"Sacred-Sword",
+				"Secret-Sword",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Keldeo-Ordinary Pokemon Class
+	//Keldeo-Ordinary PokemonInstance Class
 	#region Keldeo-Ordinary
-	public class KeldeoOrdinary : Pokemon
+	public class KeldeoOrdinaryInstance : PokemonInstance
 	{
-		#region Keldeo-Ordinary Builders
+		#region Keldeo-Ordinary Constructors
 		/// <summary>
-		/// Keldeo-Ordinary Builder waiting for a Nickname & a Level
+		/// Keldeo-Ordinary Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public KeldeoOrdinary(string nickname, int level)
+		public KeldeoOrdinaryInstance(string nickname, int level)
 		: base(
 				647,
-				SpecieKeldeoOrdinary.Instance, // Pokemon Specie
+				SpeciesKeldeoOrdinary.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fighting.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Keldeo-Ordinary Builder only waiting for a Level
 		/// </summary>
-		public KeldeoOrdinary(int level)
+		public KeldeoOrdinaryInstance(int level)
 		: base(
 				647,
-				SpecieKeldeoOrdinary.Instance, // Pokemon Specie
+				SpeciesKeldeoOrdinary.Instance, // PokemonInstance Species
 				"Keldeo-Ordinary", level,
 				Water.Instance, Fighting.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Keldeo-Ordinary Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Keldeo-Ordinary Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public KeldeoOrdinary() : base(
 			647,
-			SpecieKeldeoOrdinary.Instance, // Pokemon Specie
+			SpeciesKeldeoOrdinary.Instance, // PokemonInstance Species
 			Water.Instance, Fighting.Instance			
 		) {}
 		*/

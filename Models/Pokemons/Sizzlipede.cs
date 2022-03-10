@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sizzlipede Specie to store common natural stats of all Sizzlipedes
-	#region SpecieSizzlipede
-	public class SpecieSizzlipede : PokemonSpecie
+	//Sizzlipede Species to store common natural stats of all Sizzlipedes
+	#region SpeciesSizzlipede
+	public class SpeciesSizzlipede : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSizzlipede? _instance = null;
+		private static SpeciesSizzlipede? _instance = null;
 #nullable restore
-        public static SpecieSizzlipede Instance
+        public static SpeciesSizzlipede Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSizzlipede();
+                    _instance = new SpeciesSizzlipede();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSizzlipede Builder
-		public SpecieSizzlipede() : base(
+		#region SpeciesSizzlipede Constructor
+		public SpeciesSizzlipede() : base(
 			"Sizzlipede",
 			0.7,
 			1.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sizzlipede Pokemon Class
+	//Sizzlipede PokemonInstance Class
 	#region Sizzlipede
-	public class Sizzlipede : Pokemon
+	public class SizzlipedeInstance : PokemonInstance
 	{
-		#region Sizzlipede Builders
+		#region Sizzlipede Constructors
 		/// <summary>
-		/// Sizzlipede Builder waiting for a Nickname & a Level
+		/// Sizzlipede Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sizzlipede(string nickname, int level)
+		public SizzlipedeInstance(string nickname, int level)
 		: base(
 				850,
-				SpecieSizzlipede.Instance, // Pokemon Specie
+				SpeciesSizzlipede.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Bug.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sizzlipede Builder only waiting for a Level
 		/// </summary>
-		public Sizzlipede(int level)
+		public SizzlipedeInstance(int level)
 		: base(
 				850,
-				SpecieSizzlipede.Instance, // Pokemon Specie
+				SpeciesSizzlipede.Instance, // PokemonInstance Species
 				"Sizzlipede", level,
 				Fire.Instance, Bug.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sizzlipede Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sizzlipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sizzlipede() : base(
 			850,
-			SpecieSizzlipede.Instance, // Pokemon Specie
+			SpeciesSizzlipede.Instance, // PokemonInstance Species
 			Fire.Instance, Bug.Instance			
 		) {}
 		*/

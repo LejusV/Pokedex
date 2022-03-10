@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Omastar Specie to store common natural stats of all Omastars
-	#region SpecieOmastar
-	public class SpecieOmastar : PokemonSpecie
+	//Omastar Species to store common natural stats of all Omastars
+	#region SpeciesOmastar
+	public class SpeciesOmastar : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieOmastar? _instance = null;
+		private static SpeciesOmastar? _instance = null;
 #nullable restore
-        public static SpecieOmastar Instance
+        public static SpeciesOmastar Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieOmastar();
+                    _instance = new SpeciesOmastar();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieOmastar Builder
-		public SpecieOmastar() : base(
+		#region SpeciesOmastar Constructor
+		public SpeciesOmastar() : base(
 			"Omastar",
 			1.0,
 			35.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			115, 70, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Headbutt",
+				"Horn-Attack",
+				"Horn-Drill",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Submission",
+				"Seismic-Toss",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Withdraw",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Skull-Bash",
+				"Spike-Cannon",
+				"Constrict",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Knock-Off",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Tickle",
+				"Iron-Defense",
+				"Mud-Shot",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Brine",
+				"Natural-Gift",
+				"Rock-Polish",
+				"Earth-Power",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Round",
+				"Scald",
+				"Shell-Smash",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Omastar Pokemon Class
+	//Omastar PokemonInstance Class
 	#region Omastar
-	public class Omastar : Pokemon
+	public class OmastarInstance : PokemonInstance
 	{
-		#region Omastar Builders
+		#region Omastar Constructors
 		/// <summary>
-		/// Omastar Builder waiting for a Nickname & a Level
+		/// Omastar Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Omastar(string nickname, int level)
+		public OmastarInstance(string nickname, int level)
 		: base(
 				139,
-				SpecieOmastar.Instance, // Pokemon Specie
+				SpeciesOmastar.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Omastar Builder only waiting for a Level
 		/// </summary>
-		public Omastar(int level)
+		public OmastarInstance(int level)
 		: base(
 				139,
-				SpecieOmastar.Instance, // Pokemon Specie
+				SpeciesOmastar.Instance, // PokemonInstance Species
 				"Omastar", level,
 				Rock.Instance, Water.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Omastar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Omastar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Omastar() : base(
 			139,
-			SpecieOmastar.Instance, // Pokemon Specie
+			SpeciesOmastar.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}
 		*/

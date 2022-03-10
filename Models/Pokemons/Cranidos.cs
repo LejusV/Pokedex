@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cranidos Specie to store common natural stats of all Cranidoss
-	#region SpecieCranidos
-	public class SpecieCranidos : PokemonSpecie
+	//Cranidos Species to store common natural stats of all Cranidoss
+	#region SpeciesCranidos
+	public class SpeciesCranidos : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCranidos? _instance = null;
+		private static SpeciesCranidos? _instance = null;
 #nullable restore
-        public static SpecieCranidos Instance
+        public static SpeciesCranidos Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCranidos();
+                    _instance = new SpeciesCranidos();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCranidos Builder
-		public SpecieCranidos() : base(
+		#region SpeciesCranidos Constructor
+		public SpeciesCranidos() : base(
 			"Cranidos",
 			0.9,
 			31.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			58		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Whirlwind",
+				"Slam",
+				"Stomp",
+				"Headbutt",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Leer",
+				"Roar",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Strength",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Focus-Energy",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Shock-Wave",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Fling",
+				"Rock-Polish",
+				"Dragon-Pulse",
+				"Earth-Power",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Smack-Down",
+				"Round",
+				"Chip-Away",
+				"Incinerate",
+				"Bulldoze",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cranidos Pokemon Class
+	//Cranidos PokemonInstance Class
 	#region Cranidos
-	public class Cranidos : Pokemon
+	public class CranidosInstance : PokemonInstance
 	{
-		#region Cranidos Builders
+		#region Cranidos Constructors
 		/// <summary>
-		/// Cranidos Builder waiting for a Nickname & a Level
+		/// Cranidos Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cranidos(string nickname, int level)
+		public CranidosInstance(string nickname, int level)
 		: base(
 				408,
-				SpecieCranidos.Instance, // Pokemon Specie
+				SpeciesCranidos.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cranidos Builder only waiting for a Level
 		/// </summary>
-		public Cranidos(int level)
+		public CranidosInstance(int level)
 		: base(
 				408,
-				SpecieCranidos.Instance, // Pokemon Specie
+				SpeciesCranidos.Instance, // PokemonInstance Species
 				"Cranidos", level,
 				Rock.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cranidos Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cranidos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cranidos() : base(
 			408,
-			SpecieCranidos.Instance, // Pokemon Specie
+			SpeciesCranidos.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Stonjourner Specie to store common natural stats of all Stonjourners
-	#region SpecieStonjourner
-	public class SpecieStonjourner : PokemonSpecie
+	//Stonjourner Species to store common natural stats of all Stonjourners
+	#region SpeciesStonjourner
+	public class SpeciesStonjourner : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieStonjourner? _instance = null;
+		private static SpeciesStonjourner? _instance = null;
 #nullable restore
-        public static SpecieStonjourner Instance
+        public static SpeciesStonjourner Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieStonjourner();
+                    _instance = new SpeciesStonjourner();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieStonjourner Builder
-		public SpecieStonjourner() : base(
+		#region SpeciesStonjourner Constructor
+		public SpeciesStonjourner() : base(
 			"Stonjourner",
 			2.5,
 			520.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			20, 20, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Stonjourner Pokemon Class
+	//Stonjourner PokemonInstance Class
 	#region Stonjourner
-	public class Stonjourner : Pokemon
+	public class StonjournerInstance : PokemonInstance
 	{
-		#region Stonjourner Builders
+		#region Stonjourner Constructors
 		/// <summary>
-		/// Stonjourner Builder waiting for a Nickname & a Level
+		/// Stonjourner Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Stonjourner(string nickname, int level)
+		public StonjournerInstance(string nickname, int level)
 		: base(
 				874,
-				SpecieStonjourner.Instance, // Pokemon Specie
+				SpeciesStonjourner.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Stonjourner Builder only waiting for a Level
 		/// </summary>
-		public Stonjourner(int level)
+		public StonjournerInstance(int level)
 		: base(
 				874,
-				SpecieStonjourner.Instance, // Pokemon Specie
+				SpeciesStonjourner.Instance, // PokemonInstance Species
 				"Stonjourner", level,
 				Rock.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Stonjourner Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Stonjourner Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Stonjourner() : base(
 			874,
-			SpecieStonjourner.Instance, // Pokemon Specie
+			SpeciesStonjourner.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

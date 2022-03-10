@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Electivire Specie to store common natural stats of all Electivires
-	#region SpecieElectivire
-	public class SpecieElectivire : PokemonSpecie
+	//Electivire Species to store common natural stats of all Electivires
+	#region SpeciesElectivire
+	public class SpeciesElectivire : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieElectivire? _instance = null;
+		private static SpeciesElectivire? _instance = null;
 #nullable restore
-        public static SpecieElectivire Instance
+        public static SpeciesElectivire Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieElectivire();
+                    _instance = new SpeciesElectivire();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieElectivire Builder
-		public SpecieElectivire() : base(
+		#region SpeciesElectivire Constructor
+		public SpeciesElectivire() : base(
 			"Electivire",
 			1.8,
 			138.6,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			95, 85, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Leer",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Magnet-Rise",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Low-Sweep",
+				"Round",
+				"Volt-Switch",
+				"Bulldoze",
+				"Electroweb",
+				"Wild-Charge",
+				"Dual-Chop",
+				"Ion-Deluge",
+				"Confide",
+				"Electric-Terrain",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Electivire Pokemon Class
+	//Electivire PokemonInstance Class
 	#region Electivire
-	public class Electivire : Pokemon
+	public class ElectivireInstance : PokemonInstance
 	{
-		#region Electivire Builders
+		#region Electivire Constructors
 		/// <summary>
-		/// Electivire Builder waiting for a Nickname & a Level
+		/// Electivire Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Electivire(string nickname, int level)
+		public ElectivireInstance(string nickname, int level)
 		: base(
 				466,
-				SpecieElectivire.Instance, // Pokemon Specie
+				SpeciesElectivire.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Electivire Builder only waiting for a Level
 		/// </summary>
-		public Electivire(int level)
+		public ElectivireInstance(int level)
 		: base(
 				466,
-				SpecieElectivire.Instance, // Pokemon Specie
+				SpeciesElectivire.Instance, // PokemonInstance Species
 				"Electivire", level,
 				Electric.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Electivire Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Electivire Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Electivire() : base(
 			466,
-			SpecieElectivire.Instance, // Pokemon Specie
+			SpeciesElectivire.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

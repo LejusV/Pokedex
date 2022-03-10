@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gliscor Specie to store common natural stats of all Gliscors
-	#region SpecieGliscor
-	public class SpecieGliscor : PokemonSpecie
+	//Gliscor Species to store common natural stats of all Gliscors
+	#region SpeciesGliscor
+	public class SpeciesGliscor : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGliscor? _instance = null;
+		private static SpeciesGliscor? _instance = null;
 #nullable restore
-        public static SpecieGliscor Instance
+        public static SpeciesGliscor Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGliscor();
+                    _instance = new SpeciesGliscor();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGliscor Builder
-		public SpecieGliscor() : base(
+		#region SpeciesGliscor Constructor
+		public SpeciesGliscor() : base(
 			"Gliscor",
 			2.0,
 			42.5,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			45, 75, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Guillotine",
+				"Swords-Dance",
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Harden",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sky-Uppercut",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Rock-Polish",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Earth-Power",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Defog",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Venoshock",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Bulldoze",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gliscor Pokemon Class
+	//Gliscor PokemonInstance Class
 	#region Gliscor
-	public class Gliscor : Pokemon
+	public class GliscorInstance : PokemonInstance
 	{
-		#region Gliscor Builders
+		#region Gliscor Constructors
 		/// <summary>
-		/// Gliscor Builder waiting for a Nickname & a Level
+		/// Gliscor Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gliscor(string nickname, int level)
+		public GliscorInstance(string nickname, int level)
 		: base(
 				472,
-				SpecieGliscor.Instance, // Pokemon Specie
+				SpeciesGliscor.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gliscor Builder only waiting for a Level
 		/// </summary>
-		public Gliscor(int level)
+		public GliscorInstance(int level)
 		: base(
 				472,
-				SpecieGliscor.Instance, // Pokemon Specie
+				SpeciesGliscor.Instance, // PokemonInstance Species
 				"Gliscor", level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gliscor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gliscor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gliscor() : base(
 			472,
-			SpecieGliscor.Instance, // Pokemon Specie
+			SpeciesGliscor.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}
 		*/

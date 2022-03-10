@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Axew Specie to store common natural stats of all Axews
-	#region SpecieAxew
-	public class SpecieAxew : PokemonSpecie
+	//Axew Species to store common natural stats of all Axews
+	#region SpeciesAxew
+	public class SpeciesAxew : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieAxew? _instance = null;
+		private static SpeciesAxew? _instance = null;
 #nullable restore
-        public static SpecieAxew Instance
+        public static SpeciesAxew Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieAxew();
+                    _instance = new SpeciesAxew();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieAxew Builder
-		public SpecieAxew() : base(
+		#region SpeciesAxew Constructor
+		public SpeciesAxew() : base(
 			"Axew",
 			0.6,
 			18.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			30, 40, // Special Attack & Defense
 			57		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Guillotine",
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Leer",
+				"Roar",
+				"Counter",
+				"Strength",
+				"Dragon-Rage",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Focus-Energy",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Dragon-Dance",
+				"Shock-Wave",
+				"Payback",
+				"Assurance",
+				"Fling",
+				"Poison-Jab",
+				"Night-Slash",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Dragon-Pulse",
+				"Giga-Impact",
+				"Draco-Meteor",
+				"Hone-Claws",
+				"Round",
+				"Incinerate",
+				"Dual-Chop",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Axew Pokemon Class
+	//Axew PokemonInstance Class
 	#region Axew
-	public class Axew : Pokemon
+	public class AxewInstance : PokemonInstance
 	{
-		#region Axew Builders
+		#region Axew Constructors
 		/// <summary>
-		/// Axew Builder waiting for a Nickname & a Level
+		/// Axew Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Axew(string nickname, int level)
+		public AxewInstance(string nickname, int level)
 		: base(
 				610,
-				SpecieAxew.Instance, // Pokemon Specie
+				SpeciesAxew.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Axew Builder only waiting for a Level
 		/// </summary>
-		public Axew(int level)
+		public AxewInstance(int level)
 		: base(
 				610,
-				SpecieAxew.Instance, // Pokemon Specie
+				SpeciesAxew.Instance, // PokemonInstance Species
 				"Axew", level,
 				Dragon.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Axew Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Axew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Axew() : base(
 			610,
-			SpecieAxew.Instance, // Pokemon Specie
+			SpeciesAxew.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

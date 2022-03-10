@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Claydol Specie to store common natural stats of all Claydols
-	#region SpecieClaydol
-	public class SpecieClaydol : PokemonSpecie
+	//Claydol Species to store common natural stats of all Claydols
+	#region SpeciesClaydol
+	public class SpeciesClaydol : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieClaydol? _instance = null;
+		private static SpeciesClaydol? _instance = null;
 #nullable restore
-        public static SpecieClaydol Instance
+        public static SpeciesClaydol Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieClaydol();
+                    _instance = new SpeciesClaydol();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieClaydol Builder
-		public SpecieClaydol() : base(
+		#region SpeciesClaydol Constructor
+		public SpeciesClaydol() : base(
 			"Claydol",
 			1.5,
 			108.0,
@@ -32,23 +34,115 @@ namespace Pokedex.Models.Pokemons
 			70, 120, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Double-Edge",
+				"Ice-Beam",
+				"Psybeam",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Reflect",
+				"Self-Destruct",
+				"Dream-Eater",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Trick",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Imprison",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Extrasensory",
+				"Calm-Mind",
+				"Gravity",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Heal-Block",
+				"Power-Trick",
+				"Rock-Polish",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Guard-Split",
+				"Power-Split",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Smack-Down",
+				"Round",
+				"Ally-Switch",
+				"Bulldoze",
+				"Drill-Run",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Claydol Pokemon Class
+	//Claydol PokemonInstance Class
 	#region Claydol
-	public class Claydol : Pokemon
+	public class ClaydolInstance : PokemonInstance
 	{
-		#region Claydol Builders
+		#region Claydol Constructors
 		/// <summary>
-		/// Claydol Builder waiting for a Nickname & a Level
+		/// Claydol Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Claydol(string nickname, int level)
+		public ClaydolInstance(string nickname, int level)
 		: base(
 				344,
-				SpecieClaydol.Instance, // Pokemon Specie
+				SpeciesClaydol.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Psychic.Instance			
 		)
@@ -60,10 +154,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Claydol Builder only waiting for a Level
 		/// </summary>
-		public Claydol(int level)
+		public ClaydolInstance(int level)
 		: base(
 				344,
-				SpecieClaydol.Instance, // Pokemon Specie
+				SpeciesClaydol.Instance, // PokemonInstance Species
 				"Claydol", level,
 				Ground.Instance, Psychic.Instance			
 		)
@@ -73,12 +167,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Claydol Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Claydol Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Claydol() : base(
 			344,
-			SpecieClaydol.Instance, // Pokemon Specie
+			SpeciesClaydol.Instance, // PokemonInstance Species
 			Ground.Instance, Psychic.Instance			
 		) {}
 		*/

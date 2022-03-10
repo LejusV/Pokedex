@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Castform Specie to store common natural stats of all Castforms
-	#region SpecieCastform
-	public class SpecieCastform : PokemonSpecie
+	//Castform Species to store common natural stats of all Castforms
+	#region SpeciesCastform
+	public class SpeciesCastform : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCastform? _instance = null;
+		private static SpeciesCastform? _instance = null;
 #nullable restore
-        public static SpecieCastform Instance
+        public static SpeciesCastform Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCastform();
+                    _instance = new SpeciesCastform();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCastform Builder
-		public SpecieCastform() : base(
+		#region SpeciesCastform Constructor
+		public SpeciesCastform() : base(
 			"Castform",
 			0.3,
 			0.8,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			70, 70, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Disable",
+				"Ember",
+				"Flamethrower",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Ice-Beam",
+				"Blizzard",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Fire-Blast",
+				"Swift",
+				"Amnesia",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Weather-Ball",
+				"Cosmic-Power",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Tailwind",
+				"Lucky-Chant",
+				"Guard-Swap",
+				"Last-Resort",
+				"Energy-Ball",
+				"Avalanche",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Clear-Smog",
+				"Scald",
+				"Hex",
+				"Incinerate",
+				"Reflect-Type",
+				"Retaliate",
+				"Work-Up",
+				"Hurricane",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Castform Pokemon Class
+	//Castform PokemonInstance Class
 	#region Castform
-	public class Castform : Pokemon
+	public class CastformInstance : PokemonInstance
 	{
-		#region Castform Builders
+		#region Castform Constructors
 		/// <summary>
-		/// Castform Builder waiting for a Nickname & a Level
+		/// Castform Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Castform(string nickname, int level)
+		public CastformInstance(string nickname, int level)
 		: base(
 				351,
-				SpecieCastform.Instance, // Pokemon Specie
+				SpeciesCastform.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Castform Builder only waiting for a Level
 		/// </summary>
-		public Castform(int level)
+		public CastformInstance(int level)
 		: base(
 				351,
-				SpecieCastform.Instance, // Pokemon Specie
+				SpeciesCastform.Instance, // PokemonInstance Species
 				"Castform", level,
 				Normal.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Castform Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Castform Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Castform() : base(
 			351,
-			SpecieCastform.Instance, // Pokemon Specie
+			SpeciesCastform.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

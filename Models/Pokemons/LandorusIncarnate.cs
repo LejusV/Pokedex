@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Landorus-Incarnate Specie to store common natural stats of all Landorus-Incarnates
-	#region SpecieLandorus-Incarnate
-	public class SpecieLandorusIncarnate : PokemonSpecie
+	//Landorus-Incarnate Species to store common natural stats of all Landorus-Incarnates
+	#region SpeciesLandorus-Incarnate
+	public class SpeciesLandorusIncarnate : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLandorusIncarnate? _instance = null;
+		private static SpeciesLandorusIncarnate? _instance = null;
 #nullable restore
-        public static SpecieLandorusIncarnate Instance
+        public static SpeciesLandorusIncarnate Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLandorusIncarnate();
+                    _instance = new SpeciesLandorusIncarnate();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLandorus-Incarnate Builder
-		public SpecieLandorusIncarnate() : base(
+		#region SpeciesLandorus-Incarnate Constructor
+		public SpeciesLandorusIncarnate() : base(
 			"Landorus-Incarnate",
 			1.5,
 			68.0,
@@ -32,23 +34,94 @@ namespace Pokedex.Models.Pokemons
 			115, 80, // Special Attack & Defense
 			101		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Fly",
+				"Hyper-Beam",
+				"Strength",
+				"Rock-Throw",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Outrage",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Role-Play",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Imprison",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Extrasensory",
+				"Block",
+				"Bulk-Up",
+				"Mud-Shot",
+				"Calm-Mind",
+				"Gravity",
+				"Hammer-Arm",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Punishment",
+				"Rock-Polish",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Bulldoze",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Landorus-Incarnate Pokemon Class
+	//Landorus-Incarnate PokemonInstance Class
 	#region Landorus-Incarnate
-	public class LandorusIncarnate : Pokemon
+	public class LandorusIncarnateInstance : PokemonInstance
 	{
-		#region Landorus-Incarnate Builders
+		#region Landorus-Incarnate Constructors
 		/// <summary>
-		/// Landorus-Incarnate Builder waiting for a Nickname & a Level
+		/// Landorus-Incarnate Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public LandorusIncarnate(string nickname, int level)
+		public LandorusIncarnateInstance(string nickname, int level)
 		: base(
 				645,
-				SpecieLandorusIncarnate.Instance, // Pokemon Specie
+				SpeciesLandorusIncarnate.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -60,10 +133,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Landorus-Incarnate Builder only waiting for a Level
 		/// </summary>
-		public LandorusIncarnate(int level)
+		public LandorusIncarnateInstance(int level)
 		: base(
 				645,
-				SpecieLandorusIncarnate.Instance, // Pokemon Specie
+				SpeciesLandorusIncarnate.Instance, // PokemonInstance Species
 				"Landorus-Incarnate", level,
 				Ground.Instance, Flying.Instance			
 		)
@@ -73,12 +146,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Landorus-Incarnate Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Landorus-Incarnate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public LandorusIncarnate() : base(
 			645,
-			SpecieLandorusIncarnate.Instance, // Pokemon Specie
+			SpeciesLandorusIncarnate.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}
 		*/

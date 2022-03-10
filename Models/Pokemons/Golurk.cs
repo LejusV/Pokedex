@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golurk Specie to store common natural stats of all Golurks
-	#region SpecieGolurk
-	public class SpecieGolurk : PokemonSpecie
+	//Golurk Species to store common natural stats of all Golurks
+	#region SpeciesGolurk
+	public class SpeciesGolurk : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGolurk? _instance = null;
+		private static SpeciesGolurk? _instance = null;
 #nullable restore
-        public static SpecieGolurk Instance
+        public static SpeciesGolurk Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGolurk();
+                    _instance = new SpeciesGolurk();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGolurk Builder
-		public SpecieGolurk() : base(
+		#region SpeciesGolurk Constructor
+		public SpeciesGolurk() : base(
 			"Golurk",
 			2.8,
 			330.0,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			55, 80, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Fly",
+				"Ice-Beam",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Earthquake",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Defense-Curl",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Rollout",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Magnitude",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Magic-Coat",
+				"Brick-Break",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Shadow-Punch",
+				"Iron-Defense",
+				"Block",
+				"Shock-Wave",
+				"Gravity",
+				"Hammer-Arm",
+				"Gyro-Ball",
+				"Fling",
+				"Rock-Polish",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Telekinesis",
+				"Heavy-Slam",
+				"Low-Sweep",
+				"Round",
+				"Bulldoze",
+				"Phantom-Force",
+				"Confide",
+				"Power-Up-Punch",
+				"High-Horsepower",
+				"Stomping-Tantrum"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Golurk Pokemon Class
+	//Golurk PokemonInstance Class
 	#region Golurk
-	public class Golurk : Pokemon
+	public class GolurkInstance : PokemonInstance
 	{
-		#region Golurk Builders
+		#region Golurk Constructors
 		/// <summary>
-		/// Golurk Builder waiting for a Nickname & a Level
+		/// Golurk Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Golurk(string nickname, int level)
+		public GolurkInstance(string nickname, int level)
 		: base(
 				623,
-				SpecieGolurk.Instance, // Pokemon Specie
+				SpeciesGolurk.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Ghost.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golurk Builder only waiting for a Level
 		/// </summary>
-		public Golurk(int level)
+		public GolurkInstance(int level)
 		: base(
 				623,
-				SpecieGolurk.Instance, // Pokemon Specie
+				SpeciesGolurk.Instance, // PokemonInstance Species
 				"Golurk", level,
 				Ground.Instance, Ghost.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Golurk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Golurk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Golurk() : base(
 			623,
-			SpecieGolurk.Instance, // Pokemon Specie
+			SpeciesGolurk.Instance, // PokemonInstance Species
 			Ground.Instance, Ghost.Instance			
 		) {}
 		*/

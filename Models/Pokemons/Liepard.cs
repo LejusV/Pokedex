@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Liepard Specie to store common natural stats of all Liepards
-	#region SpecieLiepard
-	public class SpecieLiepard : PokemonSpecie
+	//Liepard Species to store common natural stats of all Liepards
+	#region SpeciesLiepard
+	public class SpeciesLiepard : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLiepard? _instance = null;
+		private static SpeciesLiepard? _instance = null;
 #nullable restore
-        public static SpecieLiepard Instance
+        public static SpeciesLiepard Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLiepard();
+                    _instance = new SpeciesLiepard();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLiepard Builder
-		public SpecieLiepard() : base(
+		#region SpeciesLiepard Constructor
+		public SpeciesLiepard() : base(
 			"Liepard",
 			1.1,
 			37.5,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			88, 50, // Special Attack & Defense
 			106		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Sand-Attack",
+				"Growl",
+				"Hyper-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Double-Team",
+				"Dream-Eater",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Assist",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Aerial-Ace",
+				"Covet",
+				"U-Turn",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Seed-Bomb",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Snarl",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Liepard Pokemon Class
+	//Liepard PokemonInstance Class
 	#region Liepard
-	public class Liepard : Pokemon
+	public class LiepardInstance : PokemonInstance
 	{
-		#region Liepard Builders
+		#region Liepard Constructors
 		/// <summary>
-		/// Liepard Builder waiting for a Nickname & a Level
+		/// Liepard Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Liepard(string nickname, int level)
+		public LiepardInstance(string nickname, int level)
 		: base(
 				510,
-				SpecieLiepard.Instance, // Pokemon Specie
+				SpeciesLiepard.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Liepard Builder only waiting for a Level
 		/// </summary>
-		public Liepard(int level)
+		public LiepardInstance(int level)
 		: base(
 				510,
-				SpecieLiepard.Instance, // Pokemon Specie
+				SpeciesLiepard.Instance, // PokemonInstance Species
 				"Liepard", level,
 				Dark.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Liepard Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Liepard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Liepard() : base(
 			510,
-			SpecieLiepard.Instance, // Pokemon Specie
+			SpeciesLiepard.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

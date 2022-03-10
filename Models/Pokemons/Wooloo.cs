@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wooloo Specie to store common natural stats of all Wooloos
-	#region SpecieWooloo
-	public class SpecieWooloo : PokemonSpecie
+	//Wooloo Species to store common natural stats of all Wooloos
+	#region SpeciesWooloo
+	public class SpeciesWooloo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWooloo? _instance = null;
+		private static SpeciesWooloo? _instance = null;
 #nullable restore
-        public static SpecieWooloo Instance
+        public static SpeciesWooloo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWooloo();
+                    _instance = new SpeciesWooloo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWooloo Builder
-		public SpecieWooloo() : base(
+		#region SpeciesWooloo Constructor
+		public SpeciesWooloo() : base(
 			"Wooloo",
 			0.6,
 			6.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 45, // Special Attack & Defense
 			48		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wooloo Pokemon Class
+	//Wooloo PokemonInstance Class
 	#region Wooloo
-	public class Wooloo : Pokemon
+	public class WoolooInstance : PokemonInstance
 	{
-		#region Wooloo Builders
+		#region Wooloo Constructors
 		/// <summary>
-		/// Wooloo Builder waiting for a Nickname & a Level
+		/// Wooloo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Wooloo(string nickname, int level)
+		public WoolooInstance(string nickname, int level)
 		: base(
 				831,
-				SpecieWooloo.Instance, // Pokemon Specie
+				SpeciesWooloo.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wooloo Builder only waiting for a Level
 		/// </summary>
-		public Wooloo(int level)
+		public WoolooInstance(int level)
 		: base(
 				831,
-				SpecieWooloo.Instance, // Pokemon Specie
+				SpeciesWooloo.Instance, // PokemonInstance Species
 				"Wooloo", level,
 				Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wooloo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wooloo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Wooloo() : base(
 			831,
-			SpecieWooloo.Instance, // Pokemon Specie
+			SpeciesWooloo.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

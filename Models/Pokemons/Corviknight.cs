@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Corviknight Specie to store common natural stats of all Corviknights
-	#region SpecieCorviknight
-	public class SpecieCorviknight : PokemonSpecie
+	//Corviknight Species to store common natural stats of all Corviknights
+	#region SpeciesCorviknight
+	public class SpeciesCorviknight : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCorviknight? _instance = null;
+		private static SpeciesCorviknight? _instance = null;
 #nullable restore
-        public static SpecieCorviknight Instance
+        public static SpeciesCorviknight Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCorviknight();
+                    _instance = new SpeciesCorviknight();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCorviknight Builder
-		public SpecieCorviknight() : base(
+		#region SpeciesCorviknight Constructor
+		public SpeciesCorviknight() : base(
 			"Corviknight",
 			2.2,
 			75.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			53, 85, // Special Attack & Defense
 			67		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Corviknight Pokemon Class
+	//Corviknight PokemonInstance Class
 	#region Corviknight
-	public class Corviknight : Pokemon
+	public class CorviknightInstance : PokemonInstance
 	{
-		#region Corviknight Builders
+		#region Corviknight Constructors
 		/// <summary>
-		/// Corviknight Builder waiting for a Nickname & a Level
+		/// Corviknight Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Corviknight(string nickname, int level)
+		public CorviknightInstance(string nickname, int level)
 		: base(
 				823,
-				SpecieCorviknight.Instance, // Pokemon Specie
+				SpeciesCorviknight.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Steel.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Corviknight Builder only waiting for a Level
 		/// </summary>
-		public Corviknight(int level)
+		public CorviknightInstance(int level)
 		: base(
 				823,
-				SpecieCorviknight.Instance, // Pokemon Specie
+				SpeciesCorviknight.Instance, // PokemonInstance Species
 				"Corviknight", level,
 				Flying.Instance, Steel.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Corviknight Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Corviknight Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Corviknight() : base(
 			823,
-			SpecieCorviknight.Instance, // Pokemon Specie
+			SpeciesCorviknight.Instance, // PokemonInstance Species
 			Flying.Instance, Steel.Instance			
 		) {}
 		*/

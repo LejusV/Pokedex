@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Corvisquire Specie to store common natural stats of all Corvisquires
-	#region SpecieCorvisquire
-	public class SpecieCorvisquire : PokemonSpecie
+	//Corvisquire Species to store common natural stats of all Corvisquires
+	#region SpeciesCorvisquire
+	public class SpeciesCorvisquire : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCorvisquire? _instance = null;
+		private static SpeciesCorvisquire? _instance = null;
 #nullable restore
-        public static SpecieCorvisquire Instance
+        public static SpeciesCorvisquire Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCorvisquire();
+                    _instance = new SpeciesCorvisquire();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCorvisquire Builder
-		public SpecieCorvisquire() : base(
+		#region SpeciesCorvisquire Constructor
+		public SpeciesCorvisquire() : base(
 			"Corvisquire",
 			0.8,
 			16.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			43, 55, // Special Attack & Defense
 			77		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Corvisquire Pokemon Class
+	//Corvisquire PokemonInstance Class
 	#region Corvisquire
-	public class Corvisquire : Pokemon
+	public class CorvisquireInstance : PokemonInstance
 	{
-		#region Corvisquire Builders
+		#region Corvisquire Constructors
 		/// <summary>
-		/// Corvisquire Builder waiting for a Nickname & a Level
+		/// Corvisquire Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Corvisquire(string nickname, int level)
+		public CorvisquireInstance(string nickname, int level)
 		: base(
 				822,
-				SpecieCorvisquire.Instance, // Pokemon Specie
+				SpeciesCorvisquire.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Corvisquire Builder only waiting for a Level
 		/// </summary>
-		public Corvisquire(int level)
+		public CorvisquireInstance(int level)
 		: base(
 				822,
-				SpecieCorvisquire.Instance, // Pokemon Specie
+				SpeciesCorvisquire.Instance, // PokemonInstance Species
 				"Corvisquire", level,
 				Flying.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Corvisquire Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Corvisquire Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Corvisquire() : base(
 			822,
-			SpecieCorvisquire.Instance, // Pokemon Specie
+			SpeciesCorvisquire.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}
 		*/

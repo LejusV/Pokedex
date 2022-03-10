@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Houndour Specie to store common natural stats of all Houndours
-	#region SpecieHoundour
-	public class SpecieHoundour : PokemonSpecie
+	//Houndour Species to store common natural stats of all Houndours
+	#region SpeciesHoundour
+	public class SpeciesHoundour : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHoundour? _instance = null;
+		private static SpeciesHoundour? _instance = null;
 #nullable restore
-        public static SpecieHoundour Instance
+        public static SpeciesHoundour Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHoundour();
+                    _instance = new SpeciesHoundour();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHoundour Builder
-		public SpecieHoundour() : base(
+		#region SpeciesHoundour Constructor
+		public SpeciesHoundour() : base(
 			"Houndour",
 			0.6,
 			10.8,
@@ -32,23 +34,114 @@ namespace Pokedex.Models.Pokemons
 			80, 50, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Counter",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Smog",
+				"Fire-Blast",
+				"Swift",
+				"Dream-Eater",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Destiny-Bond",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Beat-Up",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Role-Play",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Overheat",
+				"Odor-Sleuth",
+				"Howl",
+				"Natural-Gift",
+				"Feint",
+				"Payback",
+				"Embargo",
+				"Punishment",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Nasty-Plot",
+				"Thunder-Fang",
+				"Fire-Fang",
+				"Captivate",
+				"Flame-Charge",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Inferno",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Houndour Pokemon Class
+	//Houndour PokemonInstance Class
 	#region Houndour
-	public class Houndour : Pokemon
+	public class HoundourInstance : PokemonInstance
 	{
-		#region Houndour Builders
+		#region Houndour Constructors
 		/// <summary>
-		/// Houndour Builder waiting for a Nickname & a Level
+		/// Houndour Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Houndour(string nickname, int level)
+		public HoundourInstance(string nickname, int level)
 		: base(
 				228,
-				SpecieHoundour.Instance, // Pokemon Specie
+				SpeciesHoundour.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fire.Instance			
 		)
@@ -60,10 +153,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Houndour Builder only waiting for a Level
 		/// </summary>
-		public Houndour(int level)
+		public HoundourInstance(int level)
 		: base(
 				228,
-				SpecieHoundour.Instance, // Pokemon Specie
+				SpeciesHoundour.Instance, // PokemonInstance Species
 				"Houndour", level,
 				Dark.Instance, Fire.Instance			
 		)
@@ -73,12 +166,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Houndour Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Houndour Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Houndour() : base(
 			228,
-			SpecieHoundour.Instance, // Pokemon Specie
+			SpeciesHoundour.Instance, // PokemonInstance Species
 			Dark.Instance, Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mr-Rime Specie to store common natural stats of all Mr-Rimes
-	#region SpecieMr-Rime
-	public class SpecieMrRime : PokemonSpecie
+	//Mr-Rime Species to store common natural stats of all Mr-Rimes
+	#region SpeciesMr-Rime
+	public class SpeciesMrRime : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMrRime? _instance = null;
+		private static SpeciesMrRime? _instance = null;
 #nullable restore
-        public static SpecieMrRime Instance
+        public static SpeciesMrRime Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMrRime();
+                    _instance = new SpeciesMrRime();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMr-Rime Builder
-		public SpecieMrRime() : base(
+		#region SpeciesMr-Rime Constructor
+		public SpeciesMrRime() : base(
 			"Mr-Rime",
 			1.5,
 			58.2,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			110, 100, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mr-Rime Pokemon Class
+	//Mr-Rime PokemonInstance Class
 	#region Mr-Rime
-	public class MrRime : Pokemon
+	public class MrRimeInstance : PokemonInstance
 	{
-		#region Mr-Rime Builders
+		#region Mr-Rime Constructors
 		/// <summary>
-		/// Mr-Rime Builder waiting for a Nickname & a Level
+		/// Mr-Rime Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public MrRime(string nickname, int level)
+		public MrRimeInstance(string nickname, int level)
 		: base(
 				866,
-				SpecieMrRime.Instance, // Pokemon Specie
+				SpeciesMrRime.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mr-Rime Builder only waiting for a Level
 		/// </summary>
-		public MrRime(int level)
+		public MrRimeInstance(int level)
 		: base(
 				866,
-				SpecieMrRime.Instance, // Pokemon Specie
+				SpeciesMrRime.Instance, // PokemonInstance Species
 				"Mr-Rime", level,
 				Ice.Instance, Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mr-Rime Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mr-Rime Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public MrRime() : base(
 			866,
-			SpecieMrRime.Instance, // Pokemon Specie
+			SpeciesMrRime.Instance, // PokemonInstance Species
 			Ice.Instance, Psychic.Instance			
 		) {}
 		*/

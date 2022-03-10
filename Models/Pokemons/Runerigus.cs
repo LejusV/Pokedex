@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Runerigus Specie to store common natural stats of all Runeriguss
-	#region SpecieRunerigus
-	public class SpecieRunerigus : PokemonSpecie
+	//Runerigus Species to store common natural stats of all Runeriguss
+	#region SpeciesRunerigus
+	public class SpeciesRunerigus : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRunerigus? _instance = null;
+		private static SpeciesRunerigus? _instance = null;
 #nullable restore
-        public static SpecieRunerigus Instance
+        public static SpeciesRunerigus Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRunerigus();
+                    _instance = new SpeciesRunerigus();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRunerigus Builder
-		public SpecieRunerigus() : base(
+		#region SpeciesRunerigus Constructor
+		public SpeciesRunerigus() : base(
 			"Runerigus",
 			1.6,
 			66.6,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			50, 105, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Runerigus Pokemon Class
+	//Runerigus PokemonInstance Class
 	#region Runerigus
-	public class Runerigus : Pokemon
+	public class RunerigusInstance : PokemonInstance
 	{
-		#region Runerigus Builders
+		#region Runerigus Constructors
 		/// <summary>
-		/// Runerigus Builder waiting for a Nickname & a Level
+		/// Runerigus Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Runerigus(string nickname, int level)
+		public RunerigusInstance(string nickname, int level)
 		: base(
 				867,
-				SpecieRunerigus.Instance, // Pokemon Specie
+				SpeciesRunerigus.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Runerigus Builder only waiting for a Level
 		/// </summary>
-		public Runerigus(int level)
+		public RunerigusInstance(int level)
 		: base(
 				867,
-				SpecieRunerigus.Instance, // Pokemon Specie
+				SpeciesRunerigus.Instance, // PokemonInstance Species
 				"Runerigus", level,
 				Ground.Instance, Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Runerigus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Runerigus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Runerigus() : base(
 			867,
-			SpecieRunerigus.Instance, // Pokemon Specie
+			SpeciesRunerigus.Instance, // PokemonInstance Species
 			Ground.Instance, Ghost.Instance			
 		) {}
 		*/

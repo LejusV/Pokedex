@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Taillow Specie to store common natural stats of all Taillows
-	#region SpecieTaillow
-	public class SpecieTaillow : PokemonSpecie
+	//Taillow Species to store common natural stats of all Taillows
+	#region SpeciesTaillow
+	public class SpeciesTaillow : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTaillow? _instance = null;
+		private static SpeciesTaillow? _instance = null;
 #nullable restore
-        public static SpecieTaillow Instance
+        public static SpeciesTaillow Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTaillow();
+                    _instance = new SpeciesTaillow();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTaillow Builder
-		public SpecieTaillow() : base(
+		#region SpeciesTaillow Constructor
+		public SpeciesTaillow() : base(
 			"Taillow",
 			0.3,
 			2.3,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Whirlwind",
+				"Fly",
+				"Double-Edge",
+				"Growl",
+				"Supersonic",
+				"Peck",
+				"Counter",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Mirror-Move",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Facade",
+				"Endeavor",
+				"Refresh",
+				"Secret-Power",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Air-Slash",
+				"Brave-Bird",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Quick-Guard",
+				"Work-Up",
+				"Hurricane",
+				"Boomburst",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Taillow Pokemon Class
+	//Taillow PokemonInstance Class
 	#region Taillow
-	public class Taillow : Pokemon
+	public class TaillowInstance : PokemonInstance
 	{
-		#region Taillow Builders
+		#region Taillow Constructors
 		/// <summary>
-		/// Taillow Builder waiting for a Nickname & a Level
+		/// Taillow Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Taillow(string nickname, int level)
+		public TaillowInstance(string nickname, int level)
 		: base(
 				276,
-				SpecieTaillow.Instance, // Pokemon Specie
+				SpeciesTaillow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Taillow Builder only waiting for a Level
 		/// </summary>
-		public Taillow(int level)
+		public TaillowInstance(int level)
 		: base(
 				276,
-				SpecieTaillow.Instance, // Pokemon Specie
+				SpeciesTaillow.Instance, // PokemonInstance Species
 				"Taillow", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Taillow Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Taillow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Taillow() : base(
 			276,
-			SpecieTaillow.Instance, // Pokemon Specie
+			SpeciesTaillow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

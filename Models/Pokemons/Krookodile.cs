@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Krookodile Specie to store common natural stats of all Krookodiles
-	#region SpecieKrookodile
-	public class SpecieKrookodile : PokemonSpecie
+	//Krookodile Species to store common natural stats of all Krookodiles
+	#region SpeciesKrookodile
+	public class SpeciesKrookodile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKrookodile? _instance = null;
+		private static SpeciesKrookodile? _instance = null;
 #nullable restore
-        public static SpecieKrookodile Instance
+        public static SpeciesKrookodile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKrookodile();
+                    _instance = new SpeciesKrookodile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKrookodile Builder
-		public SpecieKrookodile() : base(
+		#region SpeciesKrookodile Constructor
+		public SpeciesKrookodile() : base(
 			"Krookodile",
 			1.5,
 			96.3,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			65, 70, // Special Attack & Defense
 			92		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Outrage",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Crunch",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Sand-Tomb",
+				"Aerial-Ace",
+				"Block",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Fling",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Smack-Down",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch",
+				"Power-Trip",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Krookodile Pokemon Class
+	//Krookodile PokemonInstance Class
 	#region Krookodile
-	public class Krookodile : Pokemon
+	public class KrookodileInstance : PokemonInstance
 	{
-		#region Krookodile Builders
+		#region Krookodile Constructors
 		/// <summary>
-		/// Krookodile Builder waiting for a Nickname & a Level
+		/// Krookodile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Krookodile(string nickname, int level)
+		public KrookodileInstance(string nickname, int level)
 		: base(
 				553,
-				SpecieKrookodile.Instance, // Pokemon Specie
+				SpeciesKrookodile.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dark.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Krookodile Builder only waiting for a Level
 		/// </summary>
-		public Krookodile(int level)
+		public KrookodileInstance(int level)
 		: base(
 				553,
-				SpecieKrookodile.Instance, // Pokemon Specie
+				SpeciesKrookodile.Instance, // PokemonInstance Species
 				"Krookodile", level,
 				Ground.Instance, Dark.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Krookodile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Krookodile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Krookodile() : base(
 			553,
-			SpecieKrookodile.Instance, // Pokemon Specie
+			SpeciesKrookodile.Instance, // PokemonInstance Species
 			Ground.Instance, Dark.Instance			
 		) {}
 		*/

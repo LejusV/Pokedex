@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sableye Specie to store common natural stats of all Sableyes
-	#region SpecieSableye
-	public class SpecieSableye : PokemonSpecie
+	//Sableye Species to store common natural stats of all Sableyes
+	#region SpeciesSableye
+	public class SpeciesSableye : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSableye? _instance = null;
+		private static SpeciesSableye? _instance = null;
 #nullable restore
-        public static SpecieSableye Instance
+        public static SpeciesSableye Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSableye();
+                    _instance = new SpeciesSableye();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSableye Builder
-		public SpecieSableye() : base(
+		#region SpeciesSableye Constructor
+		public SpeciesSableye() : base(
 			"Sableye",
 			0.5,
 			11.0,
@@ -32,23 +34,142 @@ namespace Pokedex.Models.Pokemons
 			65, 65, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Scratch",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Mimic",
+				"Double-Team",
+				"Recover",
+				"Confuse-Ray",
+				"Metronome",
+				"Dream-Eater",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Foresight",
+				"Icy-Wind",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Dynamic-Punch",
+				"Moonlight",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Torment",
+				"Flatter",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Brick-Break",
+				"Knock-Off",
+				"Imprison",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Gravity",
+				"Natural-Gift",
+				"Feint",
+				"Metal-Burst",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Punishment",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Power-Gem",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Shadow-Sneak",
+				"Zen-Headbutt",
+				"Captivate",
+				"Ominous-Wind",
+				"Hone-Claws",
+				"Wonder-Room",
+				"Telekinesis",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Quash",
+				"Retaliate",
+				"Snarl",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sableye Pokemon Class
+	//Sableye PokemonInstance Class
 	#region Sableye
-	public class Sableye : Pokemon
+	public class SableyeInstance : PokemonInstance
 	{
-		#region Sableye Builders
+		#region Sableye Constructors
 		/// <summary>
-		/// Sableye Builder waiting for a Nickname & a Level
+		/// Sableye Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sableye(string nickname, int level)
+		public SableyeInstance(string nickname, int level)
 		: base(
 				302,
-				SpecieSableye.Instance, // Pokemon Specie
+				SpeciesSableye.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Ghost.Instance			
 		)
@@ -60,10 +181,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sableye Builder only waiting for a Level
 		/// </summary>
-		public Sableye(int level)
+		public SableyeInstance(int level)
 		: base(
 				302,
-				SpecieSableye.Instance, // Pokemon Specie
+				SpeciesSableye.Instance, // PokemonInstance Species
 				"Sableye", level,
 				Dark.Instance, Ghost.Instance			
 		)
@@ -73,12 +194,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sableye Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sableye Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sableye() : base(
 			302,
-			SpecieSableye.Instance, // Pokemon Specie
+			SpeciesSableye.Instance, // PokemonInstance Species
 			Dark.Instance, Ghost.Instance			
 		) {}
 		*/

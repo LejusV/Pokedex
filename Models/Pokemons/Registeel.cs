@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Registeel Specie to store common natural stats of all Registeels
-	#region SpecieRegisteel
-	public class SpecieRegisteel : PokemonSpecie
+	//Registeel Species to store common natural stats of all Registeels
+	#region SpeciesRegisteel
+	public class SpeciesRegisteel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRegisteel? _instance = null;
+		private static SpeciesRegisteel? _instance = null;
 #nullable restore
-        public static SpecieRegisteel Instance
+        public static SpeciesRegisteel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRegisteel();
+                    _instance = new SpeciesRegisteel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRegisteel Builder
-		public SpecieRegisteel() : base(
+		#region SpeciesRegisteel Constructor
+		public SpeciesRegisteel() : base(
 			"Registeel",
 			1.9,
 			205.0,
@@ -32,23 +34,111 @@ namespace Pokedex.Models.Pokemons
 			75, 150, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Stomp",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Amnesia",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Lock-On",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Shock-Wave",
+				"Gravity",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Charge-Beam",
+				"Hone-Claws",
+				"Round",
+				"Bulldoze",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Registeel Pokemon Class
+	//Registeel PokemonInstance Class
 	#region Registeel
-	public class Registeel : Pokemon
+	public class RegisteelInstance : PokemonInstance
 	{
-		#region Registeel Builders
+		#region Registeel Constructors
 		/// <summary>
-		/// Registeel Builder waiting for a Nickname & a Level
+		/// Registeel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Registeel(string nickname, int level)
+		public RegisteelInstance(string nickname, int level)
 		: base(
 				379,
-				SpecieRegisteel.Instance, // Pokemon Specie
+				SpeciesRegisteel.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +150,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Registeel Builder only waiting for a Level
 		/// </summary>
-		public Registeel(int level)
+		public RegisteelInstance(int level)
 		: base(
 				379,
-				SpecieRegisteel.Instance, // Pokemon Specie
+				SpeciesRegisteel.Instance, // PokemonInstance Species
 				"Registeel", level,
 				Steel.Instance			
 		)
@@ -73,12 +163,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Registeel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Registeel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Registeel() : base(
 			379,
-			SpecieRegisteel.Instance, // Pokemon Specie
+			SpeciesRegisteel.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

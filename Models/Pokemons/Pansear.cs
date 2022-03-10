@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pansear Specie to store common natural stats of all Pansears
-	#region SpeciePansear
-	public class SpeciePansear : PokemonSpecie
+	//Pansear Species to store common natural stats of all Pansears
+	#region SpeciesPansear
+	public class SpeciesPansear : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePansear? _instance = null;
+		private static SpeciesPansear? _instance = null;
 #nullable restore
-        public static SpeciePansear Instance
+        public static SpeciesPansear Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePansear();
+                    _instance = new SpeciesPansear();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePansear Builder
-		public SpeciePansear() : base(
+		#region SpeciesPansear Constructor
+		public SpeciesPansear() : base(
 			"Pansear",
 			0.6,
 			11.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			53, 48, // Special Attack & Defense
 			64		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Scratch",
+				"Cut",
+				"Leer",
+				"Bite",
+				"Flamethrower",
+				"Low-Kick",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Fire-Blast",
+				"Amnesia",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Recycle",
+				"Yawn",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Astonish",
+				"Overheat",
+				"Rock-Tomb",
+				"Tickle",
+				"Covet",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Gastro-Acid",
+				"Flare-Blitz",
+				"Nasty-Plot",
+				"Shadow-Claw",
+				"Gunk-Shot",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Low-Sweep",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Fire-Pledge",
+				"Work-Up",
+				"Belch",
+				"Disarming-Voice",
+				"Play-Nice",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pansear Pokemon Class
+	//Pansear PokemonInstance Class
 	#region Pansear
-	public class Pansear : Pokemon
+	public class PansearInstance : PokemonInstance
 	{
-		#region Pansear Builders
+		#region Pansear Constructors
 		/// <summary>
-		/// Pansear Builder waiting for a Nickname & a Level
+		/// Pansear Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pansear(string nickname, int level)
+		public PansearInstance(string nickname, int level)
 		: base(
 				513,
-				SpeciePansear.Instance, // Pokemon Specie
+				SpeciesPansear.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pansear Builder only waiting for a Level
 		/// </summary>
-		public Pansear(int level)
+		public PansearInstance(int level)
 		: base(
 				513,
-				SpeciePansear.Instance, // Pokemon Specie
+				SpeciesPansear.Instance, // PokemonInstance Species
 				"Pansear", level,
 				Fire.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pansear Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pansear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pansear() : base(
 			513,
-			SpeciePansear.Instance, // Pokemon Specie
+			SpeciesPansear.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spewpa Specie to store common natural stats of all Spewpas
-	#region SpecieSpewpa
-	public class SpecieSpewpa : PokemonSpecie
+	//Spewpa Species to store common natural stats of all Spewpas
+	#region SpeciesSpewpa
+	public class SpeciesSpewpa : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSpewpa? _instance = null;
+		private static SpeciesSpewpa? _instance = null;
 #nullable restore
-        public static SpecieSpewpa Instance
+        public static SpeciesSpewpa Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSpewpa();
+                    _instance = new SpeciesSpewpa();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSpewpa Builder
-		public SpecieSpewpa() : base(
+		#region SpeciesSpewpa Constructor
+		public SpeciesSpewpa() : base(
 			"Spewpa",
 			0.3,
 			8.4,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			27, 30, // Special Attack & Defense
 			29		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Harden",
+				"Protect",
+				"Iron-Defense",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Spewpa Pokemon Class
+	//Spewpa PokemonInstance Class
 	#region Spewpa
-	public class Spewpa : Pokemon
+	public class SpewpaInstance : PokemonInstance
 	{
-		#region Spewpa Builders
+		#region Spewpa Constructors
 		/// <summary>
-		/// Spewpa Builder waiting for a Nickname & a Level
+		/// Spewpa Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Spewpa(string nickname, int level)
+		public SpewpaInstance(string nickname, int level)
 		: base(
 				665,
-				SpecieSpewpa.Instance, // Pokemon Specie
+				SpeciesSpewpa.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spewpa Builder only waiting for a Level
 		/// </summary>
-		public Spewpa(int level)
+		public SpewpaInstance(int level)
 		: base(
 				665,
-				SpecieSpewpa.Instance, // Pokemon Specie
+				SpeciesSpewpa.Instance, // PokemonInstance Species
 				"Spewpa", level,
 				Bug.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Spewpa Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Spewpa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Spewpa() : base(
 			665,
-			SpecieSpewpa.Instance, // Pokemon Specie
+			SpeciesSpewpa.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

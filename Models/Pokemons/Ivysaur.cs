@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ivysaur Specie to store common natural stats of all Ivysaurs
-	#region SpecieIvysaur
-	public class SpecieIvysaur : PokemonSpecie
+	//Ivysaur Species to store common natural stats of all Ivysaurs
+	#region SpeciesIvysaur
+	public class SpeciesIvysaur : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieIvysaur? _instance = null;
+		private static SpeciesIvysaur? _instance = null;
 #nullable restore
-        public static SpecieIvysaur Instance
+        public static SpeciesIvysaur Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieIvysaur();
+                    _instance = new SpeciesIvysaur();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieIvysaur Builder
-		public SpecieIvysaur() : base(
+		#region SpeciesIvysaur Constructor
+		public SpeciesIvysaur() : base(
 			"Ivysaur",
 			1.0,
 			13.0,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Vine-Whip",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Strength",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Sleep-Powder",
+				"String-Shot",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Knock-Off",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Round",
+				"Echoed-Voice",
+				"Grass-Pledge",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ivysaur Pokemon Class
+	//Ivysaur PokemonInstance Class
 	#region Ivysaur
-	public class Ivysaur : Pokemon
+	public class IvysaurInstance : PokemonInstance
 	{
-		#region Ivysaur Builders
+		#region Ivysaur Constructors
 		/// <summary>
-		/// Ivysaur Builder waiting for a Nickname & a Level
+		/// Ivysaur Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ivysaur(string nickname, int level)
+		public IvysaurInstance(string nickname, int level)
 		: base(
 				2,
-				SpecieIvysaur.Instance, // Pokemon Specie
+				SpeciesIvysaur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ivysaur Builder only waiting for a Level
 		/// </summary>
-		public Ivysaur(int level)
+		public IvysaurInstance(int level)
 		: base(
 				2,
-				SpecieIvysaur.Instance, // Pokemon Specie
+				SpeciesIvysaur.Instance, // PokemonInstance Species
 				"Ivysaur", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ivysaur Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ivysaur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ivysaur() : base(
 			2,
-			SpecieIvysaur.Instance, // Pokemon Specie
+			SpeciesIvysaur.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

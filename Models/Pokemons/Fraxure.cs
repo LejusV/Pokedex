@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Fraxure Specie to store common natural stats of all Fraxures
-	#region SpecieFraxure
-	public class SpecieFraxure : PokemonSpecie
+	//Fraxure Species to store common natural stats of all Fraxures
+	#region SpeciesFraxure
+	public class SpeciesFraxure : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieFraxure? _instance = null;
+		private static SpeciesFraxure? _instance = null;
 #nullable restore
-        public static SpecieFraxure Instance
+        public static SpeciesFraxure Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieFraxure();
+                    _instance = new SpeciesFraxure();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieFraxure Builder
-		public SpecieFraxure() : base(
+		#region SpeciesFraxure Constructor
+		public SpeciesFraxure() : base(
 			"Fraxure",
 			1.0,
 			36.0,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			67		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Guillotine",
+				"Swords-Dance",
+				"Cut",
+				"Leer",
+				"Roar",
+				"Low-Kick",
+				"Strength",
+				"Dragon-Rage",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Dragon-Dance",
+				"Shock-Wave",
+				"Payback",
+				"Assurance",
+				"Fling",
+				"Poison-Jab",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Dragon-Pulse",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Draco-Meteor",
+				"Hone-Claws",
+				"Round",
+				"Incinerate",
+				"Dragon-Tail",
+				"Dual-Chop",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Fraxure Pokemon Class
+	//Fraxure PokemonInstance Class
 	#region Fraxure
-	public class Fraxure : Pokemon
+	public class FraxureInstance : PokemonInstance
 	{
-		#region Fraxure Builders
+		#region Fraxure Constructors
 		/// <summary>
-		/// Fraxure Builder waiting for a Nickname & a Level
+		/// Fraxure Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Fraxure(string nickname, int level)
+		public FraxureInstance(string nickname, int level)
 		: base(
 				611,
-				SpecieFraxure.Instance, // Pokemon Specie
+				SpeciesFraxure.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Fraxure Builder only waiting for a Level
 		/// </summary>
-		public Fraxure(int level)
+		public FraxureInstance(int level)
 		: base(
 				611,
-				SpecieFraxure.Instance, // Pokemon Specie
+				SpeciesFraxure.Instance, // PokemonInstance Species
 				"Fraxure", level,
 				Dragon.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Fraxure Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Fraxure Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Fraxure() : base(
 			611,
-			SpecieFraxure.Instance, // Pokemon Specie
+			SpeciesFraxure.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

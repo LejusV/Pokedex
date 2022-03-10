@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Skarmory Specie to store common natural stats of all Skarmorys
-	#region SpecieSkarmory
-	public class SpecieSkarmory : PokemonSpecie
+	//Skarmory Species to store common natural stats of all Skarmorys
+	#region SpeciesSkarmory
+	public class SpeciesSkarmory : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSkarmory? _instance = null;
+		private static SpeciesSkarmory? _instance = null;
 #nullable restore
-        public static SpecieSkarmory Instance
+        public static SpeciesSkarmory Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSkarmory();
+                    _instance = new SpeciesSkarmory();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSkarmory Builder
-		public SpecieSkarmory() : base(
+		#region SpeciesSkarmory Constructor
+		public SpeciesSkarmory() : base(
 			"Skarmory",
 			1.7,
 			50.5,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			40, 70, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Whirlwind",
+				"Fly",
+				"Sand-Attack",
+				"Fury-Attack",
+				"Double-Edge",
+				"Leer",
+				"Roar",
+				"Peck",
+				"Drill-Peck",
+				"Counter",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Double-Team",
+				"Swift",
+				"Sky-Attack",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Spikes",
+				"Icy-Wind",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Twister",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Secret-Power",
+				"Air-Cutter",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Pluck",
+				"Tailwind",
+				"Payback",
+				"Assurance",
+				"Guard-Swap",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Air-Slash",
+				"X-Scissor",
+				"Brave-Bird",
+				"Flash-Cannon",
+				"Defog",
+				"Iron-Head",
+				"Captivate",
+				"Stealth-Rock",
+				"Ominous-Wind",
+				"Autotomize",
+				"Round",
+				"Sky-Drop",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Skarmory Pokemon Class
+	//Skarmory PokemonInstance Class
 	#region Skarmory
-	public class Skarmory : Pokemon
+	public class SkarmoryInstance : PokemonInstance
 	{
-		#region Skarmory Builders
+		#region Skarmory Constructors
 		/// <summary>
-		/// Skarmory Builder waiting for a Nickname & a Level
+		/// Skarmory Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Skarmory(string nickname, int level)
+		public SkarmoryInstance(string nickname, int level)
 		: base(
 				227,
-				SpecieSkarmory.Instance, // Pokemon Specie
+				SpeciesSkarmory.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Flying.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Skarmory Builder only waiting for a Level
 		/// </summary>
-		public Skarmory(int level)
+		public SkarmoryInstance(int level)
 		: base(
 				227,
-				SpecieSkarmory.Instance, // Pokemon Specie
+				SpeciesSkarmory.Instance, // PokemonInstance Species
 				"Skarmory", level,
 				Steel.Instance, Flying.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Skarmory Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Skarmory Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Skarmory() : base(
 			227,
-			SpecieSkarmory.Instance, // Pokemon Specie
+			SpeciesSkarmory.Instance, // PokemonInstance Species
 			Steel.Instance, Flying.Instance			
 		) {}
 		*/

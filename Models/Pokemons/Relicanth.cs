@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Relicanth Specie to store common natural stats of all Relicanths
-	#region SpecieRelicanth
-	public class SpecieRelicanth : PokemonSpecie
+	//Relicanth Species to store common natural stats of all Relicanths
+	#region SpeciesRelicanth
+	public class SpeciesRelicanth : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRelicanth? _instance = null;
+		private static SpeciesRelicanth? _instance = null;
 #nullable restore
-        public static SpecieRelicanth Instance
+        public static SpeciesRelicanth Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRelicanth();
+                    _instance = new SpeciesRelicanth();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRelicanth Builder
-		public SpecieRelicanth() : base(
+		#region SpeciesRelicanth Constructor
+		public SpeciesRelicanth() : base(
 			"Relicanth",
 			1.0,
 			23.4,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			45, 65, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Waterfall",
+				"Skull-Bash",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Magnitude",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Yawn",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Water-Sport",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Rock-Polish",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Smack-Down",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Relicanth Pokemon Class
+	//Relicanth PokemonInstance Class
 	#region Relicanth
-	public class Relicanth : Pokemon
+	public class RelicanthInstance : PokemonInstance
 	{
-		#region Relicanth Builders
+		#region Relicanth Constructors
 		/// <summary>
-		/// Relicanth Builder waiting for a Nickname & a Level
+		/// Relicanth Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Relicanth(string nickname, int level)
+		public RelicanthInstance(string nickname, int level)
 		: base(
 				369,
-				SpecieRelicanth.Instance, // Pokemon Specie
+				SpeciesRelicanth.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Relicanth Builder only waiting for a Level
 		/// </summary>
-		public Relicanth(int level)
+		public RelicanthInstance(int level)
 		: base(
 				369,
-				SpecieRelicanth.Instance, // Pokemon Specie
+				SpeciesRelicanth.Instance, // PokemonInstance Species
 				"Relicanth", level,
 				Water.Instance, Rock.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Relicanth Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Relicanth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Relicanth() : base(
 			369,
-			SpecieRelicanth.Instance, // Pokemon Specie
+			SpeciesRelicanth.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}
 		*/

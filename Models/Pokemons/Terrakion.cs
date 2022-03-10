@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Terrakion Specie to store common natural stats of all Terrakions
-	#region SpecieTerrakion
-	public class SpecieTerrakion : PokemonSpecie
+	//Terrakion Species to store common natural stats of all Terrakions
+	#region SpeciesTerrakion
+	public class SpeciesTerrakion : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTerrakion? _instance = null;
+		private static SpeciesTerrakion? _instance = null;
 #nullable restore
-        public static SpecieTerrakion Instance
+        public static SpeciesTerrakion Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTerrakion();
+                    _instance = new SpeciesTerrakion();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTerrakion Builder
-		public SpecieTerrakion() : base(
+		#region SpeciesTerrakion Constructor
+		public SpeciesTerrakion() : base(
 			"Terrakion",
 			1.9,
 			260.0,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			72, 90, // Special Attack & Defense
 			108		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Double-Kick",
+				"Take-Down",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Reflect",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Psych-Up",
+				"Rock-Smash",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Superpower",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Block",
+				"Calm-Mind",
+				"Close-Combat",
+				"Rock-Polish",
+				"Poison-Jab",
+				"X-Scissor",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Sacred-Sword",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Terrakion Pokemon Class
+	//Terrakion PokemonInstance Class
 	#region Terrakion
-	public class Terrakion : Pokemon
+	public class TerrakionInstance : PokemonInstance
 	{
-		#region Terrakion Builders
+		#region Terrakion Constructors
 		/// <summary>
-		/// Terrakion Builder waiting for a Nickname & a Level
+		/// Terrakion Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Terrakion(string nickname, int level)
+		public TerrakionInstance(string nickname, int level)
 		: base(
 				639,
-				SpecieTerrakion.Instance, // Pokemon Specie
+				SpeciesTerrakion.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fighting.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Terrakion Builder only waiting for a Level
 		/// </summary>
-		public Terrakion(int level)
+		public TerrakionInstance(int level)
 		: base(
 				639,
-				SpecieTerrakion.Instance, // Pokemon Specie
+				SpeciesTerrakion.Instance, // PokemonInstance Species
 				"Terrakion", level,
 				Rock.Instance, Fighting.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Terrakion Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Terrakion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Terrakion() : base(
 			639,
-			SpecieTerrakion.Instance, // Pokemon Specie
+			SpeciesTerrakion.Instance, // PokemonInstance Species
 			Rock.Instance, Fighting.Instance			
 		) {}
 		*/

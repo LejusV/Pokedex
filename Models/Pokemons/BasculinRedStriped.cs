@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Basculin-Red-Striped Specie to store common natural stats of all Basculin-Red-Stripeds
-	#region SpecieBasculin-Red-Striped
-	public class SpecieBasculinRedStriped : PokemonSpecie
+	//Basculin-Red-Striped Species to store common natural stats of all Basculin-Red-Stripeds
+	#region SpeciesBasculin-Red-Striped
+	public class SpeciesBasculinRedStriped : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBasculinRedStriped? _instance = null;
+		private static SpeciesBasculinRedStriped? _instance = null;
 #nullable restore
-        public static SpecieBasculinRedStriped Instance
+        public static SpeciesBasculinRedStriped Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBasculinRedStriped();
+                    _instance = new SpeciesBasculinRedStriped();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBasculin-Red-Striped Builder
-		public SpecieBasculinRedStriped() : base(
+		#region SpeciesBasculin-Red-Striped Constructor
+		public SpeciesBasculinRedStriped() : base(
 			"Basculin-Red-Striped",
 			1.0,
 			18.0,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			80, 55, // Special Attack & Defense
 			98		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Bubble-Beam",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Double-Team",
+				"Waterfall",
+				"Swift",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Scary-Face",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Revenge",
+				"Endeavor",
+				"Secret-Power",
+				"Dive",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Brine",
+				"Aqua-Tail",
+				"Zen-Headbutt",
+				"Aqua-Jet",
+				"Head-Smash",
+				"Soak",
+				"Round",
+				"Chip-Away",
+				"Scald",
+				"Final-Gambit",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Basculin-Red-Striped Pokemon Class
+	//Basculin-Red-Striped PokemonInstance Class
 	#region Basculin-Red-Striped
-	public class BasculinRedStriped : Pokemon
+	public class BasculinRedStripedInstance : PokemonInstance
 	{
-		#region Basculin-Red-Striped Builders
+		#region Basculin-Red-Striped Constructors
 		/// <summary>
-		/// Basculin-Red-Striped Builder waiting for a Nickname & a Level
+		/// Basculin-Red-Striped Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public BasculinRedStriped(string nickname, int level)
+		public BasculinRedStripedInstance(string nickname, int level)
 		: base(
 				550,
-				SpecieBasculinRedStriped.Instance, // Pokemon Specie
+				SpeciesBasculinRedStriped.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Basculin-Red-Striped Builder only waiting for a Level
 		/// </summary>
-		public BasculinRedStriped(int level)
+		public BasculinRedStripedInstance(int level)
 		: base(
 				550,
-				SpecieBasculinRedStriped.Instance, // Pokemon Specie
+				SpeciesBasculinRedStriped.Instance, // PokemonInstance Species
 				"Basculin-Red-Striped", level,
 				Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Basculin-Red-Striped Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Basculin-Red-Striped Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public BasculinRedStriped() : base(
 			550,
-			SpecieBasculinRedStriped.Instance, // Pokemon Specie
+			SpeciesBasculinRedStriped.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

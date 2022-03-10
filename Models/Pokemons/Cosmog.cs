@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cosmog Specie to store common natural stats of all Cosmogs
-	#region SpecieCosmog
-	public class SpecieCosmog : PokemonSpecie
+	//Cosmog Species to store common natural stats of all Cosmogs
+	#region SpeciesCosmog
+	public class SpeciesCosmog : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCosmog? _instance = null;
+		private static SpeciesCosmog? _instance = null;
 #nullable restore
-        public static SpecieCosmog Instance
+        public static SpeciesCosmog Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCosmog();
+                    _instance = new SpeciesCosmog();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCosmog Builder
-		public SpecieCosmog() : base(
+		#region SpeciesCosmog Constructor
+		public SpeciesCosmog() : base(
 			"Cosmog",
 			0.2,
 			0.1,
@@ -32,23 +34,36 @@ namespace Pokedex.Models.Pokemons
 			29, 31, // Special Attack & Defense
 			37		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Teleport",
+				"Splash"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cosmog Pokemon Class
+	//Cosmog PokemonInstance Class
 	#region Cosmog
-	public class Cosmog : Pokemon
+	public class CosmogInstance : PokemonInstance
 	{
-		#region Cosmog Builders
+		#region Cosmog Constructors
 		/// <summary>
-		/// Cosmog Builder waiting for a Nickname & a Level
+		/// Cosmog Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cosmog(string nickname, int level)
+		public CosmogInstance(string nickname, int level)
 		: base(
 				789,
-				SpecieCosmog.Instance, // Pokemon Specie
+				SpeciesCosmog.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +75,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cosmog Builder only waiting for a Level
 		/// </summary>
-		public Cosmog(int level)
+		public CosmogInstance(int level)
 		: base(
 				789,
-				SpecieCosmog.Instance, // Pokemon Specie
+				SpeciesCosmog.Instance, // PokemonInstance Species
 				"Cosmog", level,
 				Psychic.Instance			
 		)
@@ -73,12 +88,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cosmog Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cosmog Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cosmog() : base(
 			789,
-			SpecieCosmog.Instance, // Pokemon Specie
+			SpeciesCosmog.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

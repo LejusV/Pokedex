@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Litwick Specie to store common natural stats of all Litwicks
-	#region SpecieLitwick
-	public class SpecieLitwick : PokemonSpecie
+	//Litwick Species to store common natural stats of all Litwicks
+	#region SpeciesLitwick
+	public class SpeciesLitwick : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLitwick? _instance = null;
+		private static SpeciesLitwick? _instance = null;
 #nullable restore
-        public static SpecieLitwick Instance
+        public static SpeciesLitwick Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLitwick();
+                    _instance = new SpeciesLitwick();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLitwick Builder
-		public SpecieLitwick() : base(
+		#region SpeciesLitwick Constructor
+		public SpeciesLitwick() : base(
 			"Litwick",
 			0.3,
 			3.1,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			65, 55, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Acid",
+				"Ember",
+				"Flamethrower",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Minimize",
+				"Confuse-Ray",
+				"Haze",
+				"Smog",
+				"Fire-Blast",
+				"Dream-Eater",
+				"Flash",
+				"Acid-Armor",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Memento",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Imprison",
+				"Secret-Power",
+				"Astonish",
+				"Overheat",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Payback",
+				"Embargo",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Trick-Room",
+				"Captivate",
+				"Power-Split",
+				"Telekinesis",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Round",
+				"Clear-Smog",
+				"Hex",
+				"Incinerate",
+				"Inferno",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Litwick Pokemon Class
+	//Litwick PokemonInstance Class
 	#region Litwick
-	public class Litwick : Pokemon
+	public class LitwickInstance : PokemonInstance
 	{
-		#region Litwick Builders
+		#region Litwick Constructors
 		/// <summary>
-		/// Litwick Builder waiting for a Nickname & a Level
+		/// Litwick Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Litwick(string nickname, int level)
+		public LitwickInstance(string nickname, int level)
 		: base(
 				607,
-				SpecieLitwick.Instance, // Pokemon Specie
+				SpeciesLitwick.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Litwick Builder only waiting for a Level
 		/// </summary>
-		public Litwick(int level)
+		public LitwickInstance(int level)
 		: base(
 				607,
-				SpecieLitwick.Instance, // Pokemon Specie
+				SpeciesLitwick.Instance, // PokemonInstance Species
 				"Litwick", level,
 				Ghost.Instance, Fire.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Litwick Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Litwick Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Litwick() : base(
 			607,
-			SpecieLitwick.Instance, // Pokemon Specie
+			SpeciesLitwick.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}
 		*/

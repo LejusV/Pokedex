@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bounsweet Specie to store common natural stats of all Bounsweets
-	#region SpecieBounsweet
-	public class SpecieBounsweet : PokemonSpecie
+	//Bounsweet Species to store common natural stats of all Bounsweets
+	#region SpeciesBounsweet
+	public class SpeciesBounsweet : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBounsweet? _instance = null;
+		private static SpeciesBounsweet? _instance = null;
 #nullable restore
-        public static SpecieBounsweet Instance
+        public static SpeciesBounsweet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBounsweet();
+                    _instance = new SpeciesBounsweet();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBounsweet Builder
-		public SpecieBounsweet() : base(
+		#region SpeciesBounsweet Constructor
+		public SpeciesBounsweet() : base(
 			"Bounsweet",
 			0.3,
 			3.2,
@@ -32,23 +34,72 @@ namespace Pokedex.Models.Pokemons
 			30, 38, // Special Attack & Defense
 			32		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Flail",
+				"Protect",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Rapid-Spin",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Teeter-Dance",
+				"Grass-Whistle",
+				"Magical-Leaf",
+				"Feint",
+				"Acupressure",
+				"Energy-Ball",
+				"Grass-Knot",
+				"Round",
+				"Play-Rough",
+				"Play-Nice",
+				"Confide",
+				"Aromatic-Mist",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bounsweet Pokemon Class
+	//Bounsweet PokemonInstance Class
 	#region Bounsweet
-	public class Bounsweet : Pokemon
+	public class BounsweetInstance : PokemonInstance
 	{
-		#region Bounsweet Builders
+		#region Bounsweet Constructors
 		/// <summary>
-		/// Bounsweet Builder waiting for a Nickname & a Level
+		/// Bounsweet Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bounsweet(string nickname, int level)
+		public BounsweetInstance(string nickname, int level)
 		: base(
 				761,
-				SpecieBounsweet.Instance, // Pokemon Specie
+				SpeciesBounsweet.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +111,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bounsweet Builder only waiting for a Level
 		/// </summary>
-		public Bounsweet(int level)
+		public BounsweetInstance(int level)
 		: base(
 				761,
-				SpecieBounsweet.Instance, // Pokemon Specie
+				SpeciesBounsweet.Instance, // PokemonInstance Species
 				"Bounsweet", level,
 				Grass.Instance			
 		)
@@ -73,12 +124,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bounsweet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bounsweet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bounsweet() : base(
 			761,
-			SpecieBounsweet.Instance, // Pokemon Specie
+			SpeciesBounsweet.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

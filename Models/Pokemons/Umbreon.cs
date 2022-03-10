@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Umbreon Specie to store common natural stats of all Umbreons
-	#region SpecieUmbreon
-	public class SpecieUmbreon : PokemonSpecie
+	//Umbreon Species to store common natural stats of all Umbreons
+	#region SpeciesUmbreon
+	public class SpeciesUmbreon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieUmbreon? _instance = null;
+		private static SpeciesUmbreon? _instance = null;
 #nullable restore
-        public static SpecieUmbreon Instance
+        public static SpeciesUmbreon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieUmbreon();
+                    _instance = new SpeciesUmbreon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieUmbreon Builder
-		public SpecieUmbreon() : base(
+		#region SpeciesUmbreon Constructor
+		public SpeciesUmbreon() : base(
 			"Umbreon",
 			1.0,
 			27.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			60, 130, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Tail-Whip",
+				"Hyper-Beam",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Quick-Attack",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Confuse-Ray",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Moonlight",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Covet",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Guard-Swap",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Giga-Impact",
+				"Captivate",
+				"Wonder-Room",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Snarl",
+				"Confide",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Umbreon Pokemon Class
+	//Umbreon PokemonInstance Class
 	#region Umbreon
-	public class Umbreon : Pokemon
+	public class UmbreonInstance : PokemonInstance
 	{
-		#region Umbreon Builders
+		#region Umbreon Constructors
 		/// <summary>
-		/// Umbreon Builder waiting for a Nickname & a Level
+		/// Umbreon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Umbreon(string nickname, int level)
+		public UmbreonInstance(string nickname, int level)
 		: base(
 				197,
-				SpecieUmbreon.Instance, // Pokemon Specie
+				SpeciesUmbreon.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Umbreon Builder only waiting for a Level
 		/// </summary>
-		public Umbreon(int level)
+		public UmbreonInstance(int level)
 		: base(
 				197,
-				SpecieUmbreon.Instance, // Pokemon Specie
+				SpeciesUmbreon.Instance, // PokemonInstance Species
 				"Umbreon", level,
 				Dark.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Umbreon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Umbreon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Umbreon() : base(
 			197,
-			SpecieUmbreon.Instance, // Pokemon Specie
+			SpeciesUmbreon.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

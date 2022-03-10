@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Comfey Specie to store common natural stats of all Comfeys
-	#region SpecieComfey
-	public class SpecieComfey : PokemonSpecie
+	//Comfey Species to store common natural stats of all Comfeys
+	#region SpeciesComfey
+	public class SpeciesComfey : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieComfey? _instance = null;
+		private static SpeciesComfey? _instance = null;
 #nullable restore
-        public static SpecieComfey Instance
+        public static SpeciesComfey Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieComfey();
+                    _instance = new SpeciesComfey();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieComfey Builder
-		public SpecieComfey() : base(
+		#region SpeciesComfey Constructor
+		public SpeciesComfey() : base(
 			"Comfey",
 			0.1,
 			0.3,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			82, 110, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vine-Whip",
+				"Wrap",
+				"Hyper-Beam",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Petal-Dance",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Amnesia",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"Sweet-Kiss",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Aromatherapy",
+				"Magical-Leaf",
+				"Calm-Mind",
+				"Natural-Gift",
+				"U-Turn",
+				"Fling",
+				"Lucky-Chant",
+				"Energy-Ball",
+				"Trick-Room",
+				"Grass-Knot",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Acrobatics",
+				"Petal-Blizzard",
+				"Draining-Kiss",
+				"Flower-Shield",
+				"Grassy-Terrain",
+				"Play-Rough",
+				"Confide",
+				"Dazzling-Gleam",
+				"Floral-Healing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Comfey Pokemon Class
+	//Comfey PokemonInstance Class
 	#region Comfey
-	public class Comfey : Pokemon
+	public class ComfeyInstance : PokemonInstance
 	{
-		#region Comfey Builders
+		#region Comfey Constructors
 		/// <summary>
-		/// Comfey Builder waiting for a Nickname & a Level
+		/// Comfey Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Comfey(string nickname, int level)
+		public ComfeyInstance(string nickname, int level)
 		: base(
 				764,
-				SpecieComfey.Instance, // Pokemon Specie
+				SpeciesComfey.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Comfey Builder only waiting for a Level
 		/// </summary>
-		public Comfey(int level)
+		public ComfeyInstance(int level)
 		: base(
 				764,
-				SpecieComfey.Instance, // Pokemon Specie
+				SpeciesComfey.Instance, // PokemonInstance Species
 				"Comfey", level,
 				Fairy.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Comfey Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Comfey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Comfey() : base(
 			764,
-			SpecieComfey.Instance, // Pokemon Specie
+			SpeciesComfey.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

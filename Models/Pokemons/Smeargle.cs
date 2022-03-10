@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Smeargle Specie to store common natural stats of all Smeargles
-	#region SpecieSmeargle
-	public class SpecieSmeargle : PokemonSpecie
+	//Smeargle Species to store common natural stats of all Smeargles
+	#region SpeciesSmeargle
+	public class SpeciesSmeargle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSmeargle? _instance = null;
+		private static SpeciesSmeargle? _instance = null;
 #nullable restore
-        public static SpecieSmeargle Instance
+        public static SpeciesSmeargle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSmeargle();
+                    _instance = new SpeciesSmeargle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSmeargle Builder
-		public SpecieSmeargle() : base(
+		#region SpeciesSmeargle Constructor
+		public SpeciesSmeargle() : base(
 			"Smeargle",
 			1.2,
 			58.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			20, 45, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sketch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Smeargle Pokemon Class
+	//Smeargle PokemonInstance Class
 	#region Smeargle
-	public class Smeargle : Pokemon
+	public class SmeargleInstance : PokemonInstance
 	{
-		#region Smeargle Builders
+		#region Smeargle Constructors
 		/// <summary>
-		/// Smeargle Builder waiting for a Nickname & a Level
+		/// Smeargle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Smeargle(string nickname, int level)
+		public SmeargleInstance(string nickname, int level)
 		: base(
 				235,
-				SpecieSmeargle.Instance, // Pokemon Specie
+				SpeciesSmeargle.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Smeargle Builder only waiting for a Level
 		/// </summary>
-		public Smeargle(int level)
+		public SmeargleInstance(int level)
 		: base(
 				235,
-				SpecieSmeargle.Instance, // Pokemon Specie
+				SpeciesSmeargle.Instance, // PokemonInstance Species
 				"Smeargle", level,
 				Normal.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Smeargle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Smeargle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Smeargle() : base(
 			235,
-			SpecieSmeargle.Instance, // Pokemon Specie
+			SpeciesSmeargle.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

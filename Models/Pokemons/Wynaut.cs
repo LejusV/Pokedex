@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wynaut Specie to store common natural stats of all Wynauts
-	#region SpecieWynaut
-	public class SpecieWynaut : PokemonSpecie
+	//Wynaut Species to store common natural stats of all Wynauts
+	#region SpeciesWynaut
+	public class SpeciesWynaut : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWynaut? _instance = null;
+		private static SpeciesWynaut? _instance = null;
 #nullable restore
-        public static SpecieWynaut Instance
+        public static SpeciesWynaut Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWynaut();
+                    _instance = new SpeciesWynaut();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWynaut Builder
-		public SpecieWynaut() : base(
+		#region SpeciesWynaut Constructor
+		public SpeciesWynaut() : base(
 			"Wynaut",
 			0.6,
 			14.0,
@@ -32,23 +34,41 @@ namespace Pokedex.Models.Pokemons
 			23, 48, // Special Attack & Defense
 			23		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Counter",
+				"Splash",
+				"Destiny-Bond",
+				"Charm",
+				"Safeguard",
+				"Encore",
+				"Mirror-Coat"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wynaut Pokemon Class
+	//Wynaut PokemonInstance Class
 	#region Wynaut
-	public class Wynaut : Pokemon
+	public class WynautInstance : PokemonInstance
 	{
-		#region Wynaut Builders
+		#region Wynaut Constructors
 		/// <summary>
-		/// Wynaut Builder waiting for a Nickname & a Level
+		/// Wynaut Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Wynaut(string nickname, int level)
+		public WynautInstance(string nickname, int level)
 		: base(
 				360,
-				SpecieWynaut.Instance, // Pokemon Specie
+				SpeciesWynaut.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +80,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wynaut Builder only waiting for a Level
 		/// </summary>
-		public Wynaut(int level)
+		public WynautInstance(int level)
 		: base(
 				360,
-				SpecieWynaut.Instance, // Pokemon Specie
+				SpeciesWynaut.Instance, // PokemonInstance Species
 				"Wynaut", level,
 				Psychic.Instance			
 		)
@@ -73,12 +93,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wynaut Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wynaut Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Wynaut() : base(
 			360,
-			SpecieWynaut.Instance, // Pokemon Specie
+			SpeciesWynaut.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

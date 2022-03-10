@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Meltan Specie to store common natural stats of all Meltans
-	#region SpecieMeltan
-	public class SpecieMeltan : PokemonSpecie
+	//Meltan Species to store common natural stats of all Meltans
+	#region SpeciesMeltan
+	public class SpeciesMeltan : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMeltan? _instance = null;
+		private static SpeciesMeltan? _instance = null;
 #nullable restore
-        public static SpecieMeltan Instance
+        public static SpeciesMeltan Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMeltan();
+                    _instance = new SpeciesMeltan();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMeltan Builder
-		public SpecieMeltan() : base(
+		#region SpeciesMeltan Constructor
+		public SpeciesMeltan() : base(
 			"Meltan",
 			0.2,
 			8.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			55, 35, // Special Attack & Defense
 			34		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Meltan Pokemon Class
+	//Meltan PokemonInstance Class
 	#region Meltan
-	public class Meltan : Pokemon
+	public class MeltanInstance : PokemonInstance
 	{
-		#region Meltan Builders
+		#region Meltan Constructors
 		/// <summary>
-		/// Meltan Builder waiting for a Nickname & a Level
+		/// Meltan Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Meltan(string nickname, int level)
+		public MeltanInstance(string nickname, int level)
 		: base(
 				808,
-				SpecieMeltan.Instance, // Pokemon Specie
+				SpeciesMeltan.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Meltan Builder only waiting for a Level
 		/// </summary>
-		public Meltan(int level)
+		public MeltanInstance(int level)
 		: base(
 				808,
-				SpecieMeltan.Instance, // Pokemon Specie
+				SpeciesMeltan.Instance, // PokemonInstance Species
 				"Meltan", level,
 				Steel.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Meltan Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Meltan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Meltan() : base(
 			808,
-			SpecieMeltan.Instance, // Pokemon Specie
+			SpeciesMeltan.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

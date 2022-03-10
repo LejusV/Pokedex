@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nihilego Specie to store common natural stats of all Nihilegos
-	#region SpecieNihilego
-	public class SpecieNihilego : PokemonSpecie
+	//Nihilego Species to store common natural stats of all Nihilegos
+	#region SpeciesNihilego
+	public class SpeciesNihilego : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNihilego? _instance = null;
+		private static SpeciesNihilego? _instance = null;
 #nullable restore
-        public static SpecieNihilego Instance
+        public static SpeciesNihilego Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNihilego();
+                    _instance = new SpeciesNihilego();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNihilego Builder
-		public SpecieNihilego() : base(
+		#region SpeciesNihilego Constructor
+		public SpeciesNihilego() : base(
 			"Nihilego",
 			1.2,
 			55.5,
@@ -32,23 +34,83 @@ namespace Pokedex.Models.Pokemons
 			127, 131, // Special Attack & Defense
 			103		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Headbutt",
+				"Acid",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Constrict",
+				"Psywave",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Sludge-Bomb",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Mirror-Coat",
+				"Facade",
+				"Tickle",
+				"Toxic-Spikes",
+				"Poison-Jab",
+				"Power-Gem",
+				"Trick-Room",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Head-Smash",
+				"Guard-Split",
+				"Power-Split",
+				"Wonder-Room",
+				"Psyshock",
+				"Venoshock",
+				"Sludge-Wave",
+				"Acid-Spray",
+				"Round",
+				"Echoed-Voice",
+				"Clear-Smog",
+				"Confide",
+				"Venom-Drench",
+				"Dazzling-Gleam",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nihilego Pokemon Class
+	//Nihilego PokemonInstance Class
 	#region Nihilego
-	public class Nihilego : Pokemon
+	public class NihilegoInstance : PokemonInstance
 	{
-		#region Nihilego Builders
+		#region Nihilego Constructors
 		/// <summary>
-		/// Nihilego Builder waiting for a Nickname & a Level
+		/// Nihilego Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nihilego(string nickname, int level)
+		public NihilegoInstance(string nickname, int level)
 		: base(
 				793,
-				SpecieNihilego.Instance, // Pokemon Specie
+				SpeciesNihilego.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Poison.Instance			
 		)
@@ -60,10 +122,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nihilego Builder only waiting for a Level
 		/// </summary>
-		public Nihilego(int level)
+		public NihilegoInstance(int level)
 		: base(
 				793,
-				SpecieNihilego.Instance, // Pokemon Specie
+				SpeciesNihilego.Instance, // PokemonInstance Species
 				"Nihilego", level,
 				Rock.Instance, Poison.Instance			
 		)
@@ -73,12 +135,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nihilego Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nihilego Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nihilego() : base(
 			793,
-			SpecieNihilego.Instance, // Pokemon Specie
+			SpeciesNihilego.Instance, // PokemonInstance Species
 			Rock.Instance, Poison.Instance			
 		) {}
 		*/

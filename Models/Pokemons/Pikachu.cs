@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pikachu Specie to store common natural stats of all Pikachus
-	#region SpeciePikachu
-	public class SpeciePikachu : PokemonSpecie
+	//Pikachu Species to store common natural stats of all Pikachus
+	#region SpeciesPikachu
+	public class SpeciesPikachu : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePikachu? _instance = null;
+		private static SpeciesPikachu? _instance = null;
 #nullable restore
-        public static SpeciePikachu Instance
+        public static SpeciesPikachu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePikachu();
+                    _instance = new SpeciesPikachu();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePikachu Builder
-		public SpeciePikachu() : base(
+		#region SpeciesPikachu Constructor
+		public SpeciesPikachu() : base(
 			"Pikachu",
 			0.4,
 			6.0,
@@ -32,23 +34,115 @@ namespace Pokedex.Models.Pokemons
 			50, 50, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Pay-Day",
+				"Thunder-Punch",
+				"Slam",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Growl",
+				"Surf",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Swift",
+				"Skull-Bash",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Signal-Beam",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Feint",
+				"Fling",
+				"Magnet-Rise",
+				"Discharge",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Round",
+				"Echoed-Voice",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Play-Nice",
+				"Confide",
+				"Nuzzle"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pikachu Pokemon Class
+	//Pikachu PokemonInstance Class
 	#region Pikachu
-	public class Pikachu : Pokemon
+	public class PikachuInstance : PokemonInstance
 	{
-		#region Pikachu Builders
+		#region Pikachu Constructors
 		/// <summary>
-		/// Pikachu Builder waiting for a Nickname & a Level
+		/// Pikachu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pikachu(string nickname, int level)
+		public PikachuInstance(string nickname, int level)
 		: base(
 				25,
-				SpeciePikachu.Instance, // Pokemon Specie
+				SpeciesPikachu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +154,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pikachu Builder only waiting for a Level
 		/// </summary>
-		public Pikachu(int level)
+		public PikachuInstance(int level)
 		: base(
 				25,
-				SpeciePikachu.Instance, // Pokemon Specie
+				SpeciesPikachu.Instance, // PokemonInstance Species
 				"Pikachu", level,
 				Electric.Instance			
 		)
@@ -73,12 +167,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pikachu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pikachu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pikachu() : base(
 			25,
-			SpeciePikachu.Instance, // Pokemon Specie
+			SpeciesPikachu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

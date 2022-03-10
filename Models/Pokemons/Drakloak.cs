@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drakloak Specie to store common natural stats of all Drakloaks
-	#region SpecieDrakloak
-	public class SpecieDrakloak : PokemonSpecie
+	//Drakloak Species to store common natural stats of all Drakloaks
+	#region SpeciesDrakloak
+	public class SpeciesDrakloak : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrakloak? _instance = null;
+		private static SpeciesDrakloak? _instance = null;
 #nullable restore
-        public static SpecieDrakloak Instance
+        public static SpeciesDrakloak Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrakloak();
+                    _instance = new SpeciesDrakloak();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrakloak Builder
-		public SpecieDrakloak() : base(
+		#region SpeciesDrakloak Constructor
+		public SpeciesDrakloak() : base(
 			"Drakloak",
 			1.4,
 			11.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 50, // Special Attack & Defense
 			102		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drakloak Pokemon Class
+	//Drakloak PokemonInstance Class
 	#region Drakloak
-	public class Drakloak : Pokemon
+	public class DrakloakInstance : PokemonInstance
 	{
-		#region Drakloak Builders
+		#region Drakloak Constructors
 		/// <summary>
-		/// Drakloak Builder waiting for a Nickname & a Level
+		/// Drakloak Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drakloak(string nickname, int level)
+		public DrakloakInstance(string nickname, int level)
 		: base(
 				886,
-				SpecieDrakloak.Instance, // Pokemon Specie
+				SpeciesDrakloak.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drakloak Builder only waiting for a Level
 		/// </summary>
-		public Drakloak(int level)
+		public DrakloakInstance(int level)
 		: base(
 				886,
-				SpecieDrakloak.Instance, // Pokemon Specie
+				SpeciesDrakloak.Instance, // PokemonInstance Species
 				"Drakloak", level,
 				Dragon.Instance, Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drakloak Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drakloak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drakloak() : base(
 			886,
-			SpecieDrakloak.Instance, // Pokemon Specie
+			SpeciesDrakloak.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Oddish Specie to store common natural stats of all Oddishs
-	#region SpecieOddish
-	public class SpecieOddish : PokemonSpecie
+	//Oddish Species to store common natural stats of all Oddishs
+	#region SpeciesOddish
+	public class SpeciesOddish : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieOddish? _instance = null;
+		private static SpeciesOddish? _instance = null;
 #nullable restore
-        public static SpecieOddish Instance
+        public static SpeciesOddish Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieOddish();
+                    _instance = new SpeciesOddish();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieOddish Builder
-		public SpecieOddish() : base(
+		#region SpeciesOddish Constructor
+		public SpeciesOddish() : base(
 			"Oddish",
 			0.5,
 			5.4,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			75, 65, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Take-Down",
+				"Double-Edge",
+				"Acid",
+				"Absorb",
+				"Mega-Drain",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Petal-Dance",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Moonlight",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Secret-Power",
+				"Teeter-Dance",
+				"Tickle",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Gastro-Acid",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"After-You",
+				"Round",
+				"Grassy-Terrain",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation",
+				"Strength-Sap"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Oddish Pokemon Class
+	//Oddish PokemonInstance Class
 	#region Oddish
-	public class Oddish : Pokemon
+	public class OddishInstance : PokemonInstance
 	{
-		#region Oddish Builders
+		#region Oddish Constructors
 		/// <summary>
-		/// Oddish Builder waiting for a Nickname & a Level
+		/// Oddish Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Oddish(string nickname, int level)
+		public OddishInstance(string nickname, int level)
 		: base(
 				43,
-				SpecieOddish.Instance, // Pokemon Specie
+				SpeciesOddish.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Oddish Builder only waiting for a Level
 		/// </summary>
-		public Oddish(int level)
+		public OddishInstance(int level)
 		: base(
 				43,
-				SpecieOddish.Instance, // Pokemon Specie
+				SpeciesOddish.Instance, // PokemonInstance Species
 				"Oddish", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Oddish Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Oddish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Oddish() : base(
 			43,
-			SpecieOddish.Instance, // Pokemon Specie
+			SpeciesOddish.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

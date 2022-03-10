@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Delcatty Specie to store common natural stats of all Delcattys
-	#region SpecieDelcatty
-	public class SpecieDelcatty : PokemonSpecie
+	//Delcatty Species to store common natural stats of all Delcattys
+	#region SpeciesDelcatty
+	public class SpeciesDelcatty : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDelcatty? _instance = null;
+		private static SpeciesDelcatty? _instance = null;
 #nullable restore
-        public static SpecieDelcatty Instance
+        public static SpeciesDelcatty Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDelcatty();
+                    _instance = new SpeciesDelcatty();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDelcatty Builder
-		public SpecieDelcatty() : base(
+		#region SpeciesDelcatty Constructor
+		public SpeciesDelcatty() : base(
 			"Delcatty",
 			1.1,
 			32.6,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			55, 55, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Sing",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Payback",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Delcatty Pokemon Class
+	//Delcatty PokemonInstance Class
 	#region Delcatty
-	public class Delcatty : Pokemon
+	public class DelcattyInstance : PokemonInstance
 	{
-		#region Delcatty Builders
+		#region Delcatty Constructors
 		/// <summary>
-		/// Delcatty Builder waiting for a Nickname & a Level
+		/// Delcatty Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Delcatty(string nickname, int level)
+		public DelcattyInstance(string nickname, int level)
 		: base(
 				301,
-				SpecieDelcatty.Instance, // Pokemon Specie
+				SpeciesDelcatty.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Delcatty Builder only waiting for a Level
 		/// </summary>
-		public Delcatty(int level)
+		public DelcattyInstance(int level)
 		: base(
 				301,
-				SpecieDelcatty.Instance, // Pokemon Specie
+				SpeciesDelcatty.Instance, // PokemonInstance Species
 				"Delcatty", level,
 				Normal.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Delcatty Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Delcatty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Delcatty() : base(
 			301,
-			SpecieDelcatty.Instance, // Pokemon Specie
+			SpeciesDelcatty.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

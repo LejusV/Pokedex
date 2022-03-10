@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Golisopod Specie to store common natural stats of all Golisopods
-	#region SpecieGolisopod
-	public class SpecieGolisopod : PokemonSpecie
+	//Golisopod Species to store common natural stats of all Golisopods
+	#region SpeciesGolisopod
+	public class SpeciesGolisopod : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGolisopod? _instance = null;
+		private static SpeciesGolisopod? _instance = null;
 #nullable restore
-        public static SpecieGolisopod Instance
+        public static SpeciesGolisopod Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGolisopod();
+                    _instance = new SpeciesGolisopod();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGolisopod Builder
-		public SpecieGolisopod() : base(
+		#region SpeciesGolisopod Constructor
+		public SpeciesGolisopod() : base(
 			"Golisopod",
 			2.0,
 			108.0,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			60, 90, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Sand-Attack",
+				"Pin-Missile",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Leech-Life",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Spite",
+				"Protect",
+				"Sludge-Bomb",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Bulk-Up",
+				"Payback",
+				"Fling",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"X-Scissor",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Bug-Bite",
+				"Venoshock",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Struggle-Bug",
+				"Frost-Breath",
+				"Razor-Shell",
+				"Snarl",
+				"Confide",
+				"First-Impression",
+				"Liquidation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Golisopod Pokemon Class
+	//Golisopod PokemonInstance Class
 	#region Golisopod
-	public class Golisopod : Pokemon
+	public class GolisopodInstance : PokemonInstance
 	{
-		#region Golisopod Builders
+		#region Golisopod Constructors
 		/// <summary>
-		/// Golisopod Builder waiting for a Nickname & a Level
+		/// Golisopod Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Golisopod(string nickname, int level)
+		public GolisopodInstance(string nickname, int level)
 		: base(
 				768,
-				SpecieGolisopod.Instance, // Pokemon Specie
+				SpeciesGolisopod.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Golisopod Builder only waiting for a Level
 		/// </summary>
-		public Golisopod(int level)
+		public GolisopodInstance(int level)
 		: base(
 				768,
-				SpecieGolisopod.Instance, // Pokemon Specie
+				SpeciesGolisopod.Instance, // PokemonInstance Species
 				"Golisopod", level,
 				Bug.Instance, Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Golisopod Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Golisopod Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Golisopod() : base(
 			768,
-			SpecieGolisopod.Instance, // Pokemon Specie
+			SpeciesGolisopod.Instance, // PokemonInstance Species
 			Bug.Instance, Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Beautifly Specie to store common natural stats of all Beautiflys
-	#region SpecieBeautifly
-	public class SpecieBeautifly : PokemonSpecie
+	//Beautifly Species to store common natural stats of all Beautiflys
+	#region SpeciesBeautifly
+	public class SpeciesBeautifly : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBeautifly? _instance = null;
+		private static SpeciesBeautifly? _instance = null;
 #nullable restore
-        public static SpecieBeautifly Instance
+        public static SpeciesBeautifly Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBeautifly();
+                    _instance = new SpeciesBeautifly();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBeautifly Builder
-		public SpecieBeautifly() : base(
+		#region SpeciesBeautifly Constructor
+		public SpeciesBeautifly() : base(
 			"Beautifly",
 			1.0,
 			28.4,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			100, 50, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Whirlwind",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Absorb",
+				"Mega-Drain",
+				"Solar-Beam",
+				"Stun-Spore",
+				"String-Shot",
+				"Toxic",
+				"Psychic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Morning-Sun",
+				"Hidden-Power",
+				"Twister",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Venoshock",
+				"Quiver-Dance",
+				"Round",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Electroweb",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Beautifly Pokemon Class
+	//Beautifly PokemonInstance Class
 	#region Beautifly
-	public class Beautifly : Pokemon
+	public class BeautiflyInstance : PokemonInstance
 	{
-		#region Beautifly Builders
+		#region Beautifly Constructors
 		/// <summary>
-		/// Beautifly Builder waiting for a Nickname & a Level
+		/// Beautifly Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Beautifly(string nickname, int level)
+		public BeautiflyInstance(string nickname, int level)
 		: base(
 				267,
-				SpecieBeautifly.Instance, // Pokemon Specie
+				SpeciesBeautifly.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Beautifly Builder only waiting for a Level
 		/// </summary>
-		public Beautifly(int level)
+		public BeautiflyInstance(int level)
 		: base(
 				267,
-				SpecieBeautifly.Instance, // Pokemon Specie
+				SpeciesBeautifly.Instance, // PokemonInstance Species
 				"Beautifly", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Beautifly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Beautifly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Beautifly() : base(
 			267,
-			SpecieBeautifly.Instance, // Pokemon Specie
+			SpeciesBeautifly.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

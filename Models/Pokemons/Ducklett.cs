@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ducklett Specie to store common natural stats of all Duckletts
-	#region SpecieDucklett
-	public class SpecieDucklett : PokemonSpecie
+	//Ducklett Species to store common natural stats of all Duckletts
+	#region SpeciesDucklett
+	public class SpeciesDucklett : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDucklett? _instance = null;
+		private static SpeciesDucklett? _instance = null;
 #nullable restore
-        public static SpecieDucklett Instance
+        public static SpeciesDucklett Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDucklett();
+                    _instance = new SpeciesDucklett();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDucklett Builder
-		public SpecieDucklett() : base(
+		#region SpeciesDucklett Constructor
+		public SpeciesDucklett() : base(
 			"Ducklett",
 			0.5,
 			5.5,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			44, 50, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Wing-Attack",
+				"Fly",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Mirror-Move",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Endeavor",
+				"Secret-Power",
+				"Dive",
+				"Feather-Dance",
+				"Mud-Sport",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Water-Sport",
+				"Water-Pulse",
+				"Roost",
+				"Brine",
+				"Pluck",
+				"Tailwind",
+				"Lucky-Chant",
+				"Me-First",
+				"Aqua-Ring",
+				"Air-Slash",
+				"Brave-Bird",
+				"Defog",
+				"Aqua-Jet",
+				"Round",
+				"Scald",
+				"Hurricane",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ducklett Pokemon Class
+	//Ducklett PokemonInstance Class
 	#region Ducklett
-	public class Ducklett : Pokemon
+	public class DucklettInstance : PokemonInstance
 	{
-		#region Ducklett Builders
+		#region Ducklett Constructors
 		/// <summary>
-		/// Ducklett Builder waiting for a Nickname & a Level
+		/// Ducklett Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ducklett(string nickname, int level)
+		public DucklettInstance(string nickname, int level)
 		: base(
 				580,
-				SpecieDucklett.Instance, // Pokemon Specie
+				SpeciesDucklett.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ducklett Builder only waiting for a Level
 		/// </summary>
-		public Ducklett(int level)
+		public DucklettInstance(int level)
 		: base(
 				580,
-				SpecieDucklett.Instance, // Pokemon Specie
+				SpeciesDucklett.Instance, // PokemonInstance Species
 				"Ducklett", level,
 				Water.Instance, Flying.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ducklett Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ducklett Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ducklett() : base(
 			580,
-			SpecieDucklett.Instance, // Pokemon Specie
+			SpeciesDucklett.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}
 		*/

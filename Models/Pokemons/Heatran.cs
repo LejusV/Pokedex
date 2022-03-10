@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Heatran Specie to store common natural stats of all Heatrans
-	#region SpecieHeatran
-	public class SpecieHeatran : PokemonSpecie
+	//Heatran Species to store common natural stats of all Heatrans
+	#region SpeciesHeatran
+	public class SpeciesHeatran : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHeatran? _instance = null;
+		private static SpeciesHeatran? _instance = null;
 #nullable restore
-        public static SpecieHeatran Instance
+        public static SpeciesHeatran Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHeatran();
+                    _instance = new SpeciesHeatran();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHeatran Builder
-		public SpecieHeatran() : base(
+		#region SpeciesHeatran Constructor
+		public SpeciesHeatran() : base(
 			"Heatran",
 			1.7,
 			430.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			130, 106, // Special Attack & Defense
 			77		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Leer",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Iron-Defense",
+				"Natural-Gift",
+				"Payback",
+				"Dark-Pulse",
+				"Dragon-Pulse",
+				"Earth-Power",
+				"Giga-Impact",
+				"Fire-Fang",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Lava-Plume",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Bug-Bite",
+				"Magma-Storm",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Heatran Pokemon Class
+	//Heatran PokemonInstance Class
 	#region Heatran
-	public class Heatran : Pokemon
+	public class HeatranInstance : PokemonInstance
 	{
-		#region Heatran Builders
+		#region Heatran Constructors
 		/// <summary>
-		/// Heatran Builder waiting for a Nickname & a Level
+		/// Heatran Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Heatran(string nickname, int level)
+		public HeatranInstance(string nickname, int level)
 		: base(
 				485,
-				SpecieHeatran.Instance, // Pokemon Specie
+				SpeciesHeatran.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Steel.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Heatran Builder only waiting for a Level
 		/// </summary>
-		public Heatran(int level)
+		public HeatranInstance(int level)
 		: base(
 				485,
-				SpecieHeatran.Instance, // Pokemon Specie
+				SpeciesHeatran.Instance, // PokemonInstance Species
 				"Heatran", level,
 				Fire.Instance, Steel.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Heatran Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Heatran Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Heatran() : base(
 			485,
-			SpecieHeatran.Instance, // Pokemon Specie
+			SpeciesHeatran.Instance, // PokemonInstance Species
 			Fire.Instance, Steel.Instance			
 		) {}
 		*/

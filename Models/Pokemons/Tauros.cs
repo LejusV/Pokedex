@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tauros Specie to store common natural stats of all Tauross
-	#region SpecieTauros
-	public class SpecieTauros : PokemonSpecie
+	//Tauros Species to store common natural stats of all Tauross
+	#region SpeciesTauros
+	public class SpeciesTauros : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTauros? _instance = null;
+		private static SpeciesTauros? _instance = null;
 #nullable restore
-        public static SpecieTauros Instance
+        public static SpeciesTauros Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTauros();
+                    _instance = new SpeciesTauros();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTauros Builder
-		public SpecieTauros() : base(
+		#region SpeciesTauros Constructor
+		public SpeciesTauros() : base(
 			"Tauros",
 			1.4,
 			88.4,
@@ -32,23 +34,113 @@ namespace Pokedex.Models.Pokemons
 			40, 70, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Headbutt",
+				"Horn-Attack",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Tail-Whip",
+				"Leer",
+				"Flamethrower",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Bide",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Facade",
+				"Helping-Hand",
+				"Role-Play",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Payback",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tauros Pokemon Class
+	//Tauros PokemonInstance Class
 	#region Tauros
-	public class Tauros : Pokemon
+	public class TaurosInstance : PokemonInstance
 	{
-		#region Tauros Builders
+		#region Tauros Constructors
 		/// <summary>
-		/// Tauros Builder waiting for a Nickname & a Level
+		/// Tauros Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tauros(string nickname, int level)
+		public TaurosInstance(string nickname, int level)
 		: base(
 				128,
-				SpecieTauros.Instance, // Pokemon Specie
+				SpeciesTauros.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +152,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tauros Builder only waiting for a Level
 		/// </summary>
-		public Tauros(int level)
+		public TaurosInstance(int level)
 		: base(
 				128,
-				SpecieTauros.Instance, // Pokemon Specie
+				SpeciesTauros.Instance, // PokemonInstance Species
 				"Tauros", level,
 				Normal.Instance			
 		)
@@ -73,12 +165,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tauros Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tauros Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tauros() : base(
 			128,
-			SpecieTauros.Instance, // Pokemon Specie
+			SpeciesTauros.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

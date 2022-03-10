@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rookidee Specie to store common natural stats of all Rookidees
-	#region SpecieRookidee
-	public class SpecieRookidee : PokemonSpecie
+	//Rookidee Species to store common natural stats of all Rookidees
+	#region SpeciesRookidee
+	public class SpeciesRookidee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRookidee? _instance = null;
+		private static SpeciesRookidee? _instance = null;
 #nullable restore
-        public static SpecieRookidee Instance
+        public static SpeciesRookidee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRookidee();
+                    _instance = new SpeciesRookidee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRookidee Builder
-		public SpecieRookidee() : base(
+		#region SpeciesRookidee Constructor
+		public SpeciesRookidee() : base(
 			"Rookidee",
 			0.2,
 			1.8,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			33, 35, // Special Attack & Defense
 			57		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rookidee Pokemon Class
+	//Rookidee PokemonInstance Class
 	#region Rookidee
-	public class Rookidee : Pokemon
+	public class RookideeInstance : PokemonInstance
 	{
-		#region Rookidee Builders
+		#region Rookidee Constructors
 		/// <summary>
-		/// Rookidee Builder waiting for a Nickname & a Level
+		/// Rookidee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rookidee(string nickname, int level)
+		public RookideeInstance(string nickname, int level)
 		: base(
 				821,
-				SpecieRookidee.Instance, // Pokemon Specie
+				SpeciesRookidee.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rookidee Builder only waiting for a Level
 		/// </summary>
-		public Rookidee(int level)
+		public RookideeInstance(int level)
 		: base(
 				821,
-				SpecieRookidee.Instance, // Pokemon Specie
+				SpeciesRookidee.Instance, // PokemonInstance Species
 				"Rookidee", level,
 				Flying.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rookidee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rookidee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rookidee() : base(
 			821,
-			SpecieRookidee.Instance, // Pokemon Specie
+			SpeciesRookidee.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}
 		*/

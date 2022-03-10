@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Slurpuff Specie to store common natural stats of all Slurpuffs
-	#region SpecieSlurpuff
-	public class SpecieSlurpuff : PokemonSpecie
+	//Slurpuff Species to store common natural stats of all Slurpuffs
+	#region SpeciesSlurpuff
+	public class SpeciesSlurpuff : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSlurpuff? _instance = null;
+		private static SpeciesSlurpuff? _instance = null;
 #nullable restore
-        public static SpecieSlurpuff Instance
+        public static SpeciesSlurpuff Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSlurpuff();
+                    _instance = new SpeciesSlurpuff();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSlurpuff Builder
-		public SpecieSlurpuff() : base(
+		#region SpeciesSlurpuff Constructor
+		public SpeciesSlurpuff() : base(
 			"Slurpuff",
 			0.8,
 			5.0,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			85, 75, // Special Attack & Defense
 			72		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Flamethrower",
+				"Surf",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Cotton-Spore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Facade",
+				"Helping-Hand",
+				"Wish",
+				"Magic-Coat",
+				"Endeavor",
+				"Secret-Power",
+				"Aromatherapy",
+				"Fake-Tears",
+				"Covet",
+				"Calm-Mind",
+				"Gastro-Acid",
+				"Drain-Punch",
+				"Energy-Ball",
+				"Giga-Impact",
+				"After-You",
+				"Round",
+				"Cotton-Guard",
+				"Draining-Kiss",
+				"Play-Rough",
+				"Fairy-Wind",
+				"Play-Nice",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Slurpuff Pokemon Class
+	//Slurpuff PokemonInstance Class
 	#region Slurpuff
-	public class Slurpuff : Pokemon
+	public class SlurpuffInstance : PokemonInstance
 	{
-		#region Slurpuff Builders
+		#region Slurpuff Constructors
 		/// <summary>
-		/// Slurpuff Builder waiting for a Nickname & a Level
+		/// Slurpuff Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Slurpuff(string nickname, int level)
+		public SlurpuffInstance(string nickname, int level)
 		: base(
 				685,
-				SpecieSlurpuff.Instance, // Pokemon Specie
+				SpeciesSlurpuff.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Slurpuff Builder only waiting for a Level
 		/// </summary>
-		public Slurpuff(int level)
+		public SlurpuffInstance(int level)
 		: base(
 				685,
-				SpecieSlurpuff.Instance, // Pokemon Specie
+				SpeciesSlurpuff.Instance, // PokemonInstance Species
 				"Slurpuff", level,
 				Fairy.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Slurpuff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Slurpuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Slurpuff() : base(
 			685,
-			SpecieSlurpuff.Instance, // Pokemon Specie
+			SpeciesSlurpuff.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

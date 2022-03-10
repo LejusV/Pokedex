@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Electrode Specie to store common natural stats of all Electrodes
-	#region SpecieElectrode
-	public class SpecieElectrode : PokemonSpecie
+	//Electrode Species to store common natural stats of all Electrodes
+	#region SpeciesElectrode
+	public class SpeciesElectrode : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieElectrode? _instance = null;
+		private static SpeciesElectrode? _instance = null;
 #nullable restore
-        public static SpecieElectrode Instance
+        public static SpeciesElectrode Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieElectrode();
+                    _instance = new SpeciesElectrode();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieElectrode Builder
-		public SpecieElectrode() : base(
+		#region SpeciesElectrode Constructor
+		public SpeciesElectrode() : base(
 			"Electrode",
 			1.2,
 			66.6,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			150		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Sonic-Boom",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Swift",
+				"Skull-Bash",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Zap-Cannon",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Torment",
+				"Facade",
+				"Charge",
+				"Taunt",
+				"Magic-Coat",
+				"Secret-Power",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Discharge",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Foul-Play",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide",
+				"Eerie-Impulse",
+				"Magnetic-Flux"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Electrode Pokemon Class
+	//Electrode PokemonInstance Class
 	#region Electrode
-	public class Electrode : Pokemon
+	public class ElectrodeInstance : PokemonInstance
 	{
-		#region Electrode Builders
+		#region Electrode Constructors
 		/// <summary>
-		/// Electrode Builder waiting for a Nickname & a Level
+		/// Electrode Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Electrode(string nickname, int level)
+		public ElectrodeInstance(string nickname, int level)
 		: base(
 				101,
-				SpecieElectrode.Instance, // Pokemon Specie
+				SpeciesElectrode.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Electrode Builder only waiting for a Level
 		/// </summary>
-		public Electrode(int level)
+		public ElectrodeInstance(int level)
 		: base(
 				101,
-				SpecieElectrode.Instance, // Pokemon Specie
+				SpeciesElectrode.Instance, // PokemonInstance Species
 				"Electrode", level,
 				Electric.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Electrode Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Electrode Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Electrode() : base(
 			101,
-			SpecieElectrode.Instance, // Pokemon Specie
+			SpeciesElectrode.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

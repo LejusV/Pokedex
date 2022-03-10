@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jangmo-O Specie to store common natural stats of all Jangmo-Os
-	#region SpecieJangmo-O
-	public class SpecieJangmoO : PokemonSpecie
+	//Jangmo-O Species to store common natural stats of all Jangmo-Os
+	#region SpeciesJangmo-O
+	public class SpeciesJangmoO : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJangmoO? _instance = null;
+		private static SpeciesJangmoO? _instance = null;
 #nullable restore
-        public static SpecieJangmoO Instance
+        public static SpeciesJangmoO Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJangmoO();
+                    _instance = new SpeciesJangmoO();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJangmo-O Builder
-		public SpecieJangmoO() : base(
+		#region SpeciesJangmo-O Constructor
+		public SpeciesJangmoO() : base(
 			"Jangmo-O",
 			0.6,
 			29.7,
@@ -32,23 +34,83 @@ namespace Pokedex.Models.Pokemons
 			45, 45, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Headbutt",
+				"Tackle",
+				"Leer",
+				"Roar",
+				"Counter",
+				"Earthquake",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Bide",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Reversal",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Facade",
+				"Taunt",
+				"Brick-Break",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Dragon-Dance",
+				"Payback",
+				"X-Scissor",
+				"Focus-Blast",
+				"Shadow-Claw",
+				"Draco-Meteor",
+				"Round",
+				"Echoed-Voice",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Work-Up",
+				"Noble-Roar",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jangmo-O Pokemon Class
+	//Jangmo-O PokemonInstance Class
 	#region Jangmo-O
-	public class JangmoO : Pokemon
+	public class JangmoOInstance : PokemonInstance
 	{
-		#region Jangmo-O Builders
+		#region Jangmo-O Constructors
 		/// <summary>
-		/// Jangmo-O Builder waiting for a Nickname & a Level
+		/// Jangmo-O Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public JangmoO(string nickname, int level)
+		public JangmoOInstance(string nickname, int level)
 		: base(
 				782,
-				SpecieJangmoO.Instance, // Pokemon Specie
+				SpeciesJangmoO.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +122,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jangmo-O Builder only waiting for a Level
 		/// </summary>
-		public JangmoO(int level)
+		public JangmoOInstance(int level)
 		: base(
 				782,
-				SpecieJangmoO.Instance, // Pokemon Specie
+				SpeciesJangmoO.Instance, // PokemonInstance Species
 				"Jangmo-O", level,
 				Dragon.Instance			
 		)
@@ -73,12 +135,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jangmo-O Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jangmo-O Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public JangmoO() : base(
 			782,
-			SpecieJangmoO.Instance, // Pokemon Specie
+			SpeciesJangmoO.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

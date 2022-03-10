@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Roggenrola Specie to store common natural stats of all Roggenrolas
-	#region SpecieRoggenrola
-	public class SpecieRoggenrola : PokemonSpecie
+	//Roggenrola Species to store common natural stats of all Roggenrolas
+	#region SpeciesRoggenrola
+	public class SpeciesRoggenrola : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRoggenrola? _instance = null;
+		private static SpeciesRoggenrola? _instance = null;
 #nullable restore
-        public static SpecieRoggenrola Instance
+        public static SpeciesRoggenrola Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRoggenrola();
+                    _instance = new SpeciesRoggenrola();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRoggenrola Builder
-		public SpecieRoggenrola() : base(
+		#region SpeciesRoggenrola Constructor
+		public SpeciesRoggenrola() : base(
 			"Roggenrola",
 			0.4,
 			18.0,
@@ -32,23 +34,81 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Lock-On",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Gravity",
+				"Rock-Polish",
+				"Earth-Power",
+				"Flash-Cannon",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Wide-Guard",
+				"Autotomize",
+				"Smack-Down",
+				"Heavy-Slam",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Roggenrola Pokemon Class
+	//Roggenrola PokemonInstance Class
 	#region Roggenrola
-	public class Roggenrola : Pokemon
+	public class RoggenrolaInstance : PokemonInstance
 	{
-		#region Roggenrola Builders
+		#region Roggenrola Constructors
 		/// <summary>
-		/// Roggenrola Builder waiting for a Nickname & a Level
+		/// Roggenrola Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Roggenrola(string nickname, int level)
+		public RoggenrolaInstance(string nickname, int level)
 		: base(
 				524,
-				SpecieRoggenrola.Instance, // Pokemon Specie
+				SpeciesRoggenrola.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +120,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Roggenrola Builder only waiting for a Level
 		/// </summary>
-		public Roggenrola(int level)
+		public RoggenrolaInstance(int level)
 		: base(
 				524,
-				SpecieRoggenrola.Instance, // Pokemon Specie
+				SpeciesRoggenrola.Instance, // PokemonInstance Species
 				"Roggenrola", level,
 				Rock.Instance			
 		)
@@ -73,12 +133,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Roggenrola Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Roggenrola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Roggenrola() : base(
 			524,
-			SpecieRoggenrola.Instance, // Pokemon Specie
+			SpeciesRoggenrola.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

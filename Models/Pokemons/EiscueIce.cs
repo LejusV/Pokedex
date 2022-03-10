@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eiscue-Ice Specie to store common natural stats of all Eiscue-Ices
-	#region SpecieEiscue-Ice
-	public class SpecieEiscueIce : PokemonSpecie
+	//Eiscue-Ice Species to store common natural stats of all Eiscue-Ices
+	#region SpeciesEiscue-Ice
+	public class SpeciesEiscueIce : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEiscueIce? _instance = null;
+		private static SpeciesEiscueIce? _instance = null;
 #nullable restore
-        public static SpecieEiscueIce Instance
+        public static SpeciesEiscueIce Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEiscueIce();
+                    _instance = new SpeciesEiscueIce();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEiscue-Ice Builder
-		public SpecieEiscueIce() : base(
+		#region SpeciesEiscue-Ice Constructor
+		public SpeciesEiscueIce() : base(
 			"Eiscue-Ice",
 			1.4,
 			89.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			65, 90, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Eiscue-Ice Pokemon Class
+	//Eiscue-Ice PokemonInstance Class
 	#region Eiscue-Ice
-	public class EiscueIce : Pokemon
+	public class EiscueIceInstance : PokemonInstance
 	{
-		#region Eiscue-Ice Builders
+		#region Eiscue-Ice Constructors
 		/// <summary>
-		/// Eiscue-Ice Builder waiting for a Nickname & a Level
+		/// Eiscue-Ice Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public EiscueIce(string nickname, int level)
+		public EiscueIceInstance(string nickname, int level)
 		: base(
 				875,
-				SpecieEiscueIce.Instance, // Pokemon Specie
+				SpeciesEiscueIce.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eiscue-Ice Builder only waiting for a Level
 		/// </summary>
-		public EiscueIce(int level)
+		public EiscueIceInstance(int level)
 		: base(
 				875,
-				SpecieEiscueIce.Instance, // Pokemon Specie
+				SpeciesEiscueIce.Instance, // PokemonInstance Species
 				"Eiscue-Ice", level,
 				Ice.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Eiscue-Ice Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Eiscue-Ice Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public EiscueIce() : base(
 			875,
-			SpecieEiscueIce.Instance, // Pokemon Specie
+			SpeciesEiscueIce.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

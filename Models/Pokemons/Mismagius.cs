@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mismagius Specie to store common natural stats of all Mismagiuss
-	#region SpecieMismagius
-	public class SpecieMismagius : PokemonSpecie
+	//Mismagius Species to store common natural stats of all Mismagiuss
+	#region SpeciesMismagius
+	public class SpeciesMismagius : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMismagius? _instance = null;
+		private static SpeciesMismagius? _instance = null;
 #nullable restore
-        public static SpecieMismagius Instance
+        public static SpeciesMismagius Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMismagius();
+                    _instance = new SpeciesMismagius();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMismagius Builder
-		public SpecieMismagius() : base(
+		#region SpeciesMismagius Constructor
+		public SpeciesMismagius() : base(
 			"Mismagius",
 			0.9,
 			4.4,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			105, 105, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Growl",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Astonish",
+				"Aerial-Ace",
+				"Magical-Leaf",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Lucky-Chant",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Power-Gem",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Trick-Room",
+				"Captivate",
+				"Charge-Beam",
+				"Ominous-Wind",
+				"Wonder-Room",
+				"Telekinesis",
+				"Magic-Room",
+				"Foul-Play",
+				"Round",
+				"Echoed-Voice",
+				"Phantom-Force",
+				"Confide",
+				"Mystical-Fire",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mismagius Pokemon Class
+	//Mismagius PokemonInstance Class
 	#region Mismagius
-	public class Mismagius : Pokemon
+	public class MismagiusInstance : PokemonInstance
 	{
-		#region Mismagius Builders
+		#region Mismagius Constructors
 		/// <summary>
-		/// Mismagius Builder waiting for a Nickname & a Level
+		/// Mismagius Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mismagius(string nickname, int level)
+		public MismagiusInstance(string nickname, int level)
 		: base(
 				429,
-				SpecieMismagius.Instance, // Pokemon Specie
+				SpeciesMismagius.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mismagius Builder only waiting for a Level
 		/// </summary>
-		public Mismagius(int level)
+		public MismagiusInstance(int level)
 		: base(
 				429,
-				SpecieMismagius.Instance, // Pokemon Specie
+				SpeciesMismagius.Instance, // PokemonInstance Species
 				"Mismagius", level,
 				Ghost.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mismagius Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mismagius Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mismagius() : base(
 			429,
-			SpecieMismagius.Instance, // Pokemon Specie
+			SpeciesMismagius.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

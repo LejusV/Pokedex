@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Binacle Specie to store common natural stats of all Binacles
-	#region SpecieBinacle
-	public class SpecieBinacle : PokemonSpecie
+	//Binacle Species to store common natural stats of all Binacles
+	#region SpeciesBinacle
+	public class SpeciesBinacle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBinacle? _instance = null;
+		private static SpeciesBinacle? _instance = null;
 #nullable restore
-        public static SpecieBinacle Instance
+        public static SpeciesBinacle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBinacle();
+                    _instance = new SpeciesBinacle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBinacle Builder
-		public SpecieBinacle() : base(
+		#region SpeciesBinacle Constructor
+		public SpeciesBinacle() : base(
 			"Binacle",
 			0.5,
 			31.0,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			39, 56, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Sand-Attack",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Withdraw",
+				"Clamp",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Helping-Hand",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Tickle",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Water-Sport",
+				"Water-Pulse",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Rock-Polish",
+				"Poison-Jab",
+				"Night-Slash",
+				"X-Scissor",
+				"Switcheroo",
+				"Shadow-Claw",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Scald",
+				"Shell-Smash",
+				"Bulldoze",
+				"Dual-Chop",
+				"Razor-Shell",
+				"Confide",
+				"Infestation",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Binacle Pokemon Class
+	//Binacle PokemonInstance Class
 	#region Binacle
-	public class Binacle : Pokemon
+	public class BinacleInstance : PokemonInstance
 	{
-		#region Binacle Builders
+		#region Binacle Constructors
 		/// <summary>
-		/// Binacle Builder waiting for a Nickname & a Level
+		/// Binacle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Binacle(string nickname, int level)
+		public BinacleInstance(string nickname, int level)
 		: base(
 				688,
-				SpecieBinacle.Instance, // Pokemon Specie
+				SpeciesBinacle.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Binacle Builder only waiting for a Level
 		/// </summary>
-		public Binacle(int level)
+		public BinacleInstance(int level)
 		: base(
 				688,
-				SpecieBinacle.Instance, // Pokemon Specie
+				SpeciesBinacle.Instance, // PokemonInstance Species
 				"Binacle", level,
 				Rock.Instance, Water.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Binacle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Binacle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Binacle() : base(
 			688,
-			SpecieBinacle.Instance, // Pokemon Specie
+			SpeciesBinacle.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}
 		*/

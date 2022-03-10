@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Yanmega Specie to store common natural stats of all Yanmegas
-	#region SpecieYanmega
-	public class SpecieYanmega : PokemonSpecie
+	//Yanmega Species to store common natural stats of all Yanmegas
+	#region SpeciesYanmega
+	public class SpeciesYanmega : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieYanmega? _instance = null;
+		private static SpeciesYanmega? _instance = null;
 #nullable restore
-        public static SpecieYanmega Instance
+        public static SpeciesYanmega Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieYanmega();
+                    _instance = new SpeciesYanmega();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieYanmega Builder
-		public SpecieYanmega() : base(
+		#region SpeciesYanmega Constructor
+		public SpeciesYanmega() : base(
 			"Yanmega",
 			1.9,
 			51.5,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			116, 56, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Supersonic",
+				"Sonic-Boom",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Psychic",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Swift",
+				"Dream-Eater",
+				"Leech-Life",
+				"Flash",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Feint",
+				"Tailwind",
+				"U-Turn",
+				"Night-Slash",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Ominous-Wind",
+				"Round",
+				"Struggle-Bug",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Yanmega Pokemon Class
+	//Yanmega PokemonInstance Class
 	#region Yanmega
-	public class Yanmega : Pokemon
+	public class YanmegaInstance : PokemonInstance
 	{
-		#region Yanmega Builders
+		#region Yanmega Constructors
 		/// <summary>
-		/// Yanmega Builder waiting for a Nickname & a Level
+		/// Yanmega Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Yanmega(string nickname, int level)
+		public YanmegaInstance(string nickname, int level)
 		: base(
 				469,
-				SpecieYanmega.Instance, // Pokemon Specie
+				SpeciesYanmega.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Yanmega Builder only waiting for a Level
 		/// </summary>
-		public Yanmega(int level)
+		public YanmegaInstance(int level)
 		: base(
 				469,
-				SpecieYanmega.Instance, // Pokemon Specie
+				SpeciesYanmega.Instance, // PokemonInstance Species
 				"Yanmega", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Yanmega Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Yanmega Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Yanmega() : base(
 			469,
-			SpecieYanmega.Instance, // Pokemon Specie
+			SpeciesYanmega.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

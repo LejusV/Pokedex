@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Charjabug Specie to store common natural stats of all Charjabugs
-	#region SpecieCharjabug
-	public class SpecieCharjabug : PokemonSpecie
+	//Charjabug Species to store common natural stats of all Charjabugs
+	#region SpeciesCharjabug
+	public class SpeciesCharjabug : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCharjabug? _instance = null;
+		private static SpeciesCharjabug? _instance = null;
 #nullable restore
-        public static SpecieCharjabug Instance
+        public static SpeciesCharjabug Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCharjabug();
+                    _instance = new SpeciesCharjabug();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCharjabug Builder
-		public SpecieCharjabug() : base(
+		#region SpeciesCharjabug Constructor
+		public SpeciesCharjabug() : base(
 			"Charjabug",
 			0.5,
 			10.5,
@@ -32,23 +34,69 @@ namespace Pokedex.Models.Pokemons
 			55, 75, // Special Attack & Defense
 			36		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Bite",
+				"String-Shot",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Mud-Slap",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Facade",
+				"Charge",
+				"Iron-Defense",
+				"Poison-Jab",
+				"X-Scissor",
+				"Discharge",
+				"Bug-Bite",
+				"Charge-Beam",
+				"Round",
+				"Acrobatics",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Charjabug Pokemon Class
+	//Charjabug PokemonInstance Class
 	#region Charjabug
-	public class Charjabug : Pokemon
+	public class CharjabugInstance : PokemonInstance
 	{
-		#region Charjabug Builders
+		#region Charjabug Constructors
 		/// <summary>
-		/// Charjabug Builder waiting for a Nickname & a Level
+		/// Charjabug Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Charjabug(string nickname, int level)
+		public CharjabugInstance(string nickname, int level)
 		: base(
 				737,
-				SpecieCharjabug.Instance, // Pokemon Specie
+				SpeciesCharjabug.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -60,10 +108,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Charjabug Builder only waiting for a Level
 		/// </summary>
-		public Charjabug(int level)
+		public CharjabugInstance(int level)
 		: base(
 				737,
-				SpecieCharjabug.Instance, // Pokemon Specie
+				SpeciesCharjabug.Instance, // PokemonInstance Species
 				"Charjabug", level,
 				Bug.Instance, Electric.Instance			
 		)
@@ -73,12 +121,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Charjabug Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Charjabug Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Charjabug() : base(
 			737,
-			SpecieCharjabug.Instance, // Pokemon Specie
+			SpeciesCharjabug.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}
 		*/

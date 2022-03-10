@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magikarp Specie to store common natural stats of all Magikarps
-	#region SpecieMagikarp
-	public class SpecieMagikarp : PokemonSpecie
+	//Magikarp Species to store common natural stats of all Magikarps
+	#region SpeciesMagikarp
+	public class SpeciesMagikarp : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMagikarp? _instance = null;
+		private static SpeciesMagikarp? _instance = null;
 #nullable restore
-        public static SpecieMagikarp Instance
+        public static SpeciesMagikarp Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMagikarp();
+                    _instance = new SpeciesMagikarp();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMagikarp Builder
-		public SpecieMagikarp() : base(
+		#region SpeciesMagikarp Constructor
+		public SpeciesMagikarp() : base(
 			"Magikarp",
 			0.9,
 			10.0,
@@ -32,23 +34,38 @@ namespace Pokedex.Models.Pokemons
 			15, 20, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Splash",
+				"Flail",
+				"Bounce"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Magikarp Pokemon Class
+	//Magikarp PokemonInstance Class
 	#region Magikarp
-	public class Magikarp : Pokemon
+	public class MagikarpInstance : PokemonInstance
 	{
-		#region Magikarp Builders
+		#region Magikarp Constructors
 		/// <summary>
-		/// Magikarp Builder waiting for a Nickname & a Level
+		/// Magikarp Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Magikarp(string nickname, int level)
+		public MagikarpInstance(string nickname, int level)
 		: base(
 				129,
-				SpecieMagikarp.Instance, // Pokemon Specie
+				SpeciesMagikarp.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +77,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magikarp Builder only waiting for a Level
 		/// </summary>
-		public Magikarp(int level)
+		public MagikarpInstance(int level)
 		: base(
 				129,
-				SpecieMagikarp.Instance, // Pokemon Specie
+				SpeciesMagikarp.Instance, // PokemonInstance Species
 				"Magikarp", level,
 				Water.Instance			
 		)
@@ -73,12 +90,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Magikarp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Magikarp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Magikarp() : base(
 			129,
-			SpecieMagikarp.Instance, // Pokemon Specie
+			SpeciesMagikarp.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

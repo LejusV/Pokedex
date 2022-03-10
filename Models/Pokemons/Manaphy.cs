@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Manaphy Specie to store common natural stats of all Manaphys
-	#region SpecieManaphy
-	public class SpecieManaphy : PokemonSpecie
+	//Manaphy Species to store common natural stats of all Manaphys
+	#region SpeciesManaphy
+	public class SpeciesManaphy : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieManaphy? _instance = null;
+		private static SpeciesManaphy? _instance = null;
 #nullable restore
-        public static SpecieManaphy Instance
+        public static SpeciesManaphy Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieManaphy();
+                    _instance = new SpeciesManaphy();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieManaphy Builder
-		public SpecieManaphy() : base(
+		#region SpeciesManaphy Constructor
+		public SpeciesManaphy() : base(
 			"Manaphy",
 			0.3,
 			1.4,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			100, 100, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Supersonic",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Waterfall",
+				"Swift",
+				"Bubble",
+				"Flash",
+				"Acid-Armor",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Helping-Hand",
+				"Knock-Off",
+				"Skill-Swap",
+				"Secret-Power",
+				"Dive",
+				"Tail-Glow",
+				"Signal-Beam",
+				"Bounce",
+				"Covet",
+				"Water-Sport",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"U-Turn",
+				"Fling",
+				"Last-Resort",
+				"Heart-Swap",
+				"Aqua-Ring",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Round",
+				"Scald",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Manaphy Pokemon Class
+	//Manaphy PokemonInstance Class
 	#region Manaphy
-	public class Manaphy : Pokemon
+	public class ManaphyInstance : PokemonInstance
 	{
-		#region Manaphy Builders
+		#region Manaphy Constructors
 		/// <summary>
-		/// Manaphy Builder waiting for a Nickname & a Level
+		/// Manaphy Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Manaphy(string nickname, int level)
+		public ManaphyInstance(string nickname, int level)
 		: base(
 				490,
-				SpecieManaphy.Instance, // Pokemon Specie
+				SpeciesManaphy.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Manaphy Builder only waiting for a Level
 		/// </summary>
-		public Manaphy(int level)
+		public ManaphyInstance(int level)
 		: base(
 				490,
-				SpecieManaphy.Instance, // Pokemon Specie
+				SpeciesManaphy.Instance, // PokemonInstance Species
 				"Manaphy", level,
 				Water.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Manaphy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Manaphy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Manaphy() : base(
 			490,
-			SpecieManaphy.Instance, // Pokemon Specie
+			SpeciesManaphy.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

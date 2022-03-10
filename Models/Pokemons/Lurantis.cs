@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lurantis Specie to store common natural stats of all Lurantiss
-	#region SpecieLurantis
-	public class SpecieLurantis : PokemonSpecie
+	//Lurantis Species to store common natural stats of all Lurantiss
+	#region SpeciesLurantis
+	public class SpeciesLurantis : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLurantis? _instance = null;
+		private static SpeciesLurantis? _instance = null;
 #nullable restore
-        public static SpecieLurantis Instance
+        public static SpeciesLurantis Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLurantis();
+                    _instance = new SpeciesLurantis();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLurantis Builder
-		public SpecieLurantis() : base(
+		#region SpeciesLurantis Constructor
+		public SpeciesLurantis() : base(
 			"Lurantis",
 			0.9,
 			18.5,
@@ -32,23 +34,78 @@ namespace Pokedex.Models.Pokemons
 			80, 90, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Hyper-Beam",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Leech-Life",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Protect",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Ingrain",
+				"Brick-Break",
+				"Aerial-Ace",
+				"Leaf-Blade",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Night-Slash",
+				"X-Scissor",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Grass-Knot",
+				"Low-Sweep",
+				"Round",
+				"Petal-Blizzard",
+				"Confide",
+				"Solar-Blade",
+				"Leafage"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lurantis Pokemon Class
+	//Lurantis PokemonInstance Class
 	#region Lurantis
-	public class Lurantis : Pokemon
+	public class LurantisInstance : PokemonInstance
 	{
-		#region Lurantis Builders
+		#region Lurantis Constructors
 		/// <summary>
-		/// Lurantis Builder waiting for a Nickname & a Level
+		/// Lurantis Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lurantis(string nickname, int level)
+		public LurantisInstance(string nickname, int level)
 		: base(
 				754,
-				SpecieLurantis.Instance, // Pokemon Specie
+				SpeciesLurantis.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +117,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lurantis Builder only waiting for a Level
 		/// </summary>
-		public Lurantis(int level)
+		public LurantisInstance(int level)
 		: base(
 				754,
-				SpecieLurantis.Instance, // Pokemon Specie
+				SpeciesLurantis.Instance, // PokemonInstance Species
 				"Lurantis", level,
 				Grass.Instance			
 		)
@@ -73,12 +130,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lurantis Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lurantis Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lurantis() : base(
 			754,
-			SpecieLurantis.Instance, // Pokemon Specie
+			SpeciesLurantis.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Regice Specie to store common natural stats of all Regices
-	#region SpecieRegice
-	public class SpecieRegice : PokemonSpecie
+	//Regice Species to store common natural stats of all Regices
+	#region SpeciesRegice
+	public class SpeciesRegice : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRegice? _instance = null;
+		private static SpeciesRegice? _instance = null;
 #nullable restore
-        public static SpecieRegice Instance
+        public static SpeciesRegice Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRegice();
+                    _instance = new SpeciesRegice();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRegice Builder
-		public SpecieRegice() : base(
+		#region SpeciesRegice Constructor
+		public SpeciesRegice() : base(
 			"Regice",
 			1.8,
 			175.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			100, 200, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Stomp",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Amnesia",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Lock-On",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Block",
+				"Shock-Wave",
+				"Gravity",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Rock-Polish",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Avalanche",
+				"Flash-Cannon",
+				"Rock-Climb",
+				"Iron-Head",
+				"Charge-Beam",
+				"Round",
+				"Bulldoze",
+				"Frost-Breath",
+				"Confide",
+				"Power-Up-Punch",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Regice Pokemon Class
+	//Regice PokemonInstance Class
 	#region Regice
-	public class Regice : Pokemon
+	public class RegiceInstance : PokemonInstance
 	{
-		#region Regice Builders
+		#region Regice Constructors
 		/// <summary>
-		/// Regice Builder waiting for a Nickname & a Level
+		/// Regice Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Regice(string nickname, int level)
+		public RegiceInstance(string nickname, int level)
 		: base(
 				378,
-				SpecieRegice.Instance, // Pokemon Specie
+				SpeciesRegice.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Regice Builder only waiting for a Level
 		/// </summary>
-		public Regice(int level)
+		public RegiceInstance(int level)
 		: base(
 				378,
-				SpecieRegice.Instance, // Pokemon Specie
+				SpeciesRegice.Instance, // PokemonInstance Species
 				"Regice", level,
 				Ice.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Regice Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Regice Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Regice() : base(
 			378,
-			SpecieRegice.Instance, // Pokemon Specie
+			SpeciesRegice.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

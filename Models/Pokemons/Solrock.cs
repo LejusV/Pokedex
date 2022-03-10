@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Solrock Specie to store common natural stats of all Solrocks
-	#region SpecieSolrock
-	public class SpecieSolrock : PokemonSpecie
+	//Solrock Species to store common natural stats of all Solrocks
+	#region SpeciesSolrock
+	public class SpeciesSolrock : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSolrock? _instance = null;
+		private static SpeciesSolrock? _instance = null;
 #nullable restore
-        public static SpecieSolrock Instance
+        public static SpeciesSolrock Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSolrock();
+                    _instance = new SpeciesSolrock();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSolrock Builder
-		public SpecieSolrock() : base(
+		#region SpeciesSolrock Constructor
+		public SpeciesSolrock() : base(
 			"Solrock",
 			1.2,
 			154.0,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			55, 65, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Rock-Throw",
+				"Earthquake",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Self-Destruct",
+				"Fire-Blast",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Helping-Hand",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Gravity",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Embargo",
+				"Heal-Block",
+				"Flare-Blitz",
+				"Rock-Polish",
+				"Earth-Power",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Smack-Down",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Solrock Pokemon Class
+	//Solrock PokemonInstance Class
 	#region Solrock
-	public class Solrock : Pokemon
+	public class SolrockInstance : PokemonInstance
 	{
-		#region Solrock Builders
+		#region Solrock Constructors
 		/// <summary>
-		/// Solrock Builder waiting for a Nickname & a Level
+		/// Solrock Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Solrock(string nickname, int level)
+		public SolrockInstance(string nickname, int level)
 		: base(
 				338,
-				SpecieSolrock.Instance, // Pokemon Specie
+				SpeciesSolrock.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Psychic.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Solrock Builder only waiting for a Level
 		/// </summary>
-		public Solrock(int level)
+		public SolrockInstance(int level)
 		: base(
 				338,
-				SpecieSolrock.Instance, // Pokemon Specie
+				SpeciesSolrock.Instance, // PokemonInstance Species
 				"Solrock", level,
 				Rock.Instance, Psychic.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Solrock Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Solrock Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Solrock() : base(
 			338,
-			SpecieSolrock.Instance, // Pokemon Specie
+			SpeciesSolrock.Instance, // PokemonInstance Species
 			Rock.Instance, Psychic.Instance			
 		) {}
 		*/

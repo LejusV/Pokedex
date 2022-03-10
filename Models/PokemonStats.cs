@@ -6,7 +6,7 @@ namespace Pokedex.Models
     {
         private Dictionary<string, int> _stats;
 
-        public static readonly string[] Keys = {"HP", "ATK", "DEF", "SP_ATK", "SP_DEF", "SPEED"};
+        public static readonly List<string> Keys = new List<string>(){"HP", "ATK", "DEF", "SP_ATK", "SP_DEF", "SPEED"};
 
         public int Get(string key)
         {
@@ -16,6 +16,11 @@ namespace Pokedex.Models
         public void Set(string key, int value)
         {
             _stats[key] = value;
+        }
+
+        public void Add(string key, int value)
+        {
+            _stats[key] += value;
         }
 
         public void CopyTo(PokemonStats stats_copy)

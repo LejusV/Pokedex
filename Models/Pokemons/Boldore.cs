@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Boldore Specie to store common natural stats of all Boldores
-	#region SpecieBoldore
-	public class SpecieBoldore : PokemonSpecie
+	//Boldore Species to store common natural stats of all Boldores
+	#region SpeciesBoldore
+	public class SpeciesBoldore : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBoldore? _instance = null;
+		private static SpeciesBoldore? _instance = null;
 #nullable restore
-        public static SpecieBoldore Instance
+        public static SpeciesBoldore Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBoldore();
+                    _instance = new SpeciesBoldore();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBoldore Builder
-		public SpecieBoldore() : base(
+		#region SpeciesBoldore Constructor
+		public SpeciesBoldore() : base(
 			"Boldore",
 			0.9,
 			102.0,
@@ -32,23 +34,75 @@ namespace Pokedex.Models.Pokemons
 			50, 40, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Gravity",
+				"Rock-Polish",
+				"Power-Gem",
+				"Earth-Power",
+				"Flash-Cannon",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Smack-Down",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Boldore Pokemon Class
+	//Boldore PokemonInstance Class
 	#region Boldore
-	public class Boldore : Pokemon
+	public class BoldoreInstance : PokemonInstance
 	{
-		#region Boldore Builders
+		#region Boldore Constructors
 		/// <summary>
-		/// Boldore Builder waiting for a Nickname & a Level
+		/// Boldore Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Boldore(string nickname, int level)
+		public BoldoreInstance(string nickname, int level)
 		: base(
 				525,
-				SpecieBoldore.Instance, // Pokemon Specie
+				SpeciesBoldore.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +114,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Boldore Builder only waiting for a Level
 		/// </summary>
-		public Boldore(int level)
+		public BoldoreInstance(int level)
 		: base(
 				525,
-				SpecieBoldore.Instance, // Pokemon Specie
+				SpeciesBoldore.Instance, // PokemonInstance Species
 				"Boldore", level,
 				Rock.Instance			
 		)
@@ -73,12 +127,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Boldore Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Boldore Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Boldore() : base(
 			525,
-			SpecieBoldore.Instance, // Pokemon Specie
+			SpeciesBoldore.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

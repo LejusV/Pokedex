@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rillaboom Specie to store common natural stats of all Rillabooms
-	#region SpecieRillaboom
-	public class SpecieRillaboom : PokemonSpecie
+	//Rillaboom Species to store common natural stats of all Rillabooms
+	#region SpeciesRillaboom
+	public class SpeciesRillaboom : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRillaboom? _instance = null;
+		private static SpeciesRillaboom? _instance = null;
 #nullable restore
-        public static SpecieRillaboom Instance
+        public static SpeciesRillaboom Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRillaboom();
+                    _instance = new SpeciesRillaboom();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRillaboom Builder
-		public SpecieRillaboom() : base(
+		#region SpeciesRillaboom Constructor
+		public SpeciesRillaboom() : base(
 			"Rillaboom",
 			2.1,
 			90.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			60, 70, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rillaboom Pokemon Class
+	//Rillaboom PokemonInstance Class
 	#region Rillaboom
-	public class Rillaboom : Pokemon
+	public class RillaboomInstance : PokemonInstance
 	{
-		#region Rillaboom Builders
+		#region Rillaboom Constructors
 		/// <summary>
-		/// Rillaboom Builder waiting for a Nickname & a Level
+		/// Rillaboom Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rillaboom(string nickname, int level)
+		public RillaboomInstance(string nickname, int level)
 		: base(
 				812,
-				SpecieRillaboom.Instance, // Pokemon Specie
+				SpeciesRillaboom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rillaboom Builder only waiting for a Level
 		/// </summary>
-		public Rillaboom(int level)
+		public RillaboomInstance(int level)
 		: base(
 				812,
-				SpecieRillaboom.Instance, // Pokemon Specie
+				SpeciesRillaboom.Instance, // PokemonInstance Species
 				"Rillaboom", level,
 				Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rillaboom Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rillaboom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rillaboom() : base(
 			812,
-			SpecieRillaboom.Instance, // Pokemon Specie
+			SpeciesRillaboom.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

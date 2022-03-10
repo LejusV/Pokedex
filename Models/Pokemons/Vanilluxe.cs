@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vanilluxe Specie to store common natural stats of all Vanilluxes
-	#region SpecieVanilluxe
-	public class SpecieVanilluxe : PokemonSpecie
+	//Vanilluxe Species to store common natural stats of all Vanilluxes
+	#region SpeciesVanilluxe
+	public class SpeciesVanilluxe : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVanilluxe? _instance = null;
+		private static SpeciesVanilluxe? _instance = null;
 #nullable restore
-        public static SpecieVanilluxe Instance
+        public static SpeciesVanilluxe Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVanilluxe();
+                    _instance = new SpeciesVanilluxe();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVanilluxe Builder
-		public SpecieVanilluxe() : base(
+		#region SpeciesVanilluxe Constructor
+		public SpeciesVanilluxe() : base(
 			"Vanilluxe",
 			1.3,
 			57.5,
@@ -32,23 +34,79 @@ namespace Pokedex.Models.Pokemons
 			110, 95, // Special Attack & Defense
 			79		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Toxic",
+				"Double-Team",
+				"Harden",
+				"Light-Screen",
+				"Acid-Armor",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Mirror-Coat",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Taunt",
+				"Magic-Coat",
+				"Secret-Power",
+				"Astonish",
+				"Weather-Ball",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Icicle-Spear",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Avalanche",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Round",
+				"Frost-Breath",
+				"Freeze-Dry",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vanilluxe Pokemon Class
+	//Vanilluxe PokemonInstance Class
 	#region Vanilluxe
-	public class Vanilluxe : Pokemon
+	public class VanilluxeInstance : PokemonInstance
 	{
-		#region Vanilluxe Builders
+		#region Vanilluxe Constructors
 		/// <summary>
-		/// Vanilluxe Builder waiting for a Nickname & a Level
+		/// Vanilluxe Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vanilluxe(string nickname, int level)
+		public VanilluxeInstance(string nickname, int level)
 		: base(
 				584,
-				SpecieVanilluxe.Instance, // Pokemon Specie
+				SpeciesVanilluxe.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
 		)
@@ -60,10 +118,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vanilluxe Builder only waiting for a Level
 		/// </summary>
-		public Vanilluxe(int level)
+		public VanilluxeInstance(int level)
 		: base(
 				584,
-				SpecieVanilluxe.Instance, // Pokemon Specie
+				SpeciesVanilluxe.Instance, // PokemonInstance Species
 				"Vanilluxe", level,
 				Ice.Instance			
 		)
@@ -73,12 +131,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vanilluxe Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vanilluxe Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vanilluxe() : base(
 			584,
-			SpecieVanilluxe.Instance, // Pokemon Specie
+			SpeciesVanilluxe.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}
 		*/

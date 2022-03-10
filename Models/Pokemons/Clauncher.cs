@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Clauncher Specie to store common natural stats of all Claunchers
-	#region SpecieClauncher
-	public class SpecieClauncher : PokemonSpecie
+	//Clauncher Species to store common natural stats of all Claunchers
+	#region SpeciesClauncher
+	public class SpeciesClauncher : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieClauncher? _instance = null;
+		private static SpeciesClauncher? _instance = null;
 #nullable restore
-        public static SpecieClauncher Instance
+        public static SpeciesClauncher Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieClauncher();
+                    _instance = new SpeciesClauncher();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieClauncher Builder
-		public SpecieClauncher() : base(
+		#region SpeciesClauncher Constructor
+		public SpeciesClauncher() : base(
 			"Clauncher",
 			0.5,
 			8.3,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			58, 63, // Special Attack & Defense
 			44		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Swords-Dance",
+				"Cut",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Bubble",
+				"Splash",
+				"Crabhammer",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Dive",
+				"Muddy-Water",
+				"Bounce",
+				"Water-Sport",
+				"Water-Pulse",
+				"U-Turn",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Flash-Cannon",
+				"Aqua-Jet",
+				"Venoshock",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Entrainment",
+				"Round",
+				"Scald",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Clauncher Pokemon Class
+	//Clauncher PokemonInstance Class
 	#region Clauncher
-	public class Clauncher : Pokemon
+	public class ClauncherInstance : PokemonInstance
 	{
-		#region Clauncher Builders
+		#region Clauncher Constructors
 		/// <summary>
-		/// Clauncher Builder waiting for a Nickname & a Level
+		/// Clauncher Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Clauncher(string nickname, int level)
+		public ClauncherInstance(string nickname, int level)
 		: base(
 				692,
-				SpecieClauncher.Instance, // Pokemon Specie
+				SpeciesClauncher.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Clauncher Builder only waiting for a Level
 		/// </summary>
-		public Clauncher(int level)
+		public ClauncherInstance(int level)
 		: base(
 				692,
-				SpecieClauncher.Instance, // Pokemon Specie
+				SpeciesClauncher.Instance, // PokemonInstance Species
 				"Clauncher", level,
 				Water.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Clauncher Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Clauncher Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Clauncher() : base(
 			692,
-			SpecieClauncher.Instance, // Pokemon Specie
+			SpeciesClauncher.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bidoof Specie to store common natural stats of all Bidoofs
-	#region SpecieBidoof
-	public class SpecieBidoof : PokemonSpecie
+	//Bidoof Species to store common natural stats of all Bidoofs
+	#region SpeciesBidoof
+	public class SpeciesBidoof : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBidoof? _instance = null;
+		private static SpeciesBidoof? _instance = null;
 #nullable restore
-        public static SpecieBidoof Instance
+        public static SpeciesBidoof Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBidoof();
+                    _instance = new SpeciesBidoof();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBidoof Builder
-		public SpecieBidoof() : base(
+		#region SpeciesBidoof Constructor
+		public SpeciesBidoof() : base(
 			"Bidoof",
 			0.5,
 			20.0,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			35, 40, // Special Attack & Defense
 			31		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Ice-Beam",
+				"Blizzard",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Defense-Curl",
+				"Swift",
+				"Skull-Bash",
+				"Amnesia",
+				"Fury-Swipes",
+				"Rest",
+				"Hyper-Fang",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Yawn",
+				"Secret-Power",
+				"Mud-Sport",
+				"Odor-Sleuth",
+				"Covet",
+				"Water-Sport",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Pluck",
+				"Last-Resort",
+				"Aqua-Tail",
+				"Rock-Climb",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bidoof Pokemon Class
+	//Bidoof PokemonInstance Class
 	#region Bidoof
-	public class Bidoof : Pokemon
+	public class BidoofInstance : PokemonInstance
 	{
-		#region Bidoof Builders
+		#region Bidoof Constructors
 		/// <summary>
-		/// Bidoof Builder waiting for a Nickname & a Level
+		/// Bidoof Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bidoof(string nickname, int level)
+		public BidoofInstance(string nickname, int level)
 		: base(
 				399,
-				SpecieBidoof.Instance, // Pokemon Specie
+				SpeciesBidoof.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bidoof Builder only waiting for a Level
 		/// </summary>
-		public Bidoof(int level)
+		public BidoofInstance(int level)
 		: base(
 				399,
-				SpecieBidoof.Instance, // Pokemon Specie
+				SpeciesBidoof.Instance, // PokemonInstance Species
 				"Bidoof", level,
 				Normal.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bidoof Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bidoof Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bidoof() : base(
 			399,
-			SpecieBidoof.Instance, // Pokemon Specie
+			SpeciesBidoof.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

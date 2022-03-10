@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ninetales Specie to store common natural stats of all Ninetaless
-	#region SpecieNinetales
-	public class SpecieNinetales : PokemonSpecie
+	//Ninetales Species to store common natural stats of all Ninetaless
+	#region SpeciesNinetales
+	public class SpeciesNinetales : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNinetales? _instance = null;
+		private static SpeciesNinetales? _instance = null;
 #nullable restore
-        public static SpecieNinetales Instance
+        public static SpeciesNinetales Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNinetales();
+                    _instance = new SpeciesNinetales();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNinetales Builder
-		public SpecieNinetales() : base(
+		#region SpeciesNinetales Constructor
+		public SpeciesNinetales() : base(
 			"Ninetales",
 			1.1,
 			19.9,
@@ -32,23 +34,100 @@ namespace Pokedex.Models.Pokemons
 			81, 100, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Swift",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Role-Play",
+				"Imprison",
+				"Secret-Power",
+				"Overheat",
+				"Covet",
+				"Calm-Mind",
+				"Natural-Gift",
+				"Payback",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Zen-Headbutt",
+				"Captivate",
+				"Ominous-Wind",
+				"Psyshock",
+				"Flame-Charge",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ninetales Pokemon Class
+	//Ninetales PokemonInstance Class
 	#region Ninetales
-	public class Ninetales : Pokemon
+	public class NinetalesInstance : PokemonInstance
 	{
-		#region Ninetales Builders
+		#region Ninetales Constructors
 		/// <summary>
-		/// Ninetales Builder waiting for a Nickname & a Level
+		/// Ninetales Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ninetales(string nickname, int level)
+		public NinetalesInstance(string nickname, int level)
 		: base(
 				38,
-				SpecieNinetales.Instance, // Pokemon Specie
+				SpeciesNinetales.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +139,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ninetales Builder only waiting for a Level
 		/// </summary>
-		public Ninetales(int level)
+		public NinetalesInstance(int level)
 		: base(
 				38,
-				SpecieNinetales.Instance, // Pokemon Specie
+				SpeciesNinetales.Instance, // PokemonInstance Species
 				"Ninetales", level,
 				Fire.Instance			
 		)
@@ -73,12 +152,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ninetales Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ninetales Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ninetales() : base(
 			38,
-			SpecieNinetales.Instance, // Pokemon Specie
+			SpeciesNinetales.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

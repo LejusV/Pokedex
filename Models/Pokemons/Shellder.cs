@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shellder Specie to store common natural stats of all Shellders
-	#region SpecieShellder
-	public class SpecieShellder : PokemonSpecie
+	//Shellder Species to store common natural stats of all Shellders
+	#region SpeciesShellder
+	public class SpeciesShellder : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShellder? _instance = null;
+		private static SpeciesShellder? _instance = null;
 #nullable restore
-        public static SpecieShellder Instance
+        public static SpeciesShellder Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShellder();
+                    _instance = new SpeciesShellder();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShellder Builder
-		public SpecieShellder() : base(
+		#region SpeciesShellder Constructor
+		public SpeciesShellder() : base(
 			"Shellder",
 			0.3,
 			4.0,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			45, 25, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Twineedle",
+				"Leer",
+				"Supersonic",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Toxic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Withdraw",
+				"Barrier",
+				"Reflect",
+				"Bide",
+				"Self-Destruct",
+				"Clamp",
+				"Swift",
+				"Explosion",
+				"Rest",
+				"Tri-Attack",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Icicle-Spear",
+				"Iron-Defense",
+				"Mud-Shot",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Payback",
+				"Aqua-Ring",
+				"Avalanche",
+				"Ice-Shard",
+				"Captivate",
+				"Round",
+				"Shell-Smash",
+				"Razor-Shell",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shellder Pokemon Class
+	//Shellder PokemonInstance Class
 	#region Shellder
-	public class Shellder : Pokemon
+	public class ShellderInstance : PokemonInstance
 	{
-		#region Shellder Builders
+		#region Shellder Constructors
 		/// <summary>
-		/// Shellder Builder waiting for a Nickname & a Level
+		/// Shellder Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shellder(string nickname, int level)
+		public ShellderInstance(string nickname, int level)
 		: base(
 				90,
-				SpecieShellder.Instance, // Pokemon Specie
+				SpeciesShellder.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shellder Builder only waiting for a Level
 		/// </summary>
-		public Shellder(int level)
+		public ShellderInstance(int level)
 		: base(
 				90,
-				SpecieShellder.Instance, // Pokemon Specie
+				SpeciesShellder.Instance, // PokemonInstance Species
 				"Shellder", level,
 				Water.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shellder Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shellder Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shellder() : base(
 			90,
-			SpecieShellder.Instance, // Pokemon Specie
+			SpeciesShellder.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

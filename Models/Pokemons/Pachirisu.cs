@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pachirisu Specie to store common natural stats of all Pachirisus
-	#region SpeciePachirisu
-	public class SpeciePachirisu : PokemonSpecie
+	//Pachirisu Species to store common natural stats of all Pachirisus
+	#region SpeciesPachirisu
+	public class SpeciesPachirisu : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePachirisu? _instance = null;
+		private static SpeciesPachirisu? _instance = null;
 #nullable restore
-        public static SpeciePachirisu Instance
+        public static SpeciesPachirisu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePachirisu();
+                    _instance = new SpeciesPachirisu();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePachirisu Builder
-		public SpeciePachirisu() : base(
+		#region SpeciesPachirisu Constructor
+		public SpeciesPachirisu() : base(
 			"Pachirisu",
 			0.4,
 			3.9,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			45, 90, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Punch",
+				"Cut",
+				"Headbutt",
+				"Tail-Whip",
+				"Bite",
+				"Growl",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Bide",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Hyper-Fang",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sweet-Kiss",
+				"Mud-Slap",
+				"Endure",
+				"Charm",
+				"Rollout",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Flatter",
+				"Facade",
+				"Follow-Me",
+				"Charge",
+				"Helping-Hand",
+				"Secret-Power",
+				"Fake-Tears",
+				"Covet",
+				"Shock-Wave",
+				"Natural-Gift",
+				"U-Turn",
+				"Fling",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Seed-Bomb",
+				"Discharge",
+				"Gunk-Shot",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Round",
+				"Echoed-Voice",
+				"Bestow",
+				"Volt-Switch",
+				"Electroweb",
+				"Ion-Deluge",
+				"Confide",
+				"Baby-Doll-Eyes",
+				"Nuzzle"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pachirisu Pokemon Class
+	//Pachirisu PokemonInstance Class
 	#region Pachirisu
-	public class Pachirisu : Pokemon
+	public class PachirisuInstance : PokemonInstance
 	{
-		#region Pachirisu Builders
+		#region Pachirisu Constructors
 		/// <summary>
-		/// Pachirisu Builder waiting for a Nickname & a Level
+		/// Pachirisu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pachirisu(string nickname, int level)
+		public PachirisuInstance(string nickname, int level)
 		: base(
 				417,
-				SpeciePachirisu.Instance, // Pokemon Specie
+				SpeciesPachirisu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pachirisu Builder only waiting for a Level
 		/// </summary>
-		public Pachirisu(int level)
+		public PachirisuInstance(int level)
 		: base(
 				417,
-				SpeciePachirisu.Instance, // Pokemon Specie
+				SpeciesPachirisu.Instance, // PokemonInstance Species
 				"Pachirisu", level,
 				Electric.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pachirisu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pachirisu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pachirisu() : base(
 			417,
-			SpeciePachirisu.Instance, // Pokemon Specie
+			SpeciesPachirisu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

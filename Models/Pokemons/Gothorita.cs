@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gothorita Specie to store common natural stats of all Gothoritas
-	#region SpecieGothorita
-	public class SpecieGothorita : PokemonSpecie
+	//Gothorita Species to store common natural stats of all Gothoritas
+	#region SpeciesGothorita
+	public class SpeciesGothorita : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGothorita? _instance = null;
+		private static SpeciesGothorita? _instance = null;
 #nullable restore
-        public static SpecieGothorita Instance
+        public static SpeciesGothorita Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGothorita();
+                    _instance = new SpeciesGothorita();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGothorita Builder
-		public SpecieGothorita() : base(
+		#region SpeciesGothorita Constructor
+		public SpeciesGothorita() : base(
 			"Gothorita",
 			0.7,
 			18.0,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			75, 85, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Psybeam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Uproar",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Tickle",
+				"Signal-Beam",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Heal-Block",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Foul-Play",
+				"Round",
+				"Play-Nice",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gothorita Pokemon Class
+	//Gothorita PokemonInstance Class
 	#region Gothorita
-	public class Gothorita : Pokemon
+	public class GothoritaInstance : PokemonInstance
 	{
-		#region Gothorita Builders
+		#region Gothorita Constructors
 		/// <summary>
-		/// Gothorita Builder waiting for a Nickname & a Level
+		/// Gothorita Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gothorita(string nickname, int level)
+		public GothoritaInstance(string nickname, int level)
 		: base(
 				575,
-				SpecieGothorita.Instance, // Pokemon Specie
+				SpeciesGothorita.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gothorita Builder only waiting for a Level
 		/// </summary>
-		public Gothorita(int level)
+		public GothoritaInstance(int level)
 		: base(
 				575,
-				SpecieGothorita.Instance, // Pokemon Specie
+				SpeciesGothorita.Instance, // PokemonInstance Species
 				"Gothorita", level,
 				Psychic.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gothorita Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gothorita Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gothorita() : base(
 			575,
-			SpecieGothorita.Instance, // Pokemon Specie
+			SpeciesGothorita.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

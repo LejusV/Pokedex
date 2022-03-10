@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Regidrago Specie to store common natural stats of all Regidragos
-	#region SpecieRegidrago
-	public class SpecieRegidrago : PokemonSpecie
+	//Regidrago Species to store common natural stats of all Regidragos
+	#region SpeciesRegidrago
+	public class SpeciesRegidrago : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRegidrago? _instance = null;
+		private static SpeciesRegidrago? _instance = null;
 #nullable restore
-        public static SpecieRegidrago Instance
+        public static SpeciesRegidrago Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRegidrago();
+                    _instance = new SpeciesRegidrago();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRegidrago Builder
-		public SpecieRegidrago() : base(
+		#region SpeciesRegidrago Constructor
+		public SpeciesRegidrago() : base(
 			"Regidrago",
 			2.1,
 			200.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			100, 50, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Regidrago Pokemon Class
+	//Regidrago PokemonInstance Class
 	#region Regidrago
-	public class Regidrago : Pokemon
+	public class RegidragoInstance : PokemonInstance
 	{
-		#region Regidrago Builders
+		#region Regidrago Constructors
 		/// <summary>
-		/// Regidrago Builder waiting for a Nickname & a Level
+		/// Regidrago Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Regidrago(string nickname, int level)
+		public RegidragoInstance(string nickname, int level)
 		: base(
 				895,
-				SpecieRegidrago.Instance, // Pokemon Specie
+				SpeciesRegidrago.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Regidrago Builder only waiting for a Level
 		/// </summary>
-		public Regidrago(int level)
+		public RegidragoInstance(int level)
 		: base(
 				895,
-				SpecieRegidrago.Instance, // Pokemon Specie
+				SpeciesRegidrago.Instance, // PokemonInstance Species
 				"Regidrago", level,
 				Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Regidrago Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Regidrago Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Regidrago() : base(
 			895,
-			SpecieRegidrago.Instance, // Pokemon Specie
+			SpeciesRegidrago.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}
 		*/

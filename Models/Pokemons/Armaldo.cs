@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Armaldo Specie to store common natural stats of all Armaldos
-	#region SpecieArmaldo
-	public class SpecieArmaldo : PokemonSpecie
+	//Armaldo Species to store common natural stats of all Armaldos
+	#region SpeciesArmaldo
+	public class SpeciesArmaldo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArmaldo? _instance = null;
+		private static SpeciesArmaldo? _instance = null;
 #nullable restore
-        public static SpecieArmaldo Instance
+        public static SpeciesArmaldo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArmaldo();
+                    _instance = new SpeciesArmaldo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArmaldo Builder
-		public SpecieArmaldo() : base(
+		#region SpeciesArmaldo Constructor
+		public SpeciesArmaldo() : base(
 			"Armaldo",
 			1.5,
 			68.2,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Water-Gun",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Seismic-Toss",
+				"Strength",
+				"String-Shot",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Facade",
+				"Superpower",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Mud-Sport",
+				"Crush-Claw",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Block",
+				"Rock-Blast",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Rock-Polish",
+				"Aqua-Tail",
+				"X-Scissor",
+				"Earth-Power",
+				"Giga-Impact",
+				"Flash-Cannon",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Struggle-Bug",
+				"Bulldoze",
+				"Confide",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Armaldo Pokemon Class
+	//Armaldo PokemonInstance Class
 	#region Armaldo
-	public class Armaldo : Pokemon
+	public class ArmaldoInstance : PokemonInstance
 	{
-		#region Armaldo Builders
+		#region Armaldo Constructors
 		/// <summary>
-		/// Armaldo Builder waiting for a Nickname & a Level
+		/// Armaldo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Armaldo(string nickname, int level)
+		public ArmaldoInstance(string nickname, int level)
 		: base(
 				348,
-				SpecieArmaldo.Instance, // Pokemon Specie
+				SpeciesArmaldo.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Bug.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Armaldo Builder only waiting for a Level
 		/// </summary>
-		public Armaldo(int level)
+		public ArmaldoInstance(int level)
 		: base(
 				348,
-				SpecieArmaldo.Instance, // Pokemon Specie
+				SpeciesArmaldo.Instance, // PokemonInstance Species
 				"Armaldo", level,
 				Rock.Instance, Bug.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Armaldo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Armaldo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Armaldo() : base(
 			348,
-			SpecieArmaldo.Instance, // Pokemon Specie
+			SpeciesArmaldo.Instance, // PokemonInstance Species
 			Rock.Instance, Bug.Instance			
 		) {}
 		*/

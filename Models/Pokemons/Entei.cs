@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Entei Specie to store common natural stats of all Enteis
-	#region SpecieEntei
-	public class SpecieEntei : PokemonSpecie
+	//Entei Species to store common natural stats of all Enteis
+	#region SpeciesEntei
+	public class SpeciesEntei : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEntei? _instance = null;
+		private static SpeciesEntei? _instance = null;
 #nullable restore
-        public static SpecieEntei Instance
+        public static SpeciesEntei Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEntei();
+                    _instance = new SpeciesEntei();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEntei Builder
-		public SpecieEntei() : base(
+		#region SpeciesEntei Constructor
+		public SpeciesEntei() : base(
 			"Entei",
 			2.1,
 			198.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			90, 75, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Stomp",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Fire-Blast",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sacred-Fire",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Eruption",
+				"Secret-Power",
+				"Overheat",
+				"Extrasensory",
+				"Calm-Mind",
+				"Natural-Gift",
+				"Giga-Impact",
+				"Fire-Fang",
+				"Rock-Climb",
+				"Lava-Plume",
+				"Iron-Head",
+				"Stone-Edge",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Quash",
+				"Bulldoze",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Entei Pokemon Class
+	//Entei PokemonInstance Class
 	#region Entei
-	public class Entei : Pokemon
+	public class EnteiInstance : PokemonInstance
 	{
-		#region Entei Builders
+		#region Entei Constructors
 		/// <summary>
-		/// Entei Builder waiting for a Nickname & a Level
+		/// Entei Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Entei(string nickname, int level)
+		public EnteiInstance(string nickname, int level)
 		: base(
 				244,
-				SpecieEntei.Instance, // Pokemon Specie
+				SpeciesEntei.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Entei Builder only waiting for a Level
 		/// </summary>
-		public Entei(int level)
+		public EnteiInstance(int level)
 		: base(
 				244,
-				SpecieEntei.Instance, // Pokemon Specie
+				SpeciesEntei.Instance, // PokemonInstance Species
 				"Entei", level,
 				Fire.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Entei Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Entei Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Entei() : base(
 			244,
-			SpecieEntei.Instance, // Pokemon Specie
+			SpeciesEntei.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

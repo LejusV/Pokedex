@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Klinklang Specie to store common natural stats of all Klinklangs
-	#region SpecieKlinklang
-	public class SpecieKlinklang : PokemonSpecie
+	//Klinklang Species to store common natural stats of all Klinklangs
+	#region SpeciesKlinklang
+	public class SpeciesKlinklang : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKlinklang? _instance = null;
+		private static SpeciesKlinklang? _instance = null;
 #nullable restore
-        public static SpecieKlinklang Instance
+        public static SpeciesKlinklang Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKlinklang();
+                    _instance = new SpeciesKlinklang();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKlinklang Builder
-		public SpecieKlinklang() : base(
+		#region SpeciesKlinklang Constructor
+		public SpeciesKlinklang() : base(
 			"Klinklang",
 			0.6,
 			81.0,
@@ -32,23 +34,85 @@ namespace Pokedex.Models.Pokemons
 			70, 85, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Bind",
+				"Hyper-Beam",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Zap-Cannon",
+				"Lock-On",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Charge",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Metal-Sound",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Gravity",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Giga-Impact",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Discharge",
+				"Charge-Beam",
+				"Autotomize",
+				"Round",
+				"Shift-Gear",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Gear-Grind",
+				"Confide",
+				"Magnetic-Flux",
+				"Gear-Up"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Klinklang Pokemon Class
+	//Klinklang PokemonInstance Class
 	#region Klinklang
-	public class Klinklang : Pokemon
+	public class KlinklangInstance : PokemonInstance
 	{
-		#region Klinklang Builders
+		#region Klinklang Constructors
 		/// <summary>
-		/// Klinklang Builder waiting for a Nickname & a Level
+		/// Klinklang Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Klinklang(string nickname, int level)
+		public KlinklangInstance(string nickname, int level)
 		: base(
 				601,
-				SpecieKlinklang.Instance, // Pokemon Specie
+				SpeciesKlinklang.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +124,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Klinklang Builder only waiting for a Level
 		/// </summary>
-		public Klinklang(int level)
+		public KlinklangInstance(int level)
 		: base(
 				601,
-				SpecieKlinklang.Instance, // Pokemon Specie
+				SpeciesKlinklang.Instance, // PokemonInstance Species
 				"Klinklang", level,
 				Steel.Instance			
 		)
@@ -73,12 +137,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Klinklang Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Klinklang Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Klinklang() : base(
 			601,
-			SpecieKlinklang.Instance, // Pokemon Specie
+			SpeciesKlinklang.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

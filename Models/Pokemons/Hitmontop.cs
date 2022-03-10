@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hitmontop Specie to store common natural stats of all Hitmontops
-	#region SpecieHitmontop
-	public class SpecieHitmontop : PokemonSpecie
+	//Hitmontop Species to store common natural stats of all Hitmontops
+	#region SpeciesHitmontop
+	public class SpeciesHitmontop : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHitmontop? _instance = null;
+		private static SpeciesHitmontop? _instance = null;
 #nullable restore
-        public static SpecieHitmontop Instance
+        public static SpeciesHitmontop Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHitmontop();
+                    _instance = new SpeciesHitmontop();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHitmontop Builder
-		public SpecieHitmontop() : base(
+		#region SpeciesHitmontop Constructor
+		public SpeciesHitmontop() : base(
 			"Hitmontop",
 			1.4,
 			48.0,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			35, 110, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Kick",
+				"Rolling-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Triple-Kick",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Helping-Hand",
+				"Role-Play",
+				"Revenge",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Covet",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Feint",
+				"Close-Combat",
+				"Sucker-Punch",
+				"Vacuum-Wave",
+				"Stone-Edge",
+				"Captivate",
+				"Wide-Guard",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Drill-Run",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hitmontop Pokemon Class
+	//Hitmontop PokemonInstance Class
 	#region Hitmontop
-	public class Hitmontop : Pokemon
+	public class HitmontopInstance : PokemonInstance
 	{
-		#region Hitmontop Builders
+		#region Hitmontop Constructors
 		/// <summary>
-		/// Hitmontop Builder waiting for a Nickname & a Level
+		/// Hitmontop Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hitmontop(string nickname, int level)
+		public HitmontopInstance(string nickname, int level)
 		: base(
 				237,
-				SpecieHitmontop.Instance, // Pokemon Specie
+				SpeciesHitmontop.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hitmontop Builder only waiting for a Level
 		/// </summary>
-		public Hitmontop(int level)
+		public HitmontopInstance(int level)
 		: base(
 				237,
-				SpecieHitmontop.Instance, // Pokemon Specie
+				SpeciesHitmontop.Instance, // PokemonInstance Species
 				"Hitmontop", level,
 				Fighting.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hitmontop Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hitmontop Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hitmontop() : base(
 			237,
-			SpecieHitmontop.Instance, // Pokemon Specie
+			SpeciesHitmontop.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

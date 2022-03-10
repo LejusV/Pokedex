@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bisharp Specie to store common natural stats of all Bisharps
-	#region SpecieBisharp
-	public class SpecieBisharp : PokemonSpecie
+	//Bisharp Species to store common natural stats of all Bisharps
+	#region SpeciesBisharp
+	public class SpeciesBisharp : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBisharp? _instance = null;
+		private static SpeciesBisharp? _instance = null;
 #nullable restore
-        public static SpecieBisharp Instance
+        public static SpeciesBisharp Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBisharp();
+                    _instance = new SpeciesBisharp();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBisharp Builder
-		public SpecieBisharp() : base(
+		#region SpeciesBisharp Constructor
+		public SpeciesBisharp() : base(
 			"Bisharp",
 			1.6,
 			70.0,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			60, 70, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Guillotine",
+				"Swords-Dance",
+				"Cut",
+				"Leer",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Thunder-Wave",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Sandstorm",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Role-Play",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Metal-Sound",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Metal-Burst",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Fling",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Night-Slash",
+				"X-Scissor",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Dual-Chop",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bisharp Pokemon Class
+	//Bisharp PokemonInstance Class
 	#region Bisharp
-	public class Bisharp : Pokemon
+	public class BisharpInstance : PokemonInstance
 	{
-		#region Bisharp Builders
+		#region Bisharp Constructors
 		/// <summary>
-		/// Bisharp Builder waiting for a Nickname & a Level
+		/// Bisharp Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bisharp(string nickname, int level)
+		public BisharpInstance(string nickname, int level)
 		: base(
 				625,
-				SpecieBisharp.Instance, // Pokemon Specie
+				SpeciesBisharp.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Steel.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bisharp Builder only waiting for a Level
 		/// </summary>
-		public Bisharp(int level)
+		public BisharpInstance(int level)
 		: base(
 				625,
-				SpecieBisharp.Instance, // Pokemon Specie
+				SpeciesBisharp.Instance, // PokemonInstance Species
 				"Bisharp", level,
 				Dark.Instance, Steel.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bisharp Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bisharp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bisharp() : base(
 			625,
-			SpecieBisharp.Instance, // Pokemon Specie
+			SpeciesBisharp.Instance, // PokemonInstance Species
 			Dark.Instance, Steel.Instance			
 		) {}
 		*/

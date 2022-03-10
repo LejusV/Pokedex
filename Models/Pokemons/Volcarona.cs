@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Volcarona Specie to store common natural stats of all Volcaronas
-	#region SpecieVolcarona
-	public class SpecieVolcarona : PokemonSpecie
+	//Volcarona Species to store common natural stats of all Volcaronas
+	#region SpeciesVolcarona
+	public class SpeciesVolcarona : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVolcarona? _instance = null;
+		private static SpeciesVolcarona? _instance = null;
 #nullable restore
-        public static SpecieVolcarona Instance
+        public static SpeciesVolcarona Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVolcarona();
+                    _instance = new SpeciesVolcarona();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVolcarona Builder
-		public SpecieVolcarona() : base(
+		#region SpeciesVolcarona Constructor
+		public SpeciesVolcarona() : base(
 			"Volcarona",
 			1.6,
 			46.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			135, 105, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Thrash",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Absorb",
+				"Solar-Beam",
+				"String-Shot",
+				"Fire-Spin",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Fire-Blast",
+				"Amnesia",
+				"Leech-Life",
+				"Rest",
+				"Substitute",
+				"Flame-Wheel",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Secret-Power",
+				"Overheat",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Roost",
+				"Tailwind",
+				"U-Turn",
+				"Magnet-Rise",
+				"Flare-Blitz",
+				"Poison-Jab",
+				"Bug-Buzz",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Bug-Bite",
+				"Rage-Powder",
+				"Quiver-Dance",
+				"Flame-Charge",
+				"Round",
+				"Incinerate",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Wild-Charge",
+				"Hurricane",
+				"Fiery-Dance",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Volcarona Pokemon Class
+	//Volcarona PokemonInstance Class
 	#region Volcarona
-	public class Volcarona : Pokemon
+	public class VolcaronaInstance : PokemonInstance
 	{
-		#region Volcarona Builders
+		#region Volcarona Constructors
 		/// <summary>
-		/// Volcarona Builder waiting for a Nickname & a Level
+		/// Volcarona Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Volcarona(string nickname, int level)
+		public VolcaronaInstance(string nickname, int level)
 		: base(
 				637,
-				SpecieVolcarona.Instance, // Pokemon Specie
+				SpeciesVolcarona.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fire.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Volcarona Builder only waiting for a Level
 		/// </summary>
-		public Volcarona(int level)
+		public VolcaronaInstance(int level)
 		: base(
 				637,
-				SpecieVolcarona.Instance, // Pokemon Specie
+				SpeciesVolcarona.Instance, // PokemonInstance Species
 				"Volcarona", level,
 				Bug.Instance, Fire.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Volcarona Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Volcarona Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Volcarona() : base(
 			637,
-			SpecieVolcarona.Instance, // Pokemon Specie
+			SpeciesVolcarona.Instance, // PokemonInstance Species
 			Bug.Instance, Fire.Instance			
 		) {}
 		*/

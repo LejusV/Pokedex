@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Archen Specie to store common natural stats of all Archens
-	#region SpecieArchen
-	public class SpecieArchen : PokemonSpecie
+	//Archen Species to store common natural stats of all Archens
+	#region SpeciesArchen
+	public class SpeciesArchen : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArchen? _instance = null;
+		private static SpeciesArchen? _instance = null;
 #nullable restore
-        public static SpecieArchen Instance
+        public static SpeciesArchen Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArchen();
+                    _instance = new SpeciesArchen();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArchen Builder
-		public SpecieArchen() : base(
+		#region SpeciesArchen Constructor
+		public SpeciesArchen() : base(
 			"Archen",
 			0.5,
 			9.5,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			74, 45, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Wing-Attack",
+				"Thrash",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Rock-Throw",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Sandstorm",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Crunch",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Heat-Wave",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Knock-Off",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bounce",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Rock-Polish",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Earth-Power",
+				"Switcheroo",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Defog",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Head-Smash",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Quick-Guard",
+				"Ally-Switch",
+				"Acrobatics",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Archen Pokemon Class
+	//Archen PokemonInstance Class
 	#region Archen
-	public class Archen : Pokemon
+	public class ArchenInstance : PokemonInstance
 	{
-		#region Archen Builders
+		#region Archen Constructors
 		/// <summary>
-		/// Archen Builder waiting for a Nickname & a Level
+		/// Archen Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Archen(string nickname, int level)
+		public ArchenInstance(string nickname, int level)
 		: base(
 				566,
-				SpecieArchen.Instance, // Pokemon Specie
+				SpeciesArchen.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Archen Builder only waiting for a Level
 		/// </summary>
-		public Archen(int level)
+		public ArchenInstance(int level)
 		: base(
 				566,
-				SpecieArchen.Instance, // Pokemon Specie
+				SpeciesArchen.Instance, // PokemonInstance Species
 				"Archen", level,
 				Rock.Instance, Flying.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Archen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Archen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Archen() : base(
 			566,
-			SpecieArchen.Instance, // Pokemon Specie
+			SpeciesArchen.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}
 		*/

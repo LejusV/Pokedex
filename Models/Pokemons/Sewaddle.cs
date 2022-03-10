@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sewaddle Specie to store common natural stats of all Sewaddles
-	#region SpecieSewaddle
-	public class SpecieSewaddle : PokemonSpecie
+	//Sewaddle Species to store common natural stats of all Sewaddles
+	#region SpeciesSewaddle
+	public class SpeciesSewaddle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSewaddle? _instance = null;
+		private static SpeciesSewaddle? _instance = null;
 #nullable restore
-        public static SpecieSewaddle Instance
+        public static SpeciesSewaddle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSewaddle();
+                    _instance = new SpeciesSewaddle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSewaddle Builder
-		public SpecieSewaddle() : base(
+		#region SpeciesSewaddle Constructor
+		public SpeciesSewaddle() : base(
 			"Sewaddle",
 			0.3,
 			2.5,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			40, 60, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Cut",
+				"Tackle",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Agility",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Baton-Pass",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Magic-Coat",
+				"Secret-Power",
+				"Camouflage",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Payback",
+				"Me-First",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Air-Slash",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Round",
+				"Struggle-Bug",
+				"Electroweb",
+				"Sticky-Web",
+				"Grassy-Terrain",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sewaddle Pokemon Class
+	//Sewaddle PokemonInstance Class
 	#region Sewaddle
-	public class Sewaddle : Pokemon
+	public class SewaddleInstance : PokemonInstance
 	{
-		#region Sewaddle Builders
+		#region Sewaddle Constructors
 		/// <summary>
-		/// Sewaddle Builder waiting for a Nickname & a Level
+		/// Sewaddle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sewaddle(string nickname, int level)
+		public SewaddleInstance(string nickname, int level)
 		: base(
 				540,
-				SpecieSewaddle.Instance, // Pokemon Specie
+				SpeciesSewaddle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sewaddle Builder only waiting for a Level
 		/// </summary>
-		public Sewaddle(int level)
+		public SewaddleInstance(int level)
 		: base(
 				540,
-				SpecieSewaddle.Instance, // Pokemon Specie
+				SpeciesSewaddle.Instance, // PokemonInstance Species
 				"Sewaddle", level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sewaddle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sewaddle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sewaddle() : base(
 			540,
-			SpecieSewaddle.Instance, // Pokemon Specie
+			SpeciesSewaddle.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}
 		*/

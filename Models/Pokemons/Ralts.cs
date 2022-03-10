@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ralts Specie to store common natural stats of all Raltss
-	#region SpecieRalts
-	public class SpecieRalts : PokemonSpecie
+	//Ralts Species to store common natural stats of all Raltss
+	#region SpeciesRalts
+	public class SpeciesRalts : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRalts? _instance = null;
+		private static SpeciesRalts? _instance = null;
 #nullable restore
-        public static SpecieRalts Instance
+        public static SpeciesRalts Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRalts();
+                    _instance = new SpeciesRalts();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRalts Builder
-		public SpecieRalts() : base(
+		#region SpeciesRalts Constructor
+		public SpeciesRalts() : base(
 			"Ralts",
 			0.4,
 			6.6,
@@ -32,23 +34,127 @@ namespace Pokedex.Models.Pokemons
 			45, 35, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Disable",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Hypnosis",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Destiny-Bond",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Encore",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Will-O-Wisp",
+				"Memento",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Imprison",
+				"Grudge",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Signal-Beam",
+				"Magical-Leaf",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Fling",
+				"Lucky-Chant",
+				"Shadow-Sneak",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Synchronoise",
+				"Round",
+				"Echoed-Voice",
+				"Stored-Power",
+				"Ally-Switch",
+				"Heal-Pulse",
+				"Disarming-Voice",
+				"Draining-Kiss",
+				"Misty-Terrain",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ralts Pokemon Class
+	//Ralts PokemonInstance Class
 	#region Ralts
-	public class Ralts : Pokemon
+	public class RaltsInstance : PokemonInstance
 	{
-		#region Ralts Builders
+		#region Ralts Constructors
 		/// <summary>
-		/// Ralts Builder waiting for a Nickname & a Level
+		/// Ralts Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ralts(string nickname, int level)
+		public RaltsInstance(string nickname, int level)
 		: base(
 				280,
-				SpecieRalts.Instance, // Pokemon Specie
+				SpeciesRalts.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -60,10 +166,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ralts Builder only waiting for a Level
 		/// </summary>
-		public Ralts(int level)
+		public RaltsInstance(int level)
 		: base(
 				280,
-				SpecieRalts.Instance, // Pokemon Specie
+				SpeciesRalts.Instance, // PokemonInstance Species
 				"Ralts", level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -73,12 +179,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ralts Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ralts Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ralts() : base(
 			280,
-			SpecieRalts.Instance, // Pokemon Specie
+			SpeciesRalts.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}
 		*/

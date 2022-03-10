@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Copperajah Specie to store common natural stats of all Copperajahs
-	#region SpecieCopperajah
-	public class SpecieCopperajah : PokemonSpecie
+	//Copperajah Species to store common natural stats of all Copperajahs
+	#region SpeciesCopperajah
+	public class SpeciesCopperajah : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCopperajah? _instance = null;
+		private static SpeciesCopperajah? _instance = null;
 #nullable restore
-        public static SpecieCopperajah Instance
+        public static SpeciesCopperajah Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCopperajah();
+                    _instance = new SpeciesCopperajah();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCopperajah Builder
-		public SpecieCopperajah() : base(
+		#region SpeciesCopperajah Constructor
+		public SpeciesCopperajah() : base(
 			"Copperajah",
 			3.0,
 			650.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 69, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Copperajah Pokemon Class
+	//Copperajah PokemonInstance Class
 	#region Copperajah
-	public class Copperajah : Pokemon
+	public class CopperajahInstance : PokemonInstance
 	{
-		#region Copperajah Builders
+		#region Copperajah Constructors
 		/// <summary>
-		/// Copperajah Builder waiting for a Nickname & a Level
+		/// Copperajah Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Copperajah(string nickname, int level)
+		public CopperajahInstance(string nickname, int level)
 		: base(
 				879,
-				SpecieCopperajah.Instance, // Pokemon Specie
+				SpeciesCopperajah.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Copperajah Builder only waiting for a Level
 		/// </summary>
-		public Copperajah(int level)
+		public CopperajahInstance(int level)
 		: base(
 				879,
-				SpecieCopperajah.Instance, // Pokemon Specie
+				SpeciesCopperajah.Instance, // PokemonInstance Species
 				"Copperajah", level,
 				Steel.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Copperajah Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Copperajah Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Copperajah() : base(
 			879,
-			SpecieCopperajah.Instance, // Pokemon Specie
+			SpeciesCopperajah.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swablu Specie to store common natural stats of all Swablus
-	#region SpecieSwablu
-	public class SpecieSwablu : PokemonSpecie
+	//Swablu Species to store common natural stats of all Swablus
+	#region SpeciesSwablu
+	public class SpeciesSwablu : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwablu? _instance = null;
+		private static SpeciesSwablu? _instance = null;
 #nullable restore
-        public static SpecieSwablu Instance
+        public static SpeciesSwablu Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwablu();
+                    _instance = new SpeciesSwablu();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwablu Builder
-		public SpecieSwablu() : base(
+		#region SpeciesSwablu Constructor
+		public SpeciesSwablu() : base(
 			"Swablu",
 			0.4,
 			1.2,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			40, 75, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fly",
+				"Fury-Attack",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Sing",
+				"Mist",
+				"Ice-Beam",
+				"Peck",
+				"Solar-Beam",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Haze",
+				"Mirror-Move",
+				"Swift",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Perish-Song",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pursuit",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Refresh",
+				"Secret-Power",
+				"Feather-Dance",
+				"Hyper-Voice",
+				"Astonish",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"Power-Swap",
+				"Dragon-Pulse",
+				"Dragon-Rush",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Cotton-Guard",
+				"Disarming-Voice",
+				"Play-Rough",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swablu Pokemon Class
+	//Swablu PokemonInstance Class
 	#region Swablu
-	public class Swablu : Pokemon
+	public class SwabluInstance : PokemonInstance
 	{
-		#region Swablu Builders
+		#region Swablu Constructors
 		/// <summary>
-		/// Swablu Builder waiting for a Nickname & a Level
+		/// Swablu Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swablu(string nickname, int level)
+		public SwabluInstance(string nickname, int level)
 		: base(
 				333,
-				SpecieSwablu.Instance, // Pokemon Specie
+				SpeciesSwablu.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swablu Builder only waiting for a Level
 		/// </summary>
-		public Swablu(int level)
+		public SwabluInstance(int level)
 		: base(
 				333,
-				SpecieSwablu.Instance, // Pokemon Specie
+				SpeciesSwablu.Instance, // PokemonInstance Species
 				"Swablu", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swablu Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swablu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swablu() : base(
 			333,
-			SpecieSwablu.Instance, // Pokemon Specie
+			SpeciesSwablu.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

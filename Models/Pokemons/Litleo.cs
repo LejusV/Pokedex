@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Litleo Specie to store common natural stats of all Litleos
-	#region SpecieLitleo
-	public class SpecieLitleo : PokemonSpecie
+	//Litleo Species to store common natural stats of all Litleos
+	#region SpeciesLitleo
+	public class SpeciesLitleo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLitleo? _instance = null;
+		private static SpeciesLitleo? _instance = null;
 #nullable restore
-        public static SpecieLitleo Instance
+        public static SpeciesLitleo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLitleo();
+                    _instance = new SpeciesLitleo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLitleo Builder
-		public SpecieLitleo() : base(
+		#region SpeciesLitleo Constructor
+		public SpeciesLitleo() : base(
 			"Litleo",
 			0.6,
 			13.5,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			73, 54, // Special Attack & Defense
 			72		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Take-Down",
+				"Leer",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Yawn",
+				"Endeavor",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Overheat",
+				"Payback",
+				"Flare-Blitz",
+				"Dark-Pulse",
+				"Fire-Fang",
+				"Flame-Charge",
+				"Entrainment",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Snarl",
+				"Noble-Roar",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Litleo Pokemon Class
+	//Litleo PokemonInstance Class
 	#region Litleo
-	public class Litleo : Pokemon
+	public class LitleoInstance : PokemonInstance
 	{
-		#region Litleo Builders
+		#region Litleo Constructors
 		/// <summary>
-		/// Litleo Builder waiting for a Nickname & a Level
+		/// Litleo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Litleo(string nickname, int level)
+		public LitleoInstance(string nickname, int level)
 		: base(
 				667,
-				SpecieLitleo.Instance, // Pokemon Specie
+				SpeciesLitleo.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Normal.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Litleo Builder only waiting for a Level
 		/// </summary>
-		public Litleo(int level)
+		public LitleoInstance(int level)
 		: base(
 				667,
-				SpecieLitleo.Instance, // Pokemon Specie
+				SpeciesLitleo.Instance, // PokemonInstance Species
 				"Litleo", level,
 				Fire.Instance, Normal.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Litleo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Litleo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Litleo() : base(
 			667,
-			SpecieLitleo.Instance, // Pokemon Specie
+			SpeciesLitleo.Instance, // PokemonInstance Species
 			Fire.Instance, Normal.Instance			
 		) {}
 		*/

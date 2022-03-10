@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Granbull Specie to store common natural stats of all Granbulls
-	#region SpecieGranbull
-	public class SpecieGranbull : PokemonSpecie
+	//Granbull Species to store common natural stats of all Granbulls
+	#region SpeciesGranbull
+	public class SpeciesGranbull : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGranbull? _instance = null;
+		private static SpeciesGranbull? _instance = null;
 #nullable restore
-        public static SpecieGranbull Instance
+        public static SpeciesGranbull Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGranbull();
+                    _instance = new SpeciesGranbull();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGranbull Builder
-		public SpecieGranbull() : base(
+		#region SpeciesGranbull Constructor
+		public SpeciesGranbull() : base(
 			"Granbull",
 			1.4,
 			48.7,
@@ -32,23 +34,135 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Metronome",
+				"Lick",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Outrage",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Overheat",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Covet",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Last-Resort",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Snarl",
+				"Play-Rough",
+				"Confide",
+				"Dazzling-Gleam",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Granbull Pokemon Class
+	//Granbull PokemonInstance Class
 	#region Granbull
-	public class Granbull : Pokemon
+	public class GranbullInstance : PokemonInstance
 	{
-		#region Granbull Builders
+		#region Granbull Constructors
 		/// <summary>
-		/// Granbull Builder waiting for a Nickname & a Level
+		/// Granbull Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Granbull(string nickname, int level)
+		public GranbullInstance(string nickname, int level)
 		: base(
 				210,
-				SpecieGranbull.Instance, // Pokemon Specie
+				SpeciesGranbull.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +174,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Granbull Builder only waiting for a Level
 		/// </summary>
-		public Granbull(int level)
+		public GranbullInstance(int level)
 		: base(
 				210,
-				SpecieGranbull.Instance, // Pokemon Specie
+				SpeciesGranbull.Instance, // PokemonInstance Species
 				"Granbull", level,
 				Fairy.Instance			
 		)
@@ -73,12 +187,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Granbull Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Granbull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Granbull() : base(
 			210,
-			SpecieGranbull.Instance, // Pokemon Specie
+			SpeciesGranbull.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

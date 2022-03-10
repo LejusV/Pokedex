@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gossifleur Specie to store common natural stats of all Gossifleurs
-	#region SpecieGossifleur
-	public class SpecieGossifleur : PokemonSpecie
+	//Gossifleur Species to store common natural stats of all Gossifleurs
+	#region SpeciesGossifleur
+	public class SpeciesGossifleur : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGossifleur? _instance = null;
+		private static SpeciesGossifleur? _instance = null;
 #nullable restore
-        public static SpecieGossifleur Instance
+        public static SpeciesGossifleur Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGossifleur();
+                    _instance = new SpeciesGossifleur();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGossifleur Builder
-		public SpecieGossifleur() : base(
+		#region SpeciesGossifleur Constructor
+		public SpeciesGossifleur() : base(
 			"Gossifleur",
 			0.4,
 			2.2,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 60, // Special Attack & Defense
 			10		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gossifleur Pokemon Class
+	//Gossifleur PokemonInstance Class
 	#region Gossifleur
-	public class Gossifleur : Pokemon
+	public class GossifleurInstance : PokemonInstance
 	{
-		#region Gossifleur Builders
+		#region Gossifleur Constructors
 		/// <summary>
-		/// Gossifleur Builder waiting for a Nickname & a Level
+		/// Gossifleur Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gossifleur(string nickname, int level)
+		public GossifleurInstance(string nickname, int level)
 		: base(
 				829,
-				SpecieGossifleur.Instance, // Pokemon Specie
+				SpeciesGossifleur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gossifleur Builder only waiting for a Level
 		/// </summary>
-		public Gossifleur(int level)
+		public GossifleurInstance(int level)
 		: base(
 				829,
-				SpecieGossifleur.Instance, // Pokemon Specie
+				SpeciesGossifleur.Instance, // PokemonInstance Species
 				"Gossifleur", level,
 				Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gossifleur Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gossifleur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gossifleur() : base(
 			829,
-			SpecieGossifleur.Instance, // Pokemon Specie
+			SpeciesGossifleur.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

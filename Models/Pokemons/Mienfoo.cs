@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mienfoo Specie to store common natural stats of all Mienfoos
-	#region SpecieMienfoo
-	public class SpecieMienfoo : PokemonSpecie
+	//Mienfoo Species to store common natural stats of all Mienfoos
+	#region SpeciesMienfoo
+	public class SpeciesMienfoo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMienfoo? _instance = null;
+		private static SpeciesMienfoo? _instance = null;
 #nullable restore
-        public static SpecieMienfoo Instance
+        public static SpeciesMienfoo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMienfoo();
+                    _instance = new SpeciesMienfoo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMienfoo Builder
-		public SpecieMienfoo() : base(
+		#region SpeciesMienfoo Constructor
+		public SpeciesMienfoo() : base(
 			"Mienfoo",
 			0.9,
 			20.0,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			55, 50, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Swords-Dance",
+				"Jump-Kick",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Meditate",
+				"Double-Team",
+				"Reflect",
+				"Swift",
+				"High-Jump-Kick",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Vital-Throw",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Rock-Smash",
+				"Fake-Out",
+				"Facade",
+				"Focus-Punch",
+				"Smelling-Salts",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Bounce",
+				"Calm-Mind",
+				"Feint",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Me-First",
+				"Force-Palm",
+				"Aura-Sphere",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Low-Sweep",
+				"Round",
+				"Quick-Guard",
+				"Ally-Switch",
+				"Acrobatics",
+				"Retaliate",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mienfoo Pokemon Class
+	//Mienfoo PokemonInstance Class
 	#region Mienfoo
-	public class Mienfoo : Pokemon
+	public class MienfooInstance : PokemonInstance
 	{
-		#region Mienfoo Builders
+		#region Mienfoo Constructors
 		/// <summary>
-		/// Mienfoo Builder waiting for a Nickname & a Level
+		/// Mienfoo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mienfoo(string nickname, int level)
+		public MienfooInstance(string nickname, int level)
 		: base(
 				619,
-				SpecieMienfoo.Instance, // Pokemon Specie
+				SpeciesMienfoo.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mienfoo Builder only waiting for a Level
 		/// </summary>
-		public Mienfoo(int level)
+		public MienfooInstance(int level)
 		: base(
 				619,
-				SpecieMienfoo.Instance, // Pokemon Specie
+				SpeciesMienfoo.Instance, // PokemonInstance Species
 				"Mienfoo", level,
 				Fighting.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mienfoo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mienfoo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mienfoo() : base(
 			619,
-			SpecieMienfoo.Instance, // Pokemon Specie
+			SpeciesMienfoo.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

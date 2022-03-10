@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Applin Specie to store common natural stats of all Applins
-	#region SpecieApplin
-	public class SpecieApplin : PokemonSpecie
+	//Applin Species to store common natural stats of all Applins
+	#region SpeciesApplin
+	public class SpeciesApplin : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieApplin? _instance = null;
+		private static SpeciesApplin? _instance = null;
 #nullable restore
-        public static SpecieApplin Instance
+        public static SpeciesApplin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieApplin();
+                    _instance = new SpeciesApplin();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieApplin Builder
-		public SpecieApplin() : base(
+		#region SpeciesApplin Constructor
+		public SpeciesApplin() : base(
 			"Applin",
 			0.2,
 			0.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 40, // Special Attack & Defense
 			20		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Applin Pokemon Class
+	//Applin PokemonInstance Class
 	#region Applin
-	public class Applin : Pokemon
+	public class ApplinInstance : PokemonInstance
 	{
-		#region Applin Builders
+		#region Applin Constructors
 		/// <summary>
-		/// Applin Builder waiting for a Nickname & a Level
+		/// Applin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Applin(string nickname, int level)
+		public ApplinInstance(string nickname, int level)
 		: base(
 				840,
-				SpecieApplin.Instance, // Pokemon Specie
+				SpeciesApplin.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Applin Builder only waiting for a Level
 		/// </summary>
-		public Applin(int level)
+		public ApplinInstance(int level)
 		: base(
 				840,
-				SpecieApplin.Instance, // Pokemon Specie
+				SpeciesApplin.Instance, // PokemonInstance Species
 				"Applin", level,
 				Grass.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Applin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Applin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Applin() : base(
 			840,
-			SpecieApplin.Instance, // Pokemon Specie
+			SpeciesApplin.Instance, // PokemonInstance Species
 			Grass.Instance, Dragon.Instance			
 		) {}
 		*/

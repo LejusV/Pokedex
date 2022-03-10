@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Unown Specie to store common natural stats of all Unowns
-	#region SpecieUnown
-	public class SpecieUnown : PokemonSpecie
+	//Unown Species to store common natural stats of all Unowns
+	#region SpeciesUnown
+	public class SpeciesUnown : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieUnown? _instance = null;
+		private static SpeciesUnown? _instance = null;
 #nullable restore
-        public static SpecieUnown Instance
+        public static SpeciesUnown Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieUnown();
+                    _instance = new SpeciesUnown();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieUnown Builder
-		public SpecieUnown() : base(
+		#region SpeciesUnown Constructor
+		public SpeciesUnown() : base(
 			"Unown",
 			0.5,
 			5.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			72, 48, // Special Attack & Defense
 			48		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Hidden-Power"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Unown Pokemon Class
+	//Unown PokemonInstance Class
 	#region Unown
-	public class Unown : Pokemon
+	public class UnownInstance : PokemonInstance
 	{
-		#region Unown Builders
+		#region Unown Constructors
 		/// <summary>
-		/// Unown Builder waiting for a Nickname & a Level
+		/// Unown Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Unown(string nickname, int level)
+		public UnownInstance(string nickname, int level)
 		: base(
 				201,
-				SpecieUnown.Instance, // Pokemon Specie
+				SpeciesUnown.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Unown Builder only waiting for a Level
 		/// </summary>
-		public Unown(int level)
+		public UnownInstance(int level)
 		: base(
 				201,
-				SpecieUnown.Instance, // Pokemon Specie
+				SpeciesUnown.Instance, // PokemonInstance Species
 				"Unown", level,
 				Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Unown Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Unown Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Unown() : base(
 			201,
-			SpecieUnown.Instance, // Pokemon Specie
+			SpeciesUnown.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

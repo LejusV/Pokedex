@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Klang Specie to store common natural stats of all Klangs
-	#region SpecieKlang
-	public class SpecieKlang : PokemonSpecie
+	//Klang Species to store common natural stats of all Klangs
+	#region SpeciesKlang
+	public class SpeciesKlang : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKlang? _instance = null;
+		private static SpeciesKlang? _instance = null;
 #nullable restore
-        public static SpecieKlang Instance
+        public static SpeciesKlang Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKlang();
+                    _instance = new SpeciesKlang();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKlang Builder
-		public SpecieKlang() : base(
+		#region SpeciesKlang Constructor
+		public SpeciesKlang() : base(
 			"Klang",
 			0.6,
 			51.0,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			70, 85, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vice-Grip",
+				"Bind",
+				"Hyper-Beam",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Screech",
+				"Double-Team",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Zap-Cannon",
+				"Lock-On",
+				"Sandstorm",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Charge",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Metal-Sound",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Gravity",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Mirror-Shot",
+				"Flash-Cannon",
+				"Discharge",
+				"Charge-Beam",
+				"Autotomize",
+				"Round",
+				"Shift-Gear",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Gear-Grind",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Klang Pokemon Class
+	//Klang PokemonInstance Class
 	#region Klang
-	public class Klang : Pokemon
+	public class KlangInstance : PokemonInstance
 	{
-		#region Klang Builders
+		#region Klang Constructors
 		/// <summary>
-		/// Klang Builder waiting for a Nickname & a Level
+		/// Klang Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Klang(string nickname, int level)
+		public KlangInstance(string nickname, int level)
 		: base(
 				600,
-				SpecieKlang.Instance, // Pokemon Specie
+				SpeciesKlang.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Klang Builder only waiting for a Level
 		/// </summary>
-		public Klang(int level)
+		public KlangInstance(int level)
 		: base(
 				600,
-				SpecieKlang.Instance, // Pokemon Specie
+				SpeciesKlang.Instance, // PokemonInstance Species
 				"Klang", level,
 				Steel.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Klang Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Klang Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Klang() : base(
 			600,
-			SpecieKlang.Instance, // Pokemon Specie
+			SpeciesKlang.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

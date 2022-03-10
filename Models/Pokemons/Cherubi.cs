@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cherubi Specie to store common natural stats of all Cherubis
-	#region SpecieCherubi
-	public class SpecieCherubi : PokemonSpecie
+	//Cherubi Species to store common natural stats of all Cherubis
+	#region SpeciesCherubi
+	public class SpeciesCherubi : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCherubi? _instance = null;
+		private static SpeciesCherubi? _instance = null;
 #nullable restore
-        public static SpecieCherubi Instance
+        public static SpeciesCherubi Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCherubi();
+                    _instance = new SpeciesCherubi();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCherubi Builder
-		public SpecieCherubi() : base(
+		#region SpeciesCherubi Constructor
+		public SpeciesCherubi() : base(
 			"Cherubi",
 			0.4,
 			3.3,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			62, 53, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Tackle",
+				"Take-Down",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Defense-Curl",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Sweet-Scent",
+				"Morning-Sun",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Secret-Power",
+				"Weather-Ball",
+				"Aromatherapy",
+				"Grass-Whistle",
+				"Tickle",
+				"Bullet-Seed",
+				"Magical-Leaf",
+				"Healing-Wish",
+				"Natural-Gift",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Round",
+				"Heal-Pulse",
+				"Petal-Blizzard",
+				"Flower-Shield",
+				"Grassy-Terrain",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cherubi Pokemon Class
+	//Cherubi PokemonInstance Class
 	#region Cherubi
-	public class Cherubi : Pokemon
+	public class CherubiInstance : PokemonInstance
 	{
-		#region Cherubi Builders
+		#region Cherubi Constructors
 		/// <summary>
-		/// Cherubi Builder waiting for a Nickname & a Level
+		/// Cherubi Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cherubi(string nickname, int level)
+		public CherubiInstance(string nickname, int level)
 		: base(
 				420,
-				SpecieCherubi.Instance, // Pokemon Specie
+				SpeciesCherubi.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cherubi Builder only waiting for a Level
 		/// </summary>
-		public Cherubi(int level)
+		public CherubiInstance(int level)
 		: base(
 				420,
-				SpecieCherubi.Instance, // Pokemon Specie
+				SpeciesCherubi.Instance, // PokemonInstance Species
 				"Cherubi", level,
 				Grass.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cherubi Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cherubi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cherubi() : base(
 			420,
-			SpecieCherubi.Instance, // Pokemon Specie
+			SpeciesCherubi.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

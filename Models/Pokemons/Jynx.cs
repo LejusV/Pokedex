@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jynx Specie to store common natural stats of all Jynxs
-	#region SpecieJynx
-	public class SpecieJynx : PokemonSpecie
+	//Jynx Species to store common natural stats of all Jynxs
+	#region SpeciesJynx
+	public class SpeciesJynx : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJynx? _instance = null;
+		private static SpeciesJynx? _instance = null;
 #nullable restore
-        public static SpecieJynx Instance
+        public static SpeciesJynx Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJynx();
+                    _instance = new SpeciesJynx();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJynx Builder
-		public SpecieJynx() : base(
+		#region SpeciesJynx Constructor
+		public SpeciesJynx() : base(
 			"Jynx",
 			1.4,
 			40.6,
@@ -32,23 +34,137 @@ namespace Pokedex.Models.Pokemons
 			115, 95, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Mega-Punch",
+				"Ice-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Water-Gun",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Toxic",
+				"Psychic",
+				"Rage",
+				"Teleport",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Bide",
+				"Metronome",
+				"Lick",
+				"Skull-Bash",
+				"Dream-Eater",
+				"Lovely-Kiss",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Perish-Song",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Hail",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Skill-Swap",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Signal-Beam",
+				"Covet",
+				"Calm-Mind",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Wring-Out",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Avalanche",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Round",
+				"Echoed-Voice",
+				"Frost-Breath",
+				"Heart-Stamp",
+				"Draining-Kiss",
+				"Confide",
+				"Power-Up-Punch",
+				"Aurora-Veil"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jynx Pokemon Class
+	//Jynx PokemonInstance Class
 	#region Jynx
-	public class Jynx : Pokemon
+	public class JynxInstance : PokemonInstance
 	{
-		#region Jynx Builders
+		#region Jynx Constructors
 		/// <summary>
-		/// Jynx Builder waiting for a Nickname & a Level
+		/// Jynx Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Jynx(string nickname, int level)
+		public JynxInstance(string nickname, int level)
 		: base(
 				124,
-				SpecieJynx.Instance, // Pokemon Specie
+				SpeciesJynx.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Psychic.Instance			
 		)
@@ -60,10 +176,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jynx Builder only waiting for a Level
 		/// </summary>
-		public Jynx(int level)
+		public JynxInstance(int level)
 		: base(
 				124,
-				SpecieJynx.Instance, // Pokemon Specie
+				SpeciesJynx.Instance, // PokemonInstance Species
 				"Jynx", level,
 				Ice.Instance, Psychic.Instance			
 		)
@@ -73,12 +189,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jynx Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jynx Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Jynx() : base(
 			124,
-			SpecieJynx.Instance, // Pokemon Specie
+			SpeciesJynx.Instance, // PokemonInstance Species
 			Ice.Instance, Psychic.Instance			
 		) {}
 		*/

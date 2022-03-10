@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Haunter Specie to store common natural stats of all Haunters
-	#region SpecieHaunter
-	public class SpecieHaunter : PokemonSpecie
+	//Haunter Species to store common natural stats of all Haunters
+	#region SpeciesHaunter
+	public class SpeciesHaunter : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHaunter? _instance = null;
+		private static SpeciesHaunter? _instance = null;
 #nullable restore
-        public static SpecieHaunter Instance
+        public static SpeciesHaunter Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHaunter();
+                    _instance = new SpeciesHaunter();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHaunter Builder
-		public SpecieHaunter() : base(
+		#region SpeciesHaunter Constructor
+		public SpeciesHaunter() : base(
 			"Haunter",
 			1.6,
 			0.1,
@@ -32,23 +34,112 @@ namespace Pokedex.Models.Pokemons
 			115, 55, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Drain",
+				"Thunderbolt",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Rage",
+				"Night-Shade",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Bide",
+				"Self-Destruct",
+				"Lick",
+				"Dream-Eater",
+				"Psywave",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Sludge-Bomb",
+				"Zap-Cannon",
+				"Destiny-Bond",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Knock-Off",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Shadow-Punch",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Shadow-Claw",
+				"Trick-Room",
+				"Captivate",
+				"Ominous-Wind",
+				"Wonder-Room",
+				"Venoshock",
+				"Telekinesis",
+				"Foul-Play",
+				"Round",
+				"Hex",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Haunter Pokemon Class
+	//Haunter PokemonInstance Class
 	#region Haunter
-	public class Haunter : Pokemon
+	public class HaunterInstance : PokemonInstance
 	{
-		#region Haunter Builders
+		#region Haunter Constructors
 		/// <summary>
-		/// Haunter Builder waiting for a Nickname & a Level
+		/// Haunter Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Haunter(string nickname, int level)
+		public HaunterInstance(string nickname, int level)
 		: base(
 				93,
-				SpecieHaunter.Instance, // Pokemon Specie
+				SpeciesHaunter.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Poison.Instance			
 		)
@@ -60,10 +151,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Haunter Builder only waiting for a Level
 		/// </summary>
-		public Haunter(int level)
+		public HaunterInstance(int level)
 		: base(
 				93,
-				SpecieHaunter.Instance, // Pokemon Specie
+				SpeciesHaunter.Instance, // PokemonInstance Species
 				"Haunter", level,
 				Ghost.Instance, Poison.Instance			
 		)
@@ -73,12 +164,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Haunter Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Haunter Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Haunter() : base(
 			93,
-			SpecieHaunter.Instance, // Pokemon Specie
+			SpeciesHaunter.Instance, // PokemonInstance Species
 			Ghost.Instance, Poison.Instance			
 		) {}
 		*/

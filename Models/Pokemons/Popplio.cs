@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Popplio Specie to store common natural stats of all Popplios
-	#region SpeciePopplio
-	public class SpeciePopplio : PokemonSpecie
+	//Popplio Species to store common natural stats of all Popplios
+	#region SpeciesPopplio
+	public class SpeciesPopplio : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePopplio? _instance = null;
+		private static SpeciesPopplio? _instance = null;
 #nullable restore
-        public static SpeciePopplio Instance
+        public static SpeciesPopplio Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePopplio();
+                    _instance = new SpeciesPopplio();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePopplio Builder
-		public SpeciePopplio() : base(
+		#region SpeciesPopplio Constructor
+		public SpeciesPopplio() : base(
 			"Popplio",
 			0.4,
 			7.5,
@@ -32,23 +34,81 @@ namespace Pokedex.Models.Pokemons
 			66, 56, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Growl",
+				"Sing",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Amnesia",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Perish-Song",
+				"Icy-Wind",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Hail",
+				"Facade",
+				"Hyper-Voice",
+				"Aqua-Ring",
+				"Captivate",
+				"Aqua-Jet",
+				"Wonder-Room",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Acrobatics",
+				"Water-Pledge",
+				"Work-Up",
+				"Disarming-Voice",
+				"Misty-Terrain",
+				"Moonblast",
+				"Confide",
+				"Aromatic-Mist",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Popplio Pokemon Class
+	//Popplio PokemonInstance Class
 	#region Popplio
-	public class Popplio : Pokemon
+	public class PopplioInstance : PokemonInstance
 	{
-		#region Popplio Builders
+		#region Popplio Constructors
 		/// <summary>
-		/// Popplio Builder waiting for a Nickname & a Level
+		/// Popplio Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Popplio(string nickname, int level)
+		public PopplioInstance(string nickname, int level)
 		: base(
 				728,
-				SpeciePopplio.Instance, // Pokemon Specie
+				SpeciesPopplio.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +120,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Popplio Builder only waiting for a Level
 		/// </summary>
-		public Popplio(int level)
+		public PopplioInstance(int level)
 		: base(
 				728,
-				SpeciePopplio.Instance, // Pokemon Specie
+				SpeciesPopplio.Instance, // PokemonInstance Species
 				"Popplio", level,
 				Water.Instance			
 		)
@@ -73,12 +133,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Popplio Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Popplio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Popplio() : base(
 			728,
-			SpeciePopplio.Instance, // Pokemon Specie
+			SpeciesPopplio.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

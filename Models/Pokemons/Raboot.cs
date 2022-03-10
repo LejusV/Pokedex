@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Raboot Specie to store common natural stats of all Raboots
-	#region SpecieRaboot
-	public class SpecieRaboot : PokemonSpecie
+	//Raboot Species to store common natural stats of all Raboots
+	#region SpeciesRaboot
+	public class SpeciesRaboot : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRaboot? _instance = null;
+		private static SpeciesRaboot? _instance = null;
 #nullable restore
-        public static SpecieRaboot Instance
+        public static SpeciesRaboot Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRaboot();
+                    _instance = new SpeciesRaboot();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRaboot Builder
-		public SpecieRaboot() : base(
+		#region SpeciesRaboot Constructor
+		public SpeciesRaboot() : base(
 			"Raboot",
 			0.6,
 			9.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			55, 60, // Special Attack & Defense
 			94		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Raboot Pokemon Class
+	//Raboot PokemonInstance Class
 	#region Raboot
-	public class Raboot : Pokemon
+	public class RabootInstance : PokemonInstance
 	{
-		#region Raboot Builders
+		#region Raboot Constructors
 		/// <summary>
-		/// Raboot Builder waiting for a Nickname & a Level
+		/// Raboot Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Raboot(string nickname, int level)
+		public RabootInstance(string nickname, int level)
 		: base(
 				814,
-				SpecieRaboot.Instance, // Pokemon Specie
+				SpeciesRaboot.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Raboot Builder only waiting for a Level
 		/// </summary>
-		public Raboot(int level)
+		public RabootInstance(int level)
 		: base(
 				814,
-				SpecieRaboot.Instance, // Pokemon Specie
+				SpeciesRaboot.Instance, // PokemonInstance Species
 				"Raboot", level,
 				Fire.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Raboot Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Raboot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Raboot() : base(
 			814,
-			SpecieRaboot.Instance, // Pokemon Specie
+			SpeciesRaboot.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pidove Specie to store common natural stats of all Pidoves
-	#region SpeciePidove
-	public class SpeciePidove : PokemonSpecie
+	//Pidove Species to store common natural stats of all Pidoves
+	#region SpeciesPidove
+	public class SpeciesPidove : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePidove? _instance = null;
+		private static SpeciesPidove? _instance = null;
 #nullable restore
-        public static SpeciePidove Instance
+        public static SpeciesPidove Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePidove();
+                    _instance = new SpeciesPidove();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePidove Builder
-		public SpeciePidove() : base(
+		#region SpeciesPidove Constructor
+		public SpeciesPidove() : base(
 			"Pidove",
 			0.3,
 			2.1,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			36, 30, // Special Attack & Defense
 			43		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Gust",
+				"Fly",
+				"Leer",
+				"Growl",
+				"Toxic",
+				"Hypnosis",
+				"Quick-Attack",
+				"Double-Team",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Detect",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Morning-Sun",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Taunt",
+				"Wish",
+				"Secret-Power",
+				"Feather-Dance",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Lucky-Chant",
+				"Night-Slash",
+				"Air-Slash",
+				"Round",
+				"Echoed-Voice",
+				"Bestow",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pidove Pokemon Class
+	//Pidove PokemonInstance Class
 	#region Pidove
-	public class Pidove : Pokemon
+	public class PidoveInstance : PokemonInstance
 	{
-		#region Pidove Builders
+		#region Pidove Constructors
 		/// <summary>
-		/// Pidove Builder waiting for a Nickname & a Level
+		/// Pidove Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pidove(string nickname, int level)
+		public PidoveInstance(string nickname, int level)
 		: base(
 				519,
-				SpeciePidove.Instance, // Pokemon Specie
+				SpeciesPidove.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pidove Builder only waiting for a Level
 		/// </summary>
-		public Pidove(int level)
+		public PidoveInstance(int level)
 		: base(
 				519,
-				SpeciePidove.Instance, // Pokemon Specie
+				SpeciesPidove.Instance, // PokemonInstance Species
 				"Pidove", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pidove Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pidove Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pidove() : base(
 			519,
-			SpeciePidove.Instance, // Pokemon Specie
+			SpeciesPidove.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

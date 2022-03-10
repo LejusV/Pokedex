@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Poochyena Specie to store common natural stats of all Poochyenas
-	#region SpeciePoochyena
-	public class SpeciePoochyena : PokemonSpecie
+	//Poochyena Species to store common natural stats of all Poochyenas
+	#region SpeciesPoochyena
+	public class SpeciesPoochyena : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePoochyena? _instance = null;
+		private static SpeciesPoochyena? _instance = null;
 #nullable restore
-        public static SpeciePoochyena Instance
+        public static SpeciesPoochyena Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePoochyena();
+                    _instance = new SpeciesPoochyena();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePoochyena Builder
-		public SpeciePoochyena() : base(
+		#region SpeciesPoochyena Constructor
+		public SpeciesPoochyena() : base(
 			"Poochyena",
 			0.5,
 			13.6,
@@ -32,23 +34,102 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Counter",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Uproar",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Yawn",
+				"Snatch",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Poison-Fang",
+				"Astonish",
+				"Odor-Sleuth",
+				"Howl",
+				"Covet",
+				"Natural-Gift",
+				"Payback",
+				"Assurance",
+				"Embargo",
+				"Me-First",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Captivate",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Snarl",
+				"Play-Rough",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Poochyena Pokemon Class
+	//Poochyena PokemonInstance Class
 	#region Poochyena
-	public class Poochyena : Pokemon
+	public class PoochyenaInstance : PokemonInstance
 	{
-		#region Poochyena Builders
+		#region Poochyena Constructors
 		/// <summary>
-		/// Poochyena Builder waiting for a Nickname & a Level
+		/// Poochyena Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Poochyena(string nickname, int level)
+		public PoochyenaInstance(string nickname, int level)
 		: base(
 				261,
-				SpeciePoochyena.Instance, // Pokemon Specie
+				SpeciesPoochyena.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +141,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Poochyena Builder only waiting for a Level
 		/// </summary>
-		public Poochyena(int level)
+		public PoochyenaInstance(int level)
 		: base(
 				261,
-				SpeciePoochyena.Instance, // Pokemon Specie
+				SpeciesPoochyena.Instance, // PokemonInstance Species
 				"Poochyena", level,
 				Dark.Instance			
 		)
@@ -73,12 +154,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Poochyena Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Poochyena Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Poochyena() : base(
 			261,
-			SpeciePoochyena.Instance, // Pokemon Specie
+			SpeciesPoochyena.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

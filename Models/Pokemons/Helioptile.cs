@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Helioptile Specie to store common natural stats of all Helioptiles
-	#region SpecieHelioptile
-	public class SpecieHelioptile : PokemonSpecie
+	//Helioptile Species to store common natural stats of all Helioptiles
+	#region SpeciesHelioptile
+	public class SpeciesHelioptile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHelioptile? _instance = null;
+		private static SpeciesHelioptile? _instance = null;
 #nullable restore
-        public static SpecieHelioptile Instance
+        public static SpeciesHelioptile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHelioptile();
+                    _instance = new SpeciesHelioptile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHelioptile Builder
-		public SpecieHelioptile() : base(
+		#region SpeciesHelioptile Constructor
+		public SpeciesHelioptile() : base(
 			"Helioptile",
 			0.5,
 			6.0,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			61, 43, // Special Attack & Defense
 			70		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Razor-Wind",
+				"Cut",
+				"Tail-Whip",
+				"Surf",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Light-Screen",
+				"Glare",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Facade",
+				"Charge",
+				"Secret-Power",
+				"Camouflage",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Shock-Wave",
+				"U-Turn",
+				"Magnet-Rise",
+				"Dark-Pulse",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Low-Sweep",
+				"Round",
+				"Volt-Switch",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Electroweb",
+				"Wild-Charge",
+				"Parabolic-Charge",
+				"Electrify",
+				"Confide",
+				"Electric-Terrain"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Helioptile Pokemon Class
+	//Helioptile PokemonInstance Class
 	#region Helioptile
-	public class Helioptile : Pokemon
+	public class HelioptileInstance : PokemonInstance
 	{
-		#region Helioptile Builders
+		#region Helioptile Constructors
 		/// <summary>
-		/// Helioptile Builder waiting for a Nickname & a Level
+		/// Helioptile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Helioptile(string nickname, int level)
+		public HelioptileInstance(string nickname, int level)
 		: base(
 				694,
-				SpecieHelioptile.Instance, // Pokemon Specie
+				SpeciesHelioptile.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Normal.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Helioptile Builder only waiting for a Level
 		/// </summary>
-		public Helioptile(int level)
+		public HelioptileInstance(int level)
 		: base(
 				694,
-				SpecieHelioptile.Instance, // Pokemon Specie
+				SpeciesHelioptile.Instance, // PokemonInstance Species
 				"Helioptile", level,
 				Electric.Instance, Normal.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Helioptile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Helioptile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Helioptile() : base(
 			694,
-			SpecieHelioptile.Instance, // Pokemon Specie
+			SpeciesHelioptile.Instance, // PokemonInstance Species
 			Electric.Instance, Normal.Instance			
 		) {}
 		*/

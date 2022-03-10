@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bouffalant Specie to store common natural stats of all Bouffalants
-	#region SpecieBouffalant
-	public class SpecieBouffalant : PokemonSpecie
+	//Bouffalant Species to store common natural stats of all Bouffalants
+	#region SpeciesBouffalant
+	public class SpeciesBouffalant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBouffalant? _instance = null;
+		private static SpeciesBouffalant? _instance = null;
 #nullable restore
-        public static SpecieBouffalant Instance
+        public static SpeciesBouffalant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBouffalant();
+                    _instance = new SpeciesBouffalant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBouffalant Builder
-		public SpecieBouffalant() : base(
+		#region SpeciesBouffalant Constructor
+		public SpeciesBouffalant() : base(
 			"Bouffalant",
 			1.6,
 			94.6,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			40, 95, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Stomp",
+				"Headbutt",
+				"Horn-Attack",
+				"Fury-Attack",
+				"Thrash",
+				"Leer",
+				"Surf",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Rage",
+				"Double-Team",
+				"Focus-Energy",
+				"Skull-Bash",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Megahorn",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Taunt",
+				"Superpower",
+				"Revenge",
+				"Endeavor",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Mud-Shot",
+				"Payback",
+				"Poison-Jab",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Round",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Cotton-Guard",
+				"Head-Charge",
+				"Belch",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bouffalant Pokemon Class
+	//Bouffalant PokemonInstance Class
 	#region Bouffalant
-	public class Bouffalant : Pokemon
+	public class BouffalantInstance : PokemonInstance
 	{
-		#region Bouffalant Builders
+		#region Bouffalant Constructors
 		/// <summary>
-		/// Bouffalant Builder waiting for a Nickname & a Level
+		/// Bouffalant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bouffalant(string nickname, int level)
+		public BouffalantInstance(string nickname, int level)
 		: base(
 				626,
-				SpecieBouffalant.Instance, // Pokemon Specie
+				SpeciesBouffalant.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bouffalant Builder only waiting for a Level
 		/// </summary>
-		public Bouffalant(int level)
+		public BouffalantInstance(int level)
 		: base(
 				626,
-				SpecieBouffalant.Instance, // Pokemon Specie
+				SpeciesBouffalant.Instance, // PokemonInstance Species
 				"Bouffalant", level,
 				Normal.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bouffalant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bouffalant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bouffalant() : base(
 			626,
-			SpecieBouffalant.Instance, // Pokemon Specie
+			SpeciesBouffalant.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

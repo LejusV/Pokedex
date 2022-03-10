@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Piloswine Specie to store common natural stats of all Piloswines
-	#region SpeciePiloswine
-	public class SpeciePiloswine : PokemonSpecie
+	//Piloswine Species to store common natural stats of all Piloswines
+	#region SpeciesPiloswine
+	public class SpeciesPiloswine : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePiloswine? _instance = null;
+		private static SpeciesPiloswine? _instance = null;
 #nullable restore
-        public static SpeciePiloswine Instance
+        public static SpeciesPiloswine Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePiloswine();
+                    _instance = new SpeciesPiloswine();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePiloswine Builder
-		public SpeciePiloswine() : base(
+		#region SpeciesPiloswine Constructor
+		public SpeciesPiloswine() : base(
 			"Piloswine",
 			1.1,
 			55.8,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Horn-Attack",
+				"Fury-Attack",
+				"Body-Slam",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Roar",
+				"Mist",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Peck",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Light-Screen",
+				"Reflect",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Detect",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Hail",
+				"Facade",
+				"Superpower",
+				"Endeavor",
+				"Secret-Power",
+				"Mud-Sport",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Natural-Gift",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Fang",
+				"Mud-Bomb",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Round",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Piloswine Pokemon Class
+	//Piloswine PokemonInstance Class
 	#region Piloswine
-	public class Piloswine : Pokemon
+	public class PiloswineInstance : PokemonInstance
 	{
-		#region Piloswine Builders
+		#region Piloswine Constructors
 		/// <summary>
-		/// Piloswine Builder waiting for a Nickname & a Level
+		/// Piloswine Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Piloswine(string nickname, int level)
+		public PiloswineInstance(string nickname, int level)
 		: base(
 				221,
-				SpeciePiloswine.Instance, // Pokemon Specie
+				SpeciesPiloswine.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Piloswine Builder only waiting for a Level
 		/// </summary>
-		public Piloswine(int level)
+		public PiloswineInstance(int level)
 		: base(
 				221,
-				SpeciePiloswine.Instance, // Pokemon Specie
+				SpeciesPiloswine.Instance, // PokemonInstance Species
 				"Piloswine", level,
 				Ice.Instance, Ground.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Piloswine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Piloswine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Piloswine() : base(
 			221,
-			SpeciePiloswine.Instance, // Pokemon Specie
+			SpeciesPiloswine.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}
 		*/

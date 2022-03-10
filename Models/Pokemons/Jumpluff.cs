@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Jumpluff Specie to store common natural stats of all Jumpluffs
-	#region SpecieJumpluff
-	public class SpecieJumpluff : PokemonSpecie
+	//Jumpluff Species to store common natural stats of all Jumpluffs
+	#region SpeciesJumpluff
+	public class SpeciesJumpluff : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieJumpluff? _instance = null;
+		private static SpeciesJumpluff? _instance = null;
 #nullable restore
-        public static SpecieJumpluff Instance
+        public static SpeciesJumpluff Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieJumpluff();
+                    _instance = new SpeciesJumpluff();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieJumpluff Builder
-		public SpecieJumpluff() : base(
+		#region SpeciesJumpluff Constructor
+		public SpeciesJumpluff() : base(
 			"Jumpluff",
 			0.8,
 			3.0,
@@ -32,23 +34,95 @@ namespace Pokedex.Models.Pokemons
 			55, 95, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Headbutt",
+				"Tackle",
+				"Double-Edge",
+				"Tail-Whip",
+				"Hyper-Beam",
+				"Absorb",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Solar-Beam",
+				"Poison-Powder",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Reflect",
+				"Flash",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Cotton-Spore",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Memento",
+				"Facade",
+				"Helping-Hand",
+				"Secret-Power",
+				"Silver-Wind",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Bounce",
+				"Natural-Gift",
+				"U-Turn",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Captivate",
+				"Grass-Knot",
+				"Rage-Powder",
+				"Round",
+				"Acrobatics",
+				"Fairy-Wind",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Jumpluff Pokemon Class
+	//Jumpluff PokemonInstance Class
 	#region Jumpluff
-	public class Jumpluff : Pokemon
+	public class JumpluffInstance : PokemonInstance
 	{
-		#region Jumpluff Builders
+		#region Jumpluff Constructors
 		/// <summary>
-		/// Jumpluff Builder waiting for a Nickname & a Level
+		/// Jumpluff Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Jumpluff(string nickname, int level)
+		public JumpluffInstance(string nickname, int level)
 		: base(
 				189,
-				SpecieJumpluff.Instance, // Pokemon Specie
+				SpeciesJumpluff.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -60,10 +134,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Jumpluff Builder only waiting for a Level
 		/// </summary>
-		public Jumpluff(int level)
+		public JumpluffInstance(int level)
 		: base(
 				189,
-				SpecieJumpluff.Instance, // Pokemon Specie
+				SpeciesJumpluff.Instance, // PokemonInstance Species
 				"Jumpluff", level,
 				Grass.Instance, Flying.Instance			
 		)
@@ -73,12 +147,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Jumpluff Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Jumpluff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Jumpluff() : base(
 			189,
-			SpecieJumpluff.Instance, // Pokemon Specie
+			SpeciesJumpluff.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}
 		*/

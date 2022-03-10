@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Leafeon Specie to store common natural stats of all Leafeons
-	#region SpecieLeafeon
-	public class SpecieLeafeon : PokemonSpecie
+	//Leafeon Species to store common natural stats of all Leafeons
+	#region SpeciesLeafeon
+	public class SpeciesLeafeon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLeafeon? _instance = null;
+		private static SpeciesLeafeon? _instance = null;
 #nullable restore
-        public static SpecieLeafeon Instance
+        public static SpeciesLeafeon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLeafeon();
+                    _instance = new SpeciesLeafeon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLeafeon Builder
-		public SpecieLeafeon() : base(
+		#region SpeciesLeafeon Constructor
+		public SpeciesLeafeon() : base(
 			"Leafeon",
 			1.0,
 			25.5,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			60, 65, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Tail-Whip",
+				"Roar",
+				"Hyper-Beam",
+				"Strength",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Knock-Off",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Grass-Whistle",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Covet",
+				"Magical-Leaf",
+				"Leaf-Blade",
+				"Natural-Gift",
+				"Last-Resort",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"X-Scissor",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Captivate",
+				"Grass-Knot",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Leafeon Pokemon Class
+	//Leafeon PokemonInstance Class
 	#region Leafeon
-	public class Leafeon : Pokemon
+	public class LeafeonInstance : PokemonInstance
 	{
-		#region Leafeon Builders
+		#region Leafeon Constructors
 		/// <summary>
-		/// Leafeon Builder waiting for a Nickname & a Level
+		/// Leafeon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Leafeon(string nickname, int level)
+		public LeafeonInstance(string nickname, int level)
 		: base(
 				470,
-				SpecieLeafeon.Instance, // Pokemon Specie
+				SpeciesLeafeon.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Leafeon Builder only waiting for a Level
 		/// </summary>
-		public Leafeon(int level)
+		public LeafeonInstance(int level)
 		: base(
 				470,
-				SpecieLeafeon.Instance, // Pokemon Specie
+				SpeciesLeafeon.Instance, // PokemonInstance Species
 				"Leafeon", level,
 				Grass.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Leafeon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Leafeon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Leafeon() : base(
 			470,
-			SpecieLeafeon.Instance, // Pokemon Specie
+			SpeciesLeafeon.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

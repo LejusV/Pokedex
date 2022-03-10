@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nickit Specie to store common natural stats of all Nickits
-	#region SpecieNickit
-	public class SpecieNickit : PokemonSpecie
+	//Nickit Species to store common natural stats of all Nickits
+	#region SpeciesNickit
+	public class SpeciesNickit : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNickit? _instance = null;
+		private static SpeciesNickit? _instance = null;
 #nullable restore
-        public static SpecieNickit Instance
+        public static SpeciesNickit Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNickit();
+                    _instance = new SpeciesNickit();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNickit Builder
-		public SpecieNickit() : base(
+		#region SpeciesNickit Constructor
+		public SpeciesNickit() : base(
 			"Nickit",
 			0.6,
 			8.9,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			47, 52, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nickit Pokemon Class
+	//Nickit PokemonInstance Class
 	#region Nickit
-	public class Nickit : Pokemon
+	public class NickitInstance : PokemonInstance
 	{
-		#region Nickit Builders
+		#region Nickit Constructors
 		/// <summary>
-		/// Nickit Builder waiting for a Nickname & a Level
+		/// Nickit Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nickit(string nickname, int level)
+		public NickitInstance(string nickname, int level)
 		: base(
 				827,
-				SpecieNickit.Instance, // Pokemon Specie
+				SpeciesNickit.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nickit Builder only waiting for a Level
 		/// </summary>
-		public Nickit(int level)
+		public NickitInstance(int level)
 		: base(
 				827,
-				SpecieNickit.Instance, // Pokemon Specie
+				SpeciesNickit.Instance, // PokemonInstance Species
 				"Nickit", level,
 				Dark.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nickit Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nickit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nickit() : base(
 			827,
-			SpecieNickit.Instance, // Pokemon Specie
+			SpeciesNickit.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}
 		*/

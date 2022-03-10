@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Servine Specie to store common natural stats of all Servines
-	#region SpecieServine
-	public class SpecieServine : PokemonSpecie
+	//Servine Species to store common natural stats of all Servines
+	#region SpeciesServine
+	public class SpeciesServine : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieServine? _instance = null;
+		private static SpeciesServine? _instance = null;
 #nullable restore
-        public static SpecieServine Instance
+        public static SpeciesServine Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieServine();
+                    _instance = new SpeciesServine();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieServine Builder
-		public SpecieServine() : base(
+		#region SpeciesServine Constructor
+		public SpeciesServine() : base(
 			"Servine",
 			0.8,
 			16.0,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			60, 75, // Special Attack & Defense
 			83		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Slam",
+				"Vine-Whip",
+				"Tackle",
+				"Wrap",
+				"Leer",
+				"Mega-Drain",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Taunt",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Leaf-Blade",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Aqua-Tail",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Leaf-Storm",
+				"Grass-Knot",
+				"Coil",
+				"Round",
+				"Grass-Pledge",
+				"Work-Up",
+				"Leaf-Tornado",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Servine Pokemon Class
+	//Servine PokemonInstance Class
 	#region Servine
-	public class Servine : Pokemon
+	public class ServineInstance : PokemonInstance
 	{
-		#region Servine Builders
+		#region Servine Constructors
 		/// <summary>
-		/// Servine Builder waiting for a Nickname & a Level
+		/// Servine Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Servine(string nickname, int level)
+		public ServineInstance(string nickname, int level)
 		: base(
 				496,
-				SpecieServine.Instance, // Pokemon Specie
+				SpeciesServine.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Servine Builder only waiting for a Level
 		/// </summary>
-		public Servine(int level)
+		public ServineInstance(int level)
 		: base(
 				496,
-				SpecieServine.Instance, // Pokemon Specie
+				SpeciesServine.Instance, // PokemonInstance Species
 				"Servine", level,
 				Grass.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Servine Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Servine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Servine() : base(
 			496,
-			SpecieServine.Instance, // Pokemon Specie
+			SpeciesServine.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

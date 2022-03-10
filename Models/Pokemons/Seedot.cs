@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Seedot Specie to store common natural stats of all Seedots
-	#region SpecieSeedot
-	public class SpecieSeedot : PokemonSpecie
+	//Seedot Species to store common natural stats of all Seedots
+	#region SpeciesSeedot
+	public class SpeciesSeedot : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSeedot? _instance = null;
+		private static SpeciesSeedot? _instance = null;
 #nullable restore
-        public static SpecieSeedot Instance
+        public static SpeciesSeedot Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSeedot();
+                    _instance = new SpeciesSeedot();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSeedot Builder
-		public SpecieSeedot() : base(
+		#region SpeciesSeedot Constructor
+		public SpeciesSeedot() : base(
 			"Seedot",
 			0.5,
 			4.0,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Swords-Dance",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Bide",
+				"Self-Destruct",
+				"Amnesia",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Beat-Up",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Natural-Gift",
+				"Power-Swap",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Nasty-Plot",
+				"Defog",
+				"Captivate",
+				"Grass-Knot",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Grassy-Terrain",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Seedot Pokemon Class
+	//Seedot PokemonInstance Class
 	#region Seedot
-	public class Seedot : Pokemon
+	public class SeedotInstance : PokemonInstance
 	{
-		#region Seedot Builders
+		#region Seedot Constructors
 		/// <summary>
-		/// Seedot Builder waiting for a Nickname & a Level
+		/// Seedot Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Seedot(string nickname, int level)
+		public SeedotInstance(string nickname, int level)
 		: base(
 				273,
-				SpecieSeedot.Instance, // Pokemon Specie
+				SpeciesSeedot.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Seedot Builder only waiting for a Level
 		/// </summary>
-		public Seedot(int level)
+		public SeedotInstance(int level)
 		: base(
 				273,
-				SpecieSeedot.Instance, // Pokemon Specie
+				SpeciesSeedot.Instance, // PokemonInstance Species
 				"Seedot", level,
 				Grass.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Seedot Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Seedot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Seedot() : base(
 			273,
-			SpecieSeedot.Instance, // Pokemon Specie
+			SpeciesSeedot.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

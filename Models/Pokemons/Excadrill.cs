@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Excadrill Specie to store common natural stats of all Excadrills
-	#region SpecieExcadrill
-	public class SpecieExcadrill : PokemonSpecie
+	//Excadrill Species to store common natural stats of all Excadrills
+	#region SpeciesExcadrill
+	public class SpeciesExcadrill : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieExcadrill? _instance = null;
+		private static SpeciesExcadrill? _instance = null;
 #nullable restore
-        public static SpecieExcadrill Instance
+        public static SpeciesExcadrill Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieExcadrill();
+                    _instance = new SpeciesExcadrill();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieExcadrill Builder
-		public SpecieExcadrill() : base(
+		#region SpeciesExcadrill Constructor
+		public SpeciesExcadrill() : base(
 			"Excadrill",
 			0.7,
 			40.4,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			50, 65, // Special Attack & Defense
 			88		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Cut",
+				"Horn-Drill",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Fury-Swipes",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Rapid-Spin",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Facade",
+				"Brick-Break",
+				"Secret-Power",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Fling",
+				"Magnet-Rise",
+				"Poison-Jab",
+				"X-Scissor",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Iron-Head",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Round",
+				"Bulldoze",
+				"Drill-Run",
+				"Rototiller",
+				"Confide",
+				"Smart-Strike",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Excadrill Pokemon Class
+	//Excadrill PokemonInstance Class
 	#region Excadrill
-	public class Excadrill : Pokemon
+	public class ExcadrillInstance : PokemonInstance
 	{
-		#region Excadrill Builders
+		#region Excadrill Constructors
 		/// <summary>
-		/// Excadrill Builder waiting for a Nickname & a Level
+		/// Excadrill Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Excadrill(string nickname, int level)
+		public ExcadrillInstance(string nickname, int level)
 		: base(
 				530,
-				SpecieExcadrill.Instance, // Pokemon Specie
+				SpeciesExcadrill.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Steel.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Excadrill Builder only waiting for a Level
 		/// </summary>
-		public Excadrill(int level)
+		public ExcadrillInstance(int level)
 		: base(
 				530,
-				SpecieExcadrill.Instance, // Pokemon Specie
+				SpeciesExcadrill.Instance, // PokemonInstance Species
 				"Excadrill", level,
 				Ground.Instance, Steel.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Excadrill Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Excadrill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Excadrill() : base(
 			530,
-			SpecieExcadrill.Instance, // Pokemon Specie
+			SpeciesExcadrill.Instance, // PokemonInstance Species
 			Ground.Instance, Steel.Instance			
 		) {}
 		*/

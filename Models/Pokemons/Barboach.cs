@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Barboach Specie to store common natural stats of all Barboachs
-	#region SpecieBarboach
-	public class SpecieBarboach : PokemonSpecie
+	//Barboach Species to store common natural stats of all Barboachs
+	#region SpeciesBarboach
+	public class SpeciesBarboach : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBarboach? _instance = null;
+		private static SpeciesBarboach? _instance = null;
 #nullable restore
-        public static SpecieBarboach Instance
+        public static SpeciesBarboach Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBarboach();
+                    _instance = new SpeciesBarboach();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBarboach Builder
-		public SpecieBarboach() : base(
+		#region SpeciesBarboach Constructor
+		public SpeciesBarboach() : base(
 			"Barboach",
 			0.4,
 			1.9,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			46, 41, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Earthquake",
+				"Fissure",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Waterfall",
+				"Amnesia",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Future-Sight",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Water-Sport",
+				"Dragon-Dance",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Aqua-Tail",
+				"Earth-Power",
+				"Mud-Bomb",
+				"Captivate",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Barboach Pokemon Class
+	//Barboach PokemonInstance Class
 	#region Barboach
-	public class Barboach : Pokemon
+	public class BarboachInstance : PokemonInstance
 	{
-		#region Barboach Builders
+		#region Barboach Constructors
 		/// <summary>
-		/// Barboach Builder waiting for a Nickname & a Level
+		/// Barboach Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Barboach(string nickname, int level)
+		public BarboachInstance(string nickname, int level)
 		: base(
 				339,
-				SpecieBarboach.Instance, // Pokemon Specie
+				SpeciesBarboach.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Barboach Builder only waiting for a Level
 		/// </summary>
-		public Barboach(int level)
+		public BarboachInstance(int level)
 		: base(
 				339,
-				SpecieBarboach.Instance, // Pokemon Specie
+				SpeciesBarboach.Instance, // PokemonInstance Species
 				"Barboach", level,
 				Water.Instance, Ground.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Barboach Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Barboach Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Barboach() : base(
 			339,
-			SpecieBarboach.Instance, // Pokemon Specie
+			SpeciesBarboach.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}
 		*/

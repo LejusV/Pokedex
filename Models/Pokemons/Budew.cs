@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Budew Specie to store common natural stats of all Budews
-	#region SpecieBudew
-	public class SpecieBudew : PokemonSpecie
+	//Budew Species to store common natural stats of all Budews
+	#region SpeciesBudew
+	public class SpeciesBudew : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBudew? _instance = null;
+		private static SpeciesBudew? _instance = null;
 #nullable restore
-        public static SpecieBudew Instance
+        public static SpeciesBudew Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBudew();
+                    _instance = new SpeciesBudew();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBudew Builder
-		public SpecieBudew() : base(
+		#region SpeciesBudew Constructor
+		public SpeciesBudew() : base(
 			"Budew",
 			0.2,
 			1.2,
@@ -32,23 +34,90 @@ namespace Pokedex.Models.Pokemons
 			50, 70, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Pin-Missile",
+				"Absorb",
+				"Mega-Drain",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Stun-Spore",
+				"Sleep-Powder",
+				"Toxic",
+				"Double-Team",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Mind-Reader",
+				"Snore",
+				"Cotton-Spore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Spikes",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Grass-Whistle",
+				"Extrasensory",
+				"Bullet-Seed",
+				"Covet",
+				"Water-Sport",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Round",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Budew Pokemon Class
+	//Budew PokemonInstance Class
 	#region Budew
-	public class Budew : Pokemon
+	public class BudewInstance : PokemonInstance
 	{
-		#region Budew Builders
+		#region Budew Constructors
 		/// <summary>
-		/// Budew Builder waiting for a Nickname & a Level
+		/// Budew Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Budew(string nickname, int level)
+		public BudewInstance(string nickname, int level)
 		: base(
 				406,
-				SpecieBudew.Instance, // Pokemon Specie
+				SpeciesBudew.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +129,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Budew Builder only waiting for a Level
 		/// </summary>
-		public Budew(int level)
+		public BudewInstance(int level)
 		: base(
 				406,
-				SpecieBudew.Instance, // Pokemon Specie
+				SpeciesBudew.Instance, // PokemonInstance Species
 				"Budew", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +142,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Budew Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Budew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Budew() : base(
 			406,
-			SpecieBudew.Instance, // Pokemon Specie
+			SpeciesBudew.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

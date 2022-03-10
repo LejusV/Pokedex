@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Pincurchin Specie to store common natural stats of all Pincurchins
-	#region SpeciePincurchin
-	public class SpeciePincurchin : PokemonSpecie
+	//Pincurchin Species to store common natural stats of all Pincurchins
+	#region SpeciesPincurchin
+	public class SpeciesPincurchin : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePincurchin? _instance = null;
+		private static SpeciesPincurchin? _instance = null;
 #nullable restore
-        public static SpeciePincurchin Instance
+        public static SpeciesPincurchin Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePincurchin();
+                    _instance = new SpeciesPincurchin();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePincurchin Builder
-		public SpeciePincurchin() : base(
+		#region SpeciesPincurchin Constructor
+		public SpeciesPincurchin() : base(
 			"Pincurchin",
 			0.3,
 			1.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			91, 85, // Special Attack & Defense
 			15		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Pincurchin Pokemon Class
+	//Pincurchin PokemonInstance Class
 	#region Pincurchin
-	public class Pincurchin : Pokemon
+	public class PincurchinInstance : PokemonInstance
 	{
-		#region Pincurchin Builders
+		#region Pincurchin Constructors
 		/// <summary>
-		/// Pincurchin Builder waiting for a Nickname & a Level
+		/// Pincurchin Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Pincurchin(string nickname, int level)
+		public PincurchinInstance(string nickname, int level)
 		: base(
 				871,
-				SpeciePincurchin.Instance, // Pokemon Specie
+				SpeciesPincurchin.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Pincurchin Builder only waiting for a Level
 		/// </summary>
-		public Pincurchin(int level)
+		public PincurchinInstance(int level)
 		: base(
 				871,
-				SpeciePincurchin.Instance, // Pokemon Specie
+				SpeciesPincurchin.Instance, // PokemonInstance Species
 				"Pincurchin", level,
 				Electric.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Pincurchin Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Pincurchin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Pincurchin() : base(
 			871,
-			SpeciePincurchin.Instance, // Pokemon Specie
+			SpeciesPincurchin.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

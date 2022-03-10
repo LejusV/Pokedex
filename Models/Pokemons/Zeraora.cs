@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zeraora Specie to store common natural stats of all Zeraoras
-	#region SpecieZeraora
-	public class SpecieZeraora : PokemonSpecie
+	//Zeraora Species to store common natural stats of all Zeraoras
+	#region SpeciesZeraora
+	public class SpeciesZeraora : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZeraora? _instance = null;
+		private static SpeciesZeraora? _instance = null;
 #nullable restore
-        public static SpecieZeraora Instance
+        public static SpeciesZeraora Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZeraora();
+                    _instance = new SpeciesZeraora();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZeraora Builder
-		public SpecieZeraora() : base(
+		#region SpeciesZeraora Constructor
+		public SpeciesZeraora() : base(
 			"Zeraora",
 			1.5,
 			44.5,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			102, 80, // Special Attack & Defense
 			143		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Thunder-Punch",
+				"Scratch",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Protect",
+				"False-Swipe",
+				"Spark",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Fake-Out",
+				"Facade",
+				"Charge",
+				"Taunt",
+				"Brick-Break",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Calm-Mind",
+				"Close-Combat",
+				"Fling",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Discharge",
+				"Grass-Knot",
+				"Hone-Claws",
+				"Low-Sweep",
+				"Round",
+				"Echoed-Voice",
+				"Quick-Guard",
+				"Acrobatics",
+				"Volt-Switch",
+				"Work-Up",
+				"Wild-Charge",
+				"Snarl",
+				"Confide",
+				"Brutal-Swing",
+				"Plasma-Fists"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zeraora Pokemon Class
+	//Zeraora PokemonInstance Class
 	#region Zeraora
-	public class Zeraora : Pokemon
+	public class ZeraoraInstance : PokemonInstance
 	{
-		#region Zeraora Builders
+		#region Zeraora Constructors
 		/// <summary>
-		/// Zeraora Builder waiting for a Nickname & a Level
+		/// Zeraora Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zeraora(string nickname, int level)
+		public ZeraoraInstance(string nickname, int level)
 		: base(
 				807,
-				SpecieZeraora.Instance, // Pokemon Specie
+				SpeciesZeraora.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zeraora Builder only waiting for a Level
 		/// </summary>
-		public Zeraora(int level)
+		public ZeraoraInstance(int level)
 		: base(
 				807,
-				SpecieZeraora.Instance, // Pokemon Specie
+				SpeciesZeraora.Instance, // PokemonInstance Species
 				"Zeraora", level,
 				Electric.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zeraora Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zeraora Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zeraora() : base(
 			807,
-			SpecieZeraora.Instance, // Pokemon Specie
+			SpeciesZeraora.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

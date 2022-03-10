@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Miltank Specie to store common natural stats of all Miltanks
-	#region SpecieMiltank
-	public class SpecieMiltank : PokemonSpecie
+	//Miltank Species to store common natural stats of all Miltanks
+	#region SpeciesMiltank
+	public class SpeciesMiltank : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMiltank? _instance = null;
+		private static SpeciesMiltank? _instance = null;
 #nullable restore
-        public static SpecieMiltank Instance
+        public static SpeciesMiltank Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMiltank();
+                    _instance = new SpeciesMiltank();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMiltank Builder
-		public SpecieMiltank() : base(
+		#region SpeciesMiltank Constructor
+		public SpeciesMiltank() : base(
 			"Miltank",
 			1.2,
 			75.5,
@@ -32,23 +34,126 @@ namespace Pokedex.Models.Pokemons
 			40, 70, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Stomp",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Bide",
+				"Metronome",
+				"Dizzy-Punch",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Milk-Drink",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Present",
+				"Frustration",
+				"Dynamic-Punch",
+				"Sweet-Scent",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Block",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Wake-Up-Slap",
+				"Hammer-Arm",
+				"Gyro-Ball",
+				"Natural-Gift",
+				"Fling",
+				"Punishment",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Iron-Head",
+				"Captivate",
+				"Stealth-Rock",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Heart-Stamp",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Miltank Pokemon Class
+	//Miltank PokemonInstance Class
 	#region Miltank
-	public class Miltank : Pokemon
+	public class MiltankInstance : PokemonInstance
 	{
-		#region Miltank Builders
+		#region Miltank Constructors
 		/// <summary>
-		/// Miltank Builder waiting for a Nickname & a Level
+		/// Miltank Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Miltank(string nickname, int level)
+		public MiltankInstance(string nickname, int level)
 		: base(
 				241,
-				SpecieMiltank.Instance, // Pokemon Specie
+				SpeciesMiltank.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +165,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Miltank Builder only waiting for a Level
 		/// </summary>
-		public Miltank(int level)
+		public MiltankInstance(int level)
 		: base(
 				241,
-				SpecieMiltank.Instance, // Pokemon Specie
+				SpeciesMiltank.Instance, // PokemonInstance Species
 				"Miltank", level,
 				Normal.Instance			
 		)
@@ -73,12 +178,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Miltank Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Miltank Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Miltank() : base(
 			241,
-			SpecieMiltank.Instance, // Pokemon Specie
+			SpeciesMiltank.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

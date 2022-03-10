@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Nuzleaf Specie to store common natural stats of all Nuzleafs
-	#region SpecieNuzleaf
-	public class SpecieNuzleaf : PokemonSpecie
+	//Nuzleaf Species to store common natural stats of all Nuzleafs
+	#region SpeciesNuzleaf
+	public class SpeciesNuzleaf : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNuzleaf? _instance = null;
+		private static SpeciesNuzleaf? _instance = null;
 #nullable restore
-        public static SpecieNuzleaf Instance
+        public static SpeciesNuzleaf Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNuzleaf();
+                    _instance = new SpeciesNuzleaf();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNuzleaf Builder
-		public SpecieNuzleaf() : base(
+		#region SpeciesNuzleaf Constructor
+		public SpeciesNuzleaf() : base(
 			"Nuzleaf",
 			1.0,
 			28.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			60, 40, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Razor-Wind",
+				"Swords-Dance",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Swift",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Brick-Break",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Extrasensory",
+				"Bullet-Seed",
+				"Leaf-Blade",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Worry-Seed",
+				"Dark-Pulse",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Captivate",
+				"Grass-Knot",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Nuzleaf Pokemon Class
+	//Nuzleaf PokemonInstance Class
 	#region Nuzleaf
-	public class Nuzleaf : Pokemon
+	public class NuzleafInstance : PokemonInstance
 	{
-		#region Nuzleaf Builders
+		#region Nuzleaf Constructors
 		/// <summary>
-		/// Nuzleaf Builder waiting for a Nickname & a Level
+		/// Nuzleaf Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Nuzleaf(string nickname, int level)
+		public NuzleafInstance(string nickname, int level)
 		: base(
 				274,
-				SpecieNuzleaf.Instance, // Pokemon Specie
+				SpeciesNuzleaf.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dark.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Nuzleaf Builder only waiting for a Level
 		/// </summary>
-		public Nuzleaf(int level)
+		public NuzleafInstance(int level)
 		: base(
 				274,
-				SpecieNuzleaf.Instance, // Pokemon Specie
+				SpeciesNuzleaf.Instance, // PokemonInstance Species
 				"Nuzleaf", level,
 				Grass.Instance, Dark.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Nuzleaf Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Nuzleaf Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Nuzleaf() : base(
 			274,
-			SpecieNuzleaf.Instance, // Pokemon Specie
+			SpeciesNuzleaf.Instance, // PokemonInstance Species
 			Grass.Instance, Dark.Instance			
 		) {}
 		*/

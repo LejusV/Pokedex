@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sylveon Specie to store common natural stats of all Sylveons
-	#region SpecieSylveon
-	public class SpecieSylveon : PokemonSpecie
+	//Sylveon Species to store common natural stats of all Sylveons
+	#region SpeciesSylveon
+	public class SpeciesSylveon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSylveon? _instance = null;
+		private static SpeciesSylveon? _instance = null;
 #nullable restore
-        public static SpecieSylveon Instance
+        public static SpeciesSylveon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSylveon();
+                    _instance = new SpeciesSylveon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSylveon Builder
-		public SpecieSylveon() : base(
+		#region SpeciesSylveon Constructor
+		public SpeciesSylveon() : base(
 			"Sylveon",
 			1.0,
 			23.5,
@@ -32,23 +34,87 @@ namespace Pokedex.Models.Pokemons
 			110, 130, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Tackle",
+				"Tail-Whip",
+				"Hyper-Beam",
+				"Dig",
+				"Toxic",
+				"Quick-Attack",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Facade",
+				"Helping-Hand",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Covet",
+				"Calm-Mind",
+				"Last-Resort",
+				"Giga-Impact",
+				"Psyshock",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Disarming-Voice",
+				"Draining-Kiss",
+				"Misty-Terrain",
+				"Fairy-Wind",
+				"Moonblast",
+				"Confide",
+				"Dazzling-Gleam",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sylveon Pokemon Class
+	//Sylveon PokemonInstance Class
 	#region Sylveon
-	public class Sylveon : Pokemon
+	public class SylveonInstance : PokemonInstance
 	{
-		#region Sylveon Builders
+		#region Sylveon Constructors
 		/// <summary>
-		/// Sylveon Builder waiting for a Nickname & a Level
+		/// Sylveon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sylveon(string nickname, int level)
+		public SylveonInstance(string nickname, int level)
 		: base(
 				700,
-				SpecieSylveon.Instance, // Pokemon Specie
+				SpeciesSylveon.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +126,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sylveon Builder only waiting for a Level
 		/// </summary>
-		public Sylveon(int level)
+		public SylveonInstance(int level)
 		: base(
 				700,
-				SpecieSylveon.Instance, // Pokemon Specie
+				SpeciesSylveon.Instance, // PokemonInstance Species
 				"Sylveon", level,
 				Fairy.Instance			
 		)
@@ -73,12 +139,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sylveon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sylveon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sylveon() : base(
 			700,
-			SpecieSylveon.Instance, // Pokemon Specie
+			SpeciesSylveon.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

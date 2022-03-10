@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Horsea Specie to store common natural stats of all Horseas
-	#region SpecieHorsea
-	public class SpecieHorsea : PokemonSpecie
+	//Horsea Species to store common natural stats of all Horseas
+	#region SpeciesHorsea
+	public class SpeciesHorsea : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHorsea? _instance = null;
+		private static SpeciesHorsea? _instance = null;
 #nullable restore
-        public static SpecieHorsea Instance
+        public static SpeciesHorsea Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHorsea();
+                    _instance = new SpeciesHorsea();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHorsea Builder
-		public SpecieHorsea() : base(
+		#region SpeciesHorsea Constructor
+		public SpeciesHorsea() : base(
 			"Horsea",
 			0.4,
 			8.0,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			70, 25, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Razor-Wind",
+				"Headbutt",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Disable",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Dragon-Rage",
+				"Toxic",
+				"Agility",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Smokescreen",
+				"Focus-Energy",
+				"Bide",
+				"Waterfall",
+				"Swift",
+				"Skull-Bash",
+				"Bubble",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Flail",
+				"Protect",
+				"Octazooka",
+				"Icy-Wind",
+				"Outrage",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Signal-Beam",
+				"Muddy-Water",
+				"Bounce",
+				"Dragon-Dance",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Dragon-Pulse",
+				"Flash-Cannon",
+				"Captivate",
+				"Round",
+				"Clear-Smog",
+				"Scald",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Horsea Pokemon Class
+	//Horsea PokemonInstance Class
 	#region Horsea
-	public class Horsea : Pokemon
+	public class HorseaInstance : PokemonInstance
 	{
-		#region Horsea Builders
+		#region Horsea Constructors
 		/// <summary>
-		/// Horsea Builder waiting for a Nickname & a Level
+		/// Horsea Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Horsea(string nickname, int level)
+		public HorseaInstance(string nickname, int level)
 		: base(
 				116,
-				SpecieHorsea.Instance, // Pokemon Specie
+				SpeciesHorsea.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Horsea Builder only waiting for a Level
 		/// </summary>
-		public Horsea(int level)
+		public HorseaInstance(int level)
 		: base(
 				116,
-				SpecieHorsea.Instance, // Pokemon Specie
+				SpeciesHorsea.Instance, // PokemonInstance Species
 				"Horsea", level,
 				Water.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Horsea Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Horsea Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Horsea() : base(
 			116,
-			SpecieHorsea.Instance, // Pokemon Specie
+			SpeciesHorsea.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Ekans Specie to store common natural stats of all Ekanss
-	#region SpecieEkans
-	public class SpecieEkans : PokemonSpecie
+	//Ekans Species to store common natural stats of all Ekanss
+	#region SpeciesEkans
+	public class SpeciesEkans : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEkans? _instance = null;
+		private static SpeciesEkans? _instance = null;
 #nullable restore
-        public static SpecieEkans Instance
+        public static SpeciesEkans Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEkans();
+                    _instance = new SpeciesEkans();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEkans Builder
-		public SpecieEkans() : base(
+		#region SpeciesEkans Constructor
+		public SpeciesEkans() : base(
 			"Ekans",
 			2.0,
 			6.9,
@@ -32,23 +34,116 @@ namespace Pokedex.Models.Pokemons
 			40, 54, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Slam",
+				"Headbutt",
+				"Body-Slam",
+				"Wrap",
+				"Take-Down",
+				"Double-Edge",
+				"Poison-Sting",
+				"Leer",
+				"Bite",
+				"Disable",
+				"Acid",
+				"Strength",
+				"Mega-Drain",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Haze",
+				"Bide",
+				"Skull-Bash",
+				"Glare",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Beat-Up",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Torment",
+				"Facade",
+				"Snatch",
+				"Secret-Power",
+				"Poison-Fang",
+				"Rock-Tomb",
+				"Poison-Tail",
+				"Natural-Gift",
+				"Payback",
+				"Gastro-Acid",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Aqua-Tail",
+				"Seed-Bomb",
+				"Switcheroo",
+				"Mud-Bomb",
+				"Gunk-Shot",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Coil",
+				"Acid-Spray",
+				"Round",
+				"Bulldoze",
+				"Belch",
+				"Confide",
+				"Infestation",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Ekans Pokemon Class
+	//Ekans PokemonInstance Class
 	#region Ekans
-	public class Ekans : Pokemon
+	public class EkansInstance : PokemonInstance
 	{
-		#region Ekans Builders
+		#region Ekans Constructors
 		/// <summary>
-		/// Ekans Builder waiting for a Nickname & a Level
+		/// Ekans Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Ekans(string nickname, int level)
+		public EkansInstance(string nickname, int level)
 		: base(
 				23,
-				SpecieEkans.Instance, // Pokemon Specie
+				SpeciesEkans.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
 		)
@@ -60,10 +155,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Ekans Builder only waiting for a Level
 		/// </summary>
-		public Ekans(int level)
+		public EkansInstance(int level)
 		: base(
 				23,
-				SpecieEkans.Instance, // Pokemon Specie
+				SpeciesEkans.Instance, // PokemonInstance Species
 				"Ekans", level,
 				Poison.Instance			
 		)
@@ -73,12 +168,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Ekans Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Ekans Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Ekans() : base(
 			23,
-			SpecieEkans.Instance, // Pokemon Specie
+			SpeciesEkans.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}
 		*/

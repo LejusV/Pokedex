@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hitmonlee Specie to store common natural stats of all Hitmonlees
-	#region SpecieHitmonlee
-	public class SpecieHitmonlee : PokemonSpecie
+	//Hitmonlee Species to store common natural stats of all Hitmonlees
+	#region SpeciesHitmonlee
+	public class SpeciesHitmonlee : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHitmonlee? _instance = null;
+		private static SpeciesHitmonlee? _instance = null;
 #nullable restore
-        public static SpecieHitmonlee Instance
+        public static SpeciesHitmonlee Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHitmonlee();
+                    _instance = new SpeciesHitmonlee();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHitmonlee Builder
-		public SpecieHitmonlee() : base(
+		#region SpeciesHitmonlee Constructor
+		public SpeciesHitmonlee() : base(
 			"Hitmonlee",
 			1.5,
 			49.8,
@@ -32,23 +34,116 @@ namespace Pokedex.Models.Pokemons
 			35, 110, // Special Attack & Defense
 			87		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Double-Kick",
+				"Mega-Kick",
+				"Jump-Kick",
+				"Rolling-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Meditate",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Focus-Energy",
+				"Bide",
+				"Metronome",
+				"Swift",
+				"Skull-Bash",
+				"High-Jump-Kick",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Mind-Reader",
+				"Snore",
+				"Curse",
+				"Reversal",
+				"Protect",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Blaze-Kick",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Bounce",
+				"Covet",
+				"Natural-Gift",
+				"Feint",
+				"Close-Combat",
+				"Fling",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Rock-Climb",
+				"Stone-Edge",
+				"Captivate",
+				"Wide-Guard",
+				"Low-Sweep",
+				"Round",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hitmonlee Pokemon Class
+	//Hitmonlee PokemonInstance Class
 	#region Hitmonlee
-	public class Hitmonlee : Pokemon
+	public class HitmonleeInstance : PokemonInstance
 	{
-		#region Hitmonlee Builders
+		#region Hitmonlee Constructors
 		/// <summary>
-		/// Hitmonlee Builder waiting for a Nickname & a Level
+		/// Hitmonlee Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hitmonlee(string nickname, int level)
+		public HitmonleeInstance(string nickname, int level)
 		: base(
 				106,
-				SpecieHitmonlee.Instance, // Pokemon Specie
+				SpeciesHitmonlee.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +155,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hitmonlee Builder only waiting for a Level
 		/// </summary>
-		public Hitmonlee(int level)
+		public HitmonleeInstance(int level)
 		: base(
 				106,
-				SpecieHitmonlee.Instance, // Pokemon Specie
+				SpeciesHitmonlee.Instance, // PokemonInstance Species
 				"Hitmonlee", level,
 				Fighting.Instance			
 		)
@@ -73,12 +168,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hitmonlee Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hitmonlee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hitmonlee() : base(
 			106,
-			SpecieHitmonlee.Instance, // Pokemon Specie
+			SpeciesHitmonlee.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

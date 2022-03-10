@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spectrier Specie to store common natural stats of all Spectriers
-	#region SpecieSpectrier
-	public class SpecieSpectrier : PokemonSpecie
+	//Spectrier Species to store common natural stats of all Spectriers
+	#region SpeciesSpectrier
+	public class SpeciesSpectrier : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSpectrier? _instance = null;
+		private static SpeciesSpectrier? _instance = null;
 #nullable restore
-        public static SpecieSpectrier Instance
+        public static SpeciesSpectrier Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSpectrier();
+                    _instance = new SpeciesSpectrier();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSpectrier Builder
-		public SpecieSpectrier() : base(
+		#region SpeciesSpectrier Constructor
+		public SpeciesSpectrier() : base(
 			"Spectrier",
 			2.0,
 			44.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			145, 80, // Special Attack & Defense
 			130		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Spectrier Pokemon Class
+	//Spectrier PokemonInstance Class
 	#region Spectrier
-	public class Spectrier : Pokemon
+	public class SpectrierInstance : PokemonInstance
 	{
-		#region Spectrier Builders
+		#region Spectrier Constructors
 		/// <summary>
-		/// Spectrier Builder waiting for a Nickname & a Level
+		/// Spectrier Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Spectrier(string nickname, int level)
+		public SpectrierInstance(string nickname, int level)
 		: base(
 				897,
-				SpecieSpectrier.Instance, // Pokemon Specie
+				SpeciesSpectrier.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spectrier Builder only waiting for a Level
 		/// </summary>
-		public Spectrier(int level)
+		public SpectrierInstance(int level)
 		: base(
 				897,
-				SpecieSpectrier.Instance, // Pokemon Specie
+				SpeciesSpectrier.Instance, // PokemonInstance Species
 				"Spectrier", level,
 				Ghost.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Spectrier Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Spectrier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Spectrier() : base(
 			897,
-			SpecieSpectrier.Instance, // Pokemon Specie
+			SpeciesSpectrier.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

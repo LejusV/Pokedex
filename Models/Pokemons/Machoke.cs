@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Machoke Specie to store common natural stats of all Machokes
-	#region SpecieMachoke
-	public class SpecieMachoke : PokemonSpecie
+	//Machoke Species to store common natural stats of all Machokes
+	#region SpeciesMachoke
+	public class SpeciesMachoke : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMachoke? _instance = null;
+		private static SpeciesMachoke? _instance = null;
 #nullable restore
-        public static SpecieMachoke Instance
+        public static SpeciesMachoke Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMachoke();
+                    _instance = new SpeciesMachoke();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMachoke Builder
-		public SpecieMachoke() : base(
+		#region SpeciesMachoke Constructor
+		public SpeciesMachoke() : base(
 			"Machoke",
 			1.5,
 			70.5,
@@ -32,23 +34,118 @@ namespace Pokedex.Models.Pokemons
 			50, 60, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Karate-Chop",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Leer",
+				"Flamethrower",
+				"Submission",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Focus-Energy",
+				"Bide",
+				"Metronome",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Foresight",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Vital-Throw",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Role-Play",
+				"Superpower",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Rock-Climb",
+				"Captivate",
+				"Smack-Down",
+				"Low-Sweep",
+				"Round",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Machoke Pokemon Class
+	//Machoke PokemonInstance Class
 	#region Machoke
-	public class Machoke : Pokemon
+	public class MachokeInstance : PokemonInstance
 	{
-		#region Machoke Builders
+		#region Machoke Constructors
 		/// <summary>
-		/// Machoke Builder waiting for a Nickname & a Level
+		/// Machoke Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Machoke(string nickname, int level)
+		public MachokeInstance(string nickname, int level)
 		: base(
 				67,
-				SpecieMachoke.Instance, // Pokemon Specie
+				SpeciesMachoke.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +157,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Machoke Builder only waiting for a Level
 		/// </summary>
-		public Machoke(int level)
+		public MachokeInstance(int level)
 		: base(
 				67,
-				SpecieMachoke.Instance, // Pokemon Specie
+				SpeciesMachoke.Instance, // PokemonInstance Species
 				"Machoke", level,
 				Fighting.Instance			
 		)
@@ -73,12 +170,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Machoke Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Machoke Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Machoke() : base(
 			67,
-			SpecieMachoke.Instance, // Pokemon Specie
+			SpeciesMachoke.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

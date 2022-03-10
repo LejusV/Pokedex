@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Caterpie Specie to store common natural stats of all Caterpies
-	#region SpecieCaterpie
-	public class SpecieCaterpie : PokemonSpecie
+	//Caterpie Species to store common natural stats of all Caterpies
+	#region SpeciesCaterpie
+	public class SpeciesCaterpie : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCaterpie? _instance = null;
+		private static SpeciesCaterpie? _instance = null;
 #nullable restore
-        public static SpecieCaterpie Instance
+        public static SpeciesCaterpie Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCaterpie();
+                    _instance = new SpeciesCaterpie();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCaterpie Builder
-		public SpecieCaterpie() : base(
+		#region SpeciesCaterpie Constructor
+		public SpeciesCaterpie() : base(
 			"Caterpie",
 			0.3,
 			2.9,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			20, 20, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"String-Shot",
+				"Snore",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Caterpie Pokemon Class
+	//Caterpie PokemonInstance Class
 	#region Caterpie
-	public class Caterpie : Pokemon
+	public class CaterpieInstance : PokemonInstance
 	{
-		#region Caterpie Builders
+		#region Caterpie Constructors
 		/// <summary>
-		/// Caterpie Builder waiting for a Nickname & a Level
+		/// Caterpie Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Caterpie(string nickname, int level)
+		public CaterpieInstance(string nickname, int level)
 		: base(
 				10,
-				SpecieCaterpie.Instance, // Pokemon Specie
+				SpeciesCaterpie.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Caterpie Builder only waiting for a Level
 		/// </summary>
-		public Caterpie(int level)
+		public CaterpieInstance(int level)
 		: base(
 				10,
-				SpecieCaterpie.Instance, // Pokemon Specie
+				SpeciesCaterpie.Instance, // PokemonInstance Species
 				"Caterpie", level,
 				Bug.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Caterpie Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Caterpie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Caterpie() : base(
 			10,
-			SpecieCaterpie.Instance, // Pokemon Specie
+			SpeciesCaterpie.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

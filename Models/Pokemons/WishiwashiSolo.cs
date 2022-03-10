@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wishiwashi-Solo Specie to store common natural stats of all Wishiwashi-Solos
-	#region SpecieWishiwashi-Solo
-	public class SpecieWishiwashiSolo : PokemonSpecie
+	//Wishiwashi-Solo Species to store common natural stats of all Wishiwashi-Solos
+	#region SpeciesWishiwashi-Solo
+	public class SpeciesWishiwashiSolo : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWishiwashiSolo? _instance = null;
+		private static SpeciesWishiwashiSolo? _instance = null;
 #nullable restore
-        public static SpecieWishiwashiSolo Instance
+        public static SpeciesWishiwashiSolo Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWishiwashiSolo();
+                    _instance = new SpeciesWishiwashiSolo();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWishiwashi-Solo Builder
-		public SpecieWishiwashiSolo() : base(
+		#region SpeciesWishiwashi-Solo Constructor
+		public SpeciesWishiwashiSolo() : base(
 			"Wishiwashi-Solo",
 			0.2,
 			0.3,
@@ -32,23 +34,77 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Mist",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Waterfall",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Feint-Attack",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Beat-Up",
+				"Hail",
+				"Facade",
+				"Helping-Hand",
+				"Endeavor",
+				"Dive",
+				"Muddy-Water",
+				"Water-Sport",
+				"Water-Pulse",
+				"Brine",
+				"U-Turn",
+				"Aqua-Ring",
+				"Aqua-Tail",
+				"Soak",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Tearful-Look"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wishiwashi-Solo Pokemon Class
+	//Wishiwashi-Solo PokemonInstance Class
 	#region Wishiwashi-Solo
-	public class WishiwashiSolo : Pokemon
+	public class WishiwashiSoloInstance : PokemonInstance
 	{
-		#region Wishiwashi-Solo Builders
+		#region Wishiwashi-Solo Constructors
 		/// <summary>
-		/// Wishiwashi-Solo Builder waiting for a Nickname & a Level
+		/// Wishiwashi-Solo Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public WishiwashiSolo(string nickname, int level)
+		public WishiwashiSoloInstance(string nickname, int level)
 		: base(
 				746,
-				SpecieWishiwashiSolo.Instance, // Pokemon Specie
+				SpeciesWishiwashiSolo.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +116,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wishiwashi-Solo Builder only waiting for a Level
 		/// </summary>
-		public WishiwashiSolo(int level)
+		public WishiwashiSoloInstance(int level)
 		: base(
 				746,
-				SpecieWishiwashiSolo.Instance, // Pokemon Specie
+				SpeciesWishiwashiSolo.Instance, // PokemonInstance Species
 				"Wishiwashi-Solo", level,
 				Water.Instance			
 		)
@@ -73,12 +129,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wishiwashi-Solo Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wishiwashi-Solo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public WishiwashiSolo() : base(
 			746,
-			SpecieWishiwashiSolo.Instance, // Pokemon Specie
+			SpeciesWishiwashiSolo.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

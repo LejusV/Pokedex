@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Genesect Specie to store common natural stats of all Genesects
-	#region SpecieGenesect
-	public class SpecieGenesect : PokemonSpecie
+	//Genesect Species to store common natural stats of all Genesects
+	#region SpeciesGenesect
+	public class SpeciesGenesect : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGenesect? _instance = null;
+		private static SpeciesGenesect? _instance = null;
 #nullable restore
-        public static SpecieGenesect Instance
+        public static SpeciesGenesect Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGenesect();
+                    _instance = new SpeciesGenesect();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGenesect Builder
-		public SpecieGenesect() : base(
+		#region SpeciesGenesect Constructor
+		public SpeciesGenesect() : base(
 			"Genesect",
 			1.5,
 			82.5,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			120, 95, // Special Attack & Defense
 			99		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fly",
+				"Flamethrower",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Self-Destruct",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Tri-Attack",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Zap-Cannon",
+				"Lock-On",
+				"Giga-Drain",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Metal-Claw",
+				"Hidden-Power",
+				"Facade",
+				"Magic-Coat",
+				"Recycle",
+				"Secret-Power",
+				"Metal-Sound",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Iron-Defense",
+				"Shock-Wave",
+				"Gravity",
+				"U-Turn",
+				"Last-Resort",
+				"Magnet-Rise",
+				"Rock-Polish",
+				"Dark-Pulse",
+				"X-Scissor",
+				"Bug-Buzz",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Gunk-Shot",
+				"Iron-Head",
+				"Magnet-Bomb",
+				"Bug-Bite",
+				"Charge-Beam",
+				"Hone-Claws",
+				"Flame-Charge",
+				"Simple-Beam",
+				"Round",
+				"Struggle-Bug",
+				"Electroweb",
+				"Techno-Blast",
+				"Fell-Stinger",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Genesect Pokemon Class
+	//Genesect PokemonInstance Class
 	#region Genesect
-	public class Genesect : Pokemon
+	public class GenesectInstance : PokemonInstance
 	{
-		#region Genesect Builders
+		#region Genesect Constructors
 		/// <summary>
-		/// Genesect Builder waiting for a Nickname & a Level
+		/// Genesect Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Genesect(string nickname, int level)
+		public GenesectInstance(string nickname, int level)
 		: base(
 				649,
-				SpecieGenesect.Instance, // Pokemon Specie
+				SpeciesGenesect.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Genesect Builder only waiting for a Level
 		/// </summary>
-		public Genesect(int level)
+		public GenesectInstance(int level)
 		: base(
 				649,
-				SpecieGenesect.Instance, // Pokemon Specie
+				SpeciesGenesect.Instance, // PokemonInstance Species
 				"Genesect", level,
 				Bug.Instance, Steel.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Genesect Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Genesect Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Genesect() : base(
 			649,
-			SpecieGenesect.Instance, // Pokemon Specie
+			SpeciesGenesect.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}
 		*/

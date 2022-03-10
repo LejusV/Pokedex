@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hatenna Specie to store common natural stats of all Hatennas
-	#region SpecieHatenna
-	public class SpecieHatenna : PokemonSpecie
+	//Hatenna Species to store common natural stats of all Hatennas
+	#region SpeciesHatenna
+	public class SpeciesHatenna : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHatenna? _instance = null;
+		private static SpeciesHatenna? _instance = null;
 #nullable restore
-        public static SpecieHatenna Instance
+        public static SpeciesHatenna Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHatenna();
+                    _instance = new SpeciesHatenna();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHatenna Builder
-		public SpecieHatenna() : base(
+		#region SpeciesHatenna Constructor
+		public SpeciesHatenna() : base(
 			"Hatenna",
 			0.4,
 			3.4,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			56, 53, // Special Attack & Defense
 			39		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hatenna Pokemon Class
+	//Hatenna PokemonInstance Class
 	#region Hatenna
-	public class Hatenna : Pokemon
+	public class HatennaInstance : PokemonInstance
 	{
-		#region Hatenna Builders
+		#region Hatenna Constructors
 		/// <summary>
-		/// Hatenna Builder waiting for a Nickname & a Level
+		/// Hatenna Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hatenna(string nickname, int level)
+		public HatennaInstance(string nickname, int level)
 		: base(
 				856,
-				SpecieHatenna.Instance, // Pokemon Specie
+				SpeciesHatenna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hatenna Builder only waiting for a Level
 		/// </summary>
-		public Hatenna(int level)
+		public HatennaInstance(int level)
 		: base(
 				856,
-				SpecieHatenna.Instance, // Pokemon Specie
+				SpeciesHatenna.Instance, // PokemonInstance Species
 				"Hatenna", level,
 				Psychic.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hatenna Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hatenna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hatenna() : base(
 			856,
-			SpecieHatenna.Instance, // Pokemon Specie
+			SpeciesHatenna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

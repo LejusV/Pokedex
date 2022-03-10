@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cradily Specie to store common natural stats of all Cradilys
-	#region SpecieCradily
-	public class SpecieCradily : PokemonSpecie
+	//Cradily Species to store common natural stats of all Cradilys
+	#region SpeciesCradily
+	public class SpeciesCradily : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCradily? _instance = null;
+		private static SpeciesCradily? _instance = null;
 #nullable restore
-        public static SpecieCradily Instance
+        public static SpeciesCradily Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCradily();
+                    _instance = new SpeciesCradily();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCradily Builder
-		public SpecieCradily() : base(
+		#region SpeciesCradily Constructor
+		public SpeciesCradily() : base(
 			"Cradily",
 			1.5,
 			60.4,
@@ -32,23 +34,104 @@ namespace Pokedex.Models.Pokemons
 			81, 107, // Special Attack & Defense
 			43		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Bind",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Acid",
+				"Hyper-Beam",
+				"Strength",
+				"Solar-Beam",
+				"String-Shot",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Constrict",
+				"Amnesia",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Sandstorm",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Facade",
+				"Ingrain",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Bullet-Seed",
+				"Block",
+				"Brine",
+				"Natural-Gift",
+				"Wring-Out",
+				"Gastro-Acid",
+				"Worry-Seed",
+				"Rock-Polish",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Earth-Power",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Smack-Down",
+				"Sludge-Wave",
+				"Round",
+				"Bulldoze",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cradily Pokemon Class
+	//Cradily PokemonInstance Class
 	#region Cradily
-	public class Cradily : Pokemon
+	public class CradilyInstance : PokemonInstance
 	{
-		#region Cradily Builders
+		#region Cradily Constructors
 		/// <summary>
-		/// Cradily Builder waiting for a Nickname & a Level
+		/// Cradily Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cradily(string nickname, int level)
+		public CradilyInstance(string nickname, int level)
 		: base(
 				346,
-				SpecieCradily.Instance, // Pokemon Specie
+				SpeciesCradily.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Grass.Instance			
 		)
@@ -60,10 +143,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cradily Builder only waiting for a Level
 		/// </summary>
-		public Cradily(int level)
+		public CradilyInstance(int level)
 		: base(
 				346,
-				SpecieCradily.Instance, // Pokemon Specie
+				SpeciesCradily.Instance, // PokemonInstance Species
 				"Cradily", level,
 				Rock.Instance, Grass.Instance			
 		)
@@ -73,12 +156,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cradily Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cradily Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cradily() : base(
 			346,
-			SpecieCradily.Instance, // Pokemon Specie
+			SpeciesCradily.Instance, // PokemonInstance Species
 			Rock.Instance, Grass.Instance			
 		) {}
 		*/

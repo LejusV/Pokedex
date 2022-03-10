@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tympole Specie to store common natural stats of all Tympoles
-	#region SpecieTympole
-	public class SpecieTympole : PokemonSpecie
+	//Tympole Species to store common natural stats of all Tympoles
+	#region SpeciesTympole
+	public class SpeciesTympole : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTympole? _instance = null;
+		private static SpeciesTympole? _instance = null;
 #nullable restore
-        public static SpecieTympole Instance
+        public static SpeciesTympole Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTympole();
+                    _instance = new SpeciesTympole();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTympole Builder
-		public SpecieTympole() : base(
+		#region SpeciesTympole Constructor
+		public SpeciesTympole() : base(
 			"Tympole",
 			0.5,
 			4.5,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			50, 40, // Special Attack & Defense
 			64		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Growl",
+				"Supersonic",
+				"Mist",
+				"Hydro-Pump",
+				"Surf",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Endeavor",
+				"Refresh",
+				"Secret-Power",
+				"Mud-Sport",
+				"Hyper-Voice",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Water-Pulse",
+				"Aqua-Ring",
+				"Earth-Power",
+				"Mud-Bomb",
+				"Sludge-Wave",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Confide",
+				"Venom-Drench",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tympole Pokemon Class
+	//Tympole PokemonInstance Class
 	#region Tympole
-	public class Tympole : Pokemon
+	public class TympoleInstance : PokemonInstance
 	{
-		#region Tympole Builders
+		#region Tympole Constructors
 		/// <summary>
-		/// Tympole Builder waiting for a Nickname & a Level
+		/// Tympole Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Tympole(string nickname, int level)
+		public TympoleInstance(string nickname, int level)
 		: base(
 				535,
-				SpecieTympole.Instance, // Pokemon Specie
+				SpeciesTympole.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tympole Builder only waiting for a Level
 		/// </summary>
-		public Tympole(int level)
+		public TympoleInstance(int level)
 		: base(
 				535,
-				SpecieTympole.Instance, // Pokemon Specie
+				SpeciesTympole.Instance, // PokemonInstance Species
 				"Tympole", level,
 				Water.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tympole Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tympole Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Tympole() : base(
 			535,
-			SpecieTympole.Instance, // Pokemon Specie
+			SpeciesTympole.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drednaw Specie to store common natural stats of all Drednaws
-	#region SpecieDrednaw
-	public class SpecieDrednaw : PokemonSpecie
+	//Drednaw Species to store common natural stats of all Drednaws
+	#region SpeciesDrednaw
+	public class SpeciesDrednaw : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrednaw? _instance = null;
+		private static SpeciesDrednaw? _instance = null;
 #nullable restore
-        public static SpecieDrednaw Instance
+        public static SpeciesDrednaw Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrednaw();
+                    _instance = new SpeciesDrednaw();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrednaw Builder
-		public SpecieDrednaw() : base(
+		#region SpeciesDrednaw Constructor
+		public SpeciesDrednaw() : base(
 			"Drednaw",
 			1.0,
 			115.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			48, 68, // Special Attack & Defense
 			74		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drednaw Pokemon Class
+	//Drednaw PokemonInstance Class
 	#region Drednaw
-	public class Drednaw : Pokemon
+	public class DrednawInstance : PokemonInstance
 	{
-		#region Drednaw Builders
+		#region Drednaw Constructors
 		/// <summary>
-		/// Drednaw Builder waiting for a Nickname & a Level
+		/// Drednaw Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drednaw(string nickname, int level)
+		public DrednawInstance(string nickname, int level)
 		: base(
 				834,
-				SpecieDrednaw.Instance, // Pokemon Specie
+				SpeciesDrednaw.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drednaw Builder only waiting for a Level
 		/// </summary>
-		public Drednaw(int level)
+		public DrednawInstance(int level)
 		: base(
 				834,
-				SpecieDrednaw.Instance, // Pokemon Specie
+				SpeciesDrednaw.Instance, // PokemonInstance Species
 				"Drednaw", level,
 				Water.Instance, Rock.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drednaw Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drednaw Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drednaw() : base(
 			834,
-			SpecieDrednaw.Instance, // Pokemon Specie
+			SpeciesDrednaw.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}
 		*/

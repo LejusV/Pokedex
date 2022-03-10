@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Inkay Specie to store common natural stats of all Inkays
-	#region SpecieInkay
-	public class SpecieInkay : PokemonSpecie
+	//Inkay Species to store common natural stats of all Inkays
+	#region SpeciesInkay
+	public class SpeciesInkay : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieInkay? _instance = null;
+		private static SpeciesInkay? _instance = null;
 #nullable restore
-        public static SpecieInkay Instance
+        public static SpeciesInkay Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieInkay();
+                    _instance = new SpeciesInkay();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieInkay Builder
-		public SpecieInkay() : base(
+		#region SpeciesInkay Constructor
+		public SpeciesInkay() : base(
 			"Inkay",
 			0.4,
 			3.5,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			37, 46, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Bind",
+				"Tackle",
+				"Flamethrower",
+				"Psybeam",
+				"Peck",
+				"Thunderbolt",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Constrict",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Destiny-Bond",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Taunt",
+				"Role-Play",
+				"Superpower",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Camouflage",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Pluck",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Guard-Swap",
+				"Dark-Pulse",
+				"Night-Slash",
+				"Switcheroo",
+				"Psycho-Cut",
+				"Trick-Room",
+				"Power-Split",
+				"Foul-Play",
+				"Simple-Beam",
+				"Round",
+				"Retaliate",
+				"Topsy-Turvy",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Inkay Pokemon Class
+	//Inkay PokemonInstance Class
 	#region Inkay
-	public class Inkay : Pokemon
+	public class InkayInstance : PokemonInstance
 	{
-		#region Inkay Builders
+		#region Inkay Constructors
 		/// <summary>
-		/// Inkay Builder waiting for a Nickname & a Level
+		/// Inkay Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Inkay(string nickname, int level)
+		public InkayInstance(string nickname, int level)
 		: base(
 				686,
-				SpecieInkay.Instance, // Pokemon Specie
+				SpeciesInkay.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Psychic.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Inkay Builder only waiting for a Level
 		/// </summary>
-		public Inkay(int level)
+		public InkayInstance(int level)
 		: base(
 				686,
-				SpecieInkay.Instance, // Pokemon Specie
+				SpeciesInkay.Instance, // PokemonInstance Species
 				"Inkay", level,
 				Dark.Instance, Psychic.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Inkay Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Inkay Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Inkay() : base(
 			686,
-			SpecieInkay.Instance, // Pokemon Specie
+			SpeciesInkay.Instance, // PokemonInstance Species
 			Dark.Instance, Psychic.Instance			
 		) {}
 		*/

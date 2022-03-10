@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sandaconda Specie to store common natural stats of all Sandacondas
-	#region SpecieSandaconda
-	public class SpecieSandaconda : PokemonSpecie
+	//Sandaconda Species to store common natural stats of all Sandacondas
+	#region SpeciesSandaconda
+	public class SpeciesSandaconda : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSandaconda? _instance = null;
+		private static SpeciesSandaconda? _instance = null;
 #nullable restore
-        public static SpecieSandaconda Instance
+        public static SpeciesSandaconda Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSandaconda();
+                    _instance = new SpeciesSandaconda();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSandaconda Builder
-		public SpecieSandaconda() : base(
+		#region SpeciesSandaconda Constructor
+		public SpeciesSandaconda() : base(
 			"Sandaconda",
 			3.8,
 			65.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			65, 70, // Special Attack & Defense
 			71		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sandaconda Pokemon Class
+	//Sandaconda PokemonInstance Class
 	#region Sandaconda
-	public class Sandaconda : Pokemon
+	public class SandacondaInstance : PokemonInstance
 	{
-		#region Sandaconda Builders
+		#region Sandaconda Constructors
 		/// <summary>
-		/// Sandaconda Builder waiting for a Nickname & a Level
+		/// Sandaconda Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sandaconda(string nickname, int level)
+		public SandacondaInstance(string nickname, int level)
 		: base(
 				844,
-				SpecieSandaconda.Instance, // Pokemon Specie
+				SpeciesSandaconda.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sandaconda Builder only waiting for a Level
 		/// </summary>
-		public Sandaconda(int level)
+		public SandacondaInstance(int level)
 		: base(
 				844,
-				SpecieSandaconda.Instance, // Pokemon Specie
+				SpeciesSandaconda.Instance, // PokemonInstance Species
 				"Sandaconda", level,
 				Ground.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sandaconda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sandaconda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sandaconda() : base(
 			844,
-			SpecieSandaconda.Instance, // Pokemon Specie
+			SpeciesSandaconda.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

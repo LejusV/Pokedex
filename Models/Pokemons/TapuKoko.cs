@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Tapu-Koko Specie to store common natural stats of all Tapu-Kokos
-	#region SpecieTapu-Koko
-	public class SpecieTapuKoko : PokemonSpecie
+	//Tapu-Koko Species to store common natural stats of all Tapu-Kokos
+	#region SpeciesTapu-Koko
+	public class SpeciesTapuKoko : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTapuKoko? _instance = null;
+		private static SpeciesTapuKoko? _instance = null;
 #nullable restore
-        public static SpecieTapuKoko Instance
+        public static SpeciesTapuKoko Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTapuKoko();
+                    _instance = new SpeciesTapuKoko();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTapu-Koko Builder
-		public SpecieTapuKoko() : base(
+		#region SpeciesTapu-Koko Constructor
+		public SpeciesTapuKoko() : base(
 			"Tapu-Koko",
 			1.8,
 			20.5,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			95, 75, // Special Attack & Defense
 			130		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fly",
+				"Roar",
+				"Hyper-Beam",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Screech",
+				"Double-Team",
+				"Withdraw",
+				"Light-Screen",
+				"Reflect",
+				"Mirror-Move",
+				"Substitute",
+				"Thief",
+				"Protect",
+				"False-Swipe",
+				"Swagger",
+				"Spark",
+				"Steel-Wing",
+				"Mean-Look",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Charge",
+				"Taunt",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Roost",
+				"U-Turn",
+				"Power-Swap",
+				"Brave-Bird",
+				"Giga-Impact",
+				"Discharge",
+				"Grass-Knot",
+				"Electro-Ball",
+				"Round",
+				"Echoed-Voice",
+				"Sky-Drop",
+				"Acrobatics",
+				"Volt-Switch",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide",
+				"Electric-Terrain",
+				"Dazzling-Gleam",
+				"Natures-Madness"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Tapu-Koko Pokemon Class
+	//Tapu-Koko PokemonInstance Class
 	#region Tapu-Koko
-	public class TapuKoko : Pokemon
+	public class TapuKokoInstance : PokemonInstance
 	{
-		#region Tapu-Koko Builders
+		#region Tapu-Koko Constructors
 		/// <summary>
-		/// Tapu-Koko Builder waiting for a Nickname & a Level
+		/// Tapu-Koko Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public TapuKoko(string nickname, int level)
+		public TapuKokoInstance(string nickname, int level)
 		: base(
 				785,
-				SpecieTapuKoko.Instance, // Pokemon Specie
+				SpeciesTapuKoko.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Fairy.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Tapu-Koko Builder only waiting for a Level
 		/// </summary>
-		public TapuKoko(int level)
+		public TapuKokoInstance(int level)
 		: base(
 				785,
-				SpecieTapuKoko.Instance, // Pokemon Specie
+				SpeciesTapuKoko.Instance, // PokemonInstance Species
 				"Tapu-Koko", level,
 				Electric.Instance, Fairy.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Tapu-Koko Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Tapu-Koko Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public TapuKoko() : base(
 			785,
-			SpecieTapuKoko.Instance, // Pokemon Specie
+			SpeciesTapuKoko.Instance, // PokemonInstance Species
 			Electric.Instance, Fairy.Instance			
 		) {}
 		*/

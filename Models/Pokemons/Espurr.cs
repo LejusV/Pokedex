@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Espurr Specie to store common natural stats of all Espurrs
-	#region SpecieEspurr
-	public class SpecieEspurr : PokemonSpecie
+	//Espurr Species to store common natural stats of all Espurrs
+	#region SpeciesEspurr
+	public class SpeciesEspurr : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEspurr? _instance = null;
+		private static SpeciesEspurr? _instance = null;
 #nullable restore
-        public static SpecieEspurr Instance
+        public static SpeciesEspurr Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEspurr();
+                    _instance = new SpeciesEspurr();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEspurr Builder
-		public SpecieEspurr() : base(
+		#region SpeciesEspurr Constructor
+		public SpeciesEspurr() : base(
 			"Espurr",
 			0.3,
 			3.5,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			63, 60, // Special Attack & Defense
 			68		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Leer",
+				"Psybeam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Barrier",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Fake-Out",
+				"Torment",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Assist",
+				"Magic-Coat",
+				"Recycle",
+				"Yawn",
+				"Snatch",
+				"Secret-Power",
+				"Signal-Beam",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Payback",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Charge-Beam",
+				"Wonder-Room",
+				"Psyshock",
+				"Magic-Room",
+				"Round",
+				"Echoed-Voice",
+				"Work-Up",
+				"Disarming-Voice",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Espurr Pokemon Class
+	//Espurr PokemonInstance Class
 	#region Espurr
-	public class Espurr : Pokemon
+	public class EspurrInstance : PokemonInstance
 	{
-		#region Espurr Builders
+		#region Espurr Constructors
 		/// <summary>
-		/// Espurr Builder waiting for a Nickname & a Level
+		/// Espurr Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Espurr(string nickname, int level)
+		public EspurrInstance(string nickname, int level)
 		: base(
 				677,
-				SpecieEspurr.Instance, // Pokemon Specie
+				SpeciesEspurr.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Espurr Builder only waiting for a Level
 		/// </summary>
-		public Espurr(int level)
+		public EspurrInstance(int level)
 		: base(
 				677,
-				SpecieEspurr.Instance, // Pokemon Specie
+				SpeciesEspurr.Instance, // PokemonInstance Species
 				"Espurr", level,
 				Psychic.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Espurr Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Espurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Espurr() : base(
 			677,
-			SpecieEspurr.Instance, // Pokemon Specie
+			SpeciesEspurr.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

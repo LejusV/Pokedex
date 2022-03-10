@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Torracat Specie to store common natural stats of all Torracats
-	#region SpecieTorracat
-	public class SpecieTorracat : PokemonSpecie
+	//Torracat Species to store common natural stats of all Torracats
+	#region SpeciesTorracat
+	public class SpeciesTorracat : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieTorracat? _instance = null;
+		private static SpeciesTorracat? _instance = null;
 #nullable restore
-        public static SpecieTorracat Instance
+        public static SpeciesTorracat Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieTorracat();
+                    _instance = new SpeciesTorracat();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieTorracat Builder
-		public SpecieTorracat() : base(
+		#region SpeciesTorracat Constructor
+		public SpeciesTorracat() : base(
 			"Torracat",
 			0.7,
 			25.0,
@@ -32,23 +34,78 @@ namespace Pokedex.Models.Pokemons
 			80, 50, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Swords-Dance",
+				"Double-Kick",
+				"Thrash",
+				"Leer",
+				"Bite",
+				"Growl",
+				"Roar",
+				"Ember",
+				"Flamethrower",
+				"Toxic",
+				"Double-Team",
+				"Lick",
+				"Fire-Blast",
+				"Leech-Life",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Protect",
+				"Scary-Face",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Overheat",
+				"Bulk-Up",
+				"U-Turn",
+				"Flare-Blitz",
+				"Shadow-Claw",
+				"Fire-Fang",
+				"Flame-Charge",
+				"Round",
+				"Acrobatics",
+				"Fire-Pledge",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Torracat Pokemon Class
+	//Torracat PokemonInstance Class
 	#region Torracat
-	public class Torracat : Pokemon
+	public class TorracatInstance : PokemonInstance
 	{
-		#region Torracat Builders
+		#region Torracat Constructors
 		/// <summary>
-		/// Torracat Builder waiting for a Nickname & a Level
+		/// Torracat Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Torracat(string nickname, int level)
+		public TorracatInstance(string nickname, int level)
 		: base(
 				726,
-				SpecieTorracat.Instance, // Pokemon Specie
+				SpeciesTorracat.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +117,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Torracat Builder only waiting for a Level
 		/// </summary>
-		public Torracat(int level)
+		public TorracatInstance(int level)
 		: base(
 				726,
-				SpecieTorracat.Instance, // Pokemon Specie
+				SpeciesTorracat.Instance, // PokemonInstance Species
 				"Torracat", level,
 				Fire.Instance			
 		)
@@ -73,12 +130,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Torracat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Torracat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Torracat() : base(
 			726,
-			SpecieTorracat.Instance, // Pokemon Specie
+			SpeciesTorracat.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rolycoly Specie to store common natural stats of all Rolycolys
-	#region SpecieRolycoly
-	public class SpecieRolycoly : PokemonSpecie
+	//Rolycoly Species to store common natural stats of all Rolycolys
+	#region SpeciesRolycoly
+	public class SpeciesRolycoly : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRolycoly? _instance = null;
+		private static SpeciesRolycoly? _instance = null;
 #nullable restore
-        public static SpecieRolycoly Instance
+        public static SpeciesRolycoly Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRolycoly();
+                    _instance = new SpeciesRolycoly();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRolycoly Builder
-		public SpecieRolycoly() : base(
+		#region SpeciesRolycoly Constructor
+		public SpeciesRolycoly() : base(
 			"Rolycoly",
 			0.3,
 			12.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 50, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rolycoly Pokemon Class
+	//Rolycoly PokemonInstance Class
 	#region Rolycoly
-	public class Rolycoly : Pokemon
+	public class RolycolyInstance : PokemonInstance
 	{
-		#region Rolycoly Builders
+		#region Rolycoly Constructors
 		/// <summary>
-		/// Rolycoly Builder waiting for a Nickname & a Level
+		/// Rolycoly Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rolycoly(string nickname, int level)
+		public RolycolyInstance(string nickname, int level)
 		: base(
 				837,
-				SpecieRolycoly.Instance, // Pokemon Specie
+				SpeciesRolycoly.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rolycoly Builder only waiting for a Level
 		/// </summary>
-		public Rolycoly(int level)
+		public RolycolyInstance(int level)
 		: base(
 				837,
-				SpecieRolycoly.Instance, // Pokemon Specie
+				SpeciesRolycoly.Instance, // PokemonInstance Species
 				"Rolycoly", level,
 				Rock.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rolycoly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rolycoly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rolycoly() : base(
 			837,
-			SpecieRolycoly.Instance, // Pokemon Specie
+			SpeciesRolycoly.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}
 		*/

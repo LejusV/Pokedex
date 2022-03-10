@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Swadloon Specie to store common natural stats of all Swadloons
-	#region SpecieSwadloon
-	public class SpecieSwadloon : PokemonSpecie
+	//Swadloon Species to store common natural stats of all Swadloons
+	#region SpeciesSwadloon
+	public class SpeciesSwadloon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSwadloon? _instance = null;
+		private static SpeciesSwadloon? _instance = null;
 #nullable restore
-        public static SpecieSwadloon Instance
+        public static SpeciesSwadloon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSwadloon();
+                    _instance = new SpeciesSwadloon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSwadloon Builder
-		public SpecieSwadloon() : base(
+		#region SpeciesSwadloon Constructor
+		public SpeciesSwadloon() : base(
 			"Swadloon",
 			0.5,
 			7.3,
@@ -32,23 +34,76 @@ namespace Pokedex.Models.Pokemons
 			50, 80, // Special Attack & Defense
 			42		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Tackle",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"String-Shot",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Magic-Coat",
+				"Secret-Power",
+				"Grass-Whistle",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Calm-Mind",
+				"Payback",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Grass-Knot",
+				"Bug-Bite",
+				"Round",
+				"Struggle-Bug",
+				"Electroweb",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Swadloon Pokemon Class
+	//Swadloon PokemonInstance Class
 	#region Swadloon
-	public class Swadloon : Pokemon
+	public class SwadloonInstance : PokemonInstance
 	{
-		#region Swadloon Builders
+		#region Swadloon Constructors
 		/// <summary>
-		/// Swadloon Builder waiting for a Nickname & a Level
+		/// Swadloon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Swadloon(string nickname, int level)
+		public SwadloonInstance(string nickname, int level)
 		: base(
 				541,
-				SpecieSwadloon.Instance, // Pokemon Specie
+				SpeciesSwadloon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -60,10 +115,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Swadloon Builder only waiting for a Level
 		/// </summary>
-		public Swadloon(int level)
+		public SwadloonInstance(int level)
 		: base(
 				541,
-				SpecieSwadloon.Instance, // Pokemon Specie
+				SpeciesSwadloon.Instance, // PokemonInstance Species
 				"Swadloon", level,
 				Bug.Instance, Grass.Instance			
 		)
@@ -73,12 +128,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Swadloon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Swadloon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Swadloon() : base(
 			541,
-			SpecieSwadloon.Instance, // Pokemon Specie
+			SpeciesSwadloon.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}
 		*/

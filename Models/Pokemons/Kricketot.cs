@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kricketot Specie to store common natural stats of all Kricketots
-	#region SpecieKricketot
-	public class SpecieKricketot : PokemonSpecie
+	//Kricketot Species to store common natural stats of all Kricketots
+	#region SpeciesKricketot
+	public class SpeciesKricketot : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKricketot? _instance = null;
+		private static SpeciesKricketot? _instance = null;
 #nullable restore
-        public static SpecieKricketot Instance
+        public static SpeciesKricketot Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKricketot();
+                    _instance = new SpeciesKricketot();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKricketot Builder
-		public SpecieKricketot() : base(
+		#region SpeciesKricketot Constructor
+		public SpeciesKricketot() : base(
 			"Kricketot",
 			0.3,
 			2.2,
@@ -32,23 +34,43 @@ namespace Pokedex.Models.Pokemons
 			25, 41, // Special Attack & Defense
 			25		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Growl",
+				"String-Shot",
+				"Bide",
+				"Snore",
+				"Mud-Slap",
+				"Uproar",
+				"Endeavor",
+				"Bug-Bite",
+				"Struggle-Bug"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kricketot Pokemon Class
+	//Kricketot PokemonInstance Class
 	#region Kricketot
-	public class Kricketot : Pokemon
+	public class KricketotInstance : PokemonInstance
 	{
-		#region Kricketot Builders
+		#region Kricketot Constructors
 		/// <summary>
-		/// Kricketot Builder waiting for a Nickname & a Level
+		/// Kricketot Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kricketot(string nickname, int level)
+		public KricketotInstance(string nickname, int level)
 		: base(
 				401,
-				SpecieKricketot.Instance, // Pokemon Specie
+				SpeciesKricketot.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +82,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kricketot Builder only waiting for a Level
 		/// </summary>
-		public Kricketot(int level)
+		public KricketotInstance(int level)
 		: base(
 				401,
-				SpecieKricketot.Instance, // Pokemon Specie
+				SpeciesKricketot.Instance, // PokemonInstance Species
 				"Kricketot", level,
 				Bug.Instance			
 		)
@@ -73,12 +95,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kricketot Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kricketot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kricketot() : base(
 			401,
-			SpecieKricketot.Instance, // Pokemon Specie
+			SpeciesKricketot.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

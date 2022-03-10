@@ -25,7 +25,7 @@ namespace Pokedex.Models
     internal class Wiki
     {{
         #nullable enable
-        private static Dictionary<int, Pokemon?>
+        private static Dictionary<int, PokemonInstance?>
         #nullable restore
          _pokemons;
         #nullable enable
@@ -42,14 +42,14 @@ namespace Pokedex.Models
             }}
         }}
 
-        public Dictionary<int, Pokemon?> Pokemons
+        public Dictionary<int, PokemonInstance?> Pokemons
         {{ get {{ return _pokemons; }} }} 
 
 
         public string Display()
         {{
             string res = "";
-            foreach (KeyValuePair<int, Pokemon?> entry in this.Pokemons) 
+            foreach (KeyValuePair<int, PokemonInstance?> entry in this.Pokemons) 
             {{
                 if (entry.Value != null)
                 {{
@@ -64,7 +64,7 @@ namespace Pokedex.Models
         public Wiki()
         {{
             #region PokemonDictionary
-            _pokemons = new Dictionary<int, Pokemon?>()
+            _pokemons = new Dictionary<int, PokemonInstance?>()
             {{
 				{nl.join([f'{{ {poke["id"]},		new {"".join([c for c in poke["name"].title() if c not in (" ", "-")]) }() }}' for poke in data.values()]) }
 			}};

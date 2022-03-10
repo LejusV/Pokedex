@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zacian-Hero Specie to store common natural stats of all Zacian-Heros
-	#region SpecieZacian-Hero
-	public class SpecieZacianHero : PokemonSpecie
+	//Zacian-Hero Species to store common natural stats of all Zacian-Heros
+	#region SpeciesZacian-Hero
+	public class SpeciesZacianHero : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZacianHero? _instance = null;
+		private static SpeciesZacianHero? _instance = null;
 #nullable restore
-        public static SpecieZacianHero Instance
+        public static SpeciesZacianHero Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZacianHero();
+                    _instance = new SpeciesZacianHero();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZacian-Hero Builder
-		public SpecieZacianHero() : base(
+		#region SpeciesZacian-Hero Constructor
+		public SpeciesZacianHero() : base(
 			"Zacian-Hero",
 			2.8,
 			110.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 115, // Special Attack & Defense
 			138		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zacian-Hero Pokemon Class
+	//Zacian-Hero PokemonInstance Class
 	#region Zacian-Hero
-	public class ZacianHero : Pokemon
+	public class ZacianHeroInstance : PokemonInstance
 	{
-		#region Zacian-Hero Builders
+		#region Zacian-Hero Constructors
 		/// <summary>
-		/// Zacian-Hero Builder waiting for a Nickname & a Level
+		/// Zacian-Hero Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public ZacianHero(string nickname, int level)
+		public ZacianHeroInstance(string nickname, int level)
 		: base(
 				888,
-				SpecieZacianHero.Instance, // Pokemon Specie
+				SpeciesZacianHero.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zacian-Hero Builder only waiting for a Level
 		/// </summary>
-		public ZacianHero(int level)
+		public ZacianHeroInstance(int level)
 		: base(
 				888,
-				SpecieZacianHero.Instance, // Pokemon Specie
+				SpeciesZacianHero.Instance, // PokemonInstance Species
 				"Zacian-Hero", level,
 				Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zacian-Hero Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zacian-Hero Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public ZacianHero() : base(
 			888,
-			SpecieZacianHero.Instance, // Pokemon Specie
+			SpeciesZacianHero.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}
 		*/

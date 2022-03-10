@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gogoat Specie to store common natural stats of all Gogoats
-	#region SpecieGogoat
-	public class SpecieGogoat : PokemonSpecie
+	//Gogoat Species to store common natural stats of all Gogoats
+	#region SpeciesGogoat
+	public class SpeciesGogoat : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGogoat? _instance = null;
+		private static SpeciesGogoat? _instance = null;
 #nullable restore
-        public static SpecieGogoat Instance
+        public static SpeciesGogoat Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGogoat();
+                    _instance = new SpeciesGogoat();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGogoat Builder
-		public SpecieGogoat() : base(
+		#region SpeciesGogoat Constructor
+		public SpeciesGogoat() : base(
 			"Gogoat",
 			1.7,
 			91.0,
@@ -32,23 +34,92 @@ namespace Pokedex.Models.Pokemons
 			97, 81, // Special Attack & Defense
 			68		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Vine-Whip",
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Roar",
+				"Surf",
+				"Hyper-Beam",
+				"Strength",
+				"Leech-Seed",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Swagger",
+				"Milk-Drink",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Nature-Power",
+				"Superpower",
+				"Brick-Break",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Bounce",
+				"Leaf-Blade",
+				"Payback",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Grass-Knot",
+				"Round",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Horn-Leech",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gogoat Pokemon Class
+	//Gogoat PokemonInstance Class
 	#region Gogoat
-	public class Gogoat : Pokemon
+	public class GogoatInstance : PokemonInstance
 	{
-		#region Gogoat Builders
+		#region Gogoat Constructors
 		/// <summary>
-		/// Gogoat Builder waiting for a Nickname & a Level
+		/// Gogoat Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gogoat(string nickname, int level)
+		public GogoatInstance(string nickname, int level)
 		: base(
 				673,
-				SpecieGogoat.Instance, // Pokemon Specie
+				SpeciesGogoat.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +131,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gogoat Builder only waiting for a Level
 		/// </summary>
-		public Gogoat(int level)
+		public GogoatInstance(int level)
 		: base(
 				673,
-				SpecieGogoat.Instance, // Pokemon Specie
+				SpeciesGogoat.Instance, // PokemonInstance Species
 				"Gogoat", level,
 				Grass.Instance			
 		)
@@ -73,12 +144,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gogoat Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gogoat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gogoat() : base(
 			673,
-			SpecieGogoat.Instance, // Pokemon Specie
+			SpeciesGogoat.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

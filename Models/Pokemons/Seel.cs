@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Seel Specie to store common natural stats of all Seels
-	#region SpecieSeel
-	public class SpecieSeel : PokemonSpecie
+	//Seel Species to store common natural stats of all Seels
+	#region SpeciesSeel
+	public class SpeciesSeel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSeel? _instance = null;
+		private static SpeciesSeel? _instance = null;
 #nullable restore
-        public static SpecieSeel Instance
+        public static SpeciesSeel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSeel();
+                    _instance = new SpeciesSeel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSeel Builder
-		public SpecieSeel() : base(
+		#region SpeciesSeel Constructor
+		public SpeciesSeel() : base(
 			"Seel",
 			1.1,
 			90.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			45, 70, // Special Attack & Defense
 			45		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pay-Day",
+				"Slam",
+				"Headbutt",
+				"Horn-Drill",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Disable",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Aurora-Beam",
+				"Peck",
+				"Strength",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Bide",
+				"Lick",
+				"Waterfall",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Perish-Song",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Whirlpool",
+				"Fake-Out",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Signal-Beam",
+				"Icicle-Spear",
+				"Water-Sport",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Fling",
+				"Aqua-Ring",
+				"Aqua-Tail",
+				"Ice-Shard",
+				"Captivate",
+				"Aqua-Jet",
+				"Entrainment",
+				"Round",
+				"Echoed-Voice",
+				"Drill-Run",
+				"Belch",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Seel Pokemon Class
+	//Seel PokemonInstance Class
 	#region Seel
-	public class Seel : Pokemon
+	public class SeelInstance : PokemonInstance
 	{
-		#region Seel Builders
+		#region Seel Constructors
 		/// <summary>
-		/// Seel Builder waiting for a Nickname & a Level
+		/// Seel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Seel(string nickname, int level)
+		public SeelInstance(string nickname, int level)
 		: base(
 				86,
-				SpecieSeel.Instance, // Pokemon Specie
+				SpeciesSeel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Seel Builder only waiting for a Level
 		/// </summary>
-		public Seel(int level)
+		public SeelInstance(int level)
 		: base(
 				86,
-				SpecieSeel.Instance, // Pokemon Specie
+				SpeciesSeel.Instance, // PokemonInstance Species
 				"Seel", level,
 				Water.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Seel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Seel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Seel() : base(
 			86,
-			SpecieSeel.Instance, // Pokemon Specie
+			SpeciesSeel.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Calyrex Specie to store common natural stats of all Calyrexs
-	#region SpecieCalyrex
-	public class SpecieCalyrex : PokemonSpecie
+	//Calyrex Species to store common natural stats of all Calyrexs
+	#region SpeciesCalyrex
+	public class SpeciesCalyrex : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCalyrex? _instance = null;
+		private static SpeciesCalyrex? _instance = null;
 #nullable restore
-        public static SpecieCalyrex Instance
+        public static SpeciesCalyrex Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCalyrex();
+                    _instance = new SpeciesCalyrex();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCalyrex Builder
-		public SpecieCalyrex() : base(
+		#region SpeciesCalyrex Constructor
+		public SpeciesCalyrex() : base(
 			"Calyrex",
 			1.1,
 			7.7,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Calyrex Pokemon Class
+	//Calyrex PokemonInstance Class
 	#region Calyrex
-	public class Calyrex : Pokemon
+	public class CalyrexInstance : PokemonInstance
 	{
-		#region Calyrex Builders
+		#region Calyrex Constructors
 		/// <summary>
-		/// Calyrex Builder waiting for a Nickname & a Level
+		/// Calyrex Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Calyrex(string nickname, int level)
+		public CalyrexInstance(string nickname, int level)
 		: base(
 				898,
-				SpecieCalyrex.Instance, // Pokemon Specie
+				SpeciesCalyrex.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Grass.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Calyrex Builder only waiting for a Level
 		/// </summary>
-		public Calyrex(int level)
+		public CalyrexInstance(int level)
 		: base(
 				898,
-				SpecieCalyrex.Instance, // Pokemon Specie
+				SpeciesCalyrex.Instance, // PokemonInstance Species
 				"Calyrex", level,
 				Psychic.Instance, Grass.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Calyrex Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Calyrex Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Calyrex() : base(
 			898,
-			SpecieCalyrex.Instance, // Pokemon Specie
+			SpeciesCalyrex.Instance, // PokemonInstance Species
 			Psychic.Instance, Grass.Instance			
 		) {}
 		*/

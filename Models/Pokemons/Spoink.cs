@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spoink Specie to store common natural stats of all Spoinks
-	#region SpecieSpoink
-	public class SpecieSpoink : PokemonSpecie
+	//Spoink Species to store common natural stats of all Spoinks
+	#region SpeciesSpoink
+	public class SpeciesSpoink : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSpoink? _instance = null;
+		private static SpeciesSpoink? _instance = null;
 #nullable restore
-        public static SpecieSpoink Instance
+        public static SpeciesSpoink Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSpoink();
+                    _instance = new SpeciesSpoink();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSpoink Builder
-		public SpecieSpoink() : base(
+		#region SpeciesSpoink Constructor
+		public SpeciesSpoink() : base(
 			"Spoink",
 			0.7,
 			30.6,
@@ -32,23 +34,105 @@ namespace Pokedex.Models.Pokemons
 			70, 80, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Whirlwind",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Psybeam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Amnesia",
+				"Dream-Eater",
+				"Flash",
+				"Psywave",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Mirror-Coat",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Torment",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Odor-Sleuth",
+				"Signal-Beam",
+				"Extrasensory",
+				"Bounce",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Payback",
+				"Lucky-Chant",
+				"Power-Gem",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Simple-Beam",
+				"Round",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Spoink Pokemon Class
+	//Spoink PokemonInstance Class
 	#region Spoink
-	public class Spoink : Pokemon
+	public class SpoinkInstance : PokemonInstance
 	{
-		#region Spoink Builders
+		#region Spoink Constructors
 		/// <summary>
-		/// Spoink Builder waiting for a Nickname & a Level
+		/// Spoink Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Spoink(string nickname, int level)
+		public SpoinkInstance(string nickname, int level)
 		: base(
 				325,
-				SpecieSpoink.Instance, // Pokemon Specie
+				SpeciesSpoink.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +144,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spoink Builder only waiting for a Level
 		/// </summary>
-		public Spoink(int level)
+		public SpoinkInstance(int level)
 		: base(
 				325,
-				SpecieSpoink.Instance, // Pokemon Specie
+				SpeciesSpoink.Instance, // PokemonInstance Species
 				"Spoink", level,
 				Psychic.Instance			
 		)
@@ -73,12 +157,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Spoink Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Spoink Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Spoink() : base(
 			325,
-			SpecieSpoink.Instance, // Pokemon Specie
+			SpeciesSpoink.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

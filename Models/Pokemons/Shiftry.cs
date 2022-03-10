@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shiftry Specie to store common natural stats of all Shiftrys
-	#region SpecieShiftry
-	public class SpecieShiftry : PokemonSpecie
+	//Shiftry Species to store common natural stats of all Shiftrys
+	#region SpeciesShiftry
+	public class SpeciesShiftry : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShiftry? _instance = null;
+		private static SpeciesShiftry? _instance = null;
 #nullable restore
-        public static SpecieShiftry Instance
+        public static SpeciesShiftry Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShiftry();
+                    _instance = new SpeciesShiftry();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShiftry Builder
-		public SpecieShiftry() : base(
+		#region SpeciesShiftry Constructor
+		public SpeciesShiftry() : base(
 			"Shiftry",
 			1.3,
 			59.6,
@@ -32,23 +34,126 @@ namespace Pokedex.Models.Pokemons
 			90, 60, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Swords-Dance",
+				"Cut",
+				"Whirlwind",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Growth",
+				"Razor-Leaf",
+				"Solar-Beam",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Defense-Curl",
+				"Self-Destruct",
+				"Swift",
+				"Flash",
+				"Explosion",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Synthesis",
+				"Hidden-Power",
+				"Twister",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Air-Cutter",
+				"Rock-Tomb",
+				"Silver-Wind",
+				"Bullet-Seed",
+				"Aerial-Ace",
+				"Bounce",
+				"Natural-Gift",
+				"Tailwind",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Worry-Seed",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Seed-Bomb",
+				"X-Scissor",
+				"Focus-Blast",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Nasty-Plot",
+				"Defog",
+				"Leaf-Storm",
+				"Captivate",
+				"Grass-Knot",
+				"Ominous-Wind",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Retaliate",
+				"Leaf-Tornado",
+				"Hurricane",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shiftry Pokemon Class
+	//Shiftry PokemonInstance Class
 	#region Shiftry
-	public class Shiftry : Pokemon
+	public class ShiftryInstance : PokemonInstance
 	{
-		#region Shiftry Builders
+		#region Shiftry Constructors
 		/// <summary>
-		/// Shiftry Builder waiting for a Nickname & a Level
+		/// Shiftry Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shiftry(string nickname, int level)
+		public ShiftryInstance(string nickname, int level)
 		: base(
 				275,
-				SpecieShiftry.Instance, // Pokemon Specie
+				SpeciesShiftry.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dark.Instance			
 		)
@@ -60,10 +165,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shiftry Builder only waiting for a Level
 		/// </summary>
-		public Shiftry(int level)
+		public ShiftryInstance(int level)
 		: base(
 				275,
-				SpecieShiftry.Instance, // Pokemon Specie
+				SpeciesShiftry.Instance, // PokemonInstance Species
 				"Shiftry", level,
 				Grass.Instance, Dark.Instance			
 		)
@@ -73,12 +178,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shiftry Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shiftry Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shiftry() : base(
 			275,
-			SpecieShiftry.Instance, // Pokemon Specie
+			SpeciesShiftry.Instance, // PokemonInstance Species
 			Grass.Instance, Dark.Instance			
 		) {}
 		*/

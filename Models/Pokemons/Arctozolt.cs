@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Arctozolt Specie to store common natural stats of all Arctozolts
-	#region SpecieArctozolt
-	public class SpecieArctozolt : PokemonSpecie
+	//Arctozolt Species to store common natural stats of all Arctozolts
+	#region SpeciesArctozolt
+	public class SpeciesArctozolt : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieArctozolt? _instance = null;
+		private static SpeciesArctozolt? _instance = null;
 #nullable restore
-        public static SpecieArctozolt Instance
+        public static SpeciesArctozolt Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieArctozolt();
+                    _instance = new SpeciesArctozolt();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieArctozolt Builder
-		public SpecieArctozolt() : base(
+		#region SpeciesArctozolt Constructor
+		public SpeciesArctozolt() : base(
 			"Arctozolt",
 			2.3,
 			150.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			90, 80, // Special Attack & Defense
 			55		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Arctozolt Pokemon Class
+	//Arctozolt PokemonInstance Class
 	#region Arctozolt
-	public class Arctozolt : Pokemon
+	public class ArctozoltInstance : PokemonInstance
 	{
-		#region Arctozolt Builders
+		#region Arctozolt Constructors
 		/// <summary>
-		/// Arctozolt Builder waiting for a Nickname & a Level
+		/// Arctozolt Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Arctozolt(string nickname, int level)
+		public ArctozoltInstance(string nickname, int level)
 		: base(
 				881,
-				SpecieArctozolt.Instance, // Pokemon Specie
+				SpeciesArctozolt.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Ice.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Arctozolt Builder only waiting for a Level
 		/// </summary>
-		public Arctozolt(int level)
+		public ArctozoltInstance(int level)
 		: base(
 				881,
-				SpecieArctozolt.Instance, // Pokemon Specie
+				SpeciesArctozolt.Instance, // PokemonInstance Species
 				"Arctozolt", level,
 				Electric.Instance, Ice.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Arctozolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Arctozolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Arctozolt() : base(
 			881,
-			SpecieArctozolt.Instance, // Pokemon Specie
+			SpeciesArctozolt.Instance, // PokemonInstance Species
 			Electric.Instance, Ice.Instance			
 		) {}
 		*/

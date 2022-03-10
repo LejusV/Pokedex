@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Palkia Specie to store common natural stats of all Palkias
-	#region SpeciePalkia
-	public class SpeciePalkia : PokemonSpecie
+	//Palkia Species to store common natural stats of all Palkias
+	#region SpeciesPalkia
+	public class SpeciesPalkia : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePalkia? _instance = null;
+		private static SpeciesPalkia? _instance = null;
 #nullable restore
-        public static SpeciePalkia Instance
+        public static SpeciesPalkia Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePalkia();
+                    _instance = new SpeciesPalkia();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePalkia Builder
-		public SpeciePalkia() : base(
+		#region SpeciesPalkia Constructor
+		public SpeciesPalkia() : base(
 			"Palkia",
 			4.2,
 			336.0,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			150, 120, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Headbutt",
+				"Roar",
+				"Flamethrower",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Double-Team",
+				"Fire-Blast",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Outrage",
+				"Sandstorm",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dragon-Breath",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Hyper-Voice",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Gravity",
+				"Brine",
+				"Natural-Gift",
+				"Fling",
+				"Heal-Block",
+				"Aqua-Ring",
+				"Aura-Sphere",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Power-Gem",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Avalanche",
+				"Shadow-Claw",
+				"Trick-Room",
+				"Draco-Meteor",
+				"Stone-Edge",
+				"Spacial-Rend",
+				"Hone-Claws",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Palkia Pokemon Class
+	//Palkia PokemonInstance Class
 	#region Palkia
-	public class Palkia : Pokemon
+	public class PalkiaInstance : PokemonInstance
 	{
-		#region Palkia Builders
+		#region Palkia Constructors
 		/// <summary>
-		/// Palkia Builder waiting for a Nickname & a Level
+		/// Palkia Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Palkia(string nickname, int level)
+		public PalkiaInstance(string nickname, int level)
 		: base(
 				484,
-				SpeciePalkia.Instance, // Pokemon Specie
+				SpeciesPalkia.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dragon.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Palkia Builder only waiting for a Level
 		/// </summary>
-		public Palkia(int level)
+		public PalkiaInstance(int level)
 		: base(
 				484,
-				SpeciePalkia.Instance, // Pokemon Specie
+				SpeciesPalkia.Instance, // PokemonInstance Species
 				"Palkia", level,
 				Water.Instance, Dragon.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Palkia Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Palkia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Palkia() : base(
 			484,
-			SpeciePalkia.Instance, // Pokemon Specie
+			SpeciesPalkia.Instance, // PokemonInstance Species
 			Water.Instance, Dragon.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Luvdisc Specie to store common natural stats of all Luvdiscs
-	#region SpecieLuvdisc
-	public class SpecieLuvdisc : PokemonSpecie
+	//Luvdisc Species to store common natural stats of all Luvdiscs
+	#region SpeciesLuvdisc
+	public class SpeciesLuvdisc : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLuvdisc? _instance = null;
+		private static SpeciesLuvdisc? _instance = null;
 #nullable restore
-        public static SpecieLuvdisc Instance
+        public static SpeciesLuvdisc Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLuvdisc();
+                    _instance = new SpeciesLuvdisc();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLuvdisc Builder
-		public SpecieLuvdisc() : base(
+		#region SpeciesLuvdisc Constructor
+		public SpeciesLuvdisc() : base(
 			"Luvdisc",
 			0.6,
 			8.7,
@@ -32,23 +34,91 @@ namespace Pokedex.Models.Pokemons
 			40, 65, // Special Attack & Defense
 			97		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"Take-Down",
+				"Double-Edge",
+				"Supersonic",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Toxic",
+				"Agility",
+				"Mimic",
+				"Double-Team",
+				"Waterfall",
+				"Swift",
+				"Splash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sweet-Kiss",
+				"Icy-Wind",
+				"Endure",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Mud-Sport",
+				"Bounce",
+				"Water-Sport",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Lucky-Chant",
+				"Aqua-Ring",
+				"Captivate",
+				"Aqua-Jet",
+				"Soak",
+				"Entrainment",
+				"Round",
+				"Scald",
+				"Heal-Pulse",
+				"Heart-Stamp",
+				"Draining-Kiss",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Luvdisc Pokemon Class
+	//Luvdisc PokemonInstance Class
 	#region Luvdisc
-	public class Luvdisc : Pokemon
+	public class LuvdiscInstance : PokemonInstance
 	{
-		#region Luvdisc Builders
+		#region Luvdisc Constructors
 		/// <summary>
-		/// Luvdisc Builder waiting for a Nickname & a Level
+		/// Luvdisc Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Luvdisc(string nickname, int level)
+		public LuvdiscInstance(string nickname, int level)
 		: base(
 				370,
-				SpecieLuvdisc.Instance, // Pokemon Specie
+				SpeciesLuvdisc.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +130,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Luvdisc Builder only waiting for a Level
 		/// </summary>
-		public Luvdisc(int level)
+		public LuvdiscInstance(int level)
 		: base(
 				370,
-				SpecieLuvdisc.Instance, // Pokemon Specie
+				SpeciesLuvdisc.Instance, // PokemonInstance Species
 				"Luvdisc", level,
 				Water.Instance			
 		)
@@ -73,12 +143,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Luvdisc Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Luvdisc Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Luvdisc() : base(
 			370,
-			SpecieLuvdisc.Instance, // Pokemon Specie
+			SpeciesLuvdisc.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

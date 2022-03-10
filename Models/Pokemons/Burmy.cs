@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Burmy Specie to store common natural stats of all Burmys
-	#region SpecieBurmy
-	public class SpecieBurmy : PokemonSpecie
+	//Burmy Species to store common natural stats of all Burmys
+	#region SpeciesBurmy
+	public class SpeciesBurmy : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBurmy? _instance = null;
+		private static SpeciesBurmy? _instance = null;
 #nullable restore
-        public static SpecieBurmy Instance
+        public static SpeciesBurmy Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBurmy();
+                    _instance = new SpeciesBurmy();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBurmy Builder
-		public SpecieBurmy() : base(
+		#region SpeciesBurmy Constructor
+		public SpeciesBurmy() : base(
 			"Burmy",
 			0.2,
 			3.4,
@@ -32,23 +34,41 @@ namespace Pokedex.Models.Pokemons
 			29, 45, // Special Attack & Defense
 			36		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Tackle",
+				"String-Shot",
+				"Snore",
+				"Protect",
+				"Hidden-Power",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Burmy Pokemon Class
+	//Burmy PokemonInstance Class
 	#region Burmy
-	public class Burmy : Pokemon
+	public class BurmyInstance : PokemonInstance
 	{
-		#region Burmy Builders
+		#region Burmy Constructors
 		/// <summary>
-		/// Burmy Builder waiting for a Nickname & a Level
+		/// Burmy Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Burmy(string nickname, int level)
+		public BurmyInstance(string nickname, int level)
 		: base(
 				412,
-				SpecieBurmy.Instance, // Pokemon Specie
+				SpeciesBurmy.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +80,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Burmy Builder only waiting for a Level
 		/// </summary>
-		public Burmy(int level)
+		public BurmyInstance(int level)
 		: base(
 				412,
-				SpecieBurmy.Instance, // Pokemon Specie
+				SpeciesBurmy.Instance, // PokemonInstance Species
 				"Burmy", level,
 				Bug.Instance			
 		)
@@ -73,12 +93,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Burmy Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Burmy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Burmy() : base(
 			412,
-			SpecieBurmy.Instance, // Pokemon Specie
+			SpeciesBurmy.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

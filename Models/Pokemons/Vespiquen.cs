@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Vespiquen Specie to store common natural stats of all Vespiquens
-	#region SpecieVespiquen
-	public class SpecieVespiquen : PokemonSpecie
+	//Vespiquen Species to store common natural stats of all Vespiquens
+	#region SpeciesVespiquen
+	public class SpeciesVespiquen : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieVespiquen? _instance = null;
+		private static SpeciesVespiquen? _instance = null;
 #nullable restore
-        public static SpecieVespiquen Instance
+        public static SpeciesVespiquen Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieVespiquen();
+                    _instance = new SpeciesVespiquen();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieVespiquen Builder
-		public SpecieVespiquen() : base(
+		#region SpeciesVespiquen Constructor
+		public SpeciesVespiquen() : base(
 			"Vespiquen",
 			1.2,
 			38.5,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			80, 102, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Gust",
+				"Poison-Sting",
+				"Hyper-Beam",
+				"String-Shot",
+				"Toxic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Swift",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Slash",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Destiny-Bond",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Facade",
+				"Endeavor",
+				"Secret-Power",
+				"Air-Cutter",
+				"Silver-Wind",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Tailwind",
+				"U-Turn",
+				"Fling",
+				"Air-Slash",
+				"X-Scissor",
+				"Power-Gem",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Bug-Bite",
+				"Attack-Order",
+				"Defend-Order",
+				"Heal-Order",
+				"Ominous-Wind",
+				"Hone-Claws",
+				"Venoshock",
+				"Round",
+				"Quash",
+				"Acrobatics",
+				"Struggle-Bug",
+				"Fell-Stinger",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Vespiquen Pokemon Class
+	//Vespiquen PokemonInstance Class
 	#region Vespiquen
-	public class Vespiquen : Pokemon
+	public class VespiquenInstance : PokemonInstance
 	{
-		#region Vespiquen Builders
+		#region Vespiquen Constructors
 		/// <summary>
-		/// Vespiquen Builder waiting for a Nickname & a Level
+		/// Vespiquen Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Vespiquen(string nickname, int level)
+		public VespiquenInstance(string nickname, int level)
 		: base(
 				416,
-				SpecieVespiquen.Instance, // Pokemon Specie
+				SpeciesVespiquen.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Vespiquen Builder only waiting for a Level
 		/// </summary>
-		public Vespiquen(int level)
+		public VespiquenInstance(int level)
 		: base(
 				416,
-				SpecieVespiquen.Instance, // Pokemon Specie
+				SpeciesVespiquen.Instance, // PokemonInstance Species
 				"Vespiquen", level,
 				Bug.Instance, Flying.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Vespiquen Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Vespiquen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Vespiquen() : base(
 			416,
-			SpecieVespiquen.Instance, // Pokemon Specie
+			SpeciesVespiquen.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}
 		*/

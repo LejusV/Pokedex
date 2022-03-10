@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gastly Specie to store common natural stats of all Gastlys
-	#region SpecieGastly
-	public class SpecieGastly : PokemonSpecie
+	//Gastly Species to store common natural stats of all Gastlys
+	#region SpeciesGastly
+	public class SpeciesGastly : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGastly? _instance = null;
+		private static SpeciesGastly? _instance = null;
 #nullable restore
-        public static SpecieGastly Instance
+        public static SpeciesGastly Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGastly();
+                    _instance = new SpeciesGastly();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGastly Builder
-		public SpecieGastly() : base(
+		#region SpeciesGastly Constructor
+		public SpeciesGastly() : base(
 			"Gastly",
 			1.3,
 			0.1,
@@ -32,23 +34,117 @@ namespace Pokedex.Models.Pokemons
 			100, 35, // Special Attack & Defense
 			80		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Disable",
+				"Mega-Drain",
+				"Thunderbolt",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Rage",
+				"Night-Shade",
+				"Mimic",
+				"Double-Team",
+				"Confuse-Ray",
+				"Haze",
+				"Bide",
+				"Self-Destruct",
+				"Lick",
+				"Smog",
+				"Dream-Eater",
+				"Psywave",
+				"Explosion",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Sludge-Bomb",
+				"Zap-Cannon",
+				"Destiny-Bond",
+				"Perish-Song",
+				"Icy-Wind",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Uproar",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Taunt",
+				"Trick",
+				"Knock-Off",
+				"Skill-Swap",
+				"Grudge",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Natural-Gift",
+				"Payback",
+				"Embargo",
+				"Sucker-Punch",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Trick-Room",
+				"Captivate",
+				"Ominous-Wind",
+				"Wonder-Room",
+				"Venoshock",
+				"Telekinesis",
+				"Foul-Play",
+				"Round",
+				"Clear-Smog",
+				"Hex",
+				"Reflect-Type",
+				"Confide",
+				"Dazzling-Gleam",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gastly Pokemon Class
+	//Gastly PokemonInstance Class
 	#region Gastly
-	public class Gastly : Pokemon
+	public class GastlyInstance : PokemonInstance
 	{
-		#region Gastly Builders
+		#region Gastly Constructors
 		/// <summary>
-		/// Gastly Builder waiting for a Nickname & a Level
+		/// Gastly Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gastly(string nickname, int level)
+		public GastlyInstance(string nickname, int level)
 		: base(
 				92,
-				SpecieGastly.Instance, // Pokemon Specie
+				SpeciesGastly.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Poison.Instance			
 		)
@@ -60,10 +156,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gastly Builder only waiting for a Level
 		/// </summary>
-		public Gastly(int level)
+		public GastlyInstance(int level)
 		: base(
 				92,
-				SpecieGastly.Instance, // Pokemon Specie
+				SpeciesGastly.Instance, // PokemonInstance Species
 				"Gastly", level,
 				Ghost.Instance, Poison.Instance			
 		)
@@ -73,12 +169,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gastly Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gastly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gastly() : base(
 			92,
-			SpecieGastly.Instance, // Pokemon Specie
+			SpeciesGastly.Instance, // PokemonInstance Species
 			Ghost.Instance, Poison.Instance			
 		) {}
 		*/

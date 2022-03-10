@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Dracozolt Specie to store common natural stats of all Dracozolts
-	#region SpecieDracozolt
-	public class SpecieDracozolt : PokemonSpecie
+	//Dracozolt Species to store common natural stats of all Dracozolts
+	#region SpeciesDracozolt
+	public class SpeciesDracozolt : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDracozolt? _instance = null;
+		private static SpeciesDracozolt? _instance = null;
 #nullable restore
-        public static SpecieDracozolt Instance
+        public static SpeciesDracozolt Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDracozolt();
+                    _instance = new SpeciesDracozolt();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDracozolt Builder
-		public SpecieDracozolt() : base(
+		#region SpeciesDracozolt Constructor
+		public SpeciesDracozolt() : base(
 			"Dracozolt",
 			1.8,
 			190.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			80, 70, // Special Attack & Defense
 			75		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Dracozolt Pokemon Class
+	//Dracozolt PokemonInstance Class
 	#region Dracozolt
-	public class Dracozolt : Pokemon
+	public class DracozoltInstance : PokemonInstance
 	{
-		#region Dracozolt Builders
+		#region Dracozolt Constructors
 		/// <summary>
-		/// Dracozolt Builder waiting for a Nickname & a Level
+		/// Dracozolt Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Dracozolt(string nickname, int level)
+		public DracozoltInstance(string nickname, int level)
 		: base(
 				880,
-				SpecieDracozolt.Instance, // Pokemon Specie
+				SpeciesDracozolt.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Dragon.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Dracozolt Builder only waiting for a Level
 		/// </summary>
-		public Dracozolt(int level)
+		public DracozoltInstance(int level)
 		: base(
 				880,
-				SpecieDracozolt.Instance, // Pokemon Specie
+				SpeciesDracozolt.Instance, // PokemonInstance Species
 				"Dracozolt", level,
 				Electric.Instance, Dragon.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Dracozolt Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Dracozolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Dracozolt() : base(
 			880,
-			SpecieDracozolt.Instance, // Pokemon Specie
+			SpeciesDracozolt.Instance, // PokemonInstance Species
 			Electric.Instance, Dragon.Instance			
 		) {}
 		*/

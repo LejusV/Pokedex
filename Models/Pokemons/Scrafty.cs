@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Scrafty Specie to store common natural stats of all Scraftys
-	#region SpecieScrafty
-	public class SpecieScrafty : PokemonSpecie
+	//Scrafty Species to store common natural stats of all Scraftys
+	#region SpeciesScrafty
+	public class SpeciesScrafty : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieScrafty? _instance = null;
+		private static SpeciesScrafty? _instance = null;
 #nullable restore
-        public static SpecieScrafty Instance
+        public static SpeciesScrafty Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieScrafty();
+                    _instance = new SpeciesScrafty();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieScrafty Builder
-		public SpecieScrafty() : base(
+		#region SpeciesScrafty Constructor
+		public SpeciesScrafty() : base(
 			"Scrafty",
 			1.1,
 			30.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			45, 115, // Special Attack & Defense
 			58		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Sand-Attack",
+				"Headbutt",
+				"Leer",
+				"Roar",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Double-Team",
+				"High-Jump-Kick",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Outrage",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Payback",
+				"Fling",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"Dragon-Pulse",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Iron-Head",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Head-Smash",
+				"Smack-Down",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Chip-Away",
+				"Incinerate",
+				"Retaliate",
+				"Dragon-Tail",
+				"Work-Up",
+				"Dual-Chop",
+				"Snarl",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Scrafty Pokemon Class
+	//Scrafty PokemonInstance Class
 	#region Scrafty
-	public class Scrafty : Pokemon
+	public class ScraftyInstance : PokemonInstance
 	{
-		#region Scrafty Builders
+		#region Scrafty Constructors
 		/// <summary>
-		/// Scrafty Builder waiting for a Nickname & a Level
+		/// Scrafty Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Scrafty(string nickname, int level)
+		public ScraftyInstance(string nickname, int level)
 		: base(
 				560,
-				SpecieScrafty.Instance, // Pokemon Specie
+				SpeciesScrafty.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fighting.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Scrafty Builder only waiting for a Level
 		/// </summary>
-		public Scrafty(int level)
+		public ScraftyInstance(int level)
 		: base(
 				560,
-				SpecieScrafty.Instance, // Pokemon Specie
+				SpeciesScrafty.Instance, // PokemonInstance Species
 				"Scrafty", level,
 				Dark.Instance, Fighting.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Scrafty Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Scrafty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Scrafty() : base(
 			560,
-			SpecieScrafty.Instance, // Pokemon Specie
+			SpeciesScrafty.Instance, // PokemonInstance Species
 			Dark.Instance, Fighting.Instance			
 		) {}
 		*/

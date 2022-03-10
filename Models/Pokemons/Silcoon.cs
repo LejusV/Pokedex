@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Silcoon Specie to store common natural stats of all Silcoons
-	#region SpecieSilcoon
-	public class SpecieSilcoon : PokemonSpecie
+	//Silcoon Species to store common natural stats of all Silcoons
+	#region SpeciesSilcoon
+	public class SpeciesSilcoon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSilcoon? _instance = null;
+		private static SpeciesSilcoon? _instance = null;
 #nullable restore
-        public static SpecieSilcoon Instance
+        public static SpeciesSilcoon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSilcoon();
+                    _instance = new SpeciesSilcoon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSilcoon Builder
-		public SpecieSilcoon() : base(
+		#region SpeciesSilcoon Constructor
+		public SpeciesSilcoon() : base(
 			"Silcoon",
 			0.6,
 			10.0,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"String-Shot",
+				"Harden",
+				"Iron-Defense",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Silcoon Pokemon Class
+	//Silcoon PokemonInstance Class
 	#region Silcoon
-	public class Silcoon : Pokemon
+	public class SilcoonInstance : PokemonInstance
 	{
-		#region Silcoon Builders
+		#region Silcoon Constructors
 		/// <summary>
-		/// Silcoon Builder waiting for a Nickname & a Level
+		/// Silcoon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Silcoon(string nickname, int level)
+		public SilcoonInstance(string nickname, int level)
 		: base(
 				266,
-				SpecieSilcoon.Instance, // Pokemon Specie
+				SpeciesSilcoon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Silcoon Builder only waiting for a Level
 		/// </summary>
-		public Silcoon(int level)
+		public SilcoonInstance(int level)
 		: base(
 				266,
-				SpecieSilcoon.Instance, // Pokemon Specie
+				SpeciesSilcoon.Instance, // PokemonInstance Species
 				"Silcoon", level,
 				Bug.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Silcoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Silcoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Silcoon() : base(
 			266,
-			SpecieSilcoon.Instance, // Pokemon Specie
+			SpeciesSilcoon.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Roserade Specie to store common natural stats of all Roserades
-	#region SpecieRoserade
-	public class SpecieRoserade : PokemonSpecie
+	//Roserade Species to store common natural stats of all Roserades
+	#region SpeciesRoserade
+	public class SpeciesRoserade : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRoserade? _instance = null;
+		private static SpeciesRoserade? _instance = null;
 #nullable restore
-        public static SpecieRoserade Instance
+        public static SpeciesRoserade Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRoserade();
+                    _instance = new SpeciesRoserade();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRoserade Builder
-		public SpecieRoserade() : base(
+		#region SpeciesRoserade Constructor
+		public SpeciesRoserade() : base(
 			"Roserade",
 			0.9,
 			14.5,
@@ -32,23 +34,86 @@ namespace Pokedex.Models.Pokemons
 			125, 105, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Cut",
+				"Poison-Sting",
+				"Hyper-Beam",
+				"Mega-Drain",
+				"Solar-Beam",
+				"Toxic",
+				"Double-Team",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Giga-Drain",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Sweet-Scent",
+				"Synthesis",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Facade",
+				"Nature-Power",
+				"Secret-Power",
+				"Weather-Ball",
+				"Bullet-Seed",
+				"Covet",
+				"Magical-Leaf",
+				"Natural-Gift",
+				"Worry-Seed",
+				"Poison-Jab",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Captivate",
+				"Grass-Knot",
+				"Venoshock",
+				"Round",
+				"Grassy-Terrain",
+				"Confide",
+				"Venom-Drench",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Roserade Pokemon Class
+	//Roserade PokemonInstance Class
 	#region Roserade
-	public class Roserade : Pokemon
+	public class RoseradeInstance : PokemonInstance
 	{
-		#region Roserade Builders
+		#region Roserade Constructors
 		/// <summary>
-		/// Roserade Builder waiting for a Nickname & a Level
+		/// Roserade Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Roserade(string nickname, int level)
+		public RoseradeInstance(string nickname, int level)
 		: base(
 				407,
-				SpecieRoserade.Instance, // Pokemon Specie
+				SpeciesRoserade.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -60,10 +125,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Roserade Builder only waiting for a Level
 		/// </summary>
-		public Roserade(int level)
+		public RoseradeInstance(int level)
 		: base(
 				407,
-				SpecieRoserade.Instance, // Pokemon Specie
+				SpeciesRoserade.Instance, // PokemonInstance Species
 				"Roserade", level,
 				Grass.Instance, Poison.Instance			
 		)
@@ -73,12 +138,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Roserade Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Roserade Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Roserade() : base(
 			407,
-			SpecieRoserade.Instance, // Pokemon Specie
+			SpeciesRoserade.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}
 		*/

@@ -1,31 +1,34 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    public abstract class Pokemon
+    public abstract class PokemonInstance
     {
         #region Variables
         //PokemonDB db = new PokemonDB();
 
         //public void connection
+        private static int instanceCount = 0;
 
         private readonly int _id; // ID of the pokemon in the pokedex determining what pokemon it is
 
         protected int _level; // Level of the Pokemon
         private string _nickname; // Name Given by User
 
-        protected PokemonSpecie _specie; // Specie of Pokemon (to get his specie stats and name)
+        protected PokemonSpecies _species; // Specie of Pokemon
         
-        protected PokemonType _type; // Type N°1 of the Pokemon 
-        protected PokemonType _type2; // Types of the Pokemon
+        protected PokeType _type; // Type N°1 of the PokemonInstance 
+        protected PokeType _type2; // Types of the PokemonInstance
         protected PokemonStats _iv; // Individual Values which are different from two pokemons of the same specie (random)
         protected PokemonStats _ev; // Effort Values increasing with battle wins
-        protected PokemonStats _calculated_stats; // Real max stats that will be shown, for example MaxHp (updated when player levels up)
-        protected PokemonStats _current_stats; // Current stats such as current hp, not always equal to max HP, attack != calculated attack if (de)buffed
+        protected PokemonStats _calculatedStats; // Real max stats that will be shown, for example MaxHp (updated when player levels up)
+        protected PokemonStats _currentStats; // Current stats such as current hp, not always equal to max HP, attack != calculated attack if (de)buffed
+        private PokemonStats _statModifiers; // Modifiers of the stats in battle (from -8 to +8)
 
-        protected List<Move> _moves; // List of all the Moves the Pokemon has learnt
+        protected Move[] _moves; // List of all the Moves the PokemonInstance has learnt
         #endregion
 
         #region Attributes
@@ -82,6 +85,10 @@ namespace Pokedex.Models
             /// </list>
             #endregion
 
+            #region InstanceCount Static Getter
+            public static int InstanceCount { get => instanceCount;}
+            #endregion
+
             #region Nickname Getter
             /// <summary>
             /// <c>Nickname</c> Getter AND SETTER
@@ -108,7 +115,7 @@ namespace Pokedex.Models
             /// </summary>
             /// <returns>Returns the Types tuple</returns>
             #nullable enable
-            public (PokemonType, PokemonType?) Types { get => (this._type, this._type2); }
+            public (PokeType, PokeType?) Types { get => (this._type, this._type2); }
             #nullable restore
             #endregion
 
@@ -124,8 +131,8 @@ namespace Pokedex.Models
             /// <summary>
             /// Moves Getter
             /// </summary>
-            /// <returns>Returns a List of Moves</returns>
-            public List<Move> Moves { get => this._moves; }
+            /// <returns>Returns an array of Moves</returns>
+            public Move[] Moves { get => this._moves; }
             #endregion
 
             #region IV Getter
@@ -149,23 +156,31 @@ namespace Pokedex.Models
             /// CalculatedStats Getter
             /// </summary>
             /// <returns>Returns the Calculated Base PokemonStats (Max HP, current base speed, ...)</returns>
-            public PokemonStats CalculatedStats { get => this._calculated_stats; }
+            public PokemonStats CalculatedStats { get => this._calculatedStats; }
             #endregion
 
-            #region CurrentStats Getter
+            #region BattleStats Getter
             /// <summary>
             /// CurrentStats Getter
             /// </summary>
             /// <returns>Returns the Actual Current PokemonStats (current HP if hurt, attack if (de)buffed, ...)</returns>
-            public PokemonStats CurrentStats { get => this._current_stats;}
+            public PokemonStats CurrentStats { get => this._currentStats;}
             #endregion
 
-            #region Specie Getter
+            #region StatModifiers Getter
             /// <summary>
-            /// Specie Getter
+            /// StatModifiers Getter
             /// </summary>
-            /// <returns>Returns the PokemonSpecie</returns>
-            public PokemonSpecie Specie { get => this._specie;}
+            /// <returns>Returns the Stat Modifiers (from -8 to +8)</returns>
+            public PokemonStats StatModifiers { get => this._statModifiers;}
+            #endregion
+
+            #region Species Getter
+            /// <summary>
+            /// Species Getter
+            /// </summary>
+            /// <returns>Returns the PokemonSpecies</returns>
+            public PokemonSpecies Species { get => this._species;}
             #endregion
 
             #region Types ToString
@@ -202,7 +217,7 @@ namespace Pokedex.Models
             /// <summary>
             /// Status Display
             /// </summary>
-            /// <returns>Returns the fast Status string of this Pokemon</returns>
+            /// <returns>Returns the fast Status string of this PokemonInstance</returns>
             public string Status
             {
                 get
@@ -230,7 +245,7 @@ namespace Pokedex.Models
             /// <summary>
             /// FullStatus Display
             /// </summary>
-            /// <returns>Returns the full Status string of this Pokemon</returns>
+            /// <returns>Returns the full Status string of this PokemonInstance</returns>
             public string FullStatus
             {
                 get
@@ -239,7 +254,7 @@ namespace Pokedex.Models
 
                     output.AppendLine($"{this._nickname}");
 
-                    output.Append($"  {this._specie.Name} ");
+                    output.Append($"  {this._species.Name} ");
                     output.AppendLine($"Lvl.{this._level}");
 
                     output.AppendLine("");
@@ -250,37 +265,38 @@ namespace Pokedex.Models
 
                     output.AppendLine($"    Morphology :");
 
-                    output.AppendLine($"      Height {string.Format("{0:0.0}",this._specie.Height), 5}m");
-                    output.AppendLine($"      Weight {string.Format("{0:0.0}",this._specie.Weight), 5}kg");
+                    output.AppendLine($"      Height {string.Format("{0:0.0}",this._species.Height), 5}m");
+                    output.AppendLine($"      Weight {string.Format("{0:0.0}",this._species.Weight), 5}kg");
 
                     output.AppendLine("");
 
                     output.AppendLine($"    Stats : ");
 
-                    output.Append($"      HP     {this._specie.Stats.Get("HP"), 3}  ");
-                    output.AppendLine($"SPEED  {this._specie.Stats.Get("SPEED"), 3}");
-                    output.Append($"      ATK    {this._specie.Stats.Get("ATK"), 3}  ");
-                    output.AppendLine($"DEF    {this._specie.Stats.Get("DEF"), 3}");
-                    output.Append($"      SP_ATK {this._specie.Stats.Get("SP_ATK"), 3}  ");
-                    output.AppendLine($"SP_DEF {this._specie.Stats.Get("SP_DEF"), 3}");
+                    output.Append($"      HP     {this._species.Stats.Get("HP"), 3}  ");
+                    output.AppendLine($"SPEED  {this._species.Stats.Get("SPEED"), 3}");
+                    output.Append($"      ATK    {this._species.Stats.Get("ATK"), 3}  ");
+                    output.AppendLine($"DEF    {this._species.Stats.Get("DEF"), 3}");
+                    output.Append($"      SP_ATK {this._species.Stats.Get("SP_ATK"), 3}  ");
+                    output.AppendLine($"SP_DEF {this._species.Stats.Get("SP_DEF"), 3}");
 
                     output.AppendLine("");
 
                     output.AppendLine($"  Actual Status :");
 
-                    output.AppendLine($"           {this._current_stats.Get("HP"), 3} / {this._calculated_stats.Get("HP"), 3} HP     ");
-                    output.Append($"      ATK    {this._current_stats.Get("ATK"), 3}  ");
-                    output.AppendLine($"DEF    {this._current_stats.Get("DEF"), 3}");
-                    output.Append($"      SP_ATK {this._current_stats.Get("SP_ATK"), 3}  ");
-                    output.AppendLine($"SP_DEF {this._current_stats.Get("SP_DEF"), 3}");
-                    output.AppendLine($"            SPEED  {this._current_stats.Get("SPEED"), 3}      ");
+                    output.AppendLine($"           {this._currentStats.Get("HP"), 3} / {this._calculatedStats.Get("HP"), 3} HP     ");
+                    output.Append($"      ATK    {this._currentStats.Get("ATK"), 3}  ");
+                    output.AppendLine($"DEF    {this._currentStats.Get("DEF"), 3}");
+                    output.Append($"      SP_ATK {this._currentStats.Get("SP_ATK"), 3}  ");
+                    output.AppendLine($"SP_DEF {this._currentStats.Get("SP_DEF"), 3}");
+                    output.AppendLine($"            SPEED  {this._currentStats.Get("SPEED"), 3}      ");
 
                     output.AppendLine("");
 
                     output.AppendLine($"  Learned Moves :");
 
-                    foreach (Move move in this._moves)
-                        output.AppendLine($"    ({move.PokemonType.Name}) {move.Name}");
+
+                    output.Append($"    ({this._moves[0].PokeType.Name}) {this._moves[0].Name}");
+                    output.AppendLine($"    ({this._moves[1].PokeType.Name}) {this._moves[1].Name}");
 
                     output.AppendLine("");
 
@@ -292,15 +308,17 @@ namespace Pokedex.Models
         #endregion 
 
         #region Constructors
-        public Pokemon(
+        
+            #region Double Type Pokemon (BASE CONSTRUCTOR)
+        public PokemonInstance(
             int id,
-            PokemonSpecie specie,
+            PokemonSpecies specie,
             string nickname,
             int level,
-            PokemonType type,
-            #nullable enable
-            PokemonType? type2
-            #nullable restore
+            PokeType type,
+#nullable enable
+            PokeType? type2
+#nullable restore
             )
         {
             _id = id;
@@ -308,63 +326,145 @@ namespace Pokedex.Models
             if (nickname != "")
                 _nickname = nickname;
             else throw new ArgumentException("Name cannot be empty");
-            _specie = specie;
+            _species = specie;
             _type = type;
             _type2 = type2;
             GenerateIV();
             _ev = new PokemonStats(0, 0, 0, 0, 0, 0);
-            _calculated_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
-            _current_stats = new PokemonStats(0, 0, 0, 0, 0, 0);
-            _moves = new List<Move>();
-        }
+            _calculatedStats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _currentStats = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _statModifiers = new PokemonStats(0, 0, 0, 0, 0, 0);
+            _moves = new Move[4];
 
-        public Pokemon(
+            instanceCount++;
+        }
+            #endregion
+
+            #region Single Type Pokemon
+        public PokemonInstance(
             int id,
-            PokemonSpecie specie,
+            PokemonSpecies specie,
             string nickname,
             int level,
-            PokemonType type
+            PokeType type
             )
             : this(id, specie, nickname, level, type, null)
         {}
+            #endregion
             
         #endregion
 
         #region Methods
-        public void AddMove(Move move)
+
+            #region Forget Move
+        /// <summary>
+        /// Forget the Move at specific index in the Moves Array
+        /// </summary>
+        /// <param name="move">The Move to add</param>
+        public bool ForgetMove(int index)
         {
-            _moves.Add( move );
+            if (this._moves[index] != null)
+            {
+                this._moves[index] = null;
+                return true;
+            }
+            else 
+                return false;
         }
 
+        /// <summary>
+        /// Forget the Move given in params
+        /// </summary>
+        /// <param name="move">The Move to forget</param>
+        public bool ForgetMove(Move move)
+        {
+            int indexOfMove = this._moves
+                .ToList()
+                .IndexOf(move);
+            if (indexOfMove != -1)
+                return this.ForgetMove(indexOfMove);
+            else
+                return false;
+        }
+            #endregion
+
+            #region Learn Move
+        /// <summary>
+        /// Learn a Move at specific index in the Moves Array
+        /// </summary>
+        /// <param name="move">The Move to add</param>
+        public bool LearnMove(Move move, int index)
+        {
+            if (!this._moves.Contains(move) &&
+                this._species.MoveList.Contains(move.Name))
+                {
+                    this._moves[index] = move;
+                    return true;
+                }
+            else 
+                return false;
+        }
+
+        /// <summary>
+        /// Add a Move to the first NULL cell of array
+        /// </summary>
+        /// <param name="move">The Move to add</param>
+        public bool LearnMove(Move move)
+        {
+            int indexOfNull = this._moves
+                .ToList()
+                .IndexOf(null);
+
+            if (indexOfNull != -1)
+                return this.LearnMove(move, indexOfNull);
+            else
+                return false;
+        }
+            #endregion
+
+            #region GenerateIV
+        /// <summary>
+        /// Generates a PokemonStats Class with random values between 0 and 31
+        /// </summary>
         public void GenerateIV()
         {
             Random rnd = Program.Random;
             _iv = new PokemonStats(rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31));
         }
+            #endregion
             
-
+            #region CalculateStats
+        /// <summary>
+        /// Calculates this PokemonInstance Stats depending on Specie Stats, Level, IV, EV
+        /// </summary>
         public void CalculateStats()
         {
-            this._calculated_stats.Set( "HP" , (int) ( ( 2 * _specie.Stats.Get("HP") + _iv.Get("HP") + (_ev.Get("HP") / 4) ) * _level / 100 ) + _level + 10 );
+            this._calculatedStats.Set( "HP" , (int) ( ( 2 * _species.Stats.Get("HP") + _iv.Get("HP") + (_ev.Get("HP") / 4) ) * _level / 100 ) + _level + 10 );
 
             foreach (string key in PokemonStats.Keys)
             {
-                int _base = _specie.Stats.Get(key);
+                int _base = _species.Stats.Get(key);
                 int iv = _iv.Get(key);
                 int ev = _ev.Get(key);
 
-                this._calculated_stats.Set( key , (int) ( ( 2*_base + iv +  ev/4 ) * _level / 100 ) + 5 );
+                this._calculatedStats.Set( key , (int) ( ( 2*_base + iv +  ev/4 ) * _level / 100 ) + 5 );
             }
         }
         // HP Formula (2*base + iv +  ev/4 * level)/100  + level + 10
         // Other Stats Formula (2*base + iv + ev/4 * level)/100  + 5
+            #endregion
 
-
+            #region ResetCurrentStats
+        /// <summary>
+        /// Resets the Current alterable stats of this PokemonInstance, used after or at the beginning of a Battle and after leveling up
+        /// </summary>
         public void ResetCurrentStats()
         {
-            this._calculated_stats.CopyTo(this._current_stats);
-            this._current_stats.Set("HP", this._current_stats.Get("HP"));
+            this._calculatedStats.CopyTo(this._currentStats);
+            this._currentStats.Set("HP", this._currentStats.Get("HP"));
         }
+            #endregion
+
         #endregion
     }
 }

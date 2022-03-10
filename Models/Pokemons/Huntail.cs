@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Huntail Specie to store common natural stats of all Huntails
-	#region SpecieHuntail
-	public class SpecieHuntail : PokemonSpecie
+	//Huntail Species to store common natural stats of all Huntails
+	#region SpeciesHuntail
+	public class SpeciesHuntail : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHuntail? _instance = null;
+		private static SpeciesHuntail? _instance = null;
 #nullable restore
-        public static SpecieHuntail Instance
+        public static SpeciesHuntail Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHuntail();
+                    _instance = new SpeciesHuntail();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHuntail Builder
-		public SpecieHuntail() : base(
+		#region SpeciesHuntail Constructor
+		public SpeciesHuntail() : base(
 			"Huntail",
 			1.7,
 			27.0,
@@ -32,23 +34,89 @@ namespace Pokedex.Models.Pokemons
 			94, 75, // Special Attack & Defense
 			52		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Body-Slam",
+				"Double-Edge",
+				"Bite",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Toxic",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Waterfall",
+				"Swift",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Baton-Pass",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Snatch",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Bounce",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Sucker-Punch",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Ice-Fang",
+				"Captivate",
+				"Coil",
+				"Round",
+				"Scald",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Huntail Pokemon Class
+	//Huntail PokemonInstance Class
 	#region Huntail
-	public class Huntail : Pokemon
+	public class HuntailInstance : PokemonInstance
 	{
-		#region Huntail Builders
+		#region Huntail Constructors
 		/// <summary>
-		/// Huntail Builder waiting for a Nickname & a Level
+		/// Huntail Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Huntail(string nickname, int level)
+		public HuntailInstance(string nickname, int level)
 		: base(
 				367,
-				SpecieHuntail.Instance, // Pokemon Specie
+				SpeciesHuntail.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +128,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Huntail Builder only waiting for a Level
 		/// </summary>
-		public Huntail(int level)
+		public HuntailInstance(int level)
 		: base(
 				367,
-				SpecieHuntail.Instance, // Pokemon Specie
+				SpeciesHuntail.Instance, // PokemonInstance Species
 				"Huntail", level,
 				Water.Instance			
 		)
@@ -73,12 +141,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Huntail Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Huntail Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Huntail() : base(
 			367,
-			SpecieHuntail.Instance, // Pokemon Specie
+			SpeciesHuntail.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

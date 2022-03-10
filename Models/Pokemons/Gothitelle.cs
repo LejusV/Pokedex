@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Gothitelle Specie to store common natural stats of all Gothitelles
-	#region SpecieGothitelle
-	public class SpecieGothitelle : PokemonSpecie
+	//Gothitelle Species to store common natural stats of all Gothitelles
+	#region SpeciesGothitelle
+	public class SpeciesGothitelle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGothitelle? _instance = null;
+		private static SpeciesGothitelle? _instance = null;
 #nullable restore
-        public static SpecieGothitelle Instance
+        public static SpeciesGothitelle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGothitelle();
+                    _instance = new SpeciesGothitelle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGothitelle Builder
-		public SpecieGothitelle() : base(
+		#region SpeciesGothitelle Constructor
+		public SpeciesGothitelle() : base(
 			"Gothitelle",
 			1.5,
 			44.0,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			95, 110, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Psybeam",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Charm",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Uproar",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Taunt",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Recycle",
+				"Brick-Break",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Tickle",
+				"Signal-Beam",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Gravity",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Heal-Block",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Play-Nice",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Gothitelle Pokemon Class
+	//Gothitelle PokemonInstance Class
 	#region Gothitelle
-	public class Gothitelle : Pokemon
+	public class GothitelleInstance : PokemonInstance
 	{
-		#region Gothitelle Builders
+		#region Gothitelle Constructors
 		/// <summary>
-		/// Gothitelle Builder waiting for a Nickname & a Level
+		/// Gothitelle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Gothitelle(string nickname, int level)
+		public GothitelleInstance(string nickname, int level)
 		: base(
 				576,
-				SpecieGothitelle.Instance, // Pokemon Specie
+				SpeciesGothitelle.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Gothitelle Builder only waiting for a Level
 		/// </summary>
-		public Gothitelle(int level)
+		public GothitelleInstance(int level)
 		: base(
 				576,
-				SpecieGothitelle.Instance, // Pokemon Specie
+				SpeciesGothitelle.Instance, // PokemonInstance Species
 				"Gothitelle", level,
 				Psychic.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Gothitelle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Gothitelle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Gothitelle() : base(
 			576,
-			SpecieGothitelle.Instance, // Pokemon Specie
+			SpeciesGothitelle.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

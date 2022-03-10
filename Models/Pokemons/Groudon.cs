@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Groudon Specie to store common natural stats of all Groudons
-	#region SpecieGroudon
-	public class SpecieGroudon : PokemonSpecie
+	//Groudon Species to store common natural stats of all Groudons
+	#region SpeciesGroudon
+	public class SpeciesGroudon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieGroudon? _instance = null;
+		private static SpeciesGroudon? _instance = null;
 #nullable restore
-        public static SpecieGroudon Instance
+        public static SpeciesGroudon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieGroudon();
+                    _instance = new SpeciesGroudon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieGroudon Builder
-		public SpecieGroudon() : base(
+		#region SpeciesGroudon Constructor
+		public SpeciesGroudon() : base(
 			"Groudon",
 			3.5,
 			950.0,
@@ -32,23 +34,123 @@ namespace Pokedex.Models.Pokemons
 			100, 90, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Roar",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Fire-Blast",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Slash",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Brick-Break",
+				"Eruption",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Block",
+				"Dragon-Claw",
+				"Bulk-Up",
+				"Mud-Shot",
+				"Shock-Wave",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Rock-Polish",
+				"Dragon-Pulse",
+				"Focus-Blast",
+				"Earth-Power",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Rock-Climb",
+				"Lava-Plume",
+				"Iron-Head",
+				"Stone-Edge",
+				"Stealth-Rock",
+				"Hone-Claws",
+				"Smack-Down",
+				"Round",
+				"Incinerate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Confide",
+				"Power-Up-Punch",
+				"Precipice-Blades",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Groudon Pokemon Class
+	//Groudon PokemonInstance Class
 	#region Groudon
-	public class Groudon : Pokemon
+	public class GroudonInstance : PokemonInstance
 	{
-		#region Groudon Builders
+		#region Groudon Constructors
 		/// <summary>
-		/// Groudon Builder waiting for a Nickname & a Level
+		/// Groudon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Groudon(string nickname, int level)
+		public GroudonInstance(string nickname, int level)
 		: base(
 				383,
-				SpecieGroudon.Instance, // Pokemon Specie
+				SpeciesGroudon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
 		)
@@ -60,10 +162,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Groudon Builder only waiting for a Level
 		/// </summary>
-		public Groudon(int level)
+		public GroudonInstance(int level)
 		: base(
 				383,
-				SpecieGroudon.Instance, // Pokemon Specie
+				SpeciesGroudon.Instance, // PokemonInstance Species
 				"Groudon", level,
 				Ground.Instance			
 		)
@@ -73,12 +175,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Groudon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Groudon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Groudon() : base(
 			383,
-			SpecieGroudon.Instance, // Pokemon Specie
+			SpeciesGroudon.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}
 		*/

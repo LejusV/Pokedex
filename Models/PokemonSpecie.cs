@@ -2,13 +2,14 @@ using System.Collections.Generic;
 
 namespace Pokedex.Models
 {
-    public class PokemonSpecie
+    public abstract class PokemonSpecies
     {
         //private readonly string _genus;
         private readonly double _height;
         private readonly string _name;
         private readonly PokemonStats _stats;
         private readonly double _weight;
+        protected List<string> _moveList;
 
         //public string Genus { get => _genus; }
 
@@ -19,8 +20,10 @@ namespace Pokedex.Models
         public PokemonStats Stats { get => _stats; }
 
         public double Weight { get => _weight; }
+        
+        public List<string> MoveList { get => _moveList; }
 
-        public PokemonSpecie(string name, double height, double weight, int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
+        public PokemonSpecies(string name, double height, double weight, int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
         {
             _height = height; // store specie height
             _name = name; // store specie name
@@ -31,5 +34,6 @@ namespace Pokedex.Models
 
             _weight = weight;
         }
+
     }
 }

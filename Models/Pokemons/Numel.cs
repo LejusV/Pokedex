@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Numel Specie to store common natural stats of all Numels
-	#region SpecieNumel
-	public class SpecieNumel : PokemonSpecie
+	//Numel Species to store common natural stats of all Numels
+	#region SpeciesNumel
+	public class SpeciesNumel : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieNumel? _instance = null;
+		private static SpeciesNumel? _instance = null;
 #nullable restore
-        public static SpecieNumel Instance
+        public static SpeciesNumel Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieNumel();
+                    _instance = new SpeciesNumel();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieNumel Builder
-		public SpecieNumel() : base(
+		#region SpeciesNumel Constructor
+		public SpeciesNumel() : base(
 			"Numel",
 			0.7,
 			24.0,
@@ -32,23 +34,103 @@ namespace Pokedex.Models.Pokemons
 			65, 45, // Special Attack & Defense
 			35		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Growl",
+				"Ember",
+				"Flamethrower",
+				"Strength",
+				"Growth",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Focus-Energy",
+				"Fire-Blast",
+				"Amnesia",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Nature-Power",
+				"Yawn",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Howl",
+				"Natural-Gift",
+				"Earth-Power",
+				"Mud-Bomb",
+				"Lava-Plume",
+				"Iron-Head",
+				"Captivate",
+				"Stealth-Rock",
+				"Flame-Burst",
+				"Heavy-Slam",
+				"Flame-Charge",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Bulldoze",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Numel Pokemon Class
+	//Numel PokemonInstance Class
 	#region Numel
-	public class Numel : Pokemon
+	public class NumelInstance : PokemonInstance
 	{
-		#region Numel Builders
+		#region Numel Constructors
 		/// <summary>
-		/// Numel Builder waiting for a Nickname & a Level
+		/// Numel Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Numel(string nickname, int level)
+		public NumelInstance(string nickname, int level)
 		: base(
 				322,
-				SpecieNumel.Instance, // Pokemon Specie
+				SpeciesNumel.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Ground.Instance			
 		)
@@ -60,10 +142,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Numel Builder only waiting for a Level
 		/// </summary>
-		public Numel(int level)
+		public NumelInstance(int level)
 		: base(
 				322,
-				SpecieNumel.Instance, // Pokemon Specie
+				SpeciesNumel.Instance, // PokemonInstance Species
 				"Numel", level,
 				Fire.Instance, Ground.Instance			
 		)
@@ -73,12 +155,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Numel Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Numel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Numel() : base(
 			322,
-			SpecieNumel.Instance, // Pokemon Specie
+			SpeciesNumel.Instance, // PokemonInstance Species
 			Fire.Instance, Ground.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mienshao Specie to store common natural stats of all Mienshaos
-	#region SpecieMienshao
-	public class SpecieMienshao : PokemonSpecie
+	//Mienshao Species to store common natural stats of all Mienshaos
+	#region SpeciesMienshao
+	public class SpeciesMienshao : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMienshao? _instance = null;
+		private static SpeciesMienshao? _instance = null;
 #nullable restore
-        public static SpecieMienshao Instance
+        public static SpeciesMienshao Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMienshao();
+                    _instance = new SpeciesMienshao();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMienshao Builder
-		public SpecieMienshao() : base(
+		#region SpeciesMienshao Constructor
+		public SpeciesMienshao() : base(
 			"Mienshao",
 			1.4,
 			35.5,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			95, 60, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Pound",
+				"Double-Slap",
+				"Swords-Dance",
+				"Jump-Kick",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Meditate",
+				"Double-Team",
+				"Reflect",
+				"Swift",
+				"High-Jump-Kick",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Reversal",
+				"Protect",
+				"Detect",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Rock-Smash",
+				"Fake-Out",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Brick-Break",
+				"Knock-Off",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Aerial-Ace",
+				"Bulk-Up",
+				"Bounce",
+				"Calm-Mind",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Force-Palm",
+				"Aura-Sphere",
+				"Poison-Jab",
+				"Drain-Punch",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Wide-Guard",
+				"Low-Sweep",
+				"Round",
+				"Acrobatics",
+				"Retaliate",
+				"Work-Up",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mienshao Pokemon Class
+	//Mienshao PokemonInstance Class
 	#region Mienshao
-	public class Mienshao : Pokemon
+	public class MienshaoInstance : PokemonInstance
 	{
-		#region Mienshao Builders
+		#region Mienshao Constructors
 		/// <summary>
-		/// Mienshao Builder waiting for a Nickname & a Level
+		/// Mienshao Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mienshao(string nickname, int level)
+		public MienshaoInstance(string nickname, int level)
 		: base(
 				620,
-				SpecieMienshao.Instance, // Pokemon Specie
+				SpeciesMienshao.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mienshao Builder only waiting for a Level
 		/// </summary>
-		public Mienshao(int level)
+		public MienshaoInstance(int level)
 		: base(
 				620,
-				SpecieMienshao.Instance, // Pokemon Specie
+				SpeciesMienshao.Instance, // PokemonInstance Species
 				"Mienshao", level,
 				Fighting.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mienshao Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mienshao Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mienshao() : base(
 			620,
-			SpecieMienshao.Instance, // Pokemon Specie
+			SpeciesMienshao.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}
 		*/

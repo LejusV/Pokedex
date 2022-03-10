@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Zebstrika Specie to store common natural stats of all Zebstrikas
-	#region SpecieZebstrika
-	public class SpecieZebstrika : PokemonSpecie
+	//Zebstrika Species to store common natural stats of all Zebstrikas
+	#region SpeciesZebstrika
+	public class SpeciesZebstrika : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieZebstrika? _instance = null;
+		private static SpeciesZebstrika? _instance = null;
 #nullable restore
-        public static SpecieZebstrika Instance
+        public static SpeciesZebstrika Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieZebstrika();
+                    _instance = new SpeciesZebstrika();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieZebstrika Builder
-		public SpecieZebstrika() : base(
+		#region SpeciesZebstrika Constructor
+		public SpeciesZebstrika() : base(
 			"Zebstrika",
 			1.6,
 			79.5,
@@ -32,23 +34,79 @@ namespace Pokedex.Models.Pokemons
 			80, 63, // Special Attack & Defense
 			116		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Thrash",
+				"Tail-Whip",
+				"Hyper-Beam",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Facade",
+				"Charge",
+				"Snatch",
+				"Secret-Power",
+				"Overheat",
+				"Signal-Beam",
+				"Bounce",
+				"Shock-Wave",
+				"Magnet-Rise",
+				"Giga-Impact",
+				"Discharge",
+				"Charge-Beam",
+				"Flame-Charge",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Ion-Deluge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Zebstrika Pokemon Class
+	//Zebstrika PokemonInstance Class
 	#region Zebstrika
-	public class Zebstrika : Pokemon
+	public class ZebstrikaInstance : PokemonInstance
 	{
-		#region Zebstrika Builders
+		#region Zebstrika Constructors
 		/// <summary>
-		/// Zebstrika Builder waiting for a Nickname & a Level
+		/// Zebstrika Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Zebstrika(string nickname, int level)
+		public ZebstrikaInstance(string nickname, int level)
 		: base(
 				523,
-				SpecieZebstrika.Instance, // Pokemon Specie
+				SpeciesZebstrika.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +118,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Zebstrika Builder only waiting for a Level
 		/// </summary>
-		public Zebstrika(int level)
+		public ZebstrikaInstance(int level)
 		: base(
 				523,
-				SpecieZebstrika.Instance, // Pokemon Specie
+				SpeciesZebstrika.Instance, // PokemonInstance Species
 				"Zebstrika", level,
 				Electric.Instance			
 		)
@@ -73,12 +131,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Zebstrika Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Zebstrika Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Zebstrika() : base(
 			523,
-			SpecieZebstrika.Instance, // Pokemon Specie
+			SpeciesZebstrika.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

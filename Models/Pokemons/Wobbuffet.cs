@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wobbuffet Specie to store common natural stats of all Wobbuffets
-	#region SpecieWobbuffet
-	public class SpecieWobbuffet : PokemonSpecie
+	//Wobbuffet Species to store common natural stats of all Wobbuffets
+	#region SpeciesWobbuffet
+	public class SpeciesWobbuffet : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWobbuffet? _instance = null;
+		private static SpeciesWobbuffet? _instance = null;
 #nullable restore
-        public static SpecieWobbuffet Instance
+        public static SpeciesWobbuffet Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWobbuffet();
+                    _instance = new SpeciesWobbuffet();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWobbuffet Builder
-		public SpecieWobbuffet() : base(
+		#region SpeciesWobbuffet Constructor
+		public SpeciesWobbuffet() : base(
 			"Wobbuffet",
 			1.3,
 			28.5,
@@ -32,23 +34,38 @@ namespace Pokedex.Models.Pokemons
 			33, 58, // Special Attack & Defense
 			33		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Counter",
+				"Destiny-Bond",
+				"Safeguard",
+				"Mirror-Coat"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wobbuffet Pokemon Class
+	//Wobbuffet PokemonInstance Class
 	#region Wobbuffet
-	public class Wobbuffet : Pokemon
+	public class WobbuffetInstance : PokemonInstance
 	{
-		#region Wobbuffet Builders
+		#region Wobbuffet Constructors
 		/// <summary>
-		/// Wobbuffet Builder waiting for a Nickname & a Level
+		/// Wobbuffet Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Wobbuffet(string nickname, int level)
+		public WobbuffetInstance(string nickname, int level)
 		: base(
 				202,
-				SpecieWobbuffet.Instance, // Pokemon Specie
+				SpeciesWobbuffet.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +77,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wobbuffet Builder only waiting for a Level
 		/// </summary>
-		public Wobbuffet(int level)
+		public WobbuffetInstance(int level)
 		: base(
 				202,
-				SpecieWobbuffet.Instance, // Pokemon Specie
+				SpeciesWobbuffet.Instance, // PokemonInstance Species
 				"Wobbuffet", level,
 				Psychic.Instance			
 		)
@@ -73,12 +90,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wobbuffet Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wobbuffet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Wobbuffet() : base(
 			202,
-			SpecieWobbuffet.Instance, // Pokemon Specie
+			SpeciesWobbuffet.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

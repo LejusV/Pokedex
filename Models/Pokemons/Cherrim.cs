@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cherrim Specie to store common natural stats of all Cherrims
-	#region SpecieCherrim
-	public class SpecieCherrim : PokemonSpecie
+	//Cherrim Species to store common natural stats of all Cherrims
+	#region SpeciesCherrim
+	public class SpeciesCherrim : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCherrim? _instance = null;
+		private static SpeciesCherrim? _instance = null;
 #nullable restore
-        public static SpecieCherrim Instance
+        public static SpeciesCherrim Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCherrim();
+                    _instance = new SpeciesCherrim();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCherrim Builder
-		public SpecieCherrim() : base(
+		#region SpeciesCherrim Constructor
+		public SpeciesCherrim() : base(
 			"Cherrim",
 			0.5,
 			9.3,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			87, 78, // Special Attack & Defense
 			85		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Swords-Dance",
+				"Tackle",
+				"Take-Down",
+				"Hyper-Beam",
+				"Leech-Seed",
+				"Growth",
+				"Solar-Beam",
+				"Petal-Dance",
+				"Toxic",
+				"Double-Team",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Giga-Drain",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Morning-Sun",
+				"Synthesis",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Facade",
+				"Nature-Power",
+				"Helping-Hand",
+				"Secret-Power",
+				"Bullet-Seed",
+				"Magical-Leaf",
+				"Natural-Gift",
+				"Lucky-Chant",
+				"Worry-Seed",
+				"Seed-Bomb",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Captivate",
+				"Grass-Knot",
+				"Round",
+				"Petal-Blizzard",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cherrim Pokemon Class
+	//Cherrim PokemonInstance Class
 	#region Cherrim
-	public class Cherrim : Pokemon
+	public class CherrimInstance : PokemonInstance
 	{
-		#region Cherrim Builders
+		#region Cherrim Constructors
 		/// <summary>
-		/// Cherrim Builder waiting for a Nickname & a Level
+		/// Cherrim Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cherrim(string nickname, int level)
+		public CherrimInstance(string nickname, int level)
 		: base(
 				421,
-				SpecieCherrim.Instance, // Pokemon Specie
+				SpeciesCherrim.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cherrim Builder only waiting for a Level
 		/// </summary>
-		public Cherrim(int level)
+		public CherrimInstance(int level)
 		: base(
 				421,
-				SpecieCherrim.Instance, // Pokemon Specie
+				SpeciesCherrim.Instance, // PokemonInstance Species
 				"Cherrim", level,
 				Grass.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cherrim Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cherrim Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cherrim() : base(
 			421,
-			SpecieCherrim.Instance, // Pokemon Specie
+			SpeciesCherrim.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}
 		*/

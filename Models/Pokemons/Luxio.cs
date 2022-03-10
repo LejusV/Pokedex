@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Luxio Specie to store common natural stats of all Luxios
-	#region SpecieLuxio
-	public class SpecieLuxio : PokemonSpecie
+	//Luxio Species to store common natural stats of all Luxios
+	#region SpeciesLuxio
+	public class SpeciesLuxio : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLuxio? _instance = null;
+		private static SpeciesLuxio? _instance = null;
 #nullable restore
-        public static SpecieLuxio Instance
+        public static SpeciesLuxio Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLuxio();
+                    _instance = new SpeciesLuxio();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLuxio Builder
-		public SpecieLuxio() : base(
+		#region SpeciesLuxio Constructor
+		public SpeciesLuxio() : base(
 			"Luxio",
 			0.9,
 			30.5,
@@ -32,23 +34,84 @@ namespace Pokedex.Models.Pokemons
 			60, 49, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Tackle",
+				"Leer",
+				"Bite",
+				"Roar",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Spark",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Facade",
+				"Charge",
+				"Helping-Hand",
+				"Secret-Power",
+				"Signal-Beam",
+				"Shock-Wave",
+				"Natural-Gift",
+				"Magnet-Rise",
+				"Thunder-Fang",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Round",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Snarl",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Luxio Pokemon Class
+	//Luxio PokemonInstance Class
 	#region Luxio
-	public class Luxio : Pokemon
+	public class LuxioInstance : PokemonInstance
 	{
-		#region Luxio Builders
+		#region Luxio Constructors
 		/// <summary>
-		/// Luxio Builder waiting for a Nickname & a Level
+		/// Luxio Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Luxio(string nickname, int level)
+		public LuxioInstance(string nickname, int level)
 		: base(
 				404,
-				SpecieLuxio.Instance, // Pokemon Specie
+				SpeciesLuxio.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +123,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Luxio Builder only waiting for a Level
 		/// </summary>
-		public Luxio(int level)
+		public LuxioInstance(int level)
 		: base(
 				404,
-				SpecieLuxio.Instance, // Pokemon Specie
+				SpeciesLuxio.Instance, // PokemonInstance Species
 				"Luxio", level,
 				Electric.Instance			
 		)
@@ -73,12 +136,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Luxio Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Luxio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Luxio() : base(
 			404,
-			SpecieLuxio.Instance, // Pokemon Specie
+			SpeciesLuxio.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

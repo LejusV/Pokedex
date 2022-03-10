@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Walrein Specie to store common natural stats of all Walreins
-	#region SpecieWalrein
-	public class SpecieWalrein : PokemonSpecie
+	//Walrein Species to store common natural stats of all Walreins
+	#region SpeciesWalrein
+	public class SpeciesWalrein : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWalrein? _instance = null;
+		private static SpeciesWalrein? _instance = null;
 #nullable restore
-        public static SpecieWalrein Instance
+        public static SpeciesWalrein Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWalrein();
+                    _instance = new SpeciesWalrein();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWalrein Builder
-		public SpecieWalrein() : base(
+		#region SpeciesWalrein Constructor
+		public SpeciesWalrein() : base(
 			"Walrein",
 			1.4,
 			150.6,
@@ -32,23 +34,99 @@ namespace Pokedex.Models.Pokemons
 			95, 90, // Special Attack & Defense
 			65		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Growl",
+				"Roar",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Aurora-Beam",
+				"Hyper-Beam",
+				"Strength",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Waterfall",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Powder-Snow",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Encore",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Secret-Power",
+				"Dive",
+				"Ice-Ball",
+				"Rock-Tomb",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Block",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Avalanche",
+				"Ice-Fang",
+				"Iron-Head",
+				"Captivate",
+				"Round",
+				"Echoed-Voice",
+				"Bulldoze",
+				"Frost-Breath",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Walrein Pokemon Class
+	//Walrein PokemonInstance Class
 	#region Walrein
-	public class Walrein : Pokemon
+	public class WalreinInstance : PokemonInstance
 	{
-		#region Walrein Builders
+		#region Walrein Constructors
 		/// <summary>
-		/// Walrein Builder waiting for a Nickname & a Level
+		/// Walrein Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Walrein(string nickname, int level)
+		public WalreinInstance(string nickname, int level)
 		: base(
 				365,
-				SpecieWalrein.Instance, // Pokemon Specie
+				SpeciesWalrein.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Water.Instance			
 		)
@@ -60,10 +138,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Walrein Builder only waiting for a Level
 		/// </summary>
-		public Walrein(int level)
+		public WalreinInstance(int level)
 		: base(
 				365,
-				SpecieWalrein.Instance, // Pokemon Specie
+				SpeciesWalrein.Instance, // PokemonInstance Species
 				"Walrein", level,
 				Ice.Instance, Water.Instance			
 		)
@@ -73,12 +151,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Walrein Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Walrein Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Walrein() : base(
 			365,
-			SpecieWalrein.Instance, // Pokemon Specie
+			SpeciesWalrein.Instance, // PokemonInstance Species
 			Ice.Instance, Water.Instance			
 		) {}
 		*/

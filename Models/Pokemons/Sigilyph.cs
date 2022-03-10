@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Sigilyph Specie to store common natural stats of all Sigilyphs
-	#region SpecieSigilyph
-	public class SpecieSigilyph : PokemonSpecie
+	//Sigilyph Species to store common natural stats of all Sigilyphs
+	#region SpeciesSigilyph
+	public class SpeciesSigilyph : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSigilyph? _instance = null;
+		private static SpeciesSigilyph? _instance = null;
 #nullable restore
-        public static SpecieSigilyph Instance
+        public static SpeciesSigilyph Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSigilyph();
+                    _instance = new SpeciesSigilyph();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSigilyph Builder
-		public SpecieSigilyph() : base(
+		#region SpeciesSigilyph Constructor
+		public SpeciesSigilyph() : base(
 			"Sigilyph",
 			1.4,
 			14.0,
@@ -32,23 +34,106 @@ namespace Pokedex.Models.Pokemons
 			103, 80, // Special Attack & Defense
 			97		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Gust",
+				"Whirlwind",
+				"Fly",
+				"Ice-Beam",
+				"Psybeam",
+				"Hyper-Beam",
+				"Solar-Beam",
+				"Thunder-Wave",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Mirror-Move",
+				"Dream-Eater",
+				"Sky-Attack",
+				"Flash",
+				"Psywave",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Icy-Wind",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Heat-Wave",
+				"Facade",
+				"Trick",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Air-Cutter",
+				"Cosmic-Power",
+				"Signal-Beam",
+				"Aerial-Ace",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Roost",
+				"Gravity",
+				"Miracle-Eye",
+				"Pluck",
+				"Tailwind",
+				"Psycho-Shift",
+				"Dark-Pulse",
+				"Air-Slash",
+				"Energy-Ball",
+				"Zen-Headbutt",
+				"Flash-Cannon",
+				"Trick-Room",
+				"Charge-Beam",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Smack-Down",
+				"Synchronoise",
+				"Round",
+				"Stored-Power",
+				"Confide",
+				"Dazzling-Gleam"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Sigilyph Pokemon Class
+	//Sigilyph PokemonInstance Class
 	#region Sigilyph
-	public class Sigilyph : Pokemon
+	public class SigilyphInstance : PokemonInstance
 	{
-		#region Sigilyph Builders
+		#region Sigilyph Constructors
 		/// <summary>
-		/// Sigilyph Builder waiting for a Nickname & a Level
+		/// Sigilyph Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Sigilyph(string nickname, int level)
+		public SigilyphInstance(string nickname, int level)
 		: base(
 				561,
-				SpecieSigilyph.Instance, // Pokemon Specie
+				SpeciesSigilyph.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
 		)
@@ -60,10 +145,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Sigilyph Builder only waiting for a Level
 		/// </summary>
-		public Sigilyph(int level)
+		public SigilyphInstance(int level)
 		: base(
 				561,
-				SpecieSigilyph.Instance, // Pokemon Specie
+				SpeciesSigilyph.Instance, // PokemonInstance Species
 				"Sigilyph", level,
 				Psychic.Instance, Flying.Instance			
 		)
@@ -73,12 +158,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Sigilyph Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Sigilyph Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Sigilyph() : base(
 			561,
-			SpecieSigilyph.Instance, // Pokemon Specie
+			SpeciesSigilyph.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}
 		*/

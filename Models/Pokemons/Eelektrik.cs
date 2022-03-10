@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Eelektrik Specie to store common natural stats of all Eelektriks
-	#region SpecieEelektrik
-	public class SpecieEelektrik : PokemonSpecie
+	//Eelektrik Species to store common natural stats of all Eelektriks
+	#region SpeciesEelektrik
+	public class SpeciesEelektrik : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEelektrik? _instance = null;
+		private static SpeciesEelektrik? _instance = null;
 #nullable restore
-        public static SpecieEelektrik Instance
+        public static SpeciesEelektrik Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEelektrik();
+                    _instance = new SpeciesEelektrik();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEelektrik Builder
-		public SpecieEelektrik() : base(
+		#region SpeciesEelektrik Constructor
+		public SpeciesEelektrik() : base(
 			"Eelektrik",
 			1.2,
 			22.0,
@@ -32,23 +34,82 @@ namespace Pokedex.Models.Pokemons
 			75, 70, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Bind",
+				"Headbutt",
+				"Thrash",
+				"Acid",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Double-Team",
+				"Light-Screen",
+				"Flash",
+				"Rest",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Zap-Cannon",
+				"Giga-Drain",
+				"Swagger",
+				"Spark",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Crunch",
+				"Facade",
+				"Knock-Off",
+				"Secret-Power",
+				"Signal-Beam",
+				"Bounce",
+				"Shock-Wave",
+				"U-Turn",
+				"Gastro-Acid",
+				"Magnet-Rise",
+				"Aqua-Tail",
+				"Flash-Cannon",
+				"Discharge",
+				"Charge-Beam",
+				"Coil",
+				"Acid-Spray",
+				"Round",
+				"Acrobatics",
+				"Volt-Switch",
+				"Wild-Charge",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Eelektrik Pokemon Class
+	//Eelektrik PokemonInstance Class
 	#region Eelektrik
-	public class Eelektrik : Pokemon
+	public class EelektrikInstance : PokemonInstance
 	{
-		#region Eelektrik Builders
+		#region Eelektrik Constructors
 		/// <summary>
-		/// Eelektrik Builder waiting for a Nickname & a Level
+		/// Eelektrik Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Eelektrik(string nickname, int level)
+		public EelektrikInstance(string nickname, int level)
 		: base(
 				603,
-				SpecieEelektrik.Instance, // Pokemon Specie
+				SpeciesEelektrik.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +121,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Eelektrik Builder only waiting for a Level
 		/// </summary>
-		public Eelektrik(int level)
+		public EelektrikInstance(int level)
 		: base(
 				603,
-				SpecieEelektrik.Instance, // Pokemon Specie
+				SpeciesEelektrik.Instance, // PokemonInstance Species
 				"Eelektrik", level,
 				Electric.Instance			
 		)
@@ -73,12 +134,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Eelektrik Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Eelektrik Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Eelektrik() : base(
 			603,
-			SpecieEelektrik.Instance, // Pokemon Specie
+			SpeciesEelektrik.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

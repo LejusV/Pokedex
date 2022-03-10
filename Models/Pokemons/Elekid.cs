@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Elekid Specie to store common natural stats of all Elekids
-	#region SpecieElekid
-	public class SpecieElekid : PokemonSpecie
+	//Elekid Species to store common natural stats of all Elekids
+	#region SpeciesElekid
+	public class SpeciesElekid : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieElekid? _instance = null;
+		private static SpeciesElekid? _instance = null;
 #nullable restore
-        public static SpecieElekid Instance
+        public static SpeciesElekid Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieElekid();
+                    _instance = new SpeciesElekid();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieElekid Builder
-		public SpecieElekid() : base(
+		#region SpeciesElekid Constructor
+		public SpeciesElekid() : base(
 			"Elekid",
 			0.6,
 			23.5,
@@ -32,23 +34,108 @@ namespace Pokedex.Models.Pokemons
 			65, 55, // Special Attack & Defense
 			95		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Karate-Chop",
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Rolling-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Leer",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Thunder-Shock",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Toxic",
+				"Psychic",
+				"Meditate",
+				"Quick-Attack",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Barrier",
+				"Light-Screen",
+				"Swift",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Uproar",
+				"Facade",
+				"Focus-Punch",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Signal-Beam",
+				"Covet",
+				"Shock-Wave",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Feint",
+				"Fling",
+				"Magnet-Rise",
+				"Discharge",
+				"Captivate",
+				"Charge-Beam",
+				"Electro-Ball",
+				"Round",
+				"Volt-Switch",
+				"Electroweb",
+				"Wild-Charge",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Elekid Pokemon Class
+	//Elekid PokemonInstance Class
 	#region Elekid
-	public class Elekid : Pokemon
+	public class ElekidInstance : PokemonInstance
 	{
-		#region Elekid Builders
+		#region Elekid Constructors
 		/// <summary>
-		/// Elekid Builder waiting for a Nickname & a Level
+		/// Elekid Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Elekid(string nickname, int level)
+		public ElekidInstance(string nickname, int level)
 		: base(
 				239,
-				SpecieElekid.Instance, // Pokemon Specie
+				SpeciesElekid.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +147,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Elekid Builder only waiting for a Level
 		/// </summary>
-		public Elekid(int level)
+		public ElekidInstance(int level)
 		: base(
 				239,
-				SpecieElekid.Instance, // Pokemon Specie
+				SpeciesElekid.Instance, // PokemonInstance Species
 				"Elekid", level,
 				Electric.Instance			
 		)
@@ -73,12 +160,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Elekid Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Elekid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Elekid() : base(
 			239,
-			SpecieElekid.Instance, // Pokemon Specie
+			SpeciesElekid.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

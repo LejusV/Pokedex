@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cofagrigus Specie to store common natural stats of all Cofagriguss
-	#region SpecieCofagrigus
-	public class SpecieCofagrigus : PokemonSpecie
+	//Cofagrigus Species to store common natural stats of all Cofagriguss
+	#region SpeciesCofagrigus
+	public class SpeciesCofagrigus : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCofagrigus? _instance = null;
+		private static SpeciesCofagrigus? _instance = null;
 #nullable restore
-        public static SpecieCofagrigus Instance
+        public static SpeciesCofagrigus Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCofagrigus();
+                    _instance = new SpeciesCofagrigus();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCofagrigus Builder
-		public SpecieCofagrigus() : base(
+		#region SpeciesCofagrigus Constructor
+		public SpeciesCofagrigus() : base(
 			"Cofagrigus",
 			1.7,
 			76.5,
@@ -32,23 +34,97 @@ namespace Pokedex.Models.Pokemons
 			95, 105, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Disable",
+				"Hyper-Beam",
+				"Toxic",
+				"Psychic",
+				"Night-Shade",
+				"Double-Team",
+				"Haze",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Curse",
+				"Spite",
+				"Protect",
+				"Scary-Face",
+				"Destiny-Bond",
+				"Swagger",
+				"Mean-Look",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Pain-Split",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Will-O-Wisp",
+				"Facade",
+				"Trick",
+				"Role-Play",
+				"Magic-Coat",
+				"Knock-Off",
+				"Skill-Swap",
+				"Grudge",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Iron-Defense",
+				"Block",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Payback",
+				"Embargo",
+				"Dark-Pulse",
+				"Energy-Ball",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Grass-Knot",
+				"Ominous-Wind",
+				"Guard-Split",
+				"Power-Split",
+				"Wonder-Room",
+				"Telekinesis",
+				"After-You",
+				"Round",
+				"Hex",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cofagrigus Pokemon Class
+	//Cofagrigus PokemonInstance Class
 	#region Cofagrigus
-	public class Cofagrigus : Pokemon
+	public class CofagrigusInstance : PokemonInstance
 	{
-		#region Cofagrigus Builders
+		#region Cofagrigus Constructors
 		/// <summary>
-		/// Cofagrigus Builder waiting for a Nickname & a Level
+		/// Cofagrigus Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cofagrigus(string nickname, int level)
+		public CofagrigusInstance(string nickname, int level)
 		: base(
 				563,
-				SpecieCofagrigus.Instance, // Pokemon Specie
+				SpeciesCofagrigus.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
 		)
@@ -60,10 +136,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cofagrigus Builder only waiting for a Level
 		/// </summary>
-		public Cofagrigus(int level)
+		public CofagrigusInstance(int level)
 		: base(
 				563,
-				SpecieCofagrigus.Instance, // Pokemon Specie
+				SpeciesCofagrigus.Instance, // PokemonInstance Species
 				"Cofagrigus", level,
 				Ghost.Instance			
 		)
@@ -73,12 +149,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cofagrigus Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cofagrigus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cofagrigus() : base(
 			563,
-			SpecieCofagrigus.Instance, // Pokemon Specie
+			SpeciesCofagrigus.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}
 		*/

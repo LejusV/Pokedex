@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Croagunk Specie to store common natural stats of all Croagunks
-	#region SpecieCroagunk
-	public class SpecieCroagunk : PokemonSpecie
+	//Croagunk Species to store common natural stats of all Croagunks
+	#region SpeciesCroagunk
+	public class SpeciesCroagunk : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCroagunk? _instance = null;
+		private static SpeciesCroagunk? _instance = null;
 #nullable restore
-        public static SpecieCroagunk Instance
+        public static SpeciesCroagunk Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCroagunk();
+                    _instance = new SpeciesCroagunk();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCroagunk Builder
-		public SpecieCroagunk() : base(
+		#region SpeciesCroagunk Constructor
+		public SpeciesCroagunk() : base(
 			"Croagunk",
 			0.7,
 			23.0,
@@ -32,23 +34,125 @@ namespace Pokedex.Models.Pokemons
 			61, 40, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Poison-Sting",
+				"Low-Kick",
+				"Counter",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Meditate",
+				"Double-Team",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Fury-Cutter",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Pursuit",
+				"Hidden-Power",
+				"Cross-Chop",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Torment",
+				"Flatter",
+				"Facade",
+				"Focus-Punch",
+				"Smelling-Salts",
+				"Taunt",
+				"Helping-Hand",
+				"Role-Play",
+				"Revenge",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Astonish",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Bounce",
+				"Wake-Up-Slap",
+				"Natural-Gift",
+				"Feint",
+				"Acupressure",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Me-First",
+				"Sucker-Punch",
+				"Poison-Jab",
+				"Dark-Pulse",
+				"X-Scissor",
+				"Drain-Punch",
+				"Vacuum-Wave",
+				"Focus-Blast",
+				"Nasty-Plot",
+				"Bullet-Punch",
+				"Mud-Bomb",
+				"Rock-Climb",
+				"Gunk-Shot",
+				"Captivate",
+				"Venoshock",
+				"Sludge-Wave",
+				"Low-Sweep",
+				"Foul-Play",
+				"Round",
+				"Quick-Guard",
+				"Retaliate",
+				"Bulldoze",
+				"Work-Up",
+				"Dual-Chop",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Croagunk Pokemon Class
+	//Croagunk PokemonInstance Class
 	#region Croagunk
-	public class Croagunk : Pokemon
+	public class CroagunkInstance : PokemonInstance
 	{
-		#region Croagunk Builders
+		#region Croagunk Constructors
 		/// <summary>
-		/// Croagunk Builder waiting for a Nickname & a Level
+		/// Croagunk Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Croagunk(string nickname, int level)
+		public CroagunkInstance(string nickname, int level)
 		: base(
 				453,
-				SpecieCroagunk.Instance, // Pokemon Specie
+				SpeciesCroagunk.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fighting.Instance			
 		)
@@ -60,10 +164,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Croagunk Builder only waiting for a Level
 		/// </summary>
-		public Croagunk(int level)
+		public CroagunkInstance(int level)
 		: base(
 				453,
-				SpecieCroagunk.Instance, // Pokemon Specie
+				SpeciesCroagunk.Instance, // PokemonInstance Species
 				"Croagunk", level,
 				Poison.Instance, Fighting.Instance			
 		)
@@ -73,12 +177,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Croagunk Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Croagunk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Croagunk() : base(
 			453,
-			SpecieCroagunk.Instance, // Pokemon Specie
+			SpeciesCroagunk.Instance, // PokemonInstance Species
 			Poison.Instance, Fighting.Instance			
 		) {}
 		*/

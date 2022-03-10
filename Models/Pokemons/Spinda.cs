@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Spinda Specie to store common natural stats of all Spindas
-	#region SpecieSpinda
-	public class SpecieSpinda : PokemonSpecie
+	//Spinda Species to store common natural stats of all Spindas
+	#region SpeciesSpinda
+	public class SpeciesSpinda : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieSpinda? _instance = null;
+		private static SpeciesSpinda? _instance = null;
 #nullable restore
-        public static SpecieSpinda Instance
+        public static SpeciesSpinda Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieSpinda();
+                    _instance = new SpeciesSpinda();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieSpinda Builder
-		public SpecieSpinda() : base(
+		#region SpeciesSpinda Constructor
+		public SpeciesSpinda() : base(
 			"Spinda",
 			1.1,
 			5.0,
@@ -32,23 +34,133 @@ namespace Pokedex.Models.Pokemons
 			60, 60, // Special Attack & Defense
 			60		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Thrash",
+				"Double-Edge",
+				"Disable",
+				"Psybeam",
+				"Low-Kick",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Psychic",
+				"Hypnosis",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Metronome",
+				"Swift",
+				"Dream-Eater",
+				"Dizzy-Punch",
+				"Flash",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Encore",
+				"Rapid-Spin",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Fake-Out",
+				"Uproar",
+				"Facade",
+				"Focus-Punch",
+				"Smelling-Salts",
+				"Helping-Hand",
+				"Trick",
+				"Role-Play",
+				"Wish",
+				"Assist",
+				"Recycle",
+				"Brick-Break",
+				"Skill-Swap",
+				"Snatch",
+				"Secret-Power",
+				"Teeter-Dance",
+				"Hyper-Voice",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Covet",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Natural-Gift",
+				"Fling",
+				"Psycho-Shift",
+				"Copycat",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Drain-Punch",
+				"Psycho-Cut",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Guard-Split",
+				"Round",
+				"Retaliate",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide",
+				"Power-Up-Punch",
+				"Spotlight"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Spinda Pokemon Class
+	//Spinda PokemonInstance Class
 	#region Spinda
-	public class Spinda : Pokemon
+	public class SpindaInstance : PokemonInstance
 	{
-		#region Spinda Builders
+		#region Spinda Constructors
 		/// <summary>
-		/// Spinda Builder waiting for a Nickname & a Level
+		/// Spinda Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Spinda(string nickname, int level)
+		public SpindaInstance(string nickname, int level)
 		: base(
 				327,
-				SpecieSpinda.Instance, // Pokemon Specie
+				SpeciesSpinda.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +172,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Spinda Builder only waiting for a Level
 		/// </summary>
-		public Spinda(int level)
+		public SpindaInstance(int level)
 		: base(
 				327,
-				SpecieSpinda.Instance, // Pokemon Specie
+				SpeciesSpinda.Instance, // PokemonInstance Species
 				"Spinda", level,
 				Normal.Instance			
 		)
@@ -73,12 +185,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Spinda Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Spinda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Spinda() : base(
 			327,
-			SpecieSpinda.Instance, // Pokemon Specie
+			SpeciesSpinda.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

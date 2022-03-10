@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Hatterene Specie to store common natural stats of all Hatterenes
-	#region SpecieHatterene
-	public class SpecieHatterene : PokemonSpecie
+	//Hatterene Species to store common natural stats of all Hatterenes
+	#region SpeciesHatterene
+	public class SpeciesHatterene : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieHatterene? _instance = null;
+		private static SpeciesHatterene? _instance = null;
 #nullable restore
-        public static SpecieHatterene Instance
+        public static SpeciesHatterene Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieHatterene();
+                    _instance = new SpeciesHatterene();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieHatterene Builder
-		public SpecieHatterene() : base(
+		#region SpeciesHatterene Constructor
+		public SpeciesHatterene() : base(
 			"Hatterene",
 			2.1,
 			5.1,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			136, 103, // Special Attack & Defense
 			29		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Hatterene Pokemon Class
+	//Hatterene PokemonInstance Class
 	#region Hatterene
-	public class Hatterene : Pokemon
+	public class HattereneInstance : PokemonInstance
 	{
-		#region Hatterene Builders
+		#region Hatterene Constructors
 		/// <summary>
-		/// Hatterene Builder waiting for a Nickname & a Level
+		/// Hatterene Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Hatterene(string nickname, int level)
+		public HattereneInstance(string nickname, int level)
 		: base(
 				858,
-				SpecieHatterene.Instance, // Pokemon Specie
+				SpeciesHatterene.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Hatterene Builder only waiting for a Level
 		/// </summary>
-		public Hatterene(int level)
+		public HattereneInstance(int level)
 		: base(
 				858,
-				SpecieHatterene.Instance, // Pokemon Specie
+				SpeciesHatterene.Instance, // PokemonInstance Species
 				"Hatterene", level,
 				Psychic.Instance, Fairy.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Hatterene Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Hatterene Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Hatterene() : base(
 			858,
-			SpecieHatterene.Instance, // Pokemon Specie
+			SpeciesHatterene.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}
 		*/

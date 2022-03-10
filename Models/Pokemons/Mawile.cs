@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Mawile Specie to store common natural stats of all Mawiles
-	#region SpecieMawile
-	public class SpecieMawile : PokemonSpecie
+	//Mawile Species to store common natural stats of all Mawiles
+	#region SpeciesMawile
+	public class SpeciesMawile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMawile? _instance = null;
+		private static SpeciesMawile? _instance = null;
 #nullable restore
-        public static SpecieMawile Instance
+        public static SpeciesMawile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMawile();
+                    _instance = new SpeciesMawile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMawile Builder
-		public SpecieMawile() : base(
+		#region SpeciesMawile Constructor
+		public SpeciesMawile() : base(
 			"Mawile",
 			0.6,
 			11.5,
@@ -32,23 +34,135 @@ namespace Pokedex.Models.Pokemons
 			55, 55, // Special Attack & Defense
 			50		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Vice-Grip",
+				"Swords-Dance",
+				"Slam",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Bite",
+				"Growl",
+				"Flamethrower",
+				"Ice-Beam",
+				"Hyper-Beam",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pain-Split",
+				"Dynamic-Punch",
+				"Baton-Pass",
+				"Sweet-Scent",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Crunch",
+				"Psych-Up",
+				"Ancient-Power",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Stockpile",
+				"Spit-Up",
+				"Swallow",
+				"Torment",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Brick-Break",
+				"Knock-Off",
+				"Snatch",
+				"Secret-Power",
+				"Poison-Fang",
+				"Astonish",
+				"Fake-Tears",
+				"Rock-Tomb",
+				"Tickle",
+				"Iron-Defense",
+				"Natural-Gift",
+				"Metal-Burst",
+				"Payback",
+				"Embargo",
+				"Fling",
+				"Guard-Swap",
+				"Punishment",
+				"Last-Resort",
+				"Sucker-Punch",
+				"Magnet-Rise",
+				"Dark-Pulse",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Thunder-Fang",
+				"Ice-Fang",
+				"Fire-Fang",
+				"Flash-Cannon",
+				"Iron-Head",
+				"Stone-Edge",
+				"Captivate",
+				"Stealth-Rock",
+				"Grass-Knot",
+				"Charge-Beam",
+				"Foul-Play",
+				"Round",
+				"Incinerate",
+				"Misty-Terrain",
+				"Play-Rough",
+				"Fairy-Wind",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Mawile Pokemon Class
+	//Mawile PokemonInstance Class
 	#region Mawile
-	public class Mawile : Pokemon
+	public class MawileInstance : PokemonInstance
 	{
-		#region Mawile Builders
+		#region Mawile Constructors
 		/// <summary>
-		/// Mawile Builder waiting for a Nickname & a Level
+		/// Mawile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Mawile(string nickname, int level)
+		public MawileInstance(string nickname, int level)
 		: base(
 				303,
-				SpecieMawile.Instance, // Pokemon Specie
+				SpeciesMawile.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fairy.Instance			
 		)
@@ -60,10 +174,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Mawile Builder only waiting for a Level
 		/// </summary>
-		public Mawile(int level)
+		public MawileInstance(int level)
 		: base(
 				303,
-				SpecieMawile.Instance, // Pokemon Specie
+				SpeciesMawile.Instance, // PokemonInstance Species
 				"Mawile", level,
 				Steel.Instance, Fairy.Instance			
 		)
@@ -73,12 +187,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Mawile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Mawile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Mawile() : base(
 			303,
-			SpecieMawile.Instance, // Pokemon Specie
+			SpeciesMawile.Instance, // PokemonInstance Species
 			Steel.Instance, Fairy.Instance			
 		) {}
 		*/

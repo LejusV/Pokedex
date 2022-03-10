@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Shedinja Specie to store common natural stats of all Shedinjas
-	#region SpecieShedinja
-	public class SpecieShedinja : PokemonSpecie
+	//Shedinja Species to store common natural stats of all Shedinjas
+	#region SpeciesShedinja
+	public class SpeciesShedinja : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieShedinja? _instance = null;
+		private static SpeciesShedinja? _instance = null;
 #nullable restore
-        public static SpecieShedinja Instance
+        public static SpeciesShedinja Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieShedinja();
+                    _instance = new SpeciesShedinja();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieShedinja Builder
-		public SpecieShedinja() : base(
+		#region SpeciesShedinja Constructor
+		public SpeciesShedinja() : base(
 			"Shedinja",
 			0.8,
 			1.2,
@@ -32,23 +34,93 @@ namespace Pokedex.Models.Pokemons
 			30, 30, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Scratch",
+				"Cut",
+				"Sand-Attack",
+				"Double-Edge",
+				"Hyper-Beam",
+				"Absorb",
+				"Solar-Beam",
+				"String-Shot",
+				"Dig",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Harden",
+				"Confuse-Ray",
+				"Dream-Eater",
+				"Leech-Life",
+				"Flash",
+				"Fury-Swipes",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Mind-Reader",
+				"Nightmare",
+				"Snore",
+				"Spite",
+				"Protect",
+				"Mud-Slap",
+				"Sandstorm",
+				"Giga-Drain",
+				"Endure",
+				"False-Swipe",
+				"Swagger",
+				"Fury-Cutter",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Shadow-Ball",
+				"Will-O-Wisp",
+				"Facade",
+				"Trick",
+				"Grudge",
+				"Secret-Power",
+				"Aerial-Ace",
+				"Natural-Gift",
+				"Heal-Block",
+				"Sucker-Punch",
+				"X-Scissor",
+				"Giga-Impact",
+				"Shadow-Claw",
+				"Shadow-Sneak",
+				"Bug-Bite",
+				"Hone-Claws",
+				"Telekinesis",
+				"Round",
+				"Struggle-Bug",
+				"Phantom-Force",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Shedinja Pokemon Class
+	//Shedinja PokemonInstance Class
 	#region Shedinja
-	public class Shedinja : Pokemon
+	public class ShedinjaInstance : PokemonInstance
 	{
-		#region Shedinja Builders
+		#region Shedinja Constructors
 		/// <summary>
-		/// Shedinja Builder waiting for a Nickname & a Level
+		/// Shedinja Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Shedinja(string nickname, int level)
+		public ShedinjaInstance(string nickname, int level)
 		: base(
 				292,
-				SpecieShedinja.Instance, // Pokemon Specie
+				SpeciesShedinja.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Ghost.Instance			
 		)
@@ -60,10 +132,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Shedinja Builder only waiting for a Level
 		/// </summary>
-		public Shedinja(int level)
+		public ShedinjaInstance(int level)
 		: base(
 				292,
-				SpecieShedinja.Instance, // Pokemon Specie
+				SpeciesShedinja.Instance, // PokemonInstance Species
 				"Shedinja", level,
 				Bug.Instance, Ghost.Instance			
 		)
@@ -73,12 +145,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Shedinja Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Shedinja Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Shedinja() : base(
 			292,
-			SpecieShedinja.Instance, // Pokemon Specie
+			SpeciesShedinja.Instance, // PokemonInstance Species
 			Bug.Instance, Ghost.Instance			
 		) {}
 		*/

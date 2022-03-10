@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Staraptor Specie to store common natural stats of all Staraptors
-	#region SpecieStaraptor
-	public class SpecieStaraptor : PokemonSpecie
+	//Staraptor Species to store common natural stats of all Staraptors
+	#region SpeciesStaraptor
+	public class SpeciesStaraptor : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieStaraptor? _instance = null;
+		private static SpeciesStaraptor? _instance = null;
 #nullable restore
-        public static SpecieStaraptor Instance
+        public static SpeciesStaraptor Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieStaraptor();
+                    _instance = new SpeciesStaraptor();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieStaraptor Builder
-		public SpecieStaraptor() : base(
+		#region SpeciesStaraptor Constructor
+		public SpeciesStaraptor() : base(
 			"Staraptor",
 			1.2,
 			24.9,
@@ -32,23 +34,88 @@ namespace Pokedex.Models.Pokemons
 			50, 60, // Special Attack & Defense
 			100		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Wing-Attack",
+				"Whirlwind",
+				"Fly",
+				"Tackle",
+				"Take-Down",
+				"Growl",
+				"Hyper-Beam",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Swift",
+				"Sky-Attack",
+				"Rest",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Steel-Wing",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Twister",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Uproar",
+				"Heat-Wave",
+				"Facade",
+				"Endeavor",
+				"Secret-Power",
+				"Air-Cutter",
+				"Aerial-Ace",
+				"Roost",
+				"Natural-Gift",
+				"Pluck",
+				"Tailwind",
+				"U-Turn",
+				"Close-Combat",
+				"Brave-Bird",
+				"Giga-Impact",
+				"Defog",
+				"Captivate",
+				"Ominous-Wind",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Final-Gambit",
+				"Work-Up",
+				"Confide"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Staraptor Pokemon Class
+	//Staraptor PokemonInstance Class
 	#region Staraptor
-	public class Staraptor : Pokemon
+	public class StaraptorInstance : PokemonInstance
 	{
-		#region Staraptor Builders
+		#region Staraptor Constructors
 		/// <summary>
-		/// Staraptor Builder waiting for a Nickname & a Level
+		/// Staraptor Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Staraptor(string nickname, int level)
+		public StaraptorInstance(string nickname, int level)
 		: base(
 				398,
-				SpecieStaraptor.Instance, // Pokemon Specie
+				SpeciesStaraptor.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -60,10 +127,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Staraptor Builder only waiting for a Level
 		/// </summary>
-		public Staraptor(int level)
+		public StaraptorInstance(int level)
 		: base(
 				398,
-				SpecieStaraptor.Instance, // Pokemon Specie
+				SpeciesStaraptor.Instance, // PokemonInstance Species
 				"Staraptor", level,
 				Normal.Instance, Flying.Instance			
 		)
@@ -73,12 +140,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Staraptor Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Staraptor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Staraptor() : base(
 			398,
-			SpecieStaraptor.Instance, // Pokemon Specie
+			SpeciesStaraptor.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}
 		*/

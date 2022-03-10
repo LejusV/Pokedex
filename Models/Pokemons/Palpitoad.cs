@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Palpitoad Specie to store common natural stats of all Palpitoads
-	#region SpeciePalpitoad
-	public class SpeciePalpitoad : PokemonSpecie
+	//Palpitoad Species to store common natural stats of all Palpitoads
+	#region SpeciesPalpitoad
+	public class SpeciesPalpitoad : PokemonSpecies
 	{
 #nullable enable
-		private static SpeciePalpitoad? _instance = null;
+		private static SpeciesPalpitoad? _instance = null;
 #nullable restore
-        public static SpeciePalpitoad Instance
+        public static SpeciesPalpitoad Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpeciePalpitoad();
+                    _instance = new SpeciesPalpitoad();
                 }
                 return _instance;
             }
         }
 
-		#region SpeciePalpitoad Builder
-		public SpeciePalpitoad() : base(
+		#region SpeciesPalpitoad Constructor
+		public SpeciesPalpitoad() : base(
 			"Palpitoad",
 			0.8,
 			17.0,
@@ -32,23 +34,80 @@ namespace Pokedex.Models.Pokemons
 			65, 55, // Special Attack & Defense
 			69		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Growl",
+				"Supersonic",
+				"Hydro-Pump",
+				"Surf",
+				"Bubble-Beam",
+				"Toxic",
+				"Double-Team",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Icy-Wind",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Endeavor",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Muddy-Water",
+				"Bounce",
+				"Mud-Shot",
+				"Water-Pulse",
+				"Gastro-Acid",
+				"Aqua-Ring",
+				"Earth-Power",
+				"Stealth-Rock",
+				"Sludge-Wave",
+				"After-You",
+				"Round",
+				"Echoed-Voice",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Palpitoad Pokemon Class
+	//Palpitoad PokemonInstance Class
 	#region Palpitoad
-	public class Palpitoad : Pokemon
+	public class PalpitoadInstance : PokemonInstance
 	{
-		#region Palpitoad Builders
+		#region Palpitoad Constructors
 		/// <summary>
-		/// Palpitoad Builder waiting for a Nickname & a Level
+		/// Palpitoad Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Palpitoad(string nickname, int level)
+		public PalpitoadInstance(string nickname, int level)
 		: base(
 				536,
-				SpeciePalpitoad.Instance, // Pokemon Specie
+				SpeciesPalpitoad.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
 		)
@@ -60,10 +119,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Palpitoad Builder only waiting for a Level
 		/// </summary>
-		public Palpitoad(int level)
+		public PalpitoadInstance(int level)
 		: base(
 				536,
-				SpeciePalpitoad.Instance, // Pokemon Specie
+				SpeciesPalpitoad.Instance, // PokemonInstance Species
 				"Palpitoad", level,
 				Water.Instance, Ground.Instance			
 		)
@@ -73,12 +132,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Palpitoad Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Palpitoad Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Palpitoad() : base(
 			536,
-			SpeciePalpitoad.Instance, // Pokemon Specie
+			SpeciesPalpitoad.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}
 		*/

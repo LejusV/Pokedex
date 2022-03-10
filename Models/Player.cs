@@ -8,9 +8,9 @@ namespace Pokedex.Models
     {
         private string _name = "";
         private Gender? _gender = null;
-        private List<Pokemon> _poks;
+        private List<PokemonInstance> _poks;
 
-        int InsertByLevel(Pokemon pok)
+        int InsertByLevel(PokemonInstance pok)
         {
 
             int count = _poks.Count;
@@ -28,7 +28,7 @@ namespace Pokedex.Models
             return 1;
         }
 
-        public void AddPokemon(Pokemon pok)
+        public void AddPokemon(PokemonInstance pok)
         {
             InsertByLevel(pok);
             Console.WriteLine(pok.Nickname + " joined your team !\n");
@@ -44,18 +44,18 @@ namespace Pokedex.Models
             get { return _name; }
         }
 
-        public List<Pokemon> Pokemons
+        public List<PokemonInstance> Pokemons
         {
             get { return _poks; }
             set { _poks = value; }
         }
 
-        public Player(string name, Gender gender, List<Pokemon> poks = null)
+        public Player(string name, Gender gender, List<PokemonInstance> poks = null)
         {
             _gender = gender;
             _name = name;
             _poks = poks;
-            _poks = new List<Pokemon>();
+            _poks = new List<PokemonInstance>();
         }
     }
 }

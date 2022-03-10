@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cascoon Specie to store common natural stats of all Cascoons
-	#region SpecieCascoon
-	public class SpecieCascoon : PokemonSpecie
+	//Cascoon Species to store common natural stats of all Cascoons
+	#region SpeciesCascoon
+	public class SpeciesCascoon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCascoon? _instance = null;
+		private static SpeciesCascoon? _instance = null;
 #nullable restore
-        public static SpecieCascoon Instance
+        public static SpeciesCascoon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCascoon();
+                    _instance = new SpeciesCascoon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCascoon Builder
-		public SpecieCascoon() : base(
+		#region SpeciesCascoon Constructor
+		public SpeciesCascoon() : base(
 			"Cascoon",
 			0.7,
 			11.5,
@@ -32,23 +34,39 @@ namespace Pokedex.Models.Pokemons
 			25, 25, // Special Attack & Defense
 			15		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"String-Shot",
+				"Harden",
+				"Iron-Defense",
+				"Bug-Bite",
+				"Electroweb"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cascoon Pokemon Class
+	//Cascoon PokemonInstance Class
 	#region Cascoon
-	public class Cascoon : Pokemon
+	public class CascoonInstance : PokemonInstance
 	{
-		#region Cascoon Builders
+		#region Cascoon Constructors
 		/// <summary>
-		/// Cascoon Builder waiting for a Nickname & a Level
+		/// Cascoon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cascoon(string nickname, int level)
+		public CascoonInstance(string nickname, int level)
 		: base(
 				268,
-				SpecieCascoon.Instance, // Pokemon Specie
+				SpeciesCascoon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
 		)
@@ -60,10 +78,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cascoon Builder only waiting for a Level
 		/// </summary>
-		public Cascoon(int level)
+		public CascoonInstance(int level)
 		: base(
 				268,
-				SpecieCascoon.Instance, // Pokemon Specie
+				SpeciesCascoon.Instance, // PokemonInstance Species
 				"Cascoon", level,
 				Bug.Instance			
 		)
@@ -73,12 +91,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cascoon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cascoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cascoon() : base(
 			268,
-			SpecieCascoon.Instance, // Pokemon Specie
+			SpeciesCascoon.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}
 		*/

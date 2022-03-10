@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Kyogre Specie to store common natural stats of all Kyogres
-	#region SpecieKyogre
-	public class SpecieKyogre : PokemonSpecie
+	//Kyogre Species to store common natural stats of all Kyogres
+	#region SpeciesKyogre
+	public class SpeciesKyogre : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieKyogre? _instance = null;
+		private static SpeciesKyogre? _instance = null;
 #nullable restore
-        public static SpecieKyogre Instance
+        public static SpeciesKyogre Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieKyogre();
+                    _instance = new SpeciesKyogre();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieKyogre Builder
-		public SpecieKyogre() : base(
+		#region SpeciesKyogre Constructor
+		public SpeciesKyogre() : base(
 			"Kyogre",
 			4.5,
 			352.0,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			150, 140, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Headbutt",
+				"Body-Slam",
+				"Double-Edge",
+				"Roar",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Hyper-Beam",
+				"Strength",
+				"Thunderbolt",
+				"Thunder-Wave",
+				"Thunder",
+				"Earthquake",
+				"Toxic",
+				"Mimic",
+				"Double-Team",
+				"Defense-Curl",
+				"Waterfall",
+				"Swift",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Scary-Face",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Swagger",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Safeguard",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Psych-Up",
+				"Ancient-Power",
+				"Rock-Smash",
+				"Whirlpool",
+				"Uproar",
+				"Hail",
+				"Facade",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Water-Spout",
+				"Signal-Beam",
+				"Sheer-Cold",
+				"Muddy-Water",
+				"Block",
+				"Calm-Mind",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Brine",
+				"Natural-Gift",
+				"Aqua-Ring",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Avalanche",
+				"Iron-Head",
+				"Round",
+				"Scald",
+				"Bulldoze",
+				"Confide",
+				"Origin-Pulse"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Kyogre Pokemon Class
+	//Kyogre PokemonInstance Class
 	#region Kyogre
-	public class Kyogre : Pokemon
+	public class KyogreInstance : PokemonInstance
 	{
-		#region Kyogre Builders
+		#region Kyogre Constructors
 		/// <summary>
-		/// Kyogre Builder waiting for a Nickname & a Level
+		/// Kyogre Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Kyogre(string nickname, int level)
+		public KyogreInstance(string nickname, int level)
 		: base(
 				382,
-				SpecieKyogre.Instance, // Pokemon Specie
+				SpeciesKyogre.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Kyogre Builder only waiting for a Level
 		/// </summary>
-		public Kyogre(int level)
+		public KyogreInstance(int level)
 		: base(
 				382,
-				SpecieKyogre.Instance, // Pokemon Specie
+				SpeciesKyogre.Instance, // PokemonInstance Species
 				"Kyogre", level,
 				Water.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Kyogre Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Kyogre Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Kyogre() : base(
 			382,
-			SpecieKyogre.Instance, // Pokemon Specie
+			SpeciesKyogre.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

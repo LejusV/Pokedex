@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Boltund Specie to store common natural stats of all Boltunds
-	#region SpecieBoltund
-	public class SpecieBoltund : PokemonSpecie
+	//Boltund Species to store common natural stats of all Boltunds
+	#region SpeciesBoltund
+	public class SpeciesBoltund : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBoltund? _instance = null;
+		private static SpeciesBoltund? _instance = null;
 #nullable restore
-        public static SpecieBoltund Instance
+        public static SpeciesBoltund Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBoltund();
+                    _instance = new SpeciesBoltund();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBoltund Builder
-		public SpecieBoltund() : base(
+		#region SpeciesBoltund Constructor
+		public SpeciesBoltund() : base(
 			"Boltund",
 			1.0,
 			34.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			90, 60, // Special Attack & Defense
 			121		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Boltund Pokemon Class
+	//Boltund PokemonInstance Class
 	#region Boltund
-	public class Boltund : Pokemon
+	public class BoltundInstance : PokemonInstance
 	{
-		#region Boltund Builders
+		#region Boltund Constructors
 		/// <summary>
-		/// Boltund Builder waiting for a Nickname & a Level
+		/// Boltund Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Boltund(string nickname, int level)
+		public BoltundInstance(string nickname, int level)
 		: base(
 				836,
-				SpecieBoltund.Instance, // Pokemon Specie
+				SpeciesBoltund.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Boltund Builder only waiting for a Level
 		/// </summary>
-		public Boltund(int level)
+		public BoltundInstance(int level)
 		: base(
 				836,
-				SpecieBoltund.Instance, // Pokemon Specie
+				SpeciesBoltund.Instance, // PokemonInstance Species
 				"Boltund", level,
 				Electric.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Boltund Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Boltund Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Boltund() : base(
 			836,
-			SpecieBoltund.Instance, // Pokemon Specie
+			SpeciesBoltund.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}
 		*/

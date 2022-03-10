@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Cufant Specie to store common natural stats of all Cufants
-	#region SpecieCufant
-	public class SpecieCufant : PokemonSpecie
+	//Cufant Species to store common natural stats of all Cufants
+	#region SpeciesCufant
+	public class SpeciesCufant : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieCufant? _instance = null;
+		private static SpeciesCufant? _instance = null;
 #nullable restore
-        public static SpecieCufant Instance
+        public static SpeciesCufant Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieCufant();
+                    _instance = new SpeciesCufant();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieCufant Builder
-		public SpecieCufant() : base(
+		#region SpeciesCufant Constructor
+		public SpeciesCufant() : base(
 			"Cufant",
 			1.2,
 			100.0,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			40, 49, // Special Attack & Defense
 			40		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Cufant Pokemon Class
+	//Cufant PokemonInstance Class
 	#region Cufant
-	public class Cufant : Pokemon
+	public class CufantInstance : PokemonInstance
 	{
-		#region Cufant Builders
+		#region Cufant Constructors
 		/// <summary>
-		/// Cufant Builder waiting for a Nickname & a Level
+		/// Cufant Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Cufant(string nickname, int level)
+		public CufantInstance(string nickname, int level)
 		: base(
 				878,
-				SpecieCufant.Instance, // Pokemon Specie
+				SpeciesCufant.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Cufant Builder only waiting for a Level
 		/// </summary>
-		public Cufant(int level)
+		public CufantInstance(int level)
 		: base(
 				878,
-				SpecieCufant.Instance, // Pokemon Specie
+				SpeciesCufant.Instance, // PokemonInstance Species
 				"Cufant", level,
 				Steel.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Cufant Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Cufant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Cufant() : base(
 			878,
-			SpecieCufant.Instance, // Pokemon Specie
+			SpeciesCufant.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Espeon Specie to store common natural stats of all Espeons
-	#region SpecieEspeon
-	public class SpecieEspeon : PokemonSpecie
+	//Espeon Species to store common natural stats of all Espeons
+	#region SpeciesEspeon
+	public class SpeciesEspeon : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieEspeon? _instance = null;
+		private static SpeciesEspeon? _instance = null;
 #nullable restore
-        public static SpecieEspeon Instance
+        public static SpeciesEspeon Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieEspeon();
+                    _instance = new SpeciesEspeon();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieEspeon Builder
-		public SpecieEspeon() : base(
+		#region SpeciesEspeon Constructor
+		public SpeciesEspeon() : base(
 			"Espeon",
 			0.9,
 			26.5,
@@ -32,23 +34,107 @@ namespace Pokedex.Models.Pokemons
 			130, 95, // Special Attack & Defense
 			110		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Cut",
+				"Sand-Attack",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Double-Edge",
+				"Tail-Whip",
+				"Psybeam",
+				"Hyper-Beam",
+				"Dig",
+				"Toxic",
+				"Confusion",
+				"Psychic",
+				"Quick-Attack",
+				"Mimic",
+				"Double-Team",
+				"Light-Screen",
+				"Reflect",
+				"Swift",
+				"Dream-Eater",
+				"Flash",
+				"Rest",
+				"Substitute",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Zap-Cannon",
+				"Detect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Heal-Bell",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Morning-Sun",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Future-Sight",
+				"Facade",
+				"Helping-Hand",
+				"Trick",
+				"Magic-Coat",
+				"Skill-Swap",
+				"Secret-Power",
+				"Hyper-Voice",
+				"Signal-Beam",
+				"Covet",
+				"Calm-Mind",
+				"Natural-Gift",
+				"Power-Swap",
+				"Last-Resort",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Trick-Room",
+				"Captivate",
+				"Grass-Knot",
+				"Psyshock",
+				"Telekinesis",
+				"Magic-Room",
+				"Round",
+				"Echoed-Voice",
+				"Retaliate",
+				"Work-Up",
+				"Confide",
+				"Dazzling-Gleam",
+				"Baby-Doll-Eyes"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Espeon Pokemon Class
+	//Espeon PokemonInstance Class
 	#region Espeon
-	public class Espeon : Pokemon
+	public class EspeonInstance : PokemonInstance
 	{
-		#region Espeon Builders
+		#region Espeon Constructors
 		/// <summary>
-		/// Espeon Builder waiting for a Nickname & a Level
+		/// Espeon Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Espeon(string nickname, int level)
+		public EspeonInstance(string nickname, int level)
 		: base(
 				196,
-				SpecieEspeon.Instance, // Pokemon Specie
+				SpeciesEspeon.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
 		)
@@ -60,10 +146,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Espeon Builder only waiting for a Level
 		/// </summary>
-		public Espeon(int level)
+		public EspeonInstance(int level)
 		: base(
 				196,
-				SpecieEspeon.Instance, // Pokemon Specie
+				SpeciesEspeon.Instance, // PokemonInstance Species
 				"Espeon", level,
 				Psychic.Instance			
 		)
@@ -73,12 +159,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Espeon Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Espeon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Espeon() : base(
 			196,
-			SpecieEspeon.Instance, // Pokemon Specie
+			SpeciesEspeon.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}
 		*/

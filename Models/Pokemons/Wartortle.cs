@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Wartortle Specie to store common natural stats of all Wartortles
-	#region SpecieWartortle
-	public class SpecieWartortle : PokemonSpecie
+	//Wartortle Species to store common natural stats of all Wartortles
+	#region SpeciesWartortle
+	public class SpeciesWartortle : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWartortle? _instance = null;
+		private static SpeciesWartortle? _instance = null;
 #nullable restore
-        public static SpecieWartortle Instance
+        public static SpeciesWartortle Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWartortle();
+                    _instance = new SpeciesWartortle();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWartortle Builder
-		public SpecieWartortle() : base(
+		#region SpeciesWartortle Constructor
+		public SpeciesWartortle() : base(
 			"Wartortle",
 			1.0,
 			22.5,
@@ -32,23 +34,110 @@ namespace Pokedex.Models.Pokemons
 			65, 80, // Special Attack & Defense
 			58		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Ice-Punch",
+				"Mega-Kick",
+				"Headbutt",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Bite",
+				"Water-Gun",
+				"Hydro-Pump",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Withdraw",
+				"Defense-Curl",
+				"Reflect",
+				"Bide",
+				"Waterfall",
+				"Skull-Bash",
+				"Bubble",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Dynamic-Punch",
+				"Rapid-Spin",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Rock-Smash",
+				"Whirlpool",
+				"Hail",
+				"Facade",
+				"Focus-Punch",
+				"Brick-Break",
+				"Secret-Power",
+				"Dive",
+				"Rock-Tomb",
+				"Iron-Defense",
+				"Water-Pulse",
+				"Gyro-Ball",
+				"Brine",
+				"Natural-Gift",
+				"Fling",
+				"Aqua-Tail",
+				"Dragon-Pulse",
+				"Zen-Headbutt",
+				"Captivate",
+				"Round",
+				"Scald",
+				"Water-Pledge",
+				"Work-Up",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Wartortle Pokemon Class
+	//Wartortle PokemonInstance Class
 	#region Wartortle
-	public class Wartortle : Pokemon
+	public class WartortleInstance : PokemonInstance
 	{
-		#region Wartortle Builders
+		#region Wartortle Constructors
 		/// <summary>
-		/// Wartortle Builder waiting for a Nickname & a Level
+		/// Wartortle Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Wartortle(string nickname, int level)
+		public WartortleInstance(string nickname, int level)
 		: base(
 				8,
-				SpecieWartortle.Instance, // Pokemon Specie
+				SpeciesWartortle.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +149,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Wartortle Builder only waiting for a Level
 		/// </summary>
-		public Wartortle(int level)
+		public WartortleInstance(int level)
 		: base(
 				8,
-				SpecieWartortle.Instance, // Pokemon Specie
+				SpeciesWartortle.Instance, // PokemonInstance Species
 				"Wartortle", level,
 				Water.Instance			
 		)
@@ -73,12 +162,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Wartortle Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Wartortle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Wartortle() : base(
 			8,
-			SpecieWartortle.Instance, // Pokemon Specie
+			SpeciesWartortle.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

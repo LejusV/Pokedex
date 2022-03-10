@@ -23,7 +23,7 @@ namespace Pokedex
             TextWriter oldOut = Console.Out;
             try
             {
-                ostrm = new FileStream ("./Data/Output.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                ostrm = new FileStream ("./Data/Output.txt", FileMode.Create, FileAccess.Write);
                 writer = new StreamWriter (ostrm);
             }
             catch (Exception e)
@@ -54,7 +54,7 @@ namespace Pokedex
             Player Player1 = new(inputLines[lineIndex++], gender);
 
 
-            Console.WriteLine("What Pokemon do you want to start with ?\n" +
+            Console.WriteLine("What PokemonInstance do you want to start with ?\n" +
                                 "\t- Bulbasaur\n" +
                                 "\t- Charmander\n" +
                                 "\t- Squirtle\n");
@@ -74,21 +74,21 @@ namespace Pokedex
             {
                 case "Bulbasaur" :
                 {
-                    Player1.AddPokemon(new Bulbasaur( 50 ));
+                    Player1.AddPokemon(new BulbasaurInstance( 50 ));
                     break;
                 }
 
                 case "Charmander" :
                 {
-                    Player1.AddPokemon(new Charmander( 50 ));
+                    Player1.AddPokemon(new CharmanderInstance( 50 ));
                     break;
                 }
 
                 case "Squirtle" :
                 {
-                    Player1.AddPokemon(new Squirtle( 50 ));
-                    Player1.Pokemons[0].AddMove(moveWaterShuriken);
-                    Player1.Pokemons[0].AddMove(moveTackle);
+                    Player1.AddPokemon(new SquirtleInstance( 50 ));
+                    Player1.Pokemons[0].LearnMove(moveWaterShuriken);
+                    Player1.Pokemons[0].LearnMove(moveTackle);
                     break;
                 }
             }
@@ -101,7 +101,7 @@ namespace Pokedex
             Player1.Pokemons[0].Nickname = inputLines[lineIndex++];
 
 
-            foreach (Pokemon poke in Player1.Pokemons)
+            foreach (PokemonInstance poke in Player1.Pokemons)
             {
                 Console.WriteLine(poke.FullStatus);
                 Console.WriteLine(poke.Status);
@@ -111,7 +111,7 @@ namespace Pokedex
             Console.WriteLine(moveTackle.FullStatus);
 
             //Console.WriteLine(Wiki.Instance.ToString());
-            PlayerAI.Instance.Pokemons = new List<Pokemon>(){new MrRime(Player1.Pokemons[0].Level)};
+            PlayerAI.Instance.Pokemons = new List<PokemonInstance>(){new MrRimeInstance(Player1.Pokemons[0].Level)};
 
             Battle battle = new Battle(
                 Player1,
@@ -129,6 +129,7 @@ namespace Pokedex
             Console.SetOut (oldOut);
             writer.Close();
             ostrm.Close();
+            Console.WriteLine ($"{PokemonInstance.InstanceCount} Pokemons generated");
             Console.WriteLine ("Done");
         }
     }

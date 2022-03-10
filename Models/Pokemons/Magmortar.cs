@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Magmortar Specie to store common natural stats of all Magmortars
-	#region SpecieMagmortar
-	public class SpecieMagmortar : PokemonSpecie
+	//Magmortar Species to store common natural stats of all Magmortars
+	#region SpeciesMagmortar
+	public class SpeciesMagmortar : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieMagmortar? _instance = null;
+		private static SpeciesMagmortar? _instance = null;
 #nullable restore
-        public static SpecieMagmortar Instance
+        public static SpeciesMagmortar Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieMagmortar();
+                    _instance = new SpeciesMagmortar();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieMagmortar Builder
-		public SpecieMagmortar() : base(
+		#region SpeciesMagmortar Constructor
+		public SpeciesMagmortar() : base(
 			"Magmortar",
 			1.6,
 			68.0,
@@ -32,23 +34,101 @@ namespace Pokedex.Models.Pokemons
 			125, 95, // Special Attack & Defense
 			83		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Fire-Punch",
+				"Thunder-Punch",
+				"Headbutt",
+				"Leer",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Thunderbolt",
+				"Earthquake",
+				"Toxic",
+				"Psychic",
+				"Double-Team",
+				"Smokescreen",
+				"Confuse-Ray",
+				"Smog",
+				"Fire-Blast",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Protect",
+				"Feint-Attack",
+				"Mud-Slap",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Heat-Wave",
+				"Torment",
+				"Will-O-Wisp",
+				"Facade",
+				"Focus-Punch",
+				"Taunt",
+				"Helping-Hand",
+				"Brick-Break",
+				"Secret-Power",
+				"Overheat",
+				"Rock-Tomb",
+				"Covet",
+				"Natural-Gift",
+				"Fling",
+				"Focus-Blast",
+				"Giga-Impact",
+				"Rock-Climb",
+				"Lava-Plume",
+				"Captivate",
+				"Flame-Burst",
+				"Flame-Charge",
+				"Low-Sweep",
+				"Round",
+				"Clear-Smog",
+				"Incinerate",
+				"Bulldoze",
+				"Dual-Chop",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Magmortar Pokemon Class
+	//Magmortar PokemonInstance Class
 	#region Magmortar
-	public class Magmortar : Pokemon
+	public class MagmortarInstance : PokemonInstance
 	{
-		#region Magmortar Builders
+		#region Magmortar Constructors
 		/// <summary>
-		/// Magmortar Builder waiting for a Nickname & a Level
+		/// Magmortar Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Magmortar(string nickname, int level)
+		public MagmortarInstance(string nickname, int level)
 		: base(
 				467,
-				SpecieMagmortar.Instance, // Pokemon Specie
+				SpeciesMagmortar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +140,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Magmortar Builder only waiting for a Level
 		/// </summary>
-		public Magmortar(int level)
+		public MagmortarInstance(int level)
 		: base(
 				467,
-				SpecieMagmortar.Instance, // Pokemon Specie
+				SpeciesMagmortar.Instance, // PokemonInstance Species
 				"Magmortar", level,
 				Fire.Instance			
 		)
@@ -73,12 +153,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Magmortar Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Magmortar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Magmortar() : base(
 			467,
-			SpecieMagmortar.Instance, // Pokemon Specie
+			SpeciesMagmortar.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/

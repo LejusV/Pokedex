@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Lickitung Specie to store common natural stats of all Lickitungs
-	#region SpecieLickitung
-	public class SpecieLickitung : PokemonSpecie
+	//Lickitung Species to store common natural stats of all Lickitungs
+	#region SpeciesLickitung
+	public class SpeciesLickitung : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieLickitung? _instance = null;
+		private static SpeciesLickitung? _instance = null;
 #nullable restore
-        public static SpecieLickitung Instance
+        public static SpeciesLickitung Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieLickitung();
+                    _instance = new SpeciesLickitung();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieLickitung Builder
-		public SpecieLickitung() : base(
+		#region SpeciesLickitung Constructor
+		public SpeciesLickitung() : base(
 			"Lickitung",
 			1.2,
 			65.5,
@@ -32,23 +34,143 @@ namespace Pokedex.Models.Pokemons
 			60, 75, // Special Attack & Defense
 			30		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Mega-Punch",
+				"Fire-Punch",
+				"Ice-Punch",
+				"Thunder-Punch",
+				"Swords-Dance",
+				"Cut",
+				"Bind",
+				"Slam",
+				"Stomp",
+				"Mega-Kick",
+				"Headbutt",
+				"Body-Slam",
+				"Wrap",
+				"Take-Down",
+				"Thrash",
+				"Double-Edge",
+				"Supersonic",
+				"Disable",
+				"Flamethrower",
+				"Water-Gun",
+				"Surf",
+				"Ice-Beam",
+				"Blizzard",
+				"Bubble-Beam",
+				"Hyper-Beam",
+				"Submission",
+				"Counter",
+				"Seismic-Toss",
+				"Strength",
+				"Solar-Beam",
+				"Thunderbolt",
+				"Thunder",
+				"Earthquake",
+				"Fissure",
+				"Dig",
+				"Toxic",
+				"Rage",
+				"Mimic",
+				"Screech",
+				"Double-Team",
+				"Defense-Curl",
+				"Bide",
+				"Lick",
+				"Fire-Blast",
+				"Skull-Bash",
+				"Amnesia",
+				"Dream-Eater",
+				"Rest",
+				"Rock-Slide",
+				"Substitute",
+				"Thief",
+				"Nightmare",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Belly-Drum",
+				"Mud-Slap",
+				"Icy-Wind",
+				"Sandstorm",
+				"Endure",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Magnitude",
+				"Dynamic-Punch",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rain-Dance",
+				"Sunny-Day",
+				"Psych-Up",
+				"Shadow-Ball",
+				"Rock-Smash",
+				"Whirlpool",
+				"Facade",
+				"Focus-Punch",
+				"Smelling-Salts",
+				"Brick-Break",
+				"Knock-Off",
+				"Refresh",
+				"Secret-Power",
+				"Rock-Tomb",
+				"Muddy-Water",
+				"Shock-Wave",
+				"Water-Pulse",
+				"Hammer-Arm",
+				"Natural-Gift",
+				"Fling",
+				"Wring-Out",
+				"Me-First",
+				"Aqua-Tail",
+				"Giga-Impact",
+				"Zen-Headbutt",
+				"Rock-Climb",
+				"Power-Whip",
+				"Captivate",
+				"Round",
+				"Chip-Away",
+				"Incinerate",
+				"Retaliate",
+				"Bulldoze",
+				"Dragon-Tail",
+				"Work-Up",
+				"Belch",
+				"Confide",
+				"Power-Up-Punch",
+				"Brutal-Swing"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Lickitung Pokemon Class
+	//Lickitung PokemonInstance Class
 	#region Lickitung
-	public class Lickitung : Pokemon
+	public class LickitungInstance : PokemonInstance
 	{
-		#region Lickitung Builders
+		#region Lickitung Constructors
 		/// <summary>
-		/// Lickitung Builder waiting for a Nickname & a Level
+		/// Lickitung Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Lickitung(string nickname, int level)
+		public LickitungInstance(string nickname, int level)
 		: base(
 				108,
-				SpecieLickitung.Instance, // Pokemon Specie
+				SpeciesLickitung.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +182,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Lickitung Builder only waiting for a Level
 		/// </summary>
-		public Lickitung(int level)
+		public LickitungInstance(int level)
 		: base(
 				108,
-				SpecieLickitung.Instance, // Pokemon Specie
+				SpeciesLickitung.Instance, // PokemonInstance Species
 				"Lickitung", level,
 				Normal.Instance			
 		)
@@ -73,12 +195,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Lickitung Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Lickitung Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Lickitung() : base(
 			108,
-			SpecieLickitung.Instance, // Pokemon Specie
+			SpeciesLickitung.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

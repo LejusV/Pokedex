@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Whirlipede Specie to store common natural stats of all Whirlipedes
-	#region SpecieWhirlipede
-	public class SpecieWhirlipede : PokemonSpecie
+	//Whirlipede Species to store common natural stats of all Whirlipedes
+	#region SpeciesWhirlipede
+	public class SpeciesWhirlipede : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieWhirlipede? _instance = null;
+		private static SpeciesWhirlipede? _instance = null;
 #nullable restore
-        public static SpecieWhirlipede Instance
+        public static SpeciesWhirlipede Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieWhirlipede();
+                    _instance = new SpeciesWhirlipede();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieWhirlipede Builder
-		public SpecieWhirlipede() : base(
+		#region SpeciesWhirlipede Constructor
+		public SpeciesWhirlipede() : base(
 			"Whirlipede",
 			1.2,
 			58.5,
@@ -32,23 +34,75 @@ namespace Pokedex.Models.Pokemons
 			40, 79, // Special Attack & Defense
 			47		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Edge",
+				"Poison-Sting",
+				"Solar-Beam",
+				"Toxic",
+				"Agility",
+				"Screech",
+				"Double-Team",
+				"Defense-Curl",
+				"Rest",
+				"Substitute",
+				"Snore",
+				"Protect",
+				"Sludge-Bomb",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Pursuit",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Rock-Smash",
+				"Facade",
+				"Endeavor",
+				"Secret-Power",
+				"Signal-Beam",
+				"Iron-Defense",
+				"Poison-Tail",
+				"Gyro-Ball",
+				"Payback",
+				"Poison-Jab",
+				"Rock-Climb",
+				"Bug-Bite",
+				"Venoshock",
+				"Round",
+				"Struggle-Bug",
+				"Steamroller",
+				"Confide",
+				"Venom-Drench",
+				"Infestation"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Whirlipede Pokemon Class
+	//Whirlipede PokemonInstance Class
 	#region Whirlipede
-	public class Whirlipede : Pokemon
+	public class WhirlipedeInstance : PokemonInstance
 	{
-		#region Whirlipede Builders
+		#region Whirlipede Constructors
 		/// <summary>
-		/// Whirlipede Builder waiting for a Nickname & a Level
+		/// Whirlipede Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Whirlipede(string nickname, int level)
+		public WhirlipedeInstance(string nickname, int level)
 		: base(
 				544,
-				SpecieWhirlipede.Instance, // Pokemon Specie
+				SpeciesWhirlipede.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -60,10 +114,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Whirlipede Builder only waiting for a Level
 		/// </summary>
-		public Whirlipede(int level)
+		public WhirlipedeInstance(int level)
 		: base(
 				544,
-				SpecieWhirlipede.Instance, // Pokemon Specie
+				SpeciesWhirlipede.Instance, // PokemonInstance Species
 				"Whirlipede", level,
 				Bug.Instance, Poison.Instance			
 		)
@@ -73,12 +127,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Whirlipede Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Whirlipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Whirlipede() : base(
 			544,
-			SpecieWhirlipede.Instance, // Pokemon Specie
+			SpeciesWhirlipede.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}
 		*/

@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Drizzile Specie to store common natural stats of all Drizziles
-	#region SpecieDrizzile
-	public class SpecieDrizzile : PokemonSpecie
+	//Drizzile Species to store common natural stats of all Drizziles
+	#region SpeciesDrizzile
+	public class SpeciesDrizzile : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieDrizzile? _instance = null;
+		private static SpeciesDrizzile? _instance = null;
 #nullable restore
-        public static SpecieDrizzile Instance
+        public static SpeciesDrizzile Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieDrizzile();
+                    _instance = new SpeciesDrizzile();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieDrizzile Builder
-		public SpecieDrizzile() : base(
+		#region SpeciesDrizzile Constructor
+		public SpeciesDrizzile() : base(
 			"Drizzile",
 			0.7,
 			11.5,
@@ -32,23 +34,35 @@ namespace Pokedex.Models.Pokemons
 			95, 55, // Special Attack & Defense
 			90		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Drizzile Pokemon Class
+	//Drizzile PokemonInstance Class
 	#region Drizzile
-	public class Drizzile : Pokemon
+	public class DrizzileInstance : PokemonInstance
 	{
-		#region Drizzile Builders
+		#region Drizzile Constructors
 		/// <summary>
-		/// Drizzile Builder waiting for a Nickname & a Level
+		/// Drizzile Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Drizzile(string nickname, int level)
+		public DrizzileInstance(string nickname, int level)
 		: base(
 				817,
-				SpecieDrizzile.Instance, // Pokemon Specie
+				SpeciesDrizzile.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
 		)
@@ -60,10 +74,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Drizzile Builder only waiting for a Level
 		/// </summary>
-		public Drizzile(int level)
+		public DrizzileInstance(int level)
 		: base(
 				817,
-				SpecieDrizzile.Instance, // Pokemon Specie
+				SpeciesDrizzile.Instance, // PokemonInstance Species
 				"Drizzile", level,
 				Water.Instance			
 		)
@@ -73,12 +87,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Drizzile Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Drizzile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Drizzile() : base(
 			817,
-			SpecieDrizzile.Instance, // Pokemon Specie
+			SpeciesDrizzile.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}
 		*/

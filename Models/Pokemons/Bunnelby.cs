@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Bunnelby Specie to store common natural stats of all Bunnelbys
-	#region SpecieBunnelby
-	public class SpecieBunnelby : PokemonSpecie
+	//Bunnelby Species to store common natural stats of all Bunnelbys
+	#region SpeciesBunnelby
+	public class SpeciesBunnelby : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieBunnelby? _instance = null;
+		private static SpeciesBunnelby? _instance = null;
 #nullable restore
-        public static SpecieBunnelby Instance
+        public static SpeciesBunnelby Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieBunnelby();
+                    _instance = new SpeciesBunnelby();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieBunnelby Builder
-		public SpecieBunnelby() : base(
+		#region SpeciesBunnelby Constructor
+		public SpeciesBunnelby() : base(
 			"Bunnelby",
 			0.4,
 			5.0,
@@ -32,23 +34,96 @@ namespace Pokedex.Models.Pokemons
 			32, 36, // Special Attack & Defense
 			57		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Double-Slap",
+				"Cut",
+				"Double-Kick",
+				"Tackle",
+				"Take-Down",
+				"Leer",
+				"Surf",
+				"Strength",
+				"Earthquake",
+				"Dig",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Double-Team",
+				"Defense-Curl",
+				"Rest",
+				"Rock-Slide",
+				"Super-Fang",
+				"Substitute",
+				"Thief",
+				"Snore",
+				"Flail",
+				"Protect",
+				"Sludge-Bomb",
+				"Mud-Slap",
+				"Spikes",
+				"Sandstorm",
+				"Rollout",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Rock-Smash",
+				"Torment",
+				"Facade",
+				"Nature-Power",
+				"Recycle",
+				"Brick-Break",
+				"Endeavor",
+				"Secret-Power",
+				"Odor-Sleuth",
+				"Rock-Tomb",
+				"Bulk-Up",
+				"Bounce",
+				"Mud-Shot",
+				"U-Turn",
+				"Payback",
+				"Fling",
+				"Last-Resort",
+				"Iron-Head",
+				"Stone-Edge",
+				"Grass-Knot",
+				"Smack-Down",
+				"Round",
+				"Bulldoze",
+				"Work-Up",
+				"Wild-Charge",
+				"Confide",
+				"Power-Up-Punch"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Bunnelby Pokemon Class
+	//Bunnelby PokemonInstance Class
 	#region Bunnelby
-	public class Bunnelby : Pokemon
+	public class BunnelbyInstance : PokemonInstance
 	{
-		#region Bunnelby Builders
+		#region Bunnelby Constructors
 		/// <summary>
-		/// Bunnelby Builder waiting for a Nickname & a Level
+		/// Bunnelby Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Bunnelby(string nickname, int level)
+		public BunnelbyInstance(string nickname, int level)
 		: base(
 				659,
-				SpecieBunnelby.Instance, // Pokemon Specie
+				SpeciesBunnelby.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
 		)
@@ -60,10 +135,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Bunnelby Builder only waiting for a Level
 		/// </summary>
-		public Bunnelby(int level)
+		public BunnelbyInstance(int level)
 		: base(
 				659,
-				SpecieBunnelby.Instance, // Pokemon Specie
+				SpeciesBunnelby.Instance, // PokemonInstance Species
 				"Bunnelby", level,
 				Normal.Instance			
 		)
@@ -73,12 +148,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Bunnelby Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Bunnelby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Bunnelby() : base(
 			659,
-			SpecieBunnelby.Instance, // Pokemon Specie
+			SpeciesBunnelby.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}
 		*/

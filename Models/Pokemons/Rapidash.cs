@@ -1,29 +1,31 @@
+using System.Collections.Generic;
 using Pokedex.Models;
-using Pokedex.Models.PokemonTypes;
+using Pokedex.Models.PokeTypes;
+using Pokedex.Models.Moves;
 
 namespace Pokedex.Models.Pokemons
 {
-	//Rapidash Specie to store common natural stats of all Rapidashs
-	#region SpecieRapidash
-	public class SpecieRapidash : PokemonSpecie
+	//Rapidash Species to store common natural stats of all Rapidashs
+	#region SpeciesRapidash
+	public class SpeciesRapidash : PokemonSpecies
 	{
 #nullable enable
-		private static SpecieRapidash? _instance = null;
+		private static SpeciesRapidash? _instance = null;
 #nullable restore
-        public static SpecieRapidash Instance
+        public static SpeciesRapidash Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SpecieRapidash();
+                    _instance = new SpeciesRapidash();
                 }
                 return _instance;
             }
         }
 
-		#region SpecieRapidash Builder
-		public SpecieRapidash() : base(
+		#region SpeciesRapidash Constructor
+		public SpeciesRapidash() : base(
 			"Rapidash",
 			1.7,
 			95.0,
@@ -32,23 +34,98 @@ namespace Pokedex.Models.Pokemons
 			80, 80, // Special Attack & Defense
 			105		
 		)
-		{}
+		{
+			InitMovesList();
+		}
+		#endregion
+
+		#region Methods
+		private void InitMovesList()
+		{
+			_moveList = new List<string>()
+			{
+				"Stomp",
+				"Headbutt",
+				"Fury-Attack",
+				"Horn-Drill",
+				"Tackle",
+				"Body-Slam",
+				"Take-Down",
+				"Double-Edge",
+				"Tail-Whip",
+				"Growl",
+				"Ember",
+				"Flamethrower",
+				"Hyper-Beam",
+				"Low-Kick",
+				"Strength",
+				"Solar-Beam",
+				"Fire-Spin",
+				"Toxic",
+				"Agility",
+				"Quick-Attack",
+				"Rage",
+				"Mimic",
+				"Double-Team",
+				"Reflect",
+				"Bide",
+				"Fire-Blast",
+				"Swift",
+				"Skull-Bash",
+				"Rest",
+				"Substitute",
+				"Flame-Wheel",
+				"Snore",
+				"Curse",
+				"Protect",
+				"Endure",
+				"Swagger",
+				"Attract",
+				"Sleep-Talk",
+				"Return",
+				"Frustration",
+				"Megahorn",
+				"Iron-Tail",
+				"Hidden-Power",
+				"Sunny-Day",
+				"Heat-Wave",
+				"Will-O-Wisp",
+				"Facade",
+				"Secret-Power",
+				"Overheat",
+				"Bounce",
+				"Natural-Gift",
+				"Flare-Blitz",
+				"Poison-Jab",
+				"Giga-Impact",
+				"Captivate",
+				"Flame-Charge",
+				"Round",
+				"Echoed-Voice",
+				"Incinerate",
+				"Inferno",
+				"Wild-Charge",
+				"Drill-Run",
+				"Confide",
+				"Smart-Strike"
+			};
+		}
 		#endregion
 	}
 	#endregion
 
-	//Rapidash Pokemon Class
+	//Rapidash PokemonInstance Class
 	#region Rapidash
-	public class Rapidash : Pokemon
+	public class RapidashInstance : PokemonInstance
 	{
-		#region Rapidash Builders
+		#region Rapidash Constructors
 		/// <summary>
-		/// Rapidash Builder waiting for a Nickname & a Level
+		/// Rapidash Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public Rapidash(string nickname, int level)
+		public RapidashInstance(string nickname, int level)
 		: base(
 				78,
-				SpecieRapidash.Instance, // Pokemon Specie
+				SpeciesRapidash.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
 		)
@@ -60,10 +137,10 @@ namespace Pokedex.Models.Pokemons
 		/// <summary>
 		/// Rapidash Builder only waiting for a Level
 		/// </summary>
-		public Rapidash(int level)
+		public RapidashInstance(int level)
 		: base(
 				78,
-				SpecieRapidash.Instance, // Pokemon Specie
+				SpeciesRapidash.Instance, // PokemonInstance Species
 				"Rapidash", level,
 				Fire.Instance			
 		)
@@ -73,12 +150,12 @@ namespace Pokedex.Models.Pokemons
 		}
 
 		/// <summary>
-		/// Rapidash Builder waiting for no params (Building a Wiki Pokemon without personal stats nor any level)
+		/// Rapidash Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
 		public Rapidash() : base(
 			78,
-			SpecieRapidash.Instance, // Pokemon Specie
+			SpeciesRapidash.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}
 		*/
