@@ -294,9 +294,27 @@ namespace Pokedex.Models
 
                     output.AppendLine($"  Learned Moves :");
 
-
-                    output.Append($"    ({this._moves[0].PokeType.Name}) {this._moves[0].Name}");
-                    output.AppendLine($"    ({this._moves[1].PokeType.Name}) {this._moves[1].Name}");
+                    output.AppendLine($"    ┌-------------------------┬-------------------------┐");
+                    if (_moves[0] != null)
+                        output.Append($"    | {$"({this._moves[0].PokeType.Name}) {this._moves[0].Name}", -23} |");
+                    else
+                        output.Append($"    |       Empty  slot       |");
+                    if (_moves[1] != null)
+                        output.AppendLine($" {$"({this._moves[1].PokeType.Name}) {this._moves[2].Name}", -23} |");
+                    else
+                    {
+                        output.AppendLine($"       Empty  slot       |");
+                    }
+                    output.AppendLine($"    ├-------------------------┼-------------------------┤");
+                    if (_moves[2] != null)
+                        output.Append($"    | {$"({this._moves[2].PokeType.Name}) {this._moves[2].Name}", -23} |");
+                    else
+                        output.Append($"    |       Empty  slot       |");
+                    if (_moves[3] != null)
+                        output.AppendLine($" {$"({this._moves[3].PokeType.Name}) {this._moves[3].Name}", -23} |");
+                    else
+                        output.AppendLine($"       Empty  slot       |");
+                    output.AppendLine($"    └-------------------------┴-------------------------┘");
 
                     output.AppendLine("");
 

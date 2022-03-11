@@ -1,0 +1,75 @@
+Choose you gender (F, M or O) : M
+Choose your Trainer name : Me
+What PokemonInstance do you want to start with ?
+	- Bulbasaur
+	- Charmander
+	- Squirtle
+
+squirtle
+Squirtle joined your team !
+
+
+How should it be called ? Oui
+Oui
+  Squirtle Lvl.50
+
+  Specie Attributes :
+
+    Morphology :
+      Height   0,5m
+      Weight   9,0kg
+
+    Stats : 
+      HP      44  SPEED   43
+      ATK     48  DEF     65
+      SP_ATK  50  SP_DEF  64
+
+  Actual Status :
+            51 /  51 HP     
+      ATK     60  DEF     71
+      SP_ATK  60  SP_DEF  75
+            SPEED   61      
+
+  Learned Moves :
+    ┌-------------------------┬-------------------------┐
+    | (Normal) Tackle         |       Empty  slot       |
+    ├-------------------------┼-------------------------┤
+    |       Empty  slot       |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+┌------------------┐
+| Oui              |
+| LvL 50           |
+|                  |
+|    51 /  51 HP   |
+└------------------┘
+
+Water-Shuriken  
+┌--------------┬--------------------┐
+| Type:  Water | Category: Special  |
+| Power:    15 | Accuracy: 100%     |
+| PP:    20/20 | Priority: +1       |
+└--------------┴--------------------┘
+
+Tackle          
+┌--------------┬--------------------┐
+| Type: Normal | Category: Physical |
+| Power:    40 | Accuracy: 100%     |
+| PP:    35/35 | Priority: 0        |
+└--------------┴--------------------┘
+
+A new battle is about to happen !
+						┌------------------┐
+						| Mr-Rime          |
+						| LvL50            |
+						|                  |
+						|    88 /  88 HP   |
+						└------------------┘
+┌------------------┐
+|              Oui |
+|           LvL50  |
+|                  |
+|    51 /  51 HP   |
+└------------------┘
+

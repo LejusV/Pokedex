@@ -63,6 +63,7 @@ namespace Pokedex
 
             Move moveWaterShuriken = new MoveWaterShuriken();
             Move moveTackle = new MoveTackle();
+            Move moveAvalanche = new MoveAvalanche();
 
             switch (
                 new CultureInfo("en")
@@ -87,8 +88,9 @@ namespace Pokedex
                 case "Squirtle" :
                 {
                     Player1.AddPokemon(new SquirtleInstance( 50 ));
-                    Player1.Pokemons[0].LearnMove(moveWaterShuriken);
+                    Player1.Pokemons[0].LearnMove(moveWaterShuriken, 1);
                     Player1.Pokemons[0].LearnMove(moveTackle);
+                    Player1.Pokemons[0].LearnMove(moveAvalanche, 3);
                     break;
                 }
             }
