@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGumshoos Constructor
 		public SpeciesGumshoos() : base(
+			735,
 			"Gumshoos",
 			0.7,
 			14.2,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GumshoosInstance(string nickname, int level)
 		: base(
-				735,
 				SpeciesGumshoos.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GumshoosInstance(int level)
 		: base(
-				735,
 				SpeciesGumshoos.Instance, // PokemonInstance Species
 				"Gumshoos", level,
 				Normal.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gumshoos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gumshoos() : base(
-			735,
+		public GumshoosInstance() : base(
 			SpeciesGumshoos.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

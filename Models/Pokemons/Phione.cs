@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPhione Constructor
 		public SpeciesPhione() : base(
+			489,
 			"Phione",
 			0.4,
 			3.1,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhioneInstance(string nickname, int level)
 		: base(
-				489,
 				SpeciesPhione.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhioneInstance(int level)
 		: base(
-				489,
 				SpeciesPhione.Instance, // PokemonInstance Species
 				"Phione", level,
 				Water.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Phione Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Phione() : base(
-			489,
+		public PhioneInstance() : base(
 			SpeciesPhione.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

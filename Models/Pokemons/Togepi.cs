@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTogepi Constructor
 		public SpeciesTogepi() : base(
+			175,
 			"Togepi",
 			0.3,
 			1.5,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogepiInstance(string nickname, int level)
 		: base(
-				175,
 				SpeciesTogepi.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogepiInstance(int level)
 		: base(
-				175,
 				SpeciesTogepi.Instance, // PokemonInstance Species
 				"Togepi", level,
 				Fairy.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Togepi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Togepi() : base(
-			175,
+		public TogepiInstance() : base(
 			SpeciesTogepi.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

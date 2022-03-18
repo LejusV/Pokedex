@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEspurr Constructor
 		public SpeciesEspurr() : base(
+			677,
 			"Espurr",
 			0.3,
 			3.5,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EspurrInstance(string nickname, int level)
 		: base(
-				677,
 				SpeciesEspurr.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EspurrInstance(int level)
 		: base(
-				677,
 				SpeciesEspurr.Instance, // PokemonInstance Species
 				"Espurr", level,
 				Psychic.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Espurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Espurr() : base(
-			677,
+		public EspurrInstance() : base(
 			SpeciesEspurr.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

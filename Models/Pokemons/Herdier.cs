@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHerdier Constructor
 		public SpeciesHerdier() : base(
+			507,
 			"Herdier",
 			0.9,
 			14.7,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HerdierInstance(string nickname, int level)
 		: base(
-				507,
 				SpeciesHerdier.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HerdierInstance(int level)
 		: base(
-				507,
 				SpeciesHerdier.Instance, // PokemonInstance Species
 				"Herdier", level,
 				Normal.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Herdier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Herdier() : base(
-			507,
+		public HerdierInstance() : base(
 			SpeciesHerdier.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

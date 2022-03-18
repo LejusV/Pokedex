@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegidrago Constructor
 		public SpeciesRegidrago() : base(
+			895,
 			"Regidrago",
 			2.1,
 			200.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegidragoInstance(string nickname, int level)
 		: base(
-				895,
 				SpeciesRegidrago.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegidragoInstance(int level)
 		: base(
-				895,
 				SpeciesRegidrago.Instance, // PokemonInstance Species
 				"Regidrago", level,
 				Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Regidrago Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Regidrago() : base(
-			895,
+		public RegidragoInstance() : base(
 			SpeciesRegidrago.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBunnelby Constructor
 		public SpeciesBunnelby() : base(
+			659,
 			"Bunnelby",
 			0.4,
 			5.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BunnelbyInstance(string nickname, int level)
 		: base(
-				659,
 				SpeciesBunnelby.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BunnelbyInstance(int level)
 		: base(
-				659,
 				SpeciesBunnelby.Instance, // PokemonInstance Species
 				"Bunnelby", level,
 				Normal.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bunnelby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bunnelby() : base(
-			659,
+		public BunnelbyInstance() : base(
 			SpeciesBunnelby.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

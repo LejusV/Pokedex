@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOnix Constructor
 		public SpeciesOnix() : base(
+			95,
 			"Onix",
 			8.8,
 			210.0,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OnixInstance(string nickname, int level)
 		: base(
-				95,
 				SpeciesOnix.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OnixInstance(int level)
 		: base(
-				95,
 				SpeciesOnix.Instance, // PokemonInstance Species
 				"Onix", level,
 				Rock.Instance, Ground.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Onix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Onix() : base(
-			95,
+		public OnixInstance() : base(
 			SpeciesOnix.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

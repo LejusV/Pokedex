@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEkans Constructor
 		public SpeciesEkans() : base(
+			23,
 			"Ekans",
 			2.0,
 			6.9,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EkansInstance(string nickname, int level)
 		: base(
-				23,
 				SpeciesEkans.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EkansInstance(int level)
 		: base(
-				23,
 				SpeciesEkans.Instance, // PokemonInstance Species
 				"Ekans", level,
 				Poison.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ekans Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ekans() : base(
-			23,
+		public EkansInstance() : base(
 			SpeciesEkans.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

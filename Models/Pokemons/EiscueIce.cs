@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEiscue-Ice Constructor
 		public SpeciesEiscueIce() : base(
+			875,
 			"Eiscue-Ice",
 			1.4,
 			89.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EiscueIceInstance(string nickname, int level)
 		: base(
-				875,
 				SpeciesEiscueIce.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EiscueIceInstance(int level)
 		: base(
-				875,
 				SpeciesEiscueIce.Instance, // PokemonInstance Species
 				"Eiscue-Ice", level,
 				Ice.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eiscue-Ice Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public EiscueIce() : base(
-			875,
+		public EiscueIceInstance() : base(
 			SpeciesEiscueIce.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

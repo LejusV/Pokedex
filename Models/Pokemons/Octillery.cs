@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOctillery Constructor
 		public SpeciesOctillery() : base(
+			224,
 			"Octillery",
 			0.9,
 			28.5,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OctilleryInstance(string nickname, int level)
 		: base(
-				224,
 				SpeciesOctillery.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OctilleryInstance(int level)
 		: base(
-				224,
 				SpeciesOctillery.Instance, // PokemonInstance Species
 				"Octillery", level,
 				Water.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Octillery Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Octillery() : base(
-			224,
+		public OctilleryInstance() : base(
 			SpeciesOctillery.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

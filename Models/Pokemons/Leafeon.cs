@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLeafeon Constructor
 		public SpeciesLeafeon() : base(
+			470,
 			"Leafeon",
 			1.0,
 			25.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LeafeonInstance(string nickname, int level)
 		: base(
-				470,
 				SpeciesLeafeon.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LeafeonInstance(int level)
 		: base(
-				470,
 				SpeciesLeafeon.Instance, // PokemonInstance Species
 				"Leafeon", level,
 				Grass.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Leafeon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Leafeon() : base(
-			470,
+		public LeafeonInstance() : base(
 			SpeciesLeafeon.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

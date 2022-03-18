@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesIncineroar Constructor
 		public SpeciesIncineroar() : base(
+			727,
 			"Incineroar",
 			1.8,
 			83.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IncineroarInstance(string nickname, int level)
 		: base(
-				727,
 				SpeciesIncineroar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Dark.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IncineroarInstance(int level)
 		: base(
-				727,
 				SpeciesIncineroar.Instance, // PokemonInstance Species
 				"Incineroar", level,
 				Fire.Instance, Dark.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Incineroar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Incineroar() : base(
-			727,
+		public IncineroarInstance() : base(
 			SpeciesIncineroar.Instance, // PokemonInstance Species
 			Fire.Instance, Dark.Instance			
 		) {}

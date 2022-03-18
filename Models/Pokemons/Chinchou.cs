@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChinchou Constructor
 		public SpeciesChinchou() : base(
+			170,
 			"Chinchou",
 			0.5,
 			12.0,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChinchouInstance(string nickname, int level)
 		: base(
-				170,
 				SpeciesChinchou.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Electric.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChinchouInstance(int level)
 		: base(
-				170,
 				SpeciesChinchou.Instance, // PokemonInstance Species
 				"Chinchou", level,
 				Water.Instance, Electric.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chinchou Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chinchou() : base(
-			170,
+		public ChinchouInstance() : base(
 			SpeciesChinchou.Instance, // PokemonInstance Species
 			Water.Instance, Electric.Instance			
 		) {}

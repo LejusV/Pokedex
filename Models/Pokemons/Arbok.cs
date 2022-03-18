@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArbok Constructor
 		public SpeciesArbok() : base(
+			24,
 			"Arbok",
 			3.5,
 			65.0,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArbokInstance(string nickname, int level)
 		: base(
-				24,
 				SpeciesArbok.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArbokInstance(int level)
 		: base(
-				24,
 				SpeciesArbok.Instance, // PokemonInstance Species
 				"Arbok", level,
 				Poison.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arbok Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arbok() : base(
-			24,
+		public ArbokInstance() : base(
 			SpeciesArbok.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

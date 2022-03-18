@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPinsir Constructor
 		public SpeciesPinsir() : base(
+			127,
 			"Pinsir",
 			1.5,
 			55.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PinsirInstance(string nickname, int level)
 		: base(
-				127,
 				SpeciesPinsir.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PinsirInstance(int level)
 		: base(
-				127,
 				SpeciesPinsir.Instance, // PokemonInstance Species
 				"Pinsir", level,
 				Bug.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pinsir Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pinsir() : base(
-			127,
+		public PinsirInstance() : base(
 			SpeciesPinsir.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

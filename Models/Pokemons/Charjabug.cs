@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCharjabug Constructor
 		public SpeciesCharjabug() : base(
+			737,
 			"Charjabug",
 			0.5,
 			10.5,
@@ -95,7 +96,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharjabugInstance(string nickname, int level)
 		: base(
-				737,
 				SpeciesCharjabug.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
@@ -110,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharjabugInstance(int level)
 		: base(
-				737,
 				SpeciesCharjabug.Instance, // PokemonInstance Species
 				"Charjabug", level,
 				Bug.Instance, Electric.Instance			
@@ -124,8 +123,7 @@ namespace Pokedex.Models.Pokemons
 		/// Charjabug Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Charjabug() : base(
-			737,
+		public CharjabugInstance() : base(
 			SpeciesCharjabug.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}

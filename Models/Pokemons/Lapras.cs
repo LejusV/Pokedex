@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLapras Constructor
 		public SpeciesLapras() : base(
+			131,
 			"Lapras",
 			2.5,
 			220.0,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LaprasInstance(string nickname, int level)
 		: base(
-				131,
 				SpeciesLapras.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LaprasInstance(int level)
 		: base(
-				131,
 				SpeciesLapras.Instance, // PokemonInstance Species
 				"Lapras", level,
 				Water.Instance, Ice.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lapras Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lapras() : base(
-			131,
+		public LaprasInstance() : base(
 			SpeciesLapras.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMinun Constructor
 		public SpeciesMinun() : base(
+			312,
 			"Minun",
 			0.4,
 			4.2,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MinunInstance(string nickname, int level)
 		: base(
-				312,
 				SpeciesMinun.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MinunInstance(int level)
 		: base(
-				312,
 				SpeciesMinun.Instance, // PokemonInstance Species
 				"Minun", level,
 				Electric.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Minun Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Minun() : base(
-			312,
+		public MinunInstance() : base(
 			SpeciesMinun.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpheal Constructor
 		public SpeciesSpheal() : base(
+			363,
 			"Spheal",
 			0.8,
 			39.5,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SphealInstance(string nickname, int level)
 		: base(
-				363,
 				SpeciesSpheal.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SphealInstance(int level)
 		: base(
-				363,
 				SpeciesSpheal.Instance, // PokemonInstance Species
 				"Spheal", level,
 				Ice.Instance, Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spheal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spheal() : base(
-			363,
+		public SphealInstance() : base(
 			SpeciesSpheal.Instance, // PokemonInstance Species
 			Ice.Instance, Water.Instance			
 		) {}

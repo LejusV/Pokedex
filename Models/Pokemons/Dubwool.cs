@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDubwool Constructor
 		public SpeciesDubwool() : base(
+			832,
 			"Dubwool",
 			1.3,
 			43.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DubwoolInstance(string nickname, int level)
 		: base(
-				832,
 				SpeciesDubwool.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DubwoolInstance(int level)
 		: base(
-				832,
 				SpeciesDubwool.Instance, // PokemonInstance Species
 				"Dubwool", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dubwool Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dubwool() : base(
-			832,
+		public DubwoolInstance() : base(
 			SpeciesDubwool.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBurmy Constructor
 		public SpeciesBurmy() : base(
+			412,
 			"Burmy",
 			0.2,
 			3.4,
@@ -67,7 +68,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BurmyInstance(string nickname, int level)
 		: base(
-				412,
 				SpeciesBurmy.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -82,7 +82,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BurmyInstance(int level)
 		: base(
-				412,
 				SpeciesBurmy.Instance, // PokemonInstance Species
 				"Burmy", level,
 				Bug.Instance			
@@ -96,8 +95,7 @@ namespace Pokedex.Models.Pokemons
 		/// Burmy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Burmy() : base(
-			412,
+		public BurmyInstance() : base(
 			SpeciesBurmy.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

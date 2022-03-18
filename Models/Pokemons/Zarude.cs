@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZarude Constructor
 		public SpeciesZarude() : base(
+			893,
 			"Zarude",
 			1.8,
 			70.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZarudeInstance(string nickname, int level)
 		: base(
-				893,
 				SpeciesZarude.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZarudeInstance(int level)
 		: base(
-				893,
 				SpeciesZarude.Instance, // PokemonInstance Species
 				"Zarude", level,
 				Dark.Instance, Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zarude Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zarude() : base(
-			893,
+		public ZarudeInstance() : base(
 			SpeciesZarude.Instance, // PokemonInstance Species
 			Dark.Instance, Grass.Instance			
 		) {}

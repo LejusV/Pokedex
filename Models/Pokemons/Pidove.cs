@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPidove Constructor
 		public SpeciesPidove() : base(
+			519,
 			"Pidove",
 			0.3,
 			2.1,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidoveInstance(string nickname, int level)
 		: base(
-				519,
 				SpeciesPidove.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidoveInstance(int level)
 		: base(
-				519,
 				SpeciesPidove.Instance, // PokemonInstance Species
 				"Pidove", level,
 				Normal.Instance, Flying.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pidove Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pidove() : base(
-			519,
+		public PidoveInstance() : base(
 			SpeciesPidove.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDustox Constructor
 		public SpeciesDustox() : base(
+			269,
 			"Dustox",
 			1.2,
 			31.6,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DustoxInstance(string nickname, int level)
 		: base(
-				269,
 				SpeciesDustox.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DustoxInstance(int level)
 		: base(
-				269,
 				SpeciesDustox.Instance, // PokemonInstance Species
 				"Dustox", level,
 				Bug.Instance, Poison.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dustox Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dustox() : base(
-			269,
+		public DustoxInstance() : base(
 			SpeciesDustox.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

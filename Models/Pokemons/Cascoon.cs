@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCascoon Constructor
 		public SpeciesCascoon() : base(
+			268,
 			"Cascoon",
 			0.7,
 			11.5,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CascoonInstance(string nickname, int level)
 		: base(
-				268,
 				SpeciesCascoon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CascoonInstance(int level)
 		: base(
-				268,
 				SpeciesCascoon.Instance, // PokemonInstance Species
 				"Cascoon", level,
 				Bug.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cascoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cascoon() : base(
-			268,
+		public CascoonInstance() : base(
 			SpeciesCascoon.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBidoof Constructor
 		public SpeciesBidoof() : base(
+			399,
 			"Bidoof",
 			0.5,
 			20.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BidoofInstance(string nickname, int level)
 		: base(
-				399,
 				SpeciesBidoof.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BidoofInstance(int level)
 		: base(
-				399,
 				SpeciesBidoof.Instance, // PokemonInstance Species
 				"Bidoof", level,
 				Normal.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bidoof Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bidoof() : base(
-			399,
+		public BidoofInstance() : base(
 			SpeciesBidoof.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

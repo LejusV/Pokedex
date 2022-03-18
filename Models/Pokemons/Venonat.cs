@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVenonat Constructor
 		public SpeciesVenonat() : base(
+			48,
 			"Venonat",
 			1.0,
 			30.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenonatInstance(string nickname, int level)
 		: base(
-				48,
 				SpeciesVenonat.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenonatInstance(int level)
 		: base(
-				48,
 				SpeciesVenonat.Instance, // PokemonInstance Species
 				"Venonat", level,
 				Bug.Instance, Poison.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Venonat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Venonat() : base(
-			48,
+		public VenonatInstance() : base(
 			SpeciesVenonat.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKyogre Constructor
 		public SpeciesKyogre() : base(
+			382,
 			"Kyogre",
 			4.5,
 			352.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KyogreInstance(string nickname, int level)
 		: base(
-				382,
 				SpeciesKyogre.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KyogreInstance(int level)
 		: base(
-				382,
 				SpeciesKyogre.Instance, // PokemonInstance Species
 				"Kyogre", level,
 				Water.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kyogre Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kyogre() : base(
-			382,
+		public KyogreInstance() : base(
 			SpeciesKyogre.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

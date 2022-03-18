@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKricketune Constructor
 		public SpeciesKricketune() : base(
+			402,
 			"Kricketune",
 			1.0,
 			25.5,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KricketuneInstance(string nickname, int level)
 		: base(
-				402,
 				SpeciesKricketune.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KricketuneInstance(int level)
 		: base(
-				402,
 				SpeciesKricketune.Instance, // PokemonInstance Species
 				"Kricketune", level,
 				Bug.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kricketune Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kricketune() : base(
-			402,
+		public KricketuneInstance() : base(
 			SpeciesKricketune.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

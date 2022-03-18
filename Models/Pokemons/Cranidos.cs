@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCranidos Constructor
 		public SpeciesCranidos() : base(
+			408,
 			"Cranidos",
 			0.9,
 			31.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CranidosInstance(string nickname, int level)
 		: base(
-				408,
 				SpeciesCranidos.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CranidosInstance(int level)
 		: base(
-				408,
 				SpeciesCranidos.Instance, // PokemonInstance Species
 				"Cranidos", level,
 				Rock.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cranidos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cranidos() : base(
-			408,
+		public CranidosInstance() : base(
 			SpeciesCranidos.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

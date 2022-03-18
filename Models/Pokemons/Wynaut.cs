@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWynaut Constructor
 		public SpeciesWynaut() : base(
+			360,
 			"Wynaut",
 			0.6,
 			14.0,
@@ -67,7 +68,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WynautInstance(string nickname, int level)
 		: base(
-				360,
 				SpeciesWynaut.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -82,7 +82,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WynautInstance(int level)
 		: base(
-				360,
 				SpeciesWynaut.Instance, // PokemonInstance Species
 				"Wynaut", level,
 				Psychic.Instance			
@@ -96,8 +95,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wynaut Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wynaut() : base(
-			360,
+		public WynautInstance() : base(
 			SpeciesWynaut.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

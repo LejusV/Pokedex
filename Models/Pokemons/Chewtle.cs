@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChewtle Constructor
 		public SpeciesChewtle() : base(
+			833,
 			"Chewtle",
 			0.3,
 			8.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChewtleInstance(string nickname, int level)
 		: base(
-				833,
 				SpeciesChewtle.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChewtleInstance(int level)
 		: base(
-				833,
 				SpeciesChewtle.Instance, // PokemonInstance Species
 				"Chewtle", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chewtle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chewtle() : base(
-			833,
+		public ChewtleInstance() : base(
 			SpeciesChewtle.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

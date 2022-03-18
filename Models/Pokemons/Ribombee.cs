@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRibombee Constructor
 		public SpeciesRibombee() : base(
+			743,
 			"Ribombee",
 			0.2,
 			0.5,
@@ -104,7 +105,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RibombeeInstance(string nickname, int level)
 		: base(
-				743,
 				SpeciesRibombee.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fairy.Instance			
@@ -119,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RibombeeInstance(int level)
 		: base(
-				743,
 				SpeciesRibombee.Instance, // PokemonInstance Species
 				"Ribombee", level,
 				Bug.Instance, Fairy.Instance			
@@ -133,8 +132,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ribombee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ribombee() : base(
-			743,
+		public RibombeeInstance() : base(
 			SpeciesRibombee.Instance, // PokemonInstance Species
 			Bug.Instance, Fairy.Instance			
 		) {}

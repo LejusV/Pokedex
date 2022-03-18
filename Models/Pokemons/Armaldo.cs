@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArmaldo Constructor
 		public SpeciesArmaldo() : base(
+			348,
 			"Armaldo",
 			1.5,
 			68.2,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArmaldoInstance(string nickname, int level)
 		: base(
-				348,
 				SpeciesArmaldo.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Bug.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArmaldoInstance(int level)
 		: base(
-				348,
 				SpeciesArmaldo.Instance, // PokemonInstance Species
 				"Armaldo", level,
 				Rock.Instance, Bug.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Armaldo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Armaldo() : base(
-			348,
+		public ArmaldoInstance() : base(
 			SpeciesArmaldo.Instance, // PokemonInstance Species
 			Rock.Instance, Bug.Instance			
 		) {}

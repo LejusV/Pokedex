@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlareon Constructor
 		public SpeciesFlareon() : base(
+			136,
 			"Flareon",
 			0.9,
 			25.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlareonInstance(string nickname, int level)
 		: base(
-				136,
 				SpeciesFlareon.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlareonInstance(int level)
 		: base(
-				136,
 				SpeciesFlareon.Instance, // PokemonInstance Species
 				"Flareon", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Flareon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Flareon() : base(
-			136,
+		public FlareonInstance() : base(
 			SpeciesFlareon.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

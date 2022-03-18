@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMienshao Constructor
 		public SpeciesMienshao() : base(
+			620,
 			"Mienshao",
 			1.4,
 			35.5,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MienshaoInstance(string nickname, int level)
 		: base(
-				620,
 				SpeciesMienshao.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MienshaoInstance(int level)
 		: base(
-				620,
 				SpeciesMienshao.Instance, // PokemonInstance Species
 				"Mienshao", level,
 				Fighting.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mienshao Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mienshao() : base(
-			620,
+		public MienshaoInstance() : base(
 			SpeciesMienshao.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

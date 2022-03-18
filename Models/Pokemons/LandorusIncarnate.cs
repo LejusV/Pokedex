@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLandorus-Incarnate Constructor
 		public SpeciesLandorusIncarnate() : base(
+			645,
 			"Landorus-Incarnate",
 			1.5,
 			68.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LandorusIncarnateInstance(string nickname, int level)
 		: base(
-				645,
 				SpeciesLandorusIncarnate.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LandorusIncarnateInstance(int level)
 		: base(
-				645,
 				SpeciesLandorusIncarnate.Instance, // PokemonInstance Species
 				"Landorus-Incarnate", level,
 				Ground.Instance, Flying.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Landorus-Incarnate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public LandorusIncarnate() : base(
-			645,
+		public LandorusIncarnateInstance() : base(
 			SpeciesLandorusIncarnate.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}

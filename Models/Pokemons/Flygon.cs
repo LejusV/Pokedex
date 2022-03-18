@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlygon Constructor
 		public SpeciesFlygon() : base(
+			330,
 			"Flygon",
 			2.0,
 			82.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlygonInstance(string nickname, int level)
 		: base(
-				330,
 				SpeciesFlygon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dragon.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlygonInstance(int level)
 		: base(
-				330,
 				SpeciesFlygon.Instance, // PokemonInstance Species
 				"Flygon", level,
 				Ground.Instance, Dragon.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Flygon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Flygon() : base(
-			330,
+		public FlygonInstance() : base(
 			SpeciesFlygon.Instance, // PokemonInstance Species
 			Ground.Instance, Dragon.Instance			
 		) {}

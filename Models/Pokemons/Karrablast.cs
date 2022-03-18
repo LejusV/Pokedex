@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKarrablast Constructor
 		public SpeciesKarrablast() : base(
+			588,
 			"Karrablast",
 			0.5,
 			5.9,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KarrablastInstance(string nickname, int level)
 		: base(
-				588,
 				SpeciesKarrablast.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KarrablastInstance(int level)
 		: base(
-				588,
 				SpeciesKarrablast.Instance, // PokemonInstance Species
 				"Karrablast", level,
 				Bug.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Karrablast Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Karrablast() : base(
-			588,
+		public KarrablastInstance() : base(
 			SpeciesKarrablast.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

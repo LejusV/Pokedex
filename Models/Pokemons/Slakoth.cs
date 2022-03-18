@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlakoth Constructor
 		public SpeciesSlakoth() : base(
+			287,
 			"Slakoth",
 			0.8,
 			24.0,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlakothInstance(string nickname, int level)
 		: base(
-				287,
 				SpeciesSlakoth.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlakothInstance(int level)
 		: base(
-				287,
 				SpeciesSlakoth.Instance, // PokemonInstance Species
 				"Slakoth", level,
 				Normal.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slakoth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slakoth() : base(
-			287,
+		public SlakothInstance() : base(
 			SpeciesSlakoth.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

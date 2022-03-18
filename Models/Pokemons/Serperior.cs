@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSerperior Constructor
 		public SpeciesSerperior() : base(
+			497,
 			"Serperior",
 			3.3,
 			63.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SerperiorInstance(string nickname, int level)
 		: base(
-				497,
 				SpeciesSerperior.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SerperiorInstance(int level)
 		: base(
-				497,
 				SpeciesSerperior.Instance, // PokemonInstance Species
 				"Serperior", level,
 				Grass.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Serperior Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Serperior() : base(
-			497,
+		public SerperiorInstance() : base(
 			SpeciesSerperior.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

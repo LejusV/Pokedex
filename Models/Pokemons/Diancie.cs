@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDiancie Constructor
 		public SpeciesDiancie() : base(
+			719,
 			"Diancie",
 			0.7,
 			8.8,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiancieInstance(string nickname, int level)
 		: base(
-				719,
 				SpeciesDiancie.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fairy.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiancieInstance(int level)
 		: base(
-				719,
 				SpeciesDiancie.Instance, // PokemonInstance Species
 				"Diancie", level,
 				Rock.Instance, Fairy.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Diancie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Diancie() : base(
-			719,
+		public DiancieInstance() : base(
 			SpeciesDiancie.Instance, // PokemonInstance Species
 			Rock.Instance, Fairy.Instance			
 		) {}

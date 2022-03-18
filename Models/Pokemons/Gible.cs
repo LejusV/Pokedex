@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGible Constructor
 		public SpeciesGible() : base(
+			443,
 			"Gible",
 			0.7,
 			20.5,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GibleInstance(string nickname, int level)
 		: base(
-				443,
 				SpeciesGible.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GibleInstance(int level)
 		: base(
-				443,
 				SpeciesGible.Instance, // PokemonInstance Species
 				"Gible", level,
 				Dragon.Instance, Ground.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gible Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gible() : base(
-			443,
+		public GibleInstance() : base(
 			SpeciesGible.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}

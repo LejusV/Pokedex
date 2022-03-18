@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChesnaught Constructor
 		public SpeciesChesnaught() : base(
+			652,
 			"Chesnaught",
 			1.6,
 			90.0,
@@ -151,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChesnaughtInstance(string nickname, int level)
 		: base(
-				652,
 				SpeciesChesnaught.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fighting.Instance			
@@ -166,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChesnaughtInstance(int level)
 		: base(
-				652,
 				SpeciesChesnaught.Instance, // PokemonInstance Species
 				"Chesnaught", level,
 				Grass.Instance, Fighting.Instance			
@@ -180,8 +179,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chesnaught Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chesnaught() : base(
-			652,
+		public ChesnaughtInstance() : base(
 			SpeciesChesnaught.Instance, // PokemonInstance Species
 			Grass.Instance, Fighting.Instance			
 		) {}

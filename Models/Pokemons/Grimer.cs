@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrimer Constructor
 		public SpeciesGrimer() : base(
+			88,
 			"Grimer",
 			0.9,
 			30.0,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrimerInstance(string nickname, int level)
 		: base(
-				88,
 				SpeciesGrimer.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrimerInstance(int level)
 		: base(
-				88,
 				SpeciesGrimer.Instance, // PokemonInstance Species
 				"Grimer", level,
 				Poison.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grimer Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grimer() : base(
-			88,
+		public GrimerInstance() : base(
 			SpeciesGrimer.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTepig Constructor
 		public SpeciesTepig() : base(
+			498,
 			"Tepig",
 			0.5,
 			9.9,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TepigInstance(string nickname, int level)
 		: base(
-				498,
 				SpeciesTepig.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TepigInstance(int level)
 		: base(
-				498,
 				SpeciesTepig.Instance, // PokemonInstance Species
 				"Tepig", level,
 				Fire.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tepig Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tepig() : base(
-			498,
+		public TepigInstance() : base(
 			SpeciesTepig.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

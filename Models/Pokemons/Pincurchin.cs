@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPincurchin Constructor
 		public SpeciesPincurchin() : base(
+			871,
 			"Pincurchin",
 			0.3,
 			1.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PincurchinInstance(string nickname, int level)
 		: base(
-				871,
 				SpeciesPincurchin.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PincurchinInstance(int level)
 		: base(
-				871,
 				SpeciesPincurchin.Instance, // PokemonInstance Species
 				"Pincurchin", level,
 				Electric.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pincurchin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pincurchin() : base(
-			871,
+		public PincurchinInstance() : base(
 			SpeciesPincurchin.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

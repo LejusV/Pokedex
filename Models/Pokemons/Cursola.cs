@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCursola Constructor
 		public SpeciesCursola() : base(
+			864,
 			"Cursola",
 			1.0,
 			0.4,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CursolaInstance(string nickname, int level)
 		: base(
-				864,
 				SpeciesCursola.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CursolaInstance(int level)
 		: base(
-				864,
 				SpeciesCursola.Instance, // PokemonInstance Species
 				"Cursola", level,
 				Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cursola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cursola() : base(
-			864,
+		public CursolaInstance() : base(
 			SpeciesCursola.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

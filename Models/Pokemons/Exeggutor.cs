@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesExeggutor Constructor
 		public SpeciesExeggutor() : base(
+			103,
 			"Exeggutor",
 			2.0,
 			120.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExeggutorInstance(string nickname, int level)
 		: base(
-				103,
 				SpeciesExeggutor.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Psychic.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExeggutorInstance(int level)
 		: base(
-				103,
 				SpeciesExeggutor.Instance, // PokemonInstance Species
 				"Exeggutor", level,
 				Grass.Instance, Psychic.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Exeggutor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Exeggutor() : base(
-			103,
+		public ExeggutorInstance() : base(
 			SpeciesExeggutor.Instance, // PokemonInstance Species
 			Grass.Instance, Psychic.Instance			
 		) {}

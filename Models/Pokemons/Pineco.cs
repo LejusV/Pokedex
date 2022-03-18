@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPineco Constructor
 		public SpeciesPineco() : base(
+			204,
 			"Pineco",
 			0.6,
 			7.2,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PinecoInstance(string nickname, int level)
 		: base(
-				204,
 				SpeciesPineco.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PinecoInstance(int level)
 		: base(
-				204,
 				SpeciesPineco.Instance, // PokemonInstance Species
 				"Pineco", level,
 				Bug.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pineco Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pineco() : base(
-			204,
+		public PinecoInstance() : base(
 			SpeciesPineco.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

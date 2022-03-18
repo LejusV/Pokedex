@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCrustle Constructor
 		public SpeciesCrustle() : base(
+			558,
 			"Crustle",
 			1.4,
 			200.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrustleInstance(string nickname, int level)
 		: base(
-				558,
 				SpeciesCrustle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Rock.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrustleInstance(int level)
 		: base(
-				558,
 				SpeciesCrustle.Instance, // PokemonInstance Species
 				"Crustle", level,
 				Bug.Instance, Rock.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Crustle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Crustle() : base(
-			558,
+		public CrustleInstance() : base(
 			SpeciesCrustle.Instance, // PokemonInstance Species
 			Bug.Instance, Rock.Instance			
 		) {}

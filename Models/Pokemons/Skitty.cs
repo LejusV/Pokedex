@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkitty Constructor
 		public SpeciesSkitty() : base(
+			300,
 			"Skitty",
 			0.6,
 			11.0,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkittyInstance(string nickname, int level)
 		: base(
-				300,
 				SpeciesSkitty.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkittyInstance(int level)
 		: base(
-				300,
 				SpeciesSkitty.Instance, // PokemonInstance Species
 				"Skitty", level,
 				Normal.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skitty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skitty() : base(
-			300,
+		public SkittyInstance() : base(
 			SpeciesSkitty.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

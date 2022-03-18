@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVirizion Constructor
 		public SpeciesVirizion() : base(
+			640,
 			"Virizion",
 			2.0,
 			200.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VirizionInstance(string nickname, int level)
 		: base(
-				640,
 				SpeciesVirizion.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fighting.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VirizionInstance(int level)
 		: base(
-				640,
 				SpeciesVirizion.Instance, // PokemonInstance Species
 				"Virizion", level,
 				Grass.Instance, Fighting.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Virizion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Virizion() : base(
-			640,
+		public VirizionInstance() : base(
 			SpeciesVirizion.Instance, // PokemonInstance Species
 			Grass.Instance, Fighting.Instance			
 		) {}

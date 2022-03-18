@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagnezone Constructor
 		public SpeciesMagnezone() : base(
+			462,
 			"Magnezone",
 			1.2,
 			180.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnezoneInstance(string nickname, int level)
 		: base(
-				462,
 				SpeciesMagnezone.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnezoneInstance(int level)
 		: base(
-				462,
 				SpeciesMagnezone.Instance, // PokemonInstance Species
 				"Magnezone", level,
 				Electric.Instance, Steel.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magnezone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magnezone() : base(
-			462,
+		public MagnezoneInstance() : base(
 			SpeciesMagnezone.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}

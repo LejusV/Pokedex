@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegieleki Constructor
 		public SpeciesRegieleki() : base(
+			894,
 			"Regieleki",
 			1.2,
 			145.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegielekiInstance(string nickname, int level)
 		: base(
-				894,
 				SpeciesRegieleki.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegielekiInstance(int level)
 		: base(
-				894,
 				SpeciesRegieleki.Instance, // PokemonInstance Species
 				"Regieleki", level,
 				Electric.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Regieleki Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Regieleki() : base(
-			894,
+		public RegielekiInstance() : base(
 			SpeciesRegieleki.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

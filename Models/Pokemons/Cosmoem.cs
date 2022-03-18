@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCosmoem Constructor
 		public SpeciesCosmoem() : base(
+			790,
 			"Cosmoem",
 			0.1,
 			999.9,
@@ -62,7 +63,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CosmoemInstance(string nickname, int level)
 		: base(
-				790,
 				SpeciesCosmoem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -77,7 +77,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CosmoemInstance(int level)
 		: base(
-				790,
 				SpeciesCosmoem.Instance, // PokemonInstance Species
 				"Cosmoem", level,
 				Psychic.Instance			
@@ -91,8 +90,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cosmoem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cosmoem() : base(
-			790,
+		public CosmoemInstance() : base(
 			SpeciesCosmoem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

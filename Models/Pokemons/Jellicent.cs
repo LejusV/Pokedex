@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJellicent Constructor
 		public SpeciesJellicent() : base(
+			593,
 			"Jellicent",
 			2.2,
 			135.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JellicentInstance(string nickname, int level)
 		: base(
-				593,
 				SpeciesJellicent.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ghost.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JellicentInstance(int level)
 		: base(
-				593,
 				SpeciesJellicent.Instance, // PokemonInstance Species
 				"Jellicent", level,
 				Water.Instance, Ghost.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jellicent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jellicent() : base(
-			593,
+		public JellicentInstance() : base(
 			SpeciesJellicent.Instance, // PokemonInstance Species
 			Water.Instance, Ghost.Instance			
 		) {}

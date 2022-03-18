@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFrillish Constructor
 		public SpeciesFrillish() : base(
+			592,
 			"Frillish",
 			1.2,
 			33.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrillishInstance(string nickname, int level)
 		: base(
-				592,
 				SpeciesFrillish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ghost.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrillishInstance(int level)
 		: base(
-				592,
 				SpeciesFrillish.Instance, // PokemonInstance Species
 				"Frillish", level,
 				Water.Instance, Ghost.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Frillish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Frillish() : base(
-			592,
+		public FrillishInstance() : base(
 			SpeciesFrillish.Instance, // PokemonInstance Species
 			Water.Instance, Ghost.Instance			
 		) {}

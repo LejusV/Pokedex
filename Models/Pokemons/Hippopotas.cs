@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHippopotas Constructor
 		public SpeciesHippopotas() : base(
+			449,
 			"Hippopotas",
 			0.8,
 			49.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HippopotasInstance(string nickname, int level)
 		: base(
-				449,
 				SpeciesHippopotas.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HippopotasInstance(int level)
 		: base(
-				449,
 				SpeciesHippopotas.Instance, // PokemonInstance Species
 				"Hippopotas", level,
 				Ground.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hippopotas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hippopotas() : base(
-			449,
+		public HippopotasInstance() : base(
 			SpeciesHippopotas.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

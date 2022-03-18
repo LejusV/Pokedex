@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAriados Constructor
 		public SpeciesAriados() : base(
+			168,
 			"Ariados",
 			1.1,
 			33.5,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AriadosInstance(string nickname, int level)
 		: base(
-				168,
 				SpeciesAriados.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AriadosInstance(int level)
 		: base(
-				168,
 				SpeciesAriados.Instance, // PokemonInstance Species
 				"Ariados", level,
 				Bug.Instance, Poison.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ariados Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ariados() : base(
-			168,
+		public AriadosInstance() : base(
 			SpeciesAriados.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

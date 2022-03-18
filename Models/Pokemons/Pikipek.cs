@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPikipek Constructor
 		public SpeciesPikipek() : base(
+			731,
 			"Pikipek",
 			0.3,
 			1.2,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PikipekInstance(string nickname, int level)
 		: base(
-				731,
 				SpeciesPikipek.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PikipekInstance(int level)
 		: base(
-				731,
 				SpeciesPikipek.Instance, // PokemonInstance Species
 				"Pikipek", level,
 				Normal.Instance, Flying.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pikipek Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pikipek() : base(
-			731,
+		public PikipekInstance() : base(
 			SpeciesPikipek.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

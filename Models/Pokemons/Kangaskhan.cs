@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKangaskhan Constructor
 		public SpeciesKangaskhan() : base(
+			115,
 			"Kangaskhan",
 			2.2,
 			80.0,
@@ -174,7 +175,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KangaskhanInstance(string nickname, int level)
 		: base(
-				115,
 				SpeciesKangaskhan.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -189,7 +189,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KangaskhanInstance(int level)
 		: base(
-				115,
 				SpeciesKangaskhan.Instance, // PokemonInstance Species
 				"Kangaskhan", level,
 				Normal.Instance			
@@ -203,8 +202,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kangaskhan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kangaskhan() : base(
-			115,
+		public KangaskhanInstance() : base(
 			SpeciesKangaskhan.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

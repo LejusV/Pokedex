@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZacian-Hero Constructor
 		public SpeciesZacianHero() : base(
+			888,
 			"Zacian-Hero",
 			2.8,
 			110.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZacianHeroInstance(string nickname, int level)
 		: base(
-				888,
 				SpeciesZacianHero.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZacianHeroInstance(int level)
 		: base(
-				888,
 				SpeciesZacianHero.Instance, // PokemonInstance Species
 				"Zacian-Hero", level,
 				Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zacian-Hero Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public ZacianHero() : base(
-			888,
+		public ZacianHeroInstance() : base(
 			SpeciesZacianHero.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

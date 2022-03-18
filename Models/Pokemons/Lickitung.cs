@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLickitung Constructor
 		public SpeciesLickitung() : base(
+			108,
 			"Lickitung",
 			1.2,
 			65.5,
@@ -169,7 +170,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LickitungInstance(string nickname, int level)
 		: base(
-				108,
 				SpeciesLickitung.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -184,7 +184,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LickitungInstance(int level)
 		: base(
-				108,
 				SpeciesLickitung.Instance, // PokemonInstance Species
 				"Lickitung", level,
 				Normal.Instance			
@@ -198,8 +197,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lickitung Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lickitung() : base(
-			108,
+		public LickitungInstance() : base(
 			SpeciesLickitung.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

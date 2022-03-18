@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPignite Constructor
 		public SpeciesPignite() : base(
+			499,
 			"Pignite",
 			1.0,
 			55.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PigniteInstance(string nickname, int level)
 		: base(
-				499,
 				SpeciesPignite.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PigniteInstance(int level)
 		: base(
-				499,
 				SpeciesPignite.Instance, // PokemonInstance Species
 				"Pignite", level,
 				Fire.Instance, Fighting.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pignite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pignite() : base(
-			499,
+		public PigniteInstance() : base(
 			SpeciesPignite.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

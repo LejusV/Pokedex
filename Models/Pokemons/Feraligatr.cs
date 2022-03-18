@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFeraligatr Constructor
 		public SpeciesFeraligatr() : base(
+			160,
 			"Feraligatr",
 			2.3,
 			88.8,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FeraligatrInstance(string nickname, int level)
 		: base(
-				160,
 				SpeciesFeraligatr.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FeraligatrInstance(int level)
 		: base(
-				160,
 				SpeciesFeraligatr.Instance, // PokemonInstance Species
 				"Feraligatr", level,
 				Water.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Feraligatr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Feraligatr() : base(
-			160,
+		public FeraligatrInstance() : base(
 			SpeciesFeraligatr.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

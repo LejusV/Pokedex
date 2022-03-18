@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMarshadow Constructor
 		public SpeciesMarshadow() : base(
+			802,
 			"Marshadow",
 			0.7,
 			22.2,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarshadowInstance(string nickname, int level)
 		: base(
-				802,
 				SpeciesMarshadow.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Ghost.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarshadowInstance(int level)
 		: base(
-				802,
 				SpeciesMarshadow.Instance, // PokemonInstance Species
 				"Marshadow", level,
 				Fighting.Instance, Ghost.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Marshadow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Marshadow() : base(
-			802,
+		public MarshadowInstance() : base(
 			SpeciesMarshadow.Instance, // PokemonInstance Species
 			Fighting.Instance, Ghost.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrizzile Constructor
 		public SpeciesDrizzile() : base(
+			817,
 			"Drizzile",
 			0.7,
 			11.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrizzileInstance(string nickname, int level)
 		: base(
-				817,
 				SpeciesDrizzile.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrizzileInstance(int level)
 		: base(
-				817,
 				SpeciesDrizzile.Instance, // PokemonInstance Species
 				"Drizzile", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drizzile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drizzile() : base(
-			817,
+		public DrizzileInstance() : base(
 			SpeciesDrizzile.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSalandit Constructor
 		public SpeciesSalandit() : base(
+			757,
 			"Salandit",
 			0.6,
 			4.8,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalanditInstance(string nickname, int level)
 		: base(
-				757,
 				SpeciesSalandit.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fire.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalanditInstance(int level)
 		: base(
-				757,
 				SpeciesSalandit.Instance, // PokemonInstance Species
 				"Salandit", level,
 				Poison.Instance, Fire.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Salandit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Salandit() : base(
-			757,
+		public SalanditInstance() : base(
 			SpeciesSalandit.Instance, // PokemonInstance Species
 			Poison.Instance, Fire.Instance			
 		) {}

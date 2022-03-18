@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBraixen Constructor
 		public SpeciesBraixen() : base(
+			654,
 			"Braixen",
 			1.0,
 			14.5,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BraixenInstance(string nickname, int level)
 		: base(
-				654,
 				SpeciesBraixen.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BraixenInstance(int level)
 		: base(
-				654,
 				SpeciesBraixen.Instance, // PokemonInstance Species
 				"Braixen", level,
 				Fire.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Braixen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Braixen() : base(
-			654,
+		public BraixenInstance() : base(
 			SpeciesBraixen.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCramorant Constructor
 		public SpeciesCramorant() : base(
+			845,
 			"Cramorant",
 			0.8,
 			18.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CramorantInstance(string nickname, int level)
 		: base(
-				845,
 				SpeciesCramorant.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CramorantInstance(int level)
 		: base(
-				845,
 				SpeciesCramorant.Instance, // PokemonInstance Species
 				"Cramorant", level,
 				Flying.Instance, Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cramorant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cramorant() : base(
-			845,
+		public CramorantInstance() : base(
 			SpeciesCramorant.Instance, // PokemonInstance Species
 			Flying.Instance, Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpearow Constructor
 		public SpeciesSpearow() : base(
+			21,
 			"Spearow",
 			0.3,
 			2.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpearowInstance(string nickname, int level)
 		: base(
-				21,
 				SpeciesSpearow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpearowInstance(int level)
 		: base(
-				21,
 				SpeciesSpearow.Instance, // PokemonInstance Species
 				"Spearow", level,
 				Normal.Instance, Flying.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spearow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spearow() : base(
-			21,
+		public SpearowInstance() : base(
 			SpeciesSpearow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

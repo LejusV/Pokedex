@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTogetic Constructor
 		public SpeciesTogetic() : base(
+			176,
 			"Togetic",
 			0.6,
 			3.2,
@@ -162,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogeticInstance(string nickname, int level)
 		: base(
-				176,
 				SpeciesTogetic.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance, Flying.Instance			
@@ -177,7 +177,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogeticInstance(int level)
 		: base(
-				176,
 				SpeciesTogetic.Instance, // PokemonInstance Species
 				"Togetic", level,
 				Fairy.Instance, Flying.Instance			
@@ -191,8 +190,7 @@ namespace Pokedex.Models.Pokemons
 		/// Togetic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Togetic() : base(
-			176,
+		public TogeticInstance() : base(
 			SpeciesTogetic.Instance, // PokemonInstance Species
 			Fairy.Instance, Flying.Instance			
 		) {}

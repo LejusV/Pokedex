@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOranguru Constructor
 		public SpeciesOranguru() : base(
+			765,
 			"Oranguru",
 			1.5,
 			76.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OranguruInstance(string nickname, int level)
 		: base(
-				765,
 				SpeciesOranguru.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Psychic.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OranguruInstance(int level)
 		: base(
-				765,
 				SpeciesOranguru.Instance, // PokemonInstance Species
 				"Oranguru", level,
 				Normal.Instance, Psychic.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Oranguru Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Oranguru() : base(
-			765,
+		public OranguruInstance() : base(
 			SpeciesOranguru.Instance, // PokemonInstance Species
 			Normal.Instance, Psychic.Instance			
 		) {}

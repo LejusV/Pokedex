@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeaking Constructor
 		public SpeciesSeaking() : base(
+			119,
 			"Seaking",
 			1.3,
 			39.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeakingInstance(string nickname, int level)
 		: base(
-				119,
 				SpeciesSeaking.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeakingInstance(int level)
 		: base(
-				119,
 				SpeciesSeaking.Instance, // PokemonInstance Species
 				"Seaking", level,
 				Water.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seaking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seaking() : base(
-			119,
+		public SeakingInstance() : base(
 			SpeciesSeaking.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPoliwag Constructor
 		public SpeciesPoliwag() : base(
+			60,
 			"Poliwag",
 			0.6,
 			12.4,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwagInstance(string nickname, int level)
 		: base(
-				60,
 				SpeciesPoliwag.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwagInstance(int level)
 		: base(
-				60,
 				SpeciesPoliwag.Instance, // PokemonInstance Species
 				"Poliwag", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Poliwag Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Poliwag() : base(
-			60,
+		public PoliwagInstance() : base(
 			SpeciesPoliwag.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

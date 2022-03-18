@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSentret Constructor
 		public SpeciesSentret() : base(
+			161,
 			"Sentret",
 			0.8,
 			6.0,
@@ -149,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SentretInstance(string nickname, int level)
 		: base(
-				161,
 				SpeciesSentret.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -164,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SentretInstance(int level)
 		: base(
-				161,
 				SpeciesSentret.Instance, // PokemonInstance Species
 				"Sentret", level,
 				Normal.Instance			
@@ -178,8 +177,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sentret Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sentret() : base(
-			161,
+		public SentretInstance() : base(
 			SpeciesSentret.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

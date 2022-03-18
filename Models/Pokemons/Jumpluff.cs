@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJumpluff Constructor
 		public SpeciesJumpluff() : base(
+			189,
 			"Jumpluff",
 			0.8,
 			3.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JumpluffInstance(string nickname, int level)
 		: base(
-				189,
 				SpeciesJumpluff.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JumpluffInstance(int level)
 		: base(
-				189,
 				SpeciesJumpluff.Instance, // PokemonInstance Species
 				"Jumpluff", level,
 				Grass.Instance, Flying.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jumpluff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jumpluff() : base(
-			189,
+		public JumpluffInstance() : base(
 			SpeciesJumpluff.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

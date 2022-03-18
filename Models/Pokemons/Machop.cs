@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMachop Constructor
 		public SpeciesMachop() : base(
+			66,
 			"Machop",
 			0.8,
 			19.5,
@@ -154,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachopInstance(string nickname, int level)
 		: base(
-				66,
 				SpeciesMachop.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -169,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachopInstance(int level)
 		: base(
-				66,
 				SpeciesMachop.Instance, // PokemonInstance Species
 				"Machop", level,
 				Fighting.Instance			
@@ -183,8 +182,7 @@ namespace Pokedex.Models.Pokemons
 		/// Machop Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Machop() : base(
-			66,
+		public MachopInstance() : base(
 			SpeciesMachop.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

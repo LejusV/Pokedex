@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMeganium Constructor
 		public SpeciesMeganium() : base(
+			154,
 			"Meganium",
 			1.8,
 			100.5,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeganiumInstance(string nickname, int level)
 		: base(
-				154,
 				SpeciesMeganium.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeganiumInstance(int level)
 		: base(
-				154,
 				SpeciesMeganium.Instance, // PokemonInstance Species
 				"Meganium", level,
 				Grass.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Meganium Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Meganium() : base(
-			154,
+		public MeganiumInstance() : base(
 			SpeciesMeganium.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlastoise Constructor
 		public SpeciesBlastoise() : base(
+			9,
 			"Blastoise",
 			1.6,
 			85.5,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlastoiseInstance(string nickname, int level)
 		: base(
-				9,
 				SpeciesBlastoise.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlastoiseInstance(int level)
 		: base(
-				9,
 				SpeciesBlastoise.Instance, // PokemonInstance Species
 				"Blastoise", level,
 				Water.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blastoise Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blastoise() : base(
-			9,
+		public BlastoiseInstance() : base(
 			SpeciesBlastoise.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

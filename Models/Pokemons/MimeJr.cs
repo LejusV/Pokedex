@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMime-Jr Constructor
 		public SpeciesMimeJr() : base(
+			439,
 			"Mime-Jr",
 			0.6,
 			13.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MimeJrInstance(string nickname, int level)
 		: base(
-				439,
 				SpeciesMimeJr.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MimeJrInstance(int level)
 		: base(
-				439,
 				SpeciesMimeJr.Instance, // PokemonInstance Species
 				"Mime-Jr", level,
 				Psychic.Instance, Fairy.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mime-Jr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MimeJr() : base(
-			439,
+		public MimeJrInstance() : base(
 			SpeciesMimeJr.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

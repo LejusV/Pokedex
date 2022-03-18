@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDewgong Constructor
 		public SpeciesDewgong() : base(
+			87,
 			"Dewgong",
 			1.7,
 			120.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewgongInstance(string nickname, int level)
 		: base(
-				87,
 				SpeciesDewgong.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewgongInstance(int level)
 		: base(
-				87,
 				SpeciesDewgong.Instance, // PokemonInstance Species
 				"Dewgong", level,
 				Water.Instance, Ice.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dewgong Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dewgong() : base(
-			87,
+		public DewgongInstance() : base(
 			SpeciesDewgong.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCresselia Constructor
 		public SpeciesCresselia() : base(
+			488,
 			"Cresselia",
 			1.5,
 			85.6,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CresseliaInstance(string nickname, int level)
 		: base(
-				488,
 				SpeciesCresselia.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CresseliaInstance(int level)
 		: base(
-				488,
 				SpeciesCresselia.Instance, // PokemonInstance Species
 				"Cresselia", level,
 				Psychic.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cresselia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cresselia() : base(
-			488,
+		public CresseliaInstance() : base(
 			SpeciesCresselia.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

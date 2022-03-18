@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwellow Constructor
 		public SpeciesSwellow() : base(
+			277,
 			"Swellow",
 			0.7,
 			19.8,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwellowInstance(string nickname, int level)
 		: base(
-				277,
 				SpeciesSwellow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwellowInstance(int level)
 		: base(
-				277,
 				SpeciesSwellow.Instance, // PokemonInstance Species
 				"Swellow", level,
 				Normal.Instance, Flying.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swellow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swellow() : base(
-			277,
+		public SwellowInstance() : base(
 			SpeciesSwellow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDunsparce Constructor
 		public SpeciesDunsparce() : base(
+			206,
 			"Dunsparce",
 			1.5,
 			14.0,
@@ -149,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DunsparceInstance(string nickname, int level)
 		: base(
-				206,
 				SpeciesDunsparce.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -164,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DunsparceInstance(int level)
 		: base(
-				206,
 				SpeciesDunsparce.Instance, // PokemonInstance Species
 				"Dunsparce", level,
 				Normal.Instance			
@@ -178,8 +177,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dunsparce Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dunsparce() : base(
-			206,
+		public DunsparceInstance() : base(
 			SpeciesDunsparce.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

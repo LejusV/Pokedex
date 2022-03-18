@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCofagrigus Constructor
 		public SpeciesCofagrigus() : base(
+			563,
 			"Cofagrigus",
 			1.7,
 			76.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CofagrigusInstance(string nickname, int level)
 		: base(
-				563,
 				SpeciesCofagrigus.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CofagrigusInstance(int level)
 		: base(
-				563,
 				SpeciesCofagrigus.Instance, // PokemonInstance Species
 				"Cofagrigus", level,
 				Ghost.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cofagrigus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cofagrigus() : base(
-			563,
+		public CofagrigusInstance() : base(
 			SpeciesCofagrigus.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClawitzer Constructor
 		public SpeciesClawitzer() : base(
+			693,
 			"Clawitzer",
 			1.3,
 			35.3,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClawitzerInstance(string nickname, int level)
 		: base(
-				693,
 				SpeciesClawitzer.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClawitzerInstance(int level)
 		: base(
-				693,
 				SpeciesClawitzer.Instance, // PokemonInstance Species
 				"Clawitzer", level,
 				Water.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clawitzer Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clawitzer() : base(
-			693,
+		public ClawitzerInstance() : base(
 			SpeciesClawitzer.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

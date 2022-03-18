@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMedicham Constructor
 		public SpeciesMedicham() : base(
+			308,
 			"Medicham",
 			1.3,
 			31.5,
@@ -148,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MedichamInstance(string nickname, int level)
 		: base(
-				308,
 				SpeciesMedicham.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Psychic.Instance			
@@ -163,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MedichamInstance(int level)
 		: base(
-				308,
 				SpeciesMedicham.Instance, // PokemonInstance Species
 				"Medicham", level,
 				Fighting.Instance, Psychic.Instance			
@@ -177,8 +176,7 @@ namespace Pokedex.Models.Pokemons
 		/// Medicham Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Medicham() : base(
-			308,
+		public MedichamInstance() : base(
 			SpeciesMedicham.Instance, // PokemonInstance Species
 			Fighting.Instance, Psychic.Instance			
 		) {}

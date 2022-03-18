@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPikachu Constructor
 		public SpeciesPikachu() : base(
+			25,
 			"Pikachu",
 			0.4,
 			6.0,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PikachuInstance(string nickname, int level)
 		: base(
-				25,
 				SpeciesPikachu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PikachuInstance(int level)
 		: base(
-				25,
 				SpeciesPikachu.Instance, // PokemonInstance Species
 				"Pikachu", level,
 				Electric.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pikachu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pikachu() : base(
-			25,
+		public PikachuInstance() : base(
 			SpeciesPikachu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

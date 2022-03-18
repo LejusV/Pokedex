@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMareep Constructor
 		public SpeciesMareep() : base(
+			179,
 			"Mareep",
 			0.6,
 			7.8,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MareepInstance(string nickname, int level)
 		: base(
-				179,
 				SpeciesMareep.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MareepInstance(int level)
 		: base(
-				179,
 				SpeciesMareep.Instance, // PokemonInstance Species
 				"Mareep", level,
 				Electric.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mareep Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mareep() : base(
-			179,
+		public MareepInstance() : base(
 			SpeciesMareep.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

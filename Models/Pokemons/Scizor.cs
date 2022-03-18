@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScizor Constructor
 		public SpeciesScizor() : base(
+			212,
 			"Scizor",
 			1.8,
 			118.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScizorInstance(string nickname, int level)
 		: base(
-				212,
 				SpeciesScizor.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScizorInstance(int level)
 		: base(
-				212,
 				SpeciesScizor.Instance, // PokemonInstance Species
 				"Scizor", level,
 				Bug.Instance, Steel.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scizor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scizor() : base(
-			212,
+		public ScizorInstance() : base(
 			SpeciesScizor.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}

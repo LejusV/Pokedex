@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHappiny Constructor
 		public SpeciesHappiny() : base(
+			440,
 			"Happiny",
 			0.6,
 			24.4,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HappinyInstance(string nickname, int level)
 		: base(
-				440,
 				SpeciesHappiny.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HappinyInstance(int level)
 		: base(
-				440,
 				SpeciesHappiny.Instance, // PokemonInstance Species
 				"Happiny", level,
 				Normal.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Happiny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Happiny() : base(
-			440,
+		public HappinyInstance() : base(
 			SpeciesHappiny.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

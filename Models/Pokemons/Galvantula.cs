@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGalvantula Constructor
 		public SpeciesGalvantula() : base(
+			596,
 			"Galvantula",
 			0.8,
 			14.3,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GalvantulaInstance(string nickname, int level)
 		: base(
-				596,
 				SpeciesGalvantula.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GalvantulaInstance(int level)
 		: base(
-				596,
 				SpeciesGalvantula.Instance, // PokemonInstance Species
 				"Galvantula", level,
 				Bug.Instance, Electric.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Galvantula Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Galvantula() : base(
-			596,
+		public GalvantulaInstance() : base(
 			SpeciesGalvantula.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}

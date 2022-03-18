@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArchen Constructor
 		public SpeciesArchen() : base(
+			566,
 			"Archen",
 			0.5,
 			9.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArchenInstance(string nickname, int level)
 		: base(
-				566,
 				SpeciesArchen.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArchenInstance(int level)
 		: base(
-				566,
 				SpeciesArchen.Instance, // PokemonInstance Species
 				"Archen", level,
 				Rock.Instance, Flying.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Archen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Archen() : base(
-			566,
+		public ArchenInstance() : base(
 			SpeciesArchen.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGulpin Constructor
 		public SpeciesGulpin() : base(
+			316,
 			"Gulpin",
 			0.4,
 			10.3,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GulpinInstance(string nickname, int level)
 		: base(
-				316,
 				SpeciesGulpin.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GulpinInstance(int level)
 		: base(
-				316,
 				SpeciesGulpin.Instance, // PokemonInstance Species
 				"Gulpin", level,
 				Poison.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gulpin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gulpin() : base(
-			316,
+		public GulpinInstance() : base(
 			SpeciesGulpin.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

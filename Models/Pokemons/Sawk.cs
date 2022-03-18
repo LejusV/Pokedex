@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSawk Constructor
 		public SpeciesSawk() : base(
+			539,
 			"Sawk",
 			1.4,
 			51.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SawkInstance(string nickname, int level)
 		: base(
-				539,
 				SpeciesSawk.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SawkInstance(int level)
 		: base(
-				539,
 				SpeciesSawk.Instance, // PokemonInstance Species
 				"Sawk", level,
 				Fighting.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sawk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sawk() : base(
-			539,
+		public SawkInstance() : base(
 			SpeciesSawk.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

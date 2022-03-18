@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMuk Constructor
 		public SpeciesMuk() : base(
+			89,
 			"Muk",
 			1.2,
 			30.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MukInstance(string nickname, int level)
 		: base(
-				89,
 				SpeciesMuk.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MukInstance(int level)
 		: base(
-				89,
 				SpeciesMuk.Instance, // PokemonInstance Species
 				"Muk", level,
 				Poison.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Muk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Muk() : base(
-			89,
+		public MukInstance() : base(
 			SpeciesMuk.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

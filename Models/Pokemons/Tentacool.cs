@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTentacool Constructor
 		public SpeciesTentacool() : base(
+			72,
 			"Tentacool",
 			0.9,
 			45.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TentacoolInstance(string nickname, int level)
 		: base(
-				72,
 				SpeciesTentacool.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Poison.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TentacoolInstance(int level)
 		: base(
-				72,
 				SpeciesTentacool.Instance, // PokemonInstance Species
 				"Tentacool", level,
 				Water.Instance, Poison.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tentacool Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tentacool() : base(
-			72,
+		public TentacoolInstance() : base(
 			SpeciesTentacool.Instance, // PokemonInstance Species
 			Water.Instance, Poison.Instance			
 		) {}

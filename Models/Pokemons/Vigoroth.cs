@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVigoroth Constructor
 		public SpeciesVigoroth() : base(
+			288,
 			"Vigoroth",
 			1.4,
 			46.5,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VigorothInstance(string nickname, int level)
 		: base(
-				288,
 				SpeciesVigoroth.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VigorothInstance(int level)
 		: base(
-				288,
 				SpeciesVigoroth.Instance, // PokemonInstance Species
 				"Vigoroth", level,
 				Normal.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vigoroth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vigoroth() : base(
-			288,
+		public VigorothInstance() : base(
 			SpeciesVigoroth.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

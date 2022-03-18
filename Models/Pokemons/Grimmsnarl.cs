@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrimmsnarl Constructor
 		public SpeciesGrimmsnarl() : base(
+			861,
 			"Grimmsnarl",
 			1.5,
 			61.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrimmsnarlInstance(string nickname, int level)
 		: base(
-				861,
 				SpeciesGrimmsnarl.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrimmsnarlInstance(int level)
 		: base(
-				861,
 				SpeciesGrimmsnarl.Instance, // PokemonInstance Species
 				"Grimmsnarl", level,
 				Dark.Instance, Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grimmsnarl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grimmsnarl() : base(
-			861,
+		public GrimmsnarlInstance() : base(
 			SpeciesGrimmsnarl.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}

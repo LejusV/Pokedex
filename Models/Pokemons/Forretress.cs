@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesForretress Constructor
 		public SpeciesForretress() : base(
+			205,
 			"Forretress",
 			1.2,
 			125.8,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ForretressInstance(string nickname, int level)
 		: base(
-				205,
 				SpeciesForretress.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ForretressInstance(int level)
 		: base(
-				205,
 				SpeciesForretress.Instance, // PokemonInstance Species
 				"Forretress", level,
 				Bug.Instance, Steel.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Forretress Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Forretress() : base(
-			205,
+		public ForretressInstance() : base(
 			SpeciesForretress.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}

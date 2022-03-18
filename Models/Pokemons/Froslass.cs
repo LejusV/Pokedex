@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFroslass Constructor
 		public SpeciesFroslass() : base(
+			478,
 			"Froslass",
 			1.3,
 			26.6,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FroslassInstance(string nickname, int level)
 		: base(
-				478,
 				SpeciesFroslass.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ghost.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FroslassInstance(int level)
 		: base(
-				478,
 				SpeciesFroslass.Instance, // PokemonInstance Species
 				"Froslass", level,
 				Ice.Instance, Ghost.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Froslass Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Froslass() : base(
-			478,
+		public FroslassInstance() : base(
 			SpeciesFroslass.Instance, // PokemonInstance Species
 			Ice.Instance, Ghost.Instance			
 		) {}

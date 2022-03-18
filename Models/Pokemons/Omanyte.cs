@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOmanyte Constructor
 		public SpeciesOmanyte() : base(
+			138,
 			"Omanyte",
 			0.4,
 			7.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OmanyteInstance(string nickname, int level)
 		: base(
-				138,
 				SpeciesOmanyte.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OmanyteInstance(int level)
 		: base(
-				138,
 				SpeciesOmanyte.Instance, // PokemonInstance Species
 				"Omanyte", level,
 				Rock.Instance, Water.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Omanyte Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Omanyte() : base(
-			138,
+		public OmanyteInstance() : base(
 			SpeciesOmanyte.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

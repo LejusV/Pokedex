@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRalts Constructor
 		public SpeciesRalts() : base(
+			280,
 			"Ralts",
 			0.4,
 			6.6,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaltsInstance(string nickname, int level)
 		: base(
-				280,
 				SpeciesRalts.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaltsInstance(int level)
 		: base(
-				280,
 				SpeciesRalts.Instance, // PokemonInstance Species
 				"Ralts", level,
 				Psychic.Instance, Fairy.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ralts Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ralts() : base(
-			280,
+		public RaltsInstance() : base(
 			SpeciesRalts.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

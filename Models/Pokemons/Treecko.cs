@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTreecko Constructor
 		public SpeciesTreecko() : base(
+			252,
 			"Treecko",
 			0.5,
 			5.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TreeckoInstance(string nickname, int level)
 		: base(
-				252,
 				SpeciesTreecko.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TreeckoInstance(int level)
 		: base(
-				252,
 				SpeciesTreecko.Instance, // PokemonInstance Species
 				"Treecko", level,
 				Grass.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Treecko Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Treecko() : base(
-			252,
+		public TreeckoInstance() : base(
 			SpeciesTreecko.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

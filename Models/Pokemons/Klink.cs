@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKlink Constructor
 		public SpeciesKlink() : base(
+			599,
 			"Klink",
 			0.3,
 			21.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlinkInstance(string nickname, int level)
 		: base(
-				599,
 				SpeciesKlink.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlinkInstance(int level)
 		: base(
-				599,
 				SpeciesKlink.Instance, // PokemonInstance Species
 				"Klink", level,
 				Steel.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Klink Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Klink() : base(
-			599,
+		public KlinkInstance() : base(
 			SpeciesKlink.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

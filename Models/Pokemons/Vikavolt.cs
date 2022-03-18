@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVikavolt Constructor
 		public SpeciesVikavolt() : base(
+			738,
 			"Vikavolt",
 			1.5,
 			45.0,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VikavoltInstance(string nickname, int level)
 		: base(
-				738,
 				SpeciesVikavolt.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VikavoltInstance(int level)
 		: base(
-				738,
 				SpeciesVikavolt.Instance, // PokemonInstance Species
 				"Vikavolt", level,
 				Bug.Instance, Electric.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vikavolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vikavolt() : base(
-			738,
+		public VikavoltInstance() : base(
 			SpeciesVikavolt.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}

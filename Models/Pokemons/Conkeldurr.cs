@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesConkeldurr Constructor
 		public SpeciesConkeldurr() : base(
+			534,
 			"Conkeldurr",
 			1.4,
 			87.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ConkeldurrInstance(string nickname, int level)
 		: base(
-				534,
 				SpeciesConkeldurr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ConkeldurrInstance(int level)
 		: base(
-				534,
 				SpeciesConkeldurr.Instance, // PokemonInstance Species
 				"Conkeldurr", level,
 				Fighting.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Conkeldurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Conkeldurr() : base(
-			534,
+		public ConkeldurrInstance() : base(
 			SpeciesConkeldurr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesToxel Constructor
 		public SpeciesToxel() : base(
+			848,
 			"Toxel",
 			0.4,
 			11.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxelInstance(string nickname, int level)
 		: base(
-				848,
 				SpeciesToxel.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Poison.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxelInstance(int level)
 		: base(
-				848,
 				SpeciesToxel.Instance, // PokemonInstance Species
 				"Toxel", level,
 				Electric.Instance, Poison.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Toxel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Toxel() : base(
-			848,
+		public ToxelInstance() : base(
 			SpeciesToxel.Instance, // PokemonInstance Species
 			Electric.Instance, Poison.Instance			
 		) {}

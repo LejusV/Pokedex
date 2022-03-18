@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBuizel Constructor
 		public SpeciesBuizel() : base(
+			418,
 			"Buizel",
 			0.7,
 			29.5,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BuizelInstance(string nickname, int level)
 		: base(
-				418,
 				SpeciesBuizel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BuizelInstance(int level)
 		: base(
-				418,
 				SpeciesBuizel.Instance, // PokemonInstance Species
 				"Buizel", level,
 				Water.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Buizel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Buizel() : base(
-			418,
+		public BuizelInstance() : base(
 			SpeciesBuizel.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

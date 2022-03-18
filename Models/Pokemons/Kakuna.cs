@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKakuna Constructor
 		public SpeciesKakuna() : base(
+			14,
 			"Kakuna",
 			0.6,
 			10.0,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KakunaInstance(string nickname, int level)
 		: base(
-				14,
 				SpeciesKakuna.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KakunaInstance(int level)
 		: base(
-				14,
 				SpeciesKakuna.Instance, // PokemonInstance Species
 				"Kakuna", level,
 				Bug.Instance, Poison.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kakuna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kakuna() : base(
-			14,
+		public KakunaInstance() : base(
 			SpeciesKakuna.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

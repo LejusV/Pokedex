@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCorphish Constructor
 		public SpeciesCorphish() : base(
+			341,
 			"Corphish",
 			0.6,
 			11.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorphishInstance(string nickname, int level)
 		: base(
-				341,
 				SpeciesCorphish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorphishInstance(int level)
 		: base(
-				341,
 				SpeciesCorphish.Instance, // PokemonInstance Species
 				"Corphish", level,
 				Water.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Corphish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Corphish() : base(
-			341,
+		public CorphishInstance() : base(
 			SpeciesCorphish.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

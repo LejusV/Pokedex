@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPorygon2 Constructor
 		public SpeciesPorygon2() : base(
+			233,
 			"Porygon2",
 			0.6,
 			32.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public Porygon2Instance(string nickname, int level)
 		: base(
-				233,
 				SpeciesPorygon2.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public Porygon2Instance(int level)
 		: base(
-				233,
 				SpeciesPorygon2.Instance, // PokemonInstance Species
 				"Porygon2", level,
 				Normal.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Porygon2 Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Porygon2() : base(
-			233,
+		public Porygon2Instance() : base(
 			SpeciesPorygon2.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

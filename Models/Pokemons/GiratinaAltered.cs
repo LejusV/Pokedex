@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGiratina-Altered Constructor
 		public SpeciesGiratinaAltered() : base(
+			487,
 			"Giratina-Altered",
 			4.5,
 			750.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GiratinaAlteredInstance(string nickname, int level)
 		: base(
-				487,
 				SpeciesGiratinaAltered.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Dragon.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GiratinaAlteredInstance(int level)
 		: base(
-				487,
 				SpeciesGiratinaAltered.Instance, // PokemonInstance Species
 				"Giratina-Altered", level,
 				Ghost.Instance, Dragon.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Giratina-Altered Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public GiratinaAltered() : base(
-			487,
+		public GiratinaAlteredInstance() : base(
 			SpeciesGiratinaAltered.Instance, // PokemonInstance Species
 			Ghost.Instance, Dragon.Instance			
 		) {}

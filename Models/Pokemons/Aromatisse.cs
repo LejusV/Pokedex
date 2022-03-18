@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAromatisse Constructor
 		public SpeciesAromatisse() : base(
+			683,
 			"Aromatisse",
 			0.8,
 			15.5,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AromatisseInstance(string nickname, int level)
 		: base(
-				683,
 				SpeciesAromatisse.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AromatisseInstance(int level)
 		: base(
-				683,
 				SpeciesAromatisse.Instance, // PokemonInstance Species
 				"Aromatisse", level,
 				Fairy.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aromatisse Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aromatisse() : base(
-			683,
+		public AromatisseInstance() : base(
 			SpeciesAromatisse.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

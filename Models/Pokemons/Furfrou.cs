@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFurfrou Constructor
 		public SpeciesFurfrou() : base(
+			676,
 			"Furfrou",
 			1.2,
 			28.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FurfrouInstance(string nickname, int level)
 		: base(
-				676,
 				SpeciesFurfrou.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FurfrouInstance(int level)
 		: base(
-				676,
 				SpeciesFurfrou.Instance, // PokemonInstance Species
 				"Furfrou", level,
 				Normal.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Furfrou Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Furfrou() : base(
-			676,
+		public FurfrouInstance() : base(
 			SpeciesFurfrou.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

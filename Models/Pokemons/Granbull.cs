@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGranbull Constructor
 		public SpeciesGranbull() : base(
+			210,
 			"Granbull",
 			1.4,
 			48.7,
@@ -161,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GranbullInstance(string nickname, int level)
 		: base(
-				210,
 				SpeciesGranbull.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -176,7 +176,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GranbullInstance(int level)
 		: base(
-				210,
 				SpeciesGranbull.Instance, // PokemonInstance Species
 				"Granbull", level,
 				Fairy.Instance			
@@ -190,8 +189,7 @@ namespace Pokedex.Models.Pokemons
 		/// Granbull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Granbull() : base(
-			210,
+		public GranbullInstance() : base(
 			SpeciesGranbull.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTapu-Lele Constructor
 		public SpeciesTapuLele() : base(
+			786,
 			"Tapu-Lele",
 			1.2,
 			18.6,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuLeleInstance(string nickname, int level)
 		: base(
-				786,
 				SpeciesTapuLele.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuLeleInstance(int level)
 		: base(
-				786,
 				SpeciesTapuLele.Instance, // PokemonInstance Species
 				"Tapu-Lele", level,
 				Psychic.Instance, Fairy.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tapu-Lele Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TapuLele() : base(
-			786,
+		public TapuLeleInstance() : base(
 			SpeciesTapuLele.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

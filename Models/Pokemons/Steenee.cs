@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSteenee Constructor
 		public SpeciesSteenee() : base(
+			762,
 			"Steenee",
 			0.7,
 			8.2,
@@ -99,7 +100,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SteeneeInstance(string nickname, int level)
 		: base(
-				762,
 				SpeciesSteenee.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -114,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SteeneeInstance(int level)
 		: base(
-				762,
 				SpeciesSteenee.Instance, // PokemonInstance Species
 				"Steenee", level,
 				Grass.Instance			
@@ -128,8 +127,7 @@ namespace Pokedex.Models.Pokemons
 		/// Steenee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Steenee() : base(
-			762,
+		public SteeneeInstance() : base(
 			SpeciesSteenee.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

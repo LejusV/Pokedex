@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLanturn Constructor
 		public SpeciesLanturn() : base(
+			171,
 			"Lanturn",
 			1.2,
 			22.5,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LanturnInstance(string nickname, int level)
 		: base(
-				171,
 				SpeciesLanturn.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Electric.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LanturnInstance(int level)
 		: base(
-				171,
 				SpeciesLanturn.Instance, // PokemonInstance Species
 				"Lanturn", level,
 				Water.Instance, Electric.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lanturn Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lanturn() : base(
-			171,
+		public LanturnInstance() : base(
 			SpeciesLanturn.Instance, // PokemonInstance Species
 			Water.Instance, Electric.Instance			
 		) {}

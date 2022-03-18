@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMudkip Constructor
 		public SpeciesMudkip() : base(
+			258,
 			"Mudkip",
 			0.4,
 			7.6,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudkipInstance(string nickname, int level)
 		: base(
-				258,
 				SpeciesMudkip.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudkipInstance(int level)
 		: base(
-				258,
 				SpeciesMudkip.Instance, // PokemonInstance Species
 				"Mudkip", level,
 				Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mudkip Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mudkip() : base(
-			258,
+		public MudkipInstance() : base(
 			SpeciesMudkip.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

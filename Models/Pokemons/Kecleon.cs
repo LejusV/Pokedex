@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKecleon Constructor
 		public SpeciesKecleon() : base(
+			352,
 			"Kecleon",
 			1.0,
 			22.0,
@@ -170,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KecleonInstance(string nickname, int level)
 		: base(
-				352,
 				SpeciesKecleon.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -185,7 +185,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KecleonInstance(int level)
 		: base(
-				352,
 				SpeciesKecleon.Instance, // PokemonInstance Species
 				"Kecleon", level,
 				Normal.Instance			
@@ -199,8 +198,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kecleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kecleon() : base(
-			352,
+		public KecleonInstance() : base(
 			SpeciesKecleon.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

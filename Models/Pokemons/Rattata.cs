@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRattata Constructor
 		public SpeciesRattata() : base(
+			19,
 			"Rattata",
 			0.3,
 			3.5,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RattataInstance(string nickname, int level)
 		: base(
-				19,
 				SpeciesRattata.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RattataInstance(int level)
 		: base(
-				19,
 				SpeciesRattata.Instance, // PokemonInstance Species
 				"Rattata", level,
 				Normal.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rattata Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rattata() : base(
-			19,
+		public RattataInstance() : base(
 			SpeciesRattata.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

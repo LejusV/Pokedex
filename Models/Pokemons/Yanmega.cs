@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesYanmega Constructor
 		public SpeciesYanmega() : base(
+			469,
 			"Yanmega",
 			1.9,
 			51.5,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YanmegaInstance(string nickname, int level)
 		: base(
-				469,
 				SpeciesYanmega.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YanmegaInstance(int level)
 		: base(
-				469,
 				SpeciesYanmega.Instance, // PokemonInstance Species
 				"Yanmega", level,
 				Bug.Instance, Flying.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Yanmega Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Yanmega() : base(
-			469,
+		public YanmegaInstance() : base(
 			SpeciesYanmega.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

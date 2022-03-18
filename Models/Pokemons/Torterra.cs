@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTorterra Constructor
 		public SpeciesTorterra() : base(
+			389,
 			"Torterra",
 			2.2,
 			310.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorterraInstance(string nickname, int level)
 		: base(
-				389,
 				SpeciesTorterra.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Ground.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorterraInstance(int level)
 		: base(
-				389,
 				SpeciesTorterra.Instance, // PokemonInstance Species
 				"Torterra", level,
 				Grass.Instance, Ground.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Torterra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Torterra() : base(
-			389,
+		public TorterraInstance() : base(
 			SpeciesTorterra.Instance, // PokemonInstance Species
 			Grass.Instance, Ground.Instance			
 		) {}

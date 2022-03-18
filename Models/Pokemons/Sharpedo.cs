@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSharpedo Constructor
 		public SpeciesSharpedo() : base(
+			319,
 			"Sharpedo",
 			1.8,
 			88.8,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SharpedoInstance(string nickname, int level)
 		: base(
-				319,
 				SpeciesSharpedo.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dark.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SharpedoInstance(int level)
 		: base(
-				319,
 				SpeciesSharpedo.Instance, // PokemonInstance Species
 				"Sharpedo", level,
 				Water.Instance, Dark.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sharpedo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sharpedo() : base(
-			319,
+		public SharpedoInstance() : base(
 			SpeciesSharpedo.Instance, // PokemonInstance Species
 			Water.Instance, Dark.Instance			
 		) {}

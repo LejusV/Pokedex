@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesQuilava Constructor
 		public SpeciesQuilava() : base(
+			156,
 			"Quilava",
 			0.9,
 			19.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuilavaInstance(string nickname, int level)
 		: base(
-				156,
 				SpeciesQuilava.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuilavaInstance(int level)
 		: base(
-				156,
 				SpeciesQuilava.Instance, // PokemonInstance Species
 				"Quilava", level,
 				Fire.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Quilava Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Quilava() : base(
-			156,
+		public QuilavaInstance() : base(
 			SpeciesQuilava.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

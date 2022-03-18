@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRhydon Constructor
 		public SpeciesRhydon() : base(
+			112,
 			"Rhydon",
 			1.9,
 			120.0,
@@ -172,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhydonInstance(string nickname, int level)
 		: base(
-				112,
 				SpeciesRhydon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Rock.Instance			
@@ -187,7 +187,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhydonInstance(int level)
 		: base(
-				112,
 				SpeciesRhydon.Instance, // PokemonInstance Species
 				"Rhydon", level,
 				Ground.Instance, Rock.Instance			
@@ -201,8 +200,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rhydon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rhydon() : base(
-			112,
+		public RhydonInstance() : base(
 			SpeciesRhydon.Instance, // PokemonInstance Species
 			Ground.Instance, Rock.Instance			
 		) {}

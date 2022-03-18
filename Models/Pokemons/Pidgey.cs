@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPidgey Constructor
 		public SpeciesPidgey() : base(
+			16,
 			"Pidgey",
 			0.3,
 			1.8,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidgeyInstance(string nickname, int level)
 		: base(
-				16,
 				SpeciesPidgey.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidgeyInstance(int level)
 		: base(
-				16,
 				SpeciesPidgey.Instance, // PokemonInstance Species
 				"Pidgey", level,
 				Normal.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pidgey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pidgey() : base(
-			16,
+		public PidgeyInstance() : base(
 			SpeciesPidgey.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

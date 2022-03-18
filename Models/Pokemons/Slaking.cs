@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlaking Constructor
 		public SpeciesSlaking() : base(
+			289,
 			"Slaking",
 			2.0,
 			130.5,
@@ -149,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlakingInstance(string nickname, int level)
 		: base(
-				289,
 				SpeciesSlaking.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -164,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlakingInstance(int level)
 		: base(
-				289,
 				SpeciesSlaking.Instance, // PokemonInstance Species
 				"Slaking", level,
 				Normal.Instance			
@@ -178,8 +177,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slaking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slaking() : base(
-			289,
+		public SlakingInstance() : base(
 			SpeciesSlaking.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

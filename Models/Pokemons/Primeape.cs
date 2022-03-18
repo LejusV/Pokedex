@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPrimeape Constructor
 		public SpeciesPrimeape() : base(
+			57,
 			"Primeape",
 			1.0,
 			32.0,
@@ -165,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrimeapeInstance(string nickname, int level)
 		: base(
-				57,
 				SpeciesPrimeape.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -180,7 +180,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrimeapeInstance(int level)
 		: base(
-				57,
 				SpeciesPrimeape.Instance, // PokemonInstance Species
 				"Primeape", level,
 				Fighting.Instance			
@@ -194,8 +193,7 @@ namespace Pokedex.Models.Pokemons
 		/// Primeape Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Primeape() : base(
-			57,
+		public PrimeapeInstance() : base(
 			SpeciesPrimeape.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

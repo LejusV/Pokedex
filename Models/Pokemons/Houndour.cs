@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHoundour Constructor
 		public SpeciesHoundour() : base(
+			228,
 			"Houndour",
 			0.6,
 			10.8,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoundourInstance(string nickname, int level)
 		: base(
-				228,
 				SpeciesHoundour.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fire.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoundourInstance(int level)
 		: base(
-				228,
 				SpeciesHoundour.Instance, // PokemonInstance Species
 				"Houndour", level,
 				Dark.Instance, Fire.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Houndour Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Houndour() : base(
-			228,
+		public HoundourInstance() : base(
 			SpeciesHoundour.Instance, // PokemonInstance Species
 			Dark.Instance, Fire.Instance			
 		) {}

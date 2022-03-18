@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSirfetchd Constructor
 		public SpeciesSirfetchd() : base(
+			865,
 			"Sirfetchd",
 			0.8,
 			117.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SirfetchdInstance(string nickname, int level)
 		: base(
-				865,
 				SpeciesSirfetchd.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SirfetchdInstance(int level)
 		: base(
-				865,
 				SpeciesSirfetchd.Instance, // PokemonInstance Species
 				"Sirfetchd", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sirfetchd Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sirfetchd() : base(
-			865,
+		public SirfetchdInstance() : base(
 			SpeciesSirfetchd.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

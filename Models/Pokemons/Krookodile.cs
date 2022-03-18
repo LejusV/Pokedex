@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKrookodile Constructor
 		public SpeciesKrookodile() : base(
+			553,
 			"Krookodile",
 			1.5,
 			96.3,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrookodileInstance(string nickname, int level)
 		: base(
-				553,
 				SpeciesKrookodile.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dark.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrookodileInstance(int level)
 		: base(
-				553,
 				SpeciesKrookodile.Instance, // PokemonInstance Species
 				"Krookodile", level,
 				Ground.Instance, Dark.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Krookodile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Krookodile() : base(
-			553,
+		public KrookodileInstance() : base(
 			SpeciesKrookodile.Instance, // PokemonInstance Species
 			Ground.Instance, Dark.Instance			
 		) {}

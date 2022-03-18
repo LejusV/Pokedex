@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGothitelle Constructor
 		public SpeciesGothitelle() : base(
+			576,
 			"Gothitelle",
 			1.5,
 			44.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GothitelleInstance(string nickname, int level)
 		: base(
-				576,
 				SpeciesGothitelle.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GothitelleInstance(int level)
 		: base(
-				576,
 				SpeciesGothitelle.Instance, // PokemonInstance Species
 				"Gothitelle", level,
 				Psychic.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gothitelle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gothitelle() : base(
-			576,
+		public GothitelleInstance() : base(
 			SpeciesGothitelle.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

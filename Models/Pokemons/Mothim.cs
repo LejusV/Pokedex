@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMothim Constructor
 		public SpeciesMothim() : base(
+			414,
 			"Mothim",
 			0.9,
 			23.3,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MothimInstance(string nickname, int level)
 		: base(
-				414,
 				SpeciesMothim.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MothimInstance(int level)
 		: base(
-				414,
 				SpeciesMothim.Instance, // PokemonInstance Species
 				"Mothim", level,
 				Bug.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mothim Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mothim() : base(
-			414,
+		public MothimInstance() : base(
 			SpeciesMothim.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

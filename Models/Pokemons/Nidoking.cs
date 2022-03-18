@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNidoking Constructor
 		public SpeciesNidoking() : base(
+			34,
 			"Nidoking",
 			1.4,
 			62.0,
@@ -177,7 +178,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidokingInstance(string nickname, int level)
 		: base(
-				34,
 				SpeciesNidoking.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Ground.Instance			
@@ -192,7 +192,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidokingInstance(int level)
 		: base(
-				34,
 				SpeciesNidoking.Instance, // PokemonInstance Species
 				"Nidoking", level,
 				Poison.Instance, Ground.Instance			
@@ -206,8 +205,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nidoking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nidoking() : base(
-			34,
+		public NidokingInstance() : base(
 			SpeciesNidoking.Instance, // PokemonInstance Species
 			Poison.Instance, Ground.Instance			
 		) {}

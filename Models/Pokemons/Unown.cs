@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUnown Constructor
 		public SpeciesUnown() : base(
+			201,
 			"Unown",
 			0.5,
 			5.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UnownInstance(string nickname, int level)
 		: base(
-				201,
 				SpeciesUnown.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UnownInstance(int level)
 		: base(
-				201,
 				SpeciesUnown.Instance, // PokemonInstance Species
 				"Unown", level,
 				Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Unown Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Unown() : base(
-			201,
+		public UnownInstance() : base(
 			SpeciesUnown.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

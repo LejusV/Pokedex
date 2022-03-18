@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBewear Constructor
 		public SpeciesBewear() : base(
+			760,
 			"Bewear",
 			2.1,
 			135.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BewearInstance(string nickname, int level)
 		: base(
-				760,
 				SpeciesBewear.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fighting.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BewearInstance(int level)
 		: base(
-				760,
 				SpeciesBewear.Instance, // PokemonInstance Species
 				"Bewear", level,
 				Normal.Instance, Fighting.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bewear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bewear() : base(
-			760,
+		public BewearInstance() : base(
 			SpeciesBewear.Instance, // PokemonInstance Species
 			Normal.Instance, Fighting.Instance			
 		) {}

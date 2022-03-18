@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSealeo Constructor
 		public SpeciesSealeo() : base(
+			364,
 			"Sealeo",
 			1.1,
 			87.6,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SealeoInstance(string nickname, int level)
 		: base(
-				364,
 				SpeciesSealeo.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SealeoInstance(int level)
 		: base(
-				364,
 				SpeciesSealeo.Instance, // PokemonInstance Species
 				"Sealeo", level,
 				Ice.Instance, Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sealeo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sealeo() : base(
-			364,
+		public SealeoInstance() : base(
 			SpeciesSealeo.Instance, // PokemonInstance Species
 			Ice.Instance, Water.Instance			
 		) {}

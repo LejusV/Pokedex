@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesProbopass Constructor
 		public SpeciesProbopass() : base(
+			476,
 			"Probopass",
 			1.4,
 			340.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ProbopassInstance(string nickname, int level)
 		: base(
-				476,
 				SpeciesProbopass.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Steel.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ProbopassInstance(int level)
 		: base(
-				476,
 				SpeciesProbopass.Instance, // PokemonInstance Species
 				"Probopass", level,
 				Rock.Instance, Steel.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Probopass Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Probopass() : base(
-			476,
+		public ProbopassInstance() : base(
 			SpeciesProbopass.Instance, // PokemonInstance Species
 			Rock.Instance, Steel.Instance			
 		) {}

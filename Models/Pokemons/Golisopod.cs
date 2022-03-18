@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolisopod Constructor
 		public SpeciesGolisopod() : base(
+			768,
 			"Golisopod",
 			2.0,
 			108.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolisopodInstance(string nickname, int level)
 		: base(
-				768,
 				SpeciesGolisopod.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolisopodInstance(int level)
 		: base(
-				768,
 				SpeciesGolisopod.Instance, // PokemonInstance Species
 				"Golisopod", level,
 				Bug.Instance, Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golisopod Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golisopod() : base(
-			768,
+		public GolisopodInstance() : base(
 			SpeciesGolisopod.Instance, // PokemonInstance Species
 			Bug.Instance, Water.Instance			
 		) {}

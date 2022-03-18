@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKubfu Constructor
 		public SpeciesKubfu() : base(
+			891,
 			"Kubfu",
 			0.6,
 			12.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KubfuInstance(string nickname, int level)
 		: base(
-				891,
 				SpeciesKubfu.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KubfuInstance(int level)
 		: base(
-				891,
 				SpeciesKubfu.Instance, // PokemonInstance Species
 				"Kubfu", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kubfu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kubfu() : base(
-			891,
+		public KubfuInstance() : base(
 			SpeciesKubfu.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

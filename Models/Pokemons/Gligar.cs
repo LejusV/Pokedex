@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGligar Constructor
 		public SpeciesGligar() : base(
+			207,
 			"Gligar",
 			1.1,
 			64.8,
@@ -150,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GligarInstance(string nickname, int level)
 		: base(
-				207,
 				SpeciesGligar.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
@@ -165,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GligarInstance(int level)
 		: base(
-				207,
 				SpeciesGligar.Instance, // PokemonInstance Species
 				"Gligar", level,
 				Ground.Instance, Flying.Instance			
@@ -179,8 +178,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gligar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gligar() : base(
-			207,
+		public GligarInstance() : base(
 			SpeciesGligar.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}

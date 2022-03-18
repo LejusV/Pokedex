@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHeatmor Constructor
 		public SpeciesHeatmor() : base(
+			631,
 			"Heatmor",
 			1.4,
 			58.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeatmorInstance(string nickname, int level)
 		: base(
-				631,
 				SpeciesHeatmor.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeatmorInstance(int level)
 		: base(
-				631,
 				SpeciesHeatmor.Instance, // PokemonInstance Species
 				"Heatmor", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Heatmor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Heatmor() : base(
-			631,
+		public HeatmorInstance() : base(
 			SpeciesHeatmor.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

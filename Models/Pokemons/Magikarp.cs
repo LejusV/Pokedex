@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagikarp Constructor
 		public SpeciesMagikarp() : base(
+			129,
 			"Magikarp",
 			0.9,
 			10.0,
@@ -64,7 +65,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagikarpInstance(string nickname, int level)
 		: base(
-				129,
 				SpeciesMagikarp.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -79,7 +79,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagikarpInstance(int level)
 		: base(
-				129,
 				SpeciesMagikarp.Instance, // PokemonInstance Species
 				"Magikarp", level,
 				Water.Instance			
@@ -93,8 +92,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magikarp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magikarp() : base(
-			129,
+		public MagikarpInstance() : base(
 			SpeciesMagikarp.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

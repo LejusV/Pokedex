@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnivy Constructor
 		public SpeciesSnivy() : base(
+			495,
 			"Snivy",
 			0.6,
 			8.1,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnivyInstance(string nickname, int level)
 		: base(
-				495,
 				SpeciesSnivy.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnivyInstance(int level)
 		: base(
-				495,
 				SpeciesSnivy.Instance, // PokemonInstance Species
 				"Snivy", level,
 				Grass.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snivy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snivy() : base(
-			495,
+		public SnivyInstance() : base(
 			SpeciesSnivy.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

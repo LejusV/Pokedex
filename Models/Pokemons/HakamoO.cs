@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHakamo-O Constructor
 		public SpeciesHakamoO() : base(
+			783,
 			"Hakamo-O",
 			1.2,
 			47.0,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HakamoOInstance(string nickname, int level)
 		: base(
-				783,
 				SpeciesHakamoO.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Fighting.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HakamoOInstance(int level)
 		: base(
-				783,
 				SpeciesHakamoO.Instance, // PokemonInstance Species
 				"Hakamo-O", level,
 				Dragon.Instance, Fighting.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hakamo-O Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public HakamoO() : base(
-			783,
+		public HakamoOInstance() : base(
 			SpeciesHakamoO.Instance, // PokemonInstance Species
 			Dragon.Instance, Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJynx Constructor
 		public SpeciesJynx() : base(
+			124,
 			"Jynx",
 			1.4,
 			40.6,
@@ -163,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JynxInstance(string nickname, int level)
 		: base(
-				124,
 				SpeciesJynx.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Psychic.Instance			
@@ -178,7 +178,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JynxInstance(int level)
 		: base(
-				124,
 				SpeciesJynx.Instance, // PokemonInstance Species
 				"Jynx", level,
 				Ice.Instance, Psychic.Instance			
@@ -192,8 +191,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jynx Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jynx() : base(
-			124,
+		public JynxInstance() : base(
 			SpeciesJynx.Instance, // PokemonInstance Species
 			Ice.Instance, Psychic.Instance			
 		) {}

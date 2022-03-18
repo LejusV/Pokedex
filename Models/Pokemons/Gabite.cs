@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGabite Constructor
 		public SpeciesGabite() : base(
+			444,
 			"Gabite",
 			1.4,
 			56.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GabiteInstance(string nickname, int level)
 		: base(
-				444,
 				SpeciesGabite.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GabiteInstance(int level)
 		: base(
-				444,
 				SpeciesGabite.Instance, // PokemonInstance Species
 				"Gabite", level,
 				Dragon.Instance, Ground.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gabite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gabite() : base(
-			444,
+		public GabiteInstance() : base(
 			SpeciesGabite.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}

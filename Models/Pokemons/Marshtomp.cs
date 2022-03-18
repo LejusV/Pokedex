@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMarshtomp Constructor
 		public SpeciesMarshtomp() : base(
+			259,
 			"Marshtomp",
 			0.7,
 			28.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarshtompInstance(string nickname, int level)
 		: base(
-				259,
 				SpeciesMarshtomp.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarshtompInstance(int level)
 		: base(
-				259,
 				SpeciesMarshtomp.Instance, // PokemonInstance Species
 				"Marshtomp", level,
 				Water.Instance, Ground.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Marshtomp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Marshtomp() : base(
-			259,
+		public MarshtompInstance() : base(
 			SpeciesMarshtomp.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

@@ -8,8 +8,20 @@ namespace Pokedex.Models
     {
         private string _name = "";
         private Gender? _gender = null;
-        private List<PokemonInstance> _poks;
+        private PokemonInstance[] _poks;
+        private bool _canFight;
 
+        public bool CanFight => this._canFight;
+
+        public Gender? Gender
+        {
+            get { return _gender; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
         int InsertByLevel(PokemonInstance pok)
         {
 
@@ -28,34 +40,31 @@ namespace Pokedex.Models
             return 1;
         }
 
-        public void AddPokemon(PokemonInstance pok)
+        public void AddPokemon(PokemonInstance poke)
         {
-            InsertByLevel(pok);
-            Console.WriteLine(pok.Nickname + " joined your team !\n");
+            InsertByLevel(poke);
+            Console.WriteLine(poke.Nickname + " joined your team !\n");
+            int indexOfPoke = _poks
+                .ToList()
+                .IndexOf(poke);
+            if (indexOfPoke != -1)
+                _canFight = true;
+            else
+                _canFight = false;
         }
 
-        public Gender? Gender
+        public PokemonInstance[] Pokemons
         {
-            get { return _gender; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-        }
-
-        public List<PokemonInstance> Pokemons
-        {
-            get { return _poks; }
+            get => _poks;
             set { _poks = value; }
         }
 
-        public Player(string name, Gender gender, List<PokemonInstance> poks = null)
+        public Player(string name, Gender gender, PokemonInstance[] poks = null)
         {
             _gender = gender;
             _name = name;
             _poks = poks;
-            _poks = new List<PokemonInstance>();
+            _poks = new PokemonInstance[6]();
         }
     }
 }

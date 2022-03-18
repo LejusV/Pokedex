@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCentiskorch Constructor
 		public SpeciesCentiskorch() : base(
+			851,
 			"Centiskorch",
 			3.0,
 			120.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CentiskorchInstance(string nickname, int level)
 		: base(
-				851,
 				SpeciesCentiskorch.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Bug.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CentiskorchInstance(int level)
 		: base(
-				851,
 				SpeciesCentiskorch.Instance, // PokemonInstance Species
 				"Centiskorch", level,
 				Fire.Instance, Bug.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Centiskorch Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Centiskorch() : base(
-			851,
+		public CentiskorchInstance() : base(
 			SpeciesCentiskorch.Instance, // PokemonInstance Species
 			Fire.Instance, Bug.Instance			
 		) {}

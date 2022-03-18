@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArrokuda Constructor
 		public SpeciesArrokuda() : base(
+			846,
 			"Arrokuda",
 			0.5,
 			1.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArrokudaInstance(string nickname, int level)
 		: base(
-				846,
 				SpeciesArrokuda.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArrokudaInstance(int level)
 		: base(
-				846,
 				SpeciesArrokuda.Instance, // PokemonInstance Species
 				"Arrokuda", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arrokuda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arrokuda() : base(
-			846,
+		public ArrokudaInstance() : base(
 			SpeciesArrokuda.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

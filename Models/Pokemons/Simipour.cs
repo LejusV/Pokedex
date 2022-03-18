@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSimipour Constructor
 		public SpeciesSimipour() : base(
+			516,
 			"Simipour",
 			1.0,
 			29.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimipourInstance(string nickname, int level)
 		: base(
-				516,
 				SpeciesSimipour.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimipourInstance(int level)
 		: base(
-				516,
 				SpeciesSimipour.Instance, // PokemonInstance Species
 				"Simipour", level,
 				Water.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Simipour Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Simipour() : base(
-			516,
+		public SimipourInstance() : base(
 			SpeciesSimipour.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

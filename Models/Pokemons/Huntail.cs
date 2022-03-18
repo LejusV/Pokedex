@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHuntail Constructor
 		public SpeciesHuntail() : base(
+			367,
 			"Huntail",
 			1.7,
 			27.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HuntailInstance(string nickname, int level)
 		: base(
-				367,
 				SpeciesHuntail.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HuntailInstance(int level)
 		: base(
-				367,
 				SpeciesHuntail.Instance, // PokemonInstance Species
 				"Huntail", level,
 				Water.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Huntail Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Huntail() : base(
-			367,
+		public HuntailInstance() : base(
 			SpeciesHuntail.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

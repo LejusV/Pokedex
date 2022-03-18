@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesParas Constructor
 		public SpeciesParas() : base(
+			46,
 			"Paras",
 			0.3,
 			5.4,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ParasInstance(string nickname, int level)
 		: base(
-				46,
 				SpeciesParas.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ParasInstance(int level)
 		: base(
-				46,
 				SpeciesParas.Instance, // PokemonInstance Species
 				"Paras", level,
 				Bug.Instance, Grass.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Paras Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Paras() : base(
-			46,
+		public ParasInstance() : base(
 			SpeciesParas.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

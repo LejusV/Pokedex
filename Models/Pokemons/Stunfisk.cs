@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStunfisk Constructor
 		public SpeciesStunfisk() : base(
+			618,
 			"Stunfisk",
 			0.7,
 			11.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StunfiskInstance(string nickname, int level)
 		: base(
-				618,
 				SpeciesStunfisk.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Electric.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StunfiskInstance(int level)
 		: base(
-				618,
 				SpeciesStunfisk.Instance, // PokemonInstance Species
 				"Stunfisk", level,
 				Ground.Instance, Electric.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stunfisk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stunfisk() : base(
-			618,
+		public StunfiskInstance() : base(
 			SpeciesStunfisk.Instance, // PokemonInstance Species
 			Ground.Instance, Electric.Instance			
 		) {}

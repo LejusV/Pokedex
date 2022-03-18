@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDonphan Constructor
 		public SpeciesDonphan() : base(
+			232,
 			"Donphan",
 			1.1,
 			120.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DonphanInstance(string nickname, int level)
 		: base(
-				232,
 				SpeciesDonphan.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DonphanInstance(int level)
 		: base(
-				232,
 				SpeciesDonphan.Instance, // PokemonInstance Species
 				"Donphan", level,
 				Ground.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Donphan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Donphan() : base(
-			232,
+		public DonphanInstance() : base(
 			SpeciesDonphan.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSalamence Constructor
 		public SpeciesSalamence() : base(
+			373,
 			"Salamence",
 			1.5,
 			102.6,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalamenceInstance(string nickname, int level)
 		: base(
-				373,
 				SpeciesSalamence.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Flying.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalamenceInstance(int level)
 		: base(
-				373,
 				SpeciesSalamence.Instance, // PokemonInstance Species
 				"Salamence", level,
 				Dragon.Instance, Flying.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Salamence Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Salamence() : base(
-			373,
+		public SalamenceInstance() : base(
 			SpeciesSalamence.Instance, // PokemonInstance Species
 			Dragon.Instance, Flying.Instance			
 		) {}

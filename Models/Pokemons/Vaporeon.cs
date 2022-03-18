@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVaporeon Constructor
 		public SpeciesVaporeon() : base(
+			134,
 			"Vaporeon",
 			1.0,
 			29.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VaporeonInstance(string nickname, int level)
 		: base(
-				134,
 				SpeciesVaporeon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VaporeonInstance(int level)
 		: base(
-				134,
 				SpeciesVaporeon.Instance, // PokemonInstance Species
 				"Vaporeon", level,
 				Water.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vaporeon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vaporeon() : base(
-			134,
+		public VaporeonInstance() : base(
 			SpeciesVaporeon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

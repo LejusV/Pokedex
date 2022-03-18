@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrovyle Constructor
 		public SpeciesGrovyle() : base(
+			253,
 			"Grovyle",
 			0.9,
 			21.6,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrovyleInstance(string nickname, int level)
 		: base(
-				253,
 				SpeciesGrovyle.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrovyleInstance(int level)
 		: base(
-				253,
 				SpeciesGrovyle.Instance, // PokemonInstance Species
 				"Grovyle", level,
 				Grass.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grovyle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grovyle() : base(
-			253,
+		public GrovyleInstance() : base(
 			SpeciesGrovyle.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClauncher Constructor
 		public SpeciesClauncher() : base(
+			692,
 			"Clauncher",
 			0.5,
 			8.3,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClauncherInstance(string nickname, int level)
 		: base(
-				692,
 				SpeciesClauncher.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClauncherInstance(int level)
 		: base(
-				692,
 				SpeciesClauncher.Instance, // PokemonInstance Species
 				"Clauncher", level,
 				Water.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clauncher Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clauncher() : base(
-			692,
+		public ClauncherInstance() : base(
 			SpeciesClauncher.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

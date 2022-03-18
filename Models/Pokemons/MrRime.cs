@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMr-Rime Constructor
 		public SpeciesMrRime() : base(
+			866,
 			"Mr-Rime",
 			1.5,
 			58.2,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MrRimeInstance(string nickname, int level)
 		: base(
-				866,
 				SpeciesMrRime.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MrRimeInstance(int level)
 		: base(
-				866,
 				SpeciesMrRime.Instance, // PokemonInstance Species
 				"Mr-Rime", level,
 				Ice.Instance, Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mr-Rime Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MrRime() : base(
-			866,
+		public MrRimeInstance() : base(
 			SpeciesMrRime.Instance, // PokemonInstance Species
 			Ice.Instance, Psychic.Instance			
 		) {}

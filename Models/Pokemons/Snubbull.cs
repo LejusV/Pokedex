@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnubbull Constructor
 		public SpeciesSnubbull() : base(
+			209,
 			"Snubbull",
 			0.6,
 			7.8,
@@ -158,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnubbullInstance(string nickname, int level)
 		: base(
-				209,
 				SpeciesSnubbull.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -173,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnubbullInstance(int level)
 		: base(
-				209,
 				SpeciesSnubbull.Instance, // PokemonInstance Species
 				"Snubbull", level,
 				Fairy.Instance			
@@ -187,8 +186,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snubbull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snubbull() : base(
-			209,
+		public SnubbullInstance() : base(
 			SpeciesSnubbull.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

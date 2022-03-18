@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFalinks Constructor
 		public SpeciesFalinks() : base(
+			870,
 			"Falinks",
 			3.0,
 			62.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FalinksInstance(string nickname, int level)
 		: base(
-				870,
 				SpeciesFalinks.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FalinksInstance(int level)
 		: base(
-				870,
 				SpeciesFalinks.Instance, // PokemonInstance Species
 				"Falinks", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Falinks Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Falinks() : base(
-			870,
+		public FalinksInstance() : base(
 			SpeciesFalinks.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

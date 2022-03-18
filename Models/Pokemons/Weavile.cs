@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWeavile Constructor
 		public SpeciesWeavile() : base(
+			461,
 			"Weavile",
 			1.1,
 			34.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeavileInstance(string nickname, int level)
 		: base(
-				461,
 				SpeciesWeavile.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Ice.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeavileInstance(int level)
 		: base(
-				461,
 				SpeciesWeavile.Instance, // PokemonInstance Species
 				"Weavile", level,
 				Dark.Instance, Ice.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Weavile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Weavile() : base(
-			461,
+		public WeavileInstance() : base(
 			SpeciesWeavile.Instance, // PokemonInstance Species
 			Dark.Instance, Ice.Instance			
 		) {}

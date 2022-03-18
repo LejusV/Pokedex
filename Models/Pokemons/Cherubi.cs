@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCherubi Constructor
 		public SpeciesCherubi() : base(
+			420,
 			"Cherubi",
 			0.4,
 			3.3,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CherubiInstance(string nickname, int level)
 		: base(
-				420,
 				SpeciesCherubi.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CherubiInstance(int level)
 		: base(
-				420,
 				SpeciesCherubi.Instance, // PokemonInstance Species
 				"Cherubi", level,
 				Grass.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cherubi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cherubi() : base(
-			420,
+		public CherubiInstance() : base(
 			SpeciesCherubi.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

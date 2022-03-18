@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBarboach Constructor
 		public SpeciesBarboach() : base(
+			339,
 			"Barboach",
 			0.4,
 			1.9,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarboachInstance(string nickname, int level)
 		: base(
-				339,
 				SpeciesBarboach.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarboachInstance(int level)
 		: base(
-				339,
 				SpeciesBarboach.Instance, // PokemonInstance Species
 				"Barboach", level,
 				Water.Instance, Ground.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Barboach Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Barboach() : base(
-			339,
+		public BarboachInstance() : base(
 			SpeciesBarboach.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

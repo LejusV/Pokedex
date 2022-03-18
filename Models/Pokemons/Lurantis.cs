@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLurantis Constructor
 		public SpeciesLurantis() : base(
+			754,
 			"Lurantis",
 			0.9,
 			18.5,
@@ -104,7 +105,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LurantisInstance(string nickname, int level)
 		: base(
-				754,
 				SpeciesLurantis.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -119,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LurantisInstance(int level)
 		: base(
-				754,
 				SpeciesLurantis.Instance, // PokemonInstance Species
 				"Lurantis", level,
 				Grass.Instance			
@@ -133,8 +132,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lurantis Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lurantis() : base(
-			754,
+		public LurantisInstance() : base(
 			SpeciesLurantis.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

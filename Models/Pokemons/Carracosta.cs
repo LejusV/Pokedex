@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCarracosta Constructor
 		public SpeciesCarracosta() : base(
+			565,
 			"Carracosta",
 			1.2,
 			81.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarracostaInstance(string nickname, int level)
 		: base(
-				565,
 				SpeciesCarracosta.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarracostaInstance(int level)
 		: base(
-				565,
 				SpeciesCarracosta.Instance, // PokemonInstance Species
 				"Carracosta", level,
 				Water.Instance, Rock.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Carracosta Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Carracosta() : base(
-			565,
+		public CarracostaInstance() : base(
 			SpeciesCarracosta.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}

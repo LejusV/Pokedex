@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRowlet Constructor
 		public SpeciesRowlet() : base(
+			722,
 			"Rowlet",
 			0.3,
 			1.5,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RowletInstance(string nickname, int level)
 		: base(
-				722,
 				SpeciesRowlet.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RowletInstance(int level)
 		: base(
-				722,
 				SpeciesRowlet.Instance, // PokemonInstance Species
 				"Rowlet", level,
 				Grass.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rowlet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rowlet() : base(
-			722,
+		public RowletInstance() : base(
 			SpeciesRowlet.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

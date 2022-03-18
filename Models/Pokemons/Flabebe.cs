@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlabebe Constructor
 		public SpeciesFlabebe() : base(
+			669,
 			"Flabebe",
 			0.1,
 			0.1,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlabebeInstance(string nickname, int level)
 		: base(
-				669,
 				SpeciesFlabebe.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlabebeInstance(int level)
 		: base(
-				669,
 				SpeciesFlabebe.Instance, // PokemonInstance Species
 				"Flabebe", level,
 				Fairy.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Flabebe Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Flabebe() : base(
-			669,
+		public FlabebeInstance() : base(
 			SpeciesFlabebe.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

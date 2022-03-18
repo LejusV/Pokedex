@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAxew Constructor
 		public SpeciesAxew() : base(
+			610,
 			"Axew",
 			0.6,
 			18.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AxewInstance(string nickname, int level)
 		: base(
-				610,
 				SpeciesAxew.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AxewInstance(int level)
 		: base(
-				610,
 				SpeciesAxew.Instance, // PokemonInstance Species
 				"Axew", level,
 				Dragon.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Axew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Axew() : base(
-			610,
+		public AxewInstance() : base(
 			SpeciesAxew.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

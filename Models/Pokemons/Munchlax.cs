@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMunchlax Constructor
 		public SpeciesMunchlax() : base(
+			446,
 			"Munchlax",
 			0.6,
 			105.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MunchlaxInstance(string nickname, int level)
 		: base(
-				446,
 				SpeciesMunchlax.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MunchlaxInstance(int level)
 		: base(
-				446,
 				SpeciesMunchlax.Instance, // PokemonInstance Species
 				"Munchlax", level,
 				Normal.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Munchlax Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Munchlax() : base(
-			446,
+		public MunchlaxInstance() : base(
 			SpeciesMunchlax.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDoduo Constructor
 		public SpeciesDoduo() : base(
+			84,
 			"Doduo",
 			1.4,
 			39.2,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DoduoInstance(string nickname, int level)
 		: base(
-				84,
 				SpeciesDoduo.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DoduoInstance(int level)
 		: base(
-				84,
 				SpeciesDoduo.Instance, // PokemonInstance Species
 				"Doduo", level,
 				Normal.Instance, Flying.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Doduo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Doduo() : base(
-			84,
+		public DoduoInstance() : base(
 			SpeciesDoduo.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

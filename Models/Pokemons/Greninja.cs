@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGreninja Constructor
 		public SpeciesGreninja() : base(
+			658,
 			"Greninja",
 			1.5,
 			40.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GreninjaInstance(string nickname, int level)
 		: base(
-				658,
 				SpeciesGreninja.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dark.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GreninjaInstance(int level)
 		: base(
-				658,
 				SpeciesGreninja.Instance, // PokemonInstance Species
 				"Greninja", level,
 				Water.Instance, Dark.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Greninja Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Greninja() : base(
-			658,
+		public GreninjaInstance() : base(
 			SpeciesGreninja.Instance, // PokemonInstance Species
 			Water.Instance, Dark.Instance			
 		) {}

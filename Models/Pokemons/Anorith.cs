@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAnorith Constructor
 		public SpeciesAnorith() : base(
+			347,
 			"Anorith",
 			0.7,
 			12.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AnorithInstance(string nickname, int level)
 		: base(
-				347,
 				SpeciesAnorith.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Bug.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AnorithInstance(int level)
 		: base(
-				347,
 				SpeciesAnorith.Instance, // PokemonInstance Species
 				"Anorith", level,
 				Rock.Instance, Bug.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Anorith Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Anorith() : base(
-			347,
+		public AnorithInstance() : base(
 			SpeciesAnorith.Instance, // PokemonInstance Species
 			Rock.Instance, Bug.Instance			
 		) {}

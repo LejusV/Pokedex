@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTornadus-Incarnate Constructor
 		public SpeciesTornadusIncarnate() : base(
+			641,
 			"Tornadus-Incarnate",
 			1.5,
 			63.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TornadusIncarnateInstance(string nickname, int level)
 		: base(
-				641,
 				SpeciesTornadusIncarnate.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TornadusIncarnateInstance(int level)
 		: base(
-				641,
 				SpeciesTornadusIncarnate.Instance, // PokemonInstance Species
 				"Tornadus-Incarnate", level,
 				Flying.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tornadus-Incarnate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TornadusIncarnate() : base(
-			641,
+		public TornadusIncarnateInstance() : base(
 			SpeciesTornadusIncarnate.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}

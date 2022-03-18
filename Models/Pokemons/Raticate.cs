@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRaticate Constructor
 		public SpeciesRaticate() : base(
+			20,
 			"Raticate",
 			0.7,
 			18.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaticateInstance(string nickname, int level)
 		: base(
-				20,
 				SpeciesRaticate.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaticateInstance(int level)
 		: base(
-				20,
 				SpeciesRaticate.Instance, // PokemonInstance Species
 				"Raticate", level,
 				Normal.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Raticate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Raticate() : base(
-			20,
+		public RaticateInstance() : base(
 			SpeciesRaticate.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

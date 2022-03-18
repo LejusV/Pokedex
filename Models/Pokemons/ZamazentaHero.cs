@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZamazenta-Hero Constructor
 		public SpeciesZamazentaHero() : base(
+			889,
 			"Zamazenta-Hero",
 			2.9,
 			210.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZamazentaHeroInstance(string nickname, int level)
 		: base(
-				889,
 				SpeciesZamazentaHero.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZamazentaHeroInstance(int level)
 		: base(
-				889,
 				SpeciesZamazentaHero.Instance, // PokemonInstance Species
 				"Zamazenta-Hero", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zamazenta-Hero Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public ZamazentaHero() : base(
-			889,
+		public ZamazentaHeroInstance() : base(
 			SpeciesZamazentaHero.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

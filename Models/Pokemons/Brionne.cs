@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBrionne Constructor
 		public SpeciesBrionne() : base(
+			729,
 			"Brionne",
 			0.6,
 			17.5,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BrionneInstance(string nickname, int level)
 		: base(
-				729,
 				SpeciesBrionne.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BrionneInstance(int level)
 		: base(
-				729,
 				SpeciesBrionne.Instance, // PokemonInstance Species
 				"Brionne", level,
 				Water.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Brionne Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Brionne() : base(
-			729,
+		public BrionneInstance() : base(
 			SpeciesBrionne.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLarvitar Constructor
 		public SpeciesLarvitar() : base(
+			246,
 			"Larvitar",
 			0.6,
 			72.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LarvitarInstance(string nickname, int level)
 		: base(
-				246,
 				SpeciesLarvitar.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LarvitarInstance(int level)
 		: base(
-				246,
 				SpeciesLarvitar.Instance, // PokemonInstance Species
 				"Larvitar", level,
 				Rock.Instance, Ground.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Larvitar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Larvitar() : base(
-			246,
+		public LarvitarInstance() : base(
 			SpeciesLarvitar.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

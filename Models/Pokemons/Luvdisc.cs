@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLuvdisc Constructor
 		public SpeciesLuvdisc() : base(
+			370,
 			"Luvdisc",
 			0.6,
 			8.7,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuvdiscInstance(string nickname, int level)
 		: base(
-				370,
 				SpeciesLuvdisc.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuvdiscInstance(int level)
 		: base(
-				370,
 				SpeciesLuvdisc.Instance, // PokemonInstance Species
 				"Luvdisc", level,
 				Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Luvdisc Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Luvdisc() : base(
-			370,
+		public LuvdiscInstance() : base(
 			SpeciesLuvdisc.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

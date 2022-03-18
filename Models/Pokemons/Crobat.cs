@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCrobat Constructor
 		public SpeciesCrobat() : base(
+			169,
 			"Crobat",
 			1.8,
 			75.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrobatInstance(string nickname, int level)
 		: base(
-				169,
 				SpeciesCrobat.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Flying.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrobatInstance(int level)
 		: base(
-				169,
 				SpeciesCrobat.Instance, // PokemonInstance Species
 				"Crobat", level,
 				Poison.Instance, Flying.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Crobat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Crobat() : base(
-			169,
+		public CrobatInstance() : base(
 			SpeciesCrobat.Instance, // PokemonInstance Species
 			Poison.Instance, Flying.Instance			
 		) {}

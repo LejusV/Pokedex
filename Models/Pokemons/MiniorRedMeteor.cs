@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMinior-Red-Meteor Constructor
 		public SpeciesMiniorRedMeteor() : base(
+			774,
 			"Minior-Red-Meteor",
 			0.3,
 			40.0,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiniorRedMeteorInstance(string nickname, int level)
 		: base(
-				774,
 				SpeciesMiniorRedMeteor.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiniorRedMeteorInstance(int level)
 		: base(
-				774,
 				SpeciesMiniorRedMeteor.Instance, // PokemonInstance Species
 				"Minior-Red-Meteor", level,
 				Rock.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Minior-Red-Meteor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MiniorRedMeteor() : base(
-			774,
+		public MiniorRedMeteorInstance() : base(
 			SpeciesMiniorRedMeteor.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}

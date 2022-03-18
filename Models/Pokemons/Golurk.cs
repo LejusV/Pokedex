@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolurk Constructor
 		public SpeciesGolurk() : base(
+			623,
 			"Golurk",
 			2.8,
 			330.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolurkInstance(string nickname, int level)
 		: base(
-				623,
 				SpeciesGolurk.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Ghost.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolurkInstance(int level)
 		: base(
-				623,
 				SpeciesGolurk.Instance, // PokemonInstance Species
 				"Golurk", level,
 				Ground.Instance, Ghost.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golurk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golurk() : base(
-			623,
+		public GolurkInstance() : base(
 			SpeciesGolurk.Instance, // PokemonInstance Species
 			Ground.Instance, Ghost.Instance			
 		) {}

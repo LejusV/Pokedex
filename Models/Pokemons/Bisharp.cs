@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBisharp Constructor
 		public SpeciesBisharp() : base(
+			625,
 			"Bisharp",
 			1.6,
 			70.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BisharpInstance(string nickname, int level)
 		: base(
-				625,
 				SpeciesBisharp.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Steel.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BisharpInstance(int level)
 		: base(
-				625,
 				SpeciesBisharp.Instance, // PokemonInstance Species
 				"Bisharp", level,
 				Dark.Instance, Steel.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bisharp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bisharp() : base(
-			625,
+		public BisharpInstance() : base(
 			SpeciesBisharp.Instance, // PokemonInstance Species
 			Dark.Instance, Steel.Instance			
 		) {}

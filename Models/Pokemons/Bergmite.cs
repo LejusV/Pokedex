@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBergmite Constructor
 		public SpeciesBergmite() : base(
+			712,
 			"Bergmite",
 			1.0,
 			99.5,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BergmiteInstance(string nickname, int level)
 		: base(
-				712,
 				SpeciesBergmite.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BergmiteInstance(int level)
 		: base(
-				712,
 				SpeciesBergmite.Instance, // PokemonInstance Species
 				"Bergmite", level,
 				Ice.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bergmite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bergmite() : base(
-			712,
+		public BergmiteInstance() : base(
 			SpeciesBergmite.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

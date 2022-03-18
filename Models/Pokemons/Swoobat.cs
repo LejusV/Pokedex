@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwoobat Constructor
 		public SpeciesSwoobat() : base(
+			528,
 			"Swoobat",
 			0.9,
 			10.5,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwoobatInstance(string nickname, int level)
 		: base(
-				528,
 				SpeciesSwoobat.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwoobatInstance(int level)
 		: base(
-				528,
 				SpeciesSwoobat.Instance, // PokemonInstance Species
 				"Swoobat", level,
 				Psychic.Instance, Flying.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swoobat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swoobat() : base(
-			528,
+		public SwoobatInstance() : base(
 			SpeciesSwoobat.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}

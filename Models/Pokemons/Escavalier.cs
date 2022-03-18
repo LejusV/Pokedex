@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEscavalier Constructor
 		public SpeciesEscavalier() : base(
+			589,
 			"Escavalier",
 			1.0,
 			33.0,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EscavalierInstance(string nickname, int level)
 		: base(
-				589,
 				SpeciesEscavalier.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EscavalierInstance(int level)
 		: base(
-				589,
 				SpeciesEscavalier.Instance, // PokemonInstance Species
 				"Escavalier", level,
 				Bug.Instance, Steel.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Escavalier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Escavalier() : base(
-			589,
+		public EscavalierInstance() : base(
 			SpeciesEscavalier.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}

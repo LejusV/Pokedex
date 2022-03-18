@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMeltan Constructor
 		public SpeciesMeltan() : base(
+			808,
 			"Meltan",
 			0.2,
 			8.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeltanInstance(string nickname, int level)
 		: base(
-				808,
 				SpeciesMeltan.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeltanInstance(int level)
 		: base(
-				808,
 				SpeciesMeltan.Instance, // PokemonInstance Species
 				"Meltan", level,
 				Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Meltan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Meltan() : base(
-			808,
+		public MeltanInstance() : base(
 			SpeciesMeltan.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

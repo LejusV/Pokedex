@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStufful Constructor
 		public SpeciesStufful() : base(
+			759,
 			"Stufful",
 			0.5,
 			6.8,
@@ -108,7 +109,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StuffulInstance(string nickname, int level)
 		: base(
-				759,
 				SpeciesStufful.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fighting.Instance			
@@ -123,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StuffulInstance(int level)
 		: base(
-				759,
 				SpeciesStufful.Instance, // PokemonInstance Species
 				"Stufful", level,
 				Normal.Instance, Fighting.Instance			
@@ -137,8 +136,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stufful Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stufful() : base(
-			759,
+		public StuffulInstance() : base(
 			SpeciesStufful.Instance, // PokemonInstance Species
 			Normal.Instance, Fighting.Instance			
 		) {}

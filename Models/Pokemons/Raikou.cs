@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRaikou Constructor
 		public SpeciesRaikou() : base(
+			243,
 			"Raikou",
 			1.9,
 			178.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaikouInstance(string nickname, int level)
 		: base(
-				243,
 				SpeciesRaikou.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaikouInstance(int level)
 		: base(
-				243,
 				SpeciesRaikou.Instance, // PokemonInstance Species
 				"Raikou", level,
 				Electric.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Raikou Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Raikou() : base(
-			243,
+		public RaikouInstance() : base(
 			SpeciesRaikou.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

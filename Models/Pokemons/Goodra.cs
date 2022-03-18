@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGoodra Constructor
 		public SpeciesGoodra() : base(
+			706,
 			"Goodra",
 			2.0,
 			150.5,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoodraInstance(string nickname, int level)
 		: base(
-				706,
 				SpeciesGoodra.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoodraInstance(int level)
 		: base(
-				706,
 				SpeciesGoodra.Instance, // PokemonInstance Species
 				"Goodra", level,
 				Dragon.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Goodra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Goodra() : base(
-			706,
+		public GoodraInstance() : base(
 			SpeciesGoodra.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

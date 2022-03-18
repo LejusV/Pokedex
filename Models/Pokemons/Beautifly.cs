@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBeautifly Constructor
 		public SpeciesBeautifly() : base(
+			267,
 			"Beautifly",
 			1.0,
 			28.4,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeautiflyInstance(string nickname, int level)
 		: base(
-				267,
 				SpeciesBeautifly.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeautiflyInstance(int level)
 		: base(
-				267,
 				SpeciesBeautifly.Instance, // PokemonInstance Species
 				"Beautifly", level,
 				Bug.Instance, Flying.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Beautifly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Beautifly() : base(
-			267,
+		public BeautiflyInstance() : base(
 			SpeciesBeautifly.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

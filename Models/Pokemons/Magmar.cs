@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagmar Constructor
 		public SpeciesMagmar() : base(
+			126,
 			"Magmar",
 			1.3,
 			44.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagmarInstance(string nickname, int level)
 		: base(
-				126,
 				SpeciesMagmar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagmarInstance(int level)
 		: base(
-				126,
 				SpeciesMagmar.Instance, // PokemonInstance Species
 				"Magmar", level,
 				Fire.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magmar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magmar() : base(
-			126,
+		public MagmarInstance() : base(
 			SpeciesMagmar.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

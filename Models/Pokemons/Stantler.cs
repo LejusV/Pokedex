@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStantler Constructor
 		public SpeciesStantler() : base(
+			234,
 			"Stantler",
 			1.4,
 			71.2,
@@ -146,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StantlerInstance(string nickname, int level)
 		: base(
-				234,
 				SpeciesStantler.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -161,7 +161,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StantlerInstance(int level)
 		: base(
-				234,
 				SpeciesStantler.Instance, // PokemonInstance Species
 				"Stantler", level,
 				Normal.Instance			
@@ -175,8 +174,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stantler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stantler() : base(
-			234,
+		public StantlerInstance() : base(
 			SpeciesStantler.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

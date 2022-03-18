@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNatu Constructor
 		public SpeciesNatu() : base(
+			177,
 			"Natu",
 			0.2,
 			2.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NatuInstance(string nickname, int level)
 		: base(
-				177,
 				SpeciesNatu.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NatuInstance(int level)
 		: base(
-				177,
 				SpeciesNatu.Instance, // PokemonInstance Species
 				"Natu", level,
 				Psychic.Instance, Flying.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Natu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Natu() : base(
-			177,
+		public NatuInstance() : base(
 			SpeciesNatu.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}

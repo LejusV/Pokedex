@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSandshrew Constructor
 		public SpeciesSandshrew() : base(
+			27,
 			"Sandshrew",
 			0.6,
 			12.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandshrewInstance(string nickname, int level)
 		: base(
-				27,
 				SpeciesSandshrew.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandshrewInstance(int level)
 		: base(
-				27,
 				SpeciesSandshrew.Instance, // PokemonInstance Species
 				"Sandshrew", level,
 				Ground.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sandshrew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sandshrew() : base(
-			27,
+		public SandshrewInstance() : base(
 			SpeciesSandshrew.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

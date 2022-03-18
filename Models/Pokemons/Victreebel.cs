@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVictreebel Constructor
 		public SpeciesVictreebel() : base(
+			71,
 			"Victreebel",
 			1.7,
 			15.5,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VictreebelInstance(string nickname, int level)
 		: base(
-				71,
 				SpeciesVictreebel.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VictreebelInstance(int level)
 		: base(
-				71,
 				SpeciesVictreebel.Instance, // PokemonInstance Species
 				"Victreebel", level,
 				Grass.Instance, Poison.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Victreebel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Victreebel() : base(
-			71,
+		public VictreebelInstance() : base(
 			SpeciesVictreebel.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

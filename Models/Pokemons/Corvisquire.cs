@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCorvisquire Constructor
 		public SpeciesCorvisquire() : base(
+			822,
 			"Corvisquire",
 			0.8,
 			16.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorvisquireInstance(string nickname, int level)
 		: base(
-				822,
 				SpeciesCorvisquire.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorvisquireInstance(int level)
 		: base(
-				822,
 				SpeciesCorvisquire.Instance, // PokemonInstance Species
 				"Corvisquire", level,
 				Flying.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Corvisquire Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Corvisquire() : base(
-			822,
+		public CorvisquireInstance() : base(
 			SpeciesCorvisquire.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMismagius Constructor
 		public SpeciesMismagius() : base(
+			429,
 			"Mismagius",
 			0.9,
 			4.4,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MismagiusInstance(string nickname, int level)
 		: base(
-				429,
 				SpeciesMismagius.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MismagiusInstance(int level)
 		: base(
-				429,
 				SpeciesMismagius.Instance, // PokemonInstance Species
 				"Mismagius", level,
 				Ghost.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mismagius Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mismagius() : base(
-			429,
+		public MismagiusInstance() : base(
 			SpeciesMismagius.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

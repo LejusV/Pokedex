@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBulbasaur Constructor
 		public SpeciesBulbasaur() : base(
+			1,
 			"Bulbasaur",
 			0.7,
 			6.9,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BulbasaurInstance(string nickname, int level)
 		: base(
-				1,
 				SpeciesBulbasaur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BulbasaurInstance(int level)
 		: base(
-				1,
 				SpeciesBulbasaur.Instance, // PokemonInstance Species
 				"Bulbasaur", level,
 				Grass.Instance, Poison.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bulbasaur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bulbasaur() : base(
-			1,
+		public BulbasaurInstance() : base(
 			SpeciesBulbasaur.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

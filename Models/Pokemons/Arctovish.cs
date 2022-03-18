@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArctovish Constructor
 		public SpeciesArctovish() : base(
+			883,
 			"Arctovish",
 			2.0,
 			175.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArctovishInstance(string nickname, int level)
 		: base(
-				883,
 				SpeciesArctovish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArctovishInstance(int level)
 		: base(
-				883,
 				SpeciesArctovish.Instance, // PokemonInstance Species
 				"Arctovish", level,
 				Water.Instance, Ice.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arctovish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arctovish() : base(
-			883,
+		public ArctovishInstance() : base(
 			SpeciesArctovish.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}

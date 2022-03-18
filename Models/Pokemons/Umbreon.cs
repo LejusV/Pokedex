@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUmbreon Constructor
 		public SpeciesUmbreon() : base(
+			197,
 			"Umbreon",
 			1.0,
 			27.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UmbreonInstance(string nickname, int level)
 		: base(
-				197,
 				SpeciesUmbreon.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UmbreonInstance(int level)
 		: base(
-				197,
 				SpeciesUmbreon.Instance, // PokemonInstance Species
 				"Umbreon", level,
 				Dark.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Umbreon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Umbreon() : base(
-			197,
+		public UmbreonInstance() : base(
 			SpeciesUmbreon.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

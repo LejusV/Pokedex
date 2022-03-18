@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRookidee Constructor
 		public SpeciesRookidee() : base(
+			821,
 			"Rookidee",
 			0.2,
 			1.8,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RookideeInstance(string nickname, int level)
 		: base(
-				821,
 				SpeciesRookidee.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RookideeInstance(int level)
 		: base(
-				821,
 				SpeciesRookidee.Instance, // PokemonInstance Species
 				"Rookidee", level,
 				Flying.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rookidee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rookidee() : base(
-			821,
+		public RookideeInstance() : base(
 			SpeciesRookidee.Instance, // PokemonInstance Species
 			Flying.Instance			
 		) {}

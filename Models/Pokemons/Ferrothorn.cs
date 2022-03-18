@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFerrothorn Constructor
 		public SpeciesFerrothorn() : base(
+			598,
 			"Ferrothorn",
 			1.0,
 			110.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FerrothornInstance(string nickname, int level)
 		: base(
-				598,
 				SpeciesFerrothorn.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Steel.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FerrothornInstance(int level)
 		: base(
-				598,
 				SpeciesFerrothorn.Instance, // PokemonInstance Species
 				"Ferrothorn", level,
 				Grass.Instance, Steel.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ferrothorn Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ferrothorn() : base(
-			598,
+		public FerrothornInstance() : base(
 			SpeciesFerrothorn.Instance, // PokemonInstance Species
 			Grass.Instance, Steel.Instance			
 		) {}

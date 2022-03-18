@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMoltres Constructor
 		public SpeciesMoltres() : base(
+			146,
 			"Moltres",
 			2.0,
 			60.0,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MoltresInstance(string nickname, int level)
 		: base(
-				146,
 				SpeciesMoltres.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MoltresInstance(int level)
 		: base(
-				146,
 				SpeciesMoltres.Instance, // PokemonInstance Species
 				"Moltres", level,
 				Fire.Instance, Flying.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Moltres Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Moltres() : base(
-			146,
+		public MoltresInstance() : base(
 			SpeciesMoltres.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

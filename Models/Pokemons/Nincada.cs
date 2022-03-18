@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNincada Constructor
 		public SpeciesNincada() : base(
+			290,
 			"Nincada",
 			0.5,
 			5.5,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NincadaInstance(string nickname, int level)
 		: base(
-				290,
 				SpeciesNincada.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Ground.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NincadaInstance(int level)
 		: base(
-				290,
 				SpeciesNincada.Instance, // PokemonInstance Species
 				"Nincada", level,
 				Bug.Instance, Ground.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nincada Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nincada() : base(
-			290,
+		public NincadaInstance() : base(
 			SpeciesNincada.Instance, // PokemonInstance Species
 			Bug.Instance, Ground.Instance			
 		) {}

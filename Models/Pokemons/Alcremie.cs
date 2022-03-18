@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAlcremie Constructor
 		public SpeciesAlcremie() : base(
+			869,
 			"Alcremie",
 			0.3,
 			0.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlcremieInstance(string nickname, int level)
 		: base(
-				869,
 				SpeciesAlcremie.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlcremieInstance(int level)
 		: base(
-				869,
 				SpeciesAlcremie.Instance, // PokemonInstance Species
 				"Alcremie", level,
 				Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Alcremie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Alcremie() : base(
-			869,
+		public AlcremieInstance() : base(
 			SpeciesAlcremie.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

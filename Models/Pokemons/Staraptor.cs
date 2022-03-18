@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStaraptor Constructor
 		public SpeciesStaraptor() : base(
+			398,
 			"Staraptor",
 			1.2,
 			24.9,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaraptorInstance(string nickname, int level)
 		: base(
-				398,
 				SpeciesStaraptor.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaraptorInstance(int level)
 		: base(
-				398,
 				SpeciesStaraptor.Instance, // PokemonInstance Species
 				"Staraptor", level,
 				Normal.Instance, Flying.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Staraptor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Staraptor() : base(
-			398,
+		public StaraptorInstance() : base(
 			SpeciesStaraptor.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

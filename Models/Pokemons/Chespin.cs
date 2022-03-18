@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChespin Constructor
 		public SpeciesChespin() : base(
+			650,
 			"Chespin",
 			0.4,
 			9.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChespinInstance(string nickname, int level)
 		: base(
-				650,
 				SpeciesChespin.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChespinInstance(int level)
 		: base(
-				650,
 				SpeciesChespin.Instance, // PokemonInstance Species
 				"Chespin", level,
 				Grass.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chespin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chespin() : base(
-			650,
+		public ChespinInstance() : base(
 			SpeciesChespin.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOrbeetle Constructor
 		public SpeciesOrbeetle() : base(
+			826,
 			"Orbeetle",
 			0.4,
 			40.8,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OrbeetleInstance(string nickname, int level)
 		: base(
-				826,
 				SpeciesOrbeetle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OrbeetleInstance(int level)
 		: base(
-				826,
 				SpeciesOrbeetle.Instance, // PokemonInstance Species
 				"Orbeetle", level,
 				Bug.Instance, Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Orbeetle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Orbeetle() : base(
-			826,
+		public OrbeetleInstance() : base(
 			SpeciesOrbeetle.Instance, // PokemonInstance Species
 			Bug.Instance, Psychic.Instance			
 		) {}

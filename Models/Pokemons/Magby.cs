@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagby Constructor
 		public SpeciesMagby() : base(
+			240,
 			"Magby",
 			0.7,
 			21.4,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagbyInstance(string nickname, int level)
 		: base(
-				240,
 				SpeciesMagby.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagbyInstance(int level)
 		: base(
-				240,
 				SpeciesMagby.Instance, // PokemonInstance Species
 				"Magby", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magby() : base(
-			240,
+		public MagbyInstance() : base(
 			SpeciesMagby.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

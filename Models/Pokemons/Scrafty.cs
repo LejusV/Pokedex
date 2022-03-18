@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScrafty Constructor
 		public SpeciesScrafty() : base(
+			560,
 			"Scrafty",
 			1.1,
 			30.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScraftyInstance(string nickname, int level)
 		: base(
-				560,
 				SpeciesScrafty.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fighting.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScraftyInstance(int level)
 		: base(
-				560,
 				SpeciesScrafty.Instance, // PokemonInstance Species
 				"Scrafty", level,
 				Dark.Instance, Fighting.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scrafty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scrafty() : base(
-			560,
+		public ScraftyInstance() : base(
 			SpeciesScrafty.Instance, // PokemonInstance Species
 			Dark.Instance, Fighting.Instance			
 		) {}

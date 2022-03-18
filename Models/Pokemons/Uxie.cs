@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUxie Constructor
 		public SpeciesUxie() : base(
+			480,
 			"Uxie",
 			0.3,
 			0.3,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UxieInstance(string nickname, int level)
 		: base(
-				480,
 				SpeciesUxie.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UxieInstance(int level)
 		: base(
-				480,
 				SpeciesUxie.Instance, // PokemonInstance Species
 				"Uxie", level,
 				Psychic.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Uxie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Uxie() : base(
-			480,
+		public UxieInstance() : base(
 			SpeciesUxie.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

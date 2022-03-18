@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLileep Constructor
 		public SpeciesLileep() : base(
+			345,
 			"Lileep",
 			1.0,
 			23.8,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LileepInstance(string nickname, int level)
 		: base(
-				345,
 				SpeciesLileep.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Grass.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LileepInstance(int level)
 		: base(
-				345,
 				SpeciesLileep.Instance, // PokemonInstance Species
 				"Lileep", level,
 				Rock.Instance, Grass.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lileep Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lileep() : base(
-			345,
+		public LileepInstance() : base(
 			SpeciesLileep.Instance, // PokemonInstance Species
 			Rock.Instance, Grass.Instance			
 		) {}

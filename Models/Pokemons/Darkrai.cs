@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDarkrai Constructor
 		public SpeciesDarkrai() : base(
+			491,
 			"Darkrai",
 			1.5,
 			50.5,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarkraiInstance(string nickname, int level)
 		: base(
-				491,
 				SpeciesDarkrai.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarkraiInstance(int level)
 		: base(
-				491,
 				SpeciesDarkrai.Instance, // PokemonInstance Species
 				"Darkrai", level,
 				Dark.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Darkrai Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Darkrai() : base(
-			491,
+		public DarkraiInstance() : base(
 			SpeciesDarkrai.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

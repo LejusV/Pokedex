@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlipbug Constructor
 		public SpeciesBlipbug() : base(
+			824,
 			"Blipbug",
 			0.4,
 			8.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlipbugInstance(string nickname, int level)
 		: base(
-				824,
 				SpeciesBlipbug.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlipbugInstance(int level)
 		: base(
-				824,
 				SpeciesBlipbug.Instance, // PokemonInstance Species
 				"Blipbug", level,
 				Bug.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blipbug Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blipbug() : base(
-			824,
+		public BlipbugInstance() : base(
 			SpeciesBlipbug.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

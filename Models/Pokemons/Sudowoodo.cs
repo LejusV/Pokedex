@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSudowoodo Constructor
 		public SpeciesSudowoodo() : base(
+			185,
 			"Sudowoodo",
 			1.2,
 			38.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SudowoodoInstance(string nickname, int level)
 		: base(
-				185,
 				SpeciesSudowoodo.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SudowoodoInstance(int level)
 		: base(
-				185,
 				SpeciesSudowoodo.Instance, // PokemonInstance Species
 				"Sudowoodo", level,
 				Rock.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sudowoodo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sudowoodo() : base(
-			185,
+		public SudowoodoInstance() : base(
 			SpeciesSudowoodo.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

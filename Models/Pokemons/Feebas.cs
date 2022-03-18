@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFeebas Constructor
 		public SpeciesFeebas() : base(
+			349,
 			"Feebas",
 			0.6,
 			7.4,
@@ -108,7 +109,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FeebasInstance(string nickname, int level)
 		: base(
-				349,
 				SpeciesFeebas.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -123,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FeebasInstance(int level)
 		: base(
-				349,
 				SpeciesFeebas.Instance, // PokemonInstance Species
 				"Feebas", level,
 				Water.Instance			
@@ -137,8 +136,7 @@ namespace Pokedex.Models.Pokemons
 		/// Feebas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Feebas() : base(
-			349,
+		public FeebasInstance() : base(
 			SpeciesFeebas.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

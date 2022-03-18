@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFloatzel Constructor
 		public SpeciesFloatzel() : base(
+			419,
 			"Floatzel",
 			1.1,
 			33.5,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FloatzelInstance(string nickname, int level)
 		: base(
-				419,
 				SpeciesFloatzel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FloatzelInstance(int level)
 		: base(
-				419,
 				SpeciesFloatzel.Instance, // PokemonInstance Species
 				"Floatzel", level,
 				Water.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Floatzel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Floatzel() : base(
-			419,
+		public FloatzelInstance() : base(
 			SpeciesFloatzel.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

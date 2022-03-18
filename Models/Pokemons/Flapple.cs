@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlapple Constructor
 		public SpeciesFlapple() : base(
+			841,
 			"Flapple",
 			0.3,
 			1.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlappleInstance(string nickname, int level)
 		: base(
-				841,
 				SpeciesFlapple.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlappleInstance(int level)
 		: base(
-				841,
 				SpeciesFlapple.Instance, // PokemonInstance Species
 				"Flapple", level,
 				Grass.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Flapple Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Flapple() : base(
-			841,
+		public FlappleInstance() : base(
 			SpeciesFlapple.Instance, // PokemonInstance Species
 			Grass.Instance, Dragon.Instance			
 		) {}

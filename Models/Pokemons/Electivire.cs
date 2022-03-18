@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesElectivire Constructor
 		public SpeciesElectivire() : base(
+			466,
 			"Electivire",
 			1.8,
 			138.6,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectivireInstance(string nickname, int level)
 		: base(
-				466,
 				SpeciesElectivire.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectivireInstance(int level)
 		: base(
-				466,
 				SpeciesElectivire.Instance, // PokemonInstance Species
 				"Electivire", level,
 				Electric.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Electivire Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Electivire() : base(
-			466,
+		public ElectivireInstance() : base(
 			SpeciesElectivire.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

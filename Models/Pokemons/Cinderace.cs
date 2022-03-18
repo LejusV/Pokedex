@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCinderace Constructor
 		public SpeciesCinderace() : base(
+			815,
 			"Cinderace",
 			1.4,
 			33.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CinderaceInstance(string nickname, int level)
 		: base(
-				815,
 				SpeciesCinderace.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CinderaceInstance(int level)
 		: base(
-				815,
 				SpeciesCinderace.Instance, // PokemonInstance Species
 				"Cinderace", level,
 				Fire.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cinderace Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cinderace() : base(
-			815,
+		public CinderaceInstance() : base(
 			SpeciesCinderace.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

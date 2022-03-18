@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBounsweet Constructor
 		public SpeciesBounsweet() : base(
+			761,
 			"Bounsweet",
 			0.3,
 			3.2,
@@ -98,7 +99,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BounsweetInstance(string nickname, int level)
 		: base(
-				761,
 				SpeciesBounsweet.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -113,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BounsweetInstance(int level)
 		: base(
-				761,
 				SpeciesBounsweet.Instance, // PokemonInstance Species
 				"Bounsweet", level,
 				Grass.Instance			
@@ -127,8 +126,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bounsweet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bounsweet() : base(
-			761,
+		public BounsweetInstance() : base(
 			SpeciesBounsweet.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

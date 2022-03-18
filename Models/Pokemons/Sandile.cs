@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSandile Constructor
 		public SpeciesSandile() : base(
+			551,
 			"Sandile",
 			0.7,
 			15.2,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandileInstance(string nickname, int level)
 		: base(
-				551,
 				SpeciesSandile.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dark.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandileInstance(int level)
 		: base(
-				551,
 				SpeciesSandile.Instance, // PokemonInstance Species
 				"Sandile", level,
 				Ground.Instance, Dark.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sandile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sandile() : base(
-			551,
+		public SandileInstance() : base(
 			SpeciesSandile.Instance, // PokemonInstance Species
 			Ground.Instance, Dark.Instance			
 		) {}

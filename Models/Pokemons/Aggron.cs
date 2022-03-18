@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAggron Constructor
 		public SpeciesAggron() : base(
+			306,
 			"Aggron",
 			2.1,
 			360.0,
@@ -168,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AggronInstance(string nickname, int level)
 		: base(
-				306,
 				SpeciesAggron.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Rock.Instance			
@@ -183,7 +183,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AggronInstance(int level)
 		: base(
-				306,
 				SpeciesAggron.Instance, // PokemonInstance Species
 				"Aggron", level,
 				Steel.Instance, Rock.Instance			
@@ -197,8 +196,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aggron Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aggron() : base(
-			306,
+		public AggronInstance() : base(
 			SpeciesAggron.Instance, // PokemonInstance Species
 			Steel.Instance, Rock.Instance			
 		) {}

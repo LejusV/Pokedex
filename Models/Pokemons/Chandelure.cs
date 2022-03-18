@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChandelure Constructor
 		public SpeciesChandelure() : base(
+			609,
 			"Chandelure",
 			1.0,
 			34.3,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChandelureInstance(string nickname, int level)
 		: base(
-				609,
 				SpeciesChandelure.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChandelureInstance(int level)
 		: base(
-				609,
 				SpeciesChandelure.Instance, // PokemonInstance Species
 				"Chandelure", level,
 				Ghost.Instance, Fire.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chandelure Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chandelure() : base(
-			609,
+		public ChandelureInstance() : base(
 			SpeciesChandelure.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAzelf Constructor
 		public SpeciesAzelf() : base(
+			482,
 			"Azelf",
 			0.3,
 			0.3,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzelfInstance(string nickname, int level)
 		: base(
-				482,
 				SpeciesAzelf.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzelfInstance(int level)
 		: base(
-				482,
 				SpeciesAzelf.Instance, // PokemonInstance Species
 				"Azelf", level,
 				Psychic.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Azelf Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Azelf() : base(
-			482,
+		public AzelfInstance() : base(
 			SpeciesAzelf.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwampert Constructor
 		public SpeciesSwampert() : base(
+			260,
 			"Swampert",
 			1.5,
 			81.9,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwampertInstance(string nickname, int level)
 		: base(
-				260,
 				SpeciesSwampert.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwampertInstance(int level)
 		: base(
-				260,
 				SpeciesSwampert.Instance, // PokemonInstance Species
 				"Swampert", level,
 				Water.Instance, Ground.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swampert Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swampert() : base(
-			260,
+		public SwampertInstance() : base(
 			SpeciesSwampert.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

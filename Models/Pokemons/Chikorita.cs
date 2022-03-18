@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChikorita Constructor
 		public SpeciesChikorita() : base(
+			152,
 			"Chikorita",
 			0.9,
 			6.4,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChikoritaInstance(string nickname, int level)
 		: base(
-				152,
 				SpeciesChikorita.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChikoritaInstance(int level)
 		: base(
-				152,
 				SpeciesChikorita.Instance, // PokemonInstance Species
 				"Chikorita", level,
 				Grass.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chikorita Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chikorita() : base(
-			152,
+		public ChikoritaInstance() : base(
 			SpeciesChikorita.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

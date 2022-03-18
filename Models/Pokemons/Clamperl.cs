@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClamperl Constructor
 		public SpeciesClamperl() : base(
+			366,
 			"Clamperl",
 			0.4,
 			52.5,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClamperlInstance(string nickname, int level)
 		: base(
-				366,
 				SpeciesClamperl.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClamperlInstance(int level)
 		: base(
-				366,
 				SpeciesClamperl.Instance, // PokemonInstance Species
 				"Clamperl", level,
 				Water.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clamperl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clamperl() : base(
-			366,
+		public ClamperlInstance() : base(
 			SpeciesClamperl.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

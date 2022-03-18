@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUrsaring Constructor
 		public SpeciesUrsaring() : base(
+			217,
 			"Ursaring",
 			1.8,
 			125.8,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UrsaringInstance(string nickname, int level)
 		: base(
-				217,
 				SpeciesUrsaring.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UrsaringInstance(int level)
 		: base(
-				217,
 				SpeciesUrsaring.Instance, // PokemonInstance Species
 				"Ursaring", level,
 				Normal.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ursaring Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ursaring() : base(
-			217,
+		public UrsaringInstance() : base(
 			SpeciesUrsaring.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

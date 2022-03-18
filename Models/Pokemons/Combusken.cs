@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCombusken Constructor
 		public SpeciesCombusken() : base(
+			256,
 			"Combusken",
 			0.9,
 			19.5,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CombuskenInstance(string nickname, int level)
 		: base(
-				256,
 				SpeciesCombusken.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CombuskenInstance(int level)
 		: base(
-				256,
 				SpeciesCombusken.Instance, // PokemonInstance Species
 				"Combusken", level,
 				Fire.Instance, Fighting.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Combusken Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Combusken() : base(
-			256,
+		public CombuskenInstance() : base(
 			SpeciesCombusken.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

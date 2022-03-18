@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRoserade Constructor
 		public SpeciesRoserade() : base(
+			407,
 			"Roserade",
 			0.9,
 			14.5,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoseradeInstance(string nickname, int level)
 		: base(
-				407,
 				SpeciesRoserade.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoseradeInstance(int level)
 		: base(
-				407,
 				SpeciesRoserade.Instance, // PokemonInstance Species
 				"Roserade", level,
 				Grass.Instance, Poison.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Roserade Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Roserade() : base(
-			407,
+		public RoseradeInstance() : base(
 			SpeciesRoserade.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

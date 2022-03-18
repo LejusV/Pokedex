@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHitmonlee Constructor
 		public SpeciesHitmonlee() : base(
+			106,
 			"Hitmonlee",
 			1.5,
 			49.8,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmonleeInstance(string nickname, int level)
 		: base(
-				106,
 				SpeciesHitmonlee.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmonleeInstance(int level)
 		: base(
-				106,
 				SpeciesHitmonlee.Instance, // PokemonInstance Species
 				"Hitmonlee", level,
 				Fighting.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hitmonlee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hitmonlee() : base(
-			106,
+		public HitmonleeInstance() : base(
 			SpeciesHitmonlee.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

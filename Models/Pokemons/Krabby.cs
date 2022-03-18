@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKrabby Constructor
 		public SpeciesKrabby() : base(
+			98,
 			"Krabby",
 			0.4,
 			6.5,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrabbyInstance(string nickname, int level)
 		: base(
-				98,
 				SpeciesKrabby.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrabbyInstance(int level)
 		: base(
-				98,
 				SpeciesKrabby.Instance, // PokemonInstance Species
 				"Krabby", level,
 				Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Krabby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Krabby() : base(
-			98,
+		public KrabbyInstance() : base(
 			SpeciesKrabby.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKrokorok Constructor
 		public SpeciesKrokorok() : base(
+			552,
 			"Krokorok",
 			1.0,
 			33.4,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrokorokInstance(string nickname, int level)
 		: base(
-				552,
 				SpeciesKrokorok.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dark.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KrokorokInstance(int level)
 		: base(
-				552,
 				SpeciesKrokorok.Instance, // PokemonInstance Species
 				"Krokorok", level,
 				Ground.Instance, Dark.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Krokorok Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Krokorok() : base(
-			552,
+		public KrokorokInstance() : base(
 			SpeciesKrokorok.Instance, // PokemonInstance Species
 			Ground.Instance, Dark.Instance			
 		) {}

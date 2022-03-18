@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMilotic Constructor
 		public SpeciesMilotic() : base(
+			350,
 			"Milotic",
 			6.2,
 			162.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiloticInstance(string nickname, int level)
 		: base(
-				350,
 				SpeciesMilotic.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiloticInstance(int level)
 		: base(
-				350,
 				SpeciesMilotic.Instance, // PokemonInstance Species
 				"Milotic", level,
 				Water.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Milotic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Milotic() : base(
-			350,
+		public MiloticInstance() : base(
 			SpeciesMilotic.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

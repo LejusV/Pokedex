@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSolgaleo Constructor
 		public SpeciesSolgaleo() : base(
+			791,
 			"Solgaleo",
 			3.4,
 			230.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolgaleoInstance(string nickname, int level)
 		: base(
-				791,
 				SpeciesSolgaleo.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Steel.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolgaleoInstance(int level)
 		: base(
-				791,
 				SpeciesSolgaleo.Instance, // PokemonInstance Species
 				"Solgaleo", level,
 				Psychic.Instance, Steel.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Solgaleo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Solgaleo() : base(
-			791,
+		public SolgaleoInstance() : base(
 			SpeciesSolgaleo.Instance, // PokemonInstance Species
 			Psychic.Instance, Steel.Instance			
 		) {}

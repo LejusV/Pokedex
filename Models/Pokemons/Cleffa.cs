@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCleffa Constructor
 		public SpeciesCleffa() : base(
+			173,
 			"Cleffa",
 			0.3,
 			3.0,
@@ -155,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CleffaInstance(string nickname, int level)
 		: base(
-				173,
 				SpeciesCleffa.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -170,7 +170,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CleffaInstance(int level)
 		: base(
-				173,
 				SpeciesCleffa.Instance, // PokemonInstance Species
 				"Cleffa", level,
 				Fairy.Instance			
@@ -184,8 +183,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cleffa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cleffa() : base(
-			173,
+		public CleffaInstance() : base(
 			SpeciesCleffa.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

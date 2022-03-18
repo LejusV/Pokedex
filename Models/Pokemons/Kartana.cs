@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKartana Constructor
 		public SpeciesKartana() : base(
+			798,
 			"Kartana",
 			0.3,
 			0.1,
@@ -95,7 +96,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KartanaInstance(string nickname, int level)
 		: base(
-				798,
 				SpeciesKartana.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Steel.Instance			
@@ -110,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KartanaInstance(int level)
 		: base(
-				798,
 				SpeciesKartana.Instance, // PokemonInstance Species
 				"Kartana", level,
 				Grass.Instance, Steel.Instance			
@@ -124,8 +123,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kartana Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kartana() : base(
-			798,
+		public KartanaInstance() : base(
 			SpeciesKartana.Instance, // PokemonInstance Species
 			Grass.Instance, Steel.Instance			
 		) {}

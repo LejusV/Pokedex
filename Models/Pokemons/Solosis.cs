@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSolosis Constructor
 		public SpeciesSolosis() : base(
+			577,
 			"Solosis",
 			0.3,
 			1.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolosisInstance(string nickname, int level)
 		: base(
-				577,
 				SpeciesSolosis.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolosisInstance(int level)
 		: base(
-				577,
 				SpeciesSolosis.Instance, // PokemonInstance Species
 				"Solosis", level,
 				Psychic.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Solosis Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Solosis() : base(
-			577,
+		public SolosisInstance() : base(
 			SpeciesSolosis.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

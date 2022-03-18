@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesIgglybuff Constructor
 		public SpeciesIgglybuff() : base(
+			174,
 			"Igglybuff",
 			0.3,
 			1.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IgglybuffInstance(string nickname, int level)
 		: base(
-				174,
 				SpeciesIgglybuff.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IgglybuffInstance(int level)
 		: base(
-				174,
 				SpeciesIgglybuff.Instance, // PokemonInstance Species
 				"Igglybuff", level,
 				Normal.Instance, Fairy.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Igglybuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Igglybuff() : base(
-			174,
+		public IgglybuffInstance() : base(
 			SpeciesIgglybuff.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}

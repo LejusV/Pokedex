@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEntei Constructor
 		public SpeciesEntei() : base(
+			244,
 			"Entei",
 			2.1,
 			198.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EnteiInstance(string nickname, int level)
 		: base(
-				244,
 				SpeciesEntei.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EnteiInstance(int level)
 		: base(
-				244,
 				SpeciesEntei.Instance, // PokemonInstance Species
 				"Entei", level,
 				Fire.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Entei Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Entei() : base(
-			244,
+		public EnteiInstance() : base(
 			SpeciesEntei.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

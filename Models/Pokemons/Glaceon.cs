@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGlaceon Constructor
 		public SpeciesGlaceon() : base(
+			471,
 			"Glaceon",
 			0.8,
 			25.9,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlaceonInstance(string nickname, int level)
 		: base(
-				471,
 				SpeciesGlaceon.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlaceonInstance(int level)
 		: base(
-				471,
 				SpeciesGlaceon.Instance, // PokemonInstance Species
 				"Glaceon", level,
 				Ice.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Glaceon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Glaceon() : base(
-			471,
+		public GlaceonInstance() : base(
 			SpeciesGlaceon.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

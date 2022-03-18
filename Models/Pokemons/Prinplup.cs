@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPrinplup Constructor
 		public SpeciesPrinplup() : base(
+			394,
 			"Prinplup",
 			0.8,
 			23.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrinplupInstance(string nickname, int level)
 		: base(
-				394,
 				SpeciesPrinplup.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrinplupInstance(int level)
 		: base(
-				394,
 				SpeciesPrinplup.Instance, // PokemonInstance Species
 				"Prinplup", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Prinplup Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Prinplup() : base(
-			394,
+		public PrinplupInstance() : base(
 			SpeciesPrinplup.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

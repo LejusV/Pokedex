@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagcargo Constructor
 		public SpeciesMagcargo() : base(
+			219,
 			"Magcargo",
 			0.8,
 			55.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagcargoInstance(string nickname, int level)
 		: base(
-				219,
 				SpeciesMagcargo.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Rock.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagcargoInstance(int level)
 		: base(
-				219,
 				SpeciesMagcargo.Instance, // PokemonInstance Species
 				"Magcargo", level,
 				Fire.Instance, Rock.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magcargo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magcargo() : base(
-			219,
+		public MagcargoInstance() : base(
 			SpeciesMagcargo.Instance, // PokemonInstance Species
 			Fire.Instance, Rock.Instance			
 		) {}

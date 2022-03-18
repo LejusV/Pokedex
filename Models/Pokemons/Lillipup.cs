@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLillipup Constructor
 		public SpeciesLillipup() : base(
+			506,
 			"Lillipup",
 			0.4,
 			4.1,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LillipupInstance(string nickname, int level)
 		: base(
-				506,
 				SpeciesLillipup.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LillipupInstance(int level)
 		: base(
-				506,
 				SpeciesLillipup.Instance, // PokemonInstance Species
 				"Lillipup", level,
 				Normal.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lillipup Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lillipup() : base(
-			506,
+		public LillipupInstance() : base(
 			SpeciesLillipup.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

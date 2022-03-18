@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShiinotic Constructor
 		public SpeciesShiinotic() : base(
+			756,
 			"Shiinotic",
 			1.0,
 			11.5,
@@ -99,7 +100,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShiinoticInstance(string nickname, int level)
 		: base(
-				756,
 				SpeciesShiinotic.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
@@ -114,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShiinoticInstance(int level)
 		: base(
-				756,
 				SpeciesShiinotic.Instance, // PokemonInstance Species
 				"Shiinotic", level,
 				Grass.Instance, Fairy.Instance			
@@ -128,8 +127,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shiinotic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shiinotic() : base(
-			756,
+		public ShiinoticInstance() : base(
 			SpeciesShiinotic.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}

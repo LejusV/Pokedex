@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHatenna Constructor
 		public SpeciesHatenna() : base(
+			856,
 			"Hatenna",
 			0.4,
 			3.4,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HatennaInstance(string nickname, int level)
 		: base(
-				856,
 				SpeciesHatenna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HatennaInstance(int level)
 		: base(
-				856,
 				SpeciesHatenna.Instance, // PokemonInstance Species
 				"Hatenna", level,
 				Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hatenna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hatenna() : base(
-			856,
+		public HatennaInstance() : base(
 			SpeciesHatenna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

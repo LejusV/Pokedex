@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEelektrik Constructor
 		public SpeciesEelektrik() : base(
+			603,
 			"Eelektrik",
 			1.2,
 			22.0,
@@ -108,7 +109,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EelektrikInstance(string nickname, int level)
 		: base(
-				603,
 				SpeciesEelektrik.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -123,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EelektrikInstance(int level)
 		: base(
-				603,
 				SpeciesEelektrik.Instance, // PokemonInstance Species
 				"Eelektrik", level,
 				Electric.Instance			
@@ -137,8 +136,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eelektrik Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Eelektrik() : base(
-			603,
+		public EelektrikInstance() : base(
 			SpeciesEelektrik.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

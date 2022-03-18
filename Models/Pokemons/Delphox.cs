@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDelphox Constructor
 		public SpeciesDelphox() : base(
+			655,
 			"Delphox",
 			1.5,
 			39.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelphoxInstance(string nickname, int level)
 		: base(
-				655,
 				SpeciesDelphox.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Psychic.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelphoxInstance(int level)
 		: base(
-				655,
 				SpeciesDelphox.Instance, // PokemonInstance Species
 				"Delphox", level,
 				Fire.Instance, Psychic.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Delphox Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Delphox() : base(
-			655,
+		public DelphoxInstance() : base(
 			SpeciesDelphox.Instance, // PokemonInstance Species
 			Fire.Instance, Psychic.Instance			
 		) {}

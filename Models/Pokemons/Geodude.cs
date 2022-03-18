@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGeodude Constructor
 		public SpeciesGeodude() : base(
+			74,
 			"Geodude",
 			0.4,
 			20.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GeodudeInstance(string nickname, int level)
 		: base(
-				74,
 				SpeciesGeodude.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GeodudeInstance(int level)
 		: base(
-				74,
 				SpeciesGeodude.Instance, // PokemonInstance Species
 				"Geodude", level,
 				Rock.Instance, Ground.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Geodude Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Geodude() : base(
-			74,
+		public GeodudeInstance() : base(
 			SpeciesGeodude.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

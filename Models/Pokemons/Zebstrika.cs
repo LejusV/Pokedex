@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZebstrika Constructor
 		public SpeciesZebstrika() : base(
+			523,
 			"Zebstrika",
 			1.6,
 			79.5,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZebstrikaInstance(string nickname, int level)
 		: base(
-				523,
 				SpeciesZebstrika.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZebstrikaInstance(int level)
 		: base(
-				523,
 				SpeciesZebstrika.Instance, // PokemonInstance Species
 				"Zebstrika", level,
 				Electric.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zebstrika Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zebstrika() : base(
-			523,
+		public ZebstrikaInstance() : base(
 			SpeciesZebstrika.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

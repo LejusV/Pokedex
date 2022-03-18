@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesImpidimp Constructor
 		public SpeciesImpidimp() : base(
+			859,
 			"Impidimp",
 			0.4,
 			5.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ImpidimpInstance(string nickname, int level)
 		: base(
-				859,
 				SpeciesImpidimp.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ImpidimpInstance(int level)
 		: base(
-				859,
 				SpeciesImpidimp.Instance, // PokemonInstance Species
 				"Impidimp", level,
 				Dark.Instance, Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Impidimp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Impidimp() : base(
-			859,
+		public ImpidimpInstance() : base(
 			SpeciesImpidimp.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}

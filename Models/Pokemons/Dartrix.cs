@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDartrix Constructor
 		public SpeciesDartrix() : base(
+			723,
 			"Dartrix",
 			0.7,
 			16.0,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DartrixInstance(string nickname, int level)
 		: base(
-				723,
 				SpeciesDartrix.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DartrixInstance(int level)
 		: base(
-				723,
 				SpeciesDartrix.Instance, // PokemonInstance Species
 				"Dartrix", level,
 				Grass.Instance, Flying.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dartrix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dartrix() : base(
-			723,
+		public DartrixInstance() : base(
 			SpeciesDartrix.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

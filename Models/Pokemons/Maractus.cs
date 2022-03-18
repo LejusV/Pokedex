@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMaractus Constructor
 		public SpeciesMaractus() : base(
+			556,
 			"Maractus",
 			1.0,
 			28.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MaractusInstance(string nickname, int level)
 		: base(
-				556,
 				SpeciesMaractus.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MaractusInstance(int level)
 		: base(
-				556,
 				SpeciesMaractus.Instance, // PokemonInstance Species
 				"Maractus", level,
 				Grass.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Maractus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Maractus() : base(
-			556,
+		public MaractusInstance() : base(
 			SpeciesMaractus.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

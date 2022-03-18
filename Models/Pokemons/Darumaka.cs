@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDarumaka Constructor
 		public SpeciesDarumaka() : base(
+			554,
 			"Darumaka",
 			0.6,
 			37.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarumakaInstance(string nickname, int level)
 		: base(
-				554,
 				SpeciesDarumaka.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarumakaInstance(int level)
 		: base(
-				554,
 				SpeciesDarumaka.Instance, // PokemonInstance Species
 				"Darumaka", level,
 				Fire.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Darumaka Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Darumaka() : base(
-			554,
+		public DarumakaInstance() : base(
 			SpeciesDarumaka.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

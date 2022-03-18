@@ -1,11 +1,22 @@
 ﻿using System;
+using System.Media;
 using System.Text;
+using Pokedex.Models;
 
 namespace Pokedex.Models
 {
     internal class Battle
     {
+        private Player _player1;
+        private Player _player2;
+
+
         # region Attributes
+
+        public Player Player1 => _player1;
+
+        public Player Player2 => _player2;
+
         public string Status(Player player1, Player player2)
         {
             PokemonInstance player1Pok = player1.Pokemons[0];
@@ -46,6 +57,23 @@ namespace Pokedex.Models
         {
             Console.WriteLine("A new battle is about to happen !");
             Console.WriteLine(Status(player1, player2));
+        }
+
+        public Player DoBattle()
+        {
+            int turn = 0;
+            
+            while (this._player1.CanFight && this._player2.CanFight)
+            {
+                // Code
+                this.DoTurn();
+
+                turn++;
+            }
+
+            return this._player1.CanFight
+                    ? this._player1
+                    : this._player2;
         }
     }
 }

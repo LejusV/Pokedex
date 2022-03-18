@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWhirlipede Constructor
 		public SpeciesWhirlipede() : base(
+			544,
 			"Whirlipede",
 			1.2,
 			58.5,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhirlipedeInstance(string nickname, int level)
 		: base(
-				544,
 				SpeciesWhirlipede.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhirlipedeInstance(int level)
 		: base(
-				544,
 				SpeciesWhirlipede.Instance, // PokemonInstance Species
 				"Whirlipede", level,
 				Bug.Instance, Poison.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Whirlipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Whirlipede() : base(
-			544,
+		public WhirlipedeInstance() : base(
 			SpeciesWhirlipede.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

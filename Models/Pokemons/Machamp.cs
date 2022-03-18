@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMachamp Constructor
 		public SpeciesMachamp() : base(
+			68,
 			"Machamp",
 			1.6,
 			130.0,
@@ -148,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachampInstance(string nickname, int level)
 		: base(
-				68,
 				SpeciesMachamp.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -163,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachampInstance(int level)
 		: base(
-				68,
 				SpeciesMachamp.Instance, // PokemonInstance Species
 				"Machamp", level,
 				Fighting.Instance			
@@ -177,8 +176,7 @@ namespace Pokedex.Models.Pokemons
 		/// Machamp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Machamp() : base(
-			68,
+		public MachampInstance() : base(
 			SpeciesMachamp.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

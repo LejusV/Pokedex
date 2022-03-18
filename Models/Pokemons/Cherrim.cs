@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCherrim Constructor
 		public SpeciesCherrim() : base(
+			421,
 			"Cherrim",
 			0.5,
 			9.3,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CherrimInstance(string nickname, int level)
 		: base(
-				421,
 				SpeciesCherrim.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CherrimInstance(int level)
 		: base(
-				421,
 				SpeciesCherrim.Instance, // PokemonInstance Species
 				"Cherrim", level,
 				Grass.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cherrim Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cherrim() : base(
-			421,
+		public CherrimInstance() : base(
 			SpeciesCherrim.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

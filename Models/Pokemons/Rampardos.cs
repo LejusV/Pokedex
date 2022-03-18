@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRampardos Constructor
 		public SpeciesRampardos() : base(
+			409,
 			"Rampardos",
 			1.6,
 			102.5,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RampardosInstance(string nickname, int level)
 		: base(
-				409,
 				SpeciesRampardos.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RampardosInstance(int level)
 		: base(
-				409,
 				SpeciesRampardos.Instance, // PokemonInstance Species
 				"Rampardos", level,
 				Rock.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rampardos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rampardos() : base(
-			409,
+		public RampardosInstance() : base(
 			SpeciesRampardos.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

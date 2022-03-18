@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWhiscash Constructor
 		public SpeciesWhiscash() : base(
+			340,
 			"Whiscash",
 			0.9,
 			23.6,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhiscashInstance(string nickname, int level)
 		: base(
-				340,
 				SpeciesWhiscash.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhiscashInstance(int level)
 		: base(
-				340,
 				SpeciesWhiscash.Instance, // PokemonInstance Species
 				"Whiscash", level,
 				Water.Instance, Ground.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Whiscash Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Whiscash() : base(
-			340,
+		public WhiscashInstance() : base(
 			SpeciesWhiscash.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

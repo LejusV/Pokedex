@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPheromosa Constructor
 		public SpeciesPheromosa() : base(
+			795,
 			"Pheromosa",
 			1.8,
 			25.0,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PheromosaInstance(string nickname, int level)
 		: base(
-				795,
 				SpeciesPheromosa.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fighting.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PheromosaInstance(int level)
 		: base(
-				795,
 				SpeciesPheromosa.Instance, // PokemonInstance Species
 				"Pheromosa", level,
 				Bug.Instance, Fighting.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pheromosa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pheromosa() : base(
-			795,
+		public PheromosaInstance() : base(
 			SpeciesPheromosa.Instance, // PokemonInstance Species
 			Bug.Instance, Fighting.Instance			
 		) {}

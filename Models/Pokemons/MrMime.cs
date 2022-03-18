@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMr-Mime Constructor
 		public SpeciesMrMime() : base(
+			122,
 			"Mr-Mime",
 			1.3,
 			54.5,
@@ -179,7 +180,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MrMimeInstance(string nickname, int level)
 		: base(
-				122,
 				SpeciesMrMime.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -194,7 +194,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MrMimeInstance(int level)
 		: base(
-				122,
 				SpeciesMrMime.Instance, // PokemonInstance Species
 				"Mr-Mime", level,
 				Psychic.Instance, Fairy.Instance			
@@ -208,8 +207,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mr-Mime Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MrMime() : base(
-			122,
+		public MrMimeInstance() : base(
 			SpeciesMrMime.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWatchog Constructor
 		public SpeciesWatchog() : base(
+			505,
 			"Watchog",
 			1.1,
 			27.0,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WatchogInstance(string nickname, int level)
 		: base(
-				505,
 				SpeciesWatchog.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WatchogInstance(int level)
 		: base(
-				505,
 				SpeciesWatchog.Instance, // PokemonInstance Species
 				"Watchog", level,
 				Normal.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Watchog Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Watchog() : base(
-			505,
+		public WatchogInstance() : base(
 			SpeciesWatchog.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

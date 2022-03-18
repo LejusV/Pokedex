@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRoggenrola Constructor
 		public SpeciesRoggenrola() : base(
+			524,
 			"Roggenrola",
 			0.4,
 			18.0,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoggenrolaInstance(string nickname, int level)
 		: base(
-				524,
 				SpeciesRoggenrola.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoggenrolaInstance(int level)
 		: base(
-				524,
 				SpeciesRoggenrola.Instance, // PokemonInstance Species
 				"Roggenrola", level,
 				Rock.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Roggenrola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Roggenrola() : base(
-			524,
+		public RoggenrolaInstance() : base(
 			SpeciesRoggenrola.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

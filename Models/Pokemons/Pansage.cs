@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPansage Constructor
 		public SpeciesPansage() : base(
+			511,
 			"Pansage",
 			0.6,
 			10.5,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PansageInstance(string nickname, int level)
 		: base(
-				511,
 				SpeciesPansage.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PansageInstance(int level)
 		: base(
-				511,
 				SpeciesPansage.Instance, // PokemonInstance Species
 				"Pansage", level,
 				Grass.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pansage Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pansage() : base(
-			511,
+		public PansageInstance() : base(
 			SpeciesPansage.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

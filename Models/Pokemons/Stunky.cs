@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStunky Constructor
 		public SpeciesStunky() : base(
+			434,
 			"Stunky",
 			0.4,
 			19.2,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StunkyInstance(string nickname, int level)
 		: base(
-				434,
 				SpeciesStunky.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dark.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StunkyInstance(int level)
 		: base(
-				434,
 				SpeciesStunky.Instance, // PokemonInstance Species
 				"Stunky", level,
 				Poison.Instance, Dark.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stunky Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stunky() : base(
-			434,
+		public StunkyInstance() : base(
 			SpeciesStunky.Instance, // PokemonInstance Species
 			Poison.Instance, Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWooper Constructor
 		public SpeciesWooper() : base(
+			194,
 			"Wooper",
 			0.4,
 			8.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WooperInstance(string nickname, int level)
 		: base(
-				194,
 				SpeciesWooper.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WooperInstance(int level)
 		: base(
-				194,
 				SpeciesWooper.Instance, // PokemonInstance Species
 				"Wooper", level,
 				Water.Instance, Ground.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wooper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wooper() : base(
-			194,
+		public WooperInstance() : base(
 			SpeciesWooper.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

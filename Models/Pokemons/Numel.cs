@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNumel Constructor
 		public SpeciesNumel() : base(
+			322,
 			"Numel",
 			0.7,
 			24.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NumelInstance(string nickname, int level)
 		: base(
-				322,
 				SpeciesNumel.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Ground.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NumelInstance(int level)
 		: base(
-				322,
 				SpeciesNumel.Instance, // PokemonInstance Species
 				"Numel", level,
 				Fire.Instance, Ground.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Numel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Numel() : base(
-			322,
+		public NumelInstance() : base(
 			SpeciesNumel.Instance, // PokemonInstance Species
 			Fire.Instance, Ground.Instance			
 		) {}

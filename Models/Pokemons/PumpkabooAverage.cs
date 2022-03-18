@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPumpkaboo-Average Constructor
 		public SpeciesPumpkabooAverage() : base(
+			710,
 			"Pumpkaboo-Average",
 			0.4,
 			5.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PumpkabooAverageInstance(string nickname, int level)
 		: base(
-				710,
 				SpeciesPumpkabooAverage.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PumpkabooAverageInstance(int level)
 		: base(
-				710,
 				SpeciesPumpkabooAverage.Instance, // PokemonInstance Species
 				"Pumpkaboo-Average", level,
 				Ghost.Instance, Grass.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pumpkaboo-Average Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public PumpkabooAverage() : base(
-			710,
+		public PumpkabooAverageInstance() : base(
 			SpeciesPumpkabooAverage.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}

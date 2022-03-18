@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScolipede Constructor
 		public SpeciesScolipede() : base(
+			545,
 			"Scolipede",
 			2.5,
 			200.5,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScolipedeInstance(string nickname, int level)
 		: base(
-				545,
 				SpeciesScolipede.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScolipedeInstance(int level)
 		: base(
-				545,
 				SpeciesScolipede.Instance, // PokemonInstance Species
 				"Scolipede", level,
 				Bug.Instance, Poison.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scolipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scolipede() : base(
-			545,
+		public ScolipedeInstance() : base(
 			SpeciesScolipede.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

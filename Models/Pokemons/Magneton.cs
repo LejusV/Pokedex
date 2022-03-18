@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagneton Constructor
 		public SpeciesMagneton() : base(
+			82,
 			"Magneton",
 			1.0,
 			60.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnetonInstance(string nickname, int level)
 		: base(
-				82,
 				SpeciesMagneton.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnetonInstance(int level)
 		: base(
-				82,
 				SpeciesMagneton.Instance, // PokemonInstance Species
 				"Magneton", level,
 				Electric.Instance, Steel.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magneton Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magneton() : base(
-			82,
+		public MagnetonInstance() : base(
 			SpeciesMagneton.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}

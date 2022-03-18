@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTranquill Constructor
 		public SpeciesTranquill() : base(
+			520,
 			"Tranquill",
 			0.6,
 			15.0,
@@ -100,7 +101,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TranquillInstance(string nickname, int level)
 		: base(
-				520,
 				SpeciesTranquill.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -115,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TranquillInstance(int level)
 		: base(
-				520,
 				SpeciesTranquill.Instance, // PokemonInstance Species
 				"Tranquill", level,
 				Normal.Instance, Flying.Instance			
@@ -129,8 +128,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tranquill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tranquill() : base(
-			520,
+		public TranquillInstance() : base(
 			SpeciesTranquill.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

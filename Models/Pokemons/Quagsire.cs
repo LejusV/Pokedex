@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesQuagsire Constructor
 		public SpeciesQuagsire() : base(
+			195,
 			"Quagsire",
 			1.4,
 			75.0,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuagsireInstance(string nickname, int level)
 		: base(
-				195,
 				SpeciesQuagsire.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuagsireInstance(int level)
 		: base(
-				195,
 				SpeciesQuagsire.Instance, // PokemonInstance Species
 				"Quagsire", level,
 				Water.Instance, Ground.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Quagsire Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Quagsire() : base(
-			195,
+		public QuagsireInstance() : base(
 			SpeciesQuagsire.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGothorita Constructor
 		public SpeciesGothorita() : base(
+			575,
 			"Gothorita",
 			0.7,
 			18.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GothoritaInstance(string nickname, int level)
 		: base(
-				575,
 				SpeciesGothorita.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GothoritaInstance(int level)
 		: base(
-				575,
 				SpeciesGothorita.Instance, // PokemonInstance Species
 				"Gothorita", level,
 				Psychic.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gothorita Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gothorita() : base(
-			575,
+		public GothoritaInstance() : base(
 			SpeciesGothorita.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBayleef Constructor
 		public SpeciesBayleef() : base(
+			153,
 			"Bayleef",
 			1.2,
 			15.8,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BayleefInstance(string nickname, int level)
 		: base(
-				153,
 				SpeciesBayleef.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BayleefInstance(int level)
 		: base(
-				153,
 				SpeciesBayleef.Instance, // PokemonInstance Species
 				"Bayleef", level,
 				Grass.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bayleef Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bayleef() : base(
-			153,
+		public BayleefInstance() : base(
 			SpeciesBayleef.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

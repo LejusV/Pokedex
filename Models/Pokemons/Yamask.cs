@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesYamask Constructor
 		public SpeciesYamask() : base(
+			562,
 			"Yamask",
 			0.5,
 			1.5,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YamaskInstance(string nickname, int level)
 		: base(
-				562,
 				SpeciesYamask.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YamaskInstance(int level)
 		: base(
-				562,
 				SpeciesYamask.Instance, // PokemonInstance Species
 				"Yamask", level,
 				Ghost.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Yamask Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Yamask() : base(
-			562,
+		public YamaskInstance() : base(
 			SpeciesYamask.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

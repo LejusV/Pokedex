@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCorviknight Constructor
 		public SpeciesCorviknight() : base(
+			823,
 			"Corviknight",
 			2.2,
 			75.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorviknightInstance(string nickname, int level)
 		: base(
-				823,
 				SpeciesCorviknight.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorviknightInstance(int level)
 		: base(
-				823,
 				SpeciesCorviknight.Instance, // PokemonInstance Species
 				"Corviknight", level,
 				Flying.Instance, Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Corviknight Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Corviknight() : base(
-			823,
+		public CorviknightInstance() : base(
 			SpeciesCorviknight.Instance, // PokemonInstance Species
 			Flying.Instance, Steel.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTapu-Bulu Constructor
 		public SpeciesTapuBulu() : base(
+			787,
 			"Tapu-Bulu",
 			1.9,
 			45.5,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuBuluInstance(string nickname, int level)
 		: base(
-				787,
 				SpeciesTapuBulu.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuBuluInstance(int level)
 		: base(
-				787,
 				SpeciesTapuBulu.Instance, // PokemonInstance Species
 				"Tapu-Bulu", level,
 				Grass.Instance, Fairy.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tapu-Bulu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TapuBulu() : base(
-			787,
+		public TapuBuluInstance() : base(
 			SpeciesTapuBulu.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}

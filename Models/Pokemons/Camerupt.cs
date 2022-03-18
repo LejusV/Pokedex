@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCamerupt Constructor
 		public SpeciesCamerupt() : base(
+			323,
 			"Camerupt",
 			1.9,
 			220.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CameruptInstance(string nickname, int level)
 		: base(
-				323,
 				SpeciesCamerupt.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Ground.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CameruptInstance(int level)
 		: base(
-				323,
 				SpeciesCamerupt.Instance, // PokemonInstance Species
 				"Camerupt", level,
 				Fire.Instance, Ground.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Camerupt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Camerupt() : base(
-			323,
+		public CameruptInstance() : base(
 			SpeciesCamerupt.Instance, // PokemonInstance Species
 			Fire.Instance, Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPonyta Constructor
 		public SpeciesPonyta() : base(
+			77,
 			"Ponyta",
 			1.0,
 			30.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PonytaInstance(string nickname, int level)
 		: base(
-				77,
 				SpeciesPonyta.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PonytaInstance(int level)
 		: base(
-				77,
 				SpeciesPonyta.Instance, // PokemonInstance Species
 				"Ponyta", level,
 				Fire.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ponyta Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ponyta() : base(
-			77,
+		public PonytaInstance() : base(
 			SpeciesPonyta.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWooloo Constructor
 		public SpeciesWooloo() : base(
+			831,
 			"Wooloo",
 			0.6,
 			6.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WoolooInstance(string nickname, int level)
 		: base(
-				831,
 				SpeciesWooloo.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WoolooInstance(int level)
 		: base(
-				831,
 				SpeciesWooloo.Instance, // PokemonInstance Species
 				"Wooloo", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wooloo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wooloo() : base(
-			831,
+		public WoolooInstance() : base(
 			SpeciesWooloo.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNecrozma Constructor
 		public SpeciesNecrozma() : base(
+			800,
 			"Necrozma",
 			2.4,
 			230.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NecrozmaInstance(string nickname, int level)
 		: base(
-				800,
 				SpeciesNecrozma.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NecrozmaInstance(int level)
 		: base(
-				800,
 				SpeciesNecrozma.Instance, // PokemonInstance Species
 				"Necrozma", level,
 				Psychic.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Necrozma Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Necrozma() : base(
-			800,
+		public NecrozmaInstance() : base(
 			SpeciesNecrozma.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

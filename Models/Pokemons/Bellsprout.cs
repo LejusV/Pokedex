@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBellsprout Constructor
 		public SpeciesBellsprout() : base(
+			69,
 			"Bellsprout",
 			0.7,
 			4.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BellsproutInstance(string nickname, int level)
 		: base(
-				69,
 				SpeciesBellsprout.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BellsproutInstance(int level)
 		: base(
-				69,
 				SpeciesBellsprout.Instance, // PokemonInstance Species
 				"Bellsprout", level,
 				Grass.Instance, Poison.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bellsprout Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bellsprout() : base(
-			69,
+		public BellsproutInstance() : base(
 			SpeciesBellsprout.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

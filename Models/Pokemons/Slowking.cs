@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlowking Constructor
 		public SpeciesSlowking() : base(
+			199,
 			"Slowking",
 			2.0,
 			79.5,
@@ -163,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlowkingInstance(string nickname, int level)
 		: base(
-				199,
 				SpeciesSlowking.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Psychic.Instance			
@@ -178,7 +178,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlowkingInstance(int level)
 		: base(
-				199,
 				SpeciesSlowking.Instance, // PokemonInstance Species
 				"Slowking", level,
 				Water.Instance, Psychic.Instance			
@@ -192,8 +191,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slowking Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slowking() : base(
-			199,
+		public SlowkingInstance() : base(
 			SpeciesSlowking.Instance, // PokemonInstance Species
 			Water.Instance, Psychic.Instance			
 		) {}

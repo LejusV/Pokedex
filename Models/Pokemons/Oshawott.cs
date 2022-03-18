@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOshawott Constructor
 		public SpeciesOshawott() : base(
+			501,
 			"Oshawott",
 			0.5,
 			5.9,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OshawottInstance(string nickname, int level)
 		: base(
-				501,
 				SpeciesOshawott.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OshawottInstance(int level)
 		: base(
-				501,
 				SpeciesOshawott.Instance, // PokemonInstance Species
 				"Oshawott", level,
 				Water.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Oshawott Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Oshawott() : base(
-			501,
+		public OshawottInstance() : base(
 			SpeciesOshawott.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

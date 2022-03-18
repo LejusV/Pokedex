@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMetang Constructor
 		public SpeciesMetang() : base(
+			375,
 			"Metang",
 			1.2,
 			202.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetangInstance(string nickname, int level)
 		: base(
-				375,
 				SpeciesMetang.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetangInstance(int level)
 		: base(
-				375,
 				SpeciesMetang.Instance, // PokemonInstance Species
 				"Metang", level,
 				Steel.Instance, Psychic.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Metang Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Metang() : base(
-			375,
+		public MetangInstance() : base(
 			SpeciesMetang.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

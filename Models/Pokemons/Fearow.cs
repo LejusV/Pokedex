@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFearow Constructor
 		public SpeciesFearow() : base(
+			22,
 			"Fearow",
 			1.2,
 			38.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FearowInstance(string nickname, int level)
 		: base(
-				22,
 				SpeciesFearow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FearowInstance(int level)
 		: base(
-				22,
 				SpeciesFearow.Instance, // PokemonInstance Species
 				"Fearow", level,
 				Normal.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fearow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fearow() : base(
-			22,
+		public FearowInstance() : base(
 			SpeciesFearow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

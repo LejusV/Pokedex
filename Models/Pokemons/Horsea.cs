@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHorsea Constructor
 		public SpeciesHorsea() : base(
+			116,
 			"Horsea",
 			0.4,
 			8.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HorseaInstance(string nickname, int level)
 		: base(
-				116,
 				SpeciesHorsea.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HorseaInstance(int level)
 		: base(
-				116,
 				SpeciesHorsea.Instance, // PokemonInstance Species
 				"Horsea", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Horsea Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Horsea() : base(
-			116,
+		public HorseaInstance() : base(
 			SpeciesHorsea.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

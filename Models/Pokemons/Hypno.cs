@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHypno Constructor
 		public SpeciesHypno() : base(
+			97,
 			"Hypno",
 			1.6,
 			75.6,
@@ -155,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HypnoInstance(string nickname, int level)
 		: base(
-				97,
 				SpeciesHypno.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -170,7 +170,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HypnoInstance(int level)
 		: base(
-				97,
 				SpeciesHypno.Instance, // PokemonInstance Species
 				"Hypno", level,
 				Psychic.Instance			
@@ -184,8 +183,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hypno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hypno() : base(
-			97,
+		public HypnoInstance() : base(
 			SpeciesHypno.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkarmory Constructor
 		public SpeciesSkarmory() : base(
+			227,
 			"Skarmory",
 			1.7,
 			50.5,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkarmoryInstance(string nickname, int level)
 		: base(
-				227,
 				SpeciesSkarmory.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Flying.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkarmoryInstance(int level)
 		: base(
-				227,
 				SpeciesSkarmory.Instance, // PokemonInstance Species
 				"Skarmory", level,
 				Steel.Instance, Flying.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skarmory Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skarmory() : base(
-			227,
+		public SkarmoryInstance() : base(
 			SpeciesSkarmory.Instance, // PokemonInstance Species
 			Steel.Instance, Flying.Instance			
 		) {}

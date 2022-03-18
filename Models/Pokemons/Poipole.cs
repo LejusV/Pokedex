@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPoipole Constructor
 		public SpeciesPoipole() : base(
+			803,
 			"Poipole",
 			0.6,
 			1.8,
@@ -86,7 +87,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoipoleInstance(string nickname, int level)
 		: base(
-				803,
 				SpeciesPoipole.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -101,7 +101,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoipoleInstance(int level)
 		: base(
-				803,
 				SpeciesPoipole.Instance, // PokemonInstance Species
 				"Poipole", level,
 				Poison.Instance			
@@ -115,8 +114,7 @@ namespace Pokedex.Models.Pokemons
 		/// Poipole Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Poipole() : base(
-			803,
+		public PoipoleInstance() : base(
 			SpeciesPoipole.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

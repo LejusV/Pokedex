@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFletchinder Constructor
 		public SpeciesFletchinder() : base(
+			662,
 			"Fletchinder",
 			0.7,
 			16.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FletchinderInstance(string nickname, int level)
 		: base(
-				662,
 				SpeciesFletchinder.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FletchinderInstance(int level)
 		: base(
-				662,
 				SpeciesFletchinder.Instance, // PokemonInstance Species
 				"Fletchinder", level,
 				Fire.Instance, Flying.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fletchinder Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fletchinder() : base(
-			662,
+		public FletchinderInstance() : base(
 			SpeciesFletchinder.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

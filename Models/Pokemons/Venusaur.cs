@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVenusaur Constructor
 		public SpeciesVenusaur() : base(
+			3,
 			"Venusaur",
 			2.0,
 			100.0,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenusaurInstance(string nickname, int level)
 		: base(
-				3,
 				SpeciesVenusaur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenusaurInstance(int level)
 		: base(
-				3,
 				SpeciesVenusaur.Instance, // PokemonInstance Species
 				"Venusaur", level,
 				Grass.Instance, Poison.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Venusaur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Venusaur() : base(
-			3,
+		public VenusaurInstance() : base(
 			SpeciesVenusaur.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

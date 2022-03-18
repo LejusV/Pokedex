@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDucklett Constructor
 		public SpeciesDucklett() : base(
+			580,
 			"Ducklett",
 			0.5,
 			5.5,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DucklettInstance(string nickname, int level)
 		: base(
-				580,
 				SpeciesDucklett.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DucklettInstance(int level)
 		: base(
-				580,
 				SpeciesDucklett.Instance, // PokemonInstance Species
 				"Ducklett", level,
 				Water.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ducklett Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ducklett() : base(
-			580,
+		public DucklettInstance() : base(
 			SpeciesDucklett.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

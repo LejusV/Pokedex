@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAzumarill Constructor
 		public SpeciesAzumarill() : base(
+			184,
 			"Azumarill",
 			0.8,
 			28.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzumarillInstance(string nickname, int level)
 		: base(
-				184,
 				SpeciesAzumarill.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fairy.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzumarillInstance(int level)
 		: base(
-				184,
 				SpeciesAzumarill.Instance, // PokemonInstance Species
 				"Azumarill", level,
 				Water.Instance, Fairy.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Azumarill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Azumarill() : base(
-			184,
+		public AzumarillInstance() : base(
 			SpeciesAzumarill.Instance, // PokemonInstance Species
 			Water.Instance, Fairy.Instance			
 		) {}

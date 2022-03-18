@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBarraskewda Constructor
 		public SpeciesBarraskewda() : base(
+			847,
 			"Barraskewda",
 			1.3,
 			30.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarraskewdaInstance(string nickname, int level)
 		: base(
-				847,
 				SpeciesBarraskewda.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarraskewdaInstance(int level)
 		: base(
-				847,
 				SpeciesBarraskewda.Instance, // PokemonInstance Species
 				"Barraskewda", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Barraskewda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Barraskewda() : base(
-			847,
+		public BarraskewdaInstance() : base(
 			SpeciesBarraskewda.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

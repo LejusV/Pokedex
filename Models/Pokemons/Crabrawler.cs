@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCrabrawler Constructor
 		public SpeciesCrabrawler() : base(
+			739,
 			"Crabrawler",
 			0.6,
 			7.0,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrabrawlerInstance(string nickname, int level)
 		: base(
-				739,
 				SpeciesCrabrawler.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrabrawlerInstance(int level)
 		: base(
-				739,
 				SpeciesCrabrawler.Instance, // PokemonInstance Species
 				"Crabrawler", level,
 				Fighting.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Crabrawler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Crabrawler() : base(
-			739,
+		public CrabrawlerInstance() : base(
 			SpeciesCrabrawler.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

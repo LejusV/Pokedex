@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesApplin Constructor
 		public SpeciesApplin() : base(
+			840,
 			"Applin",
 			0.2,
 			0.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ApplinInstance(string nickname, int level)
 		: base(
-				840,
 				SpeciesApplin.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ApplinInstance(int level)
 		: base(
-				840,
 				SpeciesApplin.Instance, // PokemonInstance Species
 				"Applin", level,
 				Grass.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Applin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Applin() : base(
-			840,
+		public ApplinInstance() : base(
 			SpeciesApplin.Instance, // PokemonInstance Species
 			Grass.Instance, Dragon.Instance			
 		) {}

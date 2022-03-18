@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGurdurr Constructor
 		public SpeciesGurdurr() : base(
+			533,
 			"Gurdurr",
 			1.2,
 			40.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GurdurrInstance(string nickname, int level)
 		: base(
-				533,
 				SpeciesGurdurr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GurdurrInstance(int level)
 		: base(
-				533,
 				SpeciesGurdurr.Instance, // PokemonInstance Species
 				"Gurdurr", level,
 				Fighting.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gurdurr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gurdurr() : base(
-			533,
+		public GurdurrInstance() : base(
 			SpeciesGurdurr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

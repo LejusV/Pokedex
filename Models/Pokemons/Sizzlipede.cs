@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSizzlipede Constructor
 		public SpeciesSizzlipede() : base(
+			850,
 			"Sizzlipede",
 			0.7,
 			1.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SizzlipedeInstance(string nickname, int level)
 		: base(
-				850,
 				SpeciesSizzlipede.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Bug.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SizzlipedeInstance(int level)
 		: base(
-				850,
 				SpeciesSizzlipede.Instance, // PokemonInstance Species
 				"Sizzlipede", level,
 				Fire.Instance, Bug.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sizzlipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sizzlipede() : base(
-			850,
+		public SizzlipedeInstance() : base(
 			SpeciesSizzlipede.Instance, // PokemonInstance Species
 			Fire.Instance, Bug.Instance			
 		) {}

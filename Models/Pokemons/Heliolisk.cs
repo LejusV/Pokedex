@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHeliolisk Constructor
 		public SpeciesHeliolisk() : base(
+			695,
 			"Heliolisk",
 			1.0,
 			21.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HelioliskInstance(string nickname, int level)
 		: base(
-				695,
 				SpeciesHeliolisk.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Normal.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HelioliskInstance(int level)
 		: base(
-				695,
 				SpeciesHeliolisk.Instance, // PokemonInstance Species
 				"Heliolisk", level,
 				Electric.Instance, Normal.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Heliolisk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Heliolisk() : base(
-			695,
+		public HelioliskInstance() : base(
 			SpeciesHeliolisk.Instance, // PokemonInstance Species
 			Electric.Instance, Normal.Instance			
 		) {}

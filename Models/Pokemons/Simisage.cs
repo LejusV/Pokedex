@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSimisage Constructor
 		public SpeciesSimisage() : base(
+			512,
 			"Simisage",
 			1.1,
 			30.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimisageInstance(string nickname, int level)
 		: base(
-				512,
 				SpeciesSimisage.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimisageInstance(int level)
 		: base(
-				512,
 				SpeciesSimisage.Instance, // PokemonInstance Species
 				"Simisage", level,
 				Grass.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Simisage Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Simisage() : base(
-			512,
+		public SimisageInstance() : base(
 			SpeciesSimisage.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

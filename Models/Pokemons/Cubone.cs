@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCubone Constructor
 		public SpeciesCubone() : base(
+			104,
 			"Cubone",
 			0.4,
 			6.5,
@@ -154,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CuboneInstance(string nickname, int level)
 		: base(
-				104,
 				SpeciesCubone.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -169,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CuboneInstance(int level)
 		: base(
-				104,
 				SpeciesCubone.Instance, // PokemonInstance Species
 				"Cubone", level,
 				Ground.Instance			
@@ -183,8 +182,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cubone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cubone() : base(
-			104,
+		public CuboneInstance() : base(
 			SpeciesCubone.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

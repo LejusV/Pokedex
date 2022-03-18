@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDuosion Constructor
 		public SpeciesDuosion() : base(
+			578,
 			"Duosion",
 			0.6,
 			8.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuosionInstance(string nickname, int level)
 		: base(
-				578,
 				SpeciesDuosion.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuosionInstance(int level)
 		: base(
-				578,
 				SpeciesDuosion.Instance, // PokemonInstance Species
 				"Duosion", level,
 				Psychic.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Duosion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Duosion() : base(
-			578,
+		public DuosionInstance() : base(
 			SpeciesDuosion.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

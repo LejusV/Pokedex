@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMachoke Constructor
 		public SpeciesMachoke() : base(
+			67,
 			"Machoke",
 			1.5,
 			70.5,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachokeInstance(string nickname, int level)
 		: base(
-				67,
 				SpeciesMachoke.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MachokeInstance(int level)
 		: base(
-				67,
 				SpeciesMachoke.Instance, // PokemonInstance Species
 				"Machoke", level,
 				Fighting.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Machoke Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Machoke() : base(
-			67,
+		public MachokeInstance() : base(
 			SpeciesMachoke.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

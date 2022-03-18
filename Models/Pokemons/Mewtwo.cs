@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMewtwo Constructor
 		public SpeciesMewtwo() : base(
+			150,
 			"Mewtwo",
 			2.0,
 			122.0,
@@ -196,7 +197,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MewtwoInstance(string nickname, int level)
 		: base(
-				150,
 				SpeciesMewtwo.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -211,7 +211,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MewtwoInstance(int level)
 		: base(
-				150,
 				SpeciesMewtwo.Instance, // PokemonInstance Species
 				"Mewtwo", level,
 				Psychic.Instance			
@@ -225,8 +224,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mewtwo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mewtwo() : base(
-			150,
+		public MewtwoInstance() : base(
 			SpeciesMewtwo.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

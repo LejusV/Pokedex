@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNidoqueen Constructor
 		public SpeciesNidoqueen() : base(
+			31,
 			"Nidoqueen",
 			1.3,
 			60.0,
@@ -173,7 +174,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidoqueenInstance(string nickname, int level)
 		: base(
-				31,
 				SpeciesNidoqueen.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Ground.Instance			
@@ -188,7 +188,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidoqueenInstance(int level)
 		: base(
-				31,
 				SpeciesNidoqueen.Instance, // PokemonInstance Species
 				"Nidoqueen", level,
 				Poison.Instance, Ground.Instance			
@@ -202,8 +201,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nidoqueen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nidoqueen() : base(
-			31,
+		public NidoqueenInstance() : base(
 			SpeciesNidoqueen.Instance, // PokemonInstance Species
 			Poison.Instance, Ground.Instance			
 		) {}

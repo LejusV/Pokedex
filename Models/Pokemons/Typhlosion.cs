@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTyphlosion Constructor
 		public SpeciesTyphlosion() : base(
+			157,
 			"Typhlosion",
 			1.7,
 			79.5,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyphlosionInstance(string nickname, int level)
 		: base(
-				157,
 				SpeciesTyphlosion.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyphlosionInstance(int level)
 		: base(
-				157,
 				SpeciesTyphlosion.Instance, // PokemonInstance Species
 				"Typhlosion", level,
 				Fire.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Typhlosion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Typhlosion() : base(
-			157,
+		public TyphlosionInstance() : base(
 			SpeciesTyphlosion.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

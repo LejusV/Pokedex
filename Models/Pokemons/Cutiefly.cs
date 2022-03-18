@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCutiefly Constructor
 		public SpeciesCutiefly() : base(
+			742,
 			"Cutiefly",
 			0.1,
 			0.2,
@@ -108,7 +109,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CutieflyInstance(string nickname, int level)
 		: base(
-				742,
 				SpeciesCutiefly.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fairy.Instance			
@@ -123,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CutieflyInstance(int level)
 		: base(
-				742,
 				SpeciesCutiefly.Instance, // PokemonInstance Species
 				"Cutiefly", level,
 				Bug.Instance, Fairy.Instance			
@@ -137,8 +136,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cutiefly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cutiefly() : base(
-			742,
+		public CutieflyInstance() : base(
 			SpeciesCutiefly.Instance, // PokemonInstance Species
 			Bug.Instance, Fairy.Instance			
 		) {}

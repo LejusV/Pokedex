@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGraveler Constructor
 		public SpeciesGraveler() : base(
+			75,
 			"Graveler",
 			1.0,
 			105.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GravelerInstance(string nickname, int level)
 		: base(
-				75,
 				SpeciesGraveler.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GravelerInstance(int level)
 		: base(
-				75,
 				SpeciesGraveler.Instance, // PokemonInstance Species
 				"Graveler", level,
 				Rock.Instance, Ground.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Graveler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Graveler() : base(
-			75,
+		public GravelerInstance() : base(
 			SpeciesGraveler.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

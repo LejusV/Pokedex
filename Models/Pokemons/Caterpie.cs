@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCaterpie Constructor
 		public SpeciesCaterpie() : base(
+			10,
 			"Caterpie",
 			0.3,
 			2.9,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CaterpieInstance(string nickname, int level)
 		: base(
-				10,
 				SpeciesCaterpie.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CaterpieInstance(int level)
 		: base(
-				10,
 				SpeciesCaterpie.Instance, // PokemonInstance Species
 				"Caterpie", level,
 				Bug.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Caterpie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Caterpie() : base(
-			10,
+		public CaterpieInstance() : base(
 			SpeciesCaterpie.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

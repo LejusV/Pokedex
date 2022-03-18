@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesType-Null Constructor
 		public SpeciesTypeNull() : base(
+			772,
 			"Type-Null",
 			1.9,
 			120.5,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TypeNullInstance(string nickname, int level)
 		: base(
-				772,
 				SpeciesTypeNull.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TypeNullInstance(int level)
 		: base(
-				772,
 				SpeciesTypeNull.Instance, // PokemonInstance Species
 				"Type-Null", level,
 				Normal.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Type-Null Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TypeNull() : base(
-			772,
+		public TypeNullInstance() : base(
 			SpeciesTypeNull.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

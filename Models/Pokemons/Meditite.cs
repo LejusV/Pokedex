@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMeditite Constructor
 		public SpeciesMeditite() : base(
+			307,
 			"Meditite",
 			0.6,
 			11.2,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MedititeInstance(string nickname, int level)
 		: base(
-				307,
 				SpeciesMeditite.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Psychic.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MedititeInstance(int level)
 		: base(
-				307,
 				SpeciesMeditite.Instance, // PokemonInstance Species
 				"Meditite", level,
 				Fighting.Instance, Psychic.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Meditite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Meditite() : base(
-			307,
+		public MedititeInstance() : base(
 			SpeciesMeditite.Instance, // PokemonInstance Species
 			Fighting.Instance, Psychic.Instance			
 		) {}

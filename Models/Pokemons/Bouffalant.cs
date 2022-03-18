@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBouffalant Constructor
 		public SpeciesBouffalant() : base(
+			626,
 			"Bouffalant",
 			1.6,
 			94.6,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BouffalantInstance(string nickname, int level)
 		: base(
-				626,
 				SpeciesBouffalant.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BouffalantInstance(int level)
 		: base(
-				626,
 				SpeciesBouffalant.Instance, // PokemonInstance Species
 				"Bouffalant", level,
 				Normal.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bouffalant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bouffalant() : base(
-			626,
+		public BouffalantInstance() : base(
 			SpeciesBouffalant.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

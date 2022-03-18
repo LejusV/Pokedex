@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVolbeat Constructor
 		public SpeciesVolbeat() : base(
+			313,
 			"Volbeat",
 			0.7,
 			17.7,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolbeatInstance(string nickname, int level)
 		: base(
-				313,
 				SpeciesVolbeat.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolbeatInstance(int level)
 		: base(
-				313,
 				SpeciesVolbeat.Instance, // PokemonInstance Species
 				"Volbeat", level,
 				Bug.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Volbeat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Volbeat() : base(
-			313,
+		public VolbeatInstance() : base(
 			SpeciesVolbeat.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

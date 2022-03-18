@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShroomish Constructor
 		public SpeciesShroomish() : base(
+			285,
 			"Shroomish",
 			0.4,
 			4.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShroomishInstance(string nickname, int level)
 		: base(
-				285,
 				SpeciesShroomish.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShroomishInstance(int level)
 		: base(
-				285,
 				SpeciesShroomish.Instance, // PokemonInstance Species
 				"Shroomish", level,
 				Grass.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shroomish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shroomish() : base(
-			285,
+		public ShroomishInstance() : base(
 			SpeciesShroomish.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

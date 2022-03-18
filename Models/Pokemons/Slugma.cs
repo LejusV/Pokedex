@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlugma Constructor
 		public SpeciesSlugma() : base(
+			218,
 			"Slugma",
 			0.7,
 			35.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlugmaInstance(string nickname, int level)
 		: base(
-				218,
 				SpeciesSlugma.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlugmaInstance(int level)
 		: base(
-				218,
 				SpeciesSlugma.Instance, // PokemonInstance Species
 				"Slugma", level,
 				Fire.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slugma Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slugma() : base(
-			218,
+		public SlugmaInstance() : base(
 			SpeciesSlugma.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

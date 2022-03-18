@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNoctowl Constructor
 		public SpeciesNoctowl() : base(
+			164,
 			"Noctowl",
 			1.6,
 			40.8,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoctowlInstance(string nickname, int level)
 		: base(
-				164,
 				SpeciesNoctowl.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoctowlInstance(int level)
 		: base(
-				164,
 				SpeciesNoctowl.Instance, // PokemonInstance Species
 				"Noctowl", level,
 				Normal.Instance, Flying.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Noctowl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Noctowl() : base(
-			164,
+		public NoctowlInstance() : base(
 			SpeciesNoctowl.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

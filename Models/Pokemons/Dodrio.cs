@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDodrio Constructor
 		public SpeciesDodrio() : base(
+			85,
 			"Dodrio",
 			1.8,
 			85.2,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DodrioInstance(string nickname, int level)
 		: base(
-				85,
 				SpeciesDodrio.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DodrioInstance(int level)
 		: base(
-				85,
 				SpeciesDodrio.Instance, // PokemonInstance Species
 				"Dodrio", level,
 				Normal.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dodrio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dodrio() : base(
-			85,
+		public DodrioInstance() : base(
 			SpeciesDodrio.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

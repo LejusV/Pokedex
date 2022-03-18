@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCottonee Constructor
 		public SpeciesCottonee() : base(
+			546,
 			"Cottonee",
 			0.3,
 			0.6,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CottoneeInstance(string nickname, int level)
 		: base(
-				546,
 				SpeciesCottonee.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CottoneeInstance(int level)
 		: base(
-				546,
 				SpeciesCottonee.Instance, // PokemonInstance Species
 				"Cottonee", level,
 				Grass.Instance, Fairy.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cottonee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cottonee() : base(
-			546,
+		public CottoneeInstance() : base(
 			SpeciesCottonee.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}

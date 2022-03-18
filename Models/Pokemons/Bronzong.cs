@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBronzong Constructor
 		public SpeciesBronzong() : base(
+			437,
 			"Bronzong",
 			1.3,
 			187.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BronzongInstance(string nickname, int level)
 		: base(
-				437,
 				SpeciesBronzong.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BronzongInstance(int level)
 		: base(
-				437,
 				SpeciesBronzong.Instance, // PokemonInstance Species
 				"Bronzong", level,
 				Steel.Instance, Psychic.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bronzong Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bronzong() : base(
-			437,
+		public BronzongInstance() : base(
 			SpeciesBronzong.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

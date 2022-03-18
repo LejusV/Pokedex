@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesParasect Constructor
 		public SpeciesParasect() : base(
+			47,
 			"Parasect",
 			1.0,
 			29.5,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ParasectInstance(string nickname, int level)
 		: base(
-				47,
 				SpeciesParasect.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ParasectInstance(int level)
 		: base(
-				47,
 				SpeciesParasect.Instance, // PokemonInstance Species
 				"Parasect", level,
 				Bug.Instance, Grass.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Parasect Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Parasect() : base(
-			47,
+		public ParasectInstance() : base(
 			SpeciesParasect.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

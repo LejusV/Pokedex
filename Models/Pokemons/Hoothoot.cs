@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHoothoot Constructor
 		public SpeciesHoothoot() : base(
+			163,
 			"Hoothoot",
 			0.7,
 			21.2,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoothootInstance(string nickname, int level)
 		: base(
-				163,
 				SpeciesHoothoot.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoothootInstance(int level)
 		: base(
-				163,
 				SpeciesHoothoot.Instance, // PokemonInstance Species
 				"Hoothoot", level,
 				Normal.Instance, Flying.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hoothoot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hoothoot() : base(
-			163,
+		public HoothootInstance() : base(
 			SpeciesHoothoot.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

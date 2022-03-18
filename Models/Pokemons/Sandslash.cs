@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSandslash Constructor
 		public SpeciesSandslash() : base(
+			28,
 			"Sandslash",
 			1.0,
 			29.5,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandslashInstance(string nickname, int level)
 		: base(
-				28,
 				SpeciesSandslash.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandslashInstance(int level)
 		: base(
-				28,
 				SpeciesSandslash.Instance, // PokemonInstance Species
 				"Sandslash", level,
 				Ground.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sandslash Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sandslash() : base(
-			28,
+		public SandslashInstance() : base(
 			SpeciesSandslash.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPolteageist Constructor
 		public SpeciesPolteageist() : base(
+			855,
 			"Polteageist",
 			0.2,
 			0.4,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PolteageistInstance(string nickname, int level)
 		: base(
-				855,
 				SpeciesPolteageist.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PolteageistInstance(int level)
 		: base(
-				855,
 				SpeciesPolteageist.Instance, // PokemonInstance Species
 				"Polteageist", level,
 				Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Polteageist Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Polteageist() : base(
-			855,
+		public PolteageistInstance() : base(
 			SpeciesPolteageist.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

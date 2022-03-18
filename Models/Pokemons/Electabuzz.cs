@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesElectabuzz Constructor
 		public SpeciesElectabuzz() : base(
+			125,
 			"Electabuzz",
 			1.1,
 			30.0,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectabuzzInstance(string nickname, int level)
 		: base(
-				125,
 				SpeciesElectabuzz.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectabuzzInstance(int level)
 		: base(
-				125,
 				SpeciesElectabuzz.Instance, // PokemonInstance Species
 				"Electabuzz", level,
 				Electric.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Electabuzz Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Electabuzz() : base(
-			125,
+		public ElectabuzzInstance() : base(
 			SpeciesElectabuzz.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

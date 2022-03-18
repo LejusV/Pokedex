@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTropius Constructor
 		public SpeciesTropius() : base(
+			357,
 			"Tropius",
 			2.0,
 			100.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TropiusInstance(string nickname, int level)
 		: base(
-				357,
 				SpeciesTropius.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TropiusInstance(int level)
 		: base(
-				357,
 				SpeciesTropius.Instance, // PokemonInstance Species
 				"Tropius", level,
 				Grass.Instance, Flying.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tropius Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tropius() : base(
-			357,
+		public TropiusInstance() : base(
 			SpeciesTropius.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

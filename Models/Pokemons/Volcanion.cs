@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVolcanion Constructor
 		public SpeciesVolcanion() : base(
+			721,
 			"Volcanion",
 			1.7,
 			195.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolcanionInstance(string nickname, int level)
 		: base(
-				721,
 				SpeciesVolcanion.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolcanionInstance(int level)
 		: base(
-				721,
 				SpeciesVolcanion.Instance, // PokemonInstance Species
 				"Volcanion", level,
 				Fire.Instance, Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Volcanion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Volcanion() : base(
-			721,
+		public VolcanionInstance() : base(
 			SpeciesVolcanion.Instance, // PokemonInstance Species
 			Fire.Instance, Water.Instance			
 		) {}

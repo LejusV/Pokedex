@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStarly Constructor
 		public SpeciesStarly() : base(
+			396,
 			"Starly",
 			0.3,
 			2.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StarlyInstance(string nickname, int level)
 		: base(
-				396,
 				SpeciesStarly.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StarlyInstance(int level)
 		: base(
-				396,
 				SpeciesStarly.Instance, // PokemonInstance Species
 				"Starly", level,
 				Normal.Instance, Flying.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Starly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Starly() : base(
-			396,
+		public StarlyInstance() : base(
 			SpeciesStarly.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

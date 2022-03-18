@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMandibuzz Constructor
 		public SpeciesMandibuzz() : base(
+			630,
 			"Mandibuzz",
 			1.2,
 			39.5,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MandibuzzInstance(string nickname, int level)
 		: base(
-				630,
 				SpeciesMandibuzz.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MandibuzzInstance(int level)
 		: base(
-				630,
 				SpeciesMandibuzz.Instance, // PokemonInstance Species
 				"Mandibuzz", level,
 				Dark.Instance, Flying.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mandibuzz Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mandibuzz() : base(
-			630,
+		public MandibuzzInstance() : base(
 			SpeciesMandibuzz.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}

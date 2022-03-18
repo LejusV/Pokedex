@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHeatran Constructor
 		public SpeciesHeatran() : base(
+			485,
 			"Heatran",
 			1.7,
 			430.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeatranInstance(string nickname, int level)
 		: base(
-				485,
 				SpeciesHeatran.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Steel.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeatranInstance(int level)
 		: base(
-				485,
 				SpeciesHeatran.Instance, // PokemonInstance Species
 				"Heatran", level,
 				Fire.Instance, Steel.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Heatran Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Heatran() : base(
-			485,
+		public HeatranInstance() : base(
 			SpeciesHeatran.Instance, // PokemonInstance Species
 			Fire.Instance, Steel.Instance			
 		) {}

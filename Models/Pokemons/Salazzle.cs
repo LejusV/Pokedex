@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSalazzle Constructor
 		public SpeciesSalazzle() : base(
+			758,
 			"Salazzle",
 			1.2,
 			22.2,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalazzleInstance(string nickname, int level)
 		: base(
-				758,
 				SpeciesSalazzle.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fire.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SalazzleInstance(int level)
 		: base(
-				758,
 				SpeciesSalazzle.Instance, // PokemonInstance Species
 				"Salazzle", level,
 				Poison.Instance, Fire.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Salazzle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Salazzle() : base(
-			758,
+		public SalazzleInstance() : base(
 			SpeciesSalazzle.Instance, // PokemonInstance Species
 			Poison.Instance, Fire.Instance			
 		) {}

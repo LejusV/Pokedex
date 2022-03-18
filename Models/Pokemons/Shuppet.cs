@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShuppet Constructor
 		public SpeciesShuppet() : base(
+			353,
 			"Shuppet",
 			0.6,
 			2.3,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShuppetInstance(string nickname, int level)
 		: base(
-				353,
 				SpeciesShuppet.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShuppetInstance(int level)
 		: base(
-				353,
 				SpeciesShuppet.Instance, // PokemonInstance Species
 				"Shuppet", level,
 				Ghost.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shuppet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shuppet() : base(
-			353,
+		public ShuppetInstance() : base(
 			SpeciesShuppet.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVenomoth Constructor
 		public SpeciesVenomoth() : base(
+			49,
 			"Venomoth",
 			1.5,
 			12.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenomothInstance(string nickname, int level)
 		: base(
-				49,
 				SpeciesVenomoth.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenomothInstance(int level)
 		: base(
-				49,
 				SpeciesVenomoth.Instance, // PokemonInstance Species
 				"Venomoth", level,
 				Bug.Instance, Poison.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Venomoth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Venomoth() : base(
-			49,
+		public VenomothInstance() : base(
 			SpeciesVenomoth.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

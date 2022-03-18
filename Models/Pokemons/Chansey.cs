@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChansey Constructor
 		public SpeciesChansey() : base(
+			113,
 			"Chansey",
 			1.1,
 			34.6,
@@ -181,7 +182,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChanseyInstance(string nickname, int level)
 		: base(
-				113,
 				SpeciesChansey.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -196,7 +196,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChanseyInstance(int level)
 		: base(
-				113,
 				SpeciesChansey.Instance, // PokemonInstance Species
 				"Chansey", level,
 				Normal.Instance			
@@ -210,8 +209,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chansey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chansey() : base(
-			113,
+		public ChanseyInstance() : base(
 			SpeciesChansey.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

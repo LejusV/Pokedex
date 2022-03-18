@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkorupi Constructor
 		public SpeciesSkorupi() : base(
+			451,
 			"Skorupi",
 			0.8,
 			12.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkorupiInstance(string nickname, int level)
 		: base(
-				451,
 				SpeciesSkorupi.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Bug.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkorupiInstance(int level)
 		: base(
-				451,
 				SpeciesSkorupi.Instance, // PokemonInstance Species
 				"Skorupi", level,
 				Poison.Instance, Bug.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skorupi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skorupi() : base(
-			451,
+		public SkorupiInstance() : base(
 			SpeciesSkorupi.Instance, // PokemonInstance Species
 			Poison.Instance, Bug.Instance			
 		) {}

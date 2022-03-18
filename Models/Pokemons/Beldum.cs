@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBeldum Constructor
 		public SpeciesBeldum() : base(
+			374,
 			"Beldum",
 			0.6,
 			95.2,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeldumInstance(string nickname, int level)
 		: base(
-				374,
 				SpeciesBeldum.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeldumInstance(int level)
 		: base(
-				374,
 				SpeciesBeldum.Instance, // PokemonInstance Species
 				"Beldum", level,
 				Steel.Instance, Psychic.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Beldum Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Beldum() : base(
-			374,
+		public BeldumInstance() : base(
 			SpeciesBeldum.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBeheeyem Constructor
 		public SpeciesBeheeyem() : base(
+			606,
 			"Beheeyem",
 			1.0,
 			34.5,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeheeyemInstance(string nickname, int level)
 		: base(
-				606,
 				SpeciesBeheeyem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeheeyemInstance(int level)
 		: base(
-				606,
 				SpeciesBeheeyem.Instance, // PokemonInstance Species
 				"Beheeyem", level,
 				Psychic.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Beheeyem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Beheeyem() : base(
-			606,
+		public BeheeyemInstance() : base(
 			SpeciesBeheeyem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

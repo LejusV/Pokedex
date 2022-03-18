@@ -52,6 +52,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region Species{pokeName} Constructor
 		public Species{pokeNameNoSpace}() : base(
+			{poke["id"]},
 			"{pokeName}",
 			{poke["height"]/10},
 			{poke["weight"]/10},
@@ -87,7 +88,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public {pokeNameNoSpace}Instance(string nickname, int level)
 		: base(
-				{poke["id"]},
 				Species{pokeNameNoSpace}.Instance, // Pokemon Species
 				nickname, level,
 				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
@@ -102,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public {pokeNameNoSpace}Instance(int level)
 		: base(
-				{poke["id"]},
 				Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
 				"{pokeName}", level,
 				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
@@ -116,8 +115,7 @@ namespace Pokedex.Models.Pokemons
 		/// {pokeName} Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public {pokeNameNoSpace}() : base(
-			{poke["id"]},
+		public {pokeNameNoSpace}Instance() : base(
 			Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
 			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
 		) {{}}

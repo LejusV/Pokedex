@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpinda Constructor
 		public SpeciesSpinda() : base(
+			327,
 			"Spinda",
 			1.1,
 			5.0,
@@ -159,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpindaInstance(string nickname, int level)
 		: base(
-				327,
 				SpeciesSpinda.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -174,7 +174,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpindaInstance(int level)
 		: base(
-				327,
 				SpeciesSpinda.Instance, // PokemonInstance Species
 				"Spinda", level,
 				Normal.Instance			
@@ -188,8 +187,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spinda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spinda() : base(
-			327,
+		public SpindaInstance() : base(
 			SpeciesSpinda.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAltaria Constructor
 		public SpeciesAltaria() : base(
+			334,
 			"Altaria",
 			1.1,
 			20.6,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AltariaInstance(string nickname, int level)
 		: base(
-				334,
 				SpeciesAltaria.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Flying.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AltariaInstance(int level)
 		: base(
-				334,
 				SpeciesAltaria.Instance, // PokemonInstance Species
 				"Altaria", level,
 				Dragon.Instance, Flying.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Altaria Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Altaria() : base(
-			334,
+		public AltariaInstance() : base(
 			SpeciesAltaria.Instance, // PokemonInstance Species
 			Dragon.Instance, Flying.Instance			
 		) {}

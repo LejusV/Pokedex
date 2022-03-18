@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCoalossal Constructor
 		public SpeciesCoalossal() : base(
+			839,
 			"Coalossal",
 			2.8,
 			310.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CoalossalInstance(string nickname, int level)
 		: base(
-				839,
 				SpeciesCoalossal.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fire.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CoalossalInstance(int level)
 		: base(
-				839,
 				SpeciesCoalossal.Instance, // PokemonInstance Species
 				"Coalossal", level,
 				Rock.Instance, Fire.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Coalossal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Coalossal() : base(
-			839,
+		public CoalossalInstance() : base(
 			SpeciesCoalossal.Instance, // PokemonInstance Species
 			Rock.Instance, Fire.Instance			
 		) {}

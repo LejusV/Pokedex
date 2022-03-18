@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAegislash-Shield Constructor
 		public SpeciesAegislashShield() : base(
+			681,
 			"Aegislash-Shield",
 			1.7,
 			53.0,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AegislashShieldInstance(string nickname, int level)
 		: base(
-				681,
 				SpeciesAegislashShield.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Ghost.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AegislashShieldInstance(int level)
 		: base(
-				681,
 				SpeciesAegislashShield.Instance, // PokemonInstance Species
 				"Aegislash-Shield", level,
 				Steel.Instance, Ghost.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aegislash-Shield Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public AegislashShield() : base(
-			681,
+		public AegislashShieldInstance() : base(
 			SpeciesAegislashShield.Instance, // PokemonInstance Species
 			Steel.Instance, Ghost.Instance			
 		) {}

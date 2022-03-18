@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGastly Constructor
 		public SpeciesGastly() : base(
+			92,
 			"Gastly",
 			1.3,
 			0.1,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GastlyInstance(string nickname, int level)
 		: base(
-				92,
 				SpeciesGastly.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Poison.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GastlyInstance(int level)
 		: base(
-				92,
 				SpeciesGastly.Instance, // PokemonInstance Species
 				"Gastly", level,
 				Ghost.Instance, Poison.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gastly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gastly() : base(
-			92,
+		public GastlyInstance() : base(
 			SpeciesGastly.Instance, // PokemonInstance Species
 			Ghost.Instance, Poison.Instance			
 		) {}

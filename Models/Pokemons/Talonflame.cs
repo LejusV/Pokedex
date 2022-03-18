@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTalonflame Constructor
 		public SpeciesTalonflame() : base(
+			663,
 			"Talonflame",
 			1.2,
 			24.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TalonflameInstance(string nickname, int level)
 		: base(
-				663,
 				SpeciesTalonflame.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TalonflameInstance(int level)
 		: base(
-				663,
 				SpeciesTalonflame.Instance, // PokemonInstance Species
 				"Talonflame", level,
 				Fire.Instance, Flying.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Talonflame Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Talonflame() : base(
-			663,
+		public TalonflameInstance() : base(
 			SpeciesTalonflame.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

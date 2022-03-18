@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNoivern Constructor
 		public SpeciesNoivern() : base(
+			715,
 			"Noivern",
 			1.5,
 			85.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoivernInstance(string nickname, int level)
 		: base(
-				715,
 				SpeciesNoivern.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Dragon.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoivernInstance(int level)
 		: base(
-				715,
 				SpeciesNoivern.Instance, // PokemonInstance Species
 				"Noivern", level,
 				Flying.Instance, Dragon.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Noivern Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Noivern() : base(
-			715,
+		public NoivernInstance() : base(
 			SpeciesNoivern.Instance, // PokemonInstance Species
 			Flying.Instance, Dragon.Instance			
 		) {}

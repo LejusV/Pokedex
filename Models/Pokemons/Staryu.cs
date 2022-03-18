@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStaryu Constructor
 		public SpeciesStaryu() : base(
+			120,
 			"Staryu",
 			0.8,
 			34.5,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaryuInstance(string nickname, int level)
 		: base(
-				120,
 				SpeciesStaryu.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaryuInstance(int level)
 		: base(
-				120,
 				SpeciesStaryu.Instance, // PokemonInstance Species
 				"Staryu", level,
 				Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Staryu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Staryu() : base(
-			120,
+		public StaryuInstance() : base(
 			SpeciesStaryu.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLatios Constructor
 		public SpeciesLatios() : base(
+			381,
 			"Latios",
 			2.0,
 			60.0,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LatiosInstance(string nickname, int level)
 		: base(
-				381,
 				SpeciesLatios.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Psychic.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LatiosInstance(int level)
 		: base(
-				381,
 				SpeciesLatios.Instance, // PokemonInstance Species
 				"Latios", level,
 				Dragon.Instance, Psychic.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Latios Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Latios() : base(
-			381,
+		public LatiosInstance() : base(
 			SpeciesLatios.Instance, // PokemonInstance Species
 			Dragon.Instance, Psychic.Instance			
 		) {}

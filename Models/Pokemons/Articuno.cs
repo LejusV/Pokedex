@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArticuno Constructor
 		public SpeciesArticuno() : base(
+			144,
 			"Articuno",
 			1.7,
 			55.4,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArticunoInstance(string nickname, int level)
 		: base(
-				144,
 				SpeciesArticuno.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Flying.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArticunoInstance(int level)
 		: base(
-				144,
 				SpeciesArticuno.Instance, // PokemonInstance Species
 				"Articuno", level,
 				Ice.Instance, Flying.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Articuno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Articuno() : base(
-			144,
+		public ArticunoInstance() : base(
 			SpeciesArticuno.Instance, // PokemonInstance Species
 			Ice.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShuckle Constructor
 		public SpeciesShuckle() : base(
+			213,
 			"Shuckle",
 			0.6,
 			20.5,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShuckleInstance(string nickname, int level)
 		: base(
-				213,
 				SpeciesShuckle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Rock.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShuckleInstance(int level)
 		: base(
-				213,
 				SpeciesShuckle.Instance, // PokemonInstance Species
 				"Shuckle", level,
 				Bug.Instance, Rock.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shuckle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shuckle() : base(
-			213,
+		public ShuckleInstance() : base(
 			SpeciesShuckle.Instance, // PokemonInstance Species
 			Bug.Instance, Rock.Instance			
 		) {}

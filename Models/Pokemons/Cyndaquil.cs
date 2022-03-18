@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCyndaquil Constructor
 		public SpeciesCyndaquil() : base(
+			155,
 			"Cyndaquil",
 			0.5,
 			7.9,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CyndaquilInstance(string nickname, int level)
 		: base(
-				155,
 				SpeciesCyndaquil.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CyndaquilInstance(int level)
 		: base(
-				155,
 				SpeciesCyndaquil.Instance, // PokemonInstance Species
 				"Cyndaquil", level,
 				Fire.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cyndaquil Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cyndaquil() : base(
-			155,
+		public CyndaquilInstance() : base(
 			SpeciesCyndaquil.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

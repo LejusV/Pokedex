@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBeartic Constructor
 		public SpeciesBeartic() : base(
+			614,
 			"Beartic",
 			2.6,
 			260.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BearticInstance(string nickname, int level)
 		: base(
-				614,
 				SpeciesBeartic.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BearticInstance(int level)
 		: base(
-				614,
 				SpeciesBeartic.Instance, // PokemonInstance Species
 				"Beartic", level,
 				Ice.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Beartic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Beartic() : base(
-			614,
+		public BearticInstance() : base(
 			SpeciesBeartic.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

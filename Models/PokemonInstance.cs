@@ -13,8 +13,6 @@ namespace Pokedex.Models
         //public void connection
         private static int instanceCount = 0;
 
-        private readonly int _id; // ID of the pokemon in the pokedex determining what pokemon it is
-
         protected int _level; // Level of the Pokemon
         private string _nickname; // Name Given by User
 
@@ -41,11 +39,6 @@ namespace Pokedex.Models
             ///     <item>
             ///         <term>Nickname</term>
             ///         <description>Nickname Getter AND SETTER</description>
-            ///     </item>
-            ///
-            ///     <item>
-            ///         <term>Id</term>
-            ///         <description>Id Getter</description>
             ///     </item>
             ///
             ///     <item>
@@ -101,21 +94,13 @@ namespace Pokedex.Models
             }
             #endregion
 
-            #region Id Getter
-            /// <summary>
-            /// Id Getter
-            /// </summary>
-            /// <returns>Returns the Id</returns>
-            public int Id { get => this._id; }
-            #endregion
-
             #region Types Getter
             /// <summary>
             /// Types Getter
             /// </summary>
             /// <returns>Returns the Types tuple</returns>
             #nullable enable
-            public (PokeType, PokeType?) Types { get => (this._type, this._type2); }
+            public (PokeType, PokeType?) Types => (this._type, this._type2);
             #nullable restore
             #endregion
 
@@ -124,7 +109,7 @@ namespace Pokedex.Models
             /// Level Getter
             /// </summary>
             /// <returns>Returns the Level</returns>
-            public int Level { get => this._level; }
+            public int Level => this._level;
             #endregion
 
             #region Moves Getter
@@ -132,7 +117,7 @@ namespace Pokedex.Models
             /// Moves Getter
             /// </summary>
             /// <returns>Returns an array of Moves</returns>
-            public Move[] Moves { get => this._moves; }
+            public Move[] Moves => this._moves;
             #endregion
 
             #region IV Getter
@@ -140,7 +125,7 @@ namespace Pokedex.Models
             /// IV Getter
             /// </summary>
             /// <returns>Returns the IV PokemonStats</returns>
-            public PokemonStats IV { get => this._iv;}
+            public PokemonStats IV => this._iv;
             #endregion
 
             #region EV Getter
@@ -148,7 +133,7 @@ namespace Pokedex.Models
             /// EV Getter
             /// </summary>
             /// <returns>Returns the EV PokemonStats</returns>
-            public PokemonStats EV { get => _ev; }
+            public PokemonStats EV => this._ev;
             #endregion
 
             #region CalculatedStats Getter
@@ -156,7 +141,7 @@ namespace Pokedex.Models
             /// CalculatedStats Getter
             /// </summary>
             /// <returns>Returns the Calculated Base PokemonStats (Max HP, current base speed, ...)</returns>
-            public PokemonStats CalculatedStats { get => this._calculatedStats; }
+            public PokemonStats CalculatedStats => this._calculatedStats;
             #endregion
 
             #region BattleStats Getter
@@ -164,7 +149,7 @@ namespace Pokedex.Models
             /// CurrentStats Getter
             /// </summary>
             /// <returns>Returns the Actual Current PokemonStats (current HP if hurt, attack if (de)buffed, ...)</returns>
-            public PokemonStats CurrentStats { get => this._currentStats;}
+            public PokemonStats CurrentStats => this._currentStats;
             #endregion
 
             #region StatModifiers Getter
@@ -172,7 +157,7 @@ namespace Pokedex.Models
             /// StatModifiers Getter
             /// </summary>
             /// <returns>Returns the Stat Modifiers (from -8 to +8)</returns>
-            public PokemonStats StatModifiers { get => this._statModifiers;}
+            public PokemonStats StatModifiers => this._statModifiers;
             #endregion
 
             #region Species Getter
@@ -180,7 +165,7 @@ namespace Pokedex.Models
             /// Species Getter
             /// </summary>
             /// <returns>Returns the PokemonSpecies</returns>
-            public PokemonSpecies Species { get => this._species;}
+            public PokemonSpecies Species => this._species;
             #endregion
 
             #region Types ToString
@@ -329,7 +314,6 @@ namespace Pokedex.Models
         
             #region Double Type Pokemon (BASE CONSTRUCTOR)
         public PokemonInstance(
-            int id,
             PokemonSpecies specie,
             string nickname,
             int level,
@@ -339,7 +323,6 @@ namespace Pokedex.Models
 #nullable restore
             )
         {
-            _id = id;
             _level = level;
             if (nickname != "")
                 _nickname = nickname;
@@ -360,13 +343,12 @@ namespace Pokedex.Models
 
             #region Single Type Pokemon
         public PokemonInstance(
-            int id,
             PokemonSpecies specie,
             string nickname,
             int level,
             PokeType type
             )
-            : this(id, specie, nickname, level, type, null)
+            : this(specie, nickname, level, type, null)
         {}
             #endregion
             

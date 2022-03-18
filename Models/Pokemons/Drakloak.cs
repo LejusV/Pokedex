@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrakloak Constructor
 		public SpeciesDrakloak() : base(
+			886,
 			"Drakloak",
 			1.4,
 			11.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrakloakInstance(string nickname, int level)
 		: base(
-				886,
 				SpeciesDrakloak.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrakloakInstance(int level)
 		: base(
-				886,
 				SpeciesDrakloak.Instance, // PokemonInstance Species
 				"Drakloak", level,
 				Dragon.Instance, Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drakloak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drakloak() : base(
-			886,
+		public DrakloakInstance() : base(
 			SpeciesDrakloak.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}

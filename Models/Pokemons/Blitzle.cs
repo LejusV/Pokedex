@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlitzle Constructor
 		public SpeciesBlitzle() : base(
+			522,
 			"Blitzle",
 			0.8,
 			29.8,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlitzleInstance(string nickname, int level)
 		: base(
-				522,
 				SpeciesBlitzle.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlitzleInstance(int level)
 		: base(
-				522,
 				SpeciesBlitzle.Instance, // PokemonInstance Species
 				"Blitzle", level,
 				Electric.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blitzle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blitzle() : base(
-			522,
+		public BlitzleInstance() : base(
 			SpeciesBlitzle.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

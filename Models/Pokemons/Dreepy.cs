@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDreepy Constructor
 		public SpeciesDreepy() : base(
+			885,
 			"Dreepy",
 			0.5,
 			2.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DreepyInstance(string nickname, int level)
 		: base(
-				885,
 				SpeciesDreepy.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DreepyInstance(int level)
 		: base(
-				885,
 				SpeciesDreepy.Instance, // PokemonInstance Species
 				"Dreepy", level,
 				Dragon.Instance, Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dreepy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dreepy() : base(
-			885,
+		public DreepyInstance() : base(
 			SpeciesDreepy.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}

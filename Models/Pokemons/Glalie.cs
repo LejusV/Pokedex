@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGlalie Constructor
 		public SpeciesGlalie() : base(
+			362,
 			"Glalie",
 			1.5,
 			256.5,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlalieInstance(string nickname, int level)
 		: base(
-				362,
 				SpeciesGlalie.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlalieInstance(int level)
 		: base(
-				362,
 				SpeciesGlalie.Instance, // PokemonInstance Species
 				"Glalie", level,
 				Ice.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Glalie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Glalie() : base(
-			362,
+		public GlalieInstance() : base(
 			SpeciesGlalie.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

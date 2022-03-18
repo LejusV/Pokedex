@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTorkoal Constructor
 		public SpeciesTorkoal() : base(
+			324,
 			"Torkoal",
 			0.5,
 			80.4,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorkoalInstance(string nickname, int level)
 		: base(
-				324,
 				SpeciesTorkoal.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorkoalInstance(int level)
 		: base(
-				324,
 				SpeciesTorkoal.Instance, // PokemonInstance Species
 				"Torkoal", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Torkoal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Torkoal() : base(
-			324,
+		public TorkoalInstance() : base(
 			SpeciesTorkoal.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShiftry Constructor
 		public SpeciesShiftry() : base(
+			275,
 			"Shiftry",
 			1.3,
 			59.6,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShiftryInstance(string nickname, int level)
 		: base(
-				275,
 				SpeciesShiftry.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dark.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShiftryInstance(int level)
 		: base(
-				275,
 				SpeciesShiftry.Instance, // PokemonInstance Species
 				"Shiftry", level,
 				Grass.Instance, Dark.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shiftry Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shiftry() : base(
-			275,
+		public ShiftryInstance() : base(
 			SpeciesShiftry.Instance, // PokemonInstance Species
 			Grass.Instance, Dark.Instance			
 		) {}

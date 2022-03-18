@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSolrock Constructor
 		public SpeciesSolrock() : base(
+			338,
 			"Solrock",
 			1.2,
 			154.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolrockInstance(string nickname, int level)
 		: base(
-				338,
 				SpeciesSolrock.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Psychic.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SolrockInstance(int level)
 		: base(
-				338,
 				SpeciesSolrock.Instance, // PokemonInstance Species
 				"Solrock", level,
 				Rock.Instance, Psychic.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Solrock Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Solrock() : base(
-			338,
+		public SolrockInstance() : base(
 			SpeciesSolrock.Instance, // PokemonInstance Species
 			Rock.Instance, Psychic.Instance			
 		) {}

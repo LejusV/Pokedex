@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesIndeedee-Male Constructor
 		public SpeciesIndeedeeMale() : base(
+			876,
 			"Indeedee-Male",
 			0.9,
 			28.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IndeedeeMaleInstance(string nickname, int level)
 		: base(
-				876,
 				SpeciesIndeedeeMale.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IndeedeeMaleInstance(int level)
 		: base(
-				876,
 				SpeciesIndeedeeMale.Instance, // PokemonInstance Species
 				"Indeedee-Male", level,
 				Psychic.Instance, Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Indeedee-Male Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public IndeedeeMale() : base(
-			876,
+		public IndeedeeMaleInstance() : base(
 			SpeciesIndeedeeMale.Instance, // PokemonInstance Species
 			Psychic.Instance, Normal.Instance			
 		) {}

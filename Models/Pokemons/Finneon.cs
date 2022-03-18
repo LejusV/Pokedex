@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFinneon Constructor
 		public SpeciesFinneon() : base(
+			456,
 			"Finneon",
 			0.4,
 			7.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FinneonInstance(string nickname, int level)
 		: base(
-				456,
 				SpeciesFinneon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FinneonInstance(int level)
 		: base(
-				456,
 				SpeciesFinneon.Instance, // PokemonInstance Species
 				"Finneon", level,
 				Water.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Finneon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Finneon() : base(
-			456,
+		public FinneonInstance() : base(
 			SpeciesFinneon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

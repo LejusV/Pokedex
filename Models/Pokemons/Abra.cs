@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAbra Constructor
 		public SpeciesAbra() : base(
+			63,
 			"Abra",
 			0.9,
 			19.5,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbraInstance(string nickname, int level)
 		: base(
-				63,
 				SpeciesAbra.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbraInstance(int level)
 		: base(
-				63,
 				SpeciesAbra.Instance, // PokemonInstance Species
 				"Abra", level,
 				Psychic.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Abra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Abra() : base(
-			63,
+		public AbraInstance() : base(
 			SpeciesAbra.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

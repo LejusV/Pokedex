@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDialga Constructor
 		public SpeciesDialga() : base(
+			483,
 			"Dialga",
 			5.4,
 			683.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DialgaInstance(string nickname, int level)
 		: base(
-				483,
 				SpeciesDialga.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Dragon.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DialgaInstance(int level)
 		: base(
-				483,
 				SpeciesDialga.Instance, // PokemonInstance Species
 				"Dialga", level,
 				Steel.Instance, Dragon.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dialga Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dialga() : base(
-			483,
+		public DialgaInstance() : base(
 			SpeciesDialga.Instance, // PokemonInstance Species
 			Steel.Instance, Dragon.Instance			
 		) {}

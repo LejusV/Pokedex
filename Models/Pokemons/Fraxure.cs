@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFraxure Constructor
 		public SpeciesFraxure() : base(
+			611,
 			"Fraxure",
 			1.0,
 			36.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FraxureInstance(string nickname, int level)
 		: base(
-				611,
 				SpeciesFraxure.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FraxureInstance(int level)
 		: base(
-				611,
 				SpeciesFraxure.Instance, // PokemonInstance Species
 				"Fraxure", level,
 				Dragon.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fraxure Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fraxure() : base(
-			611,
+		public FraxureInstance() : base(
 			SpeciesFraxure.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

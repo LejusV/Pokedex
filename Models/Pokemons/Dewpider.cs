@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDewpider Constructor
 		public SpeciesDewpider() : base(
+			751,
 			"Dewpider",
 			0.3,
 			4.0,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewpiderInstance(string nickname, int level)
 		: base(
-				751,
 				SpeciesDewpider.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Bug.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewpiderInstance(int level)
 		: base(
-				751,
 				SpeciesDewpider.Instance, // PokemonInstance Species
 				"Dewpider", level,
 				Water.Instance, Bug.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dewpider Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dewpider() : base(
-			751,
+		public DewpiderInstance() : base(
 			SpeciesDewpider.Instance, // PokemonInstance Species
 			Water.Instance, Bug.Instance			
 		) {}

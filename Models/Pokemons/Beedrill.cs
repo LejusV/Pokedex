@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBeedrill Constructor
 		public SpeciesBeedrill() : base(
+			15,
 			"Beedrill",
 			1.0,
 			29.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeedrillInstance(string nickname, int level)
 		: base(
-				15,
 				SpeciesBeedrill.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BeedrillInstance(int level)
 		: base(
-				15,
 				SpeciesBeedrill.Instance, // PokemonInstance Species
 				"Beedrill", level,
 				Bug.Instance, Poison.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Beedrill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Beedrill() : base(
-			15,
+		public BeedrillInstance() : base(
 			SpeciesBeedrill.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHoppip Constructor
 		public SpeciesHoppip() : base(
+			187,
 			"Hoppip",
 			0.4,
 			0.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoppipInstance(string nickname, int level)
 		: base(
-				187,
 				SpeciesHoppip.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoppipInstance(int level)
 		: base(
-				187,
 				SpeciesHoppip.Instance, // PokemonInstance Species
 				"Hoppip", level,
 				Grass.Instance, Flying.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hoppip Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hoppip() : base(
-			187,
+		public HoppipInstance() : base(
 			SpeciesHoppip.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

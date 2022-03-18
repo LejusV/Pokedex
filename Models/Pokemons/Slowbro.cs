@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlowbro Constructor
 		public SpeciesSlowbro() : base(
+			80,
 			"Slowbro",
 			1.6,
 			78.5,
@@ -173,7 +174,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlowbroInstance(string nickname, int level)
 		: base(
-				80,
 				SpeciesSlowbro.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Psychic.Instance			
@@ -188,7 +188,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlowbroInstance(int level)
 		: base(
-				80,
 				SpeciesSlowbro.Instance, // PokemonInstance Species
 				"Slowbro", level,
 				Water.Instance, Psychic.Instance			
@@ -202,8 +201,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slowbro Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slowbro() : base(
-			80,
+		public SlowbroInstance() : base(
 			SpeciesSlowbro.Instance, // PokemonInstance Species
 			Water.Instance, Psychic.Instance			
 		) {}

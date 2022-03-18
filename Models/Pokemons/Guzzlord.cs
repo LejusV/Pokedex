@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGuzzlord Constructor
 		public SpeciesGuzzlord() : base(
+			799,
 			"Guzzlord",
 			5.5,
 			888.0,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GuzzlordInstance(string nickname, int level)
 		: base(
-				799,
 				SpeciesGuzzlord.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GuzzlordInstance(int level)
 		: base(
-				799,
 				SpeciesGuzzlord.Instance, // PokemonInstance Species
 				"Guzzlord", level,
 				Dark.Instance, Dragon.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Guzzlord Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Guzzlord() : base(
-			799,
+		public GuzzlordInstance() : base(
 			SpeciesGuzzlord.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}

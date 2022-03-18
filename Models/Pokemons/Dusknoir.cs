@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDusknoir Constructor
 		public SpeciesDusknoir() : base(
+			477,
 			"Dusknoir",
 			2.2,
 			106.6,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DusknoirInstance(string nickname, int level)
 		: base(
-				477,
 				SpeciesDusknoir.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DusknoirInstance(int level)
 		: base(
-				477,
 				SpeciesDusknoir.Instance, // PokemonInstance Species
 				"Dusknoir", level,
 				Ghost.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dusknoir Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dusknoir() : base(
-			477,
+		public DusknoirInstance() : base(
 			SpeciesDusknoir.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

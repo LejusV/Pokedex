@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCarvanha Constructor
 		public SpeciesCarvanha() : base(
+			318,
 			"Carvanha",
 			0.8,
 			20.8,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarvanhaInstance(string nickname, int level)
 		: base(
-				318,
 				SpeciesCarvanha.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dark.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarvanhaInstance(int level)
 		: base(
-				318,
 				SpeciesCarvanha.Instance, // PokemonInstance Species
 				"Carvanha", level,
 				Water.Instance, Dark.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Carvanha Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Carvanha() : base(
-			318,
+		public CarvanhaInstance() : base(
 			SpeciesCarvanha.Instance, // PokemonInstance Species
 			Water.Instance, Dark.Instance			
 		) {}

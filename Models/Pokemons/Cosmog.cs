@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCosmog Constructor
 		public SpeciesCosmog() : base(
+			789,
 			"Cosmog",
 			0.2,
 			0.1,
@@ -62,7 +63,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CosmogInstance(string nickname, int level)
 		: base(
-				789,
 				SpeciesCosmog.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -77,7 +77,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CosmogInstance(int level)
 		: base(
-				789,
 				SpeciesCosmog.Instance, // PokemonInstance Species
 				"Cosmog", level,
 				Psychic.Instance			
@@ -91,8 +90,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cosmog Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cosmog() : base(
-			789,
+		public CosmogInstance() : base(
 			SpeciesCosmog.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

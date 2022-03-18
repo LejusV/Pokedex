@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCradily Constructor
 		public SpeciesCradily() : base(
+			346,
 			"Cradily",
 			1.5,
 			60.4,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CradilyInstance(string nickname, int level)
 		: base(
-				346,
 				SpeciesCradily.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Grass.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CradilyInstance(int level)
 		: base(
-				346,
 				SpeciesCradily.Instance, // PokemonInstance Species
 				"Cradily", level,
 				Rock.Instance, Grass.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cradily Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cradily() : base(
-			346,
+		public CradilyInstance() : base(
 			SpeciesCradily.Instance, // PokemonInstance Species
 			Rock.Instance, Grass.Instance			
 		) {}

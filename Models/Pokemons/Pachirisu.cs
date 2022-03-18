@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPachirisu Constructor
 		public SpeciesPachirisu() : base(
+			417,
 			"Pachirisu",
 			0.4,
 			3.9,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PachirisuInstance(string nickname, int level)
 		: base(
-				417,
 				SpeciesPachirisu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PachirisuInstance(int level)
 		: base(
-				417,
 				SpeciesPachirisu.Instance, // PokemonInstance Species
 				"Pachirisu", level,
 				Electric.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pachirisu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pachirisu() : base(
-			417,
+		public PachirisuInstance() : base(
 			SpeciesPachirisu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

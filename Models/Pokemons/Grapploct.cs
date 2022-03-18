@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrapploct Constructor
 		public SpeciesGrapploct() : base(
+			853,
 			"Grapploct",
 			1.6,
 			39.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrapploctInstance(string nickname, int level)
 		: base(
-				853,
 				SpeciesGrapploct.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrapploctInstance(int level)
 		: base(
-				853,
 				SpeciesGrapploct.Instance, // PokemonInstance Species
 				"Grapploct", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grapploct Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grapploct() : base(
-			853,
+		public GrapploctInstance() : base(
 			SpeciesGrapploct.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

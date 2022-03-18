@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDwebble Constructor
 		public SpeciesDwebble() : base(
+			557,
 			"Dwebble",
 			0.3,
 			14.5,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DwebbleInstance(string nickname, int level)
 		: base(
-				557,
 				SpeciesDwebble.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Rock.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DwebbleInstance(int level)
 		: base(
-				557,
 				SpeciesDwebble.Instance, // PokemonInstance Species
 				"Dwebble", level,
 				Bug.Instance, Rock.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dwebble Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dwebble() : base(
-			557,
+		public DwebbleInstance() : base(
 			SpeciesDwebble.Instance, // PokemonInstance Species
 			Bug.Instance, Rock.Instance			
 		) {}

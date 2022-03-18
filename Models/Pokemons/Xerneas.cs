@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesXerneas Constructor
 		public SpeciesXerneas() : base(
+			716,
 			"Xerneas",
 			3.0,
 			215.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XerneasInstance(string nickname, int level)
 		: base(
-				716,
 				SpeciesXerneas.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XerneasInstance(int level)
 		: base(
-				716,
 				SpeciesXerneas.Instance, // PokemonInstance Species
 				"Xerneas", level,
 				Fairy.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Xerneas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Xerneas() : base(
-			716,
+		public XerneasInstance() : base(
 			SpeciesXerneas.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

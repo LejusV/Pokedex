@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesInfernape Constructor
 		public SpeciesInfernape() : base(
+			392,
 			"Infernape",
 			1.2,
 			55.0,
@@ -150,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InfernapeInstance(string nickname, int level)
 		: base(
-				392,
 				SpeciesInfernape.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -165,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InfernapeInstance(int level)
 		: base(
-				392,
 				SpeciesInfernape.Instance, // PokemonInstance Species
 				"Infernape", level,
 				Fire.Instance, Fighting.Instance			
@@ -179,8 +178,7 @@ namespace Pokedex.Models.Pokemons
 		/// Infernape Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Infernape() : base(
-			392,
+		public InfernapeInstance() : base(
 			SpeciesInfernape.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

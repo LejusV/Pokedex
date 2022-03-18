@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMunna Constructor
 		public SpeciesMunna() : base(
+			517,
 			"Munna",
 			0.6,
 			23.3,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MunnaInstance(string nickname, int level)
 		: base(
-				517,
 				SpeciesMunna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MunnaInstance(int level)
 		: base(
-				517,
 				SpeciesMunna.Instance, // PokemonInstance Species
 				"Munna", level,
 				Psychic.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Munna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Munna() : base(
-			517,
+		public MunnaInstance() : base(
 			SpeciesMunna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

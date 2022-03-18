@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRoselia Constructor
 		public SpeciesRoselia() : base(
+			315,
 			"Roselia",
 			0.3,
 			2.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoseliaInstance(string nickname, int level)
 		: base(
-				315,
 				SpeciesRoselia.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RoseliaInstance(int level)
 		: base(
-				315,
 				SpeciesRoselia.Instance, // PokemonInstance Species
 				"Roselia", level,
 				Grass.Instance, Poison.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Roselia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Roselia() : base(
-			315,
+		public RoseliaInstance() : base(
 			SpeciesRoselia.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

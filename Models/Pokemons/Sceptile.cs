@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSceptile Constructor
 		public SpeciesSceptile() : base(
+			254,
 			"Sceptile",
 			1.7,
 			52.2,
@@ -154,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SceptileInstance(string nickname, int level)
 		: base(
-				254,
 				SpeciesSceptile.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -169,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SceptileInstance(int level)
 		: base(
-				254,
 				SpeciesSceptile.Instance, // PokemonInstance Species
 				"Sceptile", level,
 				Grass.Instance			
@@ -183,8 +182,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sceptile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sceptile() : base(
-			254,
+		public SceptileInstance() : base(
 			SpeciesSceptile.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

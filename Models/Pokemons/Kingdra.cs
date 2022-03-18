@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKingdra Constructor
 		public SpeciesKingdra() : base(
+			230,
 			"Kingdra",
 			1.8,
 			152.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KingdraInstance(string nickname, int level)
 		: base(
-				230,
 				SpeciesKingdra.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dragon.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KingdraInstance(int level)
 		: base(
-				230,
 				SpeciesKingdra.Instance, // PokemonInstance Species
 				"Kingdra", level,
 				Water.Instance, Dragon.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kingdra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kingdra() : base(
-			230,
+		public KingdraInstance() : base(
 			SpeciesKingdra.Instance, // PokemonInstance Species
 			Water.Instance, Dragon.Instance			
 		) {}

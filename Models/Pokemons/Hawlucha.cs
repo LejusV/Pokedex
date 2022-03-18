@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHawlucha Constructor
 		public SpeciesHawlucha() : base(
+			701,
 			"Hawlucha",
 			0.8,
 			21.5,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HawluchaInstance(string nickname, int level)
 		: base(
-				701,
 				SpeciesHawlucha.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Flying.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HawluchaInstance(int level)
 		: base(
-				701,
 				SpeciesHawlucha.Instance, // PokemonInstance Species
 				"Hawlucha", level,
 				Fighting.Instance, Flying.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hawlucha Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hawlucha() : base(
-			701,
+		public HawluchaInstance() : base(
 			SpeciesHawlucha.Instance, // PokemonInstance Species
 			Fighting.Instance, Flying.Instance			
 		) {}

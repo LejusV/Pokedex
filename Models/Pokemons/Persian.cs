@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPersian Constructor
 		public SpeciesPersian() : base(
+			53,
 			"Persian",
 			1.0,
 			32.0,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PersianInstance(string nickname, int level)
 		: base(
-				53,
 				SpeciesPersian.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PersianInstance(int level)
 		: base(
-				53,
 				SpeciesPersian.Instance, // PokemonInstance Species
 				"Persian", level,
 				Normal.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Persian Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Persian() : base(
-			53,
+		public PersianInstance() : base(
 			SpeciesPersian.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

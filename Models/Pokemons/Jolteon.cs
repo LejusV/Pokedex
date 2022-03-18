@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJolteon Constructor
 		public SpeciesJolteon() : base(
+			135,
 			"Jolteon",
 			0.8,
 			24.5,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JolteonInstance(string nickname, int level)
 		: base(
-				135,
 				SpeciesJolteon.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JolteonInstance(int level)
 		: base(
-				135,
 				SpeciesJolteon.Instance, // PokemonInstance Species
 				"Jolteon", level,
 				Electric.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jolteon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jolteon() : base(
-			135,
+		public JolteonInstance() : base(
 			SpeciesJolteon.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

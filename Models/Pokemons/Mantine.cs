@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMantine Constructor
 		public SpeciesMantine() : base(
+			226,
 			"Mantine",
 			2.1,
 			220.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MantineInstance(string nickname, int level)
 		: base(
-				226,
 				SpeciesMantine.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MantineInstance(int level)
 		: base(
-				226,
 				SpeciesMantine.Instance, // PokemonInstance Species
 				"Mantine", level,
 				Water.Instance, Flying.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mantine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mantine() : base(
-			226,
+		public MantineInstance() : base(
 			SpeciesMantine.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

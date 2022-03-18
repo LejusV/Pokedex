@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRiolu Constructor
 		public SpeciesRiolu() : base(
+			447,
 			"Riolu",
 			0.7,
 			20.2,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RioluInstance(string nickname, int level)
 		: base(
-				447,
 				SpeciesRiolu.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RioluInstance(int level)
 		: base(
-				447,
 				SpeciesRiolu.Instance, // PokemonInstance Species
 				"Riolu", level,
 				Fighting.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Riolu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Riolu() : base(
-			447,
+		public RioluInstance() : base(
 			SpeciesRiolu.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

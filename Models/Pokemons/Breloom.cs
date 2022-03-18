@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBreloom Constructor
 		public SpeciesBreloom() : base(
+			286,
 			"Breloom",
 			1.2,
 			39.2,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BreloomInstance(string nickname, int level)
 		: base(
-				286,
 				SpeciesBreloom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fighting.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BreloomInstance(int level)
 		: base(
-				286,
 				SpeciesBreloom.Instance, // PokemonInstance Species
 				"Breloom", level,
 				Grass.Instance, Fighting.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Breloom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Breloom() : base(
-			286,
+		public BreloomInstance() : base(
 			SpeciesBreloom.Instance, // PokemonInstance Species
 			Grass.Instance, Fighting.Instance			
 		) {}

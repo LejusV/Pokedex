@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSimisear Constructor
 		public SpeciesSimisear() : base(
+			514,
 			"Simisear",
 			1.0,
 			28.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimisearInstance(string nickname, int level)
 		: base(
-				514,
 				SpeciesSimisear.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SimisearInstance(int level)
 		: base(
-				514,
 				SpeciesSimisear.Instance, // PokemonInstance Species
 				"Simisear", level,
 				Fire.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Simisear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Simisear() : base(
-			514,
+		public SimisearInstance() : base(
 			SpeciesSimisear.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

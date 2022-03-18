@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKricketot Constructor
 		public SpeciesKricketot() : base(
+			401,
 			"Kricketot",
 			0.3,
 			2.2,
@@ -69,7 +70,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KricketotInstance(string nickname, int level)
 		: base(
-				401,
 				SpeciesKricketot.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -84,7 +84,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KricketotInstance(int level)
 		: base(
-				401,
 				SpeciesKricketot.Instance, // PokemonInstance Species
 				"Kricketot", level,
 				Bug.Instance			
@@ -98,8 +97,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kricketot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kricketot() : base(
-			401,
+		public KricketotInstance() : base(
 			SpeciesKricketot.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

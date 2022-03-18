@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNosepass Constructor
 		public SpeciesNosepass() : base(
+			299,
 			"Nosepass",
 			1.0,
 			97.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NosepassInstance(string nickname, int level)
 		: base(
-				299,
 				SpeciesNosepass.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NosepassInstance(int level)
 		: base(
-				299,
 				SpeciesNosepass.Instance, // PokemonInstance Species
 				"Nosepass", level,
 				Rock.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nosepass Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nosepass() : base(
-			299,
+		public NosepassInstance() : base(
 			SpeciesNosepass.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

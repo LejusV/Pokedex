@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLoudred Constructor
 		public SpeciesLoudred() : base(
+			294,
 			"Loudred",
 			1.0,
 			40.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LoudredInstance(string nickname, int level)
 		: base(
-				294,
 				SpeciesLoudred.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LoudredInstance(int level)
 		: base(
-				294,
 				SpeciesLoudred.Instance, // PokemonInstance Species
 				"Loudred", level,
 				Normal.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Loudred Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Loudred() : base(
-			294,
+		public LoudredInstance() : base(
 			SpeciesLoudred.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrilbur Constructor
 		public SpeciesDrilbur() : base(
+			529,
 			"Drilbur",
 			0.3,
 			8.5,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrilburInstance(string nickname, int level)
 		: base(
-				529,
 				SpeciesDrilbur.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrilburInstance(int level)
 		: base(
-				529,
 				SpeciesDrilbur.Instance, // PokemonInstance Species
 				"Drilbur", level,
 				Ground.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drilbur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drilbur() : base(
-			529,
+		public DrilburInstance() : base(
 			SpeciesDrilbur.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

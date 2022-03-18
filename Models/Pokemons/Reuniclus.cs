@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesReuniclus Constructor
 		public SpeciesReuniclus() : base(
+			579,
 			"Reuniclus",
 			1.0,
 			20.1,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ReuniclusInstance(string nickname, int level)
 		: base(
-				579,
 				SpeciesReuniclus.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ReuniclusInstance(int level)
 		: base(
-				579,
 				SpeciesReuniclus.Instance, // PokemonInstance Species
 				"Reuniclus", level,
 				Psychic.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Reuniclus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Reuniclus() : base(
-			579,
+		public ReuniclusInstance() : base(
 			SpeciesReuniclus.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

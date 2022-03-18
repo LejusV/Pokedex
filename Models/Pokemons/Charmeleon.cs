@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCharmeleon Constructor
 		public SpeciesCharmeleon() : base(
+			5,
 			"Charmeleon",
 			1.1,
 			19.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharmeleonInstance(string nickname, int level)
 		: base(
-				5,
 				SpeciesCharmeleon.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharmeleonInstance(int level)
 		: base(
-				5,
 				SpeciesCharmeleon.Instance, // PokemonInstance Species
 				"Charmeleon", level,
 				Fire.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Charmeleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Charmeleon() : base(
-			5,
+		public CharmeleonInstance() : base(
 			SpeciesCharmeleon.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

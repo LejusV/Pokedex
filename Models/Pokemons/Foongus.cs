@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFoongus Constructor
 		public SpeciesFoongus() : base(
+			590,
 			"Foongus",
 			0.2,
 			1.0,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FoongusInstance(string nickname, int level)
 		: base(
-				590,
 				SpeciesFoongus.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FoongusInstance(int level)
 		: base(
-				590,
 				SpeciesFoongus.Instance, // PokemonInstance Species
 				"Foongus", level,
 				Grass.Instance, Poison.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Foongus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Foongus() : base(
-			590,
+		public FoongusInstance() : base(
 			SpeciesFoongus.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCelesteela Constructor
 		public SpeciesCelesteela() : base(
+			797,
 			"Celesteela",
 			9.2,
 			999.9,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CelesteelaInstance(string nickname, int level)
 		: base(
-				797,
 				SpeciesCelesteela.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CelesteelaInstance(int level)
 		: base(
-				797,
 				SpeciesCelesteela.Instance, // PokemonInstance Species
 				"Celesteela", level,
 				Steel.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Celesteela Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Celesteela() : base(
-			797,
+		public CelesteelaInstance() : base(
 			SpeciesCelesteela.Instance, // PokemonInstance Species
 			Steel.Instance, Flying.Instance			
 		) {}

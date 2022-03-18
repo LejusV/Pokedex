@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHo-Oh Constructor
 		public SpeciesHoOh() : base(
+			250,
 			"Ho-Oh",
 			3.8,
 			199.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoOhInstance(string nickname, int level)
 		: base(
-				250,
 				SpeciesHoOh.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoOhInstance(int level)
 		: base(
-				250,
 				SpeciesHoOh.Instance, // PokemonInstance Species
 				"Ho-Oh", level,
 				Fire.Instance, Flying.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ho-Oh Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public HoOh() : base(
-			250,
+		public HoOhInstance() : base(
 			SpeciesHoOh.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

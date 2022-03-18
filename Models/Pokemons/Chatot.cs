@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChatot Constructor
 		public SpeciesChatot() : base(
+			441,
 			"Chatot",
 			0.5,
 			1.9,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChatotInstance(string nickname, int level)
 		: base(
-				441,
 				SpeciesChatot.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChatotInstance(int level)
 		: base(
-				441,
 				SpeciesChatot.Instance, // PokemonInstance Species
 				"Chatot", level,
 				Normal.Instance, Flying.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chatot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chatot() : base(
-			441,
+		public ChatotInstance() : base(
 			SpeciesChatot.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGreedent Constructor
 		public SpeciesGreedent() : base(
+			820,
 			"Greedent",
 			0.6,
 			6.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GreedentInstance(string nickname, int level)
 		: base(
-				820,
 				SpeciesGreedent.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GreedentInstance(int level)
 		: base(
-				820,
 				SpeciesGreedent.Instance, // PokemonInstance Species
 				"Greedent", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Greedent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Greedent() : base(
-			820,
+		public GreedentInstance() : base(
 			SpeciesGreedent.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

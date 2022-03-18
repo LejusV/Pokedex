@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMinccino Constructor
 		public SpeciesMinccino() : base(
+			572,
 			"Minccino",
 			0.4,
 			5.8,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MinccinoInstance(string nickname, int level)
 		: base(
-				572,
 				SpeciesMinccino.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MinccinoInstance(int level)
 		: base(
-				572,
 				SpeciesMinccino.Instance, // PokemonInstance Species
 				"Minccino", level,
 				Normal.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Minccino Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Minccino() : base(
-			572,
+		public MinccinoInstance() : base(
 			SpeciesMinccino.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

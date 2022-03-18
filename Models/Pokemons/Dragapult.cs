@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDragapult Constructor
 		public SpeciesDragapult() : base(
+			887,
 			"Dragapult",
 			3.0,
 			50.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragapultInstance(string nickname, int level)
 		: base(
-				887,
 				SpeciesDragapult.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragapultInstance(int level)
 		: base(
-				887,
 				SpeciesDragapult.Instance, // PokemonInstance Species
 				"Dragapult", level,
 				Dragon.Instance, Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dragapult Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dragapult() : base(
-			887,
+		public DragapultInstance() : base(
 			SpeciesDragapult.Instance, // PokemonInstance Species
 			Dragon.Instance, Ghost.Instance			
 		) {}

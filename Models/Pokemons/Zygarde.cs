@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZygarde Constructor
 		public SpeciesZygarde() : base(
+			718,
 			"Zygarde",
 			5.0,
 			305.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZygardeInstance(string nickname, int level)
 		: base(
-				718,
 				SpeciesZygarde.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZygardeInstance(int level)
 		: base(
-				718,
 				SpeciesZygarde.Instance, // PokemonInstance Species
 				"Zygarde", level,
 				Dragon.Instance, Ground.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zygarde Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zygarde() : base(
-			718,
+		public ZygardeInstance() : base(
 			SpeciesZygarde.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}

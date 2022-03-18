@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEmpoleon Constructor
 		public SpeciesEmpoleon() : base(
+			395,
 			"Empoleon",
 			1.7,
 			84.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmpoleonInstance(string nickname, int level)
 		: base(
-				395,
 				SpeciesEmpoleon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Steel.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmpoleonInstance(int level)
 		: base(
-				395,
 				SpeciesEmpoleon.Instance, // PokemonInstance Species
 				"Empoleon", level,
 				Water.Instance, Steel.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Empoleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Empoleon() : base(
-			395,
+		public EmpoleonInstance() : base(
 			SpeciesEmpoleon.Instance, // PokemonInstance Species
 			Water.Instance, Steel.Instance			
 		) {}

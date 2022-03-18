@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKomala Constructor
 		public SpeciesKomala() : base(
+			775,
 			"Komala",
 			0.4,
 			19.9,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KomalaInstance(string nickname, int level)
 		: base(
-				775,
 				SpeciesKomala.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KomalaInstance(int level)
 		: base(
-				775,
 				SpeciesKomala.Instance, // PokemonInstance Species
 				"Komala", level,
 				Normal.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Komala Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Komala() : base(
-			775,
+		public KomalaInstance() : base(
 			SpeciesKomala.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

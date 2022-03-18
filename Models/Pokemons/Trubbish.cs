@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTrubbish Constructor
 		public SpeciesTrubbish() : base(
+			568,
 			"Trubbish",
 			0.6,
 			31.0,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrubbishInstance(string nickname, int level)
 		: base(
-				568,
 				SpeciesTrubbish.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrubbishInstance(int level)
 		: base(
-				568,
 				SpeciesTrubbish.Instance, // PokemonInstance Species
 				"Trubbish", level,
 				Poison.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Trubbish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Trubbish() : base(
-			568,
+		public TrubbishInstance() : base(
 			SpeciesTrubbish.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDracozolt Constructor
 		public SpeciesDracozolt() : base(
+			880,
 			"Dracozolt",
 			1.8,
 			190.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DracozoltInstance(string nickname, int level)
 		: base(
-				880,
 				SpeciesDracozolt.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DracozoltInstance(int level)
 		: base(
-				880,
 				SpeciesDracozolt.Instance, // PokemonInstance Species
 				"Dracozolt", level,
 				Electric.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dracozolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dracozolt() : base(
-			880,
+		public DracozoltInstance() : base(
 			SpeciesDracozolt.Instance, // PokemonInstance Species
 			Electric.Instance, Dragon.Instance			
 		) {}

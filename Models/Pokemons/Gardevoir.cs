@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGardevoir Constructor
 		public SpeciesGardevoir() : base(
+			282,
 			"Gardevoir",
 			1.6,
 			48.4,
@@ -150,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GardevoirInstance(string nickname, int level)
 		: base(
-				282,
 				SpeciesGardevoir.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -165,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GardevoirInstance(int level)
 		: base(
-				282,
 				SpeciesGardevoir.Instance, // PokemonInstance Species
 				"Gardevoir", level,
 				Psychic.Instance, Fairy.Instance			
@@ -179,8 +178,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gardevoir Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gardevoir() : base(
-			282,
+		public GardevoirInstance() : base(
 			SpeciesGardevoir.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

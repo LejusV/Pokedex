@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrowlithe Constructor
 		public SpeciesGrowlithe() : base(
+			58,
 			"Growlithe",
 			0.7,
 			19.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrowlitheInstance(string nickname, int level)
 		: base(
-				58,
 				SpeciesGrowlithe.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrowlitheInstance(int level)
 		: base(
-				58,
 				SpeciesGrowlithe.Instance, // PokemonInstance Species
 				"Growlithe", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Growlithe Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Growlithe() : base(
-			58,
+		public GrowlitheInstance() : base(
 			SpeciesGrowlithe.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

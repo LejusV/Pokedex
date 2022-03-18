@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWormadam-Plant Constructor
 		public SpeciesWormadamPlant() : base(
+			413,
 			"Wormadam-Plant",
 			0.5,
 			6.5,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WormadamPlantInstance(string nickname, int level)
 		: base(
-				413,
 				SpeciesWormadamPlant.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WormadamPlantInstance(int level)
 		: base(
-				413,
 				SpeciesWormadamPlant.Instance, // PokemonInstance Species
 				"Wormadam-Plant", level,
 				Bug.Instance, Grass.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wormadam-Plant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public WormadamPlant() : base(
-			413,
+		public WormadamPlantInstance() : base(
 			SpeciesWormadamPlant.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

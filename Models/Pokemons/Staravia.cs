@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStaravia Constructor
 		public SpeciesStaravia() : base(
+			397,
 			"Staravia",
 			0.6,
 			15.5,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaraviaInstance(string nickname, int level)
 		: base(
-				397,
 				SpeciesStaravia.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StaraviaInstance(int level)
 		: base(
-				397,
 				SpeciesStaravia.Instance, // PokemonInstance Species
 				"Staravia", level,
 				Normal.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Staravia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Staravia() : base(
-			397,
+		public StaraviaInstance() : base(
 			SpeciesStaravia.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

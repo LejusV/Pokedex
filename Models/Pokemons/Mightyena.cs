@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMightyena Constructor
 		public SpeciesMightyena() : base(
+			262,
 			"Mightyena",
 			1.0,
 			37.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MightyenaInstance(string nickname, int level)
 		: base(
-				262,
 				SpeciesMightyena.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MightyenaInstance(int level)
 		: base(
-				262,
 				SpeciesMightyena.Instance, // PokemonInstance Species
 				"Mightyena", level,
 				Dark.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mightyena Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mightyena() : base(
-			262,
+		public MightyenaInstance() : base(
 			SpeciesMightyena.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

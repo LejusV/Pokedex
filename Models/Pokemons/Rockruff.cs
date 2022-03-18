@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRockruff Constructor
 		public SpeciesRockruff() : base(
+			744,
 			"Rockruff",
 			0.5,
 			9.2,
@@ -98,7 +99,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RockruffInstance(string nickname, int level)
 		: base(
-				744,
 				SpeciesRockruff.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -113,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RockruffInstance(int level)
 		: base(
-				744,
 				SpeciesRockruff.Instance, // PokemonInstance Species
 				"Rockruff", level,
 				Rock.Instance			
@@ -127,8 +126,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rockruff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rockruff() : base(
-			744,
+		public RockruffInstance() : base(
 			SpeciesRockruff.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

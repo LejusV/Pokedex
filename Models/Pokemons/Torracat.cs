@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTorracat Constructor
 		public SpeciesTorracat() : base(
+			726,
 			"Torracat",
 			0.7,
 			25.0,
@@ -104,7 +105,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorracatInstance(string nickname, int level)
 		: base(
-				726,
 				SpeciesTorracat.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -119,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorracatInstance(int level)
 		: base(
-				726,
 				SpeciesTorracat.Instance, // PokemonInstance Species
 				"Torracat", level,
 				Fire.Instance			
@@ -133,8 +132,7 @@ namespace Pokedex.Models.Pokemons
 		/// Torracat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Torracat() : base(
-			726,
+		public TorracatInstance() : base(
 			SpeciesTorracat.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

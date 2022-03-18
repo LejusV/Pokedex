@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSquirtle Constructor
 		public SpeciesSquirtle() : base(
+			7,
 			"Squirtle",
 			0.5,
 			9.0,
@@ -151,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SquirtleInstance(string nickname, int level)
 		: base(
-				7,
 				SpeciesSquirtle.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -166,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SquirtleInstance(int level)
 		: base(
-				7,
 				SpeciesSquirtle.Instance, // PokemonInstance Species
 				"Squirtle", level,
 				Water.Instance			
@@ -180,8 +179,7 @@ namespace Pokedex.Models.Pokemons
 		/// Squirtle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Squirtle() : base(
-			7,
+		public SquirtleInstance() : base(
 			SpeciesSquirtle.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRillaboom Constructor
 		public SpeciesRillaboom() : base(
+			812,
 			"Rillaboom",
 			2.1,
 			90.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RillaboomInstance(string nickname, int level)
 		: base(
-				812,
 				SpeciesRillaboom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RillaboomInstance(int level)
 		: base(
-				812,
 				SpeciesRillaboom.Instance, // PokemonInstance Species
 				"Rillaboom", level,
 				Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rillaboom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rillaboom() : base(
-			812,
+		public RillaboomInstance() : base(
 			SpeciesRillaboom.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

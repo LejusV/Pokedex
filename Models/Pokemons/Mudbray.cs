@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMudbray Constructor
 		public SpeciesMudbray() : base(
+			749,
 			"Mudbray",
 			1.0,
 			110.0,
@@ -99,7 +100,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudbrayInstance(string nickname, int level)
 		: base(
-				749,
 				SpeciesMudbray.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -114,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudbrayInstance(int level)
 		: base(
-				749,
 				SpeciesMudbray.Instance, // PokemonInstance Species
 				"Mudbray", level,
 				Ground.Instance			
@@ -128,8 +127,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mudbray Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mudbray() : base(
-			749,
+		public MudbrayInstance() : base(
 			SpeciesMudbray.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

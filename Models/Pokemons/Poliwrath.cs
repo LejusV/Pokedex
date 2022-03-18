@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPoliwrath Constructor
 		public SpeciesPoliwrath() : base(
+			62,
 			"Poliwrath",
 			1.3,
 			54.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwrathInstance(string nickname, int level)
 		: base(
-				62,
 				SpeciesPoliwrath.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fighting.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwrathInstance(int level)
 		: base(
-				62,
 				SpeciesPoliwrath.Instance, // PokemonInstance Species
 				"Poliwrath", level,
 				Water.Instance, Fighting.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Poliwrath Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Poliwrath() : base(
-			62,
+		public PoliwrathInstance() : base(
 			SpeciesPoliwrath.Instance, // PokemonInstance Species
 			Water.Instance, Fighting.Instance			
 		) {}

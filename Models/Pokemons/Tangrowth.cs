@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTangrowth Constructor
 		public SpeciesTangrowth() : base(
+			465,
 			"Tangrowth",
 			2.0,
 			128.6,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TangrowthInstance(string nickname, int level)
 		: base(
-				465,
 				SpeciesTangrowth.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TangrowthInstance(int level)
 		: base(
-				465,
 				SpeciesTangrowth.Instance, // PokemonInstance Species
 				"Tangrowth", level,
 				Grass.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tangrowth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tangrowth() : base(
-			465,
+		public TangrowthInstance() : base(
 			SpeciesTangrowth.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

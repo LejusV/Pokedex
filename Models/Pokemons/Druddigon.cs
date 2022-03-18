@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDruddigon Constructor
 		public SpeciesDruddigon() : base(
+			621,
 			"Druddigon",
 			1.6,
 			139.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DruddigonInstance(string nickname, int level)
 		: base(
-				621,
 				SpeciesDruddigon.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DruddigonInstance(int level)
 		: base(
-				621,
 				SpeciesDruddigon.Instance, // PokemonInstance Species
 				"Druddigon", level,
 				Dragon.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Druddigon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Druddigon() : base(
-			621,
+		public DruddigonInstance() : base(
 			SpeciesDruddigon.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

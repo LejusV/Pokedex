@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRelicanth Constructor
 		public SpeciesRelicanth() : base(
+			369,
 			"Relicanth",
 			1.0,
 			23.4,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RelicanthInstance(string nickname, int level)
 		: base(
-				369,
 				SpeciesRelicanth.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RelicanthInstance(int level)
 		: base(
-				369,
 				SpeciesRelicanth.Instance, // PokemonInstance Species
 				"Relicanth", level,
 				Water.Instance, Rock.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Relicanth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Relicanth() : base(
-			369,
+		public RelicanthInstance() : base(
 			SpeciesRelicanth.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpinarak Constructor
 		public SpeciesSpinarak() : base(
+			167,
 			"Spinarak",
 			0.5,
 			8.5,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpinarakInstance(string nickname, int level)
 		: base(
-				167,
 				SpeciesSpinarak.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpinarakInstance(int level)
 		: base(
-				167,
 				SpeciesSpinarak.Instance, // PokemonInstance Species
 				"Spinarak", level,
 				Bug.Instance, Poison.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spinarak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spinarak() : base(
-			167,
+		public SpinarakInstance() : base(
 			SpeciesSpinarak.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

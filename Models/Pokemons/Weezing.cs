@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWeezing Constructor
 		public SpeciesWeezing() : base(
+			110,
 			"Weezing",
 			1.2,
 			9.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeezingInstance(string nickname, int level)
 		: base(
-				110,
 				SpeciesWeezing.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeezingInstance(int level)
 		: base(
-				110,
 				SpeciesWeezing.Instance, // PokemonInstance Species
 				"Weezing", level,
 				Poison.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Weezing Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Weezing() : base(
-			110,
+		public WeezingInstance() : base(
 			SpeciesWeezing.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

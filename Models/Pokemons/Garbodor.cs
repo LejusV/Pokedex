@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGarbodor Constructor
 		public SpeciesGarbodor() : base(
+			569,
 			"Garbodor",
 			1.9,
 			107.3,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GarbodorInstance(string nickname, int level)
 		: base(
-				569,
 				SpeciesGarbodor.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GarbodorInstance(int level)
 		: base(
-				569,
 				SpeciesGarbodor.Instance, // PokemonInstance Species
 				"Garbodor", level,
 				Poison.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Garbodor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Garbodor() : base(
-			569,
+		public GarbodorInstance() : base(
 			SpeciesGarbodor.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

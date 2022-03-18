@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArctozolt Constructor
 		public SpeciesArctozolt() : base(
+			881,
 			"Arctozolt",
 			2.3,
 			150.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArctozoltInstance(string nickname, int level)
 		: base(
-				881,
 				SpeciesArctozolt.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Ice.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArctozoltInstance(int level)
 		: base(
-				881,
 				SpeciesArctozolt.Instance, // PokemonInstance Species
 				"Arctozolt", level,
 				Electric.Instance, Ice.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arctozolt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arctozolt() : base(
-			881,
+		public ArctozoltInstance() : base(
 			SpeciesArctozolt.Instance, // PokemonInstance Species
 			Electric.Instance, Ice.Instance			
 		) {}

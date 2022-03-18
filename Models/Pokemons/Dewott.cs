@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDewott Constructor
 		public SpeciesDewott() : base(
+			502,
 			"Dewott",
 			0.8,
 			24.5,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewottInstance(string nickname, int level)
 		: base(
-				502,
 				SpeciesDewott.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DewottInstance(int level)
 		: base(
-				502,
 				SpeciesDewott.Instance, // PokemonInstance Species
 				"Dewott", level,
 				Water.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dewott Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dewott() : base(
-			502,
+		public DewottInstance() : base(
 			SpeciesDewott.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

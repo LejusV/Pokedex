@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEspeon Constructor
 		public SpeciesEspeon() : base(
+			196,
 			"Espeon",
 			0.9,
 			26.5,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EspeonInstance(string nickname, int level)
 		: base(
-				196,
 				SpeciesEspeon.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EspeonInstance(int level)
 		: base(
-				196,
 				SpeciesEspeon.Instance, // PokemonInstance Species
 				"Espeon", level,
 				Psychic.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Espeon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Espeon() : base(
-			196,
+		public EspeonInstance() : base(
 			SpeciesEspeon.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

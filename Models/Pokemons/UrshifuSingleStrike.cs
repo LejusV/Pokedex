@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUrshifu-Single-Strike Constructor
 		public SpeciesUrshifuSingleStrike() : base(
+			892,
 			"Urshifu-Single-Strike",
 			1.9,
 			105.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UrshifuSingleStrikeInstance(string nickname, int level)
 		: base(
-				892,
 				SpeciesUrshifuSingleStrike.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Dark.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UrshifuSingleStrikeInstance(int level)
 		: base(
-				892,
 				SpeciesUrshifuSingleStrike.Instance, // PokemonInstance Species
 				"Urshifu-Single-Strike", level,
 				Fighting.Instance, Dark.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Urshifu-Single-Strike Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public UrshifuSingleStrike() : base(
-			892,
+		public UrshifuSingleStrikeInstance() : base(
 			SpeciesUrshifuSingleStrike.Instance, // PokemonInstance Species
 			Fighting.Instance, Dark.Instance			
 		) {}

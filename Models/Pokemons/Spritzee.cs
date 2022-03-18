@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpritzee Constructor
 		public SpeciesSpritzee() : base(
+			682,
 			"Spritzee",
 			0.2,
 			0.5,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpritzeeInstance(string nickname, int level)
 		: base(
-				682,
 				SpeciesSpritzee.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpritzeeInstance(int level)
 		: base(
-				682,
 				SpeciesSpritzee.Instance, // PokemonInstance Species
 				"Spritzee", level,
 				Fairy.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spritzee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spritzee() : base(
-			682,
+		public SpritzeeInstance() : base(
 			SpeciesSpritzee.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

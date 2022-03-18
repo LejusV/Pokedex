@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkrelp Constructor
 		public SpeciesSkrelp() : base(
+			690,
 			"Skrelp",
 			0.5,
 			7.3,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkrelpInstance(string nickname, int level)
 		: base(
-				690,
 				SpeciesSkrelp.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkrelpInstance(int level)
 		: base(
-				690,
 				SpeciesSkrelp.Instance, // PokemonInstance Species
 				"Skrelp", level,
 				Poison.Instance, Water.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skrelp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skrelp() : base(
-			690,
+		public SkrelpInstance() : base(
 			SpeciesSkrelp.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}

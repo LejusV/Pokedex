@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWhimsicott Constructor
 		public SpeciesWhimsicott() : base(
+			547,
 			"Whimsicott",
 			0.7,
 			6.6,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhimsicottInstance(string nickname, int level)
 		: base(
-				547,
 				SpeciesWhimsicott.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhimsicottInstance(int level)
 		: base(
-				547,
 				SpeciesWhimsicott.Instance, // PokemonInstance Species
 				"Whimsicott", level,
 				Grass.Instance, Fairy.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Whimsicott Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Whimsicott() : base(
-			547,
+		public WhimsicottInstance() : base(
 			SpeciesWhimsicott.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}

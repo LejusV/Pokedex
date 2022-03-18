@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRotom Constructor
 		public SpeciesRotom() : base(
+			479,
 			"Rotom",
 			0.3,
 			0.3,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RotomInstance(string nickname, int level)
 		: base(
-				479,
 				SpeciesRotom.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Ghost.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RotomInstance(int level)
 		: base(
-				479,
 				SpeciesRotom.Instance, // PokemonInstance Species
 				"Rotom", level,
 				Electric.Instance, Ghost.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rotom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rotom() : base(
-			479,
+		public RotomInstance() : base(
 			SpeciesRotom.Instance, // PokemonInstance Species
 			Electric.Instance, Ghost.Instance			
 		) {}

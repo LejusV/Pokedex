@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLudicolo Constructor
 		public SpeciesLudicolo() : base(
+			272,
 			"Ludicolo",
 			1.5,
 			55.0,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LudicoloInstance(string nickname, int level)
 		: base(
-				272,
 				SpeciesLudicolo.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Grass.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LudicoloInstance(int level)
 		: base(
-				272,
 				SpeciesLudicolo.Instance, // PokemonInstance Species
 				"Ludicolo", level,
 				Water.Instance, Grass.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ludicolo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ludicolo() : base(
-			272,
+		public LudicoloInstance() : base(
 			SpeciesLudicolo.Instance, // PokemonInstance Species
 			Water.Instance, Grass.Instance			
 		) {}

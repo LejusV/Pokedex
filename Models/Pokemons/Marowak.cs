@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMarowak Constructor
 		public SpeciesMarowak() : base(
+			105,
 			"Marowak",
 			1.0,
 			45.0,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarowakInstance(string nickname, int level)
 		: base(
-				105,
 				SpeciesMarowak.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MarowakInstance(int level)
 		: base(
-				105,
 				SpeciesMarowak.Instance, // PokemonInstance Species
 				"Marowak", level,
 				Ground.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Marowak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Marowak() : base(
-			105,
+		public MarowakInstance() : base(
 			SpeciesMarowak.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

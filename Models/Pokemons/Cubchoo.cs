@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCubchoo Constructor
 		public SpeciesCubchoo() : base(
+			613,
 			"Cubchoo",
 			0.5,
 			8.5,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CubchooInstance(string nickname, int level)
 		: base(
-				613,
 				SpeciesCubchoo.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CubchooInstance(int level)
 		: base(
-				613,
 				SpeciesCubchoo.Instance, // PokemonInstance Species
 				"Cubchoo", level,
 				Ice.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cubchoo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cubchoo() : base(
-			613,
+		public CubchooInstance() : base(
 			SpeciesCubchoo.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

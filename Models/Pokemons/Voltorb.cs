@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVoltorb Constructor
 		public SpeciesVoltorb() : base(
+			100,
 			"Voltorb",
 			0.5,
 			10.4,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VoltorbInstance(string nickname, int level)
 		: base(
-				100,
 				SpeciesVoltorb.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VoltorbInstance(int level)
 		: base(
-				100,
 				SpeciesVoltorb.Instance, // PokemonInstance Species
 				"Voltorb", level,
 				Electric.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Voltorb Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Voltorb() : base(
-			100,
+		public VoltorbInstance() : base(
 			SpeciesVoltorb.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

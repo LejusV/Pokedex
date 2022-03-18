@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesReshiram Constructor
 		public SpeciesReshiram() : base(
+			643,
 			"Reshiram",
 			3.2,
 			330.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ReshiramInstance(string nickname, int level)
 		: base(
-				643,
 				SpeciesReshiram.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Fire.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ReshiramInstance(int level)
 		: base(
-				643,
 				SpeciesReshiram.Instance, // PokemonInstance Species
 				"Reshiram", level,
 				Dragon.Instance, Fire.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Reshiram Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Reshiram() : base(
-			643,
+		public ReshiramInstance() : base(
 			SpeciesReshiram.Instance, // PokemonInstance Species
 			Dragon.Instance, Fire.Instance			
 		) {}

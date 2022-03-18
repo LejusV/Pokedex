@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPidgeot Constructor
 		public SpeciesPidgeot() : base(
+			18,
 			"Pidgeot",
 			1.5,
 			39.5,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidgeotInstance(string nickname, int level)
 		: base(
-				18,
 				SpeciesPidgeot.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PidgeotInstance(int level)
 		: base(
-				18,
 				SpeciesPidgeot.Instance, // PokemonInstance Species
 				"Pidgeot", level,
 				Normal.Instance, Flying.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pidgeot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pidgeot() : base(
-			18,
+		public PidgeotInstance() : base(
 			SpeciesPidgeot.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShelgon Constructor
 		public SpeciesShelgon() : base(
+			372,
 			"Shelgon",
 			1.1,
 			110.5,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShelgonInstance(string nickname, int level)
 		: base(
-				372,
 				SpeciesShelgon.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShelgonInstance(int level)
 		: base(
-				372,
 				SpeciesShelgon.Instance, // PokemonInstance Species
 				"Shelgon", level,
 				Dragon.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shelgon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shelgon() : base(
-			372,
+		public ShelgonInstance() : base(
 			SpeciesShelgon.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

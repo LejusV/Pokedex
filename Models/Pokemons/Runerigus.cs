@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRunerigus Constructor
 		public SpeciesRunerigus() : base(
+			867,
 			"Runerigus",
 			1.6,
 			66.6,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RunerigusInstance(string nickname, int level)
 		: base(
-				867,
 				SpeciesRunerigus.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RunerigusInstance(int level)
 		: base(
-				867,
 				SpeciesRunerigus.Instance, // PokemonInstance Species
 				"Runerigus", level,
 				Ground.Instance, Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Runerigus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Runerigus() : base(
-			867,
+		public RunerigusInstance() : base(
 			SpeciesRunerigus.Instance, // PokemonInstance Species
 			Ground.Instance, Ghost.Instance			
 		) {}

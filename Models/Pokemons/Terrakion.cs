@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTerrakion Constructor
 		public SpeciesTerrakion() : base(
+			639,
 			"Terrakion",
 			1.9,
 			260.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TerrakionInstance(string nickname, int level)
 		: base(
-				639,
 				SpeciesTerrakion.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fighting.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TerrakionInstance(int level)
 		: base(
-				639,
 				SpeciesTerrakion.Instance, // PokemonInstance Species
 				"Terrakion", level,
 				Rock.Instance, Fighting.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Terrakion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Terrakion() : base(
-			639,
+		public TerrakionInstance() : base(
 			SpeciesTerrakion.Instance, // PokemonInstance Species
 			Rock.Instance, Fighting.Instance			
 		) {}

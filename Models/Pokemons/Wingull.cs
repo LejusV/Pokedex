@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWingull Constructor
 		public SpeciesWingull() : base(
+			278,
 			"Wingull",
 			0.6,
 			9.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WingullInstance(string nickname, int level)
 		: base(
-				278,
 				SpeciesWingull.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WingullInstance(int level)
 		: base(
-				278,
 				SpeciesWingull.Instance, // PokemonInstance Species
 				"Wingull", level,
 				Water.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wingull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wingull() : base(
-			278,
+		public WingullInstance() : base(
 			SpeciesWingull.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTapu-Fini Constructor
 		public SpeciesTapuFini() : base(
+			788,
 			"Tapu-Fini",
 			1.3,
 			21.2,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuFiniInstance(string nickname, int level)
 		: base(
-				788,
 				SpeciesTapuFini.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fairy.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuFiniInstance(int level)
 		: base(
-				788,
 				SpeciesTapuFini.Instance, // PokemonInstance Species
 				"Tapu-Fini", level,
 				Water.Instance, Fairy.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tapu-Fini Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TapuFini() : base(
-			788,
+		public TapuFiniInstance() : base(
 			SpeciesTapuFini.Instance, // PokemonInstance Species
 			Water.Instance, Fairy.Instance			
 		) {}

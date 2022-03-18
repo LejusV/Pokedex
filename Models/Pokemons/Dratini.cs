@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDratini Constructor
 		public SpeciesDratini() : base(
+			147,
 			"Dratini",
 			1.8,
 			3.3,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DratiniInstance(string nickname, int level)
 		: base(
-				147,
 				SpeciesDratini.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DratiniInstance(int level)
 		: base(
-				147,
 				SpeciesDratini.Instance, // PokemonInstance Species
 				"Dratini", level,
 				Dragon.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dratini Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dratini() : base(
-			147,
+		public DratiniInstance() : base(
 			SpeciesDratini.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

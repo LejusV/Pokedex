@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBastiodon Constructor
 		public SpeciesBastiodon() : base(
+			411,
 			"Bastiodon",
 			1.3,
 			149.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BastiodonInstance(string nickname, int level)
 		: base(
-				411,
 				SpeciesBastiodon.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Steel.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BastiodonInstance(int level)
 		: base(
-				411,
 				SpeciesBastiodon.Instance, // PokemonInstance Species
 				"Bastiodon", level,
 				Rock.Instance, Steel.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bastiodon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bastiodon() : base(
-			411,
+		public BastiodonInstance() : base(
 			SpeciesBastiodon.Instance, // PokemonInstance Species
 			Rock.Instance, Steel.Instance			
 		) {}

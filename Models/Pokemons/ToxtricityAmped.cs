@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesToxtricity-Amped Constructor
 		public SpeciesToxtricityAmped() : base(
+			849,
 			"Toxtricity-Amped",
 			1.6,
 			40.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxtricityAmpedInstance(string nickname, int level)
 		: base(
-				849,
 				SpeciesToxtricityAmped.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Poison.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxtricityAmpedInstance(int level)
 		: base(
-				849,
 				SpeciesToxtricityAmped.Instance, // PokemonInstance Species
 				"Toxtricity-Amped", level,
 				Electric.Instance, Poison.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Toxtricity-Amped Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public ToxtricityAmped() : base(
-			849,
+		public ToxtricityAmpedInstance() : base(
 			SpeciesToxtricityAmped.Instance, // PokemonInstance Species
 			Electric.Instance, Poison.Instance			
 		) {}

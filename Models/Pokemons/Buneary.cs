@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBuneary Constructor
 		public SpeciesBuneary() : base(
+			427,
 			"Buneary",
 			0.4,
 			5.5,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BunearyInstance(string nickname, int level)
 		: base(
-				427,
 				SpeciesBuneary.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BunearyInstance(int level)
 		: base(
-				427,
 				SpeciesBuneary.Instance, // PokemonInstance Species
 				"Buneary", level,
 				Normal.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Buneary Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Buneary() : base(
-			427,
+		public BunearyInstance() : base(
 			SpeciesBuneary.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

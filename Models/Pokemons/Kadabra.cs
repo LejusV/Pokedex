@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKadabra Constructor
 		public SpeciesKadabra() : base(
+			64,
 			"Kadabra",
 			1.3,
 			56.5,
@@ -154,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KadabraInstance(string nickname, int level)
 		: base(
-				64,
 				SpeciesKadabra.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -169,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KadabraInstance(int level)
 		: base(
-				64,
 				SpeciesKadabra.Instance, // PokemonInstance Species
 				"Kadabra", level,
 				Psychic.Instance			
@@ -183,8 +182,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kadabra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kadabra() : base(
-			64,
+		public KadabraInstance() : base(
 			SpeciesKadabra.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

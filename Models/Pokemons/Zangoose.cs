@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZangoose Constructor
 		public SpeciesZangoose() : base(
+			335,
 			"Zangoose",
 			1.3,
 			40.3,
@@ -164,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZangooseInstance(string nickname, int level)
 		: base(
-				335,
 				SpeciesZangoose.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -179,7 +179,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZangooseInstance(int level)
 		: base(
-				335,
 				SpeciesZangoose.Instance, // PokemonInstance Species
 				"Zangoose", level,
 				Normal.Instance			
@@ -193,8 +192,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zangoose Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zangoose() : base(
-			335,
+		public ZangooseInstance() : base(
 			SpeciesZangoose.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

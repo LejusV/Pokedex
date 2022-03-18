@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLickilicky Constructor
 		public SpeciesLickilicky() : base(
+			463,
 			"Lickilicky",
 			1.7,
 			140.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LickilickyInstance(string nickname, int level)
 		: base(
-				463,
 				SpeciesLickilicky.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LickilickyInstance(int level)
 		: base(
-				463,
 				SpeciesLickilicky.Instance, // PokemonInstance Species
 				"Lickilicky", level,
 				Normal.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lickilicky Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lickilicky() : base(
-			463,
+		public LickilickyInstance() : base(
 			SpeciesLickilicky.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

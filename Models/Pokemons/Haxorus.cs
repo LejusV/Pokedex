@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHaxorus Constructor
 		public SpeciesHaxorus() : base(
+			612,
 			"Haxorus",
 			1.8,
 			105.5,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HaxorusInstance(string nickname, int level)
 		: base(
-				612,
 				SpeciesHaxorus.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HaxorusInstance(int level)
 		: base(
-				612,
 				SpeciesHaxorus.Instance, // PokemonInstance Species
 				"Haxorus", level,
 				Dragon.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Haxorus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Haxorus() : base(
-			612,
+		public HaxorusInstance() : base(
 			SpeciesHaxorus.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

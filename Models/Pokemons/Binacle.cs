@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBinacle Constructor
 		public SpeciesBinacle() : base(
+			688,
 			"Binacle",
 			0.5,
 			31.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BinacleInstance(string nickname, int level)
 		: base(
-				688,
 				SpeciesBinacle.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BinacleInstance(int level)
 		: base(
-				688,
 				SpeciesBinacle.Instance, // PokemonInstance Species
 				"Binacle", level,
 				Rock.Instance, Water.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Binacle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Binacle() : base(
-			688,
+		public BinacleInstance() : base(
 			SpeciesBinacle.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

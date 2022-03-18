@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDuraludon Constructor
 		public SpeciesDuraludon() : base(
+			884,
 			"Duraludon",
 			1.8,
 			40.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuraludonInstance(string nickname, int level)
 		: base(
-				884,
 				SpeciesDuraludon.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuraludonInstance(int level)
 		: base(
-				884,
 				SpeciesDuraludon.Instance, // PokemonInstance Species
 				"Duraludon", level,
 				Steel.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Duraludon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Duraludon() : base(
-			884,
+		public DuraludonInstance() : base(
 			SpeciesDuraludon.Instance, // PokemonInstance Species
 			Steel.Instance, Dragon.Instance			
 		) {}

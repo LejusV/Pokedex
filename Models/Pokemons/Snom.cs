@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnom Constructor
 		public SpeciesSnom() : base(
+			872,
 			"Snom",
 			0.3,
 			3.8,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnomInstance(string nickname, int level)
 		: base(
-				872,
 				SpeciesSnom.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Bug.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnomInstance(int level)
 		: base(
-				872,
 				SpeciesSnom.Instance, // PokemonInstance Species
 				"Snom", level,
 				Ice.Instance, Bug.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snom() : base(
-			872,
+		public SnomInstance() : base(
 			SpeciesSnom.Instance, // PokemonInstance Species
 			Ice.Instance, Bug.Instance			
 		) {}

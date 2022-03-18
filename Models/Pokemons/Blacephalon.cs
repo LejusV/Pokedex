@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlacephalon Constructor
 		public SpeciesBlacephalon() : base(
+			806,
 			"Blacephalon",
 			1.8,
 			13.0,
@@ -103,7 +104,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlacephalonInstance(string nickname, int level)
 		: base(
-				806,
 				SpeciesBlacephalon.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Ghost.Instance			
@@ -118,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlacephalonInstance(int level)
 		: base(
-				806,
 				SpeciesBlacephalon.Instance, // PokemonInstance Species
 				"Blacephalon", level,
 				Fire.Instance, Ghost.Instance			
@@ -132,8 +131,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blacephalon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blacephalon() : base(
-			806,
+		public BlacephalonInstance() : base(
 			SpeciesBlacephalon.Instance, // PokemonInstance Species
 			Fire.Instance, Ghost.Instance			
 		) {}

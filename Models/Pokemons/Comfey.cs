@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesComfey Constructor
 		public SpeciesComfey() : base(
+			764,
 			"Comfey",
 			0.1,
 			0.3,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ComfeyInstance(string nickname, int level)
 		: base(
-				764,
 				SpeciesComfey.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ComfeyInstance(int level)
 		: base(
-				764,
 				SpeciesComfey.Instance, // PokemonInstance Species
 				"Comfey", level,
 				Fairy.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Comfey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Comfey() : base(
-			764,
+		public ComfeyInstance() : base(
 			SpeciesComfey.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

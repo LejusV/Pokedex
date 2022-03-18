@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAmpharos Constructor
 		public SpeciesAmpharos() : base(
+			181,
 			"Ampharos",
 			1.4,
 			61.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmpharosInstance(string nickname, int level)
 		: base(
-				181,
 				SpeciesAmpharos.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmpharosInstance(int level)
 		: base(
-				181,
 				SpeciesAmpharos.Instance, // PokemonInstance Species
 				"Ampharos", level,
 				Electric.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ampharos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ampharos() : base(
-			181,
+		public AmpharosInstance() : base(
 			SpeciesAmpharos.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

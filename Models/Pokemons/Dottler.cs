@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDottler Constructor
 		public SpeciesDottler() : base(
+			825,
 			"Dottler",
 			0.4,
 			19.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DottlerInstance(string nickname, int level)
 		: base(
-				825,
 				SpeciesDottler.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DottlerInstance(int level)
 		: base(
-				825,
 				SpeciesDottler.Instance, // PokemonInstance Species
 				"Dottler", level,
 				Bug.Instance, Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dottler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dottler() : base(
-			825,
+		public DottlerInstance() : base(
 			SpeciesDottler.Instance, // PokemonInstance Species
 			Bug.Instance, Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBruxish Constructor
 		public SpeciesBruxish() : base(
+			779,
 			"Bruxish",
 			0.9,
 			19.0,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BruxishInstance(string nickname, int level)
 		: base(
-				779,
 				SpeciesBruxish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Psychic.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BruxishInstance(int level)
 		: base(
-				779,
 				SpeciesBruxish.Instance, // PokemonInstance Species
 				"Bruxish", level,
 				Water.Instance, Psychic.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bruxish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bruxish() : base(
-			779,
+		public BruxishInstance() : base(
 			SpeciesBruxish.Instance, // PokemonInstance Species
 			Water.Instance, Psychic.Instance			
 		) {}

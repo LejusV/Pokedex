@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTurtonator Constructor
 		public SpeciesTurtonator() : base(
+			776,
 			"Turtonator",
 			2.0,
 			212.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TurtonatorInstance(string nickname, int level)
 		: base(
-				776,
 				SpeciesTurtonator.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Dragon.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TurtonatorInstance(int level)
 		: base(
-				776,
 				SpeciesTurtonator.Instance, // PokemonInstance Species
 				"Turtonator", level,
 				Fire.Instance, Dragon.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Turtonator Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Turtonator() : base(
-			776,
+		public TurtonatorInstance() : base(
 			SpeciesTurtonator.Instance, // PokemonInstance Species
 			Fire.Instance, Dragon.Instance			
 		) {}

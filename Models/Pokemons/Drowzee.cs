@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrowzee Constructor
 		public SpeciesDrowzee() : base(
+			96,
 			"Drowzee",
 			1.0,
 			32.4,
@@ -158,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrowzeeInstance(string nickname, int level)
 		: base(
-				96,
 				SpeciesDrowzee.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -173,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrowzeeInstance(int level)
 		: base(
-				96,
 				SpeciesDrowzee.Instance, // PokemonInstance Species
 				"Drowzee", level,
 				Psychic.Instance			
@@ -187,8 +186,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drowzee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drowzee() : base(
-			96,
+		public DrowzeeInstance() : base(
 			SpeciesDrowzee.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

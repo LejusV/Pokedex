@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHattrem Constructor
 		public SpeciesHattrem() : base(
+			857,
 			"Hattrem",
 			0.6,
 			4.8,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HattremInstance(string nickname, int level)
 		: base(
-				857,
 				SpeciesHattrem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HattremInstance(int level)
 		: base(
-				857,
 				SpeciesHattrem.Instance, // PokemonInstance Species
 				"Hattrem", level,
 				Psychic.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hattrem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hattrem() : base(
-			857,
+		public HattremInstance() : base(
 			SpeciesHattrem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

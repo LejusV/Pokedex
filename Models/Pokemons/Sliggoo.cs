@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSliggoo Constructor
 		public SpeciesSliggoo() : base(
+			705,
 			"Sliggoo",
 			0.8,
 			17.5,
@@ -99,7 +100,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SliggooInstance(string nickname, int level)
 		: base(
-				705,
 				SpeciesSliggoo.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -114,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SliggooInstance(int level)
 		: base(
-				705,
 				SpeciesSliggoo.Instance, // PokemonInstance Species
 				"Sliggoo", level,
 				Dragon.Instance			
@@ -128,8 +127,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sliggoo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sliggoo() : base(
-			705,
+		public SliggooInstance() : base(
 			SpeciesSliggoo.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

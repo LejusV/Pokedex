@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagnemite Constructor
 		public SpeciesMagnemite() : base(
+			81,
 			"Magnemite",
 			0.3,
 			6.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnemiteInstance(string nickname, int level)
 		: base(
-				81,
 				SpeciesMagnemite.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagnemiteInstance(int level)
 		: base(
-				81,
 				SpeciesMagnemite.Instance, // PokemonInstance Species
 				"Magnemite", level,
 				Electric.Instance, Steel.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magnemite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magnemite() : base(
-			81,
+		public MagnemiteInstance() : base(
 			SpeciesMagnemite.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}

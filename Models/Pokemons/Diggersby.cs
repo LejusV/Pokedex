@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDiggersby Constructor
 		public SpeciesDiggersby() : base(
+			660,
 			"Diggersby",
 			1.0,
 			42.4,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiggersbyInstance(string nickname, int level)
 		: base(
-				660,
 				SpeciesDiggersby.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Ground.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiggersbyInstance(int level)
 		: base(
-				660,
 				SpeciesDiggersby.Instance, // PokemonInstance Species
 				"Diggersby", level,
 				Normal.Instance, Ground.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Diggersby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Diggersby() : base(
-			660,
+		public DiggersbyInstance() : base(
 			SpeciesDiggersby.Instance, // PokemonInstance Species
 			Normal.Instance, Ground.Instance			
 		) {}

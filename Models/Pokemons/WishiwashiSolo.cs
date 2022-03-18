@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWishiwashi-Solo Constructor
 		public SpeciesWishiwashiSolo() : base(
+			746,
 			"Wishiwashi-Solo",
 			0.2,
 			0.3,
@@ -103,7 +104,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WishiwashiSoloInstance(string nickname, int level)
 		: base(
-				746,
 				SpeciesWishiwashiSolo.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -118,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WishiwashiSoloInstance(int level)
 		: base(
-				746,
 				SpeciesWishiwashiSolo.Instance, // PokemonInstance Species
 				"Wishiwashi-Solo", level,
 				Water.Instance			
@@ -132,8 +131,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wishiwashi-Solo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public WishiwashiSolo() : base(
-			746,
+		public WishiwashiSoloInstance() : base(
 			SpeciesWishiwashiSolo.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

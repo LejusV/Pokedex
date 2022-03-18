@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWhismur Constructor
 		public SpeciesWhismur() : base(
+			293,
 			"Whismur",
 			0.6,
 			16.3,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhismurInstance(string nickname, int level)
 		: base(
-				293,
 				SpeciesWhismur.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WhismurInstance(int level)
 		: base(
-				293,
 				SpeciesWhismur.Instance, // PokemonInstance Species
 				"Whismur", level,
 				Normal.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Whismur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Whismur() : base(
-			293,
+		public WhismurInstance() : base(
 			SpeciesWhismur.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

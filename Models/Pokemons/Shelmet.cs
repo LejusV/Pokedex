@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShelmet Constructor
 		public SpeciesShelmet() : base(
+			616,
 			"Shelmet",
 			0.4,
 			7.7,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShelmetInstance(string nickname, int level)
 		: base(
-				616,
 				SpeciesShelmet.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShelmetInstance(int level)
 		: base(
-				616,
 				SpeciesShelmet.Instance, // PokemonInstance Species
 				"Shelmet", level,
 				Bug.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shelmet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shelmet() : base(
-			616,
+		public ShelmetInstance() : base(
 			SpeciesShelmet.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

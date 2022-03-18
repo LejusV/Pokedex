@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesManaphy Constructor
 		public SpeciesManaphy() : base(
+			490,
 			"Manaphy",
 			0.3,
 			1.4,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ManaphyInstance(string nickname, int level)
 		: base(
-				490,
 				SpeciesManaphy.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ManaphyInstance(int level)
 		: base(
-				490,
 				SpeciesManaphy.Instance, // PokemonInstance Species
 				"Manaphy", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Manaphy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Manaphy() : base(
-			490,
+		public ManaphyInstance() : base(
 			SpeciesManaphy.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

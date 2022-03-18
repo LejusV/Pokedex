@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGallade Constructor
 		public SpeciesGallade() : base(
+			475,
 			"Gallade",
 			1.6,
 			52.0,
@@ -166,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GalladeInstance(string nickname, int level)
 		: base(
-				475,
 				SpeciesGallade.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fighting.Instance			
@@ -181,7 +181,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GalladeInstance(int level)
 		: base(
-				475,
 				SpeciesGallade.Instance, // PokemonInstance Species
 				"Gallade", level,
 				Psychic.Instance, Fighting.Instance			
@@ -195,8 +194,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gallade Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gallade() : base(
-			475,
+		public GalladeInstance() : base(
 			SpeciesGallade.Instance, // PokemonInstance Species
 			Psychic.Instance, Fighting.Instance			
 		) {}

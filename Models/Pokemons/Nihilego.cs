@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNihilego Constructor
 		public SpeciesNihilego() : base(
+			793,
 			"Nihilego",
 			1.2,
 			55.5,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NihilegoInstance(string nickname, int level)
 		: base(
-				793,
 				SpeciesNihilego.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Poison.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NihilegoInstance(int level)
 		: base(
-				793,
 				SpeciesNihilego.Instance, // PokemonInstance Species
 				"Nihilego", level,
 				Rock.Instance, Poison.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nihilego Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nihilego() : base(
-			793,
+		public NihilegoInstance() : base(
 			SpeciesNihilego.Instance, // PokemonInstance Species
 			Rock.Instance, Poison.Instance			
 		) {}

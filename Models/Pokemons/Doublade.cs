@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDoublade Constructor
 		public SpeciesDoublade() : base(
+			680,
 			"Doublade",
 			0.8,
 			4.5,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DoubladeInstance(string nickname, int level)
 		: base(
-				680,
 				SpeciesDoublade.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Ghost.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DoubladeInstance(int level)
 		: base(
-				680,
 				SpeciesDoublade.Instance, // PokemonInstance Species
 				"Doublade", level,
 				Steel.Instance, Ghost.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Doublade Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Doublade() : base(
-			680,
+		public DoubladeInstance() : base(
 			SpeciesDoublade.Instance, // PokemonInstance Species
 			Steel.Instance, Ghost.Instance			
 		) {}

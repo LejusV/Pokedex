@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGoomy Constructor
 		public SpeciesGoomy() : base(
+			704,
 			"Goomy",
 			0.3,
 			2.8,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoomyInstance(string nickname, int level)
 		: base(
-				704,
 				SpeciesGoomy.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoomyInstance(int level)
 		: base(
-				704,
 				SpeciesGoomy.Instance, // PokemonInstance Species
 				"Goomy", level,
 				Dragon.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Goomy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Goomy() : base(
-			704,
+		public GoomyInstance() : base(
 			SpeciesGoomy.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

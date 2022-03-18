@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCombee Constructor
 		public SpeciesCombee() : base(
+			415,
 			"Combee",
 			0.3,
 			5.5,
@@ -72,7 +73,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CombeeInstance(string nickname, int level)
 		: base(
-				415,
 				SpeciesCombee.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -87,7 +87,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CombeeInstance(int level)
 		: base(
-				415,
 				SpeciesCombee.Instance, // PokemonInstance Species
 				"Combee", level,
 				Bug.Instance, Flying.Instance			
@@ -101,8 +100,7 @@ namespace Pokedex.Models.Pokemons
 		/// Combee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Combee() : base(
-			415,
+		public CombeeInstance() : base(
 			SpeciesCombee.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

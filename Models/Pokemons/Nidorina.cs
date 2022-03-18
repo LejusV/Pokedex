@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNidorina Constructor
 		public SpeciesNidorina() : base(
+			30,
 			"Nidorina",
 			0.8,
 			20.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidorinaInstance(string nickname, int level)
 		: base(
-				30,
 				SpeciesNidorina.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidorinaInstance(int level)
 		: base(
-				30,
 				SpeciesNidorina.Instance, // PokemonInstance Species
 				"Nidorina", level,
 				Poison.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nidorina Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nidorina() : base(
-			30,
+		public NidorinaInstance() : base(
 			SpeciesNidorina.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

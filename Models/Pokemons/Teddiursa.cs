@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTeddiursa Constructor
 		public SpeciesTeddiursa() : base(
+			216,
 			"Teddiursa",
 			0.6,
 			8.8,
@@ -154,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TeddiursaInstance(string nickname, int level)
 		: base(
-				216,
 				SpeciesTeddiursa.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -169,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TeddiursaInstance(int level)
 		: base(
-				216,
 				SpeciesTeddiursa.Instance, // PokemonInstance Species
 				"Teddiursa", level,
 				Normal.Instance			
@@ -183,8 +182,7 @@ namespace Pokedex.Models.Pokemons
 		/// Teddiursa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Teddiursa() : base(
-			216,
+		public TeddiursaInstance() : base(
 			SpeciesTeddiursa.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

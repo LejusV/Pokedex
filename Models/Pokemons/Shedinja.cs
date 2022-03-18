@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShedinja Constructor
 		public SpeciesShedinja() : base(
+			292,
 			"Shedinja",
 			0.8,
 			1.2,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShedinjaInstance(string nickname, int level)
 		: base(
-				292,
 				SpeciesShedinja.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Ghost.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShedinjaInstance(int level)
 		: base(
-				292,
 				SpeciesShedinja.Instance, // PokemonInstance Species
 				"Shedinja", level,
 				Bug.Instance, Ghost.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shedinja Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shedinja() : base(
-			292,
+		public ShedinjaInstance() : base(
 			SpeciesShedinja.Instance, // PokemonInstance Species
 			Bug.Instance, Ghost.Instance			
 		) {}

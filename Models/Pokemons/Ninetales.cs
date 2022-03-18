@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNinetales Constructor
 		public SpeciesNinetales() : base(
+			38,
 			"Ninetales",
 			1.1,
 			19.9,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NinetalesInstance(string nickname, int level)
 		: base(
-				38,
 				SpeciesNinetales.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NinetalesInstance(int level)
 		: base(
-				38,
 				SpeciesNinetales.Instance, // PokemonInstance Species
 				"Ninetales", level,
 				Fire.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ninetales Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ninetales() : base(
-			38,
+		public NinetalesInstance() : base(
 			SpeciesNinetales.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

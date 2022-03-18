@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwadloon Constructor
 		public SpeciesSwadloon() : base(
+			541,
 			"Swadloon",
 			0.5,
 			7.3,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwadloonInstance(string nickname, int level)
 		: base(
-				541,
 				SpeciesSwadloon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwadloonInstance(int level)
 		: base(
-				541,
 				SpeciesSwadloon.Instance, // PokemonInstance Species
 				"Swadloon", level,
 				Bug.Instance, Grass.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swadloon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swadloon() : base(
-			541,
+		public SwadloonInstance() : base(
 			SpeciesSwadloon.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

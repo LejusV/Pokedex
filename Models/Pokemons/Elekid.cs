@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesElekid Constructor
 		public SpeciesElekid() : base(
+			239,
 			"Elekid",
 			0.6,
 			23.5,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElekidInstance(string nickname, int level)
 		: base(
-				239,
 				SpeciesElekid.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElekidInstance(int level)
 		: base(
-				239,
 				SpeciesElekid.Instance, // PokemonInstance Species
 				"Elekid", level,
 				Electric.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Elekid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Elekid() : base(
-			239,
+		public ElekidInstance() : base(
 			SpeciesElekid.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

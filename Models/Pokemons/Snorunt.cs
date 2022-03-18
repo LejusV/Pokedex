@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnorunt Constructor
 		public SpeciesSnorunt() : base(
+			361,
 			"Snorunt",
 			0.7,
 			16.8,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnoruntInstance(string nickname, int level)
 		: base(
-				361,
 				SpeciesSnorunt.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnoruntInstance(int level)
 		: base(
-				361,
 				SpeciesSnorunt.Instance, // PokemonInstance Species
 				"Snorunt", level,
 				Ice.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snorunt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snorunt() : base(
-			361,
+		public SnoruntInstance() : base(
 			SpeciesSnorunt.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

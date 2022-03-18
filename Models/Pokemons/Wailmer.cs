@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWailmer Constructor
 		public SpeciesWailmer() : base(
+			320,
 			"Wailmer",
 			2.0,
 			130.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WailmerInstance(string nickname, int level)
 		: base(
-				320,
 				SpeciesWailmer.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WailmerInstance(int level)
 		: base(
-				320,
 				SpeciesWailmer.Instance, // PokemonInstance Species
 				"Wailmer", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wailmer Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wailmer() : base(
-			320,
+		public WailmerInstance() : base(
 			SpeciesWailmer.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

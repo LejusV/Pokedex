@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDitto Constructor
 		public SpeciesDitto() : base(
+			132,
 			"Ditto",
 			0.3,
 			4.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DittoInstance(string nickname, int level)
 		: base(
-				132,
 				SpeciesDitto.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DittoInstance(int level)
 		: base(
-				132,
 				SpeciesDitto.Instance, // PokemonInstance Species
 				"Ditto", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ditto Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ditto() : base(
-			132,
+		public DittoInstance() : base(
 			SpeciesDitto.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

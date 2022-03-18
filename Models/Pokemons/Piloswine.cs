@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPiloswine Constructor
 		public SpeciesPiloswine() : base(
+			221,
 			"Piloswine",
 			1.1,
 			55.8,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PiloswineInstance(string nickname, int level)
 		: base(
-				221,
 				SpeciesPiloswine.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PiloswineInstance(int level)
 		: base(
-				221,
 				SpeciesPiloswine.Instance, // PokemonInstance Species
 				"Piloswine", level,
 				Ice.Instance, Ground.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Piloswine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Piloswine() : base(
-			221,
+		public PiloswineInstance() : base(
 			SpeciesPiloswine.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}

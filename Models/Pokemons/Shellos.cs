@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShellos Constructor
 		public SpeciesShellos() : base(
+			422,
 			"Shellos",
 			0.3,
 			6.3,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShellosInstance(string nickname, int level)
 		: base(
-				422,
 				SpeciesShellos.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShellosInstance(int level)
 		: base(
-				422,
 				SpeciesShellos.Instance, // PokemonInstance Species
 				"Shellos", level,
 				Water.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shellos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shellos() : base(
-			422,
+		public ShellosInstance() : base(
 			SpeciesShellos.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

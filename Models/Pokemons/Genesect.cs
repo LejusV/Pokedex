@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGenesect Constructor
 		public SpeciesGenesect() : base(
+			649,
 			"Genesect",
 			1.5,
 			82.5,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GenesectInstance(string nickname, int level)
 		: base(
-				649,
 				SpeciesGenesect.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GenesectInstance(int level)
 		: base(
-				649,
 				SpeciesGenesect.Instance, // PokemonInstance Species
 				"Genesect", level,
 				Bug.Instance, Steel.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Genesect Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Genesect() : base(
-			649,
+		public GenesectInstance() : base(
 			SpeciesGenesect.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}

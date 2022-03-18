@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCalyrex Constructor
 		public SpeciesCalyrex() : base(
+			898,
 			"Calyrex",
 			1.1,
 			7.7,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CalyrexInstance(string nickname, int level)
 		: base(
-				898,
 				SpeciesCalyrex.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CalyrexInstance(int level)
 		: base(
-				898,
 				SpeciesCalyrex.Instance, // PokemonInstance Species
 				"Calyrex", level,
 				Psychic.Instance, Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Calyrex Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Calyrex() : base(
-			898,
+		public CalyrexInstance() : base(
 			SpeciesCalyrex.Instance, // PokemonInstance Species
 			Psychic.Instance, Grass.Instance			
 		) {}

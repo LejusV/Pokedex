@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGigalith Constructor
 		public SpeciesGigalith() : base(
+			526,
 			"Gigalith",
 			1.7,
 			260.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GigalithInstance(string nickname, int level)
 		: base(
-				526,
 				SpeciesGigalith.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GigalithInstance(int level)
 		: base(
-				526,
 				SpeciesGigalith.Instance, // PokemonInstance Species
 				"Gigalith", level,
 				Rock.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gigalith Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gigalith() : base(
-			526,
+		public GigalithInstance() : base(
 			SpeciesGigalith.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

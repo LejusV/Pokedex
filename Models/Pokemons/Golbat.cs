@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolbat Constructor
 		public SpeciesGolbat() : base(
+			42,
 			"Golbat",
 			1.6,
 			55.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolbatInstance(string nickname, int level)
 		: base(
-				42,
 				SpeciesGolbat.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Flying.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolbatInstance(int level)
 		: base(
-				42,
 				SpeciesGolbat.Instance, // PokemonInstance Species
 				"Golbat", level,
 				Poison.Instance, Flying.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golbat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golbat() : base(
-			42,
+		public GolbatInstance() : base(
 			SpeciesGolbat.Instance, // PokemonInstance Species
 			Poison.Instance, Flying.Instance			
 		) {}

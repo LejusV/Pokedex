@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScatterbug Constructor
 		public SpeciesScatterbug() : base(
+			664,
 			"Scatterbug",
 			0.3,
 			2.5,
@@ -66,7 +67,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScatterbugInstance(string nickname, int level)
 		: base(
-				664,
 				SpeciesScatterbug.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -81,7 +81,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScatterbugInstance(int level)
 		: base(
-				664,
 				SpeciesScatterbug.Instance, // PokemonInstance Species
 				"Scatterbug", level,
 				Bug.Instance			
@@ -95,8 +94,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scatterbug Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scatterbug() : base(
-			664,
+		public ScatterbugInstance() : base(
 			SpeciesScatterbug.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

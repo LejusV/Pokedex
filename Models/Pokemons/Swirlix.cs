@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwirlix Constructor
 		public SpeciesSwirlix() : base(
+			684,
 			"Swirlix",
 			0.4,
 			3.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwirlixInstance(string nickname, int level)
 		: base(
-				684,
 				SpeciesSwirlix.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwirlixInstance(int level)
 		: base(
-				684,
 				SpeciesSwirlix.Instance, // PokemonInstance Species
 				"Swirlix", level,
 				Fairy.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swirlix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swirlix() : base(
-			684,
+		public SwirlixInstance() : base(
 			SpeciesSwirlix.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

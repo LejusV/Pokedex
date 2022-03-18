@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOmastar Constructor
 		public SpeciesOmastar() : base(
+			139,
 			"Omastar",
 			1.0,
 			35.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OmastarInstance(string nickname, int level)
 		: base(
-				139,
 				SpeciesOmastar.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OmastarInstance(int level)
 		: base(
-				139,
 				SpeciesOmastar.Instance, // PokemonInstance Species
 				"Omastar", level,
 				Rock.Instance, Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Omastar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Omastar() : base(
-			139,
+		public OmastarInstance() : base(
 			SpeciesOmastar.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

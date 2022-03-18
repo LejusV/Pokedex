@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTentacruel Constructor
 		public SpeciesTentacruel() : base(
+			73,
 			"Tentacruel",
 			1.6,
 			55.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TentacruelInstance(string nickname, int level)
 		: base(
-				73,
 				SpeciesTentacruel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Poison.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TentacruelInstance(int level)
 		: base(
-				73,
 				SpeciesTentacruel.Instance, // PokemonInstance Species
 				"Tentacruel", level,
 				Water.Instance, Poison.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tentacruel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tentacruel() : base(
-			73,
+		public TentacruelInstance() : base(
 			SpeciesTentacruel.Instance, // PokemonInstance Species
 			Water.Instance, Poison.Instance			
 		) {}

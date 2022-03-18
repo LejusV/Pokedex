@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMelmetal Constructor
 		public SpeciesMelmetal() : base(
+			809,
 			"Melmetal",
 			2.5,
 			800.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MelmetalInstance(string nickname, int level)
 		: base(
-				809,
 				SpeciesMelmetal.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MelmetalInstance(int level)
 		: base(
-				809,
 				SpeciesMelmetal.Instance, // PokemonInstance Species
 				"Melmetal", level,
 				Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Melmetal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Melmetal() : base(
-			809,
+		public MelmetalInstance() : base(
 			SpeciesMelmetal.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

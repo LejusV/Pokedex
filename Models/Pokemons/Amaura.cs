@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAmaura Constructor
 		public SpeciesAmaura() : base(
+			698,
 			"Amaura",
 			1.3,
 			25.2,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmauraInstance(string nickname, int level)
 		: base(
-				698,
 				SpeciesAmaura.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ice.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmauraInstance(int level)
 		: base(
-				698,
 				SpeciesAmaura.Instance, // PokemonInstance Species
 				"Amaura", level,
 				Rock.Instance, Ice.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Amaura Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Amaura() : base(
-			698,
+		public AmauraInstance() : base(
 			SpeciesAmaura.Instance, // PokemonInstance Species
 			Rock.Instance, Ice.Instance			
 		) {}

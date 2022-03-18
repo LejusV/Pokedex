@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesXurkitree Constructor
 		public SpeciesXurkitree() : base(
+			796,
 			"Xurkitree",
 			3.8,
 			100.0,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XurkitreeInstance(string nickname, int level)
 		: base(
-				796,
 				SpeciesXurkitree.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XurkitreeInstance(int level)
 		: base(
-				796,
 				SpeciesXurkitree.Instance, // PokemonInstance Species
 				"Xurkitree", level,
 				Electric.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Xurkitree Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Xurkitree() : base(
-			796,
+		public XurkitreeInstance() : base(
 			SpeciesXurkitree.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

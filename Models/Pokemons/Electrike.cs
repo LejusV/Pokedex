@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesElectrike Constructor
 		public SpeciesElectrike() : base(
+			309,
 			"Electrike",
 			0.6,
 			15.2,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectrikeInstance(string nickname, int level)
 		: base(
-				309,
 				SpeciesElectrike.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElectrikeInstance(int level)
 		: base(
-				309,
 				SpeciesElectrike.Instance, // PokemonInstance Species
 				"Electrike", level,
 				Electric.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Electrike Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Electrike() : base(
-			309,
+		public ElectrikeInstance() : base(
 			SpeciesElectrike.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCroconaw Constructor
 		public SpeciesCroconaw() : base(
+			159,
 			"Croconaw",
 			1.1,
 			25.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CroconawInstance(string nickname, int level)
 		: base(
-				159,
 				SpeciesCroconaw.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CroconawInstance(int level)
 		: base(
-				159,
 				SpeciesCroconaw.Instance, // PokemonInstance Species
 				"Croconaw", level,
 				Water.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Croconaw Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Croconaw() : base(
-			159,
+		public CroconawInstance() : base(
 			SpeciesCroconaw.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

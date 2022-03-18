@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDeoxys-Normal Constructor
 		public SpeciesDeoxysNormal() : base(
+			386,
 			"Deoxys-Normal",
 			1.7,
 			60.8,
@@ -159,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeoxysNormalInstance(string nickname, int level)
 		: base(
-				386,
 				SpeciesDeoxysNormal.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -174,7 +174,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeoxysNormalInstance(int level)
 		: base(
-				386,
 				SpeciesDeoxysNormal.Instance, // PokemonInstance Species
 				"Deoxys-Normal", level,
 				Psychic.Instance			
@@ -188,8 +187,7 @@ namespace Pokedex.Models.Pokemons
 		/// Deoxys-Normal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public DeoxysNormal() : base(
-			386,
+		public DeoxysNormalInstance() : base(
 			SpeciesDeoxysNormal.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

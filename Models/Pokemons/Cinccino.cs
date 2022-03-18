@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCinccino Constructor
 		public SpeciesCinccino() : base(
+			573,
 			"Cinccino",
 			0.5,
 			7.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CinccinoInstance(string nickname, int level)
 		: base(
-				573,
 				SpeciesCinccino.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CinccinoInstance(int level)
 		: base(
-				573,
 				SpeciesCinccino.Instance, // PokemonInstance Species
 				"Cinccino", level,
 				Normal.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cinccino Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cinccino() : base(
-			573,
+		public CinccinoInstance() : base(
 			SpeciesCinccino.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

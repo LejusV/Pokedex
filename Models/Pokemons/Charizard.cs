@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCharizard Constructor
 		public SpeciesCharizard() : base(
+			6,
 			"Charizard",
 			1.7,
 			90.5,
@@ -168,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharizardInstance(string nickname, int level)
 		: base(
-				6,
 				SpeciesCharizard.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -183,7 +183,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharizardInstance(int level)
 		: base(
-				6,
 				SpeciesCharizard.Instance, // PokemonInstance Species
 				"Charizard", level,
 				Fire.Instance, Flying.Instance			
@@ -197,8 +196,7 @@ namespace Pokedex.Models.Pokemons
 		/// Charizard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Charizard() : base(
-			6,
+		public CharizardInstance() : base(
 			SpeciesCharizard.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

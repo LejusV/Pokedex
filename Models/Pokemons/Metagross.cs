@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMetagross Constructor
 		public SpeciesMetagross() : base(
+			376,
 			"Metagross",
 			1.6,
 			550.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetagrossInstance(string nickname, int level)
 		: base(
-				376,
 				SpeciesMetagross.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetagrossInstance(int level)
 		: base(
-				376,
 				SpeciesMetagross.Instance, // PokemonInstance Species
 				"Metagross", level,
 				Steel.Instance, Psychic.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Metagross Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Metagross() : base(
-			376,
+		public MetagrossInstance() : base(
 			SpeciesMetagross.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

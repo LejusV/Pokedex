@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPoochyena Constructor
 		public SpeciesPoochyena() : base(
+			261,
 			"Poochyena",
 			0.5,
 			13.6,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoochyenaInstance(string nickname, int level)
 		: base(
-				261,
 				SpeciesPoochyena.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoochyenaInstance(int level)
 		: base(
-				261,
 				SpeciesPoochyena.Instance, // PokemonInstance Species
 				"Poochyena", level,
 				Dark.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Poochyena Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Poochyena() : base(
-			261,
+		public PoochyenaInstance() : base(
 			SpeciesPoochyena.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

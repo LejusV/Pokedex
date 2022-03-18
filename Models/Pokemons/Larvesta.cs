@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLarvesta Constructor
 		public SpeciesLarvesta() : base(
+			636,
 			"Larvesta",
 			1.1,
 			28.8,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LarvestaInstance(string nickname, int level)
 		: base(
-				636,
 				SpeciesLarvesta.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fire.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LarvestaInstance(int level)
 		: base(
-				636,
 				SpeciesLarvesta.Instance, // PokemonInstance Species
 				"Larvesta", level,
 				Bug.Instance, Fire.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Larvesta Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Larvesta() : base(
-			636,
+		public LarvestaInstance() : base(
 			SpeciesLarvesta.Instance, // PokemonInstance Species
 			Bug.Instance, Fire.Instance			
 		) {}

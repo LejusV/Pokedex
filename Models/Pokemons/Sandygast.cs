@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSandygast Constructor
 		public SpeciesSandygast() : base(
+			769,
 			"Sandygast",
 			0.5,
 			70.0,
@@ -103,7 +104,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandygastInstance(string nickname, int level)
 		: base(
-				769,
 				SpeciesSandygast.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Ground.Instance			
@@ -118,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandygastInstance(int level)
 		: base(
-				769,
 				SpeciesSandygast.Instance, // PokemonInstance Species
 				"Sandygast", level,
 				Ghost.Instance, Ground.Instance			
@@ -132,8 +131,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sandygast Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sandygast() : base(
-			769,
+		public SandygastInstance() : base(
 			SpeciesSandygast.Instance, // PokemonInstance Species
 			Ghost.Instance, Ground.Instance			
 		) {}

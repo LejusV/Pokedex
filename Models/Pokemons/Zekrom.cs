@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZekrom Constructor
 		public SpeciesZekrom() : base(
+			644,
 			"Zekrom",
 			2.9,
 			345.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZekromInstance(string nickname, int level)
 		: base(
-				644,
 				SpeciesZekrom.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Electric.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZekromInstance(int level)
 		: base(
-				644,
 				SpeciesZekrom.Instance, // PokemonInstance Species
 				"Zekrom", level,
 				Dragon.Instance, Electric.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zekrom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zekrom() : base(
-			644,
+		public ZekromInstance() : base(
 			SpeciesZekrom.Instance, // PokemonInstance Species
 			Dragon.Instance, Electric.Instance			
 		) {}

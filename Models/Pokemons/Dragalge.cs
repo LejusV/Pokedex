@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDragalge Constructor
 		public SpeciesDragalge() : base(
+			691,
 			"Dragalge",
 			1.8,
 			81.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragalgeInstance(string nickname, int level)
 		: base(
-				691,
 				SpeciesDragalge.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dragon.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragalgeInstance(int level)
 		: base(
-				691,
 				SpeciesDragalge.Instance, // PokemonInstance Species
 				"Dragalge", level,
 				Poison.Instance, Dragon.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dragalge Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dragalge() : base(
-			691,
+		public DragalgeInstance() : base(
 			SpeciesDragalge.Instance, // PokemonInstance Species
 			Poison.Instance, Dragon.Instance			
 		) {}

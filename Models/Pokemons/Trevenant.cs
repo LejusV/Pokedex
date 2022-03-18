@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTrevenant Constructor
 		public SpeciesTrevenant() : base(
+			709,
 			"Trevenant",
 			1.5,
 			71.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrevenantInstance(string nickname, int level)
 		: base(
-				709,
 				SpeciesTrevenant.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrevenantInstance(int level)
 		: base(
-				709,
 				SpeciesTrevenant.Instance, // PokemonInstance Species
 				"Trevenant", level,
 				Ghost.Instance, Grass.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Trevenant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Trevenant() : base(
-			709,
+		public TrevenantInstance() : base(
 			SpeciesTrevenant.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}

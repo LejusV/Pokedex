@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTotodile Constructor
 		public SpeciesTotodile() : base(
+			158,
 			"Totodile",
 			0.6,
 			9.5,
@@ -148,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TotodileInstance(string nickname, int level)
 		: base(
-				158,
 				SpeciesTotodile.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -163,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TotodileInstance(int level)
 		: base(
-				158,
 				SpeciesTotodile.Instance, // PokemonInstance Species
 				"Totodile", level,
 				Water.Instance			
@@ -177,8 +176,7 @@ namespace Pokedex.Models.Pokemons
 		/// Totodile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Totodile() : base(
-			158,
+		public TotodileInstance() : base(
 			SpeciesTotodile.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAzurill Constructor
 		public SpeciesAzurill() : base(
+			298,
 			"Azurill",
 			0.2,
 			2.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzurillInstance(string nickname, int level)
 		: base(
-				298,
 				SpeciesAzurill.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AzurillInstance(int level)
 		: base(
-				298,
 				SpeciesAzurill.Instance, // PokemonInstance Species
 				"Azurill", level,
 				Normal.Instance, Fairy.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Azurill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Azurill() : base(
-			298,
+		public AzurillInstance() : base(
 			SpeciesAzurill.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}

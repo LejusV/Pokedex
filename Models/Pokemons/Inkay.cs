@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesInkay Constructor
 		public SpeciesInkay() : base(
+			686,
 			"Inkay",
 			0.4,
 			3.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InkayInstance(string nickname, int level)
 		: base(
-				686,
 				SpeciesInkay.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Psychic.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InkayInstance(int level)
 		: base(
-				686,
 				SpeciesInkay.Instance, // PokemonInstance Species
 				"Inkay", level,
 				Dark.Instance, Psychic.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Inkay Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Inkay() : base(
-			686,
+		public InkayInstance() : base(
 			SpeciesInkay.Instance, // PokemonInstance Species
 			Dark.Instance, Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMankey Constructor
 		public SpeciesMankey() : base(
+			56,
 			"Mankey",
 			0.5,
 			28.0,
@@ -171,7 +172,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MankeyInstance(string nickname, int level)
 		: base(
-				56,
 				SpeciesMankey.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -186,7 +186,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MankeyInstance(int level)
 		: base(
-				56,
 				SpeciesMankey.Instance, // PokemonInstance Species
 				"Mankey", level,
 				Fighting.Instance			
@@ -200,8 +199,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mankey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mankey() : base(
-			56,
+		public MankeyInstance() : base(
 			SpeciesMankey.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

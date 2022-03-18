@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGoldeen Constructor
 		public SpeciesGoldeen() : base(
+			118,
 			"Goldeen",
 			0.6,
 			15.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoldeenInstance(string nickname, int level)
 		: base(
-				118,
 				SpeciesGoldeen.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GoldeenInstance(int level)
 		: base(
-				118,
 				SpeciesGoldeen.Instance, // PokemonInstance Species
 				"Goldeen", level,
 				Water.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Goldeen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Goldeen() : base(
-			118,
+		public GoldeenInstance() : base(
 			SpeciesGoldeen.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

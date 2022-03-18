@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPopplio Constructor
 		public SpeciesPopplio() : base(
+			728,
 			"Popplio",
 			0.4,
 			7.5,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PopplioInstance(string nickname, int level)
 		: base(
-				728,
 				SpeciesPopplio.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PopplioInstance(int level)
 		: base(
-				728,
 				SpeciesPopplio.Instance, // PokemonInstance Species
 				"Popplio", level,
 				Water.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Popplio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Popplio() : base(
-			728,
+		public PopplioInstance() : base(
 			SpeciesPopplio.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

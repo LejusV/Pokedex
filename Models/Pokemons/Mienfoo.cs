@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMienfoo Constructor
 		public SpeciesMienfoo() : base(
+			619,
 			"Mienfoo",
 			0.9,
 			20.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MienfooInstance(string nickname, int level)
 		: base(
-				619,
 				SpeciesMienfoo.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MienfooInstance(int level)
 		: base(
-				619,
 				SpeciesMienfoo.Instance, // PokemonInstance Species
 				"Mienfoo", level,
 				Fighting.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mienfoo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mienfoo() : base(
-			619,
+		public MienfooInstance() : base(
 			SpeciesMienfoo.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

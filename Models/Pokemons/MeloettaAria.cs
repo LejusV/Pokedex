@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMeloetta-Aria Constructor
 		public SpeciesMeloettaAria() : base(
+			648,
 			"Meloetta-Aria",
 			0.6,
 			6.5,
@@ -149,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeloettaAriaInstance(string nickname, int level)
 		: base(
-				648,
 				SpeciesMeloettaAria.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Psychic.Instance			
@@ -164,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeloettaAriaInstance(int level)
 		: base(
-				648,
 				SpeciesMeloettaAria.Instance, // PokemonInstance Species
 				"Meloetta-Aria", level,
 				Normal.Instance, Psychic.Instance			
@@ -178,8 +177,7 @@ namespace Pokedex.Models.Pokemons
 		/// Meloetta-Aria Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MeloettaAria() : base(
-			648,
+		public MeloettaAriaInstance() : base(
 			SpeciesMeloettaAria.Instance, // PokemonInstance Species
 			Normal.Instance, Psychic.Instance			
 		) {}

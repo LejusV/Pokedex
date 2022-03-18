@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShieldon Constructor
 		public SpeciesShieldon() : base(
+			410,
 			"Shieldon",
 			0.5,
 			57.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShieldonInstance(string nickname, int level)
 		: base(
-				410,
 				SpeciesShieldon.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Steel.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShieldonInstance(int level)
 		: base(
-				410,
 				SpeciesShieldon.Instance, // PokemonInstance Species
 				"Shieldon", level,
 				Rock.Instance, Steel.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shieldon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shieldon() : base(
-			410,
+		public ShieldonInstance() : base(
 			SpeciesShieldon.Instance, // PokemonInstance Species
 			Rock.Instance, Steel.Instance			
 		) {}

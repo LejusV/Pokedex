@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesManectric Constructor
 		public SpeciesManectric() : base(
+			310,
 			"Manectric",
 			1.5,
 			40.2,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ManectricInstance(string nickname, int level)
 		: base(
-				310,
 				SpeciesManectric.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ManectricInstance(int level)
 		: base(
-				310,
 				SpeciesManectric.Instance, // PokemonInstance Species
 				"Manectric", level,
 				Electric.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Manectric Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Manectric() : base(
-			310,
+		public ManectricInstance() : base(
 			SpeciesManectric.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

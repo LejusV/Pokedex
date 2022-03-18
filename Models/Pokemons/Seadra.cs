@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeadra Constructor
 		public SpeciesSeadra() : base(
+			117,
 			"Seadra",
 			1.2,
 			25.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeadraInstance(string nickname, int level)
 		: base(
-				117,
 				SpeciesSeadra.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeadraInstance(int level)
 		: base(
-				117,
 				SpeciesSeadra.Instance, // PokemonInstance Species
 				"Seadra", level,
 				Water.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seadra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seadra() : base(
-			117,
+		public SeadraInstance() : base(
 			SpeciesSeadra.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

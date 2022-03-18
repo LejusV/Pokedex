@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesIllumise Constructor
 		public SpeciesIllumise() : base(
+			314,
 			"Illumise",
 			0.6,
 			17.7,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IllumiseInstance(string nickname, int level)
 		: base(
-				314,
 				SpeciesIllumise.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IllumiseInstance(int level)
 		: base(
-				314,
 				SpeciesIllumise.Instance, // PokemonInstance Species
 				"Illumise", level,
 				Bug.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Illumise Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Illumise() : base(
-			314,
+		public IllumiseInstance() : base(
 			SpeciesIllumise.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

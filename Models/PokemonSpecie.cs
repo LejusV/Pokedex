@@ -4,6 +4,8 @@ namespace Pokedex.Models
 {
     public abstract class PokemonSpecies
     {
+        private readonly int _id; // ID of the pokemon specie in the pokedex
+
         //private readonly string _genus;
         private readonly double _height;
         private readonly string _name;
@@ -11,20 +13,23 @@ namespace Pokedex.Models
         private readonly double _weight;
         protected List<string> _moveList;
 
-        //public string Genus { get => _genus; }
+        //public string Genus => _genus;
 
-        public double Height { get => _height; }
+        public int Id => this._id;
 
-        public string Name { get => _name; }
+        public double Height => _height;
 
-        public PokemonStats Stats { get => _stats; }
+        public string Name => _name;
 
-        public double Weight { get => _weight; }
+        public PokemonStats Stats => _stats;
+
+        public double Weight => _weight;
         
-        public List<string> MoveList { get => _moveList; }
+        public List<string> MoveList => _moveList;
 
-        public PokemonSpecies(string name, double height, double weight, int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
+        public PokemonSpecies(int id, string name, double height, double weight, int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
         {
+            _id = id; // store specie id
             _height = height; // store specie height
             _name = name; // store specie name
 

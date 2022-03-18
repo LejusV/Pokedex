@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLitwick Constructor
 		public SpeciesLitwick() : base(
+			607,
 			"Litwick",
 			0.3,
 			3.1,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LitwickInstance(string nickname, int level)
 		: base(
-				607,
 				SpeciesLitwick.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LitwickInstance(int level)
 		: base(
-				607,
 				SpeciesLitwick.Instance, // PokemonInstance Species
 				"Litwick", level,
 				Ghost.Instance, Fire.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Litwick Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Litwick() : base(
-			607,
+		public LitwickInstance() : base(
 			SpeciesLitwick.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}

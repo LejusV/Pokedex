@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWimpod Constructor
 		public SpeciesWimpod() : base(
+			767,
 			"Wimpod",
 			0.5,
 			12.0,
@@ -88,7 +89,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WimpodInstance(string nickname, int level)
 		: base(
-				767,
 				SpeciesWimpod.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Water.Instance			
@@ -103,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WimpodInstance(int level)
 		: base(
-				767,
 				SpeciesWimpod.Instance, // PokemonInstance Species
 				"Wimpod", level,
 				Bug.Instance, Water.Instance			
@@ -117,8 +116,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wimpod Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wimpod() : base(
-			767,
+		public WimpodInstance() : base(
 			SpeciesWimpod.Instance, // PokemonInstance Species
 			Bug.Instance, Water.Instance			
 		) {}

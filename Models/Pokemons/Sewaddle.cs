@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSewaddle Constructor
 		public SpeciesSewaddle() : base(
+			540,
 			"Sewaddle",
 			0.3,
 			2.5,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SewaddleInstance(string nickname, int level)
 		: base(
-				540,
 				SpeciesSewaddle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SewaddleInstance(int level)
 		: base(
-				540,
 				SpeciesSewaddle.Instance, // PokemonInstance Species
 				"Sewaddle", level,
 				Bug.Instance, Grass.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sewaddle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sewaddle() : base(
-			540,
+		public SewaddleInstance() : base(
 			SpeciesSewaddle.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

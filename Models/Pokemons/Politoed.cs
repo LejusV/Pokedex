@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPolitoed Constructor
 		public SpeciesPolitoed() : base(
+			186,
 			"Politoed",
 			1.1,
 			33.9,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PolitoedInstance(string nickname, int level)
 		: base(
-				186,
 				SpeciesPolitoed.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PolitoedInstance(int level)
 		: base(
-				186,
 				SpeciesPolitoed.Instance, // PokemonInstance Species
 				"Politoed", level,
 				Water.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Politoed Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Politoed() : base(
-			186,
+		public PolitoedInstance() : base(
 			SpeciesPolitoed.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlaaffy Constructor
 		public SpeciesFlaaffy() : base(
+			180,
 			"Flaaffy",
 			0.8,
 			13.3,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlaaffyInstance(string nickname, int level)
 		: base(
-				180,
 				SpeciesFlaaffy.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlaaffyInstance(int level)
 		: base(
-				180,
 				SpeciesFlaaffy.Instance, // PokemonInstance Species
 				"Flaaffy", level,
 				Electric.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Flaaffy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Flaaffy() : base(
-			180,
+		public FlaaffyInstance() : base(
 			SpeciesFlaaffy.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

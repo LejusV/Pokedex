@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPalossand Constructor
 		public SpeciesPalossand() : base(
+			770,
 			"Palossand",
 			1.3,
 			250.0,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalossandInstance(string nickname, int level)
 		: base(
-				770,
 				SpeciesPalossand.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Ground.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalossandInstance(int level)
 		: base(
-				770,
 				SpeciesPalossand.Instance, // PokemonInstance Species
 				"Palossand", level,
 				Ghost.Instance, Ground.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Palossand Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Palossand() : base(
-			770,
+		public PalossandInstance() : base(
 			SpeciesPalossand.Instance, // PokemonInstance Species
 			Ghost.Instance, Ground.Instance			
 		) {}

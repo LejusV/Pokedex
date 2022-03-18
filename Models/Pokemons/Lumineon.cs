@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLumineon Constructor
 		public SpeciesLumineon() : base(
+			457,
 			"Lumineon",
 			1.2,
 			24.0,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LumineonInstance(string nickname, int level)
 		: base(
-				457,
 				SpeciesLumineon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LumineonInstance(int level)
 		: base(
-				457,
 				SpeciesLumineon.Instance, // PokemonInstance Species
 				"Lumineon", level,
 				Water.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lumineon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lumineon() : base(
-			457,
+		public LumineonInstance() : base(
 			SpeciesLumineon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

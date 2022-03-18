@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSinistea Constructor
 		public SpeciesSinistea() : base(
+			854,
 			"Sinistea",
 			0.1,
 			0.2,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SinisteaInstance(string nickname, int level)
 		: base(
-				854,
 				SpeciesSinistea.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SinisteaInstance(int level)
 		: base(
-				854,
 				SpeciesSinistea.Instance, // PokemonInstance Species
 				"Sinistea", level,
 				Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sinistea Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sinistea() : base(
-			854,
+		public SinisteaInstance() : base(
 			SpeciesSinistea.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

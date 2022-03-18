@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMudsdale Constructor
 		public SpeciesMudsdale() : base(
+			750,
 			"Mudsdale",
 			2.5,
 			920.0,
@@ -96,7 +97,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudsdaleInstance(string nickname, int level)
 		: base(
-				750,
 				SpeciesMudsdale.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -111,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MudsdaleInstance(int level)
 		: base(
-				750,
 				SpeciesMudsdale.Instance, // PokemonInstance Species
 				"Mudsdale", level,
 				Ground.Instance			
@@ -125,8 +124,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mudsdale Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mudsdale() : base(
-			750,
+		public MudsdaleInstance() : base(
 			SpeciesMudsdale.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMilcery Constructor
 		public SpeciesMilcery() : base(
+			868,
 			"Milcery",
 			0.2,
 			0.3,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MilceryInstance(string nickname, int level)
 		: base(
-				868,
 				SpeciesMilcery.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MilceryInstance(int level)
 		: base(
-				868,
 				SpeciesMilcery.Instance, // PokemonInstance Species
 				"Milcery", level,
 				Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Milcery Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Milcery() : base(
-			868,
+		public MilceryInstance() : base(
 			SpeciesMilcery.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

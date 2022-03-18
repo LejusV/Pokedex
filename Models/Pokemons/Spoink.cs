@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpoink Constructor
 		public SpeciesSpoink() : base(
+			325,
 			"Spoink",
 			0.7,
 			30.6,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpoinkInstance(string nickname, int level)
 		: base(
-				325,
 				SpeciesSpoink.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpoinkInstance(int level)
 		: base(
-				325,
 				SpeciesSpoink.Instance, // PokemonInstance Species
 				"Spoink", level,
 				Psychic.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spoink Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spoink() : base(
-			325,
+		public SpoinkInstance() : base(
 			SpeciesSpoink.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

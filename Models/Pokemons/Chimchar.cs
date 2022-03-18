@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChimchar Constructor
 		public SpeciesChimchar() : base(
+			390,
 			"Chimchar",
 			0.5,
 			6.2,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChimcharInstance(string nickname, int level)
 		: base(
-				390,
 				SpeciesChimchar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChimcharInstance(int level)
 		: base(
-				390,
 				SpeciesChimchar.Instance, // PokemonInstance Species
 				"Chimchar", level,
 				Fire.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chimchar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chimchar() : base(
-			390,
+		public ChimcharInstance() : base(
 			SpeciesChimchar.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

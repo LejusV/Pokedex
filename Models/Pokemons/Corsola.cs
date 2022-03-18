@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCorsola Constructor
 		public SpeciesCorsola() : base(
+			222,
 			"Corsola",
 			0.6,
 			5.0,
@@ -148,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorsolaInstance(string nickname, int level)
 		: base(
-				222,
 				SpeciesCorsola.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
@@ -163,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CorsolaInstance(int level)
 		: base(
-				222,
 				SpeciesCorsola.Instance, // PokemonInstance Species
 				"Corsola", level,
 				Water.Instance, Rock.Instance			
@@ -177,8 +176,7 @@ namespace Pokedex.Models.Pokemons
 		/// Corsola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Corsola() : base(
-			222,
+		public CorsolaInstance() : base(
 			SpeciesCorsola.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}

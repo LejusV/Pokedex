@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPalkia Constructor
 		public SpeciesPalkia() : base(
+			484,
 			"Palkia",
 			4.2,
 			336.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalkiaInstance(string nickname, int level)
 		: base(
-				484,
 				SpeciesPalkia.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dragon.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalkiaInstance(int level)
 		: base(
-				484,
 				SpeciesPalkia.Instance, // PokemonInstance Species
 				"Palkia", level,
 				Water.Instance, Dragon.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Palkia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Palkia() : base(
-			484,
+		public PalkiaInstance() : base(
 			SpeciesPalkia.Instance, // PokemonInstance Species
 			Water.Instance, Dragon.Instance			
 		) {}

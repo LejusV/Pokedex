@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHaunter Constructor
 		public SpeciesHaunter() : base(
+			93,
 			"Haunter",
 			1.6,
 			0.1,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HaunterInstance(string nickname, int level)
 		: base(
-				93,
 				SpeciesHaunter.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Poison.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HaunterInstance(int level)
 		: base(
-				93,
 				SpeciesHaunter.Instance, // PokemonInstance Species
 				"Haunter", level,
 				Ghost.Instance, Poison.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Haunter Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Haunter() : base(
-			93,
+		public HaunterInstance() : base(
 			SpeciesHaunter.Instance, // PokemonInstance Species
 			Ghost.Instance, Poison.Instance			
 		) {}

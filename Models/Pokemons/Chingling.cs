@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChingling Constructor
 		public SpeciesChingling() : base(
+			433,
 			"Chingling",
 			0.2,
 			0.6,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChinglingInstance(string nickname, int level)
 		: base(
-				433,
 				SpeciesChingling.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChinglingInstance(int level)
 		: base(
-				433,
 				SpeciesChingling.Instance, // PokemonInstance Species
 				"Chingling", level,
 				Psychic.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chingling Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chingling() : base(
-			433,
+		public ChinglingInstance() : base(
 			SpeciesChingling.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

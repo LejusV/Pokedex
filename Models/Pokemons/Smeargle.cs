@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSmeargle Constructor
 		public SpeciesSmeargle() : base(
+			235,
 			"Smeargle",
 			1.2,
 			58.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SmeargleInstance(string nickname, int level)
 		: base(
-				235,
 				SpeciesSmeargle.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SmeargleInstance(int level)
 		: base(
-				235,
 				SpeciesSmeargle.Instance, // PokemonInstance Species
 				"Smeargle", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Smeargle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Smeargle() : base(
-			235,
+		public SmeargleInstance() : base(
 			SpeciesSmeargle.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

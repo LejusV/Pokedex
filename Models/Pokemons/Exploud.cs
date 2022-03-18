@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesExploud Constructor
 		public SpeciesExploud() : base(
+			295,
 			"Exploud",
 			1.5,
 			84.0,
@@ -150,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExploudInstance(string nickname, int level)
 		: base(
-				295,
 				SpeciesExploud.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -165,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExploudInstance(int level)
 		: base(
-				295,
 				SpeciesExploud.Instance, // PokemonInstance Species
 				"Exploud", level,
 				Normal.Instance			
@@ -179,8 +178,7 @@ namespace Pokedex.Models.Pokemons
 		/// Exploud Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Exploud() : base(
-			295,
+		public ExploudInstance() : base(
 			SpeciesExploud.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesIvysaur Constructor
 		public SpeciesIvysaur() : base(
+			2,
 			"Ivysaur",
 			1.0,
 			13.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IvysaurInstance(string nickname, int level)
 		: base(
-				2,
 				SpeciesIvysaur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public IvysaurInstance(int level)
 		: base(
-				2,
 				SpeciesIvysaur.Instance, // PokemonInstance Species
 				"Ivysaur", level,
 				Grass.Instance, Poison.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ivysaur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ivysaur() : base(
-			2,
+		public IvysaurInstance() : base(
 			SpeciesIvysaur.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

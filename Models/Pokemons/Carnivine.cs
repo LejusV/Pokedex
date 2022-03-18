@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCarnivine Constructor
 		public SpeciesCarnivine() : base(
+			455,
 			"Carnivine",
 			1.4,
 			27.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarnivineInstance(string nickname, int level)
 		: base(
-				455,
 				SpeciesCarnivine.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarnivineInstance(int level)
 		: base(
-				455,
 				SpeciesCarnivine.Instance, // PokemonInstance Species
 				"Carnivine", level,
 				Grass.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Carnivine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Carnivine() : base(
-			455,
+		public CarnivineInstance() : base(
 			SpeciesCarnivine.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

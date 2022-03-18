@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFrosmoth Constructor
 		public SpeciesFrosmoth() : base(
+			873,
 			"Frosmoth",
 			1.3,
 			42.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrosmothInstance(string nickname, int level)
 		: base(
-				873,
 				SpeciesFrosmoth.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Bug.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrosmothInstance(int level)
 		: base(
-				873,
 				SpeciesFrosmoth.Instance, // PokemonInstance Species
 				"Frosmoth", level,
 				Ice.Instance, Bug.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Frosmoth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Frosmoth() : base(
-			873,
+		public FrosmothInstance() : base(
 			SpeciesFrosmoth.Instance, // PokemonInstance Species
 			Ice.Instance, Bug.Instance			
 		) {}

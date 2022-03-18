@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSamurott Constructor
 		public SpeciesSamurott() : base(
+			503,
 			"Samurott",
 			1.5,
 			94.6,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SamurottInstance(string nickname, int level)
 		: base(
-				503,
 				SpeciesSamurott.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SamurottInstance(int level)
 		: base(
-				503,
 				SpeciesSamurott.Instance, // PokemonInstance Species
 				"Samurott", level,
 				Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Samurott Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Samurott() : base(
-			503,
+		public SamurottInstance() : base(
 			SpeciesSamurott.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

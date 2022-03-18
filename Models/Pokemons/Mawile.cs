@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMawile Constructor
 		public SpeciesMawile() : base(
+			303,
 			"Mawile",
 			0.6,
 			11.5,
@@ -161,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MawileInstance(string nickname, int level)
 		: base(
-				303,
 				SpeciesMawile.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fairy.Instance			
@@ -176,7 +176,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MawileInstance(int level)
 		: base(
-				303,
 				SpeciesMawile.Instance, // PokemonInstance Species
 				"Mawile", level,
 				Steel.Instance, Fairy.Instance			
@@ -190,8 +189,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mawile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mawile() : base(
-			303,
+		public MawileInstance() : base(
 			SpeciesMawile.Instance, // PokemonInstance Species
 			Steel.Instance, Fairy.Instance			
 		) {}

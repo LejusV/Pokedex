@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTimburr Constructor
 		public SpeciesTimburr() : base(
+			532,
 			"Timburr",
 			0.6,
 			12.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TimburrInstance(string nickname, int level)
 		: base(
-				532,
 				SpeciesTimburr.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TimburrInstance(int level)
 		: base(
-				532,
 				SpeciesTimburr.Instance, // PokemonInstance Species
 				"Timburr", level,
 				Fighting.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Timburr Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Timburr() : base(
-			532,
+		public TimburrInstance() : base(
 			SpeciesTimburr.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

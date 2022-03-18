@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesExcadrill Constructor
 		public SpeciesExcadrill() : base(
+			530,
 			"Excadrill",
 			0.7,
 			40.4,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExcadrillInstance(string nickname, int level)
 		: base(
-				530,
 				SpeciesExcadrill.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Steel.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExcadrillInstance(int level)
 		: base(
-				530,
 				SpeciesExcadrill.Instance, // PokemonInstance Species
 				"Excadrill", level,
 				Ground.Instance, Steel.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Excadrill Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Excadrill() : base(
-			530,
+		public ExcadrillInstance() : base(
 			SpeciesExcadrill.Instance, // PokemonInstance Species
 			Ground.Instance, Steel.Instance			
 		) {}

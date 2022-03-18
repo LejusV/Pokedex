@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLitten Constructor
 		public SpeciesLitten() : base(
+			725,
 			"Litten",
 			0.4,
 			4.3,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LittenInstance(string nickname, int level)
 		: base(
-				725,
 				SpeciesLitten.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LittenInstance(int level)
 		: base(
-				725,
 				SpeciesLitten.Instance, // PokemonInstance Species
 				"Litten", level,
 				Fire.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Litten Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Litten() : base(
-			725,
+		public LittenInstance() : base(
 			SpeciesLitten.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

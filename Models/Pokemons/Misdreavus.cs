@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMisdreavus Constructor
 		public SpeciesMisdreavus() : base(
+			200,
 			"Misdreavus",
 			0.7,
 			1.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MisdreavusInstance(string nickname, int level)
 		: base(
-				200,
 				SpeciesMisdreavus.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MisdreavusInstance(int level)
 		: base(
-				200,
 				SpeciesMisdreavus.Instance, // PokemonInstance Species
 				"Misdreavus", level,
 				Ghost.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Misdreavus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Misdreavus() : base(
-			200,
+		public MisdreavusInstance() : base(
 			SpeciesMisdreavus.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

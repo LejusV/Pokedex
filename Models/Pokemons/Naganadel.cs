@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNaganadel Constructor
 		public SpeciesNaganadel() : base(
+			804,
 			"Naganadel",
 			3.6,
 			150.0,
@@ -108,7 +109,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NaganadelInstance(string nickname, int level)
 		: base(
-				804,
 				SpeciesNaganadel.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dragon.Instance			
@@ -123,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NaganadelInstance(int level)
 		: base(
-				804,
 				SpeciesNaganadel.Instance, // PokemonInstance Species
 				"Naganadel", level,
 				Poison.Instance, Dragon.Instance			
@@ -137,8 +136,7 @@ namespace Pokedex.Models.Pokemons
 		/// Naganadel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Naganadel() : base(
-			804,
+		public NaganadelInstance() : base(
 			SpeciesNaganadel.Instance, // PokemonInstance Species
 			Poison.Instance, Dragon.Instance			
 		) {}

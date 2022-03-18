@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMalamar Constructor
 		public SpeciesMalamar() : base(
+			687,
 			"Malamar",
 			1.5,
 			47.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MalamarInstance(string nickname, int level)
 		: base(
-				687,
 				SpeciesMalamar.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Psychic.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MalamarInstance(int level)
 		: base(
-				687,
 				SpeciesMalamar.Instance, // PokemonInstance Species
 				"Malamar", level,
 				Dark.Instance, Psychic.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Malamar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Malamar() : base(
-			687,
+		public MalamarInstance() : base(
 			SpeciesMalamar.Instance, // PokemonInstance Species
 			Dark.Instance, Psychic.Instance			
 		) {}

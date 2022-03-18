@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKirlia Constructor
 		public SpeciesKirlia() : base(
+			281,
 			"Kirlia",
 			0.8,
 			20.2,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KirliaInstance(string nickname, int level)
 		: base(
-				281,
 				SpeciesKirlia.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KirliaInstance(int level)
 		: base(
-				281,
 				SpeciesKirlia.Instance, // PokemonInstance Species
 				"Kirlia", level,
 				Psychic.Instance, Fairy.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kirlia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kirlia() : base(
-			281,
+		public KirliaInstance() : base(
 			SpeciesKirlia.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

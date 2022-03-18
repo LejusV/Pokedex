@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolem Constructor
 		public SpeciesGolem() : base(
+			76,
 			"Golem",
 			1.4,
 			300.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolemInstance(string nickname, int level)
 		: base(
-				76,
 				SpeciesGolem.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolemInstance(int level)
 		: base(
-				76,
 				SpeciesGolem.Instance, // PokemonInstance Species
 				"Golem", level,
 				Rock.Instance, Ground.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golem() : base(
-			76,
+		public GolemInstance() : base(
 			SpeciesGolem.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

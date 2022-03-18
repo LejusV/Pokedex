@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKabuto Constructor
 		public SpeciesKabuto() : base(
+			140,
 			"Kabuto",
 			0.5,
 			11.5,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KabutoInstance(string nickname, int level)
 		: base(
-				140,
 				SpeciesKabuto.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KabutoInstance(int level)
 		: base(
-				140,
 				SpeciesKabuto.Instance, // PokemonInstance Species
 				"Kabuto", level,
 				Rock.Instance, Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kabuto Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kabuto() : base(
-			140,
+		public KabutoInstance() : base(
 			SpeciesKabuto.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAlakazam Constructor
 		public SpeciesAlakazam() : base(
+			65,
 			"Alakazam",
 			1.5,
 			48.0,
@@ -157,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlakazamInstance(string nickname, int level)
 		: base(
-				65,
 				SpeciesAlakazam.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -172,7 +172,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlakazamInstance(int level)
 		: base(
-				65,
 				SpeciesAlakazam.Instance, // PokemonInstance Species
 				"Alakazam", level,
 				Psychic.Instance			
@@ -186,8 +185,7 @@ namespace Pokedex.Models.Pokemons
 		/// Alakazam Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Alakazam() : base(
-			65,
+		public AlakazamInstance() : base(
 			SpeciesAlakazam.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

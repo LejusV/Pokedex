@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZeraora Constructor
 		public SpeciesZeraora() : base(
+			807,
 			"Zeraora",
 			1.5,
 			44.5,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZeraoraInstance(string nickname, int level)
 		: base(
-				807,
 				SpeciesZeraora.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZeraoraInstance(int level)
 		: base(
-				807,
 				SpeciesZeraora.Instance, // PokemonInstance Species
 				"Zeraora", level,
 				Electric.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zeraora Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zeraora() : base(
-			807,
+		public ZeraoraInstance() : base(
 			SpeciesZeraora.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesXatu Constructor
 		public SpeciesXatu() : base(
+			178,
 			"Xatu",
 			1.5,
 			15.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XatuInstance(string nickname, int level)
 		: base(
-				178,
 				SpeciesXatu.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public XatuInstance(int level)
 		: base(
-				178,
 				SpeciesXatu.Instance, // PokemonInstance Species
 				"Xatu", level,
 				Psychic.Instance, Flying.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Xatu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Xatu() : base(
-			178,
+		public XatuInstance() : base(
 			SpeciesXatu.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}

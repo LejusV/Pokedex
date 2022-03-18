@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPelipper Constructor
 		public SpeciesPelipper() : base(
+			279,
 			"Pelipper",
 			1.2,
 			28.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PelipperInstance(string nickname, int level)
 		: base(
-				279,
 				SpeciesPelipper.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PelipperInstance(int level)
 		: base(
-				279,
 				SpeciesPelipper.Instance, // PokemonInstance Species
 				"Pelipper", level,
 				Water.Instance, Flying.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pelipper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pelipper() : base(
-			279,
+		public PelipperInstance() : base(
 			SpeciesPelipper.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

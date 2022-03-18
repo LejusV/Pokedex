@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPoliwhirl Constructor
 		public SpeciesPoliwhirl() : base(
+			61,
 			"Poliwhirl",
 			1.0,
 			20.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwhirlInstance(string nickname, int level)
 		: base(
-				61,
 				SpeciesPoliwhirl.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PoliwhirlInstance(int level)
 		: base(
-				61,
 				SpeciesPoliwhirl.Instance, // PokemonInstance Species
 				"Poliwhirl", level,
 				Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Poliwhirl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Poliwhirl() : base(
-			61,
+		public PoliwhirlInstance() : base(
 			SpeciesPoliwhirl.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

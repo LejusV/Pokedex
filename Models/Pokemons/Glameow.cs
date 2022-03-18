@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGlameow Constructor
 		public SpeciesGlameow() : base(
+			431,
 			"Glameow",
 			0.5,
 			3.9,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlameowInstance(string nickname, int level)
 		: base(
-				431,
 				SpeciesGlameow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlameowInstance(int level)
 		: base(
-				431,
 				SpeciesGlameow.Instance, // PokemonInstance Species
 				"Glameow", level,
 				Normal.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Glameow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Glameow() : base(
-			431,
+		public GlameowInstance() : base(
 			SpeciesGlameow.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

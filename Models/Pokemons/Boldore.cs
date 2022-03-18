@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBoldore Constructor
 		public SpeciesBoldore() : base(
+			525,
 			"Boldore",
 			0.9,
 			102.0,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BoldoreInstance(string nickname, int level)
 		: base(
-				525,
 				SpeciesBoldore.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BoldoreInstance(int level)
 		: base(
-				525,
 				SpeciesBoldore.Instance, // PokemonInstance Species
 				"Boldore", level,
 				Rock.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Boldore Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Boldore() : base(
-			525,
+		public BoldoreInstance() : base(
 			SpeciesBoldore.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

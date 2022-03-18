@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClaydol Constructor
 		public SpeciesClaydol() : base(
+			344,
 			"Claydol",
 			1.5,
 			108.0,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClaydolInstance(string nickname, int level)
 		: base(
-				344,
 				SpeciesClaydol.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Psychic.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClaydolInstance(int level)
 		: base(
-				344,
 				SpeciesClaydol.Instance, // PokemonInstance Species
 				"Claydol", level,
 				Ground.Instance, Psychic.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Claydol Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Claydol() : base(
-			344,
+		public ClaydolInstance() : base(
 			SpeciesClaydol.Instance, // PokemonInstance Species
 			Ground.Instance, Psychic.Instance			
 		) {}

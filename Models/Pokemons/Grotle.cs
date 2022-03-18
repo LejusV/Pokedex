@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrotle Constructor
 		public SpeciesGrotle() : base(
+			388,
 			"Grotle",
 			1.1,
 			97.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrotleInstance(string nickname, int level)
 		: base(
-				388,
 				SpeciesGrotle.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrotleInstance(int level)
 		: base(
-				388,
 				SpeciesGrotle.Instance, // PokemonInstance Species
 				"Grotle", level,
 				Grass.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grotle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grotle() : base(
-			388,
+		public GrotleInstance() : base(
 			SpeciesGrotle.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

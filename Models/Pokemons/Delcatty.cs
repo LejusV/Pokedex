@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDelcatty Constructor
 		public SpeciesDelcatty() : base(
+			301,
 			"Delcatty",
 			1.1,
 			32.6,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelcattyInstance(string nickname, int level)
 		: base(
-				301,
 				SpeciesDelcatty.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelcattyInstance(int level)
 		: base(
-				301,
 				SpeciesDelcatty.Instance, // PokemonInstance Species
 				"Delcatty", level,
 				Normal.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Delcatty Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Delcatty() : base(
-			301,
+		public DelcattyInstance() : base(
 			SpeciesDelcatty.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

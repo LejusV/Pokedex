@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTyrunt Constructor
 		public SpeciesTyrunt() : base(
+			696,
 			"Tyrunt",
 			0.8,
 			26.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyruntInstance(string nickname, int level)
 		: base(
-				696,
 				SpeciesTyrunt.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Dragon.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyruntInstance(int level)
 		: base(
-				696,
 				SpeciesTyrunt.Instance, // PokemonInstance Species
 				"Tyrunt", level,
 				Rock.Instance, Dragon.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tyrunt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tyrunt() : base(
-			696,
+		public TyruntInstance() : base(
 			SpeciesTyrunt.Instance, // PokemonInstance Species
 			Rock.Instance, Dragon.Instance			
 		) {}

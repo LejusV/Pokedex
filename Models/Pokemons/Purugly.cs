@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPurugly Constructor
 		public SpeciesPurugly() : base(
+			432,
 			"Purugly",
 			1.0,
 			43.8,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PuruglyInstance(string nickname, int level)
 		: base(
-				432,
 				SpeciesPurugly.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PuruglyInstance(int level)
 		: base(
-				432,
 				SpeciesPurugly.Instance, // PokemonInstance Species
 				"Purugly", level,
 				Normal.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Purugly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Purugly() : base(
-			432,
+		public PuruglyInstance() : base(
 			SpeciesPurugly.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

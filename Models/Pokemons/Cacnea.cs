@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCacnea Constructor
 		public SpeciesCacnea() : base(
+			331,
 			"Cacnea",
 			0.4,
 			51.3,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CacneaInstance(string nickname, int level)
 		: base(
-				331,
 				SpeciesCacnea.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CacneaInstance(int level)
 		: base(
-				331,
 				SpeciesCacnea.Instance, // PokemonInstance Species
 				"Cacnea", level,
 				Grass.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cacnea Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cacnea() : base(
-			331,
+		public CacneaInstance() : base(
 			SpeciesCacnea.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShaymin-Land Constructor
 		public SpeciesShayminLand() : base(
+			492,
 			"Shaymin-Land",
 			0.2,
 			2.1,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShayminLandInstance(string nickname, int level)
 		: base(
-				492,
 				SpeciesShayminLand.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShayminLandInstance(int level)
 		: base(
-				492,
 				SpeciesShayminLand.Instance, // PokemonInstance Species
 				"Shaymin-Land", level,
 				Grass.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shaymin-Land Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public ShayminLand() : base(
-			492,
+		public ShayminLandInstance() : base(
 			SpeciesShayminLand.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

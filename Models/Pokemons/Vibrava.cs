@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVibrava Constructor
 		public SpeciesVibrava() : base(
+			329,
 			"Vibrava",
 			1.1,
 			15.3,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VibravaInstance(string nickname, int level)
 		: base(
-				329,
 				SpeciesVibrava.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Dragon.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VibravaInstance(int level)
 		: base(
-				329,
 				SpeciesVibrava.Instance, // PokemonInstance Species
 				"Vibrava", level,
 				Ground.Instance, Dragon.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vibrava Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vibrava() : base(
-			329,
+		public VibravaInstance() : base(
 			SpeciesVibrava.Instance, // PokemonInstance Species
 			Ground.Instance, Dragon.Instance			
 		) {}

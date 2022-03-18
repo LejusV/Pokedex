@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrumpig Constructor
 		public SpeciesGrumpig() : base(
+			326,
 			"Grumpig",
 			0.9,
 			71.5,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrumpigInstance(string nickname, int level)
 		: base(
-				326,
 				SpeciesGrumpig.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrumpigInstance(int level)
 		: base(
-				326,
 				SpeciesGrumpig.Instance, // PokemonInstance Species
 				"Grumpig", level,
 				Psychic.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grumpig Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grumpig() : base(
-			326,
+		public GrumpigInstance() : base(
 			SpeciesGrumpig.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

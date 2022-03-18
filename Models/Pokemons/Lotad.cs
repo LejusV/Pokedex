@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLotad Constructor
 		public SpeciesLotad() : base(
+			270,
 			"Lotad",
 			0.5,
 			2.6,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LotadInstance(string nickname, int level)
 		: base(
-				270,
 				SpeciesLotad.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Grass.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LotadInstance(int level)
 		: base(
-				270,
 				SpeciesLotad.Instance, // PokemonInstance Species
 				"Lotad", level,
 				Water.Instance, Grass.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lotad Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lotad() : base(
-			270,
+		public LotadInstance() : base(
 			SpeciesLotad.Instance, // PokemonInstance Species
 			Water.Instance, Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBaltoy Constructor
 		public SpeciesBaltoy() : base(
+			343,
 			"Baltoy",
 			0.5,
 			21.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BaltoyInstance(string nickname, int level)
 		: base(
-				343,
 				SpeciesBaltoy.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Psychic.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BaltoyInstance(int level)
 		: base(
-				343,
 				SpeciesBaltoy.Instance, // PokemonInstance Species
 				"Baltoy", level,
 				Ground.Instance, Psychic.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Baltoy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Baltoy() : base(
-			343,
+		public BaltoyInstance() : base(
 			SpeciesBaltoy.Instance, // PokemonInstance Species
 			Ground.Instance, Psychic.Instance			
 		) {}

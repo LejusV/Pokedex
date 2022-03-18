@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAipom Constructor
 		public SpeciesAipom() : base(
+			190,
 			"Aipom",
 			0.8,
 			11.5,
@@ -163,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AipomInstance(string nickname, int level)
 		: base(
-				190,
 				SpeciesAipom.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -178,7 +178,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AipomInstance(int level)
 		: base(
-				190,
 				SpeciesAipom.Instance, // PokemonInstance Species
 				"Aipom", level,
 				Normal.Instance			
@@ -192,8 +191,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aipom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aipom() : base(
-			190,
+		public AipomInstance() : base(
 			SpeciesAipom.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagearna Constructor
 		public SpeciesMagearna() : base(
+			801,
 			"Magearna",
 			1.0,
 			80.5,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagearnaInstance(string nickname, int level)
 		: base(
-				801,
 				SpeciesMagearna.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fairy.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagearnaInstance(int level)
 		: base(
-				801,
 				SpeciesMagearna.Instance, // PokemonInstance Species
 				"Magearna", level,
 				Steel.Instance, Fairy.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magearna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magearna() : base(
-			801,
+		public MagearnaInstance() : base(
 			SpeciesMagearna.Instance, // PokemonInstance Species
 			Steel.Instance, Fairy.Instance			
 		) {}

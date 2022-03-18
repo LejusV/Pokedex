@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPancham Constructor
 		public SpeciesPancham() : base(
+			674,
 			"Pancham",
 			0.6,
 			8.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PanchamInstance(string nickname, int level)
 		: base(
-				674,
 				SpeciesPancham.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PanchamInstance(int level)
 		: base(
-				674,
 				SpeciesPancham.Instance, // PokemonInstance Species
 				"Pancham", level,
 				Fighting.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pancham Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pancham() : base(
-			674,
+		public PanchamInstance() : base(
 			SpeciesPancham.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpectrier Constructor
 		public SpeciesSpectrier() : base(
+			897,
 			"Spectrier",
 			2.0,
 			44.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpectrierInstance(string nickname, int level)
 		: base(
-				897,
 				SpeciesSpectrier.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpectrierInstance(int level)
 		: base(
-				897,
 				SpeciesSpectrier.Instance, // PokemonInstance Species
 				"Spectrier", level,
 				Ghost.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spectrier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spectrier() : base(
-			897,
+		public SpectrierInstance() : base(
 			SpeciesSpectrier.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

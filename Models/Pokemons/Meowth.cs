@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMeowth Constructor
 		public SpeciesMeowth() : base(
+			52,
 			"Meowth",
 			0.4,
 			4.2,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeowthInstance(string nickname, int level)
 		: base(
-				52,
 				SpeciesMeowth.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MeowthInstance(int level)
 		: base(
-				52,
 				SpeciesMeowth.Instance, // PokemonInstance Species
 				"Meowth", level,
 				Normal.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Meowth Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Meowth() : base(
-			52,
+		public MeowthInstance() : base(
 			SpeciesMeowth.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

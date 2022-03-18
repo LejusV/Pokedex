@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEternatus Constructor
 		public SpeciesEternatus() : base(
+			890,
 			"Eternatus",
 			20.0,
 			950.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EternatusInstance(string nickname, int level)
 		: base(
-				890,
 				SpeciesEternatus.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EternatusInstance(int level)
 		: base(
-				890,
 				SpeciesEternatus.Instance, // PokemonInstance Species
 				"Eternatus", level,
 				Poison.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eternatus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Eternatus() : base(
-			890,
+		public EternatusInstance() : base(
 			SpeciesEternatus.Instance, // PokemonInstance Species
 			Poison.Instance, Dragon.Instance			
 		) {}

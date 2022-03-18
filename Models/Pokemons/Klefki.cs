@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKlefki Constructor
 		public SpeciesKlefki() : base(
+			707,
 			"Klefki",
 			0.2,
 			3.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlefkiInstance(string nickname, int level)
 		: base(
-				707,
 				SpeciesKlefki.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fairy.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlefkiInstance(int level)
 		: base(
-				707,
 				SpeciesKlefki.Instance, // PokemonInstance Species
 				"Klefki", level,
 				Steel.Instance, Fairy.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Klefki Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Klefki() : base(
-			707,
+		public KlefkiInstance() : base(
 			SpeciesKlefki.Instance, // PokemonInstance Species
 			Steel.Instance, Fairy.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCufant Constructor
 		public SpeciesCufant() : base(
+			878,
 			"Cufant",
 			1.2,
 			100.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CufantInstance(string nickname, int level)
 		: base(
-				878,
 				SpeciesCufant.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CufantInstance(int level)
 		: base(
-				878,
 				SpeciesCufant.Instance, // PokemonInstance Species
 				"Cufant", level,
 				Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cufant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cufant() : base(
-			878,
+		public CufantInstance() : base(
 			SpeciesCufant.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

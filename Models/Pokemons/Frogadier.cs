@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFrogadier Constructor
 		public SpeciesFrogadier() : base(
+			657,
 			"Frogadier",
 			0.6,
 			10.9,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrogadierInstance(string nickname, int level)
 		: base(
-				657,
 				SpeciesFrogadier.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FrogadierInstance(int level)
 		: base(
-				657,
 				SpeciesFrogadier.Instance, // PokemonInstance Species
 				"Frogadier", level,
 				Water.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Frogadier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Frogadier() : base(
-			657,
+		public FrogadierInstance() : base(
 			SpeciesFrogadier.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

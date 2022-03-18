@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSneasel Constructor
 		public SpeciesSneasel() : base(
+			215,
 			"Sneasel",
 			0.9,
 			28.0,
@@ -158,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SneaselInstance(string nickname, int level)
 		: base(
-				215,
 				SpeciesSneasel.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Ice.Instance			
@@ -173,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SneaselInstance(int level)
 		: base(
-				215,
 				SpeciesSneasel.Instance, // PokemonInstance Species
 				"Sneasel", level,
 				Dark.Instance, Ice.Instance			
@@ -187,8 +186,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sneasel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sneasel() : base(
-			215,
+		public SneaselInstance() : base(
 			SpeciesSneasel.Instance, // PokemonInstance Species
 			Dark.Instance, Ice.Instance			
 		) {}

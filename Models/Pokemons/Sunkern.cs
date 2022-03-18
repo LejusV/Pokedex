@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSunkern Constructor
 		public SpeciesSunkern() : base(
+			191,
 			"Sunkern",
 			0.3,
 			1.8,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SunkernInstance(string nickname, int level)
 		: base(
-				191,
 				SpeciesSunkern.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SunkernInstance(int level)
 		: base(
-				191,
 				SpeciesSunkern.Instance, // PokemonInstance Species
 				"Sunkern", level,
 				Grass.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sunkern Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sunkern() : base(
-			191,
+		public SunkernInstance() : base(
 			SpeciesSunkern.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

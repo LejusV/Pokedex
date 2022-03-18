@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAccelgor Constructor
 		public SpeciesAccelgor() : base(
+			617,
 			"Accelgor",
 			0.8,
 			25.3,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AccelgorInstance(string nickname, int level)
 		: base(
-				617,
 				SpeciesAccelgor.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AccelgorInstance(int level)
 		: base(
-				617,
 				SpeciesAccelgor.Instance, // PokemonInstance Species
 				"Accelgor", level,
 				Bug.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Accelgor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Accelgor() : base(
-			617,
+		public AccelgorInstance() : base(
 			SpeciesAccelgor.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

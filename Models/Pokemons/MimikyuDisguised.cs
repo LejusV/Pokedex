@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMimikyu-Disguised Constructor
 		public SpeciesMimikyuDisguised() : base(
+			778,
 			"Mimikyu-Disguised",
 			0.2,
 			0.7,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MimikyuDisguisedInstance(string nickname, int level)
 		: base(
-				778,
 				SpeciesMimikyuDisguised.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fairy.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MimikyuDisguisedInstance(int level)
 		: base(
-				778,
 				SpeciesMimikyuDisguised.Instance, // PokemonInstance Species
 				"Mimikyu-Disguised", level,
 				Ghost.Instance, Fairy.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mimikyu-Disguised Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public MimikyuDisguised() : base(
-			778,
+		public MimikyuDisguisedInstance() : base(
 			SpeciesMimikyuDisguised.Instance, // PokemonInstance Species
 			Ghost.Instance, Fairy.Instance			
 		) {}

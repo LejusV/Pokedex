@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWeedle Constructor
 		public SpeciesWeedle() : base(
+			13,
 			"Weedle",
 			0.3,
 			3.2,
@@ -64,7 +65,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeedleInstance(string nickname, int level)
 		: base(
-				13,
 				SpeciesWeedle.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -79,7 +79,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeedleInstance(int level)
 		: base(
-				13,
 				SpeciesWeedle.Instance, // PokemonInstance Species
 				"Weedle", level,
 				Bug.Instance, Poison.Instance			
@@ -93,8 +92,7 @@ namespace Pokedex.Models.Pokemons
 		/// Weedle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Weedle() : base(
-			13,
+		public WeedleInstance() : base(
 			SpeciesWeedle.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

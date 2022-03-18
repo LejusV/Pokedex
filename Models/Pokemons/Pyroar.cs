@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPyroar Constructor
 		public SpeciesPyroar() : base(
+			668,
 			"Pyroar",
 			1.5,
 			81.5,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PyroarInstance(string nickname, int level)
 		: base(
-				668,
 				SpeciesPyroar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Normal.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PyroarInstance(int level)
 		: base(
-				668,
 				SpeciesPyroar.Instance, // PokemonInstance Species
 				"Pyroar", level,
 				Fire.Instance, Normal.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pyroar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pyroar() : base(
-			668,
+		public PyroarInstance() : base(
 			SpeciesPyroar.Instance, // PokemonInstance Species
 			Fire.Instance, Normal.Instance			
 		) {}

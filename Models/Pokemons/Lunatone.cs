@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLunatone Constructor
 		public SpeciesLunatone() : base(
+			337,
 			"Lunatone",
 			1.0,
 			168.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LunatoneInstance(string nickname, int level)
 		: base(
-				337,
 				SpeciesLunatone.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Psychic.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LunatoneInstance(int level)
 		: base(
-				337,
 				SpeciesLunatone.Instance, // PokemonInstance Species
 				"Lunatone", level,
 				Rock.Instance, Psychic.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lunatone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lunatone() : base(
-			337,
+		public LunatoneInstance() : base(
 			SpeciesLunatone.Instance, // PokemonInstance Species
 			Rock.Instance, Psychic.Instance			
 		) {}

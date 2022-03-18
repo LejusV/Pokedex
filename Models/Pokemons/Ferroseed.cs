@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFerroseed Constructor
 		public SpeciesFerroseed() : base(
+			597,
 			"Ferroseed",
 			0.6,
 			18.8,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FerroseedInstance(string nickname, int level)
 		: base(
-				597,
 				SpeciesFerroseed.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Steel.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FerroseedInstance(int level)
 		: base(
-				597,
 				SpeciesFerroseed.Instance, // PokemonInstance Species
 				"Ferroseed", level,
 				Grass.Instance, Steel.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ferroseed Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ferroseed() : base(
-			597,
+		public FerroseedInstance() : base(
 			SpeciesFerroseed.Instance, // PokemonInstance Species
 			Grass.Instance, Steel.Instance			
 		) {}

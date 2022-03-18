@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGastrodon Constructor
 		public SpeciesGastrodon() : base(
+			423,
 			"Gastrodon",
 			0.9,
 			29.9,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GastrodonInstance(string nickname, int level)
 		: base(
-				423,
 				SpeciesGastrodon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GastrodonInstance(int level)
 		: base(
-				423,
 				SpeciesGastrodon.Instance, // PokemonInstance Species
 				"Gastrodon", level,
 				Water.Instance, Ground.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gastrodon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gastrodon() : base(
-			423,
+		public GastrodonInstance() : base(
 			SpeciesGastrodon.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

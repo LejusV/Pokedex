@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSilcoon Constructor
 		public SpeciesSilcoon() : base(
+			266,
 			"Silcoon",
 			0.6,
 			10.0,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilcoonInstance(string nickname, int level)
 		: base(
-				266,
 				SpeciesSilcoon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilcoonInstance(int level)
 		: base(
-				266,
 				SpeciesSilcoon.Instance, // PokemonInstance Species
 				"Silcoon", level,
 				Bug.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Silcoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Silcoon() : base(
-			266,
+		public SilcoonInstance() : base(
 			SpeciesSilcoon.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTrumbeak Constructor
 		public SpeciesTrumbeak() : base(
+			732,
 			"Trumbeak",
 			0.6,
 			14.8,
@@ -98,7 +99,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrumbeakInstance(string nickname, int level)
 		: base(
-				732,
 				SpeciesTrumbeak.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -113,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrumbeakInstance(int level)
 		: base(
-				732,
 				SpeciesTrumbeak.Instance, // PokemonInstance Species
 				"Trumbeak", level,
 				Normal.Instance, Flying.Instance			
@@ -127,8 +126,7 @@ namespace Pokedex.Models.Pokemons
 		/// Trumbeak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Trumbeak() : base(
-			732,
+		public TrumbeakInstance() : base(
 			SpeciesTrumbeak.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

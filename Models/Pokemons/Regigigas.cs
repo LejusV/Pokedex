@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegigigas Constructor
 		public SpeciesRegigigas() : base(
+			486,
 			"Regigigas",
 			3.7,
 			420.0,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegigigasInstance(string nickname, int level)
 		: base(
-				486,
 				SpeciesRegigigas.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegigigasInstance(int level)
 		: base(
-				486,
 				SpeciesRegigigas.Instance, // PokemonInstance Species
 				"Regigigas", level,
 				Normal.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Regigigas Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Regigigas() : base(
-			486,
+		public RegigigasInstance() : base(
 			SpeciesRegigigas.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

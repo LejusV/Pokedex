@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCrabominable Constructor
 		public SpeciesCrabominable() : base(
+			740,
 			"Crabominable",
 			1.7,
 			180.0,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrabominableInstance(string nickname, int level)
 		: base(
-				740,
 				SpeciesCrabominable.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Ice.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrabominableInstance(int level)
 		: base(
-				740,
 				SpeciesCrabominable.Instance, // PokemonInstance Species
 				"Crabominable", level,
 				Fighting.Instance, Ice.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Crabominable Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Crabominable() : base(
-			740,
+		public CrabominableInstance() : base(
 			SpeciesCrabominable.Instance, // PokemonInstance Species
 			Fighting.Instance, Ice.Instance			
 		) {}

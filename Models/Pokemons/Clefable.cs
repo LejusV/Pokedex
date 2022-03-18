@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClefable Constructor
 		public SpeciesClefable() : base(
+			36,
 			"Clefable",
 			1.3,
 			40.0,
@@ -178,7 +179,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClefableInstance(string nickname, int level)
 		: base(
-				36,
 				SpeciesClefable.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -193,7 +193,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClefableInstance(int level)
 		: base(
-				36,
 				SpeciesClefable.Instance, // PokemonInstance Species
 				"Clefable", level,
 				Fairy.Instance			
@@ -207,8 +206,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clefable Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clefable() : base(
-			36,
+		public ClefableInstance() : base(
 			SpeciesClefable.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

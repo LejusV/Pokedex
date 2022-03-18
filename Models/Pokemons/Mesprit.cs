@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMesprit Constructor
 		public SpeciesMesprit() : base(
+			481,
 			"Mesprit",
 			0.3,
 			0.3,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MespritInstance(string nickname, int level)
 		: base(
-				481,
 				SpeciesMesprit.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MespritInstance(int level)
 		: base(
-				481,
 				SpeciesMesprit.Instance, // PokemonInstance Species
 				"Mesprit", level,
 				Psychic.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mesprit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mesprit() : base(
-			481,
+		public MespritInstance() : base(
 			SpeciesMesprit.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

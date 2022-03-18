@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwalot Constructor
 		public SpeciesSwalot() : base(
+			317,
 			"Swalot",
 			1.7,
 			80.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwalotInstance(string nickname, int level)
 		: base(
-				317,
 				SpeciesSwalot.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwalotInstance(int level)
 		: base(
-				317,
 				SpeciesSwalot.Instance, // PokemonInstance Species
 				"Swalot", level,
 				Poison.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swalot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swalot() : base(
-			317,
+		public SwalotInstance() : base(
 			SpeciesSwalot.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

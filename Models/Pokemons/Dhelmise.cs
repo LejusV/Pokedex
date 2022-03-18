@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDhelmise Constructor
 		public SpeciesDhelmise() : base(
+			781,
 			"Dhelmise",
 			3.9,
 			210.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DhelmiseInstance(string nickname, int level)
 		: base(
-				781,
 				SpeciesDhelmise.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DhelmiseInstance(int level)
 		: base(
-				781,
 				SpeciesDhelmise.Instance, // PokemonInstance Species
 				"Dhelmise", level,
 				Ghost.Instance, Grass.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dhelmise Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dhelmise() : base(
-			781,
+		public DhelmiseInstance() : base(
 			SpeciesDhelmise.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}

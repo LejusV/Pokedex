@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRaboot Constructor
 		public SpeciesRaboot() : base(
+			814,
 			"Raboot",
 			0.6,
 			9.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RabootInstance(string nickname, int level)
 		: base(
-				814,
 				SpeciesRaboot.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RabootInstance(int level)
 		: base(
-				814,
 				SpeciesRaboot.Instance, // PokemonInstance Species
 				"Raboot", level,
 				Fire.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Raboot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Raboot() : base(
-			814,
+		public RabootInstance() : base(
 			SpeciesRaboot.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

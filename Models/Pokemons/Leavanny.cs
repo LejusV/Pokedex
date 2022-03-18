@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLeavanny Constructor
 		public SpeciesLeavanny() : base(
+			542,
 			"Leavanny",
 			1.2,
 			20.5,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LeavannyInstance(string nickname, int level)
 		: base(
-				542,
 				SpeciesLeavanny.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Grass.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LeavannyInstance(int level)
 		: base(
-				542,
 				SpeciesLeavanny.Instance, // PokemonInstance Species
 				"Leavanny", level,
 				Bug.Instance, Grass.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Leavanny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Leavanny() : base(
-			542,
+		public LeavannyInstance() : base(
 			SpeciesLeavanny.Instance, // PokemonInstance Species
 			Bug.Instance, Grass.Instance			
 		) {}

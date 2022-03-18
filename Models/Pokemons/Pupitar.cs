@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPupitar Constructor
 		public SpeciesPupitar() : base(
+			247,
 			"Pupitar",
 			1.2,
 			152.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PupitarInstance(string nickname, int level)
 		: base(
-				247,
 				SpeciesPupitar.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ground.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PupitarInstance(int level)
 		: base(
-				247,
 				SpeciesPupitar.Instance, // PokemonInstance Species
 				"Pupitar", level,
 				Rock.Instance, Ground.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pupitar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pupitar() : base(
-			247,
+		public PupitarInstance() : base(
 			SpeciesPupitar.Instance, // PokemonInstance Species
 			Rock.Instance, Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesToucannon Constructor
 		public SpeciesToucannon() : base(
+			733,
 			"Toucannon",
 			1.1,
 			26.0,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToucannonInstance(string nickname, int level)
 		: base(
-				733,
 				SpeciesToucannon.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToucannonInstance(int level)
 		: base(
-				733,
 				SpeciesToucannon.Instance, // PokemonInstance Species
 				"Toucannon", level,
 				Normal.Instance, Flying.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Toucannon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Toucannon() : base(
-			733,
+		public ToucannonInstance() : base(
 			SpeciesToucannon.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

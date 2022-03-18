@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFlorges Constructor
 		public SpeciesFlorges() : base(
+			671,
 			"Florges",
 			1.1,
 			10.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlorgesInstance(string nickname, int level)
 		: base(
-				671,
 				SpeciesFlorges.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FlorgesInstance(int level)
 		: base(
-				671,
 				SpeciesFlorges.Instance, // PokemonInstance Species
 				"Florges", level,
 				Fairy.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Florges Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Florges() : base(
-			671,
+		public FlorgesInstance() : base(
 			SpeciesFlorges.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

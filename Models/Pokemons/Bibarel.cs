@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBibarel Constructor
 		public SpeciesBibarel() : base(
+			400,
 			"Bibarel",
 			1.0,
 			31.5,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BibarelInstance(string nickname, int level)
 		: base(
-				400,
 				SpeciesBibarel.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Water.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BibarelInstance(int level)
 		: base(
-				400,
 				SpeciesBibarel.Instance, // PokemonInstance Species
 				"Bibarel", level,
 				Normal.Instance, Water.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bibarel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bibarel() : base(
-			400,
+		public BibarelInstance() : base(
 			SpeciesBibarel.Instance, // PokemonInstance Species
 			Normal.Instance, Water.Instance			
 		) {}

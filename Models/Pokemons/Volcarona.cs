@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVolcarona Constructor
 		public SpeciesVolcarona() : base(
+			637,
 			"Volcarona",
 			1.6,
 			46.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolcaronaInstance(string nickname, int level)
 		: base(
-				637,
 				SpeciesVolcarona.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fire.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VolcaronaInstance(int level)
 		: base(
-				637,
 				SpeciesVolcarona.Instance, // PokemonInstance Species
 				"Volcarona", level,
 				Bug.Instance, Fire.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Volcarona Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Volcarona() : base(
-			637,
+		public VolcaronaInstance() : base(
 			SpeciesVolcarona.Instance, // PokemonInstance Species
 			Bug.Instance, Fire.Instance			
 		) {}

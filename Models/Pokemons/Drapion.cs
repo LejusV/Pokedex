@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrapion Constructor
 		public SpeciesDrapion() : base(
+			452,
 			"Drapion",
 			1.3,
 			61.5,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrapionInstance(string nickname, int level)
 		: base(
-				452,
 				SpeciesDrapion.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dark.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrapionInstance(int level)
 		: base(
-				452,
 				SpeciesDrapion.Instance, // PokemonInstance Species
 				"Drapion", level,
 				Poison.Instance, Dark.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drapion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drapion() : base(
-			452,
+		public DrapionInstance() : base(
 			SpeciesDrapion.Instance, // PokemonInstance Species
 			Poison.Instance, Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFennekin Constructor
 		public SpeciesFennekin() : base(
+			653,
 			"Fennekin",
 			0.4,
 			9.4,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FennekinInstance(string nickname, int level)
 		: base(
-				653,
 				SpeciesFennekin.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FennekinInstance(int level)
 		: base(
-				653,
 				SpeciesFennekin.Instance, // PokemonInstance Species
 				"Fennekin", level,
 				Fire.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fennekin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fennekin() : base(
-			653,
+		public FennekinInstance() : base(
 			SpeciesFennekin.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

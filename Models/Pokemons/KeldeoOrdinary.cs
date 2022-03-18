@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKeldeo-Ordinary Constructor
 		public SpeciesKeldeoOrdinary() : base(
+			647,
 			"Keldeo-Ordinary",
 			1.4,
 			48.5,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KeldeoOrdinaryInstance(string nickname, int level)
 		: base(
-				647,
 				SpeciesKeldeoOrdinary.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fighting.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KeldeoOrdinaryInstance(int level)
 		: base(
-				647,
 				SpeciesKeldeoOrdinary.Instance, // PokemonInstance Species
 				"Keldeo-Ordinary", level,
 				Water.Instance, Fighting.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Keldeo-Ordinary Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public KeldeoOrdinary() : base(
-			647,
+		public KeldeoOrdinaryInstance() : base(
 			SpeciesKeldeoOrdinary.Instance, // PokemonInstance Species
 			Water.Instance, Fighting.Instance			
 		) {}

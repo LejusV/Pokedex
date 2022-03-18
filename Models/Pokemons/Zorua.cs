@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZorua Constructor
 		public SpeciesZorua() : base(
+			570,
 			"Zorua",
 			0.7,
 			12.5,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZoruaInstance(string nickname, int level)
 		: base(
-				570,
 				SpeciesZorua.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZoruaInstance(int level)
 		: base(
-				570,
 				SpeciesZorua.Instance, // PokemonInstance Species
 				"Zorua", level,
 				Dark.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zorua Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zorua() : base(
-			570,
+		public ZoruaInstance() : base(
 			SpeciesZorua.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesToxapex Constructor
 		public SpeciesToxapex() : base(
+			748,
 			"Toxapex",
 			0.7,
 			14.5,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxapexInstance(string nickname, int level)
 		: base(
-				748,
 				SpeciesToxapex.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxapexInstance(int level)
 		: base(
-				748,
 				SpeciesToxapex.Instance, // PokemonInstance Species
 				"Toxapex", level,
 				Poison.Instance, Water.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Toxapex Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Toxapex() : base(
-			748,
+		public ToxapexInstance() : base(
 			SpeciesToxapex.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}

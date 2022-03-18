@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStoutland Constructor
 		public SpeciesStoutland() : base(
+			508,
 			"Stoutland",
 			1.2,
 			61.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StoutlandInstance(string nickname, int level)
 		: base(
-				508,
 				SpeciesStoutland.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StoutlandInstance(int level)
 		: base(
-				508,
 				SpeciesStoutland.Instance, // PokemonInstance Species
 				"Stoutland", level,
 				Normal.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stoutland Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stoutland() : base(
-			508,
+		public StoutlandInstance() : base(
 			SpeciesStoutland.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

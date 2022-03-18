@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDugtrio Constructor
 		public SpeciesDugtrio() : base(
+			51,
 			"Dugtrio",
 			0.7,
 			33.3,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DugtrioInstance(string nickname, int level)
 		: base(
-				51,
 				SpeciesDugtrio.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DugtrioInstance(int level)
 		: base(
-				51,
 				SpeciesDugtrio.Instance, // PokemonInstance Species
 				"Dugtrio", level,
 				Ground.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dugtrio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dugtrio() : base(
-			51,
+		public DugtrioInstance() : base(
 			SpeciesDugtrio.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

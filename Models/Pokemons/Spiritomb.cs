@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpiritomb Constructor
 		public SpeciesSpiritomb() : base(
+			442,
 			"Spiritomb",
 			1.0,
 			108.0,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpiritombInstance(string nickname, int level)
 		: base(
-				442,
 				SpeciesSpiritomb.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Dark.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpiritombInstance(int level)
 		: base(
-				442,
 				SpeciesSpiritomb.Instance, // PokemonInstance Species
 				"Spiritomb", level,
 				Ghost.Instance, Dark.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spiritomb Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spiritomb() : base(
-			442,
+		public SpiritombInstance() : base(
 			SpeciesSpiritomb.Instance, // PokemonInstance Species
 			Ghost.Instance, Dark.Instance			
 		) {}

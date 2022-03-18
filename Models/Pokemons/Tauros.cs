@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTauros Constructor
 		public SpeciesTauros() : base(
+			128,
 			"Tauros",
 			1.4,
 			88.4,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TaurosInstance(string nickname, int level)
 		: base(
-				128,
 				SpeciesTauros.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TaurosInstance(int level)
 		: base(
-				128,
 				SpeciesTauros.Instance, // PokemonInstance Species
 				"Tauros", level,
 				Normal.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tauros Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tauros() : base(
-			128,
+		public TaurosInstance() : base(
 			SpeciesTauros.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPansear Constructor
 		public SpeciesPansear() : base(
+			513,
 			"Pansear",
 			0.6,
 			11.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PansearInstance(string nickname, int level)
 		: base(
-				513,
 				SpeciesPansear.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PansearInstance(int level)
 		: base(
-				513,
 				SpeciesPansear.Instance, // PokemonInstance Species
 				"Pansear", level,
 				Fire.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pansear Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pansear() : base(
-			513,
+		public PansearInstance() : base(
 			SpeciesPansear.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

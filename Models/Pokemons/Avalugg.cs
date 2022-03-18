@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAvalugg Constructor
 		public SpeciesAvalugg() : base(
+			713,
 			"Avalugg",
 			2.0,
 			505.0,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AvaluggInstance(string nickname, int level)
 		: base(
-				713,
 				SpeciesAvalugg.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AvaluggInstance(int level)
 		: base(
-				713,
 				SpeciesAvalugg.Instance, // PokemonInstance Species
 				"Avalugg", level,
 				Ice.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Avalugg Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Avalugg() : base(
-			713,
+		public AvaluggInstance() : base(
 			SpeciesAvalugg.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

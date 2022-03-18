@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesQwilfish Constructor
 		public SpeciesQwilfish() : base(
+			211,
 			"Qwilfish",
 			0.5,
 			3.9,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QwilfishInstance(string nickname, int level)
 		: base(
-				211,
 				SpeciesQwilfish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Poison.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QwilfishInstance(int level)
 		: base(
-				211,
 				SpeciesQwilfish.Instance, // PokemonInstance Species
 				"Qwilfish", level,
 				Water.Instance, Poison.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Qwilfish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Qwilfish() : base(
-			211,
+		public QwilfishInstance() : base(
 			SpeciesQwilfish.Instance, // PokemonInstance Species
 			Water.Instance, Poison.Instance			
 		) {}

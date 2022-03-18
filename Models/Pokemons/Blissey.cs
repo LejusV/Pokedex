@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlissey Constructor
 		public SpeciesBlissey() : base(
+			242,
 			"Blissey",
 			1.5,
 			46.8,
@@ -171,7 +172,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlisseyInstance(string nickname, int level)
 		: base(
-				242,
 				SpeciesBlissey.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -186,7 +186,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlisseyInstance(int level)
 		: base(
-				242,
 				SpeciesBlissey.Instance, // PokemonInstance Species
 				"Blissey", level,
 				Normal.Instance			
@@ -200,8 +199,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blissey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blissey() : base(
-			242,
+		public BlisseyInstance() : base(
 			SpeciesBlissey.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

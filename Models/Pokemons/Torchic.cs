@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTorchic Constructor
 		public SpeciesTorchic() : base(
+			255,
 			"Torchic",
 			0.4,
 			2.5,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorchicInstance(string nickname, int level)
 		: base(
-				255,
 				SpeciesTorchic.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TorchicInstance(int level)
 		: base(
-				255,
 				SpeciesTorchic.Instance, // PokemonInstance Species
 				"Torchic", level,
 				Fire.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Torchic Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Torchic() : base(
-			255,
+		public TorchicInstance() : base(
 			SpeciesTorchic.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

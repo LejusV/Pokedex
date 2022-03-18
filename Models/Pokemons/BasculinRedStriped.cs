@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBasculin-Red-Striped Constructor
 		public SpeciesBasculinRedStriped() : base(
+			550,
 			"Basculin-Red-Striped",
 			1.0,
 			18.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BasculinRedStripedInstance(string nickname, int level)
 		: base(
-				550,
 				SpeciesBasculinRedStriped.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BasculinRedStripedInstance(int level)
 		: base(
-				550,
 				SpeciesBasculinRedStriped.Instance, // PokemonInstance Species
 				"Basculin-Red-Striped", level,
 				Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Basculin-Red-Striped Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public BasculinRedStriped() : base(
-			550,
+		public BasculinRedStripedInstance() : base(
 			SpeciesBasculinRedStriped.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

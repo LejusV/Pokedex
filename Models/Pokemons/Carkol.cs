@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCarkol Constructor
 		public SpeciesCarkol() : base(
+			838,
 			"Carkol",
 			1.1,
 			78.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarkolInstance(string nickname, int level)
 		: base(
-				838,
 				SpeciesCarkol.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fire.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarkolInstance(int level)
 		: base(
-				838,
 				SpeciesCarkol.Instance, // PokemonInstance Species
 				"Carkol", level,
 				Rock.Instance, Fire.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Carkol Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Carkol() : base(
-			838,
+		public CarkolInstance() : base(
 			SpeciesCarkol.Instance, // PokemonInstance Species
 			Rock.Instance, Fire.Instance			
 		) {}

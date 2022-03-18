@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHelioptile Constructor
 		public SpeciesHelioptile() : base(
+			694,
 			"Helioptile",
 			0.5,
 			6.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HelioptileInstance(string nickname, int level)
 		: base(
-				694,
 				SpeciesHelioptile.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Normal.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HelioptileInstance(int level)
 		: base(
-				694,
 				SpeciesHelioptile.Instance, // PokemonInstance Species
 				"Helioptile", level,
 				Electric.Instance, Normal.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Helioptile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Helioptile() : base(
-			694,
+		public HelioptileInstance() : base(
 			SpeciesHelioptile.Instance, // PokemonInstance Species
 			Electric.Instance, Normal.Instance			
 		) {}

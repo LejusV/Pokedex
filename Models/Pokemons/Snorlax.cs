@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnorlax Constructor
 		public SpeciesSnorlax() : base(
+			143,
 			"Snorlax",
 			2.1,
 			460.0,
@@ -172,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnorlaxInstance(string nickname, int level)
 		: base(
-				143,
 				SpeciesSnorlax.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -187,7 +187,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnorlaxInstance(int level)
 		: base(
-				143,
 				SpeciesSnorlax.Instance, // PokemonInstance Species
 				"Snorlax", level,
 				Normal.Instance			
@@ -201,8 +200,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snorlax Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snorlax() : base(
-			143,
+		public SnorlaxInstance() : base(
 			SpeciesSnorlax.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

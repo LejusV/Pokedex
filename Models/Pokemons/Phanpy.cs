@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPhanpy Constructor
 		public SpeciesPhanpy() : base(
+			231,
 			"Phanpy",
 			0.5,
 			33.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhanpyInstance(string nickname, int level)
 		: base(
-				231,
 				SpeciesPhanpy.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhanpyInstance(int level)
 		: base(
-				231,
 				SpeciesPhanpy.Instance, // PokemonInstance Species
 				"Phanpy", level,
 				Ground.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Phanpy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Phanpy() : base(
-			231,
+		public PhanpyInstance() : base(
 			SpeciesPhanpy.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

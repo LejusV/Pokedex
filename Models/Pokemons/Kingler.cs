@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKingler Constructor
 		public SpeciesKingler() : base(
+			99,
 			"Kingler",
 			1.3,
 			60.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KinglerInstance(string nickname, int level)
 		: base(
-				99,
 				SpeciesKingler.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KinglerInstance(int level)
 		: base(
-				99,
 				SpeciesKingler.Instance, // PokemonInstance Species
 				"Kingler", level,
 				Water.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kingler Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kingler() : base(
-			99,
+		public KinglerInstance() : base(
 			SpeciesKingler.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

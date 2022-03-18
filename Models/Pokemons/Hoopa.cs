@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHoopa Constructor
 		public SpeciesHoopa() : base(
+			720,
 			"Hoopa",
 			0.5,
 			9.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoopaInstance(string nickname, int level)
 		: base(
-				720,
 				SpeciesHoopa.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Ghost.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoopaInstance(int level)
 		: base(
-				720,
 				SpeciesHoopa.Instance, // PokemonInstance Species
 				"Hoopa", level,
 				Psychic.Instance, Ghost.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hoopa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hoopa() : base(
-			720,
+		public HoopaInstance() : base(
 			SpeciesHoopa.Instance, // PokemonInstance Species
 			Psychic.Instance, Ghost.Instance			
 		) {}

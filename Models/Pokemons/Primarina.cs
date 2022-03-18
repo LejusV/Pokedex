@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPrimarina Constructor
 		public SpeciesPrimarina() : base(
+			730,
 			"Primarina",
 			1.8,
 			44.0,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrimarinaInstance(string nickname, int level)
 		: base(
-				730,
 				SpeciesPrimarina.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Fairy.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PrimarinaInstance(int level)
 		: base(
-				730,
 				SpeciesPrimarina.Instance, // PokemonInstance Species
 				"Primarina", level,
 				Water.Instance, Fairy.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Primarina Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Primarina() : base(
-			730,
+		public PrimarinaInstance() : base(
 			SpeciesPrimarina.Instance, // PokemonInstance Species
 			Water.Instance, Fairy.Instance			
 		) {}

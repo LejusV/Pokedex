@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesServine Constructor
 		public SpeciesServine() : base(
+			496,
 			"Servine",
 			0.8,
 			16.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ServineInstance(string nickname, int level)
 		: base(
-				496,
 				SpeciesServine.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ServineInstance(int level)
 		: base(
-				496,
 				SpeciesServine.Instance, // PokemonInstance Species
 				"Servine", level,
 				Grass.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Servine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Servine() : base(
-			496,
+		public ServineInstance() : base(
 			SpeciesServine.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrednaw Constructor
 		public SpeciesDrednaw() : base(
+			834,
 			"Drednaw",
 			1.0,
 			115.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrednawInstance(string nickname, int level)
 		: base(
-				834,
 				SpeciesDrednaw.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrednawInstance(int level)
 		: base(
-				834,
 				SpeciesDrednaw.Instance, // PokemonInstance Species
 				"Drednaw", level,
 				Water.Instance, Rock.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drednaw Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drednaw() : base(
-			834,
+		public DrednawInstance() : base(
 			SpeciesDrednaw.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}

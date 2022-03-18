@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTyrogue Constructor
 		public SpeciesTyrogue() : base(
+			236,
 			"Tyrogue",
 			0.7,
 			21.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyrogueInstance(string nickname, int level)
 		: base(
-				236,
 				SpeciesTyrogue.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyrogueInstance(int level)
 		: base(
-				236,
 				SpeciesTyrogue.Instance, // PokemonInstance Species
 				"Tyrogue", level,
 				Fighting.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tyrogue Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tyrogue() : base(
-			236,
+		public TyrogueInstance() : base(
 			SpeciesTyrogue.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

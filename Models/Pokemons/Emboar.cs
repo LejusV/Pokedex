@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEmboar Constructor
 		public SpeciesEmboar() : base(
+			500,
 			"Emboar",
 			1.6,
 			150.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmboarInstance(string nickname, int level)
 		: base(
-				500,
 				SpeciesEmboar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmboarInstance(int level)
 		: base(
-				500,
 				SpeciesEmboar.Instance, // PokemonInstance Species
 				"Emboar", level,
 				Fire.Instance, Fighting.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Emboar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Emboar() : base(
-			500,
+		public EmboarInstance() : base(
 			SpeciesEmboar.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

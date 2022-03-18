@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTynamo Constructor
 		public SpeciesTynamo() : base(
+			602,
 			"Tynamo",
 			0.2,
 			0.3,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TynamoInstance(string nickname, int level)
 		: base(
-				602,
 				SpeciesTynamo.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TynamoInstance(int level)
 		: base(
-				602,
 				SpeciesTynamo.Instance, // PokemonInstance Species
 				"Tynamo", level,
 				Electric.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tynamo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tynamo() : base(
-			602,
+		public TynamoInstance() : base(
 			SpeciesTynamo.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKyurem Constructor
 		public SpeciesKyurem() : base(
+			646,
 			"Kyurem",
 			3.0,
 			325.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KyuremInstance(string nickname, int level)
 		: base(
-				646,
 				SpeciesKyurem.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ice.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KyuremInstance(int level)
 		: base(
-				646,
 				SpeciesKyurem.Instance, // PokemonInstance Species
 				"Kyurem", level,
 				Dragon.Instance, Ice.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kyurem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kyurem() : base(
-			646,
+		public KyuremInstance() : base(
 			SpeciesKyurem.Instance, // PokemonInstance Species
 			Dragon.Instance, Ice.Instance			
 		) {}

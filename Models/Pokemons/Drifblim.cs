@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrifblim Constructor
 		public SpeciesDrifblim() : base(
+			426,
 			"Drifblim",
 			1.2,
 			15.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrifblimInstance(string nickname, int level)
 		: base(
-				426,
 				SpeciesDrifblim.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Flying.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrifblimInstance(int level)
 		: base(
-				426,
 				SpeciesDrifblim.Instance, // PokemonInstance Species
 				"Drifblim", level,
 				Ghost.Instance, Flying.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drifblim Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drifblim() : base(
-			426,
+		public DrifblimInstance() : base(
 			SpeciesDrifblim.Instance, // PokemonInstance Species
 			Ghost.Instance, Flying.Instance			
 		) {}

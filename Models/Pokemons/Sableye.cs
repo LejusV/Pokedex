@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSableye Constructor
 		public SpeciesSableye() : base(
+			302,
 			"Sableye",
 			0.5,
 			11.0,
@@ -168,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SableyeInstance(string nickname, int level)
 		: base(
-				302,
 				SpeciesSableye.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Ghost.Instance			
@@ -183,7 +183,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SableyeInstance(int level)
 		: base(
-				302,
 				SpeciesSableye.Instance, // PokemonInstance Species
 				"Sableye", level,
 				Dark.Instance, Ghost.Instance			
@@ -197,8 +196,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sableye Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sableye() : base(
-			302,
+		public SableyeInstance() : base(
 			SpeciesSableye.Instance, // PokemonInstance Species
 			Dark.Instance, Ghost.Instance			
 		) {}

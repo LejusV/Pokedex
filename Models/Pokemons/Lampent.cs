@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLampent Constructor
 		public SpeciesLampent() : base(
+			608,
 			"Lampent",
 			0.6,
 			13.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LampentInstance(string nickname, int level)
 		: base(
-				608,
 				SpeciesLampent.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Fire.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LampentInstance(int level)
 		: base(
-				608,
 				SpeciesLampent.Instance, // PokemonInstance Species
 				"Lampent", level,
 				Ghost.Instance, Fire.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lampent Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lampent() : base(
-			608,
+		public LampentInstance() : base(
 			SpeciesLampent.Instance, // PokemonInstance Species
 			Ghost.Instance, Fire.Instance			
 		) {}

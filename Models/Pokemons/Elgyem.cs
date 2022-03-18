@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesElgyem Constructor
 		public SpeciesElgyem() : base(
+			605,
 			"Elgyem",
 			0.5,
 			9.0,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElgyemInstance(string nickname, int level)
 		: base(
-				605,
 				SpeciesElgyem.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ElgyemInstance(int level)
 		: base(
-				605,
 				SpeciesElgyem.Instance, // PokemonInstance Species
 				"Elgyem", level,
 				Psychic.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Elgyem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Elgyem() : base(
-			605,
+		public ElgyemInstance() : base(
 			SpeciesElgyem.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

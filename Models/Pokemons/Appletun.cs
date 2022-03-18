@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAppletun Constructor
 		public SpeciesAppletun() : base(
+			842,
 			"Appletun",
 			0.4,
 			13.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AppletunInstance(string nickname, int level)
 		: base(
-				842,
 				SpeciesAppletun.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AppletunInstance(int level)
 		: base(
-				842,
 				SpeciesAppletun.Instance, // PokemonInstance Species
 				"Appletun", level,
 				Grass.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Appletun Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Appletun() : base(
-			842,
+		public AppletunInstance() : base(
 			SpeciesAppletun.Instance, // PokemonInstance Species
 			Grass.Instance, Dragon.Instance			
 		) {}

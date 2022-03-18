@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLugia Constructor
 		public SpeciesLugia() : base(
+			249,
 			"Lugia",
 			5.2,
 			216.0,
@@ -161,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LugiaInstance(string nickname, int level)
 		: base(
-				249,
 				SpeciesLugia.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
@@ -176,7 +176,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LugiaInstance(int level)
 		: base(
-				249,
 				SpeciesLugia.Instance, // PokemonInstance Species
 				"Lugia", level,
 				Psychic.Instance, Flying.Instance			
@@ -190,8 +189,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lugia Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lugia() : base(
-			249,
+		public LugiaInstance() : base(
 			SpeciesLugia.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}

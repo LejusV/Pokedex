@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDelibird Constructor
 		public SpeciesDelibird() : base(
+			225,
 			"Delibird",
 			0.9,
 			16.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelibirdInstance(string nickname, int level)
 		: base(
-				225,
 				SpeciesDelibird.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Flying.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DelibirdInstance(int level)
 		: base(
-				225,
 				SpeciesDelibird.Instance, // PokemonInstance Species
 				"Delibird", level,
 				Ice.Instance, Flying.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Delibird Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Delibird() : base(
-			225,
+		public DelibirdInstance() : base(
 			SpeciesDelibird.Instance, // PokemonInstance Species
 			Ice.Instance, Flying.Instance			
 		) {}

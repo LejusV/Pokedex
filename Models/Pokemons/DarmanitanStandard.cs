@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDarmanitan-Standard Constructor
 		public SpeciesDarmanitanStandard() : base(
+			555,
 			"Darmanitan-Standard",
 			1.3,
 			92.9,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarmanitanStandardInstance(string nickname, int level)
 		: base(
-				555,
 				SpeciesDarmanitanStandard.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DarmanitanStandardInstance(int level)
 		: base(
-				555,
 				SpeciesDarmanitanStandard.Instance, // PokemonInstance Species
 				"Darmanitan-Standard", level,
 				Fire.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Darmanitan-Standard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public DarmanitanStandard() : base(
-			555,
+		public DarmanitanStandardInstance() : base(
 			SpeciesDarmanitanStandard.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

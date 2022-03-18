@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesThwackey Constructor
 		public SpeciesThwackey() : base(
+			811,
 			"Thwackey",
 			0.7,
 			14.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThwackeyInstance(string nickname, int level)
 		: base(
-				811,
 				SpeciesThwackey.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThwackeyInstance(int level)
 		: base(
-				811,
 				SpeciesThwackey.Instance, // PokemonInstance Species
 				"Thwackey", level,
 				Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Thwackey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Thwackey() : base(
-			811,
+		public ThwackeyInstance() : base(
 			SpeciesThwackey.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

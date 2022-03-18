@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTyranitar Constructor
 		public SpeciesTyranitar() : base(
+			248,
 			"Tyranitar",
 			2.0,
 			202.0,
@@ -170,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyranitarInstance(string nickname, int level)
 		: base(
-				248,
 				SpeciesTyranitar.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Dark.Instance			
@@ -185,7 +185,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyranitarInstance(int level)
 		: base(
-				248,
 				SpeciesTyranitar.Instance, // PokemonInstance Species
 				"Tyranitar", level,
 				Rock.Instance, Dark.Instance			
@@ -199,8 +198,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tyranitar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tyranitar() : base(
-			248,
+		public TyranitarInstance() : base(
 			SpeciesTyranitar.Instance, // PokemonInstance Species
 			Rock.Instance, Dark.Instance			
 		) {}

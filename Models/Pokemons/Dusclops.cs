@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDusclops Constructor
 		public SpeciesDusclops() : base(
+			356,
 			"Dusclops",
 			1.6,
 			30.6,
@@ -151,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DusclopsInstance(string nickname, int level)
 		: base(
-				356,
 				SpeciesDusclops.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -166,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DusclopsInstance(int level)
 		: base(
-				356,
 				SpeciesDusclops.Instance, // PokemonInstance Species
 				"Dusclops", level,
 				Ghost.Instance			
@@ -180,8 +179,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dusclops Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dusclops() : base(
-			356,
+		public DusclopsInstance() : base(
 			SpeciesDusclops.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

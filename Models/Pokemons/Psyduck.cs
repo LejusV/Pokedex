@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPsyduck Constructor
 		public SpeciesPsyduck() : base(
+			54,
 			"Psyduck",
 			0.8,
 			19.6,
@@ -159,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PsyduckInstance(string nickname, int level)
 		: base(
-				54,
 				SpeciesPsyduck.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -174,7 +174,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PsyduckInstance(int level)
 		: base(
-				54,
 				SpeciesPsyduck.Instance, // PokemonInstance Species
 				"Psyduck", level,
 				Water.Instance			
@@ -188,8 +187,7 @@ namespace Pokedex.Models.Pokemons
 		/// Psyduck Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Psyduck() : base(
-			54,
+		public PsyduckInstance() : base(
 			SpeciesPsyduck.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

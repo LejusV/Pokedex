@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPerrserker Constructor
 		public SpeciesPerrserker() : base(
+			863,
 			"Perrserker",
 			0.8,
 			28.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PerrserkerInstance(string nickname, int level)
 		: base(
-				863,
 				SpeciesPerrserker.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PerrserkerInstance(int level)
 		: base(
-				863,
 				SpeciesPerrserker.Instance, // PokemonInstance Species
 				"Perrserker", level,
 				Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Perrserker Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Perrserker() : base(
-			863,
+		public PerrserkerInstance() : base(
 			SpeciesPerrserker.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

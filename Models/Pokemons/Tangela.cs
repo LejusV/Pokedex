@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTangela Constructor
 		public SpeciesTangela() : base(
+			114,
 			"Tangela",
 			1.0,
 			35.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TangelaInstance(string nickname, int level)
 		: base(
-				114,
 				SpeciesTangela.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TangelaInstance(int level)
 		: base(
-				114,
 				SpeciesTangela.Instance, // PokemonInstance Species
 				"Tangela", level,
 				Grass.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tangela Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tangela() : base(
-			114,
+		public TangelaInstance() : base(
 			SpeciesTangela.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

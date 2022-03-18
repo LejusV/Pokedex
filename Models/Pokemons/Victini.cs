@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVictini Constructor
 		public SpeciesVictini() : base(
+			494,
 			"Victini",
 			0.4,
 			4.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VictiniInstance(string nickname, int level)
 		: base(
-				494,
 				SpeciesVictini.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fire.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VictiniInstance(int level)
 		: base(
-				494,
 				SpeciesVictini.Instance, // PokemonInstance Species
 				"Victini", level,
 				Psychic.Instance, Fire.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Victini Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Victini() : base(
-			494,
+		public VictiniInstance() : base(
 			SpeciesVictini.Instance, // PokemonInstance Species
 			Psychic.Instance, Fire.Instance			
 		) {}

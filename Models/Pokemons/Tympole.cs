@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTympole Constructor
 		public SpeciesTympole() : base(
+			535,
 			"Tympole",
 			0.5,
 			4.5,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TympoleInstance(string nickname, int level)
 		: base(
-				535,
 				SpeciesTympole.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TympoleInstance(int level)
 		: base(
-				535,
 				SpeciesTympole.Instance, // PokemonInstance Species
 				"Tympole", level,
 				Water.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tympole Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tympole() : base(
-			535,
+		public TympoleInstance() : base(
 			SpeciesTympole.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

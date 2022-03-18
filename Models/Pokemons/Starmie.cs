@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStarmie Constructor
 		public SpeciesStarmie() : base(
+			121,
 			"Starmie",
 			1.1,
 			80.0,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StarmieInstance(string nickname, int level)
 		: base(
-				121,
 				SpeciesStarmie.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Psychic.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StarmieInstance(int level)
 		: base(
-				121,
 				SpeciesStarmie.Instance, // PokemonInstance Species
 				"Starmie", level,
 				Water.Instance, Psychic.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Starmie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Starmie() : base(
-			121,
+		public StarmieInstance() : base(
 			SpeciesStarmie.Instance, // PokemonInstance Species
 			Water.Instance, Psychic.Instance			
 		) {}

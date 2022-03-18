@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGyarados Constructor
 		public SpeciesGyarados() : base(
+			130,
 			"Gyarados",
 			6.5,
 			235.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GyaradosInstance(string nickname, int level)
 		: base(
-				130,
 				SpeciesGyarados.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GyaradosInstance(int level)
 		: base(
-				130,
 				SpeciesGyarados.Instance, // PokemonInstance Species
 				"Gyarados", level,
 				Water.Instance, Flying.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gyarados Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gyarados() : base(
-			130,
+		public GyaradosInstance() : base(
 			SpeciesGyarados.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

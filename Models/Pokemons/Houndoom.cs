@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHoundoom Constructor
 		public SpeciesHoundoom() : base(
+			229,
 			"Houndoom",
 			1.4,
 			35.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoundoomInstance(string nickname, int level)
 		: base(
-				229,
 				SpeciesHoundoom.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fire.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HoundoomInstance(int level)
 		: base(
-				229,
 				SpeciesHoundoom.Instance, // PokemonInstance Species
 				"Houndoom", level,
 				Dark.Instance, Fire.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Houndoom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Houndoom() : base(
-			229,
+		public HoundoomInstance() : base(
 			SpeciesHoundoom.Instance, // PokemonInstance Species
 			Dark.Instance, Fire.Instance			
 		) {}

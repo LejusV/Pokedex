@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKlang Constructor
 		public SpeciesKlang() : base(
+			600,
 			"Klang",
 			0.6,
 			51.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlangInstance(string nickname, int level)
 		: base(
-				600,
 				SpeciesKlang.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KlangInstance(int level)
 		: base(
-				600,
 				SpeciesKlang.Instance, // PokemonInstance Species
 				"Klang", level,
 				Steel.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Klang Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Klang() : base(
-			600,
+		public KlangInstance() : base(
 			SpeciesKlang.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

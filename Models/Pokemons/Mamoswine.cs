@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMamoswine Constructor
 		public SpeciesMamoswine() : base(
+			473,
 			"Mamoswine",
 			2.5,
 			291.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MamoswineInstance(string nickname, int level)
 		: base(
-				473,
 				SpeciesMamoswine.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MamoswineInstance(int level)
 		: base(
-				473,
 				SpeciesMamoswine.Instance, // PokemonInstance Species
 				"Mamoswine", level,
 				Ice.Instance, Ground.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mamoswine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mamoswine() : base(
-			473,
+		public MamoswineInstance() : base(
 			SpeciesMamoswine.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRapidash Constructor
 		public SpeciesRapidash() : base(
+			78,
 			"Rapidash",
 			1.7,
 			95.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RapidashInstance(string nickname, int level)
 		: base(
-				78,
 				SpeciesRapidash.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RapidashInstance(int level)
 		: base(
-				78,
 				SpeciesRapidash.Instance, // PokemonInstance Species
 				"Rapidash", level,
 				Fire.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rapidash Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rapidash() : base(
-			78,
+		public RapidashInstance() : base(
 			SpeciesRapidash.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

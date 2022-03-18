@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJirachi Constructor
 		public SpeciesJirachi() : base(
+			385,
 			"Jirachi",
 			0.3,
 			1.1,
@@ -146,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JirachiInstance(string nickname, int level)
 		: base(
-				385,
 				SpeciesJirachi.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -161,7 +161,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JirachiInstance(int level)
 		: base(
-				385,
 				SpeciesJirachi.Instance, // PokemonInstance Species
 				"Jirachi", level,
 				Steel.Instance, Psychic.Instance			
@@ -175,8 +174,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jirachi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jirachi() : base(
-			385,
+		public JirachiInstance() : base(
 			SpeciesJirachi.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

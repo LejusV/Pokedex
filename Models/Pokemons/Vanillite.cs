@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVanillite Constructor
 		public SpeciesVanillite() : base(
+			582,
 			"Vanillite",
 			0.4,
 			5.7,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VanilliteInstance(string nickname, int level)
 		: base(
-				582,
 				SpeciesVanillite.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VanilliteInstance(int level)
 		: base(
-				582,
 				SpeciesVanillite.Instance, // PokemonInstance Species
 				"Vanillite", level,
 				Ice.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vanillite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vanillite() : base(
-			582,
+		public VanilliteInstance() : base(
 			SpeciesVanillite.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

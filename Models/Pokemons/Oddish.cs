@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOddish Constructor
 		public SpeciesOddish() : base(
+			43,
 			"Oddish",
 			0.5,
 			5.4,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OddishInstance(string nickname, int level)
 		: base(
-				43,
 				SpeciesOddish.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OddishInstance(int level)
 		: base(
-				43,
 				SpeciesOddish.Instance, // PokemonInstance Species
 				"Oddish", level,
 				Grass.Instance, Poison.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Oddish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Oddish() : base(
-			43,
+		public OddishInstance() : base(
 			SpeciesOddish.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

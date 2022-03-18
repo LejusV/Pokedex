@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesYungoos Constructor
 		public SpeciesYungoos() : base(
+			734,
 			"Yungoos",
 			0.4,
 			6.0,
@@ -104,7 +105,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YungoosInstance(string nickname, int level)
 		: base(
-				734,
 				SpeciesYungoos.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -119,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YungoosInstance(int level)
 		: base(
-				734,
 				SpeciesYungoos.Instance, // PokemonInstance Species
 				"Yungoos", level,
 				Normal.Instance			
@@ -133,8 +132,7 @@ namespace Pokedex.Models.Pokemons
 		/// Yungoos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Yungoos() : base(
-			734,
+		public YungoosInstance() : base(
 			SpeciesYungoos.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

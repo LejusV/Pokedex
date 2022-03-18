@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMorpeko Constructor
 		public SpeciesMorpeko() : base(
+			877,
 			"Morpeko",
 			0.3,
 			3.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorpekoInstance(string nickname, int level)
 		: base(
-				877,
 				SpeciesMorpeko.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Dark.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorpekoInstance(int level)
 		: base(
-				877,
 				SpeciesMorpeko.Instance, // PokemonInstance Species
 				"Morpeko", level,
 				Electric.Instance, Dark.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Morpeko Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Morpeko() : base(
-			877,
+		public MorpekoInstance() : base(
 			SpeciesMorpeko.Instance, // PokemonInstance Species
 			Electric.Instance, Dark.Instance			
 		) {}

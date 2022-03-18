@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFarfetchd Constructor
 		public SpeciesFarfetchd() : base(
+			83,
 			"Farfetchd",
 			0.8,
 			15.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FarfetchdInstance(string nickname, int level)
 		: base(
-				83,
 				SpeciesFarfetchd.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FarfetchdInstance(int level)
 		: base(
-				83,
 				SpeciesFarfetchd.Instance, // PokemonInstance Species
 				"Farfetchd", level,
 				Normal.Instance, Flying.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Farfetchd Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Farfetchd() : base(
-			83,
+		public FarfetchdInstance() : base(
 			SpeciesFarfetchd.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

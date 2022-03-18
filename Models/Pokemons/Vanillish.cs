@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVanillish Constructor
 		public SpeciesVanillish() : base(
+			583,
 			"Vanillish",
 			1.1,
 			41.0,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VanillishInstance(string nickname, int level)
 		: base(
-				583,
 				SpeciesVanillish.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VanillishInstance(int level)
 		: base(
-				583,
 				SpeciesVanillish.Instance, // PokemonInstance Species
 				"Vanillish", level,
 				Ice.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vanillish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vanillish() : base(
-			583,
+		public VanillishInstance() : base(
 			SpeciesVanillish.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

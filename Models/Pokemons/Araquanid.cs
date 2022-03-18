@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAraquanid Constructor
 		public SpeciesAraquanid() : base(
+			752,
 			"Araquanid",
 			1.8,
 			82.0,
@@ -100,7 +101,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AraquanidInstance(string nickname, int level)
 		: base(
-				752,
 				SpeciesAraquanid.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Bug.Instance			
@@ -115,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AraquanidInstance(int level)
 		: base(
-				752,
 				SpeciesAraquanid.Instance, // PokemonInstance Species
 				"Araquanid", level,
 				Water.Instance, Bug.Instance			
@@ -129,8 +128,7 @@ namespace Pokedex.Models.Pokemons
 		/// Araquanid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Araquanid() : base(
-			752,
+		public AraquanidInstance() : base(
 			SpeciesAraquanid.Instance, // PokemonInstance Species
 			Water.Instance, Bug.Instance			
 		) {}

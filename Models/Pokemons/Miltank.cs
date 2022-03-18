@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMiltank Constructor
 		public SpeciesMiltank() : base(
+			241,
 			"Miltank",
 			1.2,
 			75.5,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiltankInstance(string nickname, int level)
 		: base(
-				241,
 				SpeciesMiltank.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MiltankInstance(int level)
 		: base(
-				241,
 				SpeciesMiltank.Instance, // PokemonInstance Species
 				"Miltank", level,
 				Normal.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Miltank Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Miltank() : base(
-			241,
+		public MiltankInstance() : base(
 			SpeciesMiltank.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

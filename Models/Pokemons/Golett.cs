@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolett Constructor
 		public SpeciesGolett() : base(
+			622,
 			"Golett",
 			1.0,
 			92.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolettInstance(string nickname, int level)
 		: base(
-				622,
 				SpeciesGolett.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Ghost.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolettInstance(int level)
 		: base(
-				622,
 				SpeciesGolett.Instance, // PokemonInstance Species
 				"Golett", level,
 				Ground.Instance, Ghost.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golett Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golett() : base(
-			622,
+		public GolettInstance() : base(
 			SpeciesGolett.Instance, // PokemonInstance Species
 			Ground.Instance, Ghost.Instance			
 		) {}

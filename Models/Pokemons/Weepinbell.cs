@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWeepinbell Constructor
 		public SpeciesWeepinbell() : base(
+			70,
 			"Weepinbell",
 			1.0,
 			6.4,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeepinbellInstance(string nickname, int level)
 		: base(
-				70,
 				SpeciesWeepinbell.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WeepinbellInstance(int level)
 		: base(
-				70,
 				SpeciesWeepinbell.Instance, // PokemonInstance Species
 				"Weepinbell", level,
 				Grass.Instance, Poison.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Weepinbell Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Weepinbell() : base(
-			70,
+		public WeepinbellInstance() : base(
 			SpeciesWeepinbell.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

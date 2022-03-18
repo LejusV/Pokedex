@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGlastrier Constructor
 		public SpeciesGlastrier() : base(
+			896,
 			"Glastrier",
 			2.2,
 			800.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlastrierInstance(string nickname, int level)
 		: base(
-				896,
 				SpeciesGlastrier.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GlastrierInstance(int level)
 		: base(
-				896,
 				SpeciesGlastrier.Instance, // PokemonInstance Species
 				"Glastrier", level,
 				Ice.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Glastrier Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Glastrier() : base(
-			896,
+		public GlastrierInstance() : base(
 			SpeciesGlastrier.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

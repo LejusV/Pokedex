@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTaillow Constructor
 		public SpeciesTaillow() : base(
+			276,
 			"Taillow",
 			0.3,
 			2.3,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TaillowInstance(string nickname, int level)
 		: base(
-				276,
 				SpeciesTaillow.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TaillowInstance(int level)
 		: base(
-				276,
 				SpeciesTaillow.Instance, // PokemonInstance Species
 				"Taillow", level,
 				Normal.Instance, Flying.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Taillow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Taillow() : base(
-			276,
+		public TaillowInstance() : base(
 			SpeciesTaillow.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

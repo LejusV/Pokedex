@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesThievul Constructor
 		public SpeciesThievul() : base(
+			828,
 			"Thievul",
 			1.2,
 			19.9,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThievulInstance(string nickname, int level)
 		: base(
-				828,
 				SpeciesThievul.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThievulInstance(int level)
 		: base(
-				828,
 				SpeciesThievul.Instance, // PokemonInstance Species
 				"Thievul", level,
 				Dark.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Thievul Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Thievul() : base(
-			828,
+		public ThievulInstance() : base(
 			SpeciesThievul.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

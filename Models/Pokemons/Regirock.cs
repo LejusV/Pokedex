@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegirock Constructor
 		public SpeciesRegirock() : base(
+			377,
 			"Regirock",
 			1.7,
 			230.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegirockInstance(string nickname, int level)
 		: base(
-				377,
 				SpeciesRegirock.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegirockInstance(int level)
 		: base(
-				377,
 				SpeciesRegirock.Instance, // PokemonInstance Species
 				"Regirock", level,
 				Rock.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Regirock Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Regirock() : base(
-			377,
+		public RegirockInstance() : base(
 			SpeciesRegirock.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

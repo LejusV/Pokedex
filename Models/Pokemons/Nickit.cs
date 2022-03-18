@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNickit Constructor
 		public SpeciesNickit() : base(
+			827,
 			"Nickit",
 			0.6,
 			8.9,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NickitInstance(string nickname, int level)
 		: base(
-				827,
 				SpeciesNickit.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NickitInstance(int level)
 		: base(
-				827,
 				SpeciesNickit.Instance, // PokemonInstance Species
 				"Nickit", level,
 				Dark.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nickit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nickit() : base(
-			827,
+		public NickitInstance() : base(
 			SpeciesNickit.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

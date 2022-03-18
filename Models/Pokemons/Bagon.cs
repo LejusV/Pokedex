@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBagon Constructor
 		public SpeciesBagon() : base(
+			371,
 			"Bagon",
 			0.6,
 			42.1,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BagonInstance(string nickname, int level)
 		: base(
-				371,
 				SpeciesBagon.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BagonInstance(int level)
 		: base(
-				371,
 				SpeciesBagon.Instance, // PokemonInstance Species
 				"Bagon", level,
 				Dragon.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bagon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bagon() : base(
-			371,
+		public BagonInstance() : base(
 			SpeciesBagon.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

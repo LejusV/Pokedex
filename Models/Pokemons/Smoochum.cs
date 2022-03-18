@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSmoochum Constructor
 		public SpeciesSmoochum() : base(
+			238,
 			"Smoochum",
 			0.4,
 			6.0,
@@ -148,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SmoochumInstance(string nickname, int level)
 		: base(
-				238,
 				SpeciesSmoochum.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Psychic.Instance			
@@ -163,7 +163,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SmoochumInstance(int level)
 		: base(
-				238,
 				SpeciesSmoochum.Instance, // PokemonInstance Species
 				"Smoochum", level,
 				Ice.Instance, Psychic.Instance			
@@ -177,8 +176,7 @@ namespace Pokedex.Models.Pokemons
 		/// Smoochum Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Smoochum() : base(
-			238,
+		public SmoochumInstance() : base(
 			SpeciesSmoochum.Instance, // PokemonInstance Species
 			Ice.Instance, Psychic.Instance			
 		) {}

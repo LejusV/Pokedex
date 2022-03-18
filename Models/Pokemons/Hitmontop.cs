@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHitmontop Constructor
 		public SpeciesHitmontop() : base(
+			237,
 			"Hitmontop",
 			1.4,
 			48.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmontopInstance(string nickname, int level)
 		: base(
-				237,
 				SpeciesHitmontop.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmontopInstance(int level)
 		: base(
-				237,
 				SpeciesHitmontop.Instance, // PokemonInstance Species
 				"Hitmontop", level,
 				Fighting.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hitmontop Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hitmontop() : base(
-			237,
+		public HitmontopInstance() : base(
 			SpeciesHitmontop.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

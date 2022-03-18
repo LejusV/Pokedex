@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCobalion Constructor
 		public SpeciesCobalion() : base(
+			638,
 			"Cobalion",
 			2.1,
 			250.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CobalionInstance(string nickname, int level)
 		: base(
-				638,
 				SpeciesCobalion.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Fighting.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CobalionInstance(int level)
 		: base(
-				638,
 				SpeciesCobalion.Instance, // PokemonInstance Species
 				"Cobalion", level,
 				Steel.Instance, Fighting.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cobalion Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cobalion() : base(
-			638,
+		public CobalionInstance() : base(
 			SpeciesCobalion.Instance, // PokemonInstance Species
 			Steel.Instance, Fighting.Instance			
 		) {}

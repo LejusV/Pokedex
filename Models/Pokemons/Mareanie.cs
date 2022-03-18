@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMareanie Constructor
 		public SpeciesMareanie() : base(
+			747,
 			"Mareanie",
 			0.4,
 			8.0,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MareanieInstance(string nickname, int level)
 		: base(
-				747,
 				SpeciesMareanie.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Water.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MareanieInstance(int level)
 		: base(
-				747,
 				SpeciesMareanie.Instance, // PokemonInstance Species
 				"Mareanie", level,
 				Poison.Instance, Water.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mareanie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mareanie() : base(
-			747,
+		public MareanieInstance() : base(
 			SpeciesMareanie.Instance, // PokemonInstance Species
 			Poison.Instance, Water.Instance			
 		) {}

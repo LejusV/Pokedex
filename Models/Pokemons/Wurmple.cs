@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWurmple Constructor
 		public SpeciesWurmple() : base(
+			265,
 			"Wurmple",
 			0.3,
 			3.6,
@@ -66,7 +67,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WurmpleInstance(string nickname, int level)
 		: base(
-				265,
 				SpeciesWurmple.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -81,7 +81,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WurmpleInstance(int level)
 		: base(
-				265,
 				SpeciesWurmple.Instance, // PokemonInstance Species
 				"Wurmple", level,
 				Bug.Instance			
@@ -95,8 +94,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wurmple Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wurmple() : base(
-			265,
+		public WurmpleInstance() : base(
 			SpeciesWurmple.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGarchomp Constructor
 		public SpeciesGarchomp() : base(
+			445,
 			"Garchomp",
 			1.9,
 			95.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GarchompInstance(string nickname, int level)
 		: base(
-				445,
 				SpeciesGarchomp.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Ground.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GarchompInstance(int level)
 		: base(
-				445,
 				SpeciesGarchomp.Instance, // PokemonInstance Species
 				"Garchomp", level,
 				Dragon.Instance, Ground.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Garchomp Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Garchomp() : base(
-			445,
+		public GarchompInstance() : base(
 			SpeciesGarchomp.Instance, // PokemonInstance Species
 			Dragon.Instance, Ground.Instance			
 		) {}

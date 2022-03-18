@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPyukumuku Constructor
 		public SpeciesPyukumuku() : base(
+			771,
 			"Pyukumuku",
 			0.3,
 			1.2,
@@ -96,7 +97,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PyukumukuInstance(string nickname, int level)
 		: base(
-				771,
 				SpeciesPyukumuku.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -111,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PyukumukuInstance(int level)
 		: base(
-				771,
 				SpeciesPyukumuku.Instance, // PokemonInstance Species
 				"Pyukumuku", level,
 				Water.Instance			
@@ -125,8 +124,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pyukumuku Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pyukumuku() : base(
-			771,
+		public PyukumukuInstance() : base(
 			SpeciesPyukumuku.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

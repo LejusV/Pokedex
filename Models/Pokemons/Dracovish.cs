@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDracovish Constructor
 		public SpeciesDracovish() : base(
+			882,
 			"Dracovish",
 			2.3,
 			215.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DracovishInstance(string nickname, int level)
 		: base(
-				882,
 				SpeciesDracovish.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dragon.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DracovishInstance(int level)
 		: base(
-				882,
 				SpeciesDracovish.Instance, // PokemonInstance Species
 				"Dracovish", level,
 				Water.Instance, Dragon.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dracovish Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dracovish() : base(
-			882,
+		public DracovishInstance() : base(
 			SpeciesDracovish.Instance, // PokemonInstance Species
 			Water.Instance, Dragon.Instance			
 		) {}

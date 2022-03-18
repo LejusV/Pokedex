@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGorebyss Constructor
 		public SpeciesGorebyss() : base(
+			368,
 			"Gorebyss",
 			1.8,
 			22.6,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GorebyssInstance(string nickname, int level)
 		: base(
-				368,
 				SpeciesGorebyss.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GorebyssInstance(int level)
 		: base(
-				368,
 				SpeciesGorebyss.Instance, // PokemonInstance Species
 				"Gorebyss", level,
 				Water.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gorebyss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gorebyss() : base(
-			368,
+		public GorebyssInstance() : base(
 			SpeciesGorebyss.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

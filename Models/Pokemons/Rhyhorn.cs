@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRhyhorn Constructor
 		public SpeciesRhyhorn() : base(
+			111,
 			"Rhyhorn",
 			1.0,
 			115.0,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhyhornInstance(string nickname, int level)
 		: base(
-				111,
 				SpeciesRhyhorn.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Rock.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhyhornInstance(int level)
 		: base(
-				111,
 				SpeciesRhyhorn.Instance, // PokemonInstance Species
 				"Rhyhorn", level,
 				Ground.Instance, Rock.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rhyhorn Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rhyhorn() : base(
-			111,
+		public RhyhornInstance() : base(
 			SpeciesRhyhorn.Instance, // PokemonInstance Species
 			Ground.Instance, Rock.Instance			
 		) {}

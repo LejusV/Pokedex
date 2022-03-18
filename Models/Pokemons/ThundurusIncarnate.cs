@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesThundurus-Incarnate Constructor
 		public SpeciesThundurusIncarnate() : base(
+			642,
 			"Thundurus-Incarnate",
 			1.5,
 			61.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThundurusIncarnateInstance(string nickname, int level)
 		: base(
-				642,
 				SpeciesThundurusIncarnate.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Flying.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThundurusIncarnateInstance(int level)
 		: base(
-				642,
 				SpeciesThundurusIncarnate.Instance, // PokemonInstance Species
 				"Thundurus-Incarnate", level,
 				Electric.Instance, Flying.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Thundurus-Incarnate Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public ThundurusIncarnate() : base(
-			642,
+		public ThundurusIncarnateInstance() : base(
 			SpeciesThundurusIncarnate.Instance, // PokemonInstance Species
 			Electric.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCopperajah Constructor
 		public SpeciesCopperajah() : base(
+			879,
 			"Copperajah",
 			3.0,
 			650.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CopperajahInstance(string nickname, int level)
 		: base(
-				879,
 				SpeciesCopperajah.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CopperajahInstance(int level)
 		: base(
-				879,
 				SpeciesCopperajah.Instance, // PokemonInstance Species
 				"Copperajah", level,
 				Steel.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Copperajah Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Copperajah() : base(
-			879,
+		public CopperajahInstance() : base(
 			SpeciesCopperajah.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

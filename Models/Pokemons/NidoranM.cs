@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNidoran-M Constructor
 		public SpeciesNidoranM() : base(
+			32,
 			"Nidoran-M",
 			0.5,
 			9.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidoranMInstance(string nickname, int level)
 		: base(
-				32,
 				SpeciesNidoranM.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NidoranMInstance(int level)
 		: base(
-				32,
 				SpeciesNidoranM.Instance, // PokemonInstance Species
 				"Nidoran-M", level,
 				Poison.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nidoran-M Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public NidoranM() : base(
-			32,
+		public NidoranMInstance() : base(
 			SpeciesNidoranM.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

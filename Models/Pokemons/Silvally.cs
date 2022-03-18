@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSilvally Constructor
 		public SpeciesSilvally() : base(
+			773,
 			"Silvally",
 			2.3,
 			100.5,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilvallyInstance(string nickname, int level)
 		: base(
-				773,
 				SpeciesSilvally.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilvallyInstance(int level)
 		: base(
-				773,
 				SpeciesSilvally.Instance, // PokemonInstance Species
 				"Silvally", level,
 				Normal.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Silvally Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Silvally() : base(
-			773,
+		public SilvallyInstance() : base(
 			SpeciesSilvally.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

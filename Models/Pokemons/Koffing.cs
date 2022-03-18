@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKoffing Constructor
 		public SpeciesKoffing() : base(
+			109,
 			"Koffing",
 			0.6,
 			1.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KoffingInstance(string nickname, int level)
 		: base(
-				109,
 				SpeciesKoffing.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KoffingInstance(int level)
 		: base(
-				109,
 				SpeciesKoffing.Instance, // PokemonInstance Species
 				"Koffing", level,
 				Poison.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Koffing Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Koffing() : base(
-			109,
+		public KoffingInstance() : base(
 			SpeciesKoffing.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

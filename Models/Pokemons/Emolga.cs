@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEmolga Constructor
 		public SpeciesEmolga() : base(
+			587,
 			"Emolga",
 			0.4,
 			5.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmolgaInstance(string nickname, int level)
 		: base(
-				587,
 				SpeciesEmolga.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Flying.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EmolgaInstance(int level)
 		: base(
-				587,
 				SpeciesEmolga.Instance, // PokemonInstance Species
 				"Emolga", level,
 				Electric.Instance, Flying.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Emolga Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Emolga() : base(
-			587,
+		public EmolgaInstance() : base(
 			SpeciesEmolga.Instance, // PokemonInstance Species
 			Electric.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLycanroc-Midday Constructor
 		public SpeciesLycanrocMidday() : base(
+			745,
 			"Lycanroc-Midday",
 			0.8,
 			25.0,
@@ -99,7 +100,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LycanrocMiddayInstance(string nickname, int level)
 		: base(
-				745,
 				SpeciesLycanrocMidday.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -114,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LycanrocMiddayInstance(int level)
 		: base(
-				745,
 				SpeciesLycanrocMidday.Instance, // PokemonInstance Species
 				"Lycanroc-Midday", level,
 				Rock.Instance			
@@ -128,8 +127,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lycanroc-Midday Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public LycanrocMidday() : base(
-			745,
+		public LycanrocMiddayInstance() : base(
 			SpeciesLycanrocMidday.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

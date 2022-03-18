@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSilicobra Constructor
 		public SpeciesSilicobra() : base(
+			843,
 			"Silicobra",
 			2.2,
 			7.6,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilicobraInstance(string nickname, int level)
 		: base(
-				843,
 				SpeciesSilicobra.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SilicobraInstance(int level)
 		: base(
-				843,
 				SpeciesSilicobra.Instance, // PokemonInstance Species
 				"Silicobra", level,
 				Ground.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Silicobra Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Silicobra() : base(
-			843,
+		public SilicobraInstance() : base(
 			SpeciesSilicobra.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

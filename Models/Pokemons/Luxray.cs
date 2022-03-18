@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLuxray Constructor
 		public SpeciesLuxray() : base(
+			405,
 			"Luxray",
 			1.4,
 			42.0,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuxrayInstance(string nickname, int level)
 		: base(
-				405,
 				SpeciesLuxray.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuxrayInstance(int level)
 		: base(
-				405,
 				SpeciesLuxray.Instance, // PokemonInstance Species
 				"Luxray", level,
 				Electric.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Luxray Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Luxray() : base(
-			405,
+		public LuxrayInstance() : base(
 			SpeciesLuxray.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

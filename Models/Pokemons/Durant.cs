@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDurant Constructor
 		public SpeciesDurant() : base(
+			632,
 			"Durant",
 			0.3,
 			33.0,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DurantInstance(string nickname, int level)
 		: base(
-				632,
 				SpeciesDurant.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Steel.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DurantInstance(int level)
 		: base(
-				632,
 				SpeciesDurant.Instance, // PokemonInstance Species
 				"Durant", level,
 				Bug.Instance, Steel.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Durant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Durant() : base(
-			632,
+		public DurantInstance() : base(
 			SpeciesDurant.Instance, // PokemonInstance Species
 			Bug.Instance, Steel.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesYamper Constructor
 		public SpeciesYamper() : base(
+			835,
 			"Yamper",
 			0.3,
 			13.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YamperInstance(string nickname, int level)
 		: base(
-				835,
 				SpeciesYamper.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YamperInstance(int level)
 		: base(
-				835,
 				SpeciesYamper.Instance, // PokemonInstance Species
 				"Yamper", level,
 				Electric.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Yamper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Yamper() : base(
-			835,
+		public YamperInstance() : base(
 			SpeciesYamper.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

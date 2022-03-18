@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAudino Constructor
 		public SpeciesAudino() : base(
+			531,
 			"Audino",
 			1.1,
 			31.0,
@@ -157,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AudinoInstance(string nickname, int level)
 		: base(
-				531,
 				SpeciesAudino.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -172,7 +172,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AudinoInstance(int level)
 		: base(
-				531,
 				SpeciesAudino.Instance, // PokemonInstance Species
 				"Audino", level,
 				Normal.Instance			
@@ -186,8 +185,7 @@ namespace Pokedex.Models.Pokemons
 		/// Audino Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Audino() : base(
-			531,
+		public AudinoInstance() : base(
 			SpeciesAudino.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

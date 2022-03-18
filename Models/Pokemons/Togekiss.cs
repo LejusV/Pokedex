@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTogekiss Constructor
 		public SpeciesTogekiss() : base(
+			468,
 			"Togekiss",
 			1.5,
 			38.0,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogekissInstance(string nickname, int level)
 		: base(
-				468,
 				SpeciesTogekiss.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance, Flying.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogekissInstance(int level)
 		: base(
-				468,
 				SpeciesTogekiss.Instance, // PokemonInstance Species
 				"Togekiss", level,
 				Fairy.Instance, Flying.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Togekiss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Togekiss() : base(
-			468,
+		public TogekissInstance() : base(
 			SpeciesTogekiss.Instance, // PokemonInstance Species
 			Fairy.Instance, Flying.Instance			
 		) {}

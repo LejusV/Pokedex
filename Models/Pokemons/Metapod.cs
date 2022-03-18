@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMetapod Constructor
 		public SpeciesMetapod() : base(
+			11,
 			"Metapod",
 			0.7,
 			9.9,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetapodInstance(string nickname, int level)
 		: base(
-				11,
 				SpeciesMetapod.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MetapodInstance(int level)
 		: base(
-				11,
 				SpeciesMetapod.Instance, // PokemonInstance Species
 				"Metapod", level,
 				Bug.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Metapod Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Metapod() : base(
-			11,
+		public MetapodInstance() : base(
 			SpeciesMetapod.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

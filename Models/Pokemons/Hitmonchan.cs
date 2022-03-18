@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHitmonchan Constructor
 		public SpeciesHitmonchan() : base(
+			107,
 			"Hitmonchan",
 			1.4,
 			50.2,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmonchanInstance(string nickname, int level)
 		: base(
-				107,
 				SpeciesHitmonchan.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HitmonchanInstance(int level)
 		: base(
-				107,
 				SpeciesHitmonchan.Instance, // PokemonInstance Species
 				"Hitmonchan", level,
 				Fighting.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hitmonchan Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hitmonchan() : base(
-			107,
+		public HitmonchanInstance() : base(
 			SpeciesHitmonchan.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

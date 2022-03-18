@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFomantis Constructor
 		public SpeciesFomantis() : base(
+			753,
 			"Fomantis",
 			0.3,
 			1.5,
@@ -101,7 +102,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FomantisInstance(string nickname, int level)
 		: base(
-				753,
 				SpeciesFomantis.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -116,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FomantisInstance(int level)
 		: base(
-				753,
 				SpeciesFomantis.Instance, // PokemonInstance Species
 				"Fomantis", level,
 				Grass.Instance			
@@ -130,8 +129,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fomantis Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fomantis() : base(
-			753,
+		public FomantisInstance() : base(
 			SpeciesFomantis.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

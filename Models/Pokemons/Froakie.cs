@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFroakie Constructor
 		public SpeciesFroakie() : base(
+			656,
 			"Froakie",
 			0.3,
 			7.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FroakieInstance(string nickname, int level)
 		: base(
-				656,
 				SpeciesFroakie.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FroakieInstance(int level)
 		: base(
-				656,
 				SpeciesFroakie.Instance, // PokemonInstance Species
 				"Froakie", level,
 				Water.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Froakie Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Froakie() : base(
-			656,
+		public FroakieInstance() : base(
 			SpeciesFroakie.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

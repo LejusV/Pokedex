@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZweilous Constructor
 		public SpeciesZweilous() : base(
+			634,
 			"Zweilous",
 			1.4,
 			50.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZweilousInstance(string nickname, int level)
 		: base(
-				634,
 				SpeciesZweilous.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZweilousInstance(int level)
 		: base(
-				634,
 				SpeciesZweilous.Instance, // PokemonInstance Species
 				"Zweilous", level,
 				Dark.Instance, Dragon.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zweilous Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zweilous() : base(
-			634,
+		public ZweilousInstance() : base(
 			SpeciesZweilous.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}

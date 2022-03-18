@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesOricorio-Baile Constructor
 		public SpeciesOricorioBaile() : base(
+			741,
 			"Oricorio-Baile",
 			0.6,
 			3.4,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OricorioBaileInstance(string nickname, int level)
 		: base(
-				741,
 				SpeciesOricorioBaile.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Flying.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public OricorioBaileInstance(int level)
 		: base(
-				741,
 				SpeciesOricorioBaile.Instance, // PokemonInstance Species
 				"Oricorio-Baile", level,
 				Fire.Instance, Flying.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Oricorio-Baile Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public OricorioBaile() : base(
-			741,
+		public OricorioBaileInstance() : base(
 			SpeciesOricorioBaile.Instance, // PokemonInstance Species
 			Fire.Instance, Flying.Instance			
 		) {}

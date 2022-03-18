@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDragonite Constructor
 		public SpeciesDragonite() : base(
+			149,
 			"Dragonite",
 			2.2,
 			210.0,
@@ -172,7 +173,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragoniteInstance(string nickname, int level)
 		: base(
-				149,
 				SpeciesDragonite.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Flying.Instance			
@@ -187,7 +187,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragoniteInstance(int level)
 		: base(
-				149,
 				SpeciesDragonite.Instance, // PokemonInstance Species
 				"Dragonite", level,
 				Dragon.Instance, Flying.Instance			
@@ -201,8 +200,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dragonite Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dragonite() : base(
-			149,
+		public DragoniteInstance() : base(
 			SpeciesDragonite.Instance, // PokemonInstance Species
 			Dragon.Instance, Flying.Instance			
 		) {}

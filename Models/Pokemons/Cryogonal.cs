@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCryogonal Constructor
 		public SpeciesCryogonal() : base(
+			615,
 			"Cryogonal",
 			1.1,
 			148.0,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CryogonalInstance(string nickname, int level)
 		: base(
-				615,
 				SpeciesCryogonal.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CryogonalInstance(int level)
 		: base(
-				615,
 				SpeciesCryogonal.Instance, // PokemonInstance Species
 				"Cryogonal", level,
 				Ice.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cryogonal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cryogonal() : base(
-			615,
+		public CryogonalInstance() : base(
 			SpeciesCryogonal.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMorelull Constructor
 		public SpeciesMorelull() : base(
+			755,
 			"Morelull",
 			0.2,
 			1.5,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorelullInstance(string nickname, int level)
 		: base(
-				755,
 				SpeciesMorelull.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Fairy.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorelullInstance(int level)
 		: base(
-				755,
 				SpeciesMorelull.Instance, // PokemonInstance Species
 				"Morelull", level,
 				Grass.Instance, Fairy.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Morelull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Morelull() : base(
-			755,
+		public MorelullInstance() : base(
 			SpeciesMorelull.Instance, // PokemonInstance Species
 			Grass.Instance, Fairy.Instance			
 		) {}

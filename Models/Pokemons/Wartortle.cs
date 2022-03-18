@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWartortle Constructor
 		public SpeciesWartortle() : base(
+			8,
 			"Wartortle",
 			1.0,
 			22.5,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WartortleInstance(string nickname, int level)
 		: base(
-				8,
 				SpeciesWartortle.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WartortleInstance(int level)
 		: base(
-				8,
 				SpeciesWartortle.Instance, // PokemonInstance Species
 				"Wartortle", level,
 				Water.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wartortle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wartortle() : base(
-			8,
+		public WartortleInstance() : base(
 			SpeciesWartortle.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

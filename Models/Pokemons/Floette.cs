@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFloette Constructor
 		public SpeciesFloette() : base(
+			670,
 			"Floette",
 			0.2,
 			0.9,
@@ -111,7 +112,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FloetteInstance(string nickname, int level)
 		: base(
-				670,
 				SpeciesFloette.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -126,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FloetteInstance(int level)
 		: base(
-				670,
 				SpeciesFloette.Instance, // PokemonInstance Species
 				"Floette", level,
 				Fairy.Instance			
@@ -140,8 +139,7 @@ namespace Pokedex.Models.Pokemons
 		/// Floette Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Floette() : base(
-			670,
+		public FloetteInstance() : base(
 			SpeciesFloette.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

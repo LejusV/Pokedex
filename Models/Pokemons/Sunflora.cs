@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSunflora Constructor
 		public SpeciesSunflora() : base(
+			192,
 			"Sunflora",
 			0.8,
 			8.5,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SunfloraInstance(string nickname, int level)
 		: base(
-				192,
 				SpeciesSunflora.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SunfloraInstance(int level)
 		: base(
-				192,
 				SpeciesSunflora.Instance, // PokemonInstance Species
 				"Sunflora", level,
 				Grass.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sunflora Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sunflora() : base(
-			192,
+		public SunfloraInstance() : base(
 			SpeciesSunflora.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

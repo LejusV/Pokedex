@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKabutops Constructor
 		public SpeciesKabutops() : base(
+			141,
 			"Kabutops",
 			1.3,
 			40.5,
@@ -152,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KabutopsInstance(string nickname, int level)
 		: base(
-				141,
 				SpeciesKabutops.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -167,7 +167,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KabutopsInstance(int level)
 		: base(
-				141,
 				SpeciesKabutops.Instance, // PokemonInstance Species
 				"Kabutops", level,
 				Rock.Instance, Water.Instance			
@@ -181,8 +180,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kabutops Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Kabutops() : base(
-			141,
+		public KabutopsInstance() : base(
 			SpeciesKabutops.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

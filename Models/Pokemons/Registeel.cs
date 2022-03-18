@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegisteel Constructor
 		public SpeciesRegisteel() : base(
+			379,
 			"Registeel",
 			1.9,
 			205.0,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegisteelInstance(string nickname, int level)
 		: base(
-				379,
 				SpeciesRegisteel.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegisteelInstance(int level)
 		: base(
-				379,
 				SpeciesRegisteel.Instance, // PokemonInstance Species
 				"Registeel", level,
 				Steel.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Registeel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Registeel() : base(
-			379,
+		public RegisteelInstance() : base(
 			SpeciesRegisteel.Instance, // PokemonInstance Species
 			Steel.Instance			
 		) {}

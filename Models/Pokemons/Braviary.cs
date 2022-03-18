@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBraviary Constructor
 		public SpeciesBraviary() : base(
+			628,
 			"Braviary",
 			1.5,
 			41.0,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BraviaryInstance(string nickname, int level)
 		: base(
-				628,
 				SpeciesBraviary.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BraviaryInstance(int level)
 		: base(
-				628,
 				SpeciesBraviary.Instance, // PokemonInstance Species
 				"Braviary", level,
 				Normal.Instance, Flying.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Braviary Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Braviary() : base(
-			628,
+		public BraviaryInstance() : base(
 			SpeciesBraviary.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

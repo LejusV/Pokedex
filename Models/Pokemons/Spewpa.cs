@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSpewpa Constructor
 		public SpeciesSpewpa() : base(
+			665,
 			"Spewpa",
 			0.3,
 			8.4,
@@ -65,7 +66,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpewpaInstance(string nickname, int level)
 		: base(
-				665,
 				SpeciesSpewpa.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -80,7 +80,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SpewpaInstance(int level)
 		: base(
-				665,
 				SpeciesSpewpa.Instance, // PokemonInstance Species
 				"Spewpa", level,
 				Bug.Instance			
@@ -94,8 +93,7 @@ namespace Pokedex.Models.Pokemons
 		/// Spewpa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Spewpa() : base(
-			665,
+		public SpewpaInstance() : base(
 			SpeciesSpewpa.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

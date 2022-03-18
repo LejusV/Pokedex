@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLopunny Constructor
 		public SpeciesLopunny() : base(
+			428,
 			"Lopunny",
 			1.2,
 			33.3,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LopunnyInstance(string nickname, int level)
 		: base(
-				428,
 				SpeciesLopunny.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LopunnyInstance(int level)
 		: base(
-				428,
 				SpeciesLopunny.Instance, // PokemonInstance Species
 				"Lopunny", level,
 				Normal.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lopunny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lopunny() : base(
-			428,
+		public LopunnyInstance() : base(
 			SpeciesLopunny.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

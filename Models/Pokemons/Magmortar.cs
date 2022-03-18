@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMagmortar Constructor
 		public SpeciesMagmortar() : base(
+			467,
 			"Magmortar",
 			1.6,
 			68.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagmortarInstance(string nickname, int level)
 		: base(
-				467,
 				SpeciesMagmortar.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MagmortarInstance(int level)
 		: base(
-				467,
 				SpeciesMagmortar.Instance, // PokemonInstance Species
 				"Magmortar", level,
 				Fire.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Magmortar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Magmortar() : base(
-			467,
+		public MagmortarInstance() : base(
 			SpeciesMagmortar.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

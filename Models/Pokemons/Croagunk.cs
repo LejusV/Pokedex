@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCroagunk Constructor
 		public SpeciesCroagunk() : base(
+			453,
 			"Croagunk",
 			0.7,
 			23.0,
@@ -151,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CroagunkInstance(string nickname, int level)
 		: base(
-				453,
 				SpeciesCroagunk.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fighting.Instance			
@@ -166,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CroagunkInstance(int level)
 		: base(
-				453,
 				SpeciesCroagunk.Instance, // PokemonInstance Species
 				"Croagunk", level,
 				Poison.Instance, Fighting.Instance			
@@ -180,8 +179,7 @@ namespace Pokedex.Models.Pokemons
 		/// Croagunk Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Croagunk() : base(
-			453,
+		public CroagunkInstance() : base(
 			SpeciesCroagunk.Instance, // PokemonInstance Species
 			Poison.Instance, Fighting.Instance			
 		) {}

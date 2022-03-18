@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeismitoad Constructor
 		public SpeciesSeismitoad() : base(
+			537,
 			"Seismitoad",
 			1.5,
 			62.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeismitoadInstance(string nickname, int level)
 		: base(
-				537,
 				SpeciesSeismitoad.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeismitoadInstance(int level)
 		: base(
-				537,
 				SpeciesSeismitoad.Instance, // PokemonInstance Species
 				"Seismitoad", level,
 				Water.Instance, Ground.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seismitoad Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seismitoad() : base(
-			537,
+		public SeismitoadInstance() : base(
 			SpeciesSeismitoad.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

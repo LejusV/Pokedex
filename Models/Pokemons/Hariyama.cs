@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHariyama Constructor
 		public SpeciesHariyama() : base(
+			297,
 			"Hariyama",
 			2.3,
 			253.8,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HariyamaInstance(string nickname, int level)
 		: base(
-				297,
 				SpeciesHariyama.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HariyamaInstance(int level)
 		: base(
-				297,
 				SpeciesHariyama.Instance, // PokemonInstance Species
 				"Hariyama", level,
 				Fighting.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hariyama Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hariyama() : base(
-			297,
+		public HariyamaInstance() : base(
 			SpeciesHariyama.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesQuilladin Constructor
 		public SpeciesQuilladin() : base(
+			651,
 			"Quilladin",
 			0.7,
 			29.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuilladinInstance(string nickname, int level)
 		: base(
-				651,
 				SpeciesQuilladin.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public QuilladinInstance(int level)
 		: base(
-				651,
 				SpeciesQuilladin.Instance, // PokemonInstance Species
 				"Quilladin", level,
 				Grass.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Quilladin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Quilladin() : base(
-			651,
+		public QuilladinInstance() : base(
 			SpeciesQuilladin.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

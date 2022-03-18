@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCarbink Constructor
 		public SpeciesCarbink() : base(
+			703,
 			"Carbink",
 			0.3,
 			5.7,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarbinkInstance(string nickname, int level)
 		: base(
-				703,
 				SpeciesCarbink.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Fairy.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CarbinkInstance(int level)
 		: base(
-				703,
 				SpeciesCarbink.Instance, // PokemonInstance Species
 				"Carbink", level,
 				Rock.Instance, Fairy.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Carbink Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Carbink() : base(
-			703,
+		public CarbinkInstance() : base(
 			SpeciesCarbink.Instance, // PokemonInstance Species
 			Rock.Instance, Fairy.Instance			
 		) {}

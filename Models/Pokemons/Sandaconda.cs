@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSandaconda Constructor
 		public SpeciesSandaconda() : base(
+			844,
 			"Sandaconda",
 			3.8,
 			65.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandacondaInstance(string nickname, int level)
 		: base(
-				844,
 				SpeciesSandaconda.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SandacondaInstance(int level)
 		: base(
-				844,
 				SpeciesSandaconda.Instance, // PokemonInstance Species
 				"Sandaconda", level,
 				Ground.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sandaconda Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sandaconda() : base(
-			844,
+		public SandacondaInstance() : base(
 			SpeciesSandaconda.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

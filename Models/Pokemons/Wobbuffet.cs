@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWobbuffet Constructor
 		public SpeciesWobbuffet() : base(
+			202,
 			"Wobbuffet",
 			1.3,
 			28.5,
@@ -64,7 +65,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WobbuffetInstance(string nickname, int level)
 		: base(
-				202,
 				SpeciesWobbuffet.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -79,7 +79,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WobbuffetInstance(int level)
 		: base(
-				202,
 				SpeciesWobbuffet.Instance, // PokemonInstance Species
 				"Wobbuffet", level,
 				Psychic.Instance			
@@ -93,8 +92,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wobbuffet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wobbuffet() : base(
-			202,
+		public WobbuffetInstance() : base(
 			SpeciesWobbuffet.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNinjask Constructor
 		public SpeciesNinjask() : base(
+			291,
 			"Ninjask",
 			0.8,
 			12.0,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NinjaskInstance(string nickname, int level)
 		: base(
-				291,
 				SpeciesNinjask.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NinjaskInstance(int level)
 		: base(
-				291,
 				SpeciesNinjask.Instance, // PokemonInstance Species
 				"Ninjask", level,
 				Bug.Instance, Flying.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ninjask Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ninjask() : base(
-			291,
+		public NinjaskInstance() : base(
 			SpeciesNinjask.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

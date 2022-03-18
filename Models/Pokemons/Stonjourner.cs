@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStonjourner Constructor
 		public SpeciesStonjourner() : base(
+			874,
 			"Stonjourner",
 			2.5,
 			520.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StonjournerInstance(string nickname, int level)
 		: base(
-				874,
 				SpeciesStonjourner.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StonjournerInstance(int level)
 		: base(
-				874,
 				SpeciesStonjourner.Instance, // PokemonInstance Species
 				"Stonjourner", level,
 				Rock.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stonjourner Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stonjourner() : base(
-			874,
+		public StonjournerInstance() : base(
 			SpeciesStonjourner.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

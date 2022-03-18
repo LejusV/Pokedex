@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRhyperior Constructor
 		public SpeciesRhyperior() : base(
+			464,
 			"Rhyperior",
 			2.4,
 			282.8,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhyperiorInstance(string nickname, int level)
 		: base(
-				464,
 				SpeciesRhyperior.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Rock.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RhyperiorInstance(int level)
 		: base(
-				464,
 				SpeciesRhyperior.Instance, // PokemonInstance Species
 				"Rhyperior", level,
 				Ground.Instance, Rock.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rhyperior Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rhyperior() : base(
-			464,
+		public RhyperiorInstance() : base(
 			SpeciesRhyperior.Instance, // PokemonInstance Species
 			Ground.Instance, Rock.Instance			
 		) {}

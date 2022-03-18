@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAmoonguss Constructor
 		public SpeciesAmoonguss() : base(
+			591,
 			"Amoonguss",
 			0.6,
 			10.5,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmoongussInstance(string nickname, int level)
 		: base(
-				591,
 				SpeciesAmoonguss.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmoongussInstance(int level)
 		: base(
-				591,
 				SpeciesAmoonguss.Instance, // PokemonInstance Species
 				"Amoonguss", level,
 				Grass.Instance, Poison.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Amoonguss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Amoonguss() : base(
-			591,
+		public AmoongussInstance() : base(
 			SpeciesAmoonguss.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

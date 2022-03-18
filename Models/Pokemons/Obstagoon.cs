@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesObstagoon Constructor
 		public SpeciesObstagoon() : base(
+			862,
 			"Obstagoon",
 			1.6,
 			46.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ObstagoonInstance(string nickname, int level)
 		: base(
-				862,
 				SpeciesObstagoon.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ObstagoonInstance(int level)
 		: base(
-				862,
 				SpeciesObstagoon.Instance, // PokemonInstance Species
 				"Obstagoon", level,
 				Dark.Instance, Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Obstagoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Obstagoon() : base(
-			862,
+		public ObstagoonInstance() : base(
 			SpeciesObstagoon.Instance, // PokemonInstance Species
 			Dark.Instance, Normal.Instance			
 		) {}

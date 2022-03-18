@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDuskull Constructor
 		public SpeciesDuskull() : base(
+			355,
 			"Duskull",
 			0.8,
 			15.0,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuskullInstance(string nickname, int level)
 		: base(
-				355,
 				SpeciesDuskull.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DuskullInstance(int level)
 		: base(
-				355,
 				SpeciesDuskull.Instance, // PokemonInstance Species
 				"Duskull", level,
 				Ghost.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Duskull Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Duskull() : base(
-			355,
+		public DuskullInstance() : base(
 			SpeciesDuskull.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

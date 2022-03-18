@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSigilyph Constructor
 		public SpeciesSigilyph() : base(
+			561,
 			"Sigilyph",
 			1.4,
 			14.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SigilyphInstance(string nickname, int level)
 		: base(
-				561,
 				SpeciesSigilyph.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Flying.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SigilyphInstance(int level)
 		: base(
-				561,
 				SpeciesSigilyph.Instance, // PokemonInstance Species
 				"Sigilyph", level,
 				Psychic.Instance, Flying.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sigilyph Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sigilyph() : base(
-			561,
+		public SigilyphInstance() : base(
 			SpeciesSigilyph.Instance, // PokemonInstance Species
 			Psychic.Instance, Flying.Instance			
 		) {}

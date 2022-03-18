@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGossifleur Constructor
 		public SpeciesGossifleur() : base(
+			829,
 			"Gossifleur",
 			0.4,
 			2.2,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GossifleurInstance(string nickname, int level)
 		: base(
-				829,
 				SpeciesGossifleur.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GossifleurInstance(int level)
 		: base(
-				829,
 				SpeciesGossifleur.Instance, // PokemonInstance Species
 				"Gossifleur", level,
 				Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gossifleur Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gossifleur() : base(
-			829,
+		public GossifleurInstance() : base(
 			SpeciesGossifleur.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

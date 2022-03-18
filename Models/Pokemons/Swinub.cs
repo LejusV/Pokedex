@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwinub Constructor
 		public SpeciesSwinub() : base(
+			220,
 			"Swinub",
 			0.4,
 			6.5,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwinubInstance(string nickname, int level)
 		: base(
-				220,
 				SpeciesSwinub.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Ground.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwinubInstance(int level)
 		: base(
-				220,
 				SpeciesSwinub.Instance, // PokemonInstance Species
 				"Swinub", level,
 				Ice.Instance, Ground.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swinub Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swinub() : base(
-			220,
+		public SwinubInstance() : base(
 			SpeciesSwinub.Instance, // PokemonInstance Species
 			Ice.Instance, Ground.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGliscor Constructor
 		public SpeciesGliscor() : base(
+			472,
 			"Gliscor",
 			2.0,
 			42.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GliscorInstance(string nickname, int level)
 		: base(
-				472,
 				SpeciesGliscor.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance, Flying.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GliscorInstance(int level)
 		: base(
-				472,
 				SpeciesGliscor.Instance, // PokemonInstance Species
 				"Gliscor", level,
 				Ground.Instance, Flying.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gliscor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gliscor() : base(
-			472,
+		public GliscorInstance() : base(
 			SpeciesGliscor.Instance, // PokemonInstance Species
 			Ground.Instance, Flying.Instance			
 		) {}

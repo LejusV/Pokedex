@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMorgrem Constructor
 		public SpeciesMorgrem() : base(
+			860,
 			"Morgrem",
 			0.8,
 			12.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorgremInstance(string nickname, int level)
 		: base(
-				860,
 				SpeciesMorgrem.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MorgremInstance(int level)
 		: base(
-				860,
 				SpeciesMorgrem.Instance, // PokemonInstance Species
 				"Morgrem", level,
 				Dark.Instance, Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Morgrem Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Morgrem() : base(
-			860,
+		public MorgremInstance() : base(
 			SpeciesMorgrem.Instance, // PokemonInstance Species
 			Dark.Instance, Fairy.Instance			
 		) {}

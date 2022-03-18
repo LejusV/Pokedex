@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLucario Constructor
 		public SpeciesLucario() : base(
+			448,
 			"Lucario",
 			1.2,
 			54.0,
@@ -146,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LucarioInstance(string nickname, int level)
 		: base(
-				448,
 				SpeciesLucario.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Steel.Instance			
@@ -161,7 +161,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LucarioInstance(int level)
 		: base(
-				448,
 				SpeciesLucario.Instance, // PokemonInstance Species
 				"Lucario", level,
 				Fighting.Instance, Steel.Instance			
@@ -175,8 +174,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lucario Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lucario() : base(
-			448,
+		public LucarioInstance() : base(
 			SpeciesLucario.Instance, // PokemonInstance Species
 			Fighting.Instance, Steel.Instance			
 		) {}

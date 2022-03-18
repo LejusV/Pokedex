@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSurskit Constructor
 		public SpeciesSurskit() : base(
+			283,
 			"Surskit",
 			0.5,
 			1.7,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SurskitInstance(string nickname, int level)
 		: base(
-				283,
 				SpeciesSurskit.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Water.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SurskitInstance(int level)
 		: base(
-				283,
 				SpeciesSurskit.Instance, // PokemonInstance Species
 				"Surskit", level,
 				Bug.Instance, Water.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Surskit Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Surskit() : base(
-			283,
+		public SurskitInstance() : base(
 			SpeciesSurskit.Instance, // PokemonInstance Species
 			Bug.Instance, Water.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVileplume Constructor
 		public SpeciesVileplume() : base(
+			45,
 			"Vileplume",
 			1.2,
 			18.6,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VileplumeInstance(string nickname, int level)
 		: base(
-				45,
 				SpeciesVileplume.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VileplumeInstance(int level)
 		: base(
-				45,
 				SpeciesVileplume.Instance, // PokemonInstance Species
 				"Vileplume", level,
 				Grass.Instance, Poison.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vileplume Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vileplume() : base(
-			45,
+		public VileplumeInstance() : base(
 			SpeciesVileplume.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

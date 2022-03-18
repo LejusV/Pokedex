@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCloyster Constructor
 		public SpeciesCloyster() : base(
+			91,
 			"Cloyster",
 			1.5,
 			132.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CloysterInstance(string nickname, int level)
 		: base(
-				91,
 				SpeciesCloyster.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ice.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CloysterInstance(int level)
 		: base(
-				91,
 				SpeciesCloyster.Instance, // PokemonInstance Species
 				"Cloyster", level,
 				Water.Instance, Ice.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cloyster Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cloyster() : base(
-			91,
+		public CloysterInstance() : base(
 			SpeciesCloyster.Instance, // PokemonInstance Species
 			Water.Instance, Ice.Instance			
 		) {}

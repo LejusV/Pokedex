@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesExeggcute Constructor
 		public SpeciesExeggcute() : base(
+			102,
 			"Exeggcute",
 			0.4,
 			2.5,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExeggcuteInstance(string nickname, int level)
 		: base(
-				102,
 				SpeciesExeggcute.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Psychic.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ExeggcuteInstance(int level)
 		: base(
-				102,
 				SpeciesExeggcute.Instance, // PokemonInstance Species
 				"Exeggcute", level,
 				Grass.Instance, Psychic.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Exeggcute Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Exeggcute() : base(
-			102,
+		public ExeggcuteInstance() : base(
 			SpeciesExeggcute.Instance, // PokemonInstance Species
 			Grass.Instance, Psychic.Instance			
 		) {}

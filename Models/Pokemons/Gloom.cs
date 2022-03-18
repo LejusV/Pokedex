@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGloom Constructor
 		public SpeciesGloom() : base(
+			44,
 			"Gloom",
 			0.8,
 			8.6,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GloomInstance(string nickname, int level)
 		: base(
-				44,
 				SpeciesGloom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GloomInstance(int level)
 		: base(
-				44,
 				SpeciesGloom.Instance, // PokemonInstance Species
 				"Gloom", level,
 				Grass.Instance, Poison.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gloom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gloom() : base(
-			44,
+		public GloomInstance() : base(
 			SpeciesGloom.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

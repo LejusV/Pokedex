@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJigglypuff Constructor
 		public SpeciesJigglypuff() : base(
+			39,
 			"Jigglypuff",
 			0.5,
 			5.5,
@@ -170,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JigglypuffInstance(string nickname, int level)
 		: base(
-				39,
 				SpeciesJigglypuff.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
@@ -185,7 +185,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JigglypuffInstance(int level)
 		: base(
-				39,
 				SpeciesJigglypuff.Instance, // PokemonInstance Species
 				"Jigglypuff", level,
 				Normal.Instance, Fairy.Instance			
@@ -199,8 +198,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jigglypuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Jigglypuff() : base(
-			39,
+		public JigglypuffInstance() : base(
 			SpeciesJigglypuff.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}

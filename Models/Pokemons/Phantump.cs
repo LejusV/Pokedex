@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPhantump Constructor
 		public SpeciesPhantump() : base(
+			708,
 			"Phantump",
 			0.4,
 			7.0,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhantumpInstance(string nickname, int level)
 		: base(
-				708,
 				SpeciesPhantump.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PhantumpInstance(int level)
 		: base(
-				708,
 				SpeciesPhantump.Instance, // PokemonInstance Species
 				"Phantump", level,
 				Ghost.Instance, Grass.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Phantump Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Phantump() : base(
-			708,
+		public PhantumpInstance() : base(
 			SpeciesPhantump.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}

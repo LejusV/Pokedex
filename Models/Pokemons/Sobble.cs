@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSobble Constructor
 		public SpeciesSobble() : base(
+			816,
 			"Sobble",
 			0.3,
 			4.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SobbleInstance(string nickname, int level)
 		: base(
-				816,
 				SpeciesSobble.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SobbleInstance(int level)
 		: base(
-				816,
 				SpeciesSobble.Instance, // PokemonInstance Species
 				"Sobble", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sobble Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sobble() : base(
-			816,
+		public SobbleInstance() : base(
 			SpeciesSobble.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

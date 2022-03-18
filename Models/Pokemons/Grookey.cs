@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrookey Constructor
 		public SpeciesGrookey() : base(
+			810,
 			"Grookey",
 			0.3,
 			5.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrookeyInstance(string nickname, int level)
 		: base(
-				810,
 				SpeciesGrookey.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrookeyInstance(int level)
 		: base(
-				810,
 				SpeciesGrookey.Instance, // PokemonInstance Species
 				"Grookey", level,
 				Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grookey Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grookey() : base(
-			810,
+		public GrookeyInstance() : base(
 			SpeciesGrookey.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

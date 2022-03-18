@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGengar Constructor
 		public SpeciesGengar() : base(
+			94,
 			"Gengar",
 			1.5,
 			40.5,
@@ -160,7 +161,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GengarInstance(string nickname, int level)
 		: base(
-				94,
 				SpeciesGengar.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Poison.Instance			
@@ -175,7 +175,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GengarInstance(int level)
 		: base(
-				94,
 				SpeciesGengar.Instance, // PokemonInstance Species
 				"Gengar", level,
 				Ghost.Instance, Poison.Instance			
@@ -189,8 +188,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gengar Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gengar() : base(
-			94,
+		public GengarInstance() : base(
 			SpeciesGengar.Instance, // PokemonInstance Species
 			Ghost.Instance, Poison.Instance			
 		) {}

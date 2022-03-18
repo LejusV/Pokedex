@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRolycoly Constructor
 		public SpeciesRolycoly() : base(
+			837,
 			"Rolycoly",
 			0.3,
 			12.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RolycolyInstance(string nickname, int level)
 		: base(
-				837,
 				SpeciesRolycoly.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RolycolyInstance(int level)
 		: base(
-				837,
 				SpeciesRolycoly.Instance, // PokemonInstance Species
 				"Rolycoly", level,
 				Rock.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rolycoly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rolycoly() : base(
-			837,
+		public RolycolyInstance() : base(
 			SpeciesRolycoly.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

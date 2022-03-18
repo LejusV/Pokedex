@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLilligant Constructor
 		public SpeciesLilligant() : base(
+			549,
 			"Lilligant",
 			1.1,
 			16.3,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LilligantInstance(string nickname, int level)
 		: base(
-				549,
 				SpeciesLilligant.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LilligantInstance(int level)
 		: base(
-				549,
 				SpeciesLilligant.Instance, // PokemonInstance Species
 				"Lilligant", level,
 				Grass.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lilligant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lilligant() : base(
-			549,
+		public LilligantInstance() : base(
 			SpeciesLilligant.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

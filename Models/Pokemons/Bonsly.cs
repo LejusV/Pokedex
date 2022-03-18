@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBonsly Constructor
 		public SpeciesBonsly() : base(
+			438,
 			"Bonsly",
 			0.5,
 			15.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BonslyInstance(string nickname, int level)
 		: base(
-				438,
 				SpeciesBonsly.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BonslyInstance(int level)
 		: base(
-				438,
 				SpeciesBonsly.Instance, // PokemonInstance Species
 				"Bonsly", level,
 				Rock.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bonsly Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bonsly() : base(
-			438,
+		public BonslyInstance() : base(
 			SpeciesBonsly.Instance, // PokemonInstance Species
 			Rock.Instance			
 		) {}

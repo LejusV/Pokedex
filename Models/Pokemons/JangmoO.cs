@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJangmo-O Constructor
 		public SpeciesJangmoO() : base(
+			782,
 			"Jangmo-O",
 			0.6,
 			29.7,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JangmoOInstance(string nickname, int level)
 		: base(
-				782,
 				SpeciesJangmoO.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JangmoOInstance(int level)
 		: base(
-				782,
 				SpeciesJangmoO.Instance, // PokemonInstance Species
 				"Jangmo-O", level,
 				Dragon.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Jangmo-O Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public JangmoO() : base(
-			782,
+		public JangmoOInstance() : base(
 			SpeciesJangmoO.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPurrloin Constructor
 		public SpeciesPurrloin() : base(
+			509,
 			"Purrloin",
 			0.4,
 			10.1,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PurrloinInstance(string nickname, int level)
 		: base(
-				509,
 				SpeciesPurrloin.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PurrloinInstance(int level)
 		: base(
-				509,
 				SpeciesPurrloin.Instance, // PokemonInstance Species
 				"Purrloin", level,
 				Dark.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Purrloin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Purrloin() : base(
-			509,
+		public PurrloinInstance() : base(
 			SpeciesPurrloin.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

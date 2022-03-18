@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSylveon Constructor
 		public SpeciesSylveon() : base(
+			700,
 			"Sylveon",
 			1.0,
 			23.5,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SylveonInstance(string nickname, int level)
 		: base(
-				700,
 				SpeciesSylveon.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SylveonInstance(int level)
 		: base(
-				700,
 				SpeciesSylveon.Instance, // PokemonInstance Species
 				"Sylveon", level,
 				Fairy.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sylveon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sylveon() : base(
-			700,
+		public SylveonInstance() : base(
 			SpeciesSylveon.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

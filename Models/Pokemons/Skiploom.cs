@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkiploom Constructor
 		public SpeciesSkiploom() : base(
+			188,
 			"Skiploom",
 			0.6,
 			1.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkiploomInstance(string nickname, int level)
 		: base(
-				188,
 				SpeciesSkiploom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Flying.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkiploomInstance(int level)
 		: base(
-				188,
 				SpeciesSkiploom.Instance, // PokemonInstance Species
 				"Skiploom", level,
 				Grass.Instance, Flying.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skiploom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skiploom() : base(
-			188,
+		public SkiploomInstance() : base(
 			SpeciesSkiploom.Instance, // PokemonInstance Species
 			Grass.Instance, Flying.Instance			
 		) {}

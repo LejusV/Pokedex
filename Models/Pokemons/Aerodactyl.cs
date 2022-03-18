@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAerodactyl Constructor
 		public SpeciesAerodactyl() : base(
+			142,
 			"Aerodactyl",
 			1.8,
 			59.0,
@@ -150,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AerodactylInstance(string nickname, int level)
 		: base(
-				142,
 				SpeciesAerodactyl.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
@@ -165,7 +165,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AerodactylInstance(int level)
 		: base(
-				142,
 				SpeciesAerodactyl.Instance, // PokemonInstance Species
 				"Aerodactyl", level,
 				Rock.Instance, Flying.Instance			
@@ -179,8 +178,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aerodactyl Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aerodactyl() : base(
-			142,
+		public AerodactylInstance() : base(
 			SpeciesAerodactyl.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}

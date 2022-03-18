@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTirtouga Constructor
 		public SpeciesTirtouga() : base(
+			564,
 			"Tirtouga",
 			0.7,
 			16.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TirtougaInstance(string nickname, int level)
 		: base(
-				564,
 				SpeciesTirtouga.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Rock.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TirtougaInstance(int level)
 		: base(
-				564,
 				SpeciesTirtouga.Instance, // PokemonInstance Species
 				"Tirtouga", level,
 				Water.Instance, Rock.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tirtouga Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tirtouga() : base(
-			564,
+		public TirtougaInstance() : base(
 			SpeciesTirtouga.Instance, // PokemonInstance Species
 			Water.Instance, Rock.Instance			
 		) {}

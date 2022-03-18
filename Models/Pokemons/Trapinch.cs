@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTrapinch Constructor
 		public SpeciesTrapinch() : base(
+			328,
 			"Trapinch",
 			0.7,
 			15.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrapinchInstance(string nickname, int level)
 		: base(
-				328,
 				SpeciesTrapinch.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TrapinchInstance(int level)
 		: base(
-				328,
 				SpeciesTrapinch.Instance, // PokemonInstance Species
 				"Trapinch", level,
 				Ground.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Trapinch Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Trapinch() : base(
-			328,
+		public TrapinchInstance() : base(
 			SpeciesTrapinch.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

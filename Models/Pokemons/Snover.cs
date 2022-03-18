@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSnover Constructor
 		public SpeciesSnover() : base(
+			459,
 			"Snover",
 			1.0,
 			50.5,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnoverInstance(string nickname, int level)
 		: base(
-				459,
 				SpeciesSnover.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Ice.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SnoverInstance(int level)
 		: base(
-				459,
 				SpeciesSnover.Instance, // PokemonInstance Species
 				"Snover", level,
 				Grass.Instance, Ice.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Snover Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Snover() : base(
-			459,
+		public SnoverInstance() : base(
 			SpeciesSnover.Instance, // PokemonInstance Species
 			Grass.Instance, Ice.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRayquaza Constructor
 		public SpeciesRayquaza() : base(
+			384,
 			"Rayquaza",
 			7.0,
 			206.5,
@@ -151,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RayquazaInstance(string nickname, int level)
 		: base(
-				384,
 				SpeciesRayquaza.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Flying.Instance			
@@ -166,7 +166,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RayquazaInstance(int level)
 		: base(
-				384,
 				SpeciesRayquaza.Instance, // PokemonInstance Species
 				"Rayquaza", level,
 				Dragon.Instance, Flying.Instance			
@@ -180,8 +179,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rayquaza Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rayquaza() : base(
-			384,
+		public RayquazaInstance() : base(
 			SpeciesRayquaza.Instance, // PokemonInstance Species
 			Dragon.Instance, Flying.Instance			
 		) {}

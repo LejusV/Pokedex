@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrampa Constructor
 		public SpeciesDrampa() : base(
+			780,
 			"Drampa",
 			3.0,
 			185.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrampaInstance(string nickname, int level)
 		: base(
-				780,
 				SpeciesDrampa.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Dragon.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrampaInstance(int level)
 		: base(
-				780,
 				SpeciesDrampa.Instance, // PokemonInstance Species
 				"Drampa", level,
 				Normal.Instance, Dragon.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drampa Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drampa() : base(
-			780,
+		public DrampaInstance() : base(
 			SpeciesDrampa.Instance, // PokemonInstance Species
 			Normal.Instance, Dragon.Instance			
 		) {}

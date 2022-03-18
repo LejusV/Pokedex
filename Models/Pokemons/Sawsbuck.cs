@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSawsbuck Constructor
 		public SpeciesSawsbuck() : base(
+			586,
 			"Sawsbuck",
 			1.9,
 			92.5,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SawsbuckInstance(string nickname, int level)
 		: base(
-				586,
 				SpeciesSawsbuck.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Grass.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SawsbuckInstance(int level)
 		: base(
-				586,
 				SpeciesSawsbuck.Instance, // PokemonInstance Species
 				"Sawsbuck", level,
 				Normal.Instance, Grass.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Sawsbuck Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Sawsbuck() : base(
-			586,
+		public SawsbuckInstance() : base(
 			SpeciesSawsbuck.Instance, // PokemonInstance Species
 			Normal.Instance, Grass.Instance			
 		) {}

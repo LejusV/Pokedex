@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAmbipom Constructor
 		public SpeciesAmbipom() : base(
+			424,
 			"Ambipom",
 			1.2,
 			20.3,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmbipomInstance(string nickname, int level)
 		: base(
-				424,
 				SpeciesAmbipom.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AmbipomInstance(int level)
 		: base(
-				424,
 				SpeciesAmbipom.Instance, // PokemonInstance Species
 				"Ambipom", level,
 				Normal.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ambipom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ambipom() : base(
-			424,
+		public AmbipomInstance() : base(
 			SpeciesAmbipom.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

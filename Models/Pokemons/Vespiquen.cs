@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVespiquen Constructor
 		public SpeciesVespiquen() : base(
+			416,
 			"Vespiquen",
 			1.2,
 			38.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VespiquenInstance(string nickname, int level)
 		: base(
-				416,
 				SpeciesVespiquen.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VespiquenInstance(int level)
 		: base(
-				416,
 				SpeciesVespiquen.Instance, // PokemonInstance Species
 				"Vespiquen", level,
 				Bug.Instance, Flying.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vespiquen Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vespiquen() : base(
-			416,
+		public VespiquenInstance() : base(
 			SpeciesVespiquen.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

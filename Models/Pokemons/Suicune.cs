@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSuicune Constructor
 		public SpeciesSuicune() : base(
+			245,
 			"Suicune",
 			2.0,
 			187.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SuicuneInstance(string nickname, int level)
 		: base(
-				245,
 				SpeciesSuicune.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SuicuneInstance(int level)
 		: base(
-				245,
 				SpeciesSuicune.Instance, // PokemonInstance Species
 				"Suicune", level,
 				Water.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Suicune Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Suicune() : base(
-			245,
+		public SuicuneInstance() : base(
 			SpeciesSuicune.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

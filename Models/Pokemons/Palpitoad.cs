@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPalpitoad Constructor
 		public SpeciesPalpitoad() : base(
+			536,
 			"Palpitoad",
 			0.8,
 			17.0,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalpitoadInstance(string nickname, int level)
 		: base(
-				536,
 				SpeciesPalpitoad.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Ground.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PalpitoadInstance(int level)
 		: base(
-				536,
 				SpeciesPalpitoad.Instance, // PokemonInstance Species
 				"Palpitoad", level,
 				Water.Instance, Ground.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Palpitoad Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Palpitoad() : base(
-			536,
+		public PalpitoadInstance() : base(
 			SpeciesPalpitoad.Instance, // PokemonInstance Species
 			Water.Instance, Ground.Instance			
 		) {}

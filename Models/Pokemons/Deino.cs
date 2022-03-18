@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDeino Constructor
 		public SpeciesDeino() : base(
+			633,
 			"Deino",
 			0.8,
 			17.3,
@@ -121,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeinoInstance(string nickname, int level)
 		: base(
-				633,
 				SpeciesDeino.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
@@ -136,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeinoInstance(int level)
 		: base(
-				633,
 				SpeciesDeino.Instance, // PokemonInstance Species
 				"Deino", level,
 				Dark.Instance, Dragon.Instance			
@@ -150,8 +149,7 @@ namespace Pokedex.Models.Pokemons
 		/// Deino Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Deino() : base(
-			633,
+		public DeinoInstance() : base(
 			SpeciesDeino.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}

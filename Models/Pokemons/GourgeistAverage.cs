@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGourgeist-Average Constructor
 		public SpeciesGourgeistAverage() : base(
+			711,
 			"Gourgeist-Average",
 			0.9,
 			12.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GourgeistAverageInstance(string nickname, int level)
 		: base(
-				711,
 				SpeciesGourgeistAverage.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Grass.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GourgeistAverageInstance(int level)
 		: base(
-				711,
 				SpeciesGourgeistAverage.Instance, // PokemonInstance Species
 				"Gourgeist-Average", level,
 				Ghost.Instance, Grass.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gourgeist-Average Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public GourgeistAverage() : base(
-			711,
+		public GourgeistAverageInstance() : base(
 			SpeciesGourgeistAverage.Instance, // PokemonInstance Species
 			Ghost.Instance, Grass.Instance			
 		) {}

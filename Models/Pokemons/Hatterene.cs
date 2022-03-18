@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHatterene Constructor
 		public SpeciesHatterene() : base(
+			858,
 			"Hatterene",
 			2.1,
 			5.1,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HattereneInstance(string nickname, int level)
 		: base(
-				858,
 				SpeciesHatterene.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Fairy.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HattereneInstance(int level)
 		: base(
-				858,
 				SpeciesHatterene.Instance, // PokemonInstance Species
 				"Hatterene", level,
 				Psychic.Instance, Fairy.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hatterene Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hatterene() : base(
-			858,
+		public HattereneInstance() : base(
 			SpeciesHatterene.Instance, // PokemonInstance Species
 			Psychic.Instance, Fairy.Instance			
 		) {}

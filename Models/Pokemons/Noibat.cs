@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNoibat Constructor
 		public SpeciesNoibat() : base(
+			714,
 			"Noibat",
 			0.5,
 			8.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoibatInstance(string nickname, int level)
 		: base(
-				714,
 				SpeciesNoibat.Instance, // Pokemon Species
 				nickname, level,
 				Flying.Instance, Dragon.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NoibatInstance(int level)
 		: base(
-				714,
 				SpeciesNoibat.Instance, // PokemonInstance Species
 				"Noibat", level,
 				Flying.Instance, Dragon.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Noibat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Noibat() : base(
-			714,
+		public NoibatInstance() : base(
 			SpeciesNoibat.Instance, // PokemonInstance Species
 			Flying.Instance, Dragon.Instance			
 		) {}

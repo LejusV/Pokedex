@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPlusle Constructor
 		public SpeciesPlusle() : base(
+			311,
 			"Plusle",
 			0.4,
 			4.2,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PlusleInstance(string nickname, int level)
 		: base(
-				311,
 				SpeciesPlusle.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PlusleInstance(int level)
 		: base(
-				311,
 				SpeciesPlusle.Instance, // PokemonInstance Species
 				"Plusle", level,
 				Electric.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Plusle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Plusle() : base(
-			311,
+		public PlusleInstance() : base(
 			SpeciesPlusle.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

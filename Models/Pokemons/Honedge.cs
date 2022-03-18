@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHonedge Constructor
 		public SpeciesHonedge() : base(
+			679,
 			"Honedge",
 			0.8,
 			2.0,
@@ -107,7 +108,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HonedgeInstance(string nickname, int level)
 		: base(
-				679,
 				SpeciesHonedge.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Ghost.Instance			
@@ -122,7 +122,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HonedgeInstance(int level)
 		: base(
-				679,
 				SpeciesHonedge.Instance, // PokemonInstance Species
 				"Honedge", level,
 				Steel.Instance, Ghost.Instance			
@@ -136,8 +135,7 @@ namespace Pokedex.Models.Pokemons
 		/// Honedge Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Honedge() : base(
-			679,
+		public HonedgeInstance() : base(
 			SpeciesHonedge.Instance, // PokemonInstance Species
 			Steel.Instance, Ghost.Instance			
 		) {}

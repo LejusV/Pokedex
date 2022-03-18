@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkwovet Constructor
 		public SpeciesSkwovet() : base(
+			819,
 			"Skwovet",
 			0.3,
 			2.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkwovetInstance(string nickname, int level)
 		: base(
-				819,
 				SpeciesSkwovet.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkwovetInstance(int level)
 		: base(
-				819,
 				SpeciesSkwovet.Instance, // PokemonInstance Species
 				"Skwovet", level,
 				Normal.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skwovet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skwovet() : base(
-			819,
+		public SkwovetInstance() : base(
 			SpeciesSkwovet.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

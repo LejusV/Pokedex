@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesChimecho Constructor
 		public SpeciesChimecho() : base(
+			358,
 			"Chimecho",
 			0.6,
 			1.0,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChimechoInstance(string nickname, int level)
 		: base(
-				358,
 				SpeciesChimecho.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ChimechoInstance(int level)
 		: base(
-				358,
 				SpeciesChimecho.Instance, // PokemonInstance Species
 				"Chimecho", level,
 				Psychic.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Chimecho Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Chimecho() : base(
-			358,
+		public ChimechoInstance() : base(
 			SpeciesChimecho.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

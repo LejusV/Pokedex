@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCastform Constructor
 		public SpeciesCastform() : base(
+			351,
 			"Castform",
 			0.3,
 			0.8,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CastformInstance(string nickname, int level)
 		: base(
-				351,
 				SpeciesCastform.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CastformInstance(int level)
 		: base(
-				351,
 				SpeciesCastform.Instance, // PokemonInstance Species
 				"Castform", level,
 				Normal.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Castform Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Castform() : base(
-			351,
+		public CastformInstance() : base(
 			SpeciesCastform.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

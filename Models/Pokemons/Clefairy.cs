@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClefairy Constructor
 		public SpeciesClefairy() : base(
+			35,
 			"Clefairy",
 			0.6,
 			7.5,
@@ -187,7 +188,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClefairyInstance(string nickname, int level)
 		: base(
-				35,
 				SpeciesClefairy.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -202,7 +202,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClefairyInstance(int level)
 		: base(
-				35,
 				SpeciesClefairy.Instance, // PokemonInstance Species
 				"Clefairy", level,
 				Fairy.Instance			
@@ -216,8 +215,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clefairy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clefairy() : base(
-			35,
+		public ClefairyInstance() : base(
 			SpeciesClefairy.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

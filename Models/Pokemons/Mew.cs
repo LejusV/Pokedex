@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMew Constructor
 		public SpeciesMew() : base(
+			151,
 			"Mew",
 			0.4,
 			4.0,
@@ -306,7 +307,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MewInstance(string nickname, int level)
 		: base(
-				151,
 				SpeciesMew.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -321,7 +321,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MewInstance(int level)
 		: base(
-				151,
 				SpeciesMew.Instance, // PokemonInstance Species
 				"Mew", level,
 				Psychic.Instance			
@@ -335,8 +334,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mew() : base(
-			151,
+		public MewInstance() : base(
 			SpeciesMew.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

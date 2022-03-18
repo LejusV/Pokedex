@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesYveltal Constructor
 		public SpeciesYveltal() : base(
+			717,
 			"Yveltal",
 			5.8,
 			203.0,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YveltalInstance(string nickname, int level)
 		: base(
-				717,
 				SpeciesYveltal.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public YveltalInstance(int level)
 		: base(
-				717,
 				SpeciesYveltal.Instance, // PokemonInstance Species
 				"Yveltal", level,
 				Dark.Instance, Flying.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Yveltal Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Yveltal() : base(
-			717,
+		public YveltalInstance() : base(
 			SpeciesYveltal.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}

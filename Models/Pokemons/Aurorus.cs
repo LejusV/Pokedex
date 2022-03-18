@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAurorus Constructor
 		public SpeciesAurorus() : base(
+			699,
 			"Aurorus",
 			2.7,
 			225.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AurorusInstance(string nickname, int level)
 		: base(
-				699,
 				SpeciesAurorus.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Ice.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AurorusInstance(int level)
 		: base(
-				699,
 				SpeciesAurorus.Instance, // PokemonInstance Species
 				"Aurorus", level,
 				Rock.Instance, Ice.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aurorus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aurorus() : base(
-			699,
+		public AurorusInstance() : base(
 			SpeciesAurorus.Instance, // PokemonInstance Species
 			Rock.Instance, Ice.Instance			
 		) {}

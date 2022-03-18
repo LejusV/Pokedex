@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCacturne Constructor
 		public SpeciesCacturne() : base(
+			332,
 			"Cacturne",
 			1.3,
 			77.4,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CacturneInstance(string nickname, int level)
 		: base(
-				332,
 				SpeciesCacturne.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dark.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CacturneInstance(int level)
 		: base(
-				332,
 				SpeciesCacturne.Instance, // PokemonInstance Species
 				"Cacturne", level,
 				Grass.Instance, Dark.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Cacturne Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Cacturne() : base(
-			332,
+		public CacturneInstance() : base(
 			SpeciesCacturne.Instance, // PokemonInstance Species
 			Grass.Instance, Dark.Instance			
 		) {}

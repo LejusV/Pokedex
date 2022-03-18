@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesStakataka Constructor
 		public SpeciesStakataka() : base(
+			805,
 			"Stakataka",
 			5.5,
 			820.0,
@@ -98,7 +99,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StakatakaInstance(string nickname, int level)
 		: base(
-				805,
 				SpeciesStakataka.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Steel.Instance			
@@ -113,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public StakatakaInstance(int level)
 		: base(
-				805,
 				SpeciesStakataka.Instance, // PokemonInstance Species
 				"Stakataka", level,
 				Rock.Instance, Steel.Instance			
@@ -127,8 +126,7 @@ namespace Pokedex.Models.Pokemons
 		/// Stakataka Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Stakataka() : base(
-			805,
+		public StakatakaInstance() : base(
 			SpeciesStakataka.Instance, // PokemonInstance Species
 			Rock.Instance, Steel.Instance			
 		) {}

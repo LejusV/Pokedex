@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAbomasnow Constructor
 		public SpeciesAbomasnow() : base(
+			460,
 			"Abomasnow",
 			2.2,
 			135.5,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbomasnowInstance(string nickname, int level)
 		: base(
-				460,
 				SpeciesAbomasnow.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Ice.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbomasnowInstance(int level)
 		: base(
-				460,
 				SpeciesAbomasnow.Instance, // PokemonInstance Species
 				"Abomasnow", level,
 				Grass.Instance, Ice.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Abomasnow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Abomasnow() : base(
-			460,
+		public AbomasnowInstance() : base(
 			SpeciesAbomasnow.Instance, // PokemonInstance Species
 			Grass.Instance, Ice.Instance			
 		) {}

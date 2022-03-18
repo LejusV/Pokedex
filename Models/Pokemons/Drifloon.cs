@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDrifloon Constructor
 		public SpeciesDrifloon() : base(
+			425,
 			"Drifloon",
 			0.4,
 			1.2,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrifloonInstance(string nickname, int level)
 		: base(
-				425,
 				SpeciesDrifloon.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance, Flying.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DrifloonInstance(int level)
 		: base(
-				425,
 				SpeciesDrifloon.Instance, // PokemonInstance Species
 				"Drifloon", level,
 				Ghost.Instance, Flying.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Drifloon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Drifloon() : base(
-			425,
+		public DrifloonInstance() : base(
 			SpeciesDrifloon.Instance, // PokemonInstance Species
 			Ghost.Instance, Flying.Instance			
 		) {}

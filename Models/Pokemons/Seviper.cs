@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeviper Constructor
 		public SpeciesSeviper() : base(
+			336,
 			"Seviper",
 			2.7,
 			52.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeviperInstance(string nickname, int level)
 		: base(
-				336,
 				SpeciesSeviper.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeviperInstance(int level)
 		: base(
-				336,
 				SpeciesSeviper.Instance, // PokemonInstance Species
 				"Seviper", level,
 				Poison.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seviper Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seviper() : base(
-			336,
+		public SeviperInstance() : base(
 			SpeciesSeviper.Instance, // PokemonInstance Species
 			Poison.Instance			
 		) {}

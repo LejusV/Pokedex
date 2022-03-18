@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGrubbin Constructor
 		public SpeciesGrubbin() : base(
+			736,
 			"Grubbin",
 			0.4,
 			4.4,
@@ -96,7 +97,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrubbinInstance(string nickname, int level)
 		: base(
-				736,
 				SpeciesGrubbin.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance			
@@ -111,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GrubbinInstance(int level)
 		: base(
-				736,
 				SpeciesGrubbin.Instance, // PokemonInstance Species
 				"Grubbin", level,
 				Bug.Instance			
@@ -125,8 +124,7 @@ namespace Pokedex.Models.Pokemons
 		/// Grubbin Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Grubbin() : base(
-			736,
+		public GrubbinInstance() : base(
 			SpeciesGrubbin.Instance, // PokemonInstance Species
 			Bug.Instance			
 		) {}

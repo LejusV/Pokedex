@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBudew Constructor
 		public SpeciesBudew() : base(
+			406,
 			"Budew",
 			0.2,
 			1.2,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BudewInstance(string nickname, int level)
 		: base(
-				406,
 				SpeciesBudew.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Poison.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BudewInstance(int level)
 		: base(
-				406,
 				SpeciesBudew.Instance, // PokemonInstance Species
 				"Budew", level,
 				Grass.Instance, Poison.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Budew Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Budew() : base(
-			406,
+		public BudewInstance() : base(
 			SpeciesBudew.Instance, // PokemonInstance Species
 			Grass.Instance, Poison.Instance			
 		) {}

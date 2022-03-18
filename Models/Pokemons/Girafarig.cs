@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGirafarig Constructor
 		public SpeciesGirafarig() : base(
+			203,
 			"Girafarig",
 			1.5,
 			41.5,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GirafarigInstance(string nickname, int level)
 		: base(
-				203,
 				SpeciesGirafarig.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Psychic.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GirafarigInstance(int level)
 		: base(
-				203,
 				SpeciesGirafarig.Instance, // PokemonInstance Species
 				"Girafarig", level,
 				Normal.Instance, Psychic.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Girafarig Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Girafarig() : base(
-			203,
+		public GirafarigInstance() : base(
 			SpeciesGirafarig.Instance, // PokemonInstance Species
 			Normal.Instance, Psychic.Instance			
 		) {}

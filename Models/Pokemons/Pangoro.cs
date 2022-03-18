@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPangoro Constructor
 		public SpeciesPangoro() : base(
+			675,
 			"Pangoro",
 			2.1,
 			136.0,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PangoroInstance(string nickname, int level)
 		: base(
-				675,
 				SpeciesPangoro.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance, Dark.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PangoroInstance(int level)
 		: base(
-				675,
 				SpeciesPangoro.Instance, // PokemonInstance Species
 				"Pangoro", level,
 				Fighting.Instance, Dark.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pangoro Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pangoro() : base(
-			675,
+		public PangoroInstance() : base(
 			SpeciesPangoro.Instance, // PokemonInstance Species
 			Fighting.Instance, Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSteelix Constructor
 		public SpeciesSteelix() : base(
+			208,
 			"Steelix",
 			9.2,
 			400.0,
@@ -140,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SteelixInstance(string nickname, int level)
 		: base(
-				208,
 				SpeciesSteelix.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Ground.Instance			
@@ -155,7 +155,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SteelixInstance(int level)
 		: base(
-				208,
 				SpeciesSteelix.Instance, // PokemonInstance Species
 				"Steelix", level,
 				Steel.Instance, Ground.Instance			
@@ -169,8 +168,7 @@ namespace Pokedex.Models.Pokemons
 		/// Steelix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Steelix() : base(
-			208,
+		public SteelixInstance() : base(
 			SpeciesSteelix.Instance, // PokemonInstance Species
 			Steel.Instance, Ground.Instance			
 		) {}

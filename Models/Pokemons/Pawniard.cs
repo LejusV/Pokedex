@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPawniard Constructor
 		public SpeciesPawniard() : base(
+			624,
 			"Pawniard",
 			0.5,
 			10.2,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PawniardInstance(string nickname, int level)
 		: base(
-				624,
 				SpeciesPawniard.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Steel.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PawniardInstance(int level)
 		: base(
-				624,
 				SpeciesPawniard.Instance, // PokemonInstance Species
 				"Pawniard", level,
 				Dark.Instance, Steel.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Pawniard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Pawniard() : base(
-			624,
+		public PawniardInstance() : base(
 			SpeciesPawniard.Instance, // PokemonInstance Species
 			Dark.Instance, Steel.Instance			
 		) {}

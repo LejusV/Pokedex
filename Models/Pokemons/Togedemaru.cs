@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTogedemaru Constructor
 		public SpeciesTogedemaru() : base(
+			777,
 			"Togedemaru",
 			0.3,
 			3.3,
@@ -113,7 +114,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogedemaruInstance(string nickname, int level)
 		: base(
-				777,
 				SpeciesTogedemaru.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Steel.Instance			
@@ -128,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TogedemaruInstance(int level)
 		: base(
-				777,
 				SpeciesTogedemaru.Instance, // PokemonInstance Species
 				"Togedemaru", level,
 				Electric.Instance, Steel.Instance			
@@ -142,8 +141,7 @@ namespace Pokedex.Models.Pokemons
 		/// Togedemaru Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Togedemaru() : base(
-			777,
+		public TogedemaruInstance() : base(
 			SpeciesTogedemaru.Instance, // PokemonInstance Species
 			Electric.Instance, Steel.Instance			
 		) {}

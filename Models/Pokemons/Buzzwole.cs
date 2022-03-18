@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBuzzwole Constructor
 		public SpeciesBuzzwole() : base(
+			794,
 			"Buzzwole",
 			2.4,
 			333.6,
@@ -109,7 +110,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BuzzwoleInstance(string nickname, int level)
 		: base(
-				794,
 				SpeciesBuzzwole.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fighting.Instance			
@@ -124,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BuzzwoleInstance(int level)
 		: base(
-				794,
 				SpeciesBuzzwole.Instance, // PokemonInstance Species
 				"Buzzwole", level,
 				Bug.Instance, Fighting.Instance			
@@ -138,8 +137,7 @@ namespace Pokedex.Models.Pokemons
 		/// Buzzwole Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Buzzwole() : base(
-			794,
+		public BuzzwoleInstance() : base(
 			SpeciesBuzzwole.Instance, // PokemonInstance Species
 			Bug.Instance, Fighting.Instance			
 		) {}

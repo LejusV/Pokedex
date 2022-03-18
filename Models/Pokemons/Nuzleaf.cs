@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesNuzleaf Constructor
 		public SpeciesNuzleaf() : base(
+			274,
 			"Nuzleaf",
 			1.0,
 			28.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NuzleafInstance(string nickname, int level)
 		: base(
-				274,
 				SpeciesNuzleaf.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Dark.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public NuzleafInstance(int level)
 		: base(
-				274,
 				SpeciesNuzleaf.Instance, // PokemonInstance Species
 				"Nuzleaf", level,
 				Grass.Instance, Dark.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Nuzleaf Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Nuzleaf() : base(
-			274,
+		public NuzleafInstance() : base(
 			SpeciesNuzleaf.Instance, // PokemonInstance Species
 			Grass.Instance, Dark.Instance			
 		) {}

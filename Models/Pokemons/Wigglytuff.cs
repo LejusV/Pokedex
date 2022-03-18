@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWigglytuff Constructor
 		public SpeciesWigglytuff() : base(
+			40,
 			"Wigglytuff",
 			1.0,
 			12.0,
@@ -168,7 +169,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WigglytuffInstance(string nickname, int level)
 		: base(
-				40,
 				SpeciesWigglytuff.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Fairy.Instance			
@@ -183,7 +183,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WigglytuffInstance(int level)
 		: base(
-				40,
 				SpeciesWigglytuff.Instance, // PokemonInstance Species
 				"Wigglytuff", level,
 				Normal.Instance, Fairy.Instance			
@@ -197,8 +196,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wigglytuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wigglytuff() : base(
-			40,
+		public WigglytuffInstance() : base(
 			SpeciesWigglytuff.Instance, // PokemonInstance Species
 			Normal.Instance, Fairy.Instance			
 		) {}

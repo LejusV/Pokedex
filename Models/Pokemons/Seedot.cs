@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeedot Constructor
 		public SpeciesSeedot() : base(
+			273,
 			"Seedot",
 			0.5,
 			4.0,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeedotInstance(string nickname, int level)
 		: base(
-				273,
 				SpeciesSeedot.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeedotInstance(int level)
 		: base(
-				273,
 				SpeciesSeedot.Instance, // PokemonInstance Species
 				"Seedot", level,
 				Grass.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seedot Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seedot() : base(
-			273,
+		public SeedotInstance() : base(
 			SpeciesSeedot.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesInteleon Constructor
 		public SpeciesInteleon() : base(
+			818,
 			"Inteleon",
 			1.9,
 			45.2,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InteleonInstance(string nickname, int level)
 		: base(
-				818,
 				SpeciesInteleon.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public InteleonInstance(int level)
 		: base(
-				818,
 				SpeciesInteleon.Instance, // PokemonInstance Species
 				"Inteleon", level,
 				Water.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Inteleon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Inteleon() : base(
-			818,
+		public InteleonInstance() : base(
 			SpeciesInteleon.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

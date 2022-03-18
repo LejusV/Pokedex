@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDecidueye Constructor
 		public SpeciesDecidueye() : base(
+			724,
 			"Decidueye",
 			1.6,
 			36.6,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DecidueyeInstance(string nickname, int level)
 		: base(
-				724,
 				SpeciesDecidueye.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance, Ghost.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DecidueyeInstance(int level)
 		: base(
-				724,
 				SpeciesDecidueye.Instance, // PokemonInstance Species
 				"Decidueye", level,
 				Grass.Instance, Ghost.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Decidueye Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Decidueye() : base(
-			724,
+		public DecidueyeInstance() : base(
 			SpeciesDecidueye.Instance, // PokemonInstance Species
 			Grass.Instance, Ghost.Instance			
 		) {}

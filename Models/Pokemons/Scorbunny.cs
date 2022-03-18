@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScorbunny Constructor
 		public SpeciesScorbunny() : base(
+			813,
 			"Scorbunny",
 			0.3,
 			4.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScorbunnyInstance(string nickname, int level)
 		: base(
-				813,
 				SpeciesScorbunny.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScorbunnyInstance(int level)
 		: base(
-				813,
 				SpeciesScorbunny.Instance, // PokemonInstance Species
 				"Scorbunny", level,
 				Fire.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scorbunny Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scorbunny() : base(
-			813,
+		public ScorbunnyInstance() : base(
 			SpeciesScorbunny.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

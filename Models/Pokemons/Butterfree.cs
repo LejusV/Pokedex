@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesButterfree Constructor
 		public SpeciesButterfree() : base(
+			12,
 			"Butterfree",
 			1.1,
 			32.0,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ButterfreeInstance(string nickname, int level)
 		: base(
-				12,
 				SpeciesButterfree.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ButterfreeInstance(int level)
 		: base(
-				12,
 				SpeciesButterfree.Instance, // PokemonInstance Species
 				"Butterfree", level,
 				Bug.Instance, Flying.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Butterfree Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Butterfree() : base(
-			12,
+		public ButterfreeInstance() : base(
 			SpeciesButterfree.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

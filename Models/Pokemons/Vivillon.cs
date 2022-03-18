@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVivillon Constructor
 		public SpeciesVivillon() : base(
+			666,
 			"Vivillon",
 			1.2,
 			17.0,
@@ -114,7 +115,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VivillonInstance(string nickname, int level)
 		: base(
-				666,
 				SpeciesVivillon.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -129,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VivillonInstance(int level)
 		: base(
-				666,
 				SpeciesVivillon.Instance, // PokemonInstance Species
 				"Vivillon", level,
 				Bug.Instance, Flying.Instance			
@@ -143,8 +142,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vivillon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vivillon() : base(
-			666,
+		public VivillonInstance() : base(
 			SpeciesVivillon.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

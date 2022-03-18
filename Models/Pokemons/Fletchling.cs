@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesFletchling Constructor
 		public SpeciesFletchling() : base(
+			661,
 			"Fletchling",
 			0.3,
 			1.7,
@@ -102,7 +103,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FletchlingInstance(string nickname, int level)
 		: base(
-				661,
 				SpeciesFletchling.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -117,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public FletchlingInstance(int level)
 		: base(
-				661,
 				SpeciesFletchling.Instance, // PokemonInstance Species
 				"Fletchling", level,
 				Normal.Instance, Flying.Instance			
@@ -131,8 +130,7 @@ namespace Pokedex.Models.Pokemons
 		/// Fletchling Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Fletchling() : base(
-			661,
+		public FletchlingInstance() : base(
 			SpeciesFletchling.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

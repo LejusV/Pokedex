@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLiepard Constructor
 		public SpeciesLiepard() : base(
+			510,
 			"Liepard",
 			1.1,
 			37.5,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LiepardInstance(string nickname, int level)
 		: base(
-				510,
 				SpeciesLiepard.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LiepardInstance(int level)
 		: base(
-				510,
 				SpeciesLiepard.Instance, // PokemonInstance Species
 				"Liepard", level,
 				Dark.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Liepard Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Liepard() : base(
-			510,
+		public LiepardInstance() : base(
 			SpeciesLiepard.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEevee Constructor
 		public SpeciesEevee() : base(
+			133,
 			"Eevee",
 			0.3,
 			6.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EeveeInstance(string nickname, int level)
 		: base(
-				133,
 				SpeciesEevee.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EeveeInstance(int level)
 		: base(
-				133,
 				SpeciesEevee.Instance, // PokemonInstance Species
 				"Eevee", level,
 				Normal.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eevee Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Eevee() : base(
-			133,
+		public EeveeInstance() : base(
 			SpeciesEevee.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRegice Constructor
 		public SpeciesRegice() : base(
+			378,
 			"Regice",
 			1.8,
 			175.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegiceInstance(string nickname, int level)
 		: base(
-				378,
 				SpeciesRegice.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RegiceInstance(int level)
 		: base(
-				378,
 				SpeciesRegice.Instance, // PokemonInstance Species
 				"Regice", level,
 				Ice.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Regice Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Regice() : base(
-			378,
+		public RegiceInstance() : base(
 			SpeciesRegice.Instance, // PokemonInstance Species
 			Ice.Instance			
 		) {}

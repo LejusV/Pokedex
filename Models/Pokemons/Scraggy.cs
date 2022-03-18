@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScraggy Constructor
 		public SpeciesScraggy() : base(
+			559,
 			"Scraggy",
 			0.6,
 			11.8,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScraggyInstance(string nickname, int level)
 		: base(
-				559,
 				SpeciesScraggy.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Fighting.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScraggyInstance(int level)
 		: base(
-				559,
 				SpeciesScraggy.Instance, // PokemonInstance Species
 				"Scraggy", level,
 				Dark.Instance, Fighting.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scraggy Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scraggy() : base(
-			559,
+		public ScraggyInstance() : base(
 			SpeciesScraggy.Instance, // PokemonInstance Species
 			Dark.Instance, Fighting.Instance			
 		) {}

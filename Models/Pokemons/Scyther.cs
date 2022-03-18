@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesScyther Constructor
 		public SpeciesScyther() : base(
+			123,
 			"Scyther",
 			1.5,
 			56.0,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScytherInstance(string nickname, int level)
 		: base(
-				123,
 				SpeciesScyther.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ScytherInstance(int level)
 		: base(
-				123,
 				SpeciesScyther.Instance, // PokemonInstance Species
 				"Scyther", level,
 				Bug.Instance, Flying.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Scyther Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Scyther() : base(
-			123,
+		public ScytherInstance() : base(
 			SpeciesScyther.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

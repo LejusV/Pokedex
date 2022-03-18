@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBellossom Constructor
 		public SpeciesBellossom() : base(
+			182,
 			"Bellossom",
 			0.4,
 			5.8,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BellossomInstance(string nickname, int level)
 		: base(
-				182,
 				SpeciesBellossom.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BellossomInstance(int level)
 		: base(
-				182,
 				SpeciesBellossom.Instance, // PokemonInstance Species
 				"Bellossom", level,
 				Grass.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bellossom Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bellossom() : base(
-			182,
+		public BellossomInstance() : base(
 			SpeciesBellossom.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

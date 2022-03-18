@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMusharna Constructor
 		public SpeciesMusharna() : base(
+			518,
 			"Musharna",
 			1.1,
 			60.5,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MusharnaInstance(string nickname, int level)
 		: base(
-				518,
 				SpeciesMusharna.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MusharnaInstance(int level)
 		: base(
-				518,
 				SpeciesMusharna.Instance, // PokemonInstance Species
 				"Musharna", level,
 				Psychic.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Musharna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Musharna() : base(
-			518,
+		public MusharnaInstance() : base(
 			SpeciesMusharna.Instance, // PokemonInstance Species
 			Psychic.Instance			
 		) {}

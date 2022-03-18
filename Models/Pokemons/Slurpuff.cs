@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSlurpuff Constructor
 		public SpeciesSlurpuff() : base(
+			685,
 			"Slurpuff",
 			0.8,
 			5.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlurpuffInstance(string nickname, int level)
 		: base(
-				685,
 				SpeciesSlurpuff.Instance, // Pokemon Species
 				nickname, level,
 				Fairy.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SlurpuffInstance(int level)
 		: base(
-				685,
 				SpeciesSlurpuff.Instance, // PokemonInstance Species
 				"Slurpuff", level,
 				Fairy.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Slurpuff Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Slurpuff() : base(
-			685,
+		public SlurpuffInstance() : base(
 			SpeciesSlurpuff.Instance, // PokemonInstance Species
 			Fairy.Instance			
 		) {}

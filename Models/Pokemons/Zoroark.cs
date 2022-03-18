@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZoroark Constructor
 		public SpeciesZoroark() : base(
+			571,
 			"Zoroark",
 			1.6,
 			81.1,
@@ -128,7 +129,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZoroarkInstance(string nickname, int level)
 		: base(
-				571,
 				SpeciesZoroark.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -143,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZoroarkInstance(int level)
 		: base(
-				571,
 				SpeciesZoroark.Instance, // PokemonInstance Species
 				"Zoroark", level,
 				Dark.Instance			
@@ -157,8 +156,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zoroark Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zoroark() : base(
-			571,
+		public ZoroarkInstance() : base(
 			SpeciesZoroark.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

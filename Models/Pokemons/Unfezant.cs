@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesUnfezant Constructor
 		public SpeciesUnfezant() : base(
+			521,
 			"Unfezant",
 			1.2,
 			29.0,
@@ -103,7 +104,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UnfezantInstance(string nickname, int level)
 		: base(
-				521,
 				SpeciesUnfezant.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -118,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public UnfezantInstance(int level)
 		: base(
-				521,
 				SpeciesUnfezant.Instance, // PokemonInstance Species
 				"Unfezant", level,
 				Normal.Instance, Flying.Instance			
@@ -132,8 +131,7 @@ namespace Pokedex.Models.Pokemons
 		/// Unfezant Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Unfezant() : base(
-			521,
+		public UnfezantInstance() : base(
 			SpeciesUnfezant.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

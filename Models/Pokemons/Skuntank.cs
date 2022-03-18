@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkuntank Constructor
 		public SpeciesSkuntank() : base(
+			435,
 			"Skuntank",
 			1.0,
 			38.0,
@@ -127,7 +128,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkuntankInstance(string nickname, int level)
 		: base(
-				435,
 				SpeciesSkuntank.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Dark.Instance			
@@ -142,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkuntankInstance(int level)
 		: base(
-				435,
 				SpeciesSkuntank.Instance, // PokemonInstance Species
 				"Skuntank", level,
 				Poison.Instance, Dark.Instance			
@@ -156,8 +155,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skuntank Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skuntank() : base(
-			435,
+		public SkuntankInstance() : base(
 			SpeciesSkuntank.Instance, // PokemonInstance Species
 			Poison.Instance, Dark.Instance			
 		) {}

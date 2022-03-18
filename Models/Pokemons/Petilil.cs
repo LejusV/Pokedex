@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPetilil Constructor
 		public SpeciesPetilil() : base(
+			548,
 			"Petilil",
 			0.5,
 			6.6,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PetililInstance(string nickname, int level)
 		: base(
-				548,
 				SpeciesPetilil.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PetililInstance(int level)
 		: base(
-				548,
 				SpeciesPetilil.Instance, // PokemonInstance Species
 				"Petilil", level,
 				Grass.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Petilil Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Petilil() : base(
-			548,
+		public PetililInstance() : base(
 			SpeciesPetilil.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

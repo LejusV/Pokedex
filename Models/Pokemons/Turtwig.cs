@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTurtwig Constructor
 		public SpeciesTurtwig() : base(
+			387,
 			"Turtwig",
 			0.4,
 			10.2,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TurtwigInstance(string nickname, int level)
 		: base(
-				387,
 				SpeciesTurtwig.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TurtwigInstance(int level)
 		: base(
-				387,
 				SpeciesTurtwig.Instance, // PokemonInstance Species
 				"Turtwig", level,
 				Grass.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Turtwig Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Turtwig() : base(
-			387,
+		public TurtwigInstance() : base(
 			SpeciesTurtwig.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

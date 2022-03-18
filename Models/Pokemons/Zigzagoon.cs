@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZigzagoon Constructor
 		public SpeciesZigzagoon() : base(
+			263,
 			"Zigzagoon",
 			0.4,
 			17.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZigzagoonInstance(string nickname, int level)
 		: base(
-				263,
 				SpeciesZigzagoon.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZigzagoonInstance(int level)
 		: base(
-				263,
 				SpeciesZigzagoon.Instance, // PokemonInstance Species
 				"Zigzagoon", level,
 				Normal.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zigzagoon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zigzagoon() : base(
-			263,
+		public ZigzagoonInstance() : base(
 			SpeciesZigzagoon.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

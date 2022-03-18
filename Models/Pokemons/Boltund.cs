@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBoltund Constructor
 		public SpeciesBoltund() : base(
+			836,
 			"Boltund",
 			1.0,
 			34.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BoltundInstance(string nickname, int level)
 		: base(
-				836,
 				SpeciesBoltund.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BoltundInstance(int level)
 		: base(
-				836,
 				SpeciesBoltund.Instance, // PokemonInstance Species
 				"Boltund", level,
 				Electric.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Boltund Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Boltund() : base(
-			836,
+		public BoltundInstance() : base(
 			SpeciesBoltund.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

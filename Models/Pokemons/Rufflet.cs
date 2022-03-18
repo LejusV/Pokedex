@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRufflet Constructor
 		public SpeciesRufflet() : base(
+			627,
 			"Rufflet",
 			0.5,
 			10.5,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RuffletInstance(string nickname, int level)
 		: base(
-				627,
 				SpeciesRufflet.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RuffletInstance(int level)
 		: base(
-				627,
 				SpeciesRufflet.Instance, // PokemonInstance Species
 				"Rufflet", level,
 				Normal.Instance, Flying.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Rufflet Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Rufflet() : base(
-			627,
+		public RuffletInstance() : base(
 			SpeciesRufflet.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

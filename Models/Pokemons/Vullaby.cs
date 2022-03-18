@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVullaby Constructor
 		public SpeciesVullaby() : base(
+			629,
 			"Vullaby",
 			0.5,
 			9.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VullabyInstance(string nickname, int level)
 		: base(
-				629,
 				SpeciesVullaby.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VullabyInstance(int level)
 		: base(
-				629,
 				SpeciesVullaby.Instance, // PokemonInstance Species
 				"Vullaby", level,
 				Dark.Instance, Flying.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vullaby Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vullaby() : base(
-			629,
+		public VullabyInstance() : base(
 			SpeciesVullaby.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}

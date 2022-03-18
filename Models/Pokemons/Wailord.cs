@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWailord Constructor
 		public SpeciesWailord() : base(
+			321,
 			"Wailord",
 			14.5,
 			398.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WailordInstance(string nickname, int level)
 		: base(
-				321,
 				SpeciesWailord.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WailordInstance(int level)
 		: base(
-				321,
 				SpeciesWailord.Instance, // PokemonInstance Species
 				"Wailord", level,
 				Water.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Wailord Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Wailord() : base(
-			321,
+		public WailordInstance() : base(
 			SpeciesWailord.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

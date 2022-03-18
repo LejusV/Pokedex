@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDedenne Constructor
 		public SpeciesDedenne() : base(
+			702,
 			"Dedenne",
 			0.2,
 			2.2,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DedenneInstance(string nickname, int level)
 		: base(
-				702,
 				SpeciesDedenne.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Fairy.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DedenneInstance(int level)
 		: base(
-				702,
 				SpeciesDedenne.Instance, // PokemonInstance Species
 				"Dedenne", level,
 				Electric.Instance, Fairy.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dedenne Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dedenne() : base(
-			702,
+		public DedenneInstance() : base(
 			SpeciesDedenne.Instance, // PokemonInstance Species
 			Electric.Instance, Fairy.Instance			
 		) {}

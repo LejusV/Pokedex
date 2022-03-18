@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRemoraid Constructor
 		public SpeciesRemoraid() : base(
+			223,
 			"Remoraid",
 			0.6,
 			12.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RemoraidInstance(string nickname, int level)
 		: base(
-				223,
 				SpeciesRemoraid.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RemoraidInstance(int level)
 		: base(
-				223,
 				SpeciesRemoraid.Instance, // PokemonInstance Species
 				"Remoraid", level,
 				Water.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Remoraid Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Remoraid() : base(
-			223,
+		public RemoraidInstance() : base(
 			SpeciesRemoraid.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

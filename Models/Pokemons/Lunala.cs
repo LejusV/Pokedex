@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLunala Constructor
 		public SpeciesLunala() : base(
+			792,
 			"Lunala",
 			4.0,
 			120.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LunalaInstance(string nickname, int level)
 		: base(
-				792,
 				SpeciesLunala.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Ghost.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LunalaInstance(int level)
 		: base(
-				792,
 				SpeciesLunala.Instance, // PokemonInstance Species
 				"Lunala", level,
 				Psychic.Instance, Ghost.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lunala Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lunala() : base(
-			792,
+		public LunalaInstance() : base(
 			SpeciesLunala.Instance, // PokemonInstance Species
 			Psychic.Instance, Ghost.Instance			
 		) {}

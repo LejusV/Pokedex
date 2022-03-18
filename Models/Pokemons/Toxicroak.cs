@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesToxicroak Constructor
 		public SpeciesToxicroak() : base(
+			454,
 			"Toxicroak",
 			1.3,
 			44.4,
@@ -144,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxicroakInstance(string nickname, int level)
 		: base(
-				454,
 				SpeciesToxicroak.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Fighting.Instance			
@@ -159,7 +159,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ToxicroakInstance(int level)
 		: base(
-				454,
 				SpeciesToxicroak.Instance, // PokemonInstance Species
 				"Toxicroak", level,
 				Poison.Instance, Fighting.Instance			
@@ -173,8 +172,7 @@ namespace Pokedex.Models.Pokemons
 		/// Toxicroak Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Toxicroak() : base(
-			454,
+		public ToxicroakInstance() : base(
 			SpeciesToxicroak.Instance, // PokemonInstance Species
 			Poison.Instance, Fighting.Instance			
 		) {}

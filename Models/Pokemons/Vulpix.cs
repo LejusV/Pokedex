@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVulpix Constructor
 		public SpeciesVulpix() : base(
+			37,
 			"Vulpix",
 			0.6,
 			9.9,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VulpixInstance(string nickname, int level)
 		: base(
-				37,
 				SpeciesVulpix.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VulpixInstance(int level)
 		: base(
-				37,
 				SpeciesVulpix.Instance, // PokemonInstance Species
 				"Vulpix", level,
 				Fire.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Vulpix Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Vulpix() : base(
-			37,
+		public VulpixInstance() : base(
 			SpeciesVulpix.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

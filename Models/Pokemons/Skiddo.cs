@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSkiddo Constructor
 		public SpeciesSkiddo() : base(
+			672,
 			"Skiddo",
 			0.9,
 			31.0,
@@ -115,7 +116,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkiddoInstance(string nickname, int level)
 		: base(
-				672,
 				SpeciesSkiddo.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -130,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SkiddoInstance(int level)
 		: base(
-				672,
 				SpeciesSkiddo.Instance, // PokemonInstance Species
 				"Skiddo", level,
 				Grass.Instance			
@@ -144,8 +143,7 @@ namespace Pokedex.Models.Pokemons
 		/// Skiddo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Skiddo() : base(
-			672,
+		public SkiddoInstance() : base(
 			SpeciesSkiddo.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

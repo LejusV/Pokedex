@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTapu-Koko Constructor
 		public SpeciesTapuKoko() : base(
+			785,
 			"Tapu-Koko",
 			1.8,
 			20.5,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuKokoInstance(string nickname, int level)
 		: base(
-				785,
 				SpeciesTapuKoko.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Fairy.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TapuKokoInstance(int level)
 		: base(
-				785,
 				SpeciesTapuKoko.Instance, // PokemonInstance Species
 				"Tapu-Koko", level,
 				Electric.Instance, Fairy.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tapu-Koko Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public TapuKoko() : base(
-			785,
+		public TapuKokoInstance() : base(
 			SpeciesTapuKoko.Instance, // PokemonInstance Species
 			Electric.Instance, Fairy.Instance			
 		) {}

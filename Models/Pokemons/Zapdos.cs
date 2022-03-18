@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZapdos Constructor
 		public SpeciesZapdos() : base(
+			145,
 			"Zapdos",
 			1.6,
 			52.6,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZapdosInstance(string nickname, int level)
 		: base(
-				145,
 				SpeciesZapdos.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance, Flying.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZapdosInstance(int level)
 		: base(
-				145,
 				SpeciesZapdos.Instance, // PokemonInstance Species
 				"Zapdos", level,
 				Electric.Instance, Flying.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zapdos Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zapdos() : base(
-			145,
+		public ZapdosInstance() : base(
 			SpeciesZapdos.Instance, // PokemonInstance Species
 			Electric.Instance, Flying.Instance			
 		) {}

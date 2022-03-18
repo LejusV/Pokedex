@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesThroh Constructor
 		public SpeciesThroh() : base(
+			538,
 			"Throh",
 			1.3,
 			55.5,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThrohInstance(string nickname, int level)
 		: base(
-				538,
 				SpeciesThroh.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ThrohInstance(int level)
 		: base(
-				538,
 				SpeciesThroh.Instance, // PokemonInstance Species
 				"Throh", level,
 				Fighting.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Throh Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Throh() : base(
-			538,
+		public ThrohInstance() : base(
 			SpeciesThroh.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

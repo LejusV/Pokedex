@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCelebi Constructor
 		public SpeciesCelebi() : base(
+			251,
 			"Celebi",
 			0.6,
 			5.0,
@@ -147,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CelebiInstance(string nickname, int level)
 		: base(
-				251,
 				SpeciesCelebi.Instance, // Pokemon Species
 				nickname, level,
 				Psychic.Instance, Grass.Instance			
@@ -162,7 +162,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CelebiInstance(int level)
 		: base(
-				251,
 				SpeciesCelebi.Instance, // PokemonInstance Species
 				"Celebi", level,
 				Psychic.Instance, Grass.Instance			
@@ -176,8 +175,7 @@ namespace Pokedex.Models.Pokemons
 		/// Celebi Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Celebi() : base(
-			251,
+		public CelebiInstance() : base(
 			SpeciesCelebi.Instance, // PokemonInstance Species
 			Psychic.Instance, Grass.Instance			
 		) {}

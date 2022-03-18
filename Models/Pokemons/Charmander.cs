@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCharmander Constructor
 		public SpeciesCharmander() : base(
+			4,
 			"Charmander",
 			0.6,
 			8.5,
@@ -153,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharmanderInstance(string nickname, int level)
 		: base(
-				4,
 				SpeciesCharmander.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -168,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CharmanderInstance(int level)
 		: base(
-				4,
 				SpeciesCharmander.Instance, // PokemonInstance Species
 				"Charmander", level,
 				Fire.Instance			
@@ -182,8 +181,7 @@ namespace Pokedex.Models.Pokemons
 		/// Charmander Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Charmander() : base(
-			4,
+		public CharmanderInstance() : base(
 			SpeciesCharmander.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

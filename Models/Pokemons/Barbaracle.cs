@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBarbaracle Constructor
 		public SpeciesBarbaracle() : base(
+			689,
 			"Barbaracle",
 			1.3,
 			96.0,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarbaracleInstance(string nickname, int level)
 		: base(
-				689,
 				SpeciesBarbaracle.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Water.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BarbaracleInstance(int level)
 		: base(
-				689,
 				SpeciesBarbaracle.Instance, // PokemonInstance Species
 				"Barbaracle", level,
 				Rock.Instance, Water.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Barbaracle Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Barbaracle() : base(
-			689,
+		public BarbaracleInstance() : base(
 			SpeciesBarbaracle.Instance, // PokemonInstance Species
 			Rock.Instance, Water.Instance			
 		) {}

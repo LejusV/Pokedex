@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesVenipede Constructor
 		public SpeciesVenipede() : base(
+			543,
 			"Venipede",
 			0.4,
 			5.3,
@@ -106,7 +107,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenipedeInstance(string nickname, int level)
 		: base(
-				543,
 				SpeciesVenipede.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Poison.Instance			
@@ -121,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public VenipedeInstance(int level)
 		: base(
-				543,
 				SpeciesVenipede.Instance, // PokemonInstance Species
 				"Venipede", level,
 				Bug.Instance, Poison.Instance			
@@ -135,8 +134,7 @@ namespace Pokedex.Models.Pokemons
 		/// Venipede Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Venipede() : base(
-			543,
+		public VenipedeInstance() : base(
 			SpeciesVenipede.Instance, // PokemonInstance Species
 			Bug.Instance, Poison.Instance			
 		) {}

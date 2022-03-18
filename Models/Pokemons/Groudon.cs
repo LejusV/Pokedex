@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGroudon Constructor
 		public SpeciesGroudon() : base(
+			383,
 			"Groudon",
 			3.5,
 			950.0,
@@ -149,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GroudonInstance(string nickname, int level)
 		: base(
-				383,
 				SpeciesGroudon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -164,7 +164,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GroudonInstance(int level)
 		: base(
-				383,
 				SpeciesGroudon.Instance, // PokemonInstance Species
 				"Groudon", level,
 				Ground.Instance			
@@ -178,8 +177,7 @@ namespace Pokedex.Models.Pokemons
 		/// Groudon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Groudon() : base(
-			383,
+		public GroudonInstance() : base(
 			SpeciesGroudon.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

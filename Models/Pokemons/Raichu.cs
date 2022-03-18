@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesRaichu Constructor
 		public SpeciesRaichu() : base(
+			26,
 			"Raichu",
 			0.8,
 			30.0,
@@ -136,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaichuInstance(string nickname, int level)
 		: base(
-				26,
 				SpeciesRaichu.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -151,7 +151,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public RaichuInstance(int level)
 		: base(
-				26,
 				SpeciesRaichu.Instance, // PokemonInstance Species
 				"Raichu", level,
 				Electric.Instance			
@@ -165,8 +164,7 @@ namespace Pokedex.Models.Pokemons
 		/// Raichu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Raichu() : base(
-			26,
+		public RaichuInstance() : base(
 			SpeciesRaichu.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHonchkrow Constructor
 		public SpeciesHonchkrow() : base(
+			430,
 			"Honchkrow",
 			0.9,
 			27.3,
@@ -126,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HonchkrowInstance(string nickname, int level)
 		: base(
-				430,
 				SpeciesHonchkrow.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
@@ -141,7 +141,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HonchkrowInstance(int level)
 		: base(
-				430,
 				SpeciesHonchkrow.Instance, // PokemonInstance Species
 				"Honchkrow", level,
 				Dark.Instance, Flying.Instance			
@@ -155,8 +154,7 @@ namespace Pokedex.Models.Pokemons
 		/// Honchkrow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Honchkrow() : base(
-			430,
+		public HonchkrowInstance() : base(
 			SpeciesHonchkrow.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}

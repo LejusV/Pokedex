@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShellder Constructor
 		public SpeciesShellder() : base(
+			90,
 			"Shellder",
 			0.3,
 			4.0,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShellderInstance(string nickname, int level)
 		: base(
-				90,
 				SpeciesShellder.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShellderInstance(int level)
 		: base(
-				90,
 				SpeciesShellder.Instance, // PokemonInstance Species
 				"Shellder", level,
 				Water.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shellder Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shellder() : base(
-			90,
+		public ShellderInstance() : base(
 			SpeciesShellder.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

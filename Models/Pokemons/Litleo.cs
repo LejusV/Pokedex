@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLitleo Constructor
 		public SpeciesLitleo() : base(
+			667,
 			"Litleo",
 			0.6,
 			13.5,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LitleoInstance(string nickname, int level)
 		: base(
-				667,
 				SpeciesLitleo.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Normal.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LitleoInstance(int level)
 		: base(
-				667,
 				SpeciesLitleo.Instance, // PokemonInstance Species
 				"Litleo", level,
 				Fire.Instance, Normal.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Litleo Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Litleo() : base(
-			667,
+		public LitleoInstance() : base(
 			SpeciesLitleo.Instance, // PokemonInstance Species
 			Fire.Instance, Normal.Instance			
 		) {}

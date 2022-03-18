@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesKommo-O Constructor
 		public SpeciesKommoO() : base(
+			784,
 			"Kommo-O",
 			1.6,
 			78.2,
@@ -119,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KommoOInstance(string nickname, int level)
 		: base(
-				784,
 				SpeciesKommoO.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance, Fighting.Instance			
@@ -134,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public KommoOInstance(int level)
 		: base(
-				784,
 				SpeciesKommoO.Instance, // PokemonInstance Species
 				"Kommo-O", level,
 				Dragon.Instance, Fighting.Instance			
@@ -148,8 +147,7 @@ namespace Pokedex.Models.Pokemons
 		/// Kommo-O Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public KommoO() : base(
-			784,
+		public KommoOInstance() : base(
 			SpeciesKommoO.Instance, // PokemonInstance Species
 			Dragon.Instance, Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBronzor Constructor
 		public SpeciesBronzor() : base(
+			436,
 			"Bronzor",
 			0.5,
 			60.5,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BronzorInstance(string nickname, int level)
 		: base(
-				436,
 				SpeciesBronzor.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Psychic.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BronzorInstance(int level)
 		: base(
-				436,
 				SpeciesBronzor.Instance, // PokemonInstance Species
 				"Bronzor", level,
 				Steel.Instance, Psychic.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Bronzor Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Bronzor() : base(
-			436,
+		public BronzorInstance() : base(
 			SpeciesBronzor.Instance, // PokemonInstance Species
 			Steel.Instance, Psychic.Instance			
 		) {}

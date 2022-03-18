@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesJoltik Constructor
 		public SpeciesJoltik() : base(
+			595,
 			"Joltik",
 			0.1,
 			0.6,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JoltikInstance(string nickname, int level)
 		: base(
-				595,
 				SpeciesJoltik.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Electric.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public JoltikInstance(int level)
 		: base(
-				595,
 				SpeciesJoltik.Instance, // PokemonInstance Species
 				"Joltik", level,
 				Bug.Instance, Electric.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Joltik Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Joltik() : base(
-			595,
+		public JoltikInstance() : base(
 			SpeciesJoltik.Instance, // PokemonInstance Species
 			Bug.Instance, Electric.Instance			
 		) {}

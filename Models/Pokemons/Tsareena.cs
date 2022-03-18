@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTsareena Constructor
 		public SpeciesTsareena() : base(
+			763,
 			"Tsareena",
 			1.2,
 			21.4,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TsareenaInstance(string nickname, int level)
 		: base(
-				763,
 				SpeciesTsareena.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TsareenaInstance(int level)
 		: base(
-				763,
 				SpeciesTsareena.Instance, // PokemonInstance Species
 				"Tsareena", level,
 				Grass.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tsareena Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tsareena() : base(
-			763,
+		public TsareenaInstance() : base(
 			SpeciesTsareena.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

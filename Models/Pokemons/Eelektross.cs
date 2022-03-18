@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEelektross Constructor
 		public SpeciesEelektross() : base(
+			604,
 			"Eelektross",
 			2.1,
 			80.5,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EelektrossInstance(string nickname, int level)
 		: base(
-				604,
 				SpeciesEelektross.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EelektrossInstance(int level)
 		: base(
-				604,
 				SpeciesEelektross.Instance, // PokemonInstance Species
 				"Eelektross", level,
 				Electric.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eelektross Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Eelektross() : base(
-			604,
+		public EelektrossInstance() : base(
 			SpeciesEelektross.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

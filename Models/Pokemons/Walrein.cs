@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesWalrein Constructor
 		public SpeciesWalrein() : base(
+			365,
 			"Walrein",
 			1.4,
 			150.6,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WalreinInstance(string nickname, int level)
 		: base(
-				365,
 				SpeciesWalrein.Instance, // Pokemon Species
 				nickname, level,
 				Ice.Instance, Water.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public WalreinInstance(int level)
 		: base(
-				365,
 				SpeciesWalrein.Instance, // PokemonInstance Species
 				"Walrein", level,
 				Ice.Instance, Water.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Walrein Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Walrein() : base(
-			365,
+		public WalreinInstance() : base(
 			SpeciesWalrein.Instance, // PokemonInstance Species
 			Ice.Instance, Water.Instance			
 		) {}

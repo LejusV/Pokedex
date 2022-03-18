@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLinoone Constructor
 		public SpeciesLinoone() : base(
+			264,
 			"Linoone",
 			0.5,
 			32.5,
@@ -139,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LinooneInstance(string nickname, int level)
 		: base(
-				264,
 				SpeciesLinoone.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -154,7 +154,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LinooneInstance(int level)
 		: base(
-				264,
 				SpeciesLinoone.Instance, // PokemonInstance Species
 				"Linoone", level,
 				Normal.Instance			
@@ -168,8 +167,7 @@ namespace Pokedex.Models.Pokemons
 		/// Linoone Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Linoone() : base(
-			264,
+		public LinooneInstance() : base(
 			SpeciesLinoone.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

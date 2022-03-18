@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLedian Constructor
 		public SpeciesLedian() : base(
+			166,
 			"Ledian",
 			1.4,
 			35.6,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LedianInstance(string nickname, int level)
 		: base(
-				166,
 				SpeciesLedian.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LedianInstance(int level)
 		: base(
-				166,
 				SpeciesLedian.Instance, // PokemonInstance Species
 				"Ledian", level,
 				Bug.Instance, Flying.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ledian Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ledian() : base(
-			166,
+		public LedianInstance() : base(
 			SpeciesLedian.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

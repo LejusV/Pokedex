@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwanna Constructor
 		public SpeciesSwanna() : base(
+			581,
 			"Swanna",
 			1.3,
 			24.2,
@@ -105,7 +106,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwannaInstance(string nickname, int level)
 		: base(
-				581,
 				SpeciesSwanna.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -120,7 +120,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwannaInstance(int level)
 		: base(
-				581,
 				SpeciesSwanna.Instance, // PokemonInstance Species
 				"Swanna", level,
 				Water.Instance, Flying.Instance			
@@ -134,8 +133,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swanna Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swanna() : base(
-			581,
+		public SwannaInstance() : base(
 			SpeciesSwanna.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

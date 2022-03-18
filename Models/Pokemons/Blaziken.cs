@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBlaziken Constructor
 		public SpeciesBlaziken() : base(
+			257,
 			"Blaziken",
 			1.9,
 			52.0,
@@ -156,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlazikenInstance(string nickname, int level)
 		: base(
-				257,
 				SpeciesBlaziken.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -171,7 +171,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BlazikenInstance(int level)
 		: base(
-				257,
 				SpeciesBlaziken.Instance, // PokemonInstance Species
 				"Blaziken", level,
 				Fire.Instance, Fighting.Instance			
@@ -185,8 +184,7 @@ namespace Pokedex.Models.Pokemons
 		/// Blaziken Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Blaziken() : base(
-			257,
+		public BlazikenInstance() : base(
 			SpeciesBlaziken.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHeracross Constructor
 		public SpeciesHeracross() : base(
+			214,
 			"Heracross",
 			1.5,
 			54.0,
@@ -143,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeracrossInstance(string nickname, int level)
 		: base(
-				214,
 				SpeciesHeracross.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Fighting.Instance			
@@ -158,7 +158,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HeracrossInstance(int level)
 		: base(
-				214,
 				SpeciesHeracross.Instance, // PokemonInstance Species
 				"Heracross", level,
 				Bug.Instance, Fighting.Instance			
@@ -172,8 +171,7 @@ namespace Pokedex.Models.Pokemons
 		/// Heracross Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Heracross() : base(
-			214,
+		public HeracrossInstance() : base(
 			SpeciesHeracross.Instance, // PokemonInstance Species
 			Bug.Instance, Fighting.Instance			
 		) {}

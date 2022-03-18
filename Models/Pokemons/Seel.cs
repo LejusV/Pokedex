@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSeel Constructor
 		public SpeciesSeel() : base(
+			86,
 			"Seel",
 			1.1,
 			90.0,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeelInstance(string nickname, int level)
 		: base(
-				86,
 				SpeciesSeel.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SeelInstance(int level)
 		: base(
-				86,
 				SpeciesSeel.Instance, // PokemonInstance Species
 				"Seel", level,
 				Water.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Seel Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Seel() : base(
-			86,
+		public SeelInstance() : base(
 			SpeciesSeel.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

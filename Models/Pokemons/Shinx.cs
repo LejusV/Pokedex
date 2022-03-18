@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesShinx Constructor
 		public SpeciesShinx() : base(
+			403,
 			"Shinx",
 			0.5,
 			9.5,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShinxInstance(string nickname, int level)
 		: base(
-				403,
 				SpeciesShinx.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ShinxInstance(int level)
 		: base(
-				403,
 				SpeciesShinx.Instance, // PokemonInstance Species
 				"Shinx", level,
 				Electric.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Shinx Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Shinx() : base(
-			403,
+		public ShinxInstance() : base(
 			SpeciesShinx.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

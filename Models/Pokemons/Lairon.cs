@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLairon Constructor
 		public SpeciesLairon() : base(
+			305,
 			"Lairon",
 			0.9,
 			120.0,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LaironInstance(string nickname, int level)
 		: base(
-				305,
 				SpeciesLairon.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Rock.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LaironInstance(int level)
 		: base(
-				305,
 				SpeciesLairon.Instance, // PokemonInstance Species
 				"Lairon", level,
 				Steel.Instance, Rock.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lairon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lairon() : base(
-			305,
+		public LaironInstance() : base(
 			SpeciesLairon.Instance, // PokemonInstance Species
 			Steel.Instance, Rock.Instance			
 		) {}

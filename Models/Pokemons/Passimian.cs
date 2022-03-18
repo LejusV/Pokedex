@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPassimian Constructor
 		public SpeciesPassimian() : base(
+			766,
 			"Passimian",
 			2.0,
 			82.8,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PassimianInstance(string nickname, int level)
 		: base(
-				766,
 				SpeciesPassimian.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PassimianInstance(int level)
 		: base(
-				766,
 				SpeciesPassimian.Instance, // PokemonInstance Species
 				"Passimian", level,
 				Fighting.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Passimian Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Passimian() : base(
-			766,
+		public PassimianInstance() : base(
 			SpeciesPassimian.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesTyrantrum Constructor
 		public SpeciesTyrantrum() : base(
+			697,
 			"Tyrantrum",
 			2.5,
 			270.0,
@@ -120,7 +121,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyrantrumInstance(string nickname, int level)
 		: base(
-				697,
 				SpeciesTyrantrum.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Dragon.Instance			
@@ -135,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public TyrantrumInstance(int level)
 		: base(
-				697,
 				SpeciesTyrantrum.Instance, // PokemonInstance Species
 				"Tyrantrum", level,
 				Rock.Instance, Dragon.Instance			
@@ -149,8 +148,7 @@ namespace Pokedex.Models.Pokemons
 		/// Tyrantrum Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Tyrantrum() : base(
-			697,
+		public TyrantrumInstance() : base(
 			SpeciesTyrantrum.Instance, // PokemonInstance Species
 			Rock.Instance, Dragon.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAlomomola Constructor
 		public SpeciesAlomomola() : base(
+			594,
 			"Alomomola",
 			1.2,
 			31.6,
@@ -117,7 +118,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlomomolaInstance(string nickname, int level)
 		: base(
-				594,
 				SpeciesAlomomola.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -132,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AlomomolaInstance(int level)
 		: base(
-				594,
 				SpeciesAlomomola.Instance, // PokemonInstance Species
 				"Alomomola", level,
 				Water.Instance			
@@ -146,8 +145,7 @@ namespace Pokedex.Models.Pokemons
 		/// Alomomola Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Alomomola() : base(
-			594,
+		public AlomomolaInstance() : base(
 			SpeciesAlomomola.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

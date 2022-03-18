@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGogoat Constructor
 		public SpeciesGogoat() : base(
+			673,
 			"Gogoat",
 			1.7,
 			91.0,
@@ -118,7 +119,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GogoatInstance(string nickname, int level)
 		: base(
-				673,
 				SpeciesGogoat.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -133,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GogoatInstance(int level)
 		: base(
-				673,
 				SpeciesGogoat.Instance, // PokemonInstance Species
 				"Gogoat", level,
 				Grass.Instance			
@@ -147,8 +146,7 @@ namespace Pokedex.Models.Pokemons
 		/// Gogoat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Gogoat() : base(
-			673,
+		public GogoatInstance() : base(
 			SpeciesGogoat.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

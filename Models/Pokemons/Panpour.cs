@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPanpour Constructor
 		public SpeciesPanpour() : base(
+			515,
 			"Panpour",
 			0.6,
 			13.5,
@@ -134,7 +135,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PanpourInstance(string nickname, int level)
 		: base(
-				515,
 				SpeciesPanpour.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -149,7 +149,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PanpourInstance(int level)
 		: base(
-				515,
 				SpeciesPanpour.Instance, // PokemonInstance Species
 				"Panpour", level,
 				Water.Instance			
@@ -163,8 +162,7 @@ namespace Pokedex.Models.Pokemons
 		/// Panpour Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Panpour() : base(
-			515,
+		public PanpourInstance() : base(
 			SpeciesPanpour.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

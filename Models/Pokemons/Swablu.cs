@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesSwablu Constructor
 		public SpeciesSwablu() : base(
+			333,
 			"Swablu",
 			0.4,
 			1.2,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwabluInstance(string nickname, int level)
 		: base(
-				333,
 				SpeciesSwablu.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Flying.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public SwabluInstance(int level)
 		: base(
-				333,
 				SpeciesSwablu.Instance, // PokemonInstance Species
 				"Swablu", level,
 				Normal.Instance, Flying.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Swablu Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Swablu() : base(
-			333,
+		public SwabluInstance() : base(
 			SpeciesSwablu.Instance, // PokemonInstance Species
 			Normal.Instance, Flying.Instance			
 		) {}

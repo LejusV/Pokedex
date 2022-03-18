@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMantyke Constructor
 		public SpeciesMantyke() : base(
+			458,
 			"Mantyke",
 			1.0,
 			65.0,
@@ -123,7 +124,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MantykeInstance(string nickname, int level)
 		: base(
-				458,
 				SpeciesMantyke.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Flying.Instance			
@@ -138,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MantykeInstance(int level)
 		: base(
-				458,
 				SpeciesMantyke.Instance, // PokemonInstance Species
 				"Mantyke", level,
 				Water.Instance, Flying.Instance			
@@ -152,8 +151,7 @@ namespace Pokedex.Models.Pokemons
 		/// Mantyke Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Mantyke() : base(
-			458,
+		public MantykeInstance() : base(
 			SpeciesMantyke.Instance, // PokemonInstance Species
 			Water.Instance, Flying.Instance			
 		) {}

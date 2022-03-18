@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesBanette Constructor
 		public SpeciesBanette() : base(
+			354,
 			"Banette",
 			1.1,
 			12.5,
@@ -135,7 +136,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BanetteInstance(string nickname, int level)
 		: base(
-				354,
 				SpeciesBanette.Instance, // Pokemon Species
 				nickname, level,
 				Ghost.Instance			
@@ -150,7 +150,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public BanetteInstance(int level)
 		: base(
-				354,
 				SpeciesBanette.Instance, // PokemonInstance Species
 				"Banette", level,
 				Ghost.Instance			
@@ -164,8 +163,7 @@ namespace Pokedex.Models.Pokemons
 		/// Banette Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Banette() : base(
-			354,
+		public BanetteInstance() : base(
 			SpeciesBanette.Instance, // PokemonInstance Species
 			Ghost.Instance			
 		) {}

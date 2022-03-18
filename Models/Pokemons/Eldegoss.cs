@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesEldegoss Constructor
 		public SpeciesEldegoss() : base(
+			830,
 			"Eldegoss",
 			0.5,
 			2.5,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EldegossInstance(string nickname, int level)
 		: base(
-				830,
 				SpeciesEldegoss.Instance, // Pokemon Species
 				nickname, level,
 				Grass.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public EldegossInstance(int level)
 		: base(
-				830,
 				SpeciesEldegoss.Instance, // PokemonInstance Species
 				"Eldegoss", level,
 				Grass.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Eldegoss Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Eldegoss() : base(
-			830,
+		public EldegossInstance() : base(
 			SpeciesEldegoss.Instance, // PokemonInstance Species
 			Grass.Instance			
 		) {}

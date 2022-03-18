@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDeerling Constructor
 		public SpeciesDeerling() : base(
+			585,
 			"Deerling",
 			0.6,
 			19.5,
@@ -116,7 +117,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeerlingInstance(string nickname, int level)
 		: base(
-				585,
 				SpeciesDeerling.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance, Grass.Instance			
@@ -131,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DeerlingInstance(int level)
 		: base(
-				585,
 				SpeciesDeerling.Instance, // PokemonInstance Species
 				"Deerling", level,
 				Normal.Instance, Grass.Instance			
@@ -145,8 +144,7 @@ namespace Pokedex.Models.Pokemons
 		/// Deerling Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Deerling() : base(
-			585,
+		public DeerlingInstance() : base(
 			SpeciesDeerling.Instance, // PokemonInstance Species
 			Normal.Instance, Grass.Instance			
 		) {}

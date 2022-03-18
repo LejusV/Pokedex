@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHydreigon Constructor
 		public SpeciesHydreigon() : base(
+			635,
 			"Hydreigon",
 			1.8,
 			160.0,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HydreigonInstance(string nickname, int level)
 		: base(
-				635,
 				SpeciesHydreigon.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Dragon.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HydreigonInstance(int level)
 		: base(
-				635,
 				SpeciesHydreigon.Instance, // PokemonInstance Species
 				"Hydreigon", level,
 				Dark.Instance, Dragon.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hydreigon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hydreigon() : base(
-			635,
+		public HydreigonInstance() : base(
 			SpeciesHydreigon.Instance, // PokemonInstance Species
 			Dark.Instance, Dragon.Instance			
 		) {}

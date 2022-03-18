@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPiplup Constructor
 		public SpeciesPiplup() : base(
+			393,
 			"Piplup",
 			0.4,
 			5.2,
@@ -129,7 +130,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PiplupInstance(string nickname, int level)
 		: base(
-				393,
 				SpeciesPiplup.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -144,7 +144,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PiplupInstance(int level)
 		: base(
-				393,
 				SpeciesPiplup.Instance, // PokemonInstance Species
 				"Piplup", level,
 				Water.Instance			
@@ -158,8 +157,7 @@ namespace Pokedex.Models.Pokemons
 		/// Piplup Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Piplup() : base(
-			393,
+		public PiplupInstance() : base(
 			SpeciesPiplup.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

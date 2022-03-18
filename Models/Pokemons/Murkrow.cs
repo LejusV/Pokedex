@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMurkrow Constructor
 		public SpeciesMurkrow() : base(
+			198,
 			"Murkrow",
 			0.5,
 			2.1,
@@ -142,7 +143,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MurkrowInstance(string nickname, int level)
 		: base(
-				198,
 				SpeciesMurkrow.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance, Flying.Instance			
@@ -157,7 +157,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MurkrowInstance(int level)
 		: base(
-				198,
 				SpeciesMurkrow.Instance, // PokemonInstance Species
 				"Murkrow", level,
 				Dark.Instance, Flying.Instance			
@@ -171,8 +170,7 @@ namespace Pokedex.Models.Pokemons
 		/// Murkrow Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Murkrow() : base(
-			198,
+		public MurkrowInstance() : base(
 			SpeciesMurkrow.Instance, // PokemonInstance Species
 			Dark.Instance, Flying.Instance			
 		) {}

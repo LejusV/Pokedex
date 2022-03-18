@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDragonair Constructor
 		public SpeciesDragonair() : base(
+			148,
 			"Dragonair",
 			4.0,
 			16.5,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragonairInstance(string nickname, int level)
 		: base(
-				148,
 				SpeciesDragonair.Instance, // Pokemon Species
 				nickname, level,
 				Dragon.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DragonairInstance(int level)
 		: base(
-				148,
 				SpeciesDragonair.Instance, // PokemonInstance Species
 				"Dragonair", level,
 				Dragon.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Dragonair Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Dragonair() : base(
-			148,
+		public DragonairInstance() : base(
 			SpeciesDragonair.Instance, // PokemonInstance Species
 			Dragon.Instance			
 		) {}

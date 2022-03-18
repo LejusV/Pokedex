@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAron Constructor
 		public SpeciesAron() : base(
+			304,
 			"Aron",
 			0.4,
 			60.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AronInstance(string nickname, int level)
 		: base(
-				304,
 				SpeciesAron.Instance, // Pokemon Species
 				nickname, level,
 				Steel.Instance, Rock.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AronInstance(int level)
 		: base(
-				304,
 				SpeciesAron.Instance, // PokemonInstance Species
 				"Aron", level,
 				Steel.Instance, Rock.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Aron Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Aron() : base(
-			304,
+		public AronInstance() : base(
 			SpeciesAron.Instance, // PokemonInstance Species
 			Steel.Instance, Rock.Instance			
 		) {}

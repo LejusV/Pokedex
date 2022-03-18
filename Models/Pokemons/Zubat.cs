@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesZubat Constructor
 		public SpeciesZubat() : base(
+			41,
 			"Zubat",
 			0.8,
 			7.5,
@@ -137,7 +138,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZubatInstance(string nickname, int level)
 		: base(
-				41,
 				SpeciesZubat.Instance, // Pokemon Species
 				nickname, level,
 				Poison.Instance, Flying.Instance			
@@ -152,7 +152,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ZubatInstance(int level)
 		: base(
-				41,
 				SpeciesZubat.Instance, // PokemonInstance Species
 				"Zubat", level,
 				Poison.Instance, Flying.Instance			
@@ -166,8 +165,7 @@ namespace Pokedex.Models.Pokemons
 		/// Zubat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Zubat() : base(
-			41,
+		public ZubatInstance() : base(
 			SpeciesZubat.Instance, // PokemonInstance Species
 			Poison.Instance, Flying.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMakuhita Constructor
 		public SpeciesMakuhita() : base(
+			296,
 			"Makuhita",
 			1.0,
 			86.4,
@@ -145,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MakuhitaInstance(string nickname, int level)
 		: base(
-				296,
 				SpeciesMakuhita.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -160,7 +160,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MakuhitaInstance(int level)
 		: base(
-				296,
 				SpeciesMakuhita.Instance, // PokemonInstance Species
 				"Makuhita", level,
 				Fighting.Instance			
@@ -174,8 +173,7 @@ namespace Pokedex.Models.Pokemons
 		/// Makuhita Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Makuhita() : base(
-			296,
+		public MakuhitaInstance() : base(
 			SpeciesMakuhita.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

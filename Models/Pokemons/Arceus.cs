@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArceus Constructor
 		public SpeciesArceus() : base(
+			493,
 			"Arceus",
 			3.2,
 			320.0,
@@ -186,7 +187,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArceusInstance(string nickname, int level)
 		: base(
-				493,
 				SpeciesArceus.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -201,7 +201,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArceusInstance(int level)
 		: base(
-				493,
 				SpeciesArceus.Instance, // PokemonInstance Species
 				"Arceus", level,
 				Normal.Instance			
@@ -215,8 +214,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arceus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arceus() : base(
-			493,
+		public ArceusInstance() : base(
 			SpeciesArceus.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

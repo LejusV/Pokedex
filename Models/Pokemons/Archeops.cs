@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArcheops Constructor
 		public SpeciesArcheops() : base(
+			567,
 			"Archeops",
 			1.4,
 			32.0,
@@ -130,7 +131,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArcheopsInstance(string nickname, int level)
 		: base(
-				567,
 				SpeciesArcheops.Instance, // Pokemon Species
 				nickname, level,
 				Rock.Instance, Flying.Instance			
@@ -145,7 +145,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArcheopsInstance(int level)
 		: base(
-				567,
 				SpeciesArcheops.Instance, // PokemonInstance Species
 				"Archeops", level,
 				Rock.Instance, Flying.Instance			
@@ -159,8 +158,7 @@ namespace Pokedex.Models.Pokemons
 		/// Archeops Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Archeops() : base(
-			567,
+		public ArcheopsInstance() : base(
 			SpeciesArcheops.Instance, // PokemonInstance Species
 			Rock.Instance, Flying.Instance			
 		) {}

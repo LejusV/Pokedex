@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMonferno Constructor
 		public SpeciesMonferno() : base(
+			391,
 			"Monferno",
 			0.9,
 			22.0,
@@ -141,7 +142,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MonfernoInstance(string nickname, int level)
 		: base(
-				391,
 				SpeciesMonferno.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance, Fighting.Instance			
@@ -156,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MonfernoInstance(int level)
 		: base(
-				391,
 				SpeciesMonferno.Instance, // PokemonInstance Species
 				"Monferno", level,
 				Fire.Instance, Fighting.Instance			
@@ -170,8 +169,7 @@ namespace Pokedex.Models.Pokemons
 		/// Monferno Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Monferno() : base(
-			391,
+		public MonfernoInstance() : base(
 			SpeciesMonferno.Instance, // PokemonInstance Species
 			Fire.Instance, Fighting.Instance			
 		) {}

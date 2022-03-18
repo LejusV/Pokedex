@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesAbsol Constructor
 		public SpeciesAbsol() : base(
+			359,
 			"Absol",
 			1.2,
 			47.0,
@@ -167,7 +168,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbsolInstance(string nickname, int level)
 		: base(
-				359,
 				SpeciesAbsol.Instance, // Pokemon Species
 				nickname, level,
 				Dark.Instance			
@@ -182,7 +182,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public AbsolInstance(int level)
 		: base(
-				359,
 				SpeciesAbsol.Instance, // PokemonInstance Species
 				"Absol", level,
 				Dark.Instance			
@@ -196,8 +195,7 @@ namespace Pokedex.Models.Pokemons
 		/// Absol Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Absol() : base(
-			359,
+		public AbsolInstance() : base(
 			SpeciesAbsol.Instance, // PokemonInstance Species
 			Dark.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesDiglett Constructor
 		public SpeciesDiglett() : base(
+			50,
 			"Diglett",
 			0.2,
 			0.8,
@@ -124,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiglettInstance(string nickname, int level)
 		: base(
-				50,
 				SpeciesDiglett.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -139,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public DiglettInstance(int level)
 		: base(
-				50,
 				SpeciesDiglett.Instance, // PokemonInstance Species
 				"Diglett", level,
 				Ground.Instance			
@@ -153,8 +152,7 @@ namespace Pokedex.Models.Pokemons
 		/// Diglett Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Diglett() : base(
-			50,
+		public DiglettInstance() : base(
 			SpeciesDiglett.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

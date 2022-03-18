@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesHippowdon Constructor
 		public SpeciesHippowdon() : base(
+			450,
 			"Hippowdon",
 			2.0,
 			300.0,
@@ -112,7 +113,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HippowdonInstance(string nickname, int level)
 		: base(
-				450,
 				SpeciesHippowdon.Instance, // Pokemon Species
 				nickname, level,
 				Ground.Instance			
@@ -127,7 +127,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public HippowdonInstance(int level)
 		: base(
-				450,
 				SpeciesHippowdon.Instance, // PokemonInstance Species
 				"Hippowdon", level,
 				Ground.Instance			
@@ -141,8 +140,7 @@ namespace Pokedex.Models.Pokemons
 		/// Hippowdon Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Hippowdon() : base(
-			450,
+		public HippowdonInstance() : base(
 			SpeciesHippowdon.Instance, // PokemonInstance Species
 			Ground.Instance			
 		) {}

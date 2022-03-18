@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLuxio Constructor
 		public SpeciesLuxio() : base(
+			404,
 			"Luxio",
 			0.9,
 			30.5,
@@ -110,7 +111,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuxioInstance(string nickname, int level)
 		: base(
-				404,
 				SpeciesLuxio.Instance, // Pokemon Species
 				nickname, level,
 				Electric.Instance			
@@ -125,7 +125,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LuxioInstance(int level)
 		: base(
-				404,
 				SpeciesLuxio.Instance, // PokemonInstance Species
 				"Luxio", level,
 				Electric.Instance			
@@ -139,8 +138,7 @@ namespace Pokedex.Models.Pokemons
 		/// Luxio Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Luxio() : base(
-			404,
+		public LuxioInstance() : base(
 			SpeciesLuxio.Instance, // PokemonInstance Species
 			Electric.Instance			
 		) {}

@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesMasquerain Constructor
 		public SpeciesMasquerain() : base(
+			284,
 			"Masquerain",
 			0.8,
 			3.6,
@@ -125,7 +126,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MasquerainInstance(string nickname, int level)
 		: base(
-				284,
 				SpeciesMasquerain.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -140,7 +140,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public MasquerainInstance(int level)
 		: base(
-				284,
 				SpeciesMasquerain.Instance, // PokemonInstance Species
 				"Masquerain", level,
 				Bug.Instance, Flying.Instance			
@@ -154,8 +153,7 @@ namespace Pokedex.Models.Pokemons
 		/// Masquerain Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Masquerain() : base(
-			284,
+		public MasquerainInstance() : base(
 			SpeciesMasquerain.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

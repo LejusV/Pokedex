@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesGolduck Constructor
 		public SpeciesGolduck() : base(
+			55,
 			"Golduck",
 			1.7,
 			76.6,
@@ -155,7 +156,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolduckInstance(string nickname, int level)
 		: base(
-				55,
 				SpeciesGolduck.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance			
@@ -170,7 +170,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public GolduckInstance(int level)
 		: base(
-				55,
 				SpeciesGolduck.Instance, // PokemonInstance Species
 				"Golduck", level,
 				Water.Instance			
@@ -184,8 +183,7 @@ namespace Pokedex.Models.Pokemons
 		/// Golduck Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Golduck() : base(
-			55,
+		public GolduckInstance() : base(
 			SpeciesGolduck.Instance, // PokemonInstance Species
 			Water.Instance			
 		) {}

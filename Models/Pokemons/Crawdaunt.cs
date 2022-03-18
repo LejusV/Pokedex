@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesCrawdaunt Constructor
 		public SpeciesCrawdaunt() : base(
+			342,
 			"Crawdaunt",
 			1.1,
 			32.8,
@@ -138,7 +139,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrawdauntInstance(string nickname, int level)
 		: base(
-				342,
 				SpeciesCrawdaunt.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Dark.Instance			
@@ -153,7 +153,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public CrawdauntInstance(int level)
 		: base(
-				342,
 				SpeciesCrawdaunt.Instance, // PokemonInstance Species
 				"Crawdaunt", level,
 				Water.Instance, Dark.Instance			
@@ -167,8 +166,7 @@ namespace Pokedex.Models.Pokemons
 		/// Crawdaunt Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Crawdaunt() : base(
-			342,
+		public CrawdauntInstance() : base(
 			SpeciesCrawdaunt.Instance, // PokemonInstance Species
 			Water.Instance, Dark.Instance			
 		) {}

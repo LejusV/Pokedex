@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesArcanine Constructor
 		public SpeciesArcanine() : base(
+			59,
 			"Arcanine",
 			1.9,
 			155.0,
@@ -131,7 +132,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArcanineInstance(string nickname, int level)
 		: base(
-				59,
 				SpeciesArcanine.Instance, // Pokemon Species
 				nickname, level,
 				Fire.Instance			
@@ -146,7 +146,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ArcanineInstance(int level)
 		: base(
-				59,
 				SpeciesArcanine.Instance, // PokemonInstance Species
 				"Arcanine", level,
 				Fire.Instance			
@@ -160,8 +159,7 @@ namespace Pokedex.Models.Pokemons
 		/// Arcanine Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Arcanine() : base(
-			59,
+		public ArcanineInstance() : base(
 			SpeciesArcanine.Instance, // PokemonInstance Species
 			Fire.Instance			
 		) {}

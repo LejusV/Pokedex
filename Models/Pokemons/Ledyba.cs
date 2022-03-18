@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLedyba Constructor
 		public SpeciesLedyba() : base(
+			165,
 			"Ledyba",
 			1.0,
 			10.8,
@@ -133,7 +134,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LedybaInstance(string nickname, int level)
 		: base(
-				165,
 				SpeciesLedyba.Instance, // Pokemon Species
 				nickname, level,
 				Bug.Instance, Flying.Instance			
@@ -148,7 +148,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LedybaInstance(int level)
 		: base(
-				165,
 				SpeciesLedyba.Instance, // PokemonInstance Species
 				"Ledyba", level,
 				Bug.Instance, Flying.Instance			
@@ -162,8 +161,7 @@ namespace Pokedex.Models.Pokemons
 		/// Ledyba Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Ledyba() : base(
-			165,
+		public LedybaInstance() : base(
 			SpeciesLedyba.Instance, // PokemonInstance Species
 			Bug.Instance, Flying.Instance			
 		) {}

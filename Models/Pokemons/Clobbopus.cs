@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesClobbopus Constructor
 		public SpeciesClobbopus() : base(
+			852,
 			"Clobbopus",
 			0.6,
 			4.0,
@@ -61,7 +62,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClobbopusInstance(string nickname, int level)
 		: base(
-				852,
 				SpeciesClobbopus.Instance, // Pokemon Species
 				nickname, level,
 				Fighting.Instance			
@@ -76,7 +76,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public ClobbopusInstance(int level)
 		: base(
-				852,
 				SpeciesClobbopus.Instance, // PokemonInstance Species
 				"Clobbopus", level,
 				Fighting.Instance			
@@ -90,8 +89,7 @@ namespace Pokedex.Models.Pokemons
 		/// Clobbopus Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Clobbopus() : base(
-			852,
+		public ClobbopusInstance() : base(
 			SpeciesClobbopus.Instance, // PokemonInstance Species
 			Fighting.Instance			
 		) {}

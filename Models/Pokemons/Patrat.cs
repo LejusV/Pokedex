@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesPatrat Constructor
 		public SpeciesPatrat() : base(
+			504,
 			"Patrat",
 			0.5,
 			11.6,
@@ -122,7 +123,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PatratInstance(string nickname, int level)
 		: base(
-				504,
 				SpeciesPatrat.Instance, // Pokemon Species
 				nickname, level,
 				Normal.Instance			
@@ -137,7 +137,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public PatratInstance(int level)
 		: base(
-				504,
 				SpeciesPatrat.Instance, // PokemonInstance Species
 				"Patrat", level,
 				Normal.Instance			
@@ -151,8 +150,7 @@ namespace Pokedex.Models.Pokemons
 		/// Patrat Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Patrat() : base(
-			504,
+		public PatratInstance() : base(
 			SpeciesPatrat.Instance, // PokemonInstance Species
 			Normal.Instance			
 		) {}

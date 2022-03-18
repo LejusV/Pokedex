@@ -26,6 +26,7 @@ namespace Pokedex.Models.Pokemons
 
 		#region SpeciesLombre Constructor
 		public SpeciesLombre() : base(
+			271,
 			"Lombre",
 			1.2,
 			32.5,
@@ -132,7 +133,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LombreInstance(string nickname, int level)
 		: base(
-				271,
 				SpeciesLombre.Instance, // Pokemon Species
 				nickname, level,
 				Water.Instance, Grass.Instance			
@@ -147,7 +147,6 @@ namespace Pokedex.Models.Pokemons
 		/// </summary>
 		public LombreInstance(int level)
 		: base(
-				271,
 				SpeciesLombre.Instance, // PokemonInstance Species
 				"Lombre", level,
 				Water.Instance, Grass.Instance			
@@ -161,8 +160,7 @@ namespace Pokedex.Models.Pokemons
 		/// Lombre Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
 		/// </summary>
 		/*
-		public Lombre() : base(
-			271,
+		public LombreInstance() : base(
 			SpeciesLombre.Instance, // PokemonInstance Species
 			Water.Instance, Grass.Instance			
 		) {}
