@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 30% chance to make the target flinch.
 	public class MoveBite : Move
 	{
+#nullable enable
+		private static MoveBite? _instance = null;
+#nullable restore
+        public static MoveBite Instance => _instance ?? (_instance = new MoveBite());
+
 		public MoveBite() : base(
 			"Bite",
 			Dark.Instance, // Move Type

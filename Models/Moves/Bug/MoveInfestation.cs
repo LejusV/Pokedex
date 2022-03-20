@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Prevents the target from fleeing and inflicts damage for 2-5 turns.
 	public class MoveInfestation : Move
 	{
+#nullable enable
+		private static MoveInfestation? _instance = null;
+#nullable restore
+        public static MoveInfestation Instance => _instance ?? (_instance = new MoveInfestation());
+
 		public MoveInfestation() : base(
 			"Infestation",
 			Bug.Instance, // Move Type

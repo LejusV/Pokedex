@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Puts the target to sleep.
 	public class MoveDarkVoid : Move
 	{
+#nullable enable
+		private static MoveDarkVoid? _instance = null;
+#nullable restore
+        public static MoveDarkVoid Instance => _instance ?? (_instance = new MoveDarkVoid());
+
 		public MoveDarkVoid() : base(
 			"Dark-Void",
 			Dark.Instance, // Move Type

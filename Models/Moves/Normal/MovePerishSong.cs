@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User and target both faint after three turns.
 	public class MovePerishSong : Move
 	{
+#nullable enable
+		private static MovePerishSong? _instance = null;
+#nullable restore
+        public static MovePerishSong Instance => _instance ?? (_instance = new MovePerishSong());
+
 		public MovePerishSong() : base(
 			"Perish-Song",
 			Normal.Instance, // Move Type

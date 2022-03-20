@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Super-effective against water.
 	public class MoveFreezeDry : Move
 	{
+#nullable enable
+		private static MoveFreezeDry? _instance = null;
+#nullable restore
+        public static MoveFreezeDry Instance => _instance ?? (_instance = new MoveFreezeDry());
+
 		public MoveFreezeDry() : base(
 			"Freeze-Dry",
 			Ice.Instance, // Move Type

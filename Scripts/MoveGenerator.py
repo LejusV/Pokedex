@@ -21,18 +21,23 @@ for move in data.values():
 
 	# Create the PokemonMove class, by opening a file
 	#with open(f"D:\\PokedexMovesTest\\{moveType}\\Move{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
-	with open(f"Models\\Moves\\{moveType}\\Move{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
+	with open(f"Models\\Moves\\{moveType}\\Move{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as fBase:
 		# Load the template code
 		outfile = f"""
 
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {{
 	//{move["description"].replace('$effect_chance', str(move["effect_chance"]))}
 	public class Move{moveNameNoSpace} : Move
 	{{
+#nullable enable
+		private static Move{moveNameNoSpace}? _instance = null;
+#nullable restore
+        public static Move{moveNameNoSpace} Instance => _instance ?? (_instance = new Move{moveNameNoSpace}());
+
 		public Move{moveNameNoSpace}() : base(
 			"{moveName}",
 			{moveType}.Instance, // Move Type
@@ -47,4 +52,26 @@ namespace Pokedex.Models.Moves
 		# ↑ Delete the first two and last two newlines, here for readability
 
 		# Write the code to the file
-		f.write(outfile)
+		fBase.write(outfile)
+
+	with open(f"Models\\MoveInstances\\{moveType}\\I{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as fInstance:
+		# Load the template code
+		outfile = f"""
+
+using Pokedex.Enums;
+using Pokedex.Models.PokemonTypes;
+
+namespace Pokedex.Models.Moves
+{{
+	// The specific Move Instance Class
+	public class I{moveNameNoSpace} : MoveInstance
+	{{
+		public I{moveNameNoSpace}() : base( Move{moveNameNoSpace}.Instance ) {{}}
+	}}
+}}
+
+"""[2:-2]
+		# ↑ Delete the first two and last two newlines, here for readability
+
+		# Write the code to the file
+		fInstance.write(outfile)

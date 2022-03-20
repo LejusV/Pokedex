@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Cleanses the user of a burn, paralysis, or poison.
 	public class MoveRefresh : Move
 	{
+#nullable enable
+		private static MoveRefresh? _instance = null;
+#nullable restore
+        public static MoveRefresh Instance => _instance ?? (_instance = new MoveRefresh());
+
 		public MoveRefresh() : base(
 			"Refresh",
 			Normal.Instance, // Move Type

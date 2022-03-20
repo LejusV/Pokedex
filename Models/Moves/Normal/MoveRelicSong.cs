@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to put the target to sleep.
 	public class MoveRelicSong : Move
 	{
+#nullable enable
+		private static MoveRelicSong? _instance = null;
+#nullable restore
+        public static MoveRelicSong Instance => _instance ?? (_instance = new MoveRelicSong());
+
 		public MoveRelicSong() : base(
 			"Relic-Song",
 			Normal.Instance, // Move Type

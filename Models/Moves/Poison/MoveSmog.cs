@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 40% chance to poison the target.
 	public class MoveSmog : Move
 	{
+#nullable enable
+		private static MoveSmog? _instance = null;
+#nullable restore
+        public static MoveSmog Instance => _instance ?? (_instance = new MoveSmog());
+
 		public MoveSmog() : base(
 			"Smog",
 			Poison.Instance, // Move Type

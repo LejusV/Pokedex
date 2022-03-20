@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Attack by one stage after inflicting damage.
 	public class MoveLunge : Move
 	{
+#nullable enable
+		private static MoveLunge? _instance = null;
+#nullable restore
+        public static MoveLunge Instance => _instance ?? (_instance = new MoveLunge());
+
 		public MoveLunge() : base(
 			"Lunge",
 			Bug.Instance, // Move Type

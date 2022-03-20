@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Doubles prize money.
 	public class MoveHappyHour : Move
 	{
+#nullable enable
+		private static MoveHappyHour? _instance = null;
+#nullable restore
+        public static MoveHappyHour Instance => _instance ?? (_instance = new MoveHappyHour());
+
 		public MoveHappyHour() : base(
 			"Happy-Hour",
 			Normal.Instance, // Move Type

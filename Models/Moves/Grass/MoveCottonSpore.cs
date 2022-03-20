@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Speed by two stages.
 	public class MoveCottonSpore : Move
 	{
+#nullable enable
+		private static MoveCottonSpore? _instance = null;
+#nullable restore
+        public static MoveCottonSpore Instance => _instance ?? (_instance = new MoveCottonSpore());
+
 		public MoveCottonSpore() : base(
 			"Cotton-Spore",
 			Grass.Instance, // Move Type

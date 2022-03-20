@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User foregoes its next turn to recharge.
 	public class MoveEternabeam : Move
 	{
+#nullable enable
+		private static MoveEternabeam? _instance = null;
+#nullable restore
+        public static MoveEternabeam Instance => _instance ?? (_instance = new MoveEternabeam());
+
 		public MoveEternabeam() : base(
 			"Eternabeam",
 			Dragon.Instance, // Move Type

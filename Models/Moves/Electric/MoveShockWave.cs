@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Never misses.
 	public class MoveShockWave : Move
 	{
+#nullable enable
+		private static MoveShockWave? _instance = null;
+#nullable restore
+        public static MoveShockWave Instance => _instance ?? (_instance = new MoveShockWave());
+
 		public MoveShockWave() : base(
 			"Shock-Wave",
 			Electric.Instance, // Move Type

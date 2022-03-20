@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Special Defense by two stages.
 	public class MoveMetalSound : Move
 	{
+#nullable enable
+		private static MoveMetalSound? _instance = null;
+#nullable restore
+        public static MoveMetalSound Instance => _instance ?? (_instance = new MoveMetalSound());
+
 		public MoveMetalSound() : base(
 			"Metal-Sound",
 			Steel.Instance, // Move Type

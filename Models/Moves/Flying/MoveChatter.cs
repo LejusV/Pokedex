@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a higher chance to confuse the target when the recorded sound is louder.
 	public class MoveChatter : Move
 	{
+#nullable enable
+		private static MoveChatter? _instance = null;
+#nullable restore
+        public static MoveChatter Instance => _instance ?? (_instance = new MoveChatter());
+
 		public MoveChatter() : base(
 			"Chatter",
 			Flying.Instance, // Move Type

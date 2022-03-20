@@ -1,6 +1,6 @@
-﻿namespace Pokedex.Models.PokeTypes
+﻿namespace Pokedex.Models.PokemonTypes
 {
-    public class Grass : PokeType
+    public class Grass : PokemonType
     {
 #nullable enable
         private static Grass? _instance = null;

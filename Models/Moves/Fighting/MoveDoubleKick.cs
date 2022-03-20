@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Hits twice in one turn.
 	public class MoveDoubleKick : Move
 	{
+#nullable enable
+		private static MoveDoubleKick? _instance = null;
+#nullable restore
+        public static MoveDoubleKick Instance => _instance ?? (_instance = new MoveDoubleKick());
+
 		public MoveDoubleKick() : base(
 			"Double-Kick",
 			Fighting.Instance, // Move Type

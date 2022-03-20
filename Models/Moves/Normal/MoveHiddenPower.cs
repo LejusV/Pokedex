@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Power and type depend upon user's IVs.  Power can range from 30 to 70.
 	public class MoveHiddenPower : Move
 	{
+#nullable enable
+		private static MoveHiddenPower? _instance = null;
+#nullable restore
+        public static MoveHiddenPower Instance => _instance ?? (_instance = new MoveHiddenPower());
+
 		public MoveHiddenPower() : base(
 			"Hidden-Power",
 			Normal.Instance, // Move Type

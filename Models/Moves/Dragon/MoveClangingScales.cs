@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the user's Defense by one stage after inflicting damage.
 	public class MoveClangingScales : Move
 	{
+#nullable enable
+		private static MoveClangingScales? _instance = null;
+#nullable restore
+        public static MoveClangingScales Instance => _instance ?? (_instance = new MoveClangingScales());
+
 		public MoveClangingScales() : base(
 			"Clanging-Scales",
 			Dragon.Instance, // Move Type

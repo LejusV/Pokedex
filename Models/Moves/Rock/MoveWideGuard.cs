@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Prevents any multi-target moves from hitting friendly Pokémon this turn.
 	public class MoveWideGuard : Move
 	{
+#nullable enable
+		private static MoveWideGuard? _instance = null;
+#nullable restore
+        public static MoveWideGuard Instance => _instance ?? (_instance = new MoveWideGuard());
+
 		public MoveWideGuard() : base(
 			"Wide-Guard",
 			Rock.Instance, // Move Type

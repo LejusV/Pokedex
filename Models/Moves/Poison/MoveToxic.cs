@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Badly poisons the target, inflicting more damage every turn.
 	public class MoveToxic : Move
 	{
+#nullable enable
+		private static MoveToxic? _instance = null;
+#nullable restore
+        public static MoveToxic Instance => _instance ?? (_instance = new MoveToxic());
+
 		public MoveToxic() : base(
 			"Toxic",
 			Poison.Instance, // Move Type

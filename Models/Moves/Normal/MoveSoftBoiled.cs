@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Heals the user by half its max HP.
 	public class MoveSoftBoiled : Move
 	{
+#nullable enable
+		private static MoveSoftBoiled? _instance = null;
+#nullable restore
+        public static MoveSoftBoiled Instance => _instance ?? (_instance = new MoveSoftBoiled());
+
 		public MoveSoftBoiled() : base(
 			"Soft-Boiled",
 			Normal.Instance, // Move Type

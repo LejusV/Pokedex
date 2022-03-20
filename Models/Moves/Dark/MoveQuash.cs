@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Makes the target act last this turn.
 	public class MoveQuash : Move
 	{
+#nullable enable
+		private static MoveQuash? _instance = null;
+#nullable restore
+        public static MoveQuash Instance => _instance ?? (_instance = new MoveQuash());
+
 		public MoveQuash() : base(
 			"Quash",
 			Dark.Instance, // Move Type

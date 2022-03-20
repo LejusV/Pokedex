@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Reduces damage five turns, but must be used during hail.
 	public class MoveAuroraVeil : Move
 	{
+#nullable enable
+		private static MoveAuroraVeil? _instance = null;
+#nullable restore
+        public static MoveAuroraVeil Instance => _instance ?? (_instance = new MoveAuroraVeil());
+
 		public MoveAuroraVeil() : base(
 			"Aurora-Veil",
 			Ice.Instance, // Move Type

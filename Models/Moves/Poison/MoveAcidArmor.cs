@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Raises the user's Defense by two stages.
 	public class MoveAcidArmor : Move
 	{
+#nullable enable
+		private static MoveAcidArmor? _instance = null;
+#nullable restore
+        public static MoveAcidArmor Instance => _instance ?? (_instance = new MoveAcidArmor());
+
 		public MoveAcidArmor() : base(
 			"Acid-Armor",
 			Poison.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User and target swap stat changes.
 	public class MoveHeartSwap : Move
 	{
+#nullable enable
+		private static MoveHeartSwap? _instance = null;
+#nullable restore
+        public static MoveHeartSwap Instance => _instance ?? (_instance = new MoveHeartSwap());
+
 		public MoveHeartSwap() : base(
 			"Heart-Swap",
 			Psychic.Instance, // Move Type

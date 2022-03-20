@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.
 	public class MoveAttract : Move
 	{
+#nullable enable
+		private static MoveAttract? _instance = null;
+#nullable restore
+        public static MoveAttract Instance => _instance ?? (_instance = new MoveAttract());
+
 		public MoveAttract() : base(
 			"Attract",
 			Normal.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts damage, and the user takes damage equal to half of its max HP, rounded up.
 	public class MoveSteelBeam : Move
 	{
+#nullable enable
+		private static MoveSteelBeam? _instance = null;
+#nullable restore
+        public static MoveSteelBeam Instance => _instance ?? (_instance = new MoveSteelBeam());
+
 		public MoveSteelBeam() : base(
 			"Steel-Beam",
 			Steel.Instance, // Move Type

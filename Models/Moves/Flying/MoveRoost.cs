@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Heals the user by half its max HP.
 	public class MoveRoost : Move
 	{
+#nullable enable
+		private static MoveRoost? _instance = null;
+#nullable restore
+        public static MoveRoost Instance => _instance ?? (_instance = new MoveRoost());
+
 		public MoveRoost() : base(
 			"Roost",
 			Flying.Instance, // Move Type

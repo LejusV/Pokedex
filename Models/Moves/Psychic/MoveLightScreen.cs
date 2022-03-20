@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Reduces damage from special attacks by 50% for five turns.
 	public class MoveLightScreen : Move
 	{
+#nullable enable
+		private static MoveLightScreen? _instance = null;
+#nullable restore
+        public static MoveLightScreen Instance => _instance ?? (_instance = new MoveLightScreen());
+
 		public MoveLightScreen() : base(
 			"Light-Screen",
 			Psychic.Instance, // Move Type

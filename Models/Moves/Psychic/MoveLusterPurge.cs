@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 50% chance to lower the target's Special Defense by one stage.
 	public class MoveLusterPurge : Move
 	{
+#nullable enable
+		private static MoveLusterPurge? _instance = null;
+#nullable restore
+        public static MoveLusterPurge Instance => _instance ?? (_instance = new MoveLusterPurge());
+
 		public MoveLusterPurge() : base(
 			"Luster-Purge",
 			Psychic.Instance, // Move Type

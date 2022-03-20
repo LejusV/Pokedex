@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Hits the target two turns later.
 	public class MoveDoomDesire : Move
 	{
+#nullable enable
+		private static MoveDoomDesire? _instance = null;
+#nullable restore
+        public static MoveDoomDesire Instance => _instance ?? (_instance = new MoveDoomDesire());
+
 		public MoveDoomDesire() : base(
 			"Doom-Desire",
 			Steel.Instance, // Move Type

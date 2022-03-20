@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Attack by one stage.
 	public class MoveGrowl : Move
 	{
+#nullable enable
+		private static MoveGrowl? _instance = null;
+#nullable restore
+        public static MoveGrowl Instance => _instance ?? (_instance = new MoveGrowl());
+
 		public MoveGrowl() : base(
 			"Growl",
 			Normal.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Can only be used as the first move after the user enters battle.  Causes the target to flinch.
 	public class MoveFakeOut : Move
 	{
+#nullable enable
+		private static MoveFakeOut? _instance = null;
+#nullable restore
+        public static MoveFakeOut Instance => _instance ?? (_instance = new MoveFakeOut());
+
 		public MoveFakeOut() : base(
 			"Fake-Out",
 			Normal.Instance, // Move Type

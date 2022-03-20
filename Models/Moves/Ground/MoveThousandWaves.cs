@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Prevents the target from leaving battle.
 	public class MoveThousandWaves : Move
 	{
+#nullable enable
+		private static MoveThousandWaves? _instance = null;
+#nullable restore
+        public static MoveThousandWaves Instance => _instance ?? (_instance = new MoveThousandWaves());
+
 		public MoveThousandWaves() : base(
 			"Thousand-Waves",
 			Ground.Instance, // Move Type

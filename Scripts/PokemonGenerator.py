@@ -19,47 +19,39 @@ for poke in data.values():
 	newline: str = ',\n\t\t\t\t'
 
 	# Create the PokemonMove class, by opening a file
-	with open(f"Models\\Pokemons\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as f:
+	with open(f"Models\\PokemonSpecies\\{poke['types'][0].title()}\\{pokeNameNoSpace}Species.cs", 'w', encoding="utf-8") as fSpecie:
 	#with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
 		# Load the template code
-		outfile = f"""
+		outfSpecie = f"""
 
 using System.Collections.Generic;
-using Pokedex.Models;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 using Pokedex.Models.Moves;
 
-namespace Pokedex.Models.Pokemons
+namespace Pokedex.Models.Pokemons.Species
 {{
 	//{pokeName} Species to store common natural stats of all {pokeName}s
-	#region Species{pokeName}
-	public class Species{pokeNameNoSpace} : PokemonSpecies
+	#region {pokeName}Species
+	public class {pokeNameNoSpace}Species : PokemonSpecies
 	{{
 #nullable enable
-		private static Species{pokeNameNoSpace}? _instance = null;
+		private static {pokeNameNoSpace}Species? _instance = null;
 #nullable restore
-        public static Species{pokeNameNoSpace} Instance
-        {{
-            get
-            {{
-                if (_instance == null)
-                {{
-                    _instance = new Species{pokeNameNoSpace}();
-                }}
-                return _instance;
-            }}
-        }}
+        public static {pokeNameNoSpace}Species Instance => _instance ?? (_instance = new {pokeNameNoSpace}Species());
 
-		#region Species{pokeName} Constructor
-		public Species{pokeNameNoSpace}() : base(
+		#region {pokeName}Species Constructor
+		public {pokeNameNoSpace}Species() : base(
 			{poke["id"]},
 			"{pokeName}",
+			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) },
 			{poke["height"]/10},
 			{poke["weight"]/10},
-			{pokeStats["hp"]}, // HPs
-			{pokeStats["attack"]}, {pokeStats["defense"]}, // Attack & Defense
-			{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Special Attack & Defense
-			{pokeStats["speed"]}		
+			new PokemonStats(
+				{pokeStats["hp"]}, // HPs
+				{pokeStats["attack"]}, {pokeStats["defense"]}, // Attack & Defense
+				{pokeStats["special-attack"]}, {pokeStats["special-defense"]}, // Spacial Attack & Defense
+				{pokeStats["speed"]} // Speed
+			)			
 		)
 		{{
 			InitMovesList();
@@ -77,48 +69,53 @@ namespace Pokedex.Models.Pokemons
 		#endregion
 	}}
 	#endregion
+}}
 
+"""[2:-2]
+		# ↑ Delete the first two and last two newlines, here for readability
+
+		# Write the code to the file
+		fSpecie.write(outfSpecie)
+
+	with open(f"Models\\PokemonInstances\\{poke['types'][0].title()}\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as fInstance:
+	#with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
+		# Load the template code
+		outfInstance = f"""
+
+using System.Collections.Generic;
+using Pokedex.Models;
+using Pokedex.Models.Pokemons.Species;
+
+namespace Pokedex.Models.Pokemons.Instances
+{{
 	//{pokeName} PokemonInstance Class
 	#region {pokeName}
-	public class {pokeNameNoSpace}Instance : PokemonInstance
+	public class {pokeNameNoSpace} : PokemonInstance
 	{{
 		#region {pokeName} Constructors
 		/// <summary>
 		/// {pokeName} Instance Constructor waiting for a Nickname & a Level
 		/// </summary>
-		public {pokeNameNoSpace}Instance(string nickname, int level)
+		public {pokeNameNoSpace}(string nickname, int level)
 		: base(
-				Species{pokeNameNoSpace}.Instance, // Pokemon Species
-				nickname, level,
-				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
+				{pokeNameNoSpace}Species.Instance, // Pokemon Species
+				nickname, level		
 		)
-		{{
-			CalculateStats();
-			ResetCurrentStats();
-		}}
+		{{ }}
 
 		/// <summary>
-		/// {pokeName} Builder only waiting for a Level
+		/// {pokeName} Constructor only waiting for a Level
 		/// </summary>
-		public {pokeNameNoSpace}Instance(int level)
-		: base(
-				Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
-				"{pokeName}", level,
-				{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
-		)
-		{{
-			CalculateStats();
-			ResetCurrentStats();
-		}}
+		public {pokeNameNoSpace}(int level)
+		: this( "{pokeName}", level	)
+		{{ }}
 
 		/// <summary>
-		/// {pokeName} Builder waiting for no params (Building a Wiki PokemonInstance without personal stats nor any level)
+		/// {pokeName} Constructor waiting for no params
 		/// </summary>
 		/*
-		public {pokeNameNoSpace}Instance() : base(
-			Species{pokeNameNoSpace}.Instance, // PokemonInstance Species
-			{", ".join([f'{pokeType.title()}.Instance' for pokeType in poke["types"]]) }			
-		) {{}}
+		public {pokeNameNoSpace}() : this( "{pokeName}", 1 )
+		{{ }}
 		*/
 		#endregion
 	}}
@@ -129,4 +126,4 @@ namespace Pokedex.Models.Pokemons
 		# ↑ Delete the first two and last two newlines, here for readability
 
 		# Write the code to the file
-		f.write(outfile)
+		fInstance.write(outfInstance)

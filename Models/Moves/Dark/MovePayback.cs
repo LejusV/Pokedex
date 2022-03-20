@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Power is doubled if the target has already moved this turn.
 	public class MovePayback : Move
 	{
+#nullable enable
+		private static MovePayback? _instance = null;
+#nullable restore
+        public static MovePayback Instance => _instance ?? (_instance = new MovePayback());
+
 		public MovePayback() : base(
 			"Payback",
 			Dark.Instance, // Move Type

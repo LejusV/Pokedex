@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Raises the user's Attack, Defense, and accuracy by one stage each.
 	public class MoveCoil : Move
 	{
+#nullable enable
+		private static MoveCoil? _instance = null;
+#nullable restore
+        public static MoveCoil Instance => _instance ?? (_instance = new MoveCoil());
+
 		public MoveCoil() : base(
 			"Coil",
 			Poison.Instance, // Move Type

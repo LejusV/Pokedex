@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Causes a one-hit KO.
 	public class MoveGuillotine : Move
 	{
+#nullable enable
+		private static MoveGuillotine? _instance = null;
+#nullable restore
+        public static MoveGuillotine Instance => _instance ?? (_instance = new MoveGuillotine());
+
 		public MoveGuillotine() : base(
 			"Guillotine",
 			Normal.Instance, // Move Type

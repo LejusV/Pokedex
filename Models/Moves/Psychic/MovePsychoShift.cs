@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Transfers the user's major status effect to the target.
 	public class MovePsychoShift : Move
 	{
+#nullable enable
+		private static MovePsychoShift? _instance = null;
+#nullable restore
+        public static MovePsychoShift Instance => _instance ?? (_instance = new MovePsychoShift());
+
 		public MovePsychoShift() : base(
 			"Psycho-Shift",
 			Psychic.Instance, // Move Type

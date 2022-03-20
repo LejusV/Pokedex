@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Heals the user for half the total damage dealt to all targets.
 	public class MoveParabolicCharge : Move
 	{
+#nullable enable
+		private static MoveParabolicCharge? _instance = null;
+#nullable restore
+        public static MoveParabolicCharge Instance => _instance ?? (_instance = new MoveParabolicCharge());
+
 		public MoveParabolicCharge() : base(
 			"Parabolic-Charge",
 			Electric.Instance, // Move Type

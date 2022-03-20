@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Pokedex.Models;
+using Pokedex.Enums;
 
 namespace Pokedex.Models
 {
@@ -23,15 +23,17 @@ namespace Pokedex.Models
         # endregion
 
         # region Methods
-        public int CalculateDamage(PokemonInstance attacker, PokemonInstance defender)
+        public int CalculateDamage(PokemonInstance attacker, PokemonInstance defender, MoveInstance move)
         {
             // Initial Damage
-            double damage = (0.4 * attacker.Level + 2) * ModuleResolveEventHandler.Power;
+            double damage = (0.4 * attacker.Level + 2) * move.Attributes.Power ?? 1;
 
             // Adjust for stats
-            if (move.Damage == DamageClass.Physical)
-                damage *= ((double) attacker.Pokemon. //TODO J'ETAIS ICI)
+            damage *= move.Attributes.Category == MoveCategory.Physical
+                    ? (double) attacker.CurrentStats.Get("ATK") / defender.CurrentStats.Get("DEF")
+                    : (double) attacker.CurrentStats.Get("SP_ATK") / defender.CurrentStats.Get("SP_DEF");
 
+            return 1;
         }
         # endregion
     }

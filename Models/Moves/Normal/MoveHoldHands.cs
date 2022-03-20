@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Does nothing.
 	public class MoveHoldHands : Move
 	{
+#nullable enable
+		private static MoveHoldHands? _instance = null;
+#nullable restore
+        public static MoveHoldHands Instance => _instance ?? (_instance = new MoveHoldHands());
+
 		public MoveHoldHands() : base(
 			"Hold-Hands",
 			Normal.Instance, // Move Type

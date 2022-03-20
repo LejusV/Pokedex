@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//With Fusion Bolt, inflicts double damage.
 	public class MoveFusionFlare : Move
 	{
+#nullable enable
+		private static MoveFusionFlare? _instance = null;
+#nullable restore
+        public static MoveFusionFlare Instance => _instance ?? (_instance = new MoveFusionFlare());
+
 		public MoveFusionFlare() : base(
 			"Fusion-Flare",
 			Fire.Instance, // Move Type

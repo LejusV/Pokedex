@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Hits three times, increasing power by 100% with each successful hit.
 	public class MoveTripleKick : Move
 	{
+#nullable enable
+		private static MoveTripleKick? _instance = null;
+#nullable restore
+        public static MoveTripleKick Instance => _instance ?? (_instance = new MoveTripleKick());
+
 		public MoveTripleKick() : base(
 			"Triple-Kick",
 			Fighting.Instance, // Move Type

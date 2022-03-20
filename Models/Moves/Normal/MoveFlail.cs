@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.
 	public class MoveFlail : Move
 	{
+#nullable enable
+		private static MoveFlail? _instance = null;
+#nullable restore
+        public static MoveFlail Instance => _instance ?? (_instance = new MoveFlail());
+
 		public MoveFlail() : base(
 			"Flail",
 			Normal.Instance, // Move Type

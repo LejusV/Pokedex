@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Forces the target to repeat its last used move every turn for 2 to 6 turns.
 	public class MoveEncore : Move
 	{
+#nullable enable
+		private static MoveEncore? _instance = null;
+#nullable restore
+        public static MoveEncore Instance => _instance ?? (_instance = new MoveEncore());
+
 		public MoveEncore() : base(
 			"Encore",
 			Normal.Instance, // Move Type

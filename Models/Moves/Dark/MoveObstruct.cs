@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//
 	public class MoveObstruct : Move
 	{
+#nullable enable
+		private static MoveObstruct? _instance = null;
+#nullable restore
+        public static MoveObstruct Instance => _instance ?? (_instance = new MoveObstruct());
+
 		public MoveObstruct() : base(
 			"Obstruct",
 			Dark.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Destroys the target's held berry.
 	public class MoveIncinerate : Move
 	{
+#nullable enable
+		private static MoveIncinerate? _instance = null;
+#nullable restore
+        public static MoveIncinerate Instance => _instance ?? (_instance = new MoveIncinerate());
+
 		public MoveIncinerate() : base(
 			"Incinerate",
 			Fire.Instance, // Move Type

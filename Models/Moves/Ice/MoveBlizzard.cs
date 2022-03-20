@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to freeze the target.
 	public class MoveBlizzard : Move
 	{
+#nullable enable
+		private static MoveBlizzard? _instance = null;
+#nullable restore
+        public static MoveBlizzard Instance => _instance ?? (_instance = new MoveBlizzard());
+
 		public MoveBlizzard() : base(
 			"Blizzard",
 			Ice.Instance, // Move Type

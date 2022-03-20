@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has an increased chance for a critical hit.
 	public class MoveLeafBlade : Move
 	{
+#nullable enable
+		private static MoveLeafBlade? _instance = null;
+#nullable restore
+        public static MoveLeafBlade Instance => _instance ?? (_instance = new MoveLeafBlade());
+
 		public MoveLeafBlade() : base(
 			"Leaf-Blade",
 			Grass.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Heals the user by half its max HP.
 	public class MoveHealOrder : Move
 	{
+#nullable enable
+		private static MoveHealOrder? _instance = null;
+#nullable restore
+        public static MoveHealOrder Instance => _instance ?? (_instance = new MoveHealOrder());
+
 		public MoveHealOrder() : base(
 			"Heal-Order",
 			Bug.Instance, // Move Type

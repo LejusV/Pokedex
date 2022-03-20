@@ -1,6 +1,6 @@
 ﻿using Pokedex.Enums;
 using Pokedex.Models;
-using Pokedex.Models.Pokemons;
+using Pokedex.Models.Pokemons.Instances;
 using Pokedex.Models.Players;
 using System;
 using System.IO;
@@ -61,9 +61,9 @@ namespace Pokedex
 
             Console.WriteLine(inputLines[lineIndex]);
 
-            Move moveWaterShuriken = new MoveWaterShuriken();
-            Move moveTackle = new MoveTackle();
-            Move moveAvalanche = new MoveAvalanche();
+            MoveInstance moveWaterShuriken = new IWaterShuriken();
+            MoveInstance moveTackle = new ITackle();
+            MoveInstance moveAvalanche = new IAvalanche();
 
             switch (
                 new CultureInfo("en")
@@ -75,19 +75,19 @@ namespace Pokedex
             {
                 case "Bulbasaur" :
                 {
-                    Player1.AddPokemon(new BulbasaurInstance( 50 ));
+                    Player1.AdoptPokemon(new Bulbasaur( 50 ));
                     break;
                 }
 
                 case "Charmander" :
                 {
-                    Player1.AddPokemon(new CharmanderInstance( 50 ));
+                    Player1.AdoptPokemon(new Charmander( 50 ));
                     break;
                 }
 
                 case "Squirtle" :
                 {
-                    Player1.AddPokemon(new SquirtleInstance( 50 ));
+                    Player1.AdoptPokemon(new Squirtle( 50 ));
                     Player1.Pokemons[0].LearnMove(moveWaterShuriken, 1);
                     Player1.Pokemons[0].LearnMove(moveTackle);
                     Player1.Pokemons[0].LearnMove(moveAvalanche, 3);
@@ -105,15 +105,18 @@ namespace Pokedex
 
             foreach (PokemonInstance poke in Player1.Pokemons)
             {
-                Console.WriteLine(poke.FullStatus);
-                Console.WriteLine(poke.Status);
+                if (poke != null)
+                {
+                    Console.WriteLine(poke.FullStatus);
+                    Console.WriteLine(poke.Status);
+                }
             }
 
             Console.WriteLine(moveWaterShuriken.FullStatus);
             Console.WriteLine(moveTackle.FullStatus);
 
             //Console.WriteLine(Wiki.Instance.ToString());
-            PlayerAI.Instance.Pokemons = new List<PokemonInstance>(){new MrRimeInstance(Player1.Pokemons[0].Level)};
+            PlayerAI.Instance.Pokemons[0] = new MrRime(Player1.Pokemons[0].Level);
 
             Battle battle = new Battle(
                 Player1,

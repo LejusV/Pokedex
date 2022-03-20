@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Puts the target to sleep.
 	public class MoveLovelyKiss : Move
 	{
+#nullable enable
+		private static MoveLovelyKiss? _instance = null;
+#nullable restore
+        public static MoveLovelyKiss Instance => _instance ?? (_instance = new MoveLovelyKiss());
+
 		public MoveLovelyKiss() : base(
 			"Lovely-Kiss",
 			Normal.Instance, // Move Type

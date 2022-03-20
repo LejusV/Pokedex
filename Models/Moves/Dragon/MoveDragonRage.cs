@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts 40 points of damage.
 	public class MoveDragonRage : Move
 	{
+#nullable enable
+		private static MoveDragonRage? _instance = null;
+#nullable restore
+        public static MoveDragonRage Instance => _instance ?? (_instance = new MoveDragonRage());
+
 		public MoveDragonRage() : base(
 			"Dragon-Rage",
 			Dragon.Instance, // Move Type

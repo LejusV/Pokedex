@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Paralyzes the target.
 	public class MoveGlare : Move
 	{
+#nullable enable
+		private static MoveGlare? _instance = null;
+#nullable restore
+        public static MoveGlare Instance => _instance ?? (_instance = new MoveGlare());
+
 		public MoveGlare() : base(
 			"Glare",
 			Normal.Instance, // Move Type

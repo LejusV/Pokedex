@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User flies high into the air, dodging all attacks, and hits next turn.
 	public class MoveFly : Move
 	{
+#nullable enable
+		private static MoveFly? _instance = null;
+#nullable restore
+        public static MoveFly Instance => _instance ?? (_instance = new MoveFly());
+
 		public MoveFly() : base(
 			"Fly",
 			Flying.Instance, // Move Type

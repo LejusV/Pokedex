@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's accuracy by one stage.
 	public class MoveSmokescreen : Move
 	{
+#nullable enable
+		private static MoveSmokescreen? _instance = null;
+#nullable restore
+        public static MoveSmokescreen Instance => _instance ?? (_instance = new MoveSmokescreen());
+
 		public MoveSmokescreen() : base(
 			"Smokescreen",
 			Normal.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Defense by one stage.
 	public class MoveLeer : Move
 	{
+#nullable enable
+		private static MoveLeer? _instance = null;
+#nullable restore
+        public static MoveLeer Instance => _instance ?? (_instance = new MoveLeer());
+
 		public MoveLeer() : base(
 			"Leer",
 			Normal.Instance, // Move Type

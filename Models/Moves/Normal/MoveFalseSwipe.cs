@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Cannot lower the target's HP below 1.
 	public class MoveFalseSwipe : Move
 	{
+#nullable enable
+		private static MoveFalseSwipe? _instance = null;
+#nullable restore
+        public static MoveFalseSwipe Instance => _instance ?? (_instance = new MoveFalseSwipe());
+
 		public MoveFalseSwipe() : base(
 			"False-Swipe",
 			Normal.Instance, // Move Type

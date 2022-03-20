@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Special Defense by two stages.
 	public class MoveAcidSpray : Move
 	{
+#nullable enable
+		private static MoveAcidSpray? _instance = null;
+#nullable restore
+        public static MoveAcidSpray Instance => _instance ?? (_instance = new MoveAcidSpray());
+
 		public MoveAcidSpray() : base(
 			"Acid-Spray",
 			Poison.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Defense by two stages.
 	public class MoveScreech : Move
 	{
+#nullable enable
+		private static MoveScreech? _instance = null;
+#nullable restore
+        public static MoveScreech Instance => _instance ?? (_instance = new MoveScreech());
+
 		public MoveScreech() : base(
 			"Screech",
 			Normal.Instance, // Move Type

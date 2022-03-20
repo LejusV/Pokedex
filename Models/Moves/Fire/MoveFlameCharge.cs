@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage.  Raises the user's Speed by one stage.
 	public class MoveFlameCharge : Move
 	{
+#nullable enable
+		private static MoveFlameCharge? _instance = null;
+#nullable restore
+        public static MoveFlameCharge Instance => _instance ?? (_instance = new MoveFlameCharge());
+
 		public MoveFlameCharge() : base(
 			"Flame-Charge",
 			Fire.Instance, // Move Type

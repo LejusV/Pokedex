@@ -6,8 +6,6 @@ What PokemonInstance do you want to start with ?
 	- Squirtle
 
 squirtle
-Squirtle joined your team !
-
 
 How should it be called ? Oui
 Oui
@@ -25,10 +23,10 @@ Oui
       SP_ATK  50  SP_DEF  64
 
   Actual Status :
-            51 /  51 HP     
-      ATK     60  DEF     71
-      SP_ATK  60  SP_DEF  75
-            SPEED   61      
+            54 /  54 HP     
+      ATK     62  DEF     80
+      SP_ATK  62  SP_DEF  74
+            SPEED   56      
 
   Learned Moves :
     ┌-------------------------┬-------------------------┐
@@ -42,7 +40,7 @@ Oui
 | Oui              |
 | LvL 50           |
 |                  |
-|    51 /  51 HP   |
+|    54 /  54 HP   |
 └------------------┘
 
 Water-Shuriken  
@@ -64,12 +62,12 @@ A new battle is about to happen !
 						| Mr-Rime          |
 						| LvL50            |
 						|                  |
-						|    88 /  88 HP   |
+						|    95 /  95 HP   |
 						└------------------┘
 ┌------------------┐
 |              Oui |
 |           LvL50  |
 |                  |
-|    51 /  51 HP   |
+|    54 /  54 HP   |
 └------------------┘
 

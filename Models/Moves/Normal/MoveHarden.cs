@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Raises the user's Defense by one stage.
 	public class MoveHarden : Move
 	{
+#nullable enable
+		private static MoveHarden? _instance = null;
+#nullable restore
+        public static MoveHarden Instance => _instance ?? (_instance = new MoveHarden());
+
 		public MoveHarden() : base(
 			"Harden",
 			Normal.Instance, // Move Type

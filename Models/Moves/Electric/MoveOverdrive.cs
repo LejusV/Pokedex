@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//
 	public class MoveOverdrive : Move
 	{
+#nullable enable
+		private static MoveOverdrive? _instance = null;
+#nullable restore
+        public static MoveOverdrive Instance => _instance ?? (_instance = new MoveOverdrive());
+
 		public MoveOverdrive() : base(
 			"Overdrive",
 			Electric.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Attack by one stage.
 	public class MoveBabyDollEyes : Move
 	{
+#nullable enable
+		private static MoveBabyDollEyes? _instance = null;
+#nullable restore
+        public static MoveBabyDollEyes Instance => _instance ?? (_instance = new MoveBabyDollEyes());
+
 		public MoveBabyDollEyes() : base(
 			"Baby-Doll-Eyes",
 			Fairy.Instance, // Move Type

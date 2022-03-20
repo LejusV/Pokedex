@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//If target has a berry, inflicts double damage and uses the berry.
 	public class MovePluck : Move
 	{
+#nullable enable
+		private static MovePluck? _instance = null;
+#nullable restore
+        public static MovePluck Instance => _instance ?? (_instance = new MovePluck());
+
 		public MovePluck() : base(
 			"Pluck",
 			Flying.Instance, // Move Type

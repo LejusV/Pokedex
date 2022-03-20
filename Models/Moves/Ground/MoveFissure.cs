@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Causes a one-hit KO.
 	public class MoveFissure : Move
 	{
+#nullable enable
+		private static MoveFissure? _instance = null;
+#nullable restore
+        public static MoveFissure Instance => _instance ?? (_instance = new MoveFissure());
+
 		public MoveFissure() : base(
 			"Fissure",
 			Ground.Instance, // Move Type

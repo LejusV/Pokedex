@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Copies the user's ability onto the target.
 	public class MoveEntrainment : Move
 	{
+#nullable enable
+		private static MoveEntrainment? _instance = null;
+#nullable restore
+        public static MoveEntrainment Instance => _instance ?? (_instance = new MoveEntrainment());
+
 		public MoveEntrainment() : base(
 			"Entrainment",
 			Normal.Instance, // Move Type

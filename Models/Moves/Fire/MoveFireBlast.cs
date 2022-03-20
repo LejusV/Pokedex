@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to burn the target.
 	public class MoveFireBlast : Move
 	{
+#nullable enable
+		private static MoveFireBlast? _instance = null;
+#nullable restore
+        public static MoveFireBlast Instance => _instance ?? (_instance = new MoveFireBlast());
+
 		public MoveFireBlast() : base(
 			"Fire-Blast",
 			Fire.Instance, // Move Type

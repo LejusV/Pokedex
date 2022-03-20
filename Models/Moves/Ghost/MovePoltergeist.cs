@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage with no additional effect.
 	public class MovePoltergeist : Move
 	{
+#nullable enable
+		private static MovePoltergeist? _instance = null;
+#nullable restore
+        public static MovePoltergeist Instance => _instance ?? (_instance = new MovePoltergeist());
+
 		public MovePoltergeist() : base(
 			"Poltergeist",
 			Ghost.Instance, // Move Type

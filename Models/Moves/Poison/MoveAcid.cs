@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to lower the target's Special Defense by one stage.
 	public class MoveAcid : Move
 	{
+#nullable enable
+		private static MoveAcid? _instance = null;
+#nullable restore
+        public static MoveAcid Instance => _instance ?? (_instance = new MoveAcid());
+
 		public MoveAcid() : base(
 			"Acid",
 			Poison.Instance, // Move Type

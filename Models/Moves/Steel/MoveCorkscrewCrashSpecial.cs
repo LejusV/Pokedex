@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage with no additional effect.
 	public class MoveCorkscrewCrashSpecial : Move
 	{
+#nullable enable
+		private static MoveCorkscrewCrashSpecial? _instance = null;
+#nullable restore
+        public static MoveCorkscrewCrashSpecial Instance => _instance ?? (_instance = new MoveCorkscrewCrashSpecial());
+
 		public MoveCorkscrewCrashSpecial() : base(
 			"Corkscrew-Crash--Special",
 			Steel.Instance, // Move Type

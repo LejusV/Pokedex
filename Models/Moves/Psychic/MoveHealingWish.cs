@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User faints.  Its replacement has its HP fully restored and any major status effect removed.
 	public class MoveHealingWish : Move
 	{
+#nullable enable
+		private static MoveHealingWish? _instance = null;
+#nullable restore
+        public static MoveHealingWish Instance => _instance ?? (_instance = new MoveHealingWish());
+
 		public MoveHealingWish() : base(
 			"Healing-Wish",
 			Psychic.Instance, // Move Type

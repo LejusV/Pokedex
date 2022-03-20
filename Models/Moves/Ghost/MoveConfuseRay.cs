@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Confuses the target.
 	public class MoveConfuseRay : Move
 	{
+#nullable enable
+		private static MoveConfuseRay? _instance = null;
+#nullable restore
+        public static MoveConfuseRay Instance => _instance ?? (_instance = new MoveConfuseRay());
+
 		public MoveConfuseRay() : base(
 			"Confuse-Ray",
 			Ghost.Instance, // Move Type

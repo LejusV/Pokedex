@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to lower the target's Speed by one stage.
 	public class MoveBubble : Move
 	{
+#nullable enable
+		private static MoveBubble? _instance = null;
+#nullable restore
+        public static MoveBubble Instance => _instance ?? (_instance = new MoveBubble());
+
 		public MoveBubble() : base(
 			"Bubble",
 			Water.Instance, // Move Type

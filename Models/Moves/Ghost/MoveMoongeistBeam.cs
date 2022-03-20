@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Cannot be disrupted by abilities.
 	public class MoveMoongeistBeam : Move
 	{
+#nullable enable
+		private static MoveMoongeistBeam? _instance = null;
+#nullable restore
+        public static MoveMoongeistBeam Instance => _instance ?? (_instance = new MoveMoongeistBeam());
+
 		public MoveMoongeistBeam() : base(
 			"Moongeist-Beam",
 			Ghost.Instance, // Move Type

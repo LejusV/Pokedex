@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Raises the user's Attack by one stage.
 	public class MoveSharpen : Move
 	{
+#nullable enable
+		private static MoveSharpen? _instance = null;
+#nullable restore
+        public static MoveSharpen Instance => _instance ?? (_instance = new MoveSharpen());
+
 		public MoveSharpen() : base(
 			"Sharpen",
 			Normal.Instance, // Move Type

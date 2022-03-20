@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//
 	public class MoveMagicPowder : Move
 	{
+#nullable enable
+		private static MoveMagicPowder? _instance = null;
+#nullable restore
+        public static MoveMagicPowder Instance => _instance ?? (_instance = new MoveMagicPowder());
+
 		public MoveMagicPowder() : base(
 			"Magic-Powder",
 			Psychic.Instance, // Move Type

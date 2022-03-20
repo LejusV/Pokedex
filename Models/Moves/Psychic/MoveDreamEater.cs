@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Only works on sleeping Pokémon.  Drains half the damage inflicted to heal the user.
 	public class MoveDreamEater : Move
 	{
+#nullable enable
+		private static MoveDreamEater? _instance = null;
+#nullable restore
+        public static MoveDreamEater Instance => _instance ?? (_instance = new MoveDreamEater());
+
 		public MoveDreamEater() : base(
 			"Dream-Eater",
 			Psychic.Instance, // Move Type

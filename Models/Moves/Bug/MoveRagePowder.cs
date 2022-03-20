@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Redirects the target's single-target effects to the user for this turn.
 	public class MoveRagePowder : Move
 	{
+#nullable enable
+		private static MoveRagePowder? _instance = null;
+#nullable restore
+        public static MoveRagePowder Instance => _instance ?? (_instance = new MoveRagePowder());
+
 		public MoveRagePowder() : base(
 			"Rage-Powder",
 			Bug.Instance, // Move Type

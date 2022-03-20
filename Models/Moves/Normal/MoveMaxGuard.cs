@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Prevents any moves from hitting the user this turn.
 	public class MoveMaxGuard : Move
 	{
+#nullable enable
+		private static MoveMaxGuard? _instance = null;
+#nullable restore
+        public static MoveMaxGuard Instance => _instance ?? (_instance = new MoveMaxGuard());
+
 		public MoveMaxGuard() : base(
 			"Max-Guard",
 			Normal.Instance, // Move Type

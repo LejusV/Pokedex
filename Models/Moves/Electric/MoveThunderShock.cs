@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has a 10% chance to paralyze the target.
 	public class MoveThunderShock : Move
 	{
+#nullable enable
+		private static MoveThunderShock? _instance = null;
+#nullable restore
+        public static MoveThunderShock Instance => _instance ?? (_instance = new MoveThunderShock());
+
 		public MoveThunderShock() : base(
 			"Thunder-Shock",
 			Electric.Instance, // Move Type

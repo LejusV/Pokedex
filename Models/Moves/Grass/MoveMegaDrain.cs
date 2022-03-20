@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Drains half the damage inflicted to heal the user.
 	public class MoveMegaDrain : Move
 	{
+#nullable enable
+		private static MoveMegaDrain? _instance = null;
+#nullable restore
+        public static MoveMegaDrain Instance => _instance ?? (_instance = new MoveMegaDrain());
+
 		public MoveMegaDrain() : base(
 			"Mega-Drain",
 			Grass.Instance, // Move Type

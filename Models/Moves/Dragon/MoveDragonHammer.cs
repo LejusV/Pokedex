@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage with no additional effect.
 	public class MoveDragonHammer : Move
 	{
+#nullable enable
+		private static MoveDragonHammer? _instance = null;
+#nullable restore
+        public static MoveDragonHammer Instance => _instance ?? (_instance = new MoveDragonHammer());
+
 		public MoveDragonHammer() : base(
 			"Dragon-Hammer",
 			Dragon.Instance, // Move Type

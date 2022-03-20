@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Requires a turn to charge before attacking.
 	public class MoveSolarBeam : Move
 	{
+#nullable enable
+		private static MoveSolarBeam? _instance = null;
+#nullable restore
+        public static MoveSolarBeam Instance => _instance ?? (_instance = new MoveSolarBeam());
+
 		public MoveSolarBeam() : base(
 			"Solar-Beam",
 			Grass.Instance, // Move Type

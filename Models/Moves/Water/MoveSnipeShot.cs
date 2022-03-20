@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Sets Reflect on the user's side of the field after inflicting damage.
 	public class MoveSnipeShot : Move
 	{
+#nullable enable
+		private static MoveSnipeShot? _instance = null;
+#nullable restore
+        public static MoveSnipeShot Instance => _instance ?? (_instance = new MoveSnipeShot());
+
 		public MoveSnipeShot() : base(
 			"Snipe-Shot",
 			Water.Instance, // Move Type

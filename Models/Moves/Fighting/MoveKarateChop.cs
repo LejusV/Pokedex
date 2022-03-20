@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has an increased chance for a critical hit.
 	public class MoveKarateChop : Move
 	{
+#nullable enable
+		private static MoveKarateChop? _instance = null;
+#nullable restore
+        public static MoveKarateChop Instance => _instance ?? (_instance = new MoveKarateChop());
+
 		public MoveKarateChop() : base(
 			"Karate-Chop",
 			Fighting.Instance, // Move Type

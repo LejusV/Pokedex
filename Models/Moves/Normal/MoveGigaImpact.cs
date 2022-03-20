@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User foregoes its next turn to recharge.
 	public class MoveGigaImpact : Move
 	{
+#nullable enable
+		private static MoveGigaImpact? _instance = null;
+#nullable restore
+        public static MoveGigaImpact Instance => _instance ?? (_instance = new MoveGigaImpact());
+
 		public MoveGigaImpact() : base(
 			"Giga-Impact",
 			Normal.Instance, // Move Type

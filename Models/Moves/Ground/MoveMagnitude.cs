@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Power varies randomly from 10 to 150.
 	public class MoveMagnitude : Move
 	{
+#nullable enable
+		private static MoveMagnitude? _instance = null;
+#nullable restore
+        public static MoveMagnitude Instance => _instance ?? (_instance = new MoveMagnitude());
+
 		public MoveMagnitude() : base(
 			"Magnitude",
 			Ground.Instance, // Move Type

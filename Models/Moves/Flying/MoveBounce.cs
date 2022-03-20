@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User bounces high into the air, dodging all attacks, and hits next turn.
 	public class MoveBounce : Move
 	{
+#nullable enable
+		private static MoveBounce? _instance = null;
+#nullable restore
+        public static MoveBounce Instance => _instance ?? (_instance = new MoveBounce());
+
 		public MoveBounce() : base(
 			"Bounce",
 			Flying.Instance, // Move Type

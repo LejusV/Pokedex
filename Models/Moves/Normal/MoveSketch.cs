@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Permanently becomes the target's last used move.
 	public class MoveSketch : Move
 	{
+#nullable enable
+		private static MoveSketch? _instance = null;
+#nullable restore
+        public static MoveSketch Instance => _instance ?? (_instance = new MoveSketch());
+
 		public MoveSketch() : base(
 			"Sketch",
 			Normal.Instance, // Move Type

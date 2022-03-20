@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage with no additional effect.
 	public class MoveLeafage : Move
 	{
+#nullable enable
+		private static MoveLeafage? _instance = null;
+#nullable restore
+        public static MoveLeafage Instance => _instance ?? (_instance = new MoveLeafage());
+
 		public MoveLeafage() : base(
 			"Leafage",
 			Grass.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//If the user is holding a appropriate plate or drive, the damage inflicted will match it.
 	public class MoveJudgment : Move
 	{
+#nullable enable
+		private static MoveJudgment? _instance = null;
+#nullable restore
+        public static MoveJudgment Instance => _instance ?? (_instance = new MoveJudgment());
+
 		public MoveJudgment() : base(
 			"Judgment",
 			Normal.Instance, // Move Type

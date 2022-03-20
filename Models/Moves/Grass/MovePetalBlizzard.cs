@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts regular damage.
 	public class MovePetalBlizzard : Move
 	{
+#nullable enable
+		private static MovePetalBlizzard? _instance = null;
+#nullable restore
+        public static MovePetalBlizzard Instance => _instance ?? (_instance = new MovePetalBlizzard());
+
 		public MovePetalBlizzard() : base(
 			"Petal-Blizzard",
 			Grass.Instance, // Move Type

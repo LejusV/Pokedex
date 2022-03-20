@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Prevents any moves from hitting the user this turn.
 	public class MoveProtect : Move
 	{
+#nullable enable
+		private static MoveProtect? _instance = null;
+#nullable restore
+        public static MoveProtect Instance => _instance ?? (_instance = new MoveProtect());
+
 		public MoveProtect() : base(
 			"Protect",
 			Normal.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts damage equal to the user's level.
 	public class MoveNightShade : Move
 	{
+#nullable enable
+		private static MoveNightShade? _instance = null;
+#nullable restore
+        public static MoveNightShade Instance => _instance ?? (_instance = new MoveNightShade());
+
 		public MoveNightShade() : base(
 			"Night-Shade",
 			Ghost.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//
 	public class MoveClangorousSoul : Move
 	{
+#nullable enable
+		private static MoveClangorousSoul? _instance = null;
+#nullable restore
+        public static MoveClangorousSoul Instance => _instance ?? (_instance = new MoveClangorousSoul());
+
 		public MoveClangorousSoul() : base(
 			"Clangorous-Soul",
 			Dragon.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Has the same type as the user.
 	public class MoveRevelationDance : Move
 	{
+#nullable enable
+		private static MoveRevelationDance? _instance = null;
+#nullable restore
+        public static MoveRevelationDance Instance => _instance ?? (_instance = new MoveRevelationDance());
+
 		public MoveRevelationDance() : base(
 			"Revelation-Dance",
 			Normal.Instance, // Move Type

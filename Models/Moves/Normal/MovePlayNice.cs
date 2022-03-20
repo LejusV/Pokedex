@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers the target's Attack by one stage.
 	public class MovePlayNice : Move
 	{
+#nullable enable
+		private static MovePlayNice? _instance = null;
+#nullable restore
+        public static MovePlayNice Instance => _instance ?? (_instance = new MovePlayNice());
+
 		public MovePlayNice() : base(
 			"Play-Nice",
 			Normal.Instance, // Move Type

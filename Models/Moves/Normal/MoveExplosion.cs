@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//User faints.
 	public class MoveExplosion : Move
 	{
+#nullable enable
+		private static MoveExplosion? _instance = null;
+#nullable restore
+        public static MoveExplosion Instance => _instance ?? (_instance = new MoveExplosion());
+
 		public MoveExplosion() : base(
 			"Explosion",
 			Normal.Instance, // Move Type

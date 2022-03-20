@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts more damage when the user has more HP remaining, with a maximum of 150 power.
 	public class MoveWaterSpout : Move
 	{
+#nullable enable
+		private static MoveWaterSpout? _instance = null;
+#nullable restore
+        public static MoveWaterSpout Instance => _instance ?? (_instance = new MoveWaterSpout());
+
 		public MoveWaterSpout() : base(
 			"Water-Spout",
 			Water.Instance, // Move Type

@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Protects Pokémon on the ground from priority moves and increases the power of their  Psychic moves by 50%.
 	public class MovePsychicTerrain : Move
 	{
+#nullable enable
+		private static MovePsychicTerrain? _instance = null;
+#nullable restore
+        public static MovePsychicTerrain Instance => _instance ?? (_instance = new MovePsychicTerrain());
+
 		public MovePsychicTerrain() : base(
 			"Psychic-Terrain",
 			Psychic.Instance, // Move Type

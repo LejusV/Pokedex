@@ -13,20 +13,20 @@ namespace Pokedex.Models
         //public void connection
         private static int instanceCount = 0;
 
+        private bool isKO;
+
         protected int _level; // Level of the Pokemon
         private string _nickname; // Name Given by User
 
         protected PokemonSpecies _species; // Specie of Pokemon
         
-        protected PokeType _type; // Type N°1 of the PokemonInstance 
-        protected PokeType _type2; // Types of the PokemonInstance
         protected PokemonStats _iv; // Individual Values which are different from two pokemons of the same specie (random)
         protected PokemonStats _ev; // Effort Values increasing with battle wins
         protected PokemonStats _calculatedStats; // Real max stats that will be shown, for example MaxHp (updated when player levels up)
         protected PokemonStats _currentStats; // Current stats such as current hp, not always equal to max HP, attack != calculated attack if (de)buffed
         private PokemonStats _statModifiers; // Modifiers of the stats in battle (from -8 to +8)
 
-        protected Move[] _moves; // List of all the Moves the PokemonInstance has learnt
+        protected MoveInstance[] _moves; // List of all the Moves the PokemonInstance has learnt
         #endregion
 
         #region Attributes
@@ -94,15 +94,6 @@ namespace Pokedex.Models
             }
             #endregion
 
-            #region Types Getter
-            /// <summary>
-            /// Types Getter
-            /// </summary>
-            /// <returns>Returns the Types tuple</returns>
-            #nullable enable
-            public (PokeType, PokeType?) Types => (this._type, this._type2);
-            #nullable restore
-            #endregion
 
             #region Level Getter
             /// <summary>
@@ -117,7 +108,7 @@ namespace Pokedex.Models
             /// Moves Getter
             /// </summary>
             /// <returns>Returns an array of Moves</returns>
-            public Move[] Moves => this._moves;
+            public MoveInstance[] Moves => this._moves;
             #endregion
 
             #region IV Getter
@@ -168,23 +159,6 @@ namespace Pokedex.Models
             public PokemonSpecies Species => this._species;
             #endregion
 
-            #region Types ToString
-            /// <summary>
-            /// Types Display
-            /// </summary>
-            /// <returns>Returns the formated Types string</returns>
-            public string TypesString
-            {
-                get
-                {
-                    if (_type2 != null)
-                        return $"{this._type} Type";
-                    else
-                        return $"{this._type} - {this._type2} Types";
-                }
-            }
-            #endregion
-
             #region Moves List ToString
             /// <summary>
             /// Learned Moves Display
@@ -193,7 +167,7 @@ namespace Pokedex.Models
             public string MovesDisplay()
             {
                 string res = "";
-                foreach (Move m in _moves) res += m.Name + "\n";
+                foreach (MoveInstance m in _moves) res += m.Attributes.Name + "\n";
                 return res+"\n";
             }
             #endregion
@@ -281,22 +255,22 @@ namespace Pokedex.Models
 
                     output.AppendLine($"    ┌-------------------------┬-------------------------┐");
                     if (_moves[0] != null)
-                        output.Append($"    | {$"({this._moves[0].PokeType.Name}) {this._moves[0].Name}", -23} |");
+                        output.Append($"    | {$"({this._moves[0].Attributes.Type.Name}) {this._moves[0].Attributes.Name}", -23} |");
                     else
                         output.Append($"    |       Empty  slot       |");
                     if (_moves[1] != null)
-                        output.AppendLine($" {$"({this._moves[1].PokeType.Name}) {this._moves[2].Name}", -23} |");
+                        output.AppendLine($" {$"({this._moves[1].Attributes.Type.Name}) {this._moves[2].Attributes.Name}", -23} |");
                     else
                     {
                         output.AppendLine($"       Empty  slot       |");
                     }
                     output.AppendLine($"    ├-------------------------┼-------------------------┤");
                     if (_moves[2] != null)
-                        output.Append($"    | {$"({this._moves[2].PokeType.Name}) {this._moves[2].Name}", -23} |");
+                        output.Append($"    | {$"({this._moves[2].Attributes.Type.Name}) {this._moves[2].Attributes.Name}", -23} |");
                     else
                         output.Append($"    |       Empty  slot       |");
                     if (_moves[3] != null)
-                        output.AppendLine($" {$"({this._moves[3].PokeType.Name}) {this._moves[3].Name}", -23} |");
+                        output.AppendLine($" {$"({this._moves[3].Attributes.Type.Name}) {this._moves[3].Attributes.Name}", -23} |");
                     else
                         output.AppendLine($"       Empty  slot       |");
                     output.AppendLine($"    └-------------------------┴-------------------------┘");
@@ -311,16 +285,10 @@ namespace Pokedex.Models
         #endregion 
 
         #region Constructors
-        
-            #region Double Type Pokemon (BASE CONSTRUCTOR)
         public PokemonInstance(
             PokemonSpecies specie,
             string nickname,
-            int level,
-            PokeType type,
-#nullable enable
-            PokeType? type2
-#nullable restore
+            int level
             )
         {
             _level = level;
@@ -328,33 +296,37 @@ namespace Pokedex.Models
                 _nickname = nickname;
             else throw new ArgumentException("Name cannot be empty");
             _species = specie;
-            _type = type;
-            _type2 = type2;
             GenerateIV();
             _ev = new PokemonStats(0, 0, 0, 0, 0, 0);
             _calculatedStats = new PokemonStats(0, 0, 0, 0, 0, 0);
             _currentStats = new PokemonStats(0, 0, 0, 0, 0, 0);
             _statModifiers = new PokemonStats(0, 0, 0, 0, 0, 0);
-            _moves = new Move[4];
+            _moves = new MoveInstance[4];
+            this.CheckIsKO();
+			CalculateStats();
+			ResetCurrentStats();
+
 
             instanceCount++;
-        }
-            #endregion
-
-            #region Single Type Pokemon
-        public PokemonInstance(
-            PokemonSpecies specie,
-            string nickname,
-            int level,
-            PokeType type
-            )
-            : this(specie, nickname, level, type, null)
-        {}
-            #endregion
-            
+        }    
         #endregion
 
         #region Methods
+
+            #region Check IsKO
+        /// <summary>
+        /// Checks if the Pokemon is KO
+        /// </summary>
+        public void CheckIsKO()
+        {
+            if (this._currentStats.Get("HP") > 0)
+            {
+                isKO = false;
+            }
+            else 
+                isKO = true;
+        }
+            #endregion
 
             #region Forget Move
         /// <summary>
@@ -376,7 +348,7 @@ namespace Pokedex.Models
         /// Forget the Move given in params
         /// </summary>
         /// <param name="move">The Move to forget</param>
-        public bool ForgetMove(Move move)
+        public bool ForgetMove(MoveInstance move)
         {
             int indexOfMove = this._moves
                 .ToList()
@@ -393,10 +365,10 @@ namespace Pokedex.Models
         /// Learn a Move at specific index in the Moves Array
         /// </summary>
         /// <param name="move">The Move to add</param>
-        public bool LearnMove(Move move, int index)
+        public bool LearnMove(MoveInstance move, int index)
         {
             if (!this._moves.Contains(move) &&
-                this._species.MoveList.Contains(move.Name))
+                this._species.MoveList.Contains(move.Attributes.Name))
                 {
                     this._moves[index] = move;
                     return true;
@@ -409,7 +381,7 @@ namespace Pokedex.Models
         /// Add a Move to the first NULL cell of array
         /// </summary>
         /// <param name="move">The Move to add</param>
-        public bool LearnMove(Move move)
+        public bool LearnMove(MoveInstance move)
         {
             int indexOfNull = this._moves
                 .ToList()

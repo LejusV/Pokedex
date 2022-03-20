@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Lowers user's Speed by one stage.
 	public class MoveIceHammer : Move
 	{
+#nullable enable
+		private static MoveIceHammer? _instance = null;
+#nullable restore
+        public static MoveIceHammer Instance => _instance ?? (_instance = new MoveIceHammer());
+
 		public MoveIceHammer() : base(
 			"Ice-Hammer",
 			Ice.Instance, // Move Type

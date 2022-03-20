@@ -1,6 +1,6 @@
 ﻿namespace Pokedex.Models
 {
-    public abstract class PokeType
+    public abstract class PokemonType
     {
         private readonly string p_name,
                         p_color;
@@ -15,7 +15,7 @@
             get { return p_color; }
         }
 
-        public PokeType(string name, string color)
+        public PokemonType(string name, string color)
         {
             this.p_name = name;
             this.p_color = color;

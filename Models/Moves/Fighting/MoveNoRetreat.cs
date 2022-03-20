@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Hits twice in one turn
 	public class MoveNoRetreat : Move
 	{
+#nullable enable
+		private static MoveNoRetreat? _instance = null;
+#nullable restore
+        public static MoveNoRetreat Instance => _instance ?? (_instance = new MoveNoRetreat());
+
 		public MoveNoRetreat() : base(
 			"No-Retreat",
 			Fighting.Instance, // Move Type

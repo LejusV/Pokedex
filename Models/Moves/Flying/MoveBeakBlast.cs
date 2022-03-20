@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Inflicts a burn on any Pokémon that makes contact before the attack.
 	public class MoveBeakBlast : Move
 	{
+#nullable enable
+		private static MoveBeakBlast? _instance = null;
+#nullable restore
+        public static MoveBeakBlast Instance => _instance ?? (_instance = new MoveBeakBlast());
+
 		public MoveBeakBlast() : base(
 			"Beak-Blast",
 			Flying.Instance, // Move Type

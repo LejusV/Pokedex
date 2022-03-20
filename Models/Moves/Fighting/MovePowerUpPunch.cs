@@ -1,11 +1,16 @@
 using Pokedex.Enums;
-using Pokedex.Models.PokeTypes;
+using Pokedex.Models.PokemonTypes;
 
 namespace Pokedex.Models.Moves
 {
 	//Raises the user's Attack by one stage after inflicting damage.
 	public class MovePowerUpPunch : Move
 	{
+#nullable enable
+		private static MovePowerUpPunch? _instance = null;
+#nullable restore
+        public static MovePowerUpPunch Instance => _instance ?? (_instance = new MovePowerUpPunch());
+
 		public MovePowerUpPunch() : base(
 			"Power-Up-Punch",
 			Fighting.Instance, // Move Type
