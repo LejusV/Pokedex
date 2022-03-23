@@ -6,11 +6,11 @@ namespace Pokedex.Models
 {
     internal class Wiki
     {
-        #nullable enable
+        
         private static Dictionary<int, PokemonInstance>
-        #nullable restore
+        
          _pokemons;
-        #nullable enable
+        
         private static Wiki? _instance = null;
         public static Wiki Instance
         {
@@ -953,5 +953,5 @@ namespace Pokedex.Models
         }
     }
 }
-#nullable restore
+
 */

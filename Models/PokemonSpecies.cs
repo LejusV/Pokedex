@@ -12,9 +12,9 @@ namespace Pokedex.Models
         private readonly string _name;
         private readonly PokemonStats _stats;
         protected PokemonType _type1; // Type N°1 of the Species (required)
-        #nullable enable
+        
         protected PokemonType? _type2 = null; // Type N°2 of the Species (optional)
-        #nullable restore
+        
         private readonly double _weight;
 
 
@@ -69,9 +69,9 @@ namespace Pokedex.Models
         /// Types Getter
         /// </summary>
         /// <returns>Returns the Types tuple</returns>
-        #nullable enable
+        
         public (PokemonType, PokemonType?) Types => (this._type1, this._type2);
-        #nullable restore
+        
         #endregion
 
         #region Types ToString
@@ -91,9 +91,9 @@ namespace Pokedex.Models
         }
         #endregion
 
-        #nullable enable
+        
         public PokemonSpecies(int id, string name, PokemonType type1, PokemonType? types2, double height, double weight, PokemonStats stats)
-        #nullable restore
+        
         {
             _id = id; // store species id
             _height = height; // store species height

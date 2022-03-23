@@ -36,6 +36,11 @@
                 "${workspaceFolder}/Pokedex.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "scripts",
+            "type": "shell",
+            "command": "py './Scripts/LaunchScripts.py'"
         }
     ]
 }

@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Moves
+Models/MoveInstances/
+Models/Moves/
+
+# Pokemons
+Models/PokemonSpecies/
+Models/PokemonInstances/
+
+# Pokemon Types
+Models/PokemonTypes/

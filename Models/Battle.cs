@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Media;
 using System.Text;
+using System.Linq;
+using System.Collections.Generic;
 using Pokedex.Models;
+using Pokedex.Models.Players;
 
 namespace Pokedex.Models
 {
@@ -83,7 +85,45 @@ namespace Pokedex.Models
 
         public void DoTurn()
         {
-            // bruh
+            var moveQueue = new List<MoveInstance>();
+
+            MoveInstance? moveUsed = null;
+            int moveIndex = 0;
+            while (moveUsed == null)
+            {
+                if (_player1 != PlayerAI.Instance)
+                {
+                    Console.WriteLine("\tPlayer 1 : Choose your move");
+                    int.TryParse(Console.ReadLine() !, out moveIndex);
+                }
+
+                moveUsed = (moveIndex >= 0 && moveIndex < 4)
+                    ? _player1.Pokemons[0].Moves[moveIndex]
+                    : null;
+            }
+
+            moveQueue.Add(moveUsed);
+
+            while (moveUsed == null)
+            {
+                if (_player2 != PlayerAI.Instance)
+                {
+                    Console.WriteLine("\tPlayer 2 : Choose your move");
+                    int.TryParse(Console.ReadLine() !, out moveIndex);
+                }
+
+                moveUsed = (moveIndex >= 0 && moveIndex < 4)
+                    ? _player2.Pokemons[0].Moves[moveIndex]
+                    : null;
+            }
+
+            moveQueue.Add(moveUsed);
+            moveQueue = moveQueue.OrderByDescending(m => m.Attributes.Priority).ToList();
+            this.DealDamage()
+        }
+        public void DealDamage(PokemonInstance attacker, PokemonInstance defender, MoveInstance move)
+        {
+            defender.CurrentStats.Add("HP", -1 * DamageHandler.Instance.CalculateDamage(attacker, defender, move));
         }
     }
 }

@@ -1,24 +1,17 @@
-﻿namespace Pokedex.Models
+﻿using System.Collections.Generic;
+
+namespace Pokedex.Models
 {
     public abstract class PokemonType
     {
-        private readonly string p_name,
-                        p_color;
+        public string Name { get; }
 
-        public string Name
-        {
-            get { return p_name; }
-        }
+        public Dictionary<PokemonType, double> EffectOn { get; }
 
-        public string Color
+        public PokemonType(string name, Dictionary<PokemonType, double> effectOn)
         {
-            get { return p_color; }
-        }
-
-        public PokemonType(string name, string color)
-        {
-            this.p_name = name;
-            this.p_color = color;
+            this.Name = name;
+            this.EffectOn = effectOn;
         }
     }
 }

@@ -19,6 +19,9 @@ for poke in data.values():
 	newline: str = ',\n\t\t\t\t'
 
 	# Create the PokemonMove class, by opening a file
+	newpath = f'./Models/PokemonSpecies/{poke["types"][0].title()}' 
+	if not os.path.exists(newpath):
+		os.makedirs(newpath)
 	with open(f"Models\\PokemonSpecies\\{poke['types'][0].title()}\\{pokeNameNoSpace}Species.cs", 'w', encoding="utf-8") as fSpecie:
 	#with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
 		# Load the template code
@@ -34,9 +37,9 @@ namespace Pokedex.Models.Pokemons.Species
 	#region {pokeName}Species
 	public class {pokeNameNoSpace}Species : PokemonSpecies
 	{{
-#nullable enable
+
 		private static {pokeNameNoSpace}Species? _instance = null;
-#nullable restore
+
         public static {pokeNameNoSpace}Species Instance => _instance ?? (_instance = new {pokeNameNoSpace}Species());
 
 		#region {pokeName}Species Constructor
@@ -77,6 +80,9 @@ namespace Pokedex.Models.Pokemons.Species
 		# Write the code to the file
 		fSpecie.write(outfSpecie)
 
+	newpath = f'./Models/PokemonInstances/{poke["types"][0].title()}' 
+	if not os.path.exists(newpath):
+		os.makedirs(newpath)
 	with open(f"Models\\PokemonInstances\\{poke['types'][0].title()}\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as fInstance:
 	#with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
 		# Load the template code

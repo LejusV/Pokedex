@@ -7,19 +7,18 @@ namespace Pokedex.Models
     public abstract class MoveInstance
     {
         # region Variables
-        private Move _attributes;
-        private int _pp;
         # endregion
 
         # region Attributes
         // Values
-        public Move Attributes => this._attributes;
-        public int PP { get => this._pp; }
+        public Move Attributes { get; }
+        public PokemonInstance Owner { get; }
+        public int PP { get; }
 
         // Display Methods
         public string PPStatus
         {
-            get => $"{this._attributes.Name} : {this._pp}/{this._attributes.PP} PP";
+            get => $"{this.Attributes.Name} : {this.PP}/{this.Attributes.PP} PP";
         }
         public string FullStatus {
 
@@ -27,18 +26,18 @@ namespace Pokedex.Models
             {
                 StringBuilder output = new StringBuilder();
                 // line 1
-                output.AppendLine($"{this._attributes.Name, -16}"); // Move Name (line 1)
+                output.AppendLine($"{this.Attributes.Name, -16}"); // Move Name (line 1)
                 // line 2
                 output.AppendLine("┌--------------┬--------------------┐");
 
-                output.Append($"| Type: {this._attributes.Type.Name, 6} |"); // Move PokemonType (line 2)
-                output.AppendLine($" Category: {this._attributes.Category, -8} |"); // Move Category (line 2)
+                output.Append($"| Type: {this.Attributes.Type.Name, 6} |"); // Move PokemonType (line 2)
+                output.AppendLine($" Category: {this.Attributes.Category, -8} |"); // Move Category (line 2)
                 // line 3
-                output.Append($"| Power:   {this._attributes.Power?.ToString() ?? "-", 3} | "); // Move Power (line 3)
-                output.AppendLine($"Accuracy: {this._attributes.Accuracy?.ToString("#'%'") ?? "-", 4}     |"); // Move Accuracy (line 3)
+                output.Append($"| Power:   {this.Attributes.Power?.ToString() ?? "-", 3} | "); // Move Power (line 3)
+                output.AppendLine($"Accuracy: {this.Attributes.Accuracy?.ToString("#'%'") ?? "-", 4}     |"); // Move Accuracy (line 3)
                 // line 4
-                output.Append($"| PP:    {this._pp, 2}/{this._attributes.PP, 2} | "); // Move PP (line 4)
-                output.AppendLine($"Priority: {this._attributes.Priority, -2:+#;-#;0}       |"); // Move Priority (line 4)
+                output.Append($"| PP:    {this.PP, 2}/{this.Attributes.PP, 2} | "); // Move PP (line 4)
+                output.AppendLine($"Priority: {this.Attributes.Priority, -2:+#;-#;0}       |"); // Move Priority (line 4)
 
                 output.AppendLine("└--------------┴--------------------┘");
 
@@ -48,13 +47,14 @@ namespace Pokedex.Models
         # endregion
 
         # region Constructors
-        public MoveInstance( Move attributes, int pp)
+        public MoveInstance( PokemonInstance owner, Move attributes, int pp )
         {
-            this._attributes = attributes;
-            this._pp = pp;
+            this.Attributes = attributes;
+            this.Owner = owner;
+            this.PP = pp;
         }
 
-        public MoveInstance( Move attributes) : this(attributes, attributes.PP)
+        public MoveInstance( PokemonInstance owner, Move attributes) : this(owner, attributes, attributes.PP)
         { }
         # endregion
 

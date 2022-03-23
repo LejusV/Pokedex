@@ -1,6 +1,7 @@
 # Imports
 from asyncio.windows_events import NULL
 import json
+import os
 
 # Load the json file
 data = {}
@@ -21,6 +22,9 @@ for move in data.values():
 
 	# Create the PokemonMove class, by opening a file
 	#with open(f"D:\\PokedexMovesTest\\{moveType}\\Move{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
+	newpath = f'./Models/Moves/{moveType}' 
+	if not os.path.exists(newpath):
+		os.makedirs(newpath)
 	with open(f"Models\\Moves\\{moveType}\\Move{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as fBase:
 		# Load the template code
 		outfile = f"""
@@ -33,9 +37,9 @@ namespace Pokedex.Models.Moves
 	//{move["description"].replace('$effect_chance', str(move["effect_chance"]))}
 	public class Move{moveNameNoSpace} : Move
 	{{
-#nullable enable
+
 		private static Move{moveNameNoSpace}? _instance = null;
-#nullable restore
+
         public static Move{moveNameNoSpace} Instance => _instance ?? (_instance = new Move{moveNameNoSpace}());
 
 		public Move{moveNameNoSpace}() : base(
@@ -53,7 +57,9 @@ namespace Pokedex.Models.Moves
 
 		# Write the code to the file
 		fBase.write(outfile)
-
+	newpath = f'./Models/MoveInstances/{moveType}' 
+	if not os.path.exists(newpath):
+		os.makedirs(newpath)
 	with open(f"Models\\MoveInstances\\{moveType}\\I{moveNameNoSpace}.cs", 'w+', encoding="utf-8") as fInstance:
 		# Load the template code
 		outfile = f"""
@@ -66,7 +72,9 @@ namespace Pokedex.Models.Moves
 	// The specific Move Instance Class
 	public class I{moveNameNoSpace} : MoveInstance
 	{{
-		public I{moveNameNoSpace}() : base( Move{moveNameNoSpace}.Instance ) {{}}
+		public I{moveNameNoSpace}( PokemonInstance owner) : base( owner, Move{moveNameNoSpace}.Instance ) {{}}
+
+		public I{moveNameNoSpace}( PokemonInstance owner, int pp) : base( owner, Move{moveNameNoSpace}.Instance, pp ) {{}}
 	}}
 }}
 

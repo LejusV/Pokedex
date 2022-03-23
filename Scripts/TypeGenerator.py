@@ -1,62 +1,76 @@
-# Imports
-import json
 import os
+import requests
 
-# Load the json file
+# Load the API
+endline: str = ",\n"
 data = {}
-with open("Data\\pokemon.json", encoding="utf-8") as F:
-	data = json.load(F)
+response = requests.get("https://pokeapi.co/api/v2/type")
+data = response.json()
 
-# Give every poke that should be generated
-#nameList = ["squirtle", "bulbasaur", "charmander"]
-#nameList.extend(["fire-punch", "ice-punch", "thunder-punch", "shadow-punch"])
+# For each poke in the database
+for typeLink in data["results"]:
 
-# For each poke in the list
-for poke in data.values():
+    dataType = {}
+    responseB = requests.get(f"{typeLink['url']}")
+    dataType = responseB.json()
 
-	# Find the name to use in file names
-	x = 0
-	pokeName: str = poke["name"].title()
-	pokeNameNoSpace: str = ''.join([c for c in pokeName if c not in (' ', '-')])
-	pokeStats = poke["stats"]
+    # Temporary Variables
+    typeName: str = dataType["name"].title()
+    effect = dataType["damage_relations"]
 
-	# If the file alreay exist, don't touch it
-	#if (os.path.isfile(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs")): continue
+    # If the file alreay exist, don't touch it
+    if (os.path.isfile(f"Models\\PokemonTypes\\{typeName}.cs")): continue
 
-	# Create the PokemonMove class, by opening a file
-	with open(f"Models\\Pokemons\\{pokeNameNoSpace}.cs", 'w', encoding="utf-8") as f:
-	#with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
-		# Load the template code
-		outfile = f"""
+    # Create the PokemonMove class, by opening a file
+    newpath = f'./Models/PokemonTypes'
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+    with open(f"Models\\PokemonTypes\\{typeName}.cs", 'w', encoding="utf-8") as f:
+    #with open(f"Models\\Moves\\{pokeType}\\Move{pokeNameNoSpace}.cs", 'w+', encoding="utf-8") as f:
+        # Load the template code
+        outfile = f"""
 
-using Pokedex.Models.Types;
+using System.Collections.Generic;
 
 namespace Pokedex.Models.Types
 {{
-    publlic class Electric : PokeType
+    public class {typeName} : PokemonType
     {{
-#nullable enable
-        private static Electric? _instance = null;
-#nullable disable
-        public static Electric Instance
+        #region Variables
+        private static {typeName}? _instance = null;
+        #endregion
+
+        #region Attributes
+        public static {typeName} Instance
         {{
             get
             {{
                 if (_instance == null)
                 {{
-                    _instance = new Electric();
+                    _instance = new {typeName}();
                 }}
                 return _instance;
             }}
         }}
-        private Electric() : base("Electric", "Yellow")
-        {{
-        }}
+        #endregion
+
+        #region Constructor
+        private {typeName}() : base("{typeName}", new Dictionary<PokemonType, double>()
+                {{
+                    {r'''
+                    '''.join([f"{{ {element['name'].title()}.Instance, 0 }}," for element in effect['no_damage_to']])}
+                    {r'''
+                    '''.join([f"{{ {element['name'].title()}.Instance, 0.5 }}," for element in effect['half_damage_to']])}
+                    {r'''
+                    '''.join([f"{{ {element['name'].title()}.Instance, 2 }}," for element in effect['double_damage_to']])}
+                }})
+        {{ }}
+        #endregion
     }}
 }}
 
 """[2:-2]
-		# ↑ Delete the first two and last two newlines, here for readability
+            # ↑ Delete the first two and last two newlines, here for readability
 
-		# Write the code to the file
-		f.write(outfile)
+            # Write the code to the file
+        f.write(outfile)

@@ -13,20 +13,20 @@ namespace Pokedex.Models
         //public void connection
         private static int instanceCount = 0;
 
-        private bool isKO;
-
         protected int _level; // Level of the Pokemon
         private string _nickname; // Name Given by User
 
         protected PokemonSpecies _species; // Specie of Pokemon
-        
+        private bool _isKO;
+        private bool _isBurned;
+
         protected PokemonStats _iv; // Individual Values which are different from two pokemons of the same specie (random)
         protected PokemonStats _ev; // Effort Values increasing with battle wins
         protected PokemonStats _calculatedStats; // Real max stats that will be shown, for example MaxHp (updated when player levels up)
         protected PokemonStats _currentStats; // Current stats such as current hp, not always equal to max HP, attack != calculated attack if (de)buffed
         private PokemonStats _statModifiers; // Modifiers of the stats in battle (from -8 to +8)
 
-        protected MoveInstance[] _moves; // List of all the Moves the PokemonInstance has learnt
+        protected MoveInstance?[] _moves; // List of all the Moves the PokemonInstance has learnt
         #endregion
 
         #region Attributes
@@ -108,7 +108,15 @@ namespace Pokedex.Models
             /// Moves Getter
             /// </summary>
             /// <returns>Returns an array of Moves</returns>
-            public MoveInstance[] Moves => this._moves;
+            public MoveInstance?[] Moves => this._moves;
+            #endregion
+
+            #region Is Burned
+            /// <summary>
+            /// IV Getter
+            /// </summary>
+            /// <returns>Returns the IV PokemonStats</returns>
+            public bool IsBurned => this._isBurned;
             #endregion
 
             #region IV Getter
@@ -167,7 +175,9 @@ namespace Pokedex.Models
             public string MovesDisplay()
             {
                 string res = "";
-                foreach (MoveInstance m in _moves) res += m.Attributes.Name + "\n";
+                foreach (MoveInstance? m in _moves)
+                    if (m != null)
+                        res += m?.Attributes.Name + "\n";
                 return res+"\n";
             }
             #endregion
@@ -254,23 +264,23 @@ namespace Pokedex.Models
                     output.AppendLine($"  Learned Moves :");
 
                     output.AppendLine($"    ┌-------------------------┬-------------------------┐");
-                    if (_moves[0] != null)
-                        output.Append($"    | {$"({this._moves[0].Attributes.Type.Name}) {this._moves[0].Attributes.Name}", -23} |");
+                    if (this._moves[0] != null)
+                        output.Append($"    | {$"({this._moves[0]!.Attributes.Type.Name}) {this._moves[0]!.Attributes.Name}", -23} |");
                     else
                         output.Append($"    |       Empty  slot       |");
-                    if (_moves[1] != null)
-                        output.AppendLine($" {$"({this._moves[1].Attributes.Type.Name}) {this._moves[2].Attributes.Name}", -23} |");
+                    if (this._moves[1] != null)
+                        output.AppendLine($" {$"({this._moves[1]!.Attributes.Type.Name}) {this._moves[2]!.Attributes.Name}", -23} |");
                     else
                     {
                         output.AppendLine($"       Empty  slot       |");
                     }
                     output.AppendLine($"    ├-------------------------┼-------------------------┤");
-                    if (_moves[2] != null)
-                        output.Append($"    | {$"({this._moves[2].Attributes.Type.Name}) {this._moves[2].Attributes.Name}", -23} |");
+                    if (this._moves[2] != null)
+                        output.Append($"    | {$"({this._moves[2]!.Attributes.Type.Name}) {this._moves[2]!.Attributes.Name}", -23} |");
                     else
                         output.Append($"    |       Empty  slot       |");
-                    if (_moves[3] != null)
-                        output.AppendLine($" {$"({this._moves[3].Attributes.Type.Name}) {this._moves[3].Attributes.Name}", -23} |");
+                    if (this._moves[3] != null)
+                        output.AppendLine($" {$"({this._moves[3]!.Attributes.Type.Name}) {this._moves[3]!.Attributes.Name}", -23} |");
                     else
                         output.AppendLine($"       Empty  slot       |");
                     output.AppendLine($"    └-------------------------┴-------------------------┘");
@@ -296,7 +306,9 @@ namespace Pokedex.Models
                 _nickname = nickname;
             else throw new ArgumentException("Name cannot be empty");
             _species = specie;
-            GenerateIV();
+            _isKO = false;
+            _isBurned = false;
+            _iv = GenerateIV();
             _ev = new PokemonStats(0, 0, 0, 0, 0, 0);
             _calculatedStats = new PokemonStats(0, 0, 0, 0, 0, 0);
             _currentStats = new PokemonStats(0, 0, 0, 0, 0, 0);
@@ -321,10 +333,10 @@ namespace Pokedex.Models
         {
             if (this._currentStats.Get("HP") > 0)
             {
-                isKO = false;
+                _isKO = false;
             }
             else 
-                isKO = true;
+                _isKO = true;
         }
             #endregion
 
@@ -398,10 +410,10 @@ namespace Pokedex.Models
         /// <summary>
         /// Generates a PokemonStats Class with random values between 0 and 31
         /// </summary>
-        public void GenerateIV()
+        public PokemonStats GenerateIV()
         {
             Random rnd = Program.Random;
-            _iv = new PokemonStats(rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31));
+            return new PokemonStats(rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31) , rnd.Next(0, 31));
         }
             #endregion
             
