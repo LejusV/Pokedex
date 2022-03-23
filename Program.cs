@@ -61,10 +61,6 @@ namespace Pokedex
 
             Console.WriteLine(inputLines[lineIndex]);
 
-            MoveInstance moveWaterShuriken = new IWaterShuriken();
-            MoveInstance moveTackle = new ITackle();
-            MoveInstance moveAvalanche = new IAvalanche();
-
             switch (
                 new CultureInfo("en")
                 .TextInfo
@@ -88,13 +84,15 @@ namespace Pokedex
                 case "Squirtle" :
                 {
                     Player1.AdoptPokemon(new Squirtle( 50 ));
-                    Player1.Pokemons[0].LearnMove(moveWaterShuriken, 1);
-                    Player1.Pokemons[0].LearnMove(moveTackle);
-                    Player1.Pokemons[0].LearnMove(moveAvalanche, 3);
+
                     break;
                 }
             }
 
+
+            MoveInstance moveWaterShuriken = new IWaterShuriken(Player1.Pokemons[0]);
+            MoveInstance moveTackle = new ITackle(Player1.Pokemons[0]);
+            MoveInstance moveAvalanche = new IAvalanche(Player1.Pokemons[0]);
 
             Console.Write("\n" +
                 "How should it be called ? ");
@@ -122,14 +120,6 @@ namespace Pokedex
                 Player1,
                 PlayerAI.Instance
             );
-
-            //Console.WriteLine("hp: " + Player1.Pokemons[0].IV.Get("hp"));
-            //Console.WriteLine("attack: " + Player1.Pokemons[0].IV.Get("attack"));
-            //Console.WriteLine("defense: " + Player1.Pokemons[0].IV.Get("defense"));
-            //Console.WriteLine("sp_attack: " + Player1.Pokemons[0].IV.Get("sp_attack"));
-            //Console.WriteLine("sp_defense: " + Player1.Pokemons[0].IV.Get("sp_defense"));
-            //Console.WriteLine("speed: " + Player1.Pokemons[0].IV.Get("speed"));
-            //Console.WriteLine(Player1.Pokemons[0].StatsString);
             
             Console.SetOut (oldOut);
             writer.Close();

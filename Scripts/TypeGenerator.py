@@ -32,7 +32,7 @@ for typeLink in data["results"]:
 
 using System.Collections.Generic;
 
-namespace Pokedex.Models.Types
+namespace Pokedex.Models.PokemonTypes
 {{
     public class {typeName} : PokemonType
     {{

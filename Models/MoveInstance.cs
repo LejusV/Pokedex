@@ -52,6 +52,8 @@ namespace Pokedex.Models
             this.Attributes = attributes;
             this.Owner = owner;
             this.PP = pp;
+
+            this.Owner.LearnMove(this);
         }
 
         public MoveInstance( PokemonInstance owner, Move attributes) : this(owner, attributes, attributes.PP)
