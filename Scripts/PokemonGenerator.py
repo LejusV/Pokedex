@@ -64,7 +64,7 @@ namespace Pokedex.Models.Pokemons.Species
 		#region Methods
 		private void InitMovesList()
 		{{
-			_moveList = new List<string>()
+			MoveList = new List<string>()
 			{{
 				{f'{newline}'.join([f'"{move.title()}"' for move in poke["moves"]])}
 			}};

@@ -7,7 +7,7 @@ namespace Pokedex.Models
 {
     public abstract class PokemonInstance
     {
-        #region Attributes
+        #region Getters and Setters
             #region XML AttributesList
             /// <list type="bullet">
             ///     <listheader>
@@ -80,6 +80,14 @@ namespace Pokedex.Models
             public PokemonStats EV { get; }
             #endregion
 
+            #region InstanceCount Static Getter
+            /// <summary>
+            /// Instance Count Getter
+            /// </summary>
+            /// <returns>Returns the Instance Count</returns>
+            public static int InstanceCount { get; set; } = 0;
+            #endregion
+
             #region Is Burned
             /// <summary>
             /// IV Getter
@@ -94,14 +102,6 @@ namespace Pokedex.Models
             /// </summary>
             /// <returns>Returns the bool IsKO</returns>
             public bool IsKO { get; set; }
-            #endregion
-
-            #region InstanceCount Static Getter
-            /// <summary>
-            /// Instance Count Getter
-            /// </summary>
-            /// <returns>Returns the Instance Count</returns>
-            public static int InstanceCount { get; set; } = 0;
             #endregion
 
             #region IV Getter
@@ -148,22 +148,49 @@ namespace Pokedex.Models
             /// <summary>
             /// StatModifiers Getter
             /// </summary>
-            /// <returns>Returns the Stat Modifiers (from -8 to +8)</returns>
+            /// <returns>from -8 to +8</returns>
             public PokemonStats StatModifiers { get; }
             #endregion
 
+        #endregion
+        
+        #region ToString Functions
             #region Moves List ToString
             /// <summary>
             /// Learned Moves Display
             /// </summary>
             /// <returns>Returns the formated learned moves</returns>
-            public string MovesDisplay()
+            public string MovesDisplay
             {
-                string res = "";
-                foreach (MoveInstance? m in Moves)
-                    if (m != null)
-                        res += m?.Attributes.Name + "\n";
-                return res+"\n";
+                get
+                {
+                    var output = new StringBuilder();
+                    output.AppendLine($"    ┌-------------------------┬-------------------------┐");
+                    if (this.Moves[0] != null)
+                        output.Append($"  1 | {$"({this.Moves[0]!.Attributes.Type.Name}) {this.Moves[0]!.Attributes.Name}", -23} |");
+                    else
+                        output.Append($"    |       Empty  slot       |");
+                    if (this.Moves[1] != null)
+                        output.AppendLine($" {$"({this.Moves[1]!.Attributes.Type.Name}) {this.Moves[1]!.Attributes.Name}", -23} | 2");
+                    else
+                    {
+                        output.AppendLine($"       Empty  slot       |");
+                    }
+                    output.AppendLine($"    ├-------------------------┼-------------------------┤");
+                    if (this.Moves[2] != null)
+                        output.Append($"  3 | {$"({this.Moves[2]!.Attributes.Type.Name}) {this.Moves[2]!.Attributes.Name}", -23} |");
+                    else
+                        output.Append($"    |       Empty  slot       |");
+                    if (this.Moves[3] != null)
+                        output.AppendLine($" {$"({this.Moves[3]!.Attributes.Type.Name}) {this.Moves[3]!.Attributes.Name}", -23} | 4");
+                    else
+                        output.AppendLine($"       Empty  slot       |");
+                    output.AppendLine($"    └-------------------------┴-------------------------┘");
+
+                    output.AppendLine("");
+
+                    return output.ToString();
+                }
             }
             #endregion
         
@@ -248,30 +275,8 @@ namespace Pokedex.Models
 
                     output.AppendLine($"  Learned Moves :");
 
-                    output.AppendLine($"    ┌-------------------------┬-------------------------┐");
-                    if (this.Moves[0] != null)
-                        output.Append($"    | {$"({this.Moves[0]!.Attributes.Type.Name}) {this.Moves[0]!.Attributes.Name}", -23} |");
-                    else
-                        output.Append($"    |       Empty  slot       |");
-                    if (this.Moves[1] != null)
-                        output.AppendLine($" {$"({this.Moves[1]!.Attributes.Type.Name}) {this.Moves[2]!.Attributes.Name}", -23} |");
-                    else
-                    {
-                        output.AppendLine($"       Empty  slot       |");
-                    }
-                    output.AppendLine($"    ├-------------------------┼-------------------------┤");
-                    if (this.Moves[2] != null)
-                        output.Append($"    | {$"({this.Moves[2]!.Attributes.Type.Name}) {this.Moves[2]!.Attributes.Name}", -23} |");
-                    else
-                        output.Append($"    |       Empty  slot       |");
-                    if (this.Moves[3] != null)
-                        output.AppendLine($" {$"({this.Moves[3]!.Attributes.Type.Name}) {this.Moves[3]!.Attributes.Name}", -23} |");
-                    else
-                        output.AppendLine($"       Empty  slot       |");
-                    output.AppendLine($"    └-------------------------┴-------------------------┘");
-
-                    output.AppendLine("");
-
+                    output.AppendLine(this.MovesDisplay);
+                    
                     return output.ToString();
                 }
             }
@@ -299,10 +304,9 @@ namespace Pokedex.Models
             CurrentStats = new PokemonStats(0, 0, 0, 0, 0, 0);
             StatModifiers = new PokemonStats(0, 0, 0, 0, 0, 0);
             Moves = new MoveInstance[4];
-            this.CheckIsKO();
 			CalculateStats();
 			ResetCurrentStats();
-
+            this.CheckIsKO();
 
             InstanceCount++;
         }    
@@ -318,10 +322,13 @@ namespace Pokedex.Models
         {
             if (this.CurrentStats.Get("HP") > 0)
             {
-                IsKO = false;
+                this.IsKO = false;
             }
             else 
-                IsKO = true;
+            {
+                this.IsKO = true;
+                this.CurrentStats.Set("HP", 0);
+            }
         }
             #endregion
 

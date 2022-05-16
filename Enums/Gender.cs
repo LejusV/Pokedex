@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pokedex.Enums
+﻿namespace Pokedex.Enums
 {
     public enum Gender
     {

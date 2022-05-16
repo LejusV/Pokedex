@@ -13,6 +13,11 @@ using Pokedex.Models.Moves;
 namespace Pokedex
 {
     
+    public class Input
+    {
+        public static List<string> InputLines = new List<string>();
+        public static int LineIndex = 0;
+    }
     class Program
     {
         public static Random Random = new Random();
@@ -34,24 +39,20 @@ namespace Pokedex
             }
             Console.SetOut (writer);
 
-
-
-            int lineIndex = 0;
-            List<string> inputLines = new List<string>();
-            foreach (string line in File.ReadLines("Data\\Input.txt")) inputLines.Add(line);
+            foreach (string line in File.ReadLines("Data\\Input.txt")) Input.InputLines.Add(line);
 
 
             Console.Write("Choose you gender (F, M or O) : ");
 
-            Console.WriteLine(inputLines[lineIndex]);
-            string g = inputLines[lineIndex++];
+            Console.WriteLine(Input.InputLines[Input.LineIndex]);
+            string g = Input.InputLines[Input.LineIndex++];
             Gender gender = (Gender)Enum.Parse(typeof(Gender), g);
 
 
             Console.Write("Choose your Trainer name : ");
             
-            Console.WriteLine(inputLines[lineIndex]);
-            Player Player1 = new(inputLines[lineIndex++], gender);
+            Console.WriteLine(Input.InputLines[Input.LineIndex]);
+            Player Player1 = new(Input.InputLines[Input.LineIndex++], gender);
 
 
             Console.WriteLine("What PokemonInstance do you want to start with ?\n" +
@@ -59,13 +60,13 @@ namespace Pokedex
                                 "\t- Charmander\n" +
                                 "\t- Squirtle\n");
 
-            Console.WriteLine(inputLines[lineIndex]);
+            Console.WriteLine(Input.InputLines[Input.LineIndex]);
 
             switch (
                 new CultureInfo("en")
                 .TextInfo
                 .ToTitleCase(
-                    inputLines[lineIndex++]
+                    Input.InputLines[Input.LineIndex++]
                     .ToLower()
                 ))
             {
@@ -90,36 +91,42 @@ namespace Pokedex
             }
 
 
-            MoveInstance moveWaterShuriken = new IWaterShuriken(Player1.Pokemons[0]);
-            MoveInstance moveTackle = new ITackle(Player1.Pokemons[0]);
-            MoveInstance moveAvalanche = new IAvalanche(Player1.Pokemons[0]);
+            MoveInstance moveWaterShuriken = new IWaterShuriken(Player1.DefaultPokemon!);
+            MoveInstance moveAvalanche = new IAvalanche(Player1.DefaultPokemon!);
 
             Console.Write("\n" +
                 "How should it be called ? ");
             
-            Console.WriteLine(inputLines[lineIndex]);
-            Player1.Pokemons[0].Nickname = inputLines[lineIndex++];
+            Console.WriteLine(Input.InputLines[Input.LineIndex]);
+            Player1.DefaultPokemon!.Nickname = Input.InputLines[Input.LineIndex++];
 
 
-            foreach (PokemonInstance poke in Player1.Pokemons)
+            foreach (PokemonInstance? poke in Player1.Pokemons)
             {
                 if (poke != null)
                 {
+                    poke.LearnMove(new IMegaPunch(poke), 0);
+                    poke.LearnMove(new ITackle(poke), 1);
                     Console.WriteLine(poke.FullStatus);
                     Console.WriteLine(poke.Status);
                 }
             }
 
-            Console.WriteLine(moveWaterShuriken.FullStatus);
-            Console.WriteLine(moveTackle.FullStatus);
+            Console.WriteLine(Player1.DefaultPokemon.Moves[0]!.FullStatus);
+            Console.WriteLine(Player1.DefaultPokemon.Moves[1]!.FullStatus);
 
             //Console.WriteLine(Wiki.Instance.ToString());
-            PlayerAI.Instance.Pokemons[0] = new MrRime(Player1.Pokemons[0].Level);
+            PlayerAI.Instance.AdoptPokemon(new MrMime(Player1.DefaultPokemon!.Level), 0);
+            PlayerAI.Instance.DefaultPokemon!.LearnMove(new IPound(PlayerAI.Instance.DefaultPokemon));
 
-            Battle battle = new Battle(
-                Player1,
-                PlayerAI.Instance
-            );
+            if (Player1.PokemonsCount > 0
+                && PlayerAI.Instance.PokemonsCount > 0)
+            {
+                Battle battle = new Battle(
+                    Player1,
+                    PlayerAI.Instance
+                );
+            }
             
             Console.SetOut (oldOut);
             writer.Close();

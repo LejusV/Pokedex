@@ -4,27 +4,22 @@ namespace Pokedex.Models
 {
     public abstract class PokemonSpecies
     {
-        private readonly int _id; // ID of the pokemon species in the pokedex
-
         //private readonly string _genus;
-        private readonly double _height;
-        protected List<string> _moveList;
-        private readonly string _name;
-        private readonly PokemonStats _stats;
-        protected PokemonType _type1; // Type N°1 of the Species (required)
+        // private readonly double _height;
+        // protected List<string> MoveList;
+        // private readonly string _name;
+        // private readonly PokemonStats _stats;
         
-        protected PokemonType? _type2 = null; // Type N°2 of the Species (optional)
-        
-        private readonly double _weight;
+        // private readonly double _weight;
 
 
         public int Generation
         {
             get
             {
-                if (this._id > 0)
+                if (this.Id > 0)
                 {
-                    switch (this._id)
+                    switch (this.Id)
                     {
                         case <= 151:
                             return 1;
@@ -52,17 +47,20 @@ namespace Pokedex.Models
 
         //public string Genus => _genus;
 
-        public int Id => this._id;
+        public int Id { get; } // ID of the pokemon species in the pokedex
 
-        public double Height => _height;
+        public PokemonType Type1 { get; } // Type N°1 of the Species
+        public PokemonType? Type2 { get; } = null; // Type N°2 of the Species
 
-        public string Name => _name;
+        public double Height { get;}
 
-        public PokemonStats Stats => _stats;
+        public string Name { get;}
 
-        public double Weight => _weight;
+        public PokemonStats Stats { get; }
+
+        public double Weight { get; }
         
-        public List<string> MoveList => _moveList;
+        public List<string> MoveList { get; protected set; }
         
         #region Types Getter
         /// <summary>
@@ -70,7 +68,7 @@ namespace Pokedex.Models
         /// </summary>
         /// <returns>Returns the Types tuple</returns>
         
-        public (PokemonType, PokemonType?) Types => (this._type1, this._type2);
+        public (PokemonType, PokemonType?) Types => (this.Type1, this.Type2);
         
         #endregion
 
@@ -83,10 +81,10 @@ namespace Pokedex.Models
         {
             get
             {
-                if (_type2 != null)
-                    return $"{this._type1} Type";
+                if (Type2 != null)
+                    return $"{this.Type1} Type";
                 else
-                    return $"{this._type1} - {this._type2} Types";
+                    return $"{this.Type1} - {this.Type2} Types";
             }
         }
         #endregion
@@ -95,14 +93,15 @@ namespace Pokedex.Models
         public PokemonSpecies(int id, string name, PokemonType type1, PokemonType? types2, double height, double weight, PokemonStats stats)
         
         {
-            _id = id; // store species id
-            _height = height; // store species height
-            _name = name; // store species name
-            _stats = stats; // store a PokemonStats instance which is a Dictionnary<string, int>()
+            Id = id; // store species id
+            Height = height; // store species height
+            MoveList = new List<string>(); // store species moves
+            Name = name; // store species name
+            Stats = stats; // store a PokemonStats instance which is a Dictionnary<string, int>()
                             //{ {"HP", hp}, {"ATK", atk}, {"DEF", def}, {"SP_ATK", sp_atk}, {"SP_DEF", sp_def}, {"SPEED", speed} }
-            _type1 = type1;
-            _type2 = types2;
-            _weight = weight;
+            Type1 = type1;
+            Type2 = types2;
+            Weight = weight;
         }
 
         public PokemonSpecies(int id, string name, PokemonType type1, double height, double weight, PokemonStats stats)

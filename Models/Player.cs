@@ -1,6 +1,5 @@
 ﻿using Pokedex.Enums;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Pokedex.Models
@@ -9,14 +8,15 @@ namespace Pokedex.Models
     {
         #region Variables
         private bool _canFight;
+        private PokemonInstance? _defaultPokemon = null;
         private Gender? _gender = null;
         private string _name = "";
-        private PokemonInstance[] _poks;
+        private PokemonInstance?[] _poks;
         #endregion
 
         #region Attributes
         public bool CanFight => this._canFight;
-
+        public PokemonInstance? DefaultPokemon => this._defaultPokemon;
         public Gender? Gender
         {
             get { return _gender; }
@@ -27,20 +27,39 @@ namespace Pokedex.Models
             get { return _name; }
         }
 
-        public PokemonInstance[] Pokemons
+        public PokemonInstance?[] Pokemons
         {
             get => _poks;
             set { _poks = value; }
         }
+        
+        /// <summary>
+        /// Getter Property the effective count of Pokemons the player has
+        /// </summary>
+        /// <returns>count of pokemons</returns>
+        public int PokemonsCount
+        {
+            get
+            {
+                int count = 0;
+                foreach (PokemonInstance? pok in this._poks)
+                {
+                    if (pok != null)
+                        count++;
+                }
+                return count;
+            }
+        }
         #endregion
 
         #region Constructors
-        public Player(string name, Gender gender, PokemonInstance[] poks = null)
+        public Player(string name, Gender gender, PokemonInstance[]? poks = null)
         {
             _gender = gender;
             _name = name;
-            _poks = poks;
+            _poks = poks!;
             _poks = new PokemonInstance[6];
+            this.CheckCanFight();
         }
         #endregion
 
@@ -62,6 +81,7 @@ namespace Pokedex.Models
             if (this._poks[index] != null)
             {
                 this._poks[index] = null;
+                this.CheckCanFight();
                 return true;
             }
             else
@@ -77,9 +97,10 @@ namespace Pokedex.Models
             for (int index = 0; index < this._poks.Length; index++)
             {
                 if (this._poks[index] != null &&
-                    this._poks[index].Nickname == nickname)
+                    this._poks[index]?.Nickname == nickname)
                 {
                     this._poks[index] = null;
+                    this.CheckCanFight();
                     return true;
                 }
             }
@@ -96,8 +117,10 @@ namespace Pokedex.Models
         {
             if (!this._poks.Contains(poke))
             {
+                if (this.PokemonsCount == 0)
+                    this._defaultPokemon = poke;
                 this._poks[index] = poke;
-
+                this.CheckCanFight();
                 return true;
             }
             else 
@@ -115,20 +138,46 @@ namespace Pokedex.Models
                 .IndexOf(null);
 
             if (indexOfNull != -1)
+            {
+                if (this.PokemonsCount == 0)
+                    this._defaultPokemon = poke;
                 return this.AdoptPokemon(poke, indexOfNull);
+            }
             else
                 return false;
         }
             #endregion
 
-        private void CheckCanFight()
+            #region CheckCanFight
+        public void CheckCanFight()
         {
-            foreach (PokemonInstance poke in _poks)
+            this._canFight = false;
+            foreach (PokemonInstance? poke in _poks)
             {
-                if (poke != null && poke.CurrentStats.Get("HP") > 0)
+                if (poke != null && !poke.IsKO && poke.CurrentStats.Get("HP") > 0)
                     _canFight = true;
             }
         }
+            #endregion
+            #region ModifyDefaultPokemon
+        public void ModifyDefaultPokemon(int index)
+        {
+            if (this._poks[index] != null)
+                this._defaultPokemon = this._poks[index]!;
+        }
+        public void ModifyDefaultPokemon(string nickname)
+        {
+            for (int index = 0; index < this._poks.Length; index++)
+            {
+                if (this._poks[index] != null &&
+                    this._poks[index]?.Nickname == nickname)
+                {
+                    this._defaultPokemon = this._poks[index]!;
+                    return;
+                }
+            }
+        }
+            #endregion
         #endregion
     }
 }

@@ -17,7 +17,7 @@
             }
         }
         public PlayerAI()
-        : base("", Enums.Gender.O)
+        : base("AI", Enums.Gender.O)
         { }
     }
 }

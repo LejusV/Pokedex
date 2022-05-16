@@ -6,9 +6,9 @@ namespace Pokedex.Models
     {
         public string Name { get; }
 
-        public Dictionary<PokemonType, double> EffectOn { get; }
+        public Dictionary<string, double> EffectOn { get; }
 
-        public PokemonType(string name, Dictionary<PokemonType, double> effectOn)
+        public PokemonType(string name, Dictionary<string, double> effectOn)
         {
             this.Name = name;
             this.EffectOn = effectOn;

@@ -55,14 +55,14 @@ namespace Pokedex.Models.PokemonTypes
         #endregion
 
         #region Constructor
-        private {typeName}() : base("{typeName}", new Dictionary<PokemonType, double>()
+        private {typeName}() : base("{typeName}", new Dictionary<string, double>()
                 {{
                     {r'''
-                    '''.join([f"{{ {element['name'].title()}.Instance, 0 }}," for element in effect['no_damage_to']])}
+                    '''.join([f'{{ "{element["name"].title()}", 0 }},' for element in effect['no_damage_to']])}
                     {r'''
-                    '''.join([f"{{ {element['name'].title()}.Instance, 0.5 }}," for element in effect['half_damage_to']])}
+                    '''.join([f'{{ "{element["name"].title()}", 0.5 }},' for element in effect['half_damage_to'] if element['name'].title() != typeName])}
                     {r'''
-                    '''.join([f"{{ {element['name'].title()}.Instance, 2 }}," for element in effect['double_damage_to']])}
+                    '''.join([f'{{ "{element["name"].title()}", 2 }},' for element in effect['double_damage_to']])}
                 }})
         {{ }}
         #endregion

@@ -41,15 +41,29 @@ namespace Pokedex.Models
                     damage *= 1.5;
 
             // Effectiveness on the Type1 and eventual Type2 of defender
-            damage *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item1)
-                    ? move.Attributes.Type.EffectOn[defender.Species.Types.Item1]
+            double effectiveness = 1;
+            effectiveness *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item1.Name)
+                    ? move.Attributes.Type.EffectOn[defender.Species.Types.Item1.Name]
                     : 1 ;
             if (defender.Species.Types.Item2 != null)
             {
-                damage *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item2)
-                        ? move.Attributes.Type.EffectOn[defender.Species.Types.Item2]
+                effectiveness *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item2.Name)
+                        ? move.Attributes.Type.EffectOn[defender.Species.Types.Item2.Name]
                         : 1 ;
             }
+            if (effectiveness == 0)
+                Console.WriteLine($"\tIt is not effective at all");
+            else if (effectiveness == 0.25)
+                Console.WriteLine($"\tIt is not effective");
+            else if (effectiveness == 0.5)
+                Console.WriteLine($"\tIt is not very effective");
+            else if (effectiveness == 1)
+                Console.WriteLine($"\tIt is effective");
+            else if (effectiveness == 2)
+                Console.WriteLine($"\tIt is super effective");
+            else if (effectiveness == 4)
+                Console.WriteLine($"\tIt is ultra effective");
+            damage *= effectiveness;
 
             // Is Attacker Burned ? (dmg reduced by 2 if so)
             damage *= attacker.IsBurned ? 0.5 : 1 ;

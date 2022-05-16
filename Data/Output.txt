@@ -1,5 +1,5 @@
 Choose you gender (F, M or O) : M
-Choose your Trainer name : Me
+Choose your Trainer name : Julius
 What PokemonInstance do you want to start with ?
 	- Bulbasaur
 	- Charmander
@@ -7,8 +7,8 @@ What PokemonInstance do you want to start with ?
 
 squirtle
 
-How should it be called ? Oui
-Oui
+How should it be called ? MySquirtle
+MySquirtle
   Squirtle Lvl.50
 
   Specie Attributes :
@@ -24,30 +24,31 @@ Oui
 
   Actual Status :
             54 /  54 HP     
-      ATK     62  DEF     80
-      SP_ATK  62  SP_DEF  74
-            SPEED   56      
+      ATK     61  DEF     71
+      SP_ATK  67  SP_DEF  77
+            SPEED   60      
 
   Learned Moves :
     ┌-------------------------┬-------------------------┐
-    | (Normal) Tackle         |       Empty  slot       |
+  1 | (Normal) Mega-Punch     | (Normal) Tackle         | 2
     ├-------------------------┼-------------------------┤
     |       Empty  slot       |       Empty  slot       |
     └-------------------------┴-------------------------┘
 
 
+
 ┌------------------┐
-| Oui              |
+| MySquirtle       |
 | LvL 50           |
 |                  |
 |    54 /  54 HP   |
 └------------------┘
 
-Water-Shuriken  
+Mega-Punch      
 ┌--------------┬--------------------┐
-| Type:  Water | Category: Special  |
-| Power:    15 | Accuracy: 100%     |
-| PP:    20/20 | Priority: +1       |
+| Type: Normal | Category: Physical |
+| Power:    80 | Accuracy:  85%     |
+| PP:    20/20 | Priority: 0        |
 └--------------┴--------------------┘
 
 Tackle          
@@ -59,15 +60,91 @@ Tackle
 
 A new battle is about to happen !
 						┌------------------┐
-						| Mr-Rime          |
+						| Mr-Mime          |
 						| LvL50            |
 						|                  |
-						|    95 /  95 HP   |
+						|    49 /  49 HP   |
 						└------------------┘
 ┌------------------┐
-|              Oui |
+|       MySquirtle |
 |           LvL50  |
 |                  |
 |    54 /  54 HP   |
 └------------------┘
 
+	Julius : Choose your move (1 2 / 3 4)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Mega-Punch     | (Normal) Tackle         | 2
+    ├-------------------------┼-------------------------┤
+    |       Empty  slot       |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+MySquirtle used Mega-Punch !
+	It is effective
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    24 /  49 HP   |
+						└------------------┘
+┌------------------┐
+|       MySquirtle |
+|           LvL50  |
+|                  |
+|    38 /  54 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Mega-Punch     | (Normal) Tackle         | 2
+    ├-------------------------┼-------------------------┤
+    |       Empty  slot       |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+MySquirtle used Tackle !
+	It is effective
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    10 /  49 HP   |
+						└------------------┘
+┌------------------┐
+|       MySquirtle |
+|           LvL50  |
+|                  |
+|    22 /  54 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Mega-Punch     | (Normal) Tackle         | 2
+    ├-------------------------┼-------------------------┤
+    |       Empty  slot       |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+MySquirtle used Mega-Punch !
+	It is effective
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     0 /  49 HP   |
+						└------------------┘
+┌------------------┐
+|       MySquirtle |
+|           LvL50  |
+|                  |
+|     6 /  54 HP   |
+└------------------┘
+
+Julius won the battle !
