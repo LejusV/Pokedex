@@ -1,0 +1,381 @@
+Choose you gender (F, M or O) : M
+Choose your Trainer name : Julius
+What PokemonInstance do you want to start with ?
+	- Bulbasaur
+	- Charmander
+	- Squirtle
+
+squirtle
+
+How should it be called ? TrucJauneQuiVole
+TrucJauneQuiVole Status
+  Zapdos Lvl.30
+
+  Specie Attributes :
+
+    Morphology :
+      Height   1,6m
+      Weight  52,6kg
+
+    Stats : 
+      HP      90  SPEED  100
+      ATK     90  DEF     85
+      SP_ATK 125  SP_DEF  90
+
+  Actual Status :
+            60 /  60 HP     
+      ATK     63  DEF     58
+      SP_ATK  84  SP_DEF  62
+            SPEED   71      
+
+  Learned Moves :
+    ┌-------------------------┬-------------------------┐
+  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Flying) Roost          | (Normal) Endure         | 4
+    └-------------------------┴-------------------------┘
+
+
+┌------------------┐
+| TrucJauneQuiVole |
+| LvL 30           |
+|                  |
+|    60 /  60 HP   |
+└------------------┘
+
+Arceus Status
+  Arceus Lvl.40
+
+  Specie Attributes :
+
+    Morphology :
+      Height   3,2m
+      Weight 320,0kg
+
+    Stats : 
+      HP     120  SPEED  120
+      ATK    120  DEF    120
+      SP_ATK 120  SP_DEF 120
+
+  Actual Status :
+           107 / 107 HP     
+      ATK    108  DEF    107
+      SP_ATK 107  SP_DEF 102
+            SPEED  111      
+
+  Learned Moves :
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Roar           | (Normal) Cut            | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Normal) Endure         |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+┌------------------┐
+| Arceus           |
+| LvL 40           |
+|                  |
+|   107 / 107 HP   |
+└------------------┘
+
+Drill-Peck      
+┌--------------┬--------------------┐
+| Type: Flying | Category: Physical |
+| Power:    80 | Accuracy: 100%     |
+| PP:    20/20 | Priority: 0        |
+└--------------┴--------------------┘
+
+Roar            
+┌--------------┬--------------------┐
+| Type: Normal | Category: Status   |
+| Power:     - | Accuracy:    -     |
+| PP:    20/20 | Priority: -6       |
+└--------------┴--------------------┘
+
+Mr-Mime Status
+  Mr-Mime Lvl.50
+
+  Specie Attributes :
+
+    Morphology :
+      Height   1,3m
+      Weight  54,5kg
+
+    Stats : 
+      HP      40  SPEED   90
+      ATK     45  DEF     65
+      SP_ATK 100  SP_DEF 120
+
+  Actual Status :
+            50 /  50 HP     
+      ATK     62  DEF     74
+      SP_ATK 107  SP_DEF 130
+            SPEED  100      
+
+  Learned Moves :
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Pound          |       Empty  slot       |
+    ├-------------------------┼-------------------------┤
+    |       Empty  slot       |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+
+
+A new battle is about to happen !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    50 /  50 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|    60 /  60 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Flying) Roost          | (Normal) Endure         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    50 /  50 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|    41 /  60 HP   |
+└------------------┘
+
+TrucJauneQuiVole used Drill-Peck !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    20 /  50 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|    41 /  60 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Flying) Roost          | (Normal) Endure         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    20 /  50 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|    22 /  60 HP   |
+└------------------┘
+
+TrucJauneQuiVole used Roar !
+Arceus is Now figthing for AI
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|    22 /  60 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Flying) Roost          | (Normal) Endure         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+| TrucJauneQuiVole |
+|           LvL30  |
+|                  |
+|     0 /  60 HP   |
+└------------------┘
+
+TrucJauneQuiVole is KO
+	Julius : Choose your pokemon (1 2 / 3 4 / 5 6)
+    ┌---------------------------┬---------------------------┐
+  1 | (KO) TrucJauneQuiVole     | (Arceus) Arceus           | 4
+    ├---------------------------┼---------------------------┤
+    |        Empty  slot        |        Empty  slot        |
+    ├---------------------------┼---------------------------┤
+    |        Empty  slot        |        Empty  slot        |
+    └---------------------------┴---------------------------┘
+
+2
+Arceus is Now figthing for Julius
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|   107 / 107 HP   |
+└------------------┘
+
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|   107 / 107 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Roar           | (Normal) Cut            | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Normal) Endure         |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    85 / 107 HP   |
+└------------------┘
+
+Arceus used Roar !
+Mr-Mime is Now figthing for AI
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    20 /  50 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    85 / 107 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Roar           | (Normal) Cut            | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Normal) Endure         |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     0 /  50 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    85 / 107 HP   |
+└------------------┘
+
+Mr-Mime is KO
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Roar           | (Normal) Cut            | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Normal) Endure         |       Empty  slot       |
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus is Now figthing for AI
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    85 / 107 HP   |
+└------------------┘
+
+Arceus used Roar !
+AI fled !
+						┌------------------┐
+						| Arceus           |
+						| LvL35            |
+						|                  |
+						|    92 /  92 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    85 / 107 HP   |
+└------------------┘
+
+Julius won the battle !
