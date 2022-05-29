@@ -1,48 +1,83 @@
-Choose you gender (F, M or O) : M
-Choose your Trainer name : Julius
-What PokemonInstance do you want to start with ?
+Choose you gender (F, M or O) : Choose your Trainer name : What PokemonInstance do you want to start with ?
 	- Bulbasaur
 	- Charmander
 	- Squirtle
 
-squirtle
+bulbasaur
 
-How should it be called ? TrucJauneQuiVole
-TrucJauneQuiVole Status
-  Zapdos Lvl.30
+How should it be called ? TrucVert
+
+TrucVert learned Endure
+TrucVert learned Flash
+TrucVert learned Mud-Slap
+TrucVert learned Tackle
+You need to forget a move in order to make TrucVert learn Headbutt
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Endure         | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+
+0 to cancel
+1
+TrucVert learned Headbutt
+You need to forget a move in order to make TrucVert learn Cut
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+
+0 to cancel
+0
+TrucVert Status
+  Bulbasaur Lvl.50
 
   Specie Attributes :
 
     Morphology :
-      Height   1,6m
-      Weight  52,6kg
+      Height   0,7m
+      Weight   6,9kg
 
     Stats : 
-      HP      90  SPEED  100
-      ATK     90  DEF     85
-      SP_ATK 125  SP_DEF  90
+      HP      45  SPEED   45
+      ATK     49  DEF     49
+      SP_ATK  65  SP_DEF  65
 
   Actual Status :
-            60 /  60 HP     
-      ATK     63  DEF     58
-      SP_ATK  84  SP_DEF  62
-            SPEED   71      
+            61 /  61 HP     
+      ATK     68  DEF     55
+      SP_ATK  80  SP_DEF  76
+            SPEED   60      
 
   Learned Moves :
     ┌-------------------------┬-------------------------┐
-  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Flying) Roost          | (Normal) Endure         | 4
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
     └-------------------------┴-------------------------┘
 
 
 ┌------------------┐
-| TrucJauneQuiVole |
-| LvL 30           |
+| TrucVert         |
+| LvL 50           |
 |                  |
-|    60 /  60 HP   |
+|    61 /  61 HP   |
 └------------------┘
 
+Arceus learned Endure
+Arceus learned Flash
+Arceus learned Mud-Slap
+Arceus learned Headbutt
+You need to forget a move in order to make Arceus learn Cut
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Endure         | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+
+0 to cancel
+Arceus learned Cut
 Arceus Status
   Arceus Lvl.40
 
@@ -58,16 +93,16 @@ Arceus Status
       SP_ATK 120  SP_DEF 120
 
   Actual Status :
-           107 / 107 HP     
-      ATK    108  DEF    107
-      SP_ATK 107  SP_DEF 102
-            SPEED  111      
+           101 / 101 HP     
+      ATK    106  DEF    110
+      SP_ATK 105  SP_DEF 106
+            SPEED  110      
 
   Learned Moves :
     ┌-------------------------┬-------------------------┐
-  1 | (Normal) Roar           | (Normal) Cut            | 2
+  1 | (Normal) Cut            | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Normal) Endure         |       Empty  slot       |
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
     └-------------------------┴-------------------------┘
 
 
@@ -75,23 +110,25 @@ Arceus Status
 | Arceus           |
 | LvL 40           |
 |                  |
-|   107 / 107 HP   |
+|   101 / 101 HP   |
 └------------------┘
 
-Drill-Peck      
+Headbutt        
 ┌--------------┬--------------------┐
-| Type: Flying | Category: Physical |
-| Power:    80 | Accuracy: 100%     |
+| Type: Normal | Category: Physical |
+| Power:    70 | Accuracy: 100%     |
+| PP:    15/15 | Priority: 0        |
+└--------------┴--------------------┘
+
+Flash           
+┌--------------┬--------------------┐
+| Type: Normal | Category: Status   |
+| Power:     - | Accuracy: 100%     |
 | PP:    20/20 | Priority: 0        |
 └--------------┴--------------------┘
 
-Roar            
-┌--------------┬--------------------┐
-| Type: Normal | Category: Status   |
-| Power:     - | Accuracy:    -     |
-| PP:    20/20 | Priority: -6       |
-└--------------┴--------------------┘
-
+Mr-Mime learned Pound
+Arceus learned Cut
 Mr-Mime Status
   Mr-Mime Lvl.50
 
@@ -107,9 +144,9 @@ Mr-Mime Status
       SP_ATK 100  SP_DEF 120
 
   Actual Status :
-            50 /  50 HP     
-      ATK     62  DEF     74
-      SP_ATK 107  SP_DEF 130
+            56 /  56 HP     
+      ATK     60  DEF     77
+      SP_ATK 107  SP_DEF 126
             SPEED  100      
 
   Learned Moves :
@@ -125,59 +162,20 @@ A new battle is about to happen !
 						| Mr-Mime          |
 						| LvL50            |
 						|                  |
-						|    50 /  50 HP   |
+						|    56 /  56 HP   |
 						└------------------┘
 ┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
+|         TrucVert |
+|           LvL50  |
 |                  |
-|    60 /  60 HP   |
+|    61 /  61 HP   |
 └------------------┘
 
 	Julius : Choose your move (1 2 / 3 4 / 5 6)
     ┌-------------------------┬-------------------------┐
-  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Flying) Roost          | (Normal) Endure         | 4
-    └-------------------------┴-------------------------┘
-        5 : Switch Pokemon             Flee : 6
-
-1
-Mr-Mime used Pound !
-	It is effective
-						┌------------------┐
-						| Mr-Mime          |
-						| LvL50            |
-						|                  |
-						|    50 /  50 HP   |
-						└------------------┘
-┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
-|                  |
-|    41 /  60 HP   |
-└------------------┘
-
-TrucJauneQuiVole used Drill-Peck !
-	It is effective
-						┌------------------┐
-						| Mr-Mime          |
-						| LvL50            |
-						|                  |
-						|    20 /  50 HP   |
-						└------------------┘
-┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
-|                  |
-|    41 /  60 HP   |
-└------------------┘
-
-	Julius : Choose your move (1 2 / 3 4 / 5 6)
-    ┌-------------------------┬-------------------------┐
-  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
-    ├-------------------------┼-------------------------┤
-  3 | (Flying) Roost          | (Normal) Endure         | 4
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
     └-------------------------┴-------------------------┘
         5 : Switch Pokemon             Flee : 6
 
@@ -188,35 +186,269 @@ Mr-Mime used Pound !
 						| Mr-Mime          |
 						| LvL50            |
 						|                  |
-						|    20 /  50 HP   |
+						|    56 /  56 HP   |
 						└------------------┘
 ┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
+|         TrucVert |
+|           LvL50  |
 |                  |
-|    22 /  60 HP   |
+|    41 /  61 HP   |
 └------------------┘
 
-TrucJauneQuiVole used Roar !
-Arceus is Now figthing for AI
+TrucVert used Flash !
+Mr-Mime's Accuracy decreased by 1 stage !
 						┌------------------┐
-						| Arceus           |
-						| LvL35            |
+						| Mr-Mime          |
+						| LvL50            |
 						|                  |
-						|    92 /  92 HP   |
+						|    56 /  56 HP   |
 						└------------------┘
 ┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
+|         TrucVert |
+|           LvL50  |
 |                  |
-|    22 /  60 HP   |
+|    41 /  61 HP   |
 └------------------┘
 
 	Julius : Choose your move (1 2 / 3 4 / 5 6)
     ┌-------------------------┬-------------------------┐
-  1 | (Flying) Drill-Peck     | (Normal) Roar           | 2
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Flying) Roost          | (Normal) Endure         | 4
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Mr-Mime used Pound !
+Mr-Mime's attack missed !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    56 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|    41 /  61 HP   |
+└------------------┘
+
+TrucVert used Headbutt !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    30 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|    41 /  61 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    30 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|    21 /  61 HP   |
+└------------------┘
+
+TrucVert used Flash !
+Mr-Mime's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    30 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|    21 /  61 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Mr-Mime used Pound !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|    30 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+TrucVert used Headbutt !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     1 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Mr-Mime used Pound !
+Mr-Mime's attack missed !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     1 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+TrucVert used Flash !
+Mr-Mime's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     1 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Mr-Mime used Pound !
+Mr-Mime's attack missed !
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     1 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+TrucVert used Headbutt !
+	It is effective
+						┌------------------┐
+						| Mr-Mime          |
+						| LvL50            |
+						|                  |
+						|     0 /  56 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+Mr-Mime is KO
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Arceus is Now figthing for AI
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    80 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+TrucVert used Flash !
+Arceus's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    80 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|         TrucVert |
+|           LvL50  |
+|                  |
+|     1 /  61 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Headbutt       | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Tackle         | 4
     └-------------------------┴-------------------------┘
         5 : Switch Pokemon             Flee : 6
 
@@ -225,21 +457,21 @@ Arceus used Cut !
 	It is effective
 						┌------------------┐
 						| Arceus           |
-						| LvL35            |
+						| LvL30            |
 						|                  |
-						|    92 /  92 HP   |
+						|    80 /  80 HP   |
 						└------------------┘
 ┌------------------┐
-| TrucJauneQuiVole |
-|           LvL30  |
+|         TrucVert |
+|           LvL50  |
 |                  |
-|     0 /  60 HP   |
+|     0 /  61 HP   |
 └------------------┘
 
-TrucJauneQuiVole is KO
+TrucVert is KO
 	Julius : Choose your pokemon (1 2 / 3 4 / 5 6)
     ┌---------------------------┬---------------------------┐
-  1 | (KO) TrucJauneQuiVole     | (Arceus) Arceus           | 4
+  1 | (KO) TrucVert             | (Arceus) Arceus           | 2
     ├---------------------------┼---------------------------┤
     |        Empty  slot        |        Empty  slot        |
     ├---------------------------┼---------------------------┤
@@ -250,132 +482,367 @@ TrucJauneQuiVole is KO
 Arceus is Now figthing for Julius
 						┌------------------┐
 						| Arceus           |
-						| LvL35            |
+						| LvL30            |
 						|                  |
-						|    92 /  92 HP   |
+						|    80 /  80 HP   |
 						└------------------┘
 ┌------------------┐
 |           Arceus |
 |           LvL40  |
 |                  |
-|   107 / 107 HP   |
+|   101 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    80 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    84 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    80 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    84 / 101 HP   |
 └------------------┘
 
 Arceus used Cut !
 Arceus's attack missed !
 						┌------------------┐
 						| Arceus           |
-						| LvL35            |
+						| LvL30            |
 						|                  |
-						|    92 /  92 HP   |
+						|    80 /  80 HP   |
 						└------------------┘
 ┌------------------┐
 |           Arceus |
 |           LvL40  |
 |                  |
-|   107 / 107 HP   |
+|    84 / 101 HP   |
 └------------------┘
 
 	Julius : Choose your move (1 2 / 3 4 / 5 6)
     ┌-------------------------┬-------------------------┐
-  1 | (Normal) Roar           | (Normal) Cut            | 2
+  1 | (Normal) Cut            | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Normal) Endure         |       Empty  slot       |
-    └-------------------------┴-------------------------┘
-        5 : Switch Pokemon             Flee : 6
-
-1
-Arceus used Cut !
-	It is effective
-						┌------------------┐
-						| Arceus           |
-						| LvL35            |
-						|                  |
-						|    92 /  92 HP   |
-						└------------------┘
-┌------------------┐
-|           Arceus |
-|           LvL40  |
-|                  |
-|    85 / 107 HP   |
-└------------------┘
-
-Arceus used Roar !
-Mr-Mime is Now figthing for AI
-						┌------------------┐
-						| Mr-Mime          |
-						| LvL50            |
-						|                  |
-						|    20 /  50 HP   |
-						└------------------┘
-┌------------------┐
-|           Arceus |
-|           LvL40  |
-|                  |
-|    85 / 107 HP   |
-└------------------┘
-
-	Julius : Choose your move (1 2 / 3 4 / 5 6)
-    ┌-------------------------┬-------------------------┐
-  1 | (Normal) Roar           | (Normal) Cut            | 2
-    ├-------------------------┼-------------------------┤
-  3 | (Normal) Endure         |       Empty  slot       |
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
     └-------------------------┴-------------------------┘
         5 : Switch Pokemon             Flee : 6
 
 2
-Arceus used Cut !
-	It is effective
+Arceus used Flash !
+Arceus's Accuracy decreased by 1 stage !
 						┌------------------┐
-						| Mr-Mime          |
-						| LvL50            |
+						| Arceus           |
+						| LvL30            |
 						|                  |
-						|     0 /  50 HP   |
+						|    80 /  80 HP   |
 						└------------------┘
 ┌------------------┐
 |           Arceus |
 |           LvL40  |
 |                  |
-|    85 / 107 HP   |
+|    84 / 101 HP   |
 └------------------┘
 
-Mr-Mime is KO
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    80 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    84 / 101 HP   |
+└------------------┘
+
 	Julius : Choose your move (1 2 / 3 4 / 5 6)
     ┌-------------------------┬-------------------------┐
-  1 | (Normal) Roar           | (Normal) Cut            | 2
+  1 | (Normal) Cut            | (Normal) Flash          | 2
     ├-------------------------┼-------------------------┤
-  3 | (Normal) Endure         |       Empty  slot       |
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
     └-------------------------┴-------------------------┘
         5 : Switch Pokemon             Flee : 6
 
 1
-Arceus is Now figthing for AI
+Arceus used Cut !
+	It is effective
 						┌------------------┐
 						| Arceus           |
-						| LvL35            |
+						| LvL30            |
 						|                  |
-						|    92 /  92 HP   |
+						|    48 /  80 HP   |
 						└------------------┘
 ┌------------------┐
 |           Arceus |
 |           LvL40  |
 |                  |
-|    85 / 107 HP   |
+|    84 / 101 HP   |
 └------------------┘
 
-Arceus used Roar !
-AI fled !
+Arceus used Cut !
+	It is effective
 						┌------------------┐
 						| Arceus           |
-						| LvL35            |
+						| LvL30            |
 						|                  |
-						|    92 /  92 HP   |
+						|    48 /  80 HP   |
 						└------------------┘
 ┌------------------┐
 |           Arceus |
 |           LvL40  |
 |                  |
-|    85 / 107 HP   |
+|    67 / 101 HP   |
 └------------------┘
 
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Arceus used Flash !
+Arceus's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    67 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    67 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    67 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    67 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Arceus used Flash !
+Arceus's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    67 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    48 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    50 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    17 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    50 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    17 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    33 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+2
+Arceus used Flash !
+Arceus's Accuracy decreased by 1 stage !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    17 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    33 / 101 HP   |
+└------------------┘
+
+Arceus used Cut !
+Arceus's attack missed !
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|    17 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    33 / 101 HP   |
+└------------------┘
+
+	Julius : Choose your move (1 2 / 3 4 / 5 6)
+    ┌-------------------------┬-------------------------┐
+  1 | (Normal) Cut            | (Normal) Flash          | 2
+    ├-------------------------┼-------------------------┤
+  3 | (Ground) Mud-Slap       | (Normal) Headbutt       | 4
+    └-------------------------┴-------------------------┘
+        5 : Switch Pokemon             Flee : 6
+
+1
+Arceus used Cut !
+	It is effective
+						┌------------------┐
+						| Arceus           |
+						| LvL30            |
+						|                  |
+						|     0 /  80 HP   |
+						└------------------┘
+┌------------------┐
+|           Arceus |
+|           LvL40  |
+|                  |
+|    33 / 101 HP   |
+└------------------┘
+
+Arceus is KO
 Julius won the battle !

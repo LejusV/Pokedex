@@ -67,7 +67,7 @@ namespace Pokedex.Models
                 if (this._poks[0] is not null)
                 {
                     if (this._poks[0]!.IsKO)
-                            output.Append($"  1 | {$"(KO) {this._poks[0]!.Nickname}", -25} |");
+                            output.Append($"    | {$"(K.O.) {this._poks[0]!.Nickname}", -25} |");
                     else
                         output.Append($"  1 | {$"({this._poks[0]!.Species.Name}) {this._poks[0]!.Nickname}", -25} |");
                 }     
@@ -75,9 +75,9 @@ namespace Pokedex.Models
                     output.Append($"    |        Empty  slot        |");
                 if (this._poks[1] is not null)
                 {
-                    output.AppendLine($" {$"({this._poks[1]!.Species.Name}) {this._poks[1]!.Nickname}", -25} | 4");
+                    output.AppendLine($" {$"({this._poks[1]!.Species.Name}) {this._poks[1]!.Nickname}", -25} | 2");
                     if (this._poks[1]!.IsKO)
-                        output.AppendLine($" {$"(KO) {this._poks[1]!.Nickname}", -25} |");
+                        output.AppendLine($" {$"(K.O.) {this._poks[1]!.Nickname}", -25} |");
                 }
                 else
                     output.AppendLine($"        Empty  slot        |");
@@ -85,9 +85,9 @@ namespace Pokedex.Models
                 if (this._poks[2] is not null)
                 {
                     if (this._poks[2]!.IsKO)
-                            output.Append($"  1 | {$"(KO) {this._poks[2]!.Nickname}", -25} |");
+                            output.Append($"    | {$"(K.O.) {this._poks[2]!.Nickname}", -25} |");
                     else
-                        output.Append($"  1 | {$"({this._poks[2]!.Species.Name}) {this._poks[2]!.Nickname}", -25} |");
+                        output.Append($"  3 | {$"({this._poks[2]!.Species.Name}) {this._poks[2]!.Nickname}", -25} |");
                 }     
                 else
                     output.Append($"    |        Empty  slot        |");
@@ -95,7 +95,7 @@ namespace Pokedex.Models
                 {
                     output.AppendLine($" {$"({this._poks[3]!.Species.Name}) {this._poks[3]!.Nickname}", -25} | 4");
                     if (this._poks[3]!.IsKO)
-                        output.AppendLine($" {$"(KO) {this._poks[3]!.Nickname}", -25} |");
+                        output.AppendLine($" {$"(K.O.) {this._poks[3]!.Nickname}", -25} |");
                 }
                 else
                     output.AppendLine($"        Empty  slot        |");
@@ -103,17 +103,17 @@ namespace Pokedex.Models
                 if (this._poks[4] is not null)
                 {
                     if (this._poks[4]!.IsKO)
-                            output.Append($"  1 | {$"(KO) {this._poks[4]!.Nickname}", -25} |");
+                            output.Append($"    | {$"(K.O.) {this._poks[4]!.Nickname}", -25} |");
                     else
-                        output.Append($"  1 | {$"({this._poks[4]!.Species.Name}) {this._poks[4]!.Nickname}", -25} |");
+                        output.Append($"  5 | {$"({this._poks[4]!.Species.Name}) {this._poks[4]!.Nickname}", -25} |");
                 }     
                 else
                     output.Append($"    |        Empty  slot        |");
                 if (this._poks[5] is not null)
                 {
-                    output.AppendLine($" {$"({this._poks[5]!.Species.Name}) {this._poks[5]!.Nickname}", -25} | 4");
+                    output.AppendLine($" {$"({this._poks[5]!.Species.Name}) {this._poks[5]!.Nickname}", -25} | 6");
                     if (this._poks[5]!.IsKO)
-                        output.AppendLine($" {$"(KO) {this._poks[5]!.Nickname}", -25} |");
+                        output.AppendLine($" {$"(K.O.) {this._poks[5]!.Nickname}", -25} |");
                 }
                 else
                     output.AppendLine($"        Empty  slot        |");
@@ -261,7 +261,7 @@ namespace Pokedex.Models
                     return true;
                 }
                 else
-                    Console.WriteLine("This Pokemon is KO");
+                    Console.WriteLine("This Pokemon is K.O.");
                     return false;
             }
             else
