@@ -38,7 +38,7 @@ namespace Pokedex
                 Console.WriteLine (e.Message);
                 return;
             }
-            Console.SetOut (writer);
+            //Console.SetOut (writer);
 
             foreach (string line in File.ReadLines("Data\\Input.txt")) Input.InputLines.Add(line);
 
