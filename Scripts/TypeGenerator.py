@@ -45,7 +45,7 @@ namespace Pokedex.Models.PokemonTypes
         {{
             get
             {{
-                if (_instance == null)
+                if (_instance is null)
                 {{
                     _instance = new {typeName}();
                 }}

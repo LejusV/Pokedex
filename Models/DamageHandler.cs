@@ -29,9 +29,9 @@ namespace Pokedex.Models
             double damage = (0.4 * attacker.Level + 2) * move.Attributes.Power ?? 1;
 
             // Adjust for stats
-            damage *= move.Attributes.Category == MoveCategory.Physical
-                    ? (double) attacker.CurrentStats.Get("ATK") / defender.CurrentStats.Get("DEF")
-                    : (double) attacker.CurrentStats.Get("SP_ATK") / defender.CurrentStats.Get("SP_DEF");
+            damage *= move.Attributes.DamageCategory == DamageCategory.Physical
+                    ? (double) attacker.CurrentStats.Get(Stat.ATK) / defender.CurrentStats.Get(Stat.DEF)
+                    : (double) attacker.CurrentStats.Get(Stat.SP_ATK) / defender.CurrentStats.Get(Stat.SP_DEF);
             
             damage = damage / 50 + 2;
             
@@ -45,14 +45,15 @@ namespace Pokedex.Models
             effectiveness *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item1.Name)
                     ? move.Attributes.Type.EffectOn[defender.Species.Types.Item1.Name]
                     : 1 ;
-            if (defender.Species.Types.Item2 != null)
+            if (defender.Species.Types.Item2 is not null)
             {
                 effectiveness *= move.Attributes.Type.EffectOn.ContainsKey(defender.Species.Types.Item2.Name)
                         ? move.Attributes.Type.EffectOn[defender.Species.Types.Item2.Name]
                         : 1 ;
             }
+            // Displays the effectiveness
             if (effectiveness == 0)
-                Console.WriteLine($"\tIt is not effective at all");
+                Console.WriteLine($"\tIt is ineffective");
             else if (effectiveness == 0.25)
                 Console.WriteLine($"\tIt is not effective");
             else if (effectiveness == 0.5)
@@ -66,11 +67,14 @@ namespace Pokedex.Models
             damage *= effectiveness;
 
             // Is Attacker Burned ? (dmg reduced by 2 if so)
-            damage *= attacker.IsBurned ? 0.5 : 1 ;
+            damage *= 
+                attacker.IsBurned
+                    ? 0.5
+                    : 1 ;
 
             // Random
             Random rnd = Program.Random;
-            damage *= ((double) rnd.Next(85, 101)) / 100 ;
+            damage *= ( rnd.Next(85, 101) ) / 100.0 ;
             
 
             return (int) damage;

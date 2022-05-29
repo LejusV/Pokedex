@@ -1,9 +1,23 @@
-﻿namespace Pokedex.Enums
+
+
+namespace Pokedex.Enums
 {
     public enum MoveCategory
     {
-        Physical,
-        Special,
-        Status,
+        Damage,
+		DamageAilment,
+		Ohko,
+		NetGoodStats,
+		ForceSwitch,
+		Ailment,
+		Unique,
+		DamageLower,
+		FieldEffect,
+		DamageHeal,
+		Heal,
+		WholeFieldEffect,
+		Swagger,
+		DamageRaise
     }
 }
+

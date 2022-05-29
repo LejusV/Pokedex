@@ -1,43 +1,44 @@
+using System;
 using System.Collections.Generic;
+using System.Text;
+using Pokedex.Enums;
 
 namespace Pokedex.Models
 {
     public class PokemonStats
     {
-        private Dictionary<string, int> _stats;
+        private Dictionary<Stat, int> _stats;
 
-        public static readonly List<string> Keys = new List<string>(){"HP", "ATK", "DEF", "SP_ATK", "SP_DEF", "SPEED"};
-
-        public int Get(string key)
+        public int Get(Stat key)
         {
             return _stats[key];
         }
         
-        public void Set(string key, int value)
+        public void Set(Stat key, int value)
         {
             _stats[key] = value;
         }
 
-        public void Add(string key, int value)
+        public void Add(Stat key, int value)
         {
             _stats[key] += value;
         }
 
         public void CopyTo(PokemonStats stats_copy)
         {
-            foreach (string key in Keys) stats_copy.Set(key, this._stats[key]);
+            foreach (Stat key in Enum.GetValues<Stat>()) stats_copy.Set(key, this._stats[key]);
         }
 
         public PokemonStats(int hp, int attack, int defense, int sp_attack, int sp_defense, int speed)
         {
-            _stats = new Dictionary<string, int>
+            _stats = new Dictionary<Stat, int>
             {
-                {"HP", hp},
-                {"ATK", attack},
-                {"DEF", defense},
-                {"SP_ATK", sp_attack},
-                {"SP_DEF", sp_defense},
-                {"SPEED", speed}
+                {Stat.HP, hp},
+                {Stat.ATK, attack},
+                {Stat.DEF, defense},
+                {Stat.SP_ATK, sp_attack},
+                {Stat.SP_DEF, sp_defense},
+                {Stat.SPEED, speed}
             };
         }
     }

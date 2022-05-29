@@ -34,7 +34,7 @@ namespace Pokedex.Models
         {{
             get
             {{
-                if (_instance == null)
+                if (_instance is null)
                 {{
                     _instance = new Wiki();
                 }}
@@ -51,7 +51,7 @@ namespace Pokedex.Models
             string res = "";
             foreach (KeyValuePair<int, PokemonInstance?> entry in this.Pokemons) 
             {{
-                if (entry.Value != null)
+                if (entry.Value is not null)
                 {{
                     res += string.Format("id " + entry.Key + "\\n" +
                     entry.Value.Specie.Name + "\\n" +

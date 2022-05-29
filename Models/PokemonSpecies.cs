@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Text;
+using Pokedex.Enums;
 
 namespace Pokedex.Models
 {
@@ -72,7 +74,29 @@ namespace Pokedex.Models
         
         #endregion
 
-        #region Types ToString
+        #region ToString Functions
+        public string Status
+        {
+            get
+            {
+                StringBuilder output = new StringBuilder();
+                    output.AppendLine($"  Specie Attributes :");
+                    output.AppendLine("");
+                    output.AppendLine($"    Morphology :");
+                    output.AppendLine($"      Height {string.Format("{0:0.0}",this.Height), 5}m");
+                    output.AppendLine($"      Weight {string.Format("{0:0.0}",this.Weight), 5}kg");
+                    output.AppendLine("");
+                    output.AppendLine($"    Stats : ");
+                    output.Append($"      HP     {this.Stats.Get(Stat.HP), 3}  ");
+                    output.AppendLine($"SPEED  {this.Stats.Get(Stat.SPEED), 3}");
+                    output.Append($"      ATK    {this.Stats.Get(Stat.ATK), 3}  ");
+                    output.AppendLine($"DEF    {this.Stats.Get(Stat.DEF), 3}");
+                    output.Append($"      SP_ATK {this.Stats.Get(Stat.SP_ATK), 3}  ");
+                    output.AppendLine($"SP_DEF {this.Stats.Get(Stat.SP_DEF), 3}");
+
+                    return output.ToString();
+            }
+        }
         /// <summary>
         /// Types Display
         /// </summary>
@@ -81,7 +105,7 @@ namespace Pokedex.Models
         {
             get
             {
-                if (Type2 != null)
+                if (Type2 is not null)
                     return $"{this.Type1} Type";
                 else
                     return $"{this.Type1} - {this.Type2} Types";
@@ -98,7 +122,7 @@ namespace Pokedex.Models
             MoveList = new List<string>(); // store species moves
             Name = name; // store species name
             Stats = stats; // store a PokemonStats instance which is a Dictionnary<string, int>()
-                            //{ {"HP", hp}, {"ATK", atk}, {"DEF", def}, {"SP_ATK", sp_atk}, {"SP_DEF", sp_def}, {"SPEED", speed} }
+                            //{ {Stat.HP, hp}, {Stat.ATK, atk}, {Stat.DEF, def}, {Stat.SP_ATK, sp_atk}, {Stat.SP_DEF, sp_def}, {Stat.SPEED, speed} }
             Type1 = type1;
             Type2 = types2;
             Weight = weight;

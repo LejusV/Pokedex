@@ -1,7 +1,15 @@
 M
 Julius
-squirtle
-MySquirtle
+bulbasaur
+TrucVert
+1
+0
+1
+2
+1
+2
+1
+2
 1
 2
 1
