@@ -1,7 +1,8 @@
 # Pokedex
 A little Pokemon Game which is still a console app
 
-## Output Example
+## Output Example  
+
 Choose you gender (F, M or O) : Choose your Trainer name : What PokemonInstance do you want to start with ?
 	- Bulbasaur
 	- Charmander
